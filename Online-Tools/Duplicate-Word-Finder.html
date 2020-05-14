@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Duplicate Word Finder</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco,CSS Duplicate Word Finder,Find Repeat Words"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="Duplicate Word Finder. Find frequently repeated keywords in the content."/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <meta name="google-site-verification" content="7_j12RKlstZviWTOarYRDblot1OwUKlgxONgOIVL_Qk" />
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}</style>
+</head>
+<body>
+    <div class="container">
+<h1><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">Home</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">Featured Software</a>
+  <a href="https://dev-coco.github.io/Online-Tools.html">Online Tools</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+    <div style="text-align:center;">
+        <h1>Duplicate Word Finder</h1>
+        <br>
+        <textarea style="width:100%;height:20em" id="codeText"></textarea>
+        <br>
+        <button type="text" onclick="frequency()">Find it!</button>
+        <br>
+        <p id="repeatword"></p>
+    </div>
+</div>
+</body>
+<script>
+    function frequency(){var paragraph = codeText.value;paragraph= paragraph.replace(/(\r\n|\n|\r)/gm,"");paragraph = paragraph.replace(/,/g," ");var array_of_paragraph = paragraph.split(" ");var count=0;var all_repeated_elements=[];var count_of_elements=[];var m = [];for(var x=0;x<array_of_paragraph.length;x++){count=0;if(array_of_paragraph[x].length>3 ){if( array_of_paragraph[x] != array_of_paragraph[m]){for(var y=x+1;y<array_of_paragraph.length;y++){if(array_of_paragraph[x]==array_of_paragraph[y]){count+=1;}}find=0;for (var k = 0;k < all_repeated_elements.length;k++){if (array_of_paragraph[x]==all_repeated_elements[k]){find+=1;}}if (count>=1 && find==0 ){all_repeated_elements.push(array_of_paragraph[x]);count_of_elements.push(count)}}}}var max_repeated_elements=[];for (var z = 0;z < count_of_elements.length;z++){if(count_of_elements[z]>=10){max_repeated_elements.push (all_repeated_elements[z])}}document.getElementById("repeatword").innerHTML=max_repeated_elements;}
+</script>
+</html>

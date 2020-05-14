@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Regular expression</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco,Regular Expression"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="Regular expression tester and character conversion."/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <meta name="google-site-verification" content="7_j12RKlstZviWTOarYRDblot1OwUKlgxONgOIVL_Qk" />
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}</style>
+    <style>
+        .c_data{width:300px;height:100px;}input{margin-top:10px;}.re{width:300px;margin:0 auto;}.reg{width:200px;}select{width:300px;}#copy_sel{width:230px;}#copy_tool{width:300px;}
+    </style>
+</head>
+<body>
+    <div class="container">
+<h1><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">Home</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">Featured Software</a>
+  <a href="https://dev-coco.github.io/Online-Tools.html">Online Tools</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<div class="re">
+        <h3>Regular Expression</h3>
+        <textarea type="text" class="c_data" id="data1" autofocus></textarea>
+        <br>
+        <select id="sel1" onchange="chan()">
+            <option value=""></option>
+        </select>
+        <br> <span>Formula</span>
+        <input type="text" id="regular1" class="reg">
+        <button type="button" id="btn1">OK</button>
+        <input type="checkbox" id="ck">List display
+        <p>First result</p>
+        <textarea type="text" class="c_data" id="data2"></textarea>
+        <br>
+        <select id="sel2" onchange="chan1()">
+            <option value=""></option>
+        </select>
+        <br> <span>Formula</span>
+        <input type="text" id="regular2" class="reg">
+        <button type="button" id='btn2'>OK</button>
+        <input type="checkbox" id="ck1">List display
+        <input type="checkbox" id="u_char">Strings convert
+        <p>Second result</p>
+        <textarea type="text" class="c_data" id="data3"></textarea>
+        <hr>
+        <select id="copy_sel" onchange="copyTool()">
+            <option value=""></option>></select>
+        <button onclick="copyText()">Copy</button>
+        <textarea type="text" id="copy_tool"></textarea>
+        <p>2020/5/14 Update</p>
+    </div>
+</div>
+</body>
+    <script>
+        var btn1 = document.getElementById('btn1');var btn2 = document.getElementById('btn2');var sel1 = document.getElementById('sel1');var sel2 = document.getElementById('sel2');var ans = '';var war = '';btn1.onclick = function (){var regular1 = lookup('regular1');if (document.getElementById('ck').checked){var ov = document.getElementById('data1').value.match(regular1);var ev = '';for (var i = 0;i < ov.length;i++){if(ov!=''){ev += ov[i] + '\n';}};document.getElementById('data2').value = ev;ans = String(ov);war = ev;}else{war = ans = document.getElementById('data2').value = String(document.getElementById("data1").value.match(regular1)).replace(/,/g,'');};};btn2.onclick = function (){if(true){ans = document.getElementById('data2').value;}var regular2 = lookup('regular2');if (document.getElementById('ck1').checked && !document.getElementById('u_char').checked){document.getElementById('data3').value = shu(ans);}else if (document.getElementById('ck1').checked && document.getElementById('u_char').checked){document.getElementById('data3').value = shu(to_char(ans));}else if (!document.getElementById('ck1').checked && document.getElementById('u_char').checked){document.getElementById('data3').value = to_char(String(ans.match(regular2)).replace(/,/g,''));}else{document.getElementById('data3').value = String(ans.match(regular2)).replace(/,/g,'');};};function lookup(data){return new RegExp(document.getElementById(data).value,"gi");};function chan(){document.getElementById('regular1').value = sel1.value;};function chan1(){document.getElementById('regular2').value = sel2.value;};chan();chan1();function copyTool(){document.getElementById('copy_tool').value = document.getElementById('copy_sel').value;}function shu(data){var regular2 = lookup('regular2');var zv = data.match(regular2);var xv = '';for (var i = 0;i < zv.length;i++){if(zv[i]!=''){xv += zv[i] + '\n';}};console.log(xv,1,zv,1,regular2,1,data);return xv;}function to_char(str){str = str.replace(/(&#)(\d{1,6});/gi,function ($0){return String.fromCharCode(parseInt(escape($0).replace(/(%26%23)(\d{1,6})(%3B)/g,"$2")));});return str;}function copyText(){document.getElementById('copy_tool').select();document.execCommand("copy");};document.getElementById('copy_tool').value = document.getElementById('copy_sel').value;
+    </script>
+</html>
