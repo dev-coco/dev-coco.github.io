@@ -5,18 +5,23 @@
         <lastmod>2020-05-17</lastmod>
         <changefreq>weekly</changefreq>
     </url>
-        <url>
+    <url>
+        <loc>https://dev-coco.github.io/blog</loc>
+        <lastmod>2020-05-17</lastmod>
+        <changefreq>weekly</changefreq>
+    </url>
+    <url>
         <loc>https://dev-coco.github.io/blog/Mac-Cleaner.html</loc>
         <lastmod>2020-05-17</lastmod>
         <changefreq>weekly</changefreq>
     </url>
-        <url>
+    <url>
         <loc>https://dev-coco.github.io/blog/Check-404-Links.html</loc>
         <lastmod>2020-05-17</lastmod>
         <changefreq>weekly</changefreq>
     </url>
     <url>
-        <loc>https://dev-coco.github.io/Online-Tools.html</loc>
+        <loc>https://dev-coco.github.io/Online-Tools</loc>
         <lastmod>2020-05-17</lastmod>
         <changefreq>weekly</changefreq>
     </url>
