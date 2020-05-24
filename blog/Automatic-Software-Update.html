@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Automatic Software Update</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Mac software update, Automatic software update"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="Mac software automatic update."/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <meta name="google-site-verification" content="7_j12RKlstZviWTOarYRDblot1OwUKlgxONgOIVL_Qk" />
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}</style>
+  <style>p{text-indent: 2em;font-size: 16pt;font-family: arial, helvetica, sans-serif;}
+  </style>
+</head>
+<body>
+    <div class="container">
+<h1><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">Home</a>
+  <a href="https://dev-coco.github.io/blog">Blog</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">Featured Software</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">Online Tools</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+    </div>
+<div class="container">
+<h1 style="text-align:center">Automatic Software Update</h1>
+<p>You may need to check open source on <a href="https://github.com/dev-coco" target="_blank">Github</a> before using it.</p>
+<p>Run the following command in Terminal, the script will check software version at system launch, if software is old version will auto update it.</p>
+<h2 style="text-align:center">Install command&nbsp;</h2>
+<p>cd /Users/$USER/Library/LaunchAgents &amp;&amp; curl https://raw.githubusercontent.com/dev-coco/AutomaticSoftwareUpdate/master/AutomaticSoftwareUpdate.sh -o AutomaticSoftwareUpdate.sh &amp;&amp; sudo chmod +x /Users/$USER/Library/LaunchAgents/AutomaticSoftwareUpdate.sh &amp;&amp; curl https://raw.githubusercontent.com/dev-coco/AutomaticSoftwareUpdate/master/com.dev-coco.AutoUpdate.plist -o com.dev-coco.AutoUpdate.plist &amp;&amp; defaults write /Users/mac/Library/LaunchAgents/com.dev-coco.AutoUpdate.plist Program -string &quot;/Users/AutomaticSoftwareUpdate.sh&quot; &amp;&amp; defaults write /Users/mac/Library/LaunchAgents/com.dev-coco.AutoUpdate.plist ProgramArguments -array -string &quot;/Users/$USER/Library/LaunchAgents/AutomaticSoftwareUpdate.sh&quot; &amp;&amp; launchctl load -w /Users/$USER/Library/LaunchAgents/com.dev-coco.AutoUpdate.plist &amp;&amp; killall -9 Terminal</p>
+<h2 style="text-align:center">Uninstall command</h2>
+<p>launchctl unload -w /Users/$USER/Library/LaunchAgents/com.dev-coco.AutoUpdate.plist &amp;&amp; sudo rm -rf /Users/$USER/Library/LaunchAgents/AutomaticSoftwareUpdate.sh &amp;&amp; sudo rm -rf /Users/$USER/Library/LaunchAgents/com.dev-coco.AutoUpdate.plist</p>
+</div>
+            </div>
+        </div>
+</body>
+</html>
