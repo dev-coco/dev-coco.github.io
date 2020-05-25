@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Rich Editor Online</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Rich Editor, Rich Text Editor"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="Rich text editor online. You may use the rich text editor to include images, links, audio and video text as well as custom code."/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdn.ckeditor.com/4.14.0/full-all/ckeditor.js"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}.center{margin:0 auto;width:100%}textarea{width:97%;height:130px}.item{position:relative;text-align:center}.span{position:absolute;right:10;top:10;opacity:.5}#results{position:relative;margin:50px}#dropper{margin-left:auto;margin-right:auto;border-style:solid;width:100%;height:150px;text-align:center;line-height:150px}#dropper.hover{opacity:.5;background:#add8e6;z-index:100}</style>
+</head>
+<body>
+    <div class="container">
+<h1><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+   <p style="text-align: center;">Powered by <a target="_blank" href="https://ckeditor.com/ckeditor-4/">CKEditor 4</a>, please follow <a target="_blank" href="https://github.com/ckeditor/ckeditor4/blob/major/LICENSE.md">LICENSE</a>.</p>
+            <div style="display: flex;justify-content: center;">
+                <textarea name="editor1"></textarea>
+            </div>
+            <script>
+                CKEDITOR.replace( 'editor1', { customConfig: 'https://dev-coco.github.io/Online-Tools/config.js' } );
+            </script>
+            </br>
+            <table cellpadding="1" cellspacing="1" class="center">
+                <tbody>
+                    <tr>
+                        <td><textarea type="text" style="float:left;" id="data1" autofocus></textarea></td>
+                        <td><textarea type="text" style="float:right;" id="data2"></textarea></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="center">
+                       <span>关键词</span>
+                       <input type="text" id="regular1" style="width: 80%;">
+                       <button type="button" id="btn1">确定</button>
+                       <input style="margin-top: 10px;" type="checkbox" id="ck"> 按列显示</input>
+</div>
+</br>
+<div id="dropper">拖入图片到此处</div>
+<div id="results"></div>
+</body>
+<script>var dropper=document.getElementById("dropper"),results=document.getElementById("results");function fileLoaded(e,t){var a=document.createElement("div");a.className="item";var r=document.createElement("button");r.className="remove",r.innerHTML="x",r.onclick=function(){localStorage&&localStorage.removeItem("b64-"+e),results.removeChild(a)},a.appendChild(r);var n=document.createElement("span");if(n.innerHTML=e,a.appendChild(n),/^data:image/.test(t)){document.createElement("div");var o=document.createElement("img");o.style["max-width"]="100px",o.style["height-width"]="100px"}var l=document.createElement("textarea");l.onclick=function(){l.select()},l.value=t,a.appendChild(l),results.appendChild(a)}dropper.ondragenter=function(e){dropper.className="hover",e.preventDefault()},dropper.ondragover=function(e){e.preventDefault()},dropper.ondragleave=function(e){dropper.className="",e.preventDefault()},dropper.ondrop=function(e){[].slice.call(e.dataTransfer.files).forEach(function(e){var t=new FileReader;t.onload=function(t){fileLoaded(e.name,t.target.result)},t.readAsDataURL(e)}),dropper.className="",e.preventDefault()};</script>
+<script>var btn1=document.getElementById("btn1"),ans="",war="";function lookup(e){return new RegExp(document.getElementById(e).value,"gi")}function to_char(e){return e=e.replace(/(&#)(\d{1,6});/gi,function(e){return String.fromCharCode(parseInt(escape(e).replace(/(%26%23)(\d{1,6})(%3B)/g,"$2")))})}btn1.onclick=function(){var e=lookup("regular1");if(document.getElementById("ck").checked){for(var t=document.getElementById("data1").value.match(e),n="",a=0;a<t.length;a++)""!=t&&(n+=t[a]+"\n");document.getElementById("data2").value=n,ans=String(t),war=n}else war=ans=document.getElementById("data2").value=String(document.getElementById("data1").value.match(e)).replace(/,/g,"")},chan(),chan1();</script>
+</html>
