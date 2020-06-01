@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>优化网页的加载速度</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, 网页优化, 优化加载速度"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="几种实用小技巧，优化网页的加载速度。"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <style>img{width:58px}div.menu{background-color:#f5f5f5}div.menu a{display:inline-block;color:#000;text-align:center;padding:14px;text-decoration:none}div.menu a:hover{background-color:#777}pre{background-color:#eee}p{text-indent:2em;font-size:16pt;font-family:arial,helvetica,sans-serif}h2{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+    </div>
+<div class="container">
+<h1 style="text-align:center;">优化网页的加载速度</h1>
+<p>1. GZIP压缩</p>
+<p>2. 优化代码</p>
+<p>3.&nbsp;图片格式和大小</p>
+<p>4. CDN</p>
+<h2>GZIP压缩</h2>
+<p>GZIP压缩是基于服务端的一种网页压缩的功能，GZIP压缩可以对网页里的(HTML, CSS, JS等)进行压缩，减少网页文件的大小，这样可以加快网页打开的速度。让我们先来看看浏览器是如何加载网页的。</p>
+<p style="text-align:center"><strong>开启GZIP前的体验</strong></p>
+<p>浏览器：服务器你好，请给我一个xxx.html文件</p>
+<p>服务器：好的，让我去找下是否存在</p>
+<p>服务器：我找到了，正在发送给你</p>
+<p>浏览器：天呐！230kb？！这么大？我等到花都谢了。</p>
+<p style="text-align:center"><strong>开启GZIP后的体验</strong></p>
+<p>浏览器：服务器你好，请给我一个xxx.html文件，如果可以的话给我一个压缩版的。</p>
+<p>服务器：好的，让我去找一下是否存在</p>
+<p>服务器：找到了，正在压缩，压缩完传送给你，是GZIP格式的哦</p>
+<p>浏览器：太棒了，只有30kb！我马上解压完呈现给用户。</p>
+<p>从上面两个案例对比就可以看出，开启GZIP后可以减小网页文件的大小，从而节省宽带和下载的时间，加快网页的加载速度和增加用户的体验。</p>
+<p style="text-align:center"><strong>如何开启Gzip压缩</strong></p>
+<p>① 通过.htaccess文件开启压缩</p>
+<pre>
+&lt;ifModule mod_gzip.c&gt;
+mod_gzip_on Yes
+mod_gzip_dechunk Yes
+mod_gzip_item_include file .(html?|txt|css|js|php|pl)$
+mod_gzip_item_include handler ^cgi-script$
+mod_gzip_item_include mime ^text/.*
+mod_gzip_item_include mime ^application/x-javascript.*
+mod_gzip_item_exclude mime ^image/.*
+mod_gzip_item_exclude rspheader ^Content-Encoding:.*gzip.*
+&lt;/ifModule&gt;
+</pre>
+<p>② 在Apache服务器通过htaccess开启gzip压缩</p>
+<pre>
+&lt;IfModule mod_deflate.c&gt;
+&nbsp; AddOutputFilterByType DEFLATE application/javascript
+&nbsp; AddOutputFilterByType DEFLATE application/rss+xml
+&nbsp; AddOutputFilterByType DEFLATE application/vnd.ms-fontobject
+&nbsp; AddOutputFilterByType DEFLATE application/x-font
+&nbsp; AddOutputFilterByType DEFLATE application/x-font-opentype
+&nbsp; AddOutputFilterByType DEFLATE application/x-font-otf
+&nbsp; AddOutputFilterByType DEFLATE application/x-font-truetype
+&nbsp; AddOutputFilterByType DEFLATE application/x-font-ttf
+&nbsp; AddOutputFilterByType DEFLATE application/x-javascript
+&nbsp; AddOutputFilterByType DEFLATE application/xhtml+xml
+&nbsp; AddOutputFilterByType DEFLATE application/xml
+&nbsp; AddOutputFilterByType DEFLATE font/opentype
+&nbsp; AddOutputFilterByType DEFLATE font/otf
+&nbsp; AddOutputFilterByType DEFLATE font/ttf
+&nbsp; AddOutputFilterByType DEFLATE image/svg+xml
+&nbsp; AddOutputFilterByType DEFLATE image/x-icon
+&nbsp; AddOutputFilterByType DEFLATE text/css
+&nbsp; AddOutputFilterByType DEFLATE text/html
+&nbsp; AddOutputFilterByType DEFLATE text/javascript
+&nbsp; AddOutputFilterByType DEFLATE text/plain
+&nbsp; AddOutputFilterByType DEFLATE text/xml
+&nbsp; BrowserMatch ^Mozilla/4 gzip-only-text/html
+&nbsp; BrowserMatch ^Mozilla/4\.0[678] no-gzip
+&nbsp; BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+&nbsp; Header append Vary User-Agent
+&lt;/IfModule&gt;
+</pre>
+<p>③ 在Nginx服务器开启gzip压缩</p>
+<pre>
+gzip on;
+gzip_comp_level 2;
+gzip_http_version 1.0;
+gzip_proxied any;
+gzip_min_length 1100;
+gzip_buffers 16 8k;
+gzip_types text/plain text/html text/css application/x-javascript text/xml application/xml application/xml+rss text/javascript;
+gzip_disable &quot;MSIE [1-6].(?!.*SV1)&quot;;
+gzip_vary on;
+</pre>
+<p>设置成功后可以使用<a href="https://varvy.com/tools/gzip/" target="_blank">测试工具</a>来测试是否成功开启了GZIP</p>
+<h2><br />
+优化代码</h2>
+<p>① 压缩CSS，JS，HTML</p>
+<p>在HTML, CSS, JS这些文件里面都会有一些空格啦，注释啦，换行啦等等，可以将这些代码给压缩成一行。这样可以大大的减小文件的体积，加快加载的速度。</p>
+<p>这边推荐<a href="https://dev-coco.github.io/Online-Tools/HTML-Minifier-Online.html" target="_blank">HTML Minifier</a>这个工具，同时支持HTML，JS，CSS代码压缩。</p>
+<p>② 代码顺序</p>
+<p>因为加载网页的时候，正常是从上到下加载的。把CSS代码放在最前，加载出网页的页面，把JS的代码放在body的下面，放到最后加载。</p>
+<h2><br />
+图片格式和大小</h2>
+<p>常用的图片有这几种webp, jpeg, png格式，其中webp格式的图片体积最小，但是兼容性不是太好，有的浏览器不支持webp格式的图片。jpeg的图片是目前比较主流的图片格式之一，图片体积要比png小，但是不支持图片的透明背景。png格式的图片支持背景透明，防锯齿，但是不支持图片压缩。</p>
+<p>在一个网页里面可能会包含多张图片，可以将图片的尺寸修改到刚好合适的尺寸即可，这样就不需要用一个大尺寸的图片再使用CSS进行适配。还可以将图片进行压缩，图片的在保证用户体验的同时尽可能的压缩图片，图片体积越小，加载速度越快。如果是非常小的图片，建议使用base64压缩，避免网络请求，加载速度更快。</p>
+<h2>CDN</h2>
+<p>CDN是内容分发网络，可以将网页的内容更快的传输给用户。就好比一个日本的服务器，在美国的用户打开速度就比较慢，没有日本当地打开的快。那么使用CDN的话，只要在美国地区有节点就会大大提高访问的速度。CDN原理是将服务器的网页存在各个国家各个地区的节点，当用户请求网页的时候，就会访问距离用户最近的节点，这样就可以提高网页的加载速度。可以考虑选用<a href="https://www.cloudflare.com/" target="_blank">Cloudflare</a>.</p>
+</div>
+            </div>
+        </div>
+</body>
+</html>
