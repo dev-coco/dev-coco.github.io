@@ -11,8 +11,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}</style>
-  <style>p{text-indent: 2em;font-size: 16pt;font-family: arial, helvetica, sans-serif;}
-  </style>
+  <style>p{text-indent: 2em;font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}</style>
 </head>
 <body>
     <div class="container">
@@ -27,12 +26,15 @@
     </div>
 <div class="container">
 <h1 style="text-align:center">Automatic Software Update</h1>
-<p>在使用之前你可能会需要查看在<a href="https://github.com/dev-coco" target="_blank">Github</a>上的源代码。</p>
-<p>在Terminal运行下面的代码，这个脚本会在系统启动的时候检测软件的版本，如果是旧版本会自动更新。</p>
+<p>在使用之前你可能会需要查看在<a href="https://github.com/dev-coco/AutomaticSoftwareUpdate" target="_blank">Github</a>上的源代码。</p>
+<p>在Terminal运行下面的命令，运行完成后需要重启设备。这个脚本会在系统启动的时候检测软件的版本，如果是旧版本会自动更新。</p>
 <h2 style="text-align:center">安装命令</h2>
-<p>cd /Users/$USER/Library/LaunchAgents &amp;&amp; curl https://raw.githubusercontent.com/dev-coco/AutomaticSoftwareUpdate/master/AutomaticSoftwareUpdate.sh -o AutomaticSoftwareUpdate.sh &amp;&amp; sudo chmod +x /Users/$USER/Library/LaunchAgents/AutomaticSoftwareUpdate.sh &amp;&amp; curl https://raw.githubusercontent.com/dev-coco/AutomaticSoftwareUpdate/master/com.dev-coco.AutoUpdate.plist -o com.dev-coco.AutoUpdate.plist &amp;&amp; defaults write /Users/$USER/Library/LaunchAgents/com.dev-coco.AutoUpdate.plist Program -string &quot;/Users/$USER/Library/LaunchAgents/AutomaticSoftwareUpdate.sh&quot; &amp;&amp; defaults write /Users/$USER/Library/LaunchAgents/com.dev-coco.AutoUpdate.plist ProgramArguments -array -string &quot;/Users/$USER/Library/LaunchAgents/AutomaticSoftwareUpdate.sh&quot; &amp;&amp; launchctl load -w /Users/$USER/Library/LaunchAgents/com.dev-coco.AutoUpdate.plist &amp;&amp; killall -9 Terminal</p>
+<pre><code>cd /Users/$USER/Library/LaunchAgents &amp;&amp; curl https://raw.githubusercontent.com/dev-coco/AutomaticSoftwareUpdate/master/AutomaticSoftwareUpdate.sh -o AutomaticSoftwareUpdate.sh &amp;&amp; sudo chmod +x /Users/$USER/Library/LaunchAgents/AutomaticSoftwareUpdate.sh &amp;&amp; curl https://raw.githubusercontent.com/dev-coco/AutomaticSoftwareUpdate/master/com.dev-coco.AutoUpdate.plist -o com.dev-coco.AutoUpdate.plist &amp;&amp; defaults write /Users/$USER/Library/LaunchAgents/com.dev-coco.AutoUpdate.plist Program -string &quot;/Users/$USER/Library/LaunchAgents/AutomaticSoftwareUpdate.sh&quot; &amp;&amp; defaults write /Users/$USER/Library/LaunchAgents/com.dev-coco.AutoUpdate.plist ProgramArguments -array -string &quot;/Users/$USER/Library/LaunchAgents/AutomaticSoftwareUpdate.sh&quot; &amp;&amp; launchctl load -w /Users/$USER/Library/LaunchAgents/com.dev-coco.AutoUpdate.plist &amp;&amp; killall -9 Terminal</code></pre>
 <h2 style="text-align:center">卸载命令</h2>
-<p>launchctl unload -w /Users/$USER/Library/LaunchAgents/com.dev-coco.AutoUpdate.plist &amp;&amp; sudo rm -rf /Users/$USER/Library/LaunchAgents/AutomaticSoftwareUpdate.sh &amp;&amp; sudo rm -rf /Users/$USER/Library/LaunchAgents/com.dev-coco.AutoUpdate.plist</p>
+<pre><code>launchctl unload -w /Users/$USER/Library/LaunchAgents/com.dev-coco.AutoUpdate.plist &amp;&amp; sudo rm -rf /Users/$USER/Library/LaunchAgents/AutomaticSoftwareUpdate.sh &amp;&amp; sudo rm -rf /Users/$USER/Library/LaunchAgents/com.dev-coco.AutoUpdate.plist</code></pre>
+<h2 style="text-align:center">检测命令</h2>
+<pre><code>launchctl list | grep dev-coco.AutoUpdate</code></pre>
+<p>如果有输出内容就说明安装成功，进程已经在运行了。如果未显示任何内容代表没有安装成功。</p>
 </div>
             </div>
         </div>
