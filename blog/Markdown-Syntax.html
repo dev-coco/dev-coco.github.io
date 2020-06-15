@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>Markdown语法</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Markdown, Markdown语法"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="Markdown语法5分钟速成班。"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}</style>
+  <style>.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}p,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}
+  </style>
+</head>
+<body>
+    <div class="container">
+<h1><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1 style="text-align:center">Markdown语法</h1>
+<br>
+<p>可以使用这个动态实时预览的在线<a href="https://dev-coco.github.io/Online-Tools/Markdown-Editor.html" target="_blank">Markdown编辑器</a>。</p>
+<h2 style="text-align:center">换行</h2>
+<p>在Markdown的语法里面换行的话使用&lt;Enter&gt;键就可以了，如果是一个新的段落，那就使用两个&lt;Enter&gt;。下面来看一下效果。</p>
+<table border="1" cellpadding="1" cellspacing="1" style="margin-left:auto; margin-right:auto; width:500px">
+    <tbody>
+        <tr>
+            <td style="width:50%">
+            <p>这是一句很长很长的一句话</p>
+            <p>但是我想在下面再加一段话</p>
+            <p>&nbsp;</p>
+            <p>就像这样子，这样就是第二段话啦。</p>
+            </td>
+            <td>
+            <p>这是一句很长很长的一句话 但是我想在下面再加一段话</p>
+            <p>就像这样子，这样就是第二段话啦。</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h2 style="text-align:center">标题</h2>
+<p>在#符号后面加一个空格再加上文字。几个#符号就代表几级标题。</p>
+<table border="1" cellpadding="1" cellspacing="1" style="margin-left:auto; margin-right:auto; width:500px">
+    <tbody>
+        <tr>
+            <td style="width:50%"># 一级标题</td>
+            <td>
+            <h1>一级标题</h1>
+            </td>
+        </tr>
+        <tr>
+            <td>## 二级标题</td>
+            <td>
+            <h2>二级标题</h2>
+            </td>
+        </tr>
+        <tr>
+            <td>### 三级标题</td>
+            <td>
+            <h3>三级标题</h3>
+            </td>
+        </tr>
+        <tr>
+            <td>#### 四级标题</td>
+            <td>
+            <h4>四级标题</h4>
+            </td>
+        </tr>
+        <tr>
+            <td>##### 五级标题</td>
+            <td>
+            <h4>五级标题</h4>
+            </td>
+        </tr>
+        <tr>
+            <td>###### 六级标题</td>
+            <td>
+            <h6>六级标题</h6>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h2 style="text-align:center">字体</h2>
+<p>加粗：需要加粗的文字左右两边分别放两个*符号。</p>
+<p>斜体：需要倾斜的文字左右两边分别放一个*符号。</p>
+<p>倾斜加粗：需要倾斜加粗的文字左右两边分别放三个*符号。</p>
+<p>删除线：需要加删除线的文字左右两边分别放两个~符号。</p>
+<table border="1" cellpadding="1" cellspacing="1" style="margin-left:auto; margin-right:auto; width:500px">
+    <tbody>
+        <tr>
+            <td style="width:50%">普通文本</td>
+            <td>普通文本</td>
+        </tr>
+        <tr>
+            <td>**加粗**</td>
+            <td><strong>加粗</strong></td>
+        </tr>
+        <tr>
+            <td>*斜体*</td>
+            <td><em>斜体</em></td>
+        </tr>
+        <tr>
+            <td>***倾斜加粗***</td>
+            <td><strong><em>倾斜加粗</em></strong></td>
+        </tr>
+        <tr>
+            <td>~~删除线~~</td>
+            <td><s>删除线</s></td>
+        </tr>
+    </tbody>
+</table>
+<h2 style="text-align:center">分割线</h2>
+<p>三个或三个以上的-或*符号。</p>
+<table border="1" cellpadding="1" cellspacing="1" style="margin-left:auto; margin-right:auto; width:500px">
+    <tbody>
+        <tr>
+            <td style="width:50%">---</td>
+            <td>
+            <hr /></td>
+        </tr>
+        <tr>
+            <td>***</td>
+            <td>
+            <hr /></td>
+        </tr>
+    </tbody>
+</table>
+<h2 style="text-align:center">图片</h2>
+<p>![图片alt标签](图片链接)，效果就像下图这样</p>
+<p style="text-align:center"><img alt="" src="https://dev-coco.github.io/images/WebIcon.png" style="height:58px; width:58px" /></p>
+<h2 style="text-align:center">超链接</h2>
+<p>[文本](链接)，例如[Mac清理垃圾](https://dev-coco.github.io/blog/Mac-Cleaner.html)，效果就像这样：<a href="https://dev-coco.github.io/blog/Mac-Cleaner.html" target="_blank">Mac清理垃圾</a></p>
+<h2 style="text-align:center">代码块</h2>
+<p>在开头和结尾用三个`符号单独占一行。</p>
+<p>```</p>
+<p>#include &lt;stdio.h&gt;<br />
+int main()<br />
+{<br />
+&nbsp; &nbsp;printf(&quot;Hello, World!&quot;);<br />
+&nbsp; &nbsp;return 0;<br />
+}</p>
+<p>```</p>
+<p>效果</p>
+<pre>
+<code>
+#include
+int main()
+{
+   printf(&quot;Hello, World!&quot;);
+   return 0;
+}
+</code>
+</pre>
+<h2 style="text-align:center">关于YouTube</h2>
+<p>在Markdown里是不可以直接插入YouTube视频的，但是可以使用另外一种方法，就是使用YouTube视频的缩略图做超链接。</p>
+<p>[![图片标签](https://img.youtube.com/vi/视频ID地址/0.jpg)](https://www.youtube.com/watch?v=视频ID地址)</p>
+<p>例子：</p>
+<p>[![Youtube](https://img.youtube.com/vi/KG_k2MF9_uQ/0.jpg)](https://www.youtube.com/watch?v=KG_k2MF9_uQ)</p>
+<p>效果：</p>
+<p><a href="https://www.youtube.com/watch?v=KG_k2MF9_uQ" target="_blank"><img alt="YouTuber" src="https://img.youtube.com/vi/KG_k2MF9_uQ/0.jpg" style="height:360px; width:480px" /></a></p>
+</div>
+</body>
+</html>
