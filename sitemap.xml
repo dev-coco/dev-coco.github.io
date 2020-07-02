@@ -2,142 +2,147 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
     <url>
         <loc>https://dev-coco.github.io/</loc>
-        <lastmod>2020-06-16</lastmod>
+        <lastmod>2020-07-02</lastmod>
         <changefreq>weekly</changefreq>
     </url>
     <url>
         <loc>https://dev-coco.github.io/blog</loc>
-        <lastmod>2020-06-16</lastmod>
+        <lastmod>2020-07-02</lastmod>
         <changefreq>weekly</changefreq>
     </url>
     <url>
         <loc>https://dev-coco.github.io/blog/index.html</loc>
-        <lastmod>2020-06-16</lastmod>
+        <lastmod>2020-07-02</lastmod>
         <changefreq>weekly</changefreq>
     </url>
     <url>
         <loc>https://dev-coco.github.io/blog/index-2.html</loc>
-        <lastmod>2020-06-16</lastmod>
+        <lastmod>2020-07-02</lastmod>
         <changefreq>weekly</changefreq>
     </url>
     <url>
         <loc>https://dev-coco.github.io/blog/index-3.html</loc>
-        <lastmod>2020-06-16</lastmod>
+        <lastmod>2020-07-02</lastmod>
         <changefreq>weekly</changefreq>
     </url>
     <url>
         <loc>https://dev-coco.github.io/blog/Mac-Cleaner.html</loc>
-        <lastmod>2020-06-16</lastmod>
+        <lastmod>2020-07-02</lastmod>
         <changefreq>weekly</changefreq>
     </url>
     <url>
         <loc>https://dev-coco.github.io/blog/Check-404-Links.html</loc>
-        <lastmod>2020-06-16</lastmod>
+        <lastmod>2020-07-02</lastmod>
         <changefreq>weekly</changefreq>
     </url>
     <url>
         <loc>https://dev-coco.github.io/Online-Tools</loc>
-        <lastmod>2020-06-16</lastmod>
+        <lastmod>2020-07-02</lastmod>
         <changefreq>weekly</changefreq>
     </url>
     <url>
         <loc>https://dev-coco.github.io/Online-Tools/index.html</loc>
-        <lastmod>2020-06-16</lastmod>
+        <lastmod>2020-07-02</lastmod>
         <changefreq>weekly</changefreq>
     </url>
     <url>
         <loc>https://dev-coco.github.io/Online-Tools/index-2.html</loc>
-        <lastmod>2020-06-16</lastmod>
+        <lastmod>2020-07-02</lastmod>
         <changefreq>weekly</changefreq>
     </url>
     <url>
         <loc>https://dev-coco.github.io/Online-Tools/index-3.html</loc>
-        <lastmod>2020-06-16</lastmod>
+        <lastmod>2020-07-02</lastmod>
         <changefreq>weekly</changefreq>
     </url>
     <url>
         <loc>https://dev-coco.github.io/Featured-Software.html</loc>
-        <lastmod>2020-06-16</lastmod>
+        <lastmod>2020-07-02</lastmod>
         <changefreq>weekly</changefreq>
     </url>
     <url>
         <loc>https://dev-coco.github.io/Online-Tools/OCR.html</loc>
-        <lastmod>2020-06-16</lastmod>
+        <lastmod>2020-07-02</lastmod>
         <changefreq>weekly</changefreq>
     </url>
     <url>
         <loc>https://dev-coco.github.io/Online-Tools/RGB-to-Hex.html</loc>
-        <lastmod>2020-06-16</lastmod>
+        <lastmod>2020-07-02</lastmod>
         <changefreq>weekly</changefreq>
     </url>
     <url>
         <loc>https://dev-coco.github.io/Online-Tools/Online-HTML-Code-Editor.html</loc>
-        <lastmod>2020-06-16</lastmod>
+        <lastmod>2020-07-02</lastmod>
         <changefreq>weekly</changefreq>
     </url>
     <url>
         <loc>https://dev-coco.github.io/Online-Tools/HTML-Minifier-Online.html</loc>
-        <lastmod>2020-06-16</lastmod>
+        <lastmod>2020-07-02</lastmod>
         <changefreq>weekly</changefreq>
     </url>
     <url>
         <loc>https://dev-coco.github.io/Online-Tools/Regular-Expression.html</loc>
-        <lastmod>2020-06-16</lastmod>
+        <lastmod>2020-07-02</lastmod>
         <changefreq>weekly</changefreq>
     </url>
     <url>
         <loc>https://dev-coco.github.io/Online-Tools/Duplicate-Word-Finder.html</loc>
-        <lastmod>2020-06-16</lastmod>
+        <lastmod>2020-07-02</lastmod>
         <changefreq>weekly</changefreq>
     </url>
     <url>
         <loc>https://dev-coco.github.io/Online-Tools/Rich-Editor.html</loc>
-        <lastmod>2020-06-16</lastmod>
+        <lastmod>2020-07-02</lastmod>
         <changefreq>weekly</changefreq>
     </url>
     <url>
         <loc>https://dev-coco.github.io/Online-Tools/HTML-Password-Protect.html</loc>
-        <lastmod>2020-06-16</lastmod>
+        <lastmod>2020-07-02</lastmod>
         <changefreq>weekly</changefreq>
     </url>
     <url>
         <loc>https://dev-coco.github.io/blog/Website-Loading-Optimization.html</loc>
-        <lastmod>2020-06-16</lastmod>
+        <lastmod>2020-07-02</lastmod>
         <changefreq>weekly</changefreq>
     </url>
     <url>
         <loc>https://dev-coco.github.io/blog/Language-Code.html</loc>
-        <lastmod>2020-06-16</lastmod>
+        <lastmod>2020-07-02</lastmod>
         <changefreq>weekly</changefreq>
     </url>
     <url>
         <loc>https://dev-coco.github.io/blog/Automatic-Software-Update.html</loc>
-        <lastmod>2020-06-16</lastmod>
+        <lastmod>2020-07-02</lastmod>
         <changefreq>weekly</changefreq>
     </url>
     <url>
         <loc>https://dev-coco.github.io/blog/CPU-Limit-GUI.html</loc>
-        <lastmod>2020-06-16</lastmod>
+        <lastmod>2020-07-02</lastmod>
         <changefreq>weekly</changefreq>
     </url>
     <url>
         <loc>https://dev-coco.github.io/blog/Markdown-Syntax.html</loc>
-        <lastmod>2020-06-16</lastmod>
+        <lastmod>2020-07-02</lastmod>
         <changefreq>weekly</changefreq>
     </url>
     <url>
         <loc>https://dev-coco.github.io/Online-Tools/Markdown-Editor.html</loc>
-        <lastmod>2020-06-16</lastmod>
+        <lastmod>2020-07-02</lastmod>
         <changefreq>weekly</changefreq>
     </url>
     <url>
         <loc>https://dev-coco.github.io/blog/uCoz-Malicious-Link-Analysis.html</loc>
-        <lastmod>2020-06-16</lastmod>
+        <lastmod>2020-07-02</lastmod>
         <changefreq>weekly</changefreq>
     </url>
     <url>
         <loc>https://dev-coco.github.io/blog/Bitdefender-Anti-Anti-Virus.html</loc>
-        <lastmod>2020-06-16</lastmod>
+        <lastmod>2020-07-02</lastmod>
         <changefreq>weekly</changefreq>
     </url>
+    <url>
+        <loc>https://dev-coco.github.io/blog/Web-Debugger.html</loc>
+        <lastmod>2020-07-02</lastmod>
+        <changefreq>weekly</changefreq>
+    </url> 
 </urlset>
