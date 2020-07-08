@@ -1,21 +1,40 @@
+
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-    <title>软件列表</title>
+    <title>博客</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="keywords" content="dev-coco, 开源软件, 免费软件, 实用软件"/>
+    <meta name="keywords" content="dev-coco, 博客, 个人博客"/>
     <meta name="robots" content="index,follow"/>
-    <meta name="description" content="dev-coco的个人网站，里面有多款实用开源软件。"/>
+    <meta name="description" content="dev-coco的个人博客。"/>
     <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
     <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
-    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}</style>
+    <style>img{width:58px;float:left;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}a:hover{text-decoration:none}</style>
+    <style>
+        .left {
+         float: left;
+         width:33.33333%;
+         text-align:left;
+    }
+    .center {
+         float: left;
+         width:33.33333%;
+         text-align:center;
+    }
+    .right {
+        float: left;
+        width:33.33333%;
+        text-align:right;
+    }
+    </style>
 </head>
 <body>
     <div class="container">
-<h1><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<h1 class="my-4"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png">&nbsp;Dev-Coco</h1>
 <div class="menu">
   <a href="https://dev-coco.github.io/">主页</a>
   <a href="https://dev-coco.github.io/blog">博客</a>
@@ -23,63 +42,154 @@
   <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
   <a target="_blank" href="https://github.com/dev-coco">Github</a>
 </div>
-<h3 id="wells" class="page-header">软件列表</h3>
-        <div class="panel panel-default">
-            <div class="panel-heading">Image-Compression</div>
-            <div class="panel-body">
-                <img alt="dev-coco,Image-Compression" src="https://dev-coco.github.io/images/Image-Compression-Icon.png"> Mac一键快速压缩图片。<br><br>
-                    <p><a href="https://github.com/dev-coco/Image-Compression/releases/download/1.1/Image-Compression.zip">下载</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href="https://github.com/dev-coco/Image-Compression" target="_blank">源代码</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href="https://dev-coco.github.io/blog/Image-Compression.html" target="_blank">使用说明</a></p>
+  <br>
+  </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <img alt="dev-coco, 图片压缩, Image-Compression" src="https://dev-coco.github.io/images/Image-Compression-Icon.png">
+                <h4 class="card-title">
+                <a href="https://dev-coco.github.io/blog/Image-Compression.html" target="_blank">&nbsp;Image-Compression</a>
+                </h4>
+              <p class="card-text">&nbsp;全新Mac清理垃圾工具。支持清理缓存，卸载残留，系统优化功能。</p>
+              <p><a class="left" href="https://github.com/dev-coco/Image-Compression/releases/download/1.1/Image-Compression.zip">下载</a>
+                 <a class="center" href="https://github.com/dev-coco/Image-Compression" target="_blank">源代码</a>
+                 <a class="right" href="https://dev-coco.github.io/blog/Image-Compression.html" target="_blank">使用说明</a>
+              </p>
             </div>
+          </div>
         </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">Mac Cleaner</div>
-            <div class="panel-body">
-                <img alt="dev-coco,MacCleaner" src="https://dev-coco.github.io/images/MacCleanerIcon.png"> 全新Mac清理垃圾工具。支持清理缓存，卸载残留，系统优化功能。<br><br>
-                    <a href="https://github.com/dev-coco/MacCleaner/releases/download/2.1/Mac.Cleaner.dmg">下载</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href="https://github.com/dev-coco/MacCleaner" target="_blank">源代码</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href="https://dev-coco.github.io/blog/Mac-Cleaner.html" target="_blank">使用说明</a>
+        <div class="col-lg-6 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <img alt="dev-coco, Mac清理垃圾,MacCleaner" src="https://dev-coco.github.io/images/MacCleanerIcon.png">
+                <h4 class="card-title">
+                <a href="https://dev-coco.github.io/blog/Mac-Cleaner.html" target="_blank">&nbsp;Mac Cleaner</a>
+                </h4>
+              <p class="card-text">&nbsp;全新Mac清理垃圾工具。支持清理缓存，卸载残留，系统优化功能。</p>
+              <p><a class="left" href="https://github.com/dev-coco/MacCleaner/releases/download/2.1/Mac.Cleaner.dmg">下载</a>
+                 <a class="center" href="https://github.com/dev-coco/MacCleaner" target="_blank">源代码</a>
+                 <a class="right" href="https://dev-coco.github.io/blog/Mac-Cleaner.html" target="_blank">使用说明</a>
+              </p>
             </div>
+          </div>
         </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">Check 404 Links</div>
-            <div class="panel-body">
-                <img alt="dev-coco,Check-404-Links" src="https://dev-coco.github.io/images/Check-404-LinksIcon.png"> 一款Mac电脑上检测网站404链接工具。<br><br>
-                    <p><a href="https://github.com/dev-coco/Check-404-Links/releases/download/2.1/Check.404.Links.dmg">下载</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href="https://github.com/dev-coco/Check-404-Links" target="_blank">源代码</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href="https://dev-coco.github.io/blog/Check-404-Links.html" target="_blank">使用说明</a></p>
+        <div class="col-lg-6 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <img alt="dev-coco, 404链接, 404 Links" src="https://dev-coco.github.io/images/Check-404-LinksIcon.png">
+                <h4 class="card-title">
+                <a href="https://dev-coco.github.io/blog/Check-404-Links.html" target="_blank">&nbsp;Check 404 Links</a>
+                </h4>
+              <p class="card-text">&nbsp;一款Mac电脑上检测网站404链接工具。</p>
+              <p><a class="left" href="https://github.com/dev-coco/Check-404-Links/releases/download/2.1/Check.404.Links.dmg">下载</a>
+                 <a class="center" href="https://github.com/dev-coco/Check-404-Links" target="_blank">源代码</a>
+                 <a class="right" href="https://dev-coco.github.io/blog/Check-404-Links.html" target="_blank">使用说明</a>
+              </p>
             </div>
+          </div>
         </div>
-    <div class="panel panel-default">
-        <div class="panel-heading">Music Player</div>
-        <div class="panel-body">
-            <img alt="dev-coco,MusicPlayer" src="https://dev-coco.github.io/images/MusicPlayerIcon.png"> Mac音乐播放器，窗口置顶。可以一边做其他的事情，然后设置一个小窗口放在角落听歌和看歌词。<br><br>
-                <p>
-                <a href="https://github.com/dev-coco/Music-Player/releases/download/2.0/Music.Player.dmg">下载</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="https://github.com/dev-coco/Music-Player" target="_blank">源代码</a></p>
+        <div class="col-lg-6 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <img alt="dev-coco, Music Player, 音乐播放器" src="https://dev-coco.github.io/images/MusicPlayerIcon.png">
+                <h4 class="card-title">
+                <a href="#">&nbsp;Music Player</a>
+                </h4>
+              <p class="card-text">&nbsp;Mac音乐播放器，窗口置顶。可以一边做其他的事情，然后设置一个小窗口放在角落听歌和看歌词。</p>
+              <p><a class="left" href="https://github.com/dev-coco/Music-Player/releases/download/2.0/Music.Player.dmg">下载</a>
+                 <a class="center" href="https://github.com/dev-coco/Music-Player" target="_blank">源代码</a>
+              </p>
+            </div>
+          </div>
         </div>
+        <div class="col-lg-6 mb-4">
+           <div class="card h-100">
+             <div class="card-body">
+               <img alt="dev-coco, CPU Limit" src="https://dev-coco.github.io/images/CPU-Limit-GUI-icon.png">
+                 <h4 class="card-title">
+                 <a href="https://dev-coco.github.io/blog/CPU-Limit-GUI.html" target="_blank">&nbsp;CPU Limit GUI</a>
+                 </h4>
+               <p class="card-text">&nbsp;一款Mac电脑上限制软件的CPU使用率的图形界面工具。</p>
+               <p><a class="left" href="https://github.com/dev-coco/CPU-Limit-GUI/releases/download/1.0/CPULimitGUI.dmg">下载</a>
+                  <a class="center" href="https://github.com/dev-coco/CPU-Limit-GUI" target="_blank">源代码</a>
+                  <a class="right" href="https://dev-coco.github.io/blog/CPU-Limit-GUI.html" target="_blank">使用说明</a>
+               </p>
+             </div>
+           </div>
+         </div>
+        <div class="col-lg-6 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <img alt="dev-coco, Web Debugger, 抓包软件" src="https://dev-coco.github.io/images/WebDebuggerIcon.png">
+                <h4 class="card-title">
+                <a href="https://dev-coco.github.io/blog/Web-Debugger.html" target="_blank">&nbsp;WebDebugger</a>
+                </h4>
+              <p class="card-text">&nbsp;网络调试工具，抓取联网的数据包。</p>
+              <p><a class="left" href="https://github.com/dev-coco/WebDebugger/releases/download/1.0/WebDebugger.dmg">下载</a>
+                 <a class="center" href="https://github.com/dev-coco/WebDebugger" target="_blank">源代码</a>
+                 <a class="right" href="https://dev-coco.github.io/blog/Web-Debugger.html" target="_blank">使用说明</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        
+        
+        
+        
+        
+        
+        <!--
+        <div class="col-lg-6 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <img alt="dev-coco," src="">
+                <h4 class="card-title">
+                <a href="" target="_blank">&nbsp;</a>
+                </h4>
+              <p class="card-text">&nbsp;</p>
+              <p><a class="left" href="">下载</a>
+                 <a class="center" href="" target="_blank">源代码</a>
+                 <a class="right" href="" target="_blank">使用说明</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        -->
+        
+        
+      </div>
+      <ul class="pagination justify-content-center">
+          <!--
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+        </li>
+        -->
+        <li class="page-item">
+          <a style="background-color:#eaecef;" class="page-link" href="https://dev-coco.github.io/Featured-Software.html">1</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="https://dev-coco.github.io/Featured-Software-2.html">2</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="https://dev-coco.github.io/Featured-Software-3.html">3</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="https://dev-coco.github.io/Featured-Software-2.html" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+        </li>
+      </ul>
     </div>
-    <div class="panel panel-default">
-        <div class="panel-heading">CPU Limit GUI</div>
-        <div class="panel-body">
-            <img alt="dev-coco,CPU Limit GUI" src="https://dev-coco.github.io/images/CPU-Limit-GUI-icon.png"> 一款Mac电脑上限制软件的CPU使用率的图形界面工具。<br><br>
-                <p>
-                <a href="https://github.com/dev-coco/CPU-Limit-GUI/releases/download/1.0/CPULimitGUI.dmg">下载</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="https://github.com/dev-coco/CPU-Limit-GUI" target="_blank">源代码</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href="https://dev-coco.github.io/blog/CPU-Limit-GUI.html" target="_blank">使用说明</a></p>
-        </div>
-    </div> 
-    <div class="panel panel-default">
-        <div class="panel-heading">WebDebugger</div>
-        <div class="panel-body">
-            <img alt="dev-coco,WebDebugger" src="https://dev-coco.github.io/images/WebDebuggerIcon.png"> 网络调试工具，抓取联网的数据包。<br><br>
-                <p>
-                <a href="https://github.com/dev-coco/WebDebugger/releases/download/1.0/WebDebugger.dmg">下载</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="https://github.com/dev-coco/WebDebugger" target="_blank">源代码</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href="https://dev-coco.github.io/blog/Web-Debugger.html" target="_blank">使用说明</a></p>
-        </div>
-    </div> 
-</div>
 </body>
 </html>
+
+
+
+
+
+
