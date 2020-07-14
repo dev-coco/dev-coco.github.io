@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>禁用Squirrel框架自动更新</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Squirrel框架, 禁用自动更新"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="这个进程会禁用所有使用Squirrel框架更新的应用程序。"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}</style>
+  <style>p{text-indent: 2em;font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h2{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+
+<h1 style="text-align:center;">禁用Squirrel框架自动更新</h1>
+
+<p>这个进程会禁用所有使用Squirrel框架更新的应用程序。如果安装旧版本的程序，建议在安装后第一次启用之前就安装禁用自动更新的进程，以免一开启应用程序就被强制更新到最新版本。</p>
+
+<h2>安装命令</h2>
+
+<pre>
+<code>cd /Users/$USER/Library/LaunchAgents &amp;&amp; curl https://raw.githubusercontent.com/dev-coco/Disable-Squirrel-Update/master/com.dev-coco.DisableSquirrelUpdate.plist -o com.dev-coco.DisableSquirrelUpdate.plist &amp;&amp; launchctl load -w /Users/$USER/Library/LaunchAgents/com.dev-coco.DisableSquirrelUpdate.plist &amp;&amp; killall -9 Terminal</code>
+</pre>
+
+<h2>卸载命令</h2>
+
+<pre>
+<code>launchctl unload -w /Users/$USER/Library/LaunchAgents/com.dev-coco.DisableSquirrelUpdate.plist &amp;&amp; rm -rf /Users/$USER/Library/LaunchAgents/com.dev-coco.DisableSquirrelUpdate.plist &amp;&amp; killall -9 Terminal</code>
+</pre>
+
+<h2>检测命令</h2>
+
+<pre>
+<code>launchctl list| grep com.dev-coco.DisableSquirrelUpdate</code>
+</pre>
+<p>如果有输出内容就说明安装成功，进程已经在运行了。如果未显示任何内容代表没有安装成功。详情请看下图：</p>
+
+<p><img style="border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;" alt="Squirrel, 禁用自动更新" src="https://dev-coco.github.io/images/Disable-Squirrel-Update-wiki/1.png" /></p>
+
+<h2>效果（其中一个软件的例子）</h2>
+
+<p><img style="border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 30%;" alt="Squirrel, 禁用自动更新" src="https://dev-coco.github.io/images/Disable-Squirrel-Update-wiki/2.png" /></p>
+
+
+
+        </div>
+</body>
+</html>
