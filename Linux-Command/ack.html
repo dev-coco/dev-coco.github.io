@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>ack</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令, Linux命令手册"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="ack: 比grep好用的文本搜索工具 — 值得收藏的Linux命令速查手册。"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}</style>
+  <style>p{text-indent: 2em;font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1 style="text-align:center;">ack</h1>
+<p>比grep好用的文本搜索工具</p>
+<h3>安装</h3>
+<pre><code># ubuntu下要安装ack-grep，因为在debian系中，ack这个名字被其他的软件占用了。
+sudo apt-get install ack-grep
+# alpine Linux-apk软件包管理器 安装 ack
+apk install ack</code></pre>
+<h3>参数</h3>
+<p>这些参数在linux上的适用频率是相当高的，尤其是你用vim做为IDE的话</p>
+<pre><code>-c   #统计
+-i   #忽略大小
+-h   #不显示名称
+-l   #只显文件名
+-n   #加行号
+-v   #显示不匹配</code></pre>
+<h3>实例</h3>
+<p>grep常用操作</p>
+<pre><code>grep -r 'hello_world'   # 简单用法
+grep '^hello_world'     # 简单正则
+ls -l | grep .py        # 管道用法
+</code></pre>
+<p>Searching</p>
+<p>简单的文本搜索，默认是递归的。</p>
+<pre><code>ack-grep hello
+ack-grep -i hello
+ack-grep -v hello
+ack-grep -w hello
+ack-grep -Q 'hello*'</code></pre>
+<p>Search File</p>
+<p>对搜索结果进行处理，比如只显示一个文件的一个匹配项，或者xxx</p>
+<pre><code>ack-grep --line=1     # 输出所有文件第二行
+ack-grep -l 'hello'   # 包含的文件名
+ack-grep -L 'print'   # 非包含文件名</pre></code>
+<p>File presentation</p>
+<p>输出的结果是以什么方式展示呢，这个部分有几个参数可以练习下</p>
+<pre><code>ack-grep hello --pager='less -R'   # 以less形式展示
+ack-grep hello --noheading         # 不在头上显示文件
+ack-grep hello --nocolor           # 不对匹配字符着色</pre></code>
+<p>File finding</p>
+<p>没错，它可以查找文件，以省去你要不断的结合find和grep的麻烦，虽然在linux的思想是一个工具做好一件事。</p>
+<pre><code>ack-grep -f hello.py                # 查找全匹配文件
+ack-grep -g hello.py$               # 查找正则匹配文件
+ack-grep -g hello  --sort-files     # 查找然后排序</pre></code>
+<p>File Inclusion/Exclusion</p>
+<p>文件过滤，个人觉得这是一个很不错的功能。如果你曾经在搜索项目源码是不小心命中日志中的某个关键字的话，你会觉得这个有用。</p>
+<pre><code>ack-grep --python hello       # 查找所有python文件
+ack-grep -G hello.py$ hello   # 查找匹配正则的文件</pre></code>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+</div>
+</body>
+</html>
