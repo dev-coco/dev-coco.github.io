@@ -24,38 +24,27 @@
   <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
   <a target="_blank" href="https://github.com/dev-coco">Github</a>
 </div>
-
 <h1 style="text-align:center;">禁用Squirrel框架自动更新</h1>
-
 <p>这个进程会禁用所有使用Squirrel框架更新的应用程序。如果安装旧版本的程序，建议在安装后第一次启用之前就安装禁用自动更新的进程，以免一开启应用程序就被强制更新到最新版本。</p>
-
 <h2>安装命令</h2>
-
 <pre>
 <code>cd /Users/$USER/Library/LaunchAgents &amp;&amp; curl https://raw.githubusercontent.com/dev-coco/Disable-Squirrel-Update/master/com.dev-coco.DisableSquirrelUpdate.plist -o com.dev-coco.DisableSquirrelUpdate.plist &amp;&amp; launchctl load -w /Users/$USER/Library/LaunchAgents/com.dev-coco.DisableSquirrelUpdate.plist &amp;&amp; killall -9 Terminal</code>
 </pre>
-
 <h2>卸载命令</h2>
-
 <pre>
 <code>launchctl unload -w /Users/$USER/Library/LaunchAgents/com.dev-coco.DisableSquirrelUpdate.plist &amp;&amp; rm -rf /Users/$USER/Library/LaunchAgents/com.dev-coco.DisableSquirrelUpdate.plist &amp;&amp; killall -9 Terminal</code>
 </pre>
-
 <h2>检测命令</h2>
-
 <pre>
 <code>launchctl list | grep com.dev-coco.DisableSquirrelUpdate</code>
 </pre>
 <p>如果有输出内容就说明安装成功，进程已经在运行了。如果未显示任何内容代表没有安装成功。详情请看下图：</p>
-
 <p><img style="border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;" alt="Squirrel, 禁用自动更新" src="https://dev-coco.github.io/images/Disable-Squirrel-Update-wiki/1.png" /></p>
-
 <h2>效果（其中一个软件的例子）</h2>
-
 <p><img style="border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 30%;" alt="Squirrel, 禁用自动更新" src="https://dev-coco.github.io/images/Disable-Squirrel-Update-wiki/2.png" /></p>
-
-
-
-        </div>
+<h2>Skype旧版本下载</h2>
+<p>修改对应的版本号即可下载，以下是个例子。</p>
+<p>https://download.skype.com/s4l/download/mac/Skype-8.62.0.85.dmg</p>
+</div>
 </body>
 </html>
