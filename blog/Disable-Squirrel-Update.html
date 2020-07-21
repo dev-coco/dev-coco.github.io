@@ -25,7 +25,11 @@
   <a target="_blank" href="https://github.com/dev-coco">Github</a>
 </div>
 <h1 style="text-align:center;">禁用Squirrel框架自动更新</h1>
-<p>这个进程会禁用所有使用Squirrel框架更新的应用程序。如果安装旧版本的程序，建议在安装后第一次启用之前就安装禁用自动更新的进程，以免一开启应用程序就被强制更新到最新版本。</p>
+<p>这个进程会禁用所有使用Squirrel框架更新的应用程序（例如Skype）。如果需要安装旧版本的程序，建议在安装后第一次启动之前就安装禁用自动更新的进程，以免一开启应用程序就被强制更新到最新版本。Windows操作系统禁用Skype更新请点击-->><a href="https://dev-coco.github.io/blog/Disable-Skype-Update.html" target="_blank">禁用Skype自动更新</a>。</p>
+<h2>使用前说明</h2>
+<p>如果在此之前使用过其他的程序禁用Squirrel框架功能，建议先卸载后再继续以下操作，以免造成功能冲突或不生效。卸载命令如下：</p>
+<pre><code>launchctl unload -w /Library/LaunchAgents/*squirrel*.plist && sudo rm -rf /Library/LaunchAgents/*squirrel*.plist && launchctl list | grep [sS]quirrel</code></pre>
+<p>运行后没有任何内容输出就代表卸载完成了。此方法仅供参考，但不一定所有都通用。</p>
 <h2>安装命令</h2>
 <pre>
 <code>cd /Users/$USER/Library/LaunchAgents &amp;&amp; curl https://raw.githubusercontent.com/dev-coco/Disable-Squirrel-Update/master/com.dev-coco.DisableSquirrelUpdate.plist -o com.dev-coco.DisableSquirrelUpdate.plist &amp;&amp; launchctl load -w /Users/$USER/Library/LaunchAgents/com.dev-coco.DisableSquirrelUpdate.plist &amp;&amp; killall -9 Terminal</code>
