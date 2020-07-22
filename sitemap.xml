@@ -156,6 +156,11 @@
         <changefreq>weekly</changefreq>
     </url>
     <url>
+        <loc>https://dev-coco.github.io/skype.html</loc>
+        <lastmod>2020-07-21</lastmod>
+        <changefreq>weekly</changefreq>
+    </url>
+    <url>
         <loc>https://dev-coco.github.io/blog/Disable-Squirrel-Update.html</loc>
         <lastmod>2020-07-21</lastmod>
         <changefreq>weekly</changefreq>
