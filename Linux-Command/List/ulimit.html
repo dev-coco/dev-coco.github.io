@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>ulimit:控制shell程序的资源</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="ulimit:控制shell程序的资源 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>ulimit</h1><p>控制shell程序的资源</p>
+<h2>补充说明</h2><p><strong>ulimit命令</strong> 用来限制系统用户对shell资源的访问。如果不懂什么意思，下面一段内容可以帮助你理解：</p>
+<p>假设有这样一种情况，当一台 Linux 主机上同时登陆了 10 个人，在系统资源无限制的情况下，这 10 个用户同时打开了 500 个文档，而假设每个文档的大小有 10M，这时系统的内存资源就会受到巨大的挑战。</p>
+<p>而实际应用的环境要比这种假设复杂的多，例如在一个嵌入式开发环境中，各方面的资源都是非常紧缺的，对于开启文件描述符的数量，分配堆栈的大 小，CPU 时间，虚拟内存大小，等等，都有非常严格的要求。资源的合理限制和分配，不仅仅是保证系统可用性的必要条件，也与系统上软件运行的性能有着密不可分的联 系。这时，ulimit 可以起到很大的作用，它是一种简单并且有效的实现资源限制的方式。</p>
+<p>ulimit 用于限制 shell 启动进程所占用的资源，支持以下各种类型的限制：所创建的内核文件的大小、进程数据块的大小、Shell 进程创建文件的大小、内存锁住的大小、常驻内存集的大小、打开文件描述符的数量、分配堆栈的最大大小、CPU 时间、单个用户的最大线程数、Shell 进程所能使用的最大虚拟内存。同时，它支持硬资源和软资源的限制。</p>
+<p>作为临时限制，ulimit 可以作用于通过使用其命令登录的 shell 会话，在会话终止时便结束限制，并不影响于其他 shell 会话。而对于长期的固定限制，ulimit 命令语句又可以被添加到由登录 shell 读取的文件中，作用于特定的 shell 用户。</p>
+<h3>语法</h3><pre><code>ulimit<span>(</span>选项<span>)</span></code></pre>
+<h3>选项</h3><pre><code>-a：显示目前资源限制的设定；
+-c <span>&lt;</span>core文件上限<span>></span>：设定core文件的最大值，单位为区块；
+-d <span>&lt;</span>数据节区大小<span>></span>：程序数据节区的最大值，单位为KB；
+-e 默认进程优先级, 值越小优先级越高
+-f <span>&lt;</span>文件大小<span>></span>：shell所能建立的最大文件，单位为区块；
+-H：设定资源的硬性限制，也就是管理员所设下的限制；
+-m <span>&lt;</span>内存大小<span>></span>：指定可使用内存的上限，单位为KB；
+-n <span>&lt;</span>文件数目<span>></span>：指定同一时间最多可开启的文件数；
+-p <span>&lt;</span>缓冲区大小<span>></span>：指定管道缓冲区的大小，单位512字节；
+-s <span>&lt;</span>堆叠大小<span>></span>：指定堆叠的上限，单位为KB；
+-S：设定资源的弹性限制；
+-t <span>&lt;</span>CPU时间<span>></span>：指定CPU使用时间的上限，单位为秒；
+-u <span>&lt;</span>程序数目<span>></span>：用户最多可开启的程序数目；
+-v <span>&lt;</span>虚拟内存大小<span>></span>：指定可使用的虚拟内存上限，单位为KB。</code></pre>
+<h3>实例</h3><pre><code><span>[</span>root@localhost ~<span>]</span><span># ulimit -a</span>
+core <span>file</span> size          <span>(</span>blocks, -c<span>)</span> <span>0</span>           <span>#core文件的最大值为100 blocks。</span>
+data seg size           <span>(</span>kbytes, -d<span>)</span> unlimited   <span>#进程的数据段可以任意大。</span>
+scheduling priority             <span>(</span>-e<span>)</span> <span>0</span>
+<span>file</span> size               <span>(</span>blocks, -f<span>)</span> unlimited   <span>#文件可以任意大。</span>
+pending signals                 <span>(</span>-i<span>)</span> <span>98304</span>       <span>#最多有98304个待处理的信号。</span>
+max locked memory       <span>(</span>kbytes, -l<span>)</span> <span>32</span>          <span>#一个任务锁住的物理内存的最大值为32KB。</span>
+max memory size         <span>(</span>kbytes, -m<span>)</span> unlimited   <span>#一个任务的常驻物理内存的最大值。</span>
+<span>open</span> files                      <span>(</span>-n<span>)</span> <span>1024</span>        <span>#一个任务最多可以同时打开1024的文件。</span>
+pipe size            <span>(</span><span>512</span> bytes, -p<span>)</span> <span>8</span>           <span>#管道的最大空间为4096字节。</span>
+POSIX message queues     <span>(</span>bytes, -q<span>)</span> <span>819200</span>      <span>#POSIX的消息队列的最大值为819200字节。</span>
+real-time priority              <span>(</span>-r<span>)</span> <span>0</span>
+stack size              <span>(</span>kbytes, -s<span>)</span> <span>10240</span>       <span>#进程的栈的最大值为10240字节。</span>
+cpu <span>time</span>               <span>(</span>seconds, -t<span>)</span> unlimited   <span>#进程使用的CPU时间。</span>
+max user processes              <span>(</span>-u<span>)</span> <span>98304</span>       <span>#当前用户同时打开的进程（包括线程）的最大个数为98304。</span>
+virtual memory          <span>(</span>kbytes, -v<span>)</span> unlimited   <span>#没有限制进程的最大地址空间。</span>
+<span>file</span> locks                      <span>(</span>-x<span>)</span> unlimited   <span>#所能锁住的文件的最大个数没有限制。</span></code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>tree:树状图列出目录的内容</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="tree:树状图列出目录的内容 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>tree</h1><p>树状图列出目录的内容</p>
+<h2>补充说明</h2><p><strong>tree命令</strong> 以树状图列出目录的内容。</p>
+<h3>语法</h3><pre><code>tree<span>(</span>选项<span>)</span><span>(</span>参数<span>)</span></code></pre>
+<h3>选项</h3><pre><code>------- 列表选项 -------
+-a            <span># 显示所有文件和目录。</span>
+-d            <span># 先是目录名称而非文件。</span>
+-l            <span># 如遇到性质为符号连接的目录，直接列出该连接所指向的原始目录。</span>
+-f            <span># 在每个文件或目录之前，显示完整的相对路径名称。</span>
+-x            <span># 将范围局限在现行的文件系统中，若指定目录下的某些子目录，其存放于另一个文件系统上，则将该目录予以排除在寻找范围外。</span>
+-L level      <span># 限制目录显示层级。</span>
+-R            <span># Rerun tree when max dir level reached.</span>
+-P pattern    <span># &lt;范本样式> 只显示符合范本样式的文件和目录名称。</span>
+-I pattern    <span># Do not list files that match the given pattern.</span>
+--ignore-case <span># Ignore case when pattern matching.</span>
+--matchdirs   <span># Include directory names in -P pattern matching.</span>
+--noreport    <span># Turn off file/directory count at end of tree listing.</span>
+--charset X   <span># Use charset X for terminal/HTML and indentation line output.</span>
+--filelimit <span># # Do not descend dirs with more than # files in them.</span>
+--timefmt <span>&lt;</span>f<span>></span> <span># Print and format time according to the format &lt;f>.</span>
+-o filename   <span># Output to file instead of stdout.</span>
+-------- 文件选项 ---------
+-q            <span># 用“？”号取代控制字符，列出文件和目录名称。</span>
+-N            <span># 直接列出文件和目录名称，包括控制字符。</span>
+-Q            <span># Quote filenames with double quotes.</span>
+-p            <span># 列出权限标示。</span>
+-u            <span># 列出文件或目录的拥有者名称，没有对应的名称时，则显示用户识别码。</span>
+-g            <span># 列出文件或目录的所属群组名称，没有对应的名称时，则显示群组识别码。</span>
+-s            <span># 列出文件和目录大小。</span>
+-h            <span># Print the size in a more human readable way.</span>
+--si          <span># Like -h, but use in SI units (powers of 1000).</span>
+-D            <span># 列出文件或目录的更改时间。</span>
+-F            <span># 在执行文件，目录，Socket，符号连接，管道名称名称，各自加上"*"，"/"，"@"，"|"号。</span>
+--inodes      <span># Print inode number of each file.</span>
+--device      <span># Print device ID number to which each file belongs.</span>
+------- 排序选项 -------
+-v            <span># Sort files alphanumerically by version.</span>
+-t            <span># 用文件和目录的更改时间排序。</span>
+-c            <span># Sort files by last status change time.</span>
+-U            <span># Leave files unsorted.</span>
+-r            <span># Reverse the order of the sort.</span>
+--dirsfirst   <span># List directories before files (-U disables).</span>
+--sort X      <span># Select sort: name,version,size,mtime,ctime.</span>
+------- 图形选项 ------
+-i            <span># 不以阶梯状列出文件和目录名称。</span>
+-A            <span># 使用ASNI绘图字符显示树状图而非以ASCII字符组合。</span>
+-S            <span># Print with CP437 (console) graphics indentation lines.</span>
+-n            <span># Turn colorization off always (-C overrides).</span>
+-C            <span># 在文件和目录清单加上色彩，便于区分各种类型。</span>
+------- XML / HTML / JSON选项 -------
+-X            <span># Prints out an XML representation of the tree.</span>
+-J            <span># Prints out an JSON representation of the tree.</span>
+-H baseHREF   <span># Prints out HTML format with baseHREF as top directory.</span>
+-T string     <span># Replace the default HTML title and H1 header with string.</span>
+--nolinks     <span># Turn off hyperlinks in HTML output.</span>
+---- 杂项选项 ----
+--version     <span># 输入版本信息。</span>
+--help        <span># 打印使用帮助信息。</span>
+--            <span># Options processing terminator.</span></code></pre>
+<h3>参数</h3><p>目录：执行tree指令，它会列出指定目录下的所有文件，包括子目录里的文件。</p>
+<h3>实例</h3><p>列出目录<code>/private/</code> 第一级文件名</p>
+<pre><code>tree  /private/ -L <span>1</span>
+/private/
+├── etc
+├── tftpboot
+├── tmp
+└── var</code></pre>
+<p>忽略文件夹</p>
+<pre><code>tree -I node_modules <span># 忽略当前目录文件夹node_modules</span>
+tree -P node_modules <span># 列出当前目录文件夹node_modules的目录结构</span>
+tree -P node_modules -L <span>2</span> <span># 显示目录node_modules两层的目录树结构</span>
+tree -L <span>2</span> <span>></span> /home/www/tree.txt <span># 当前目录结果存到 tree.txt 文件中</span></code></pre>
+<p>忽略多个文件夹</p>
+<pre><code>tree -I <span>'node_modules|icon|font'</span> -L <span>2</span></code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

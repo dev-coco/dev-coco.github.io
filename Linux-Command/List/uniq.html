@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>uniq:显示或忽略重复的行</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="uniq:显示或忽略重复的行 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>uniq</h1><p>显示或忽略重复的行。</p>
+<h2>概要</h2><pre><code><span>uniq</span> <span>[</span>OPTION<span>]</span><span>..</span>. <span>[</span>INPUT <span>[</span>OUTPUT<span>]</span><span>]</span></code></pre>
+<h2>主要用途</h2><ul>
+<li>将输入文件（或标准输入）中邻近的重复行写入到输出文件（或标准输出）中。</li>
+<li>当没有选项时，邻近的重复行将合并为一个。</li>
+</ul>
+<h2>选项</h2><pre><code>-c, --count                在每行开头增加重复次数。
+-d, --repeated             所有邻近的重复行只被打印一次。
+-D                         所有邻近的重复行将全部打印。
+--all-repeated<span>[</span><span>=</span>METHOD<span>]</span>    类似于 -D，但允许每组之间以空行分割。METHOD取值范围<span>{</span>none<span>(</span>默认<span>)</span>，prepend，separate<span>}</span>。
+-f, --skip-fields<span>=</span>N        跳过对前N个列的比较。
+--group<span>[</span><span>=</span>METHOD<span>]</span>           显示所有行，允许每组之间以空行分割。METHOD取值范围：<span>{</span>separate<span>(</span>默认<span>)</span>，prepend，append，both<span>}</span>。
+-i, --ignore-case          忽略大小写的差异。
+-s, --skip-chars<span>=</span>N         跳过对前N个字符的比较。
+-u, --unique               只打印非邻近的重复行。
+-z, --zero-terminated      设置行终止符为NUL（空），而不是换行符。
+-w, --check-chars<span>=</span>N        只对每行前N个字符进行比较。
+--help                     显示帮助信息并退出。
+--version                  显示版本信息并退出。</code></pre>
+<h2>参数</h2><p>INPUT（可选）：输入文件，不提供时为标准输入。</p>
+<p>OUTPUT（可选）：输出文件，不提供时为标准输出。</p>
+<h2>返回值</h2><p>返回0表示成功，返回非0值表示失败。</p>
+<h2>例子</h2><p>注意：命令2和命令3结果一样，命令1仅作了相邻行的去重。</p>
+<pre><code><span>uniq</span> file.txt
+<span>sort</span> file.txt <span>|</span> <span>uniq</span>
+<span>sort</span> -u file.txt</code></pre>
+<p>只显示单一行，区别在于是否执行排序：</p>
+<pre><code><span>uniq</span> -u file.txt
+<span>sort</span> file.txt <span>|</span> <span>uniq</span> -u</code></pre>
+<p>统计各行在文件中出现的次数：</p>
+<pre><code><span>sort</span> file.txt <span>|</span> <span>uniq</span> -c</code></pre>
+<p>在文件中找出重复的行：</p>
+<pre><code><span>sort</span> file.txt <span>|</span> <span>uniq</span> -d</code></pre>
+<h3>注意</h3><ol>
+<li><p><code>uniq</code>只检测邻近的行是否重复，<code>sort -u</code>将输入文件先排序然后再处理重复行。 </p>
+</li>
+<li><p>该命令是<code>GNU coreutils</code>包中的命令，相关的帮助信息请查看<code>man -s 1 uniq</code>，<code>info coreutils &#39;uniq invocation&#39;</code>。</p>
+</li>
+</ol>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

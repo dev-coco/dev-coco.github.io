@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>unzip:用于解压缩由zip命令压缩的压缩包</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="unzip:用于解压缩由zip命令压缩的压缩包 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>unzip</h1><p>用于解压缩由zip命令压缩的压缩包</p>
+<h2>补充说明</h2><p><strong>unzip命令</strong> 用于解压缩由zip命令压缩的“.zip”压缩包。</p>
+<h3>语法</h3><pre><code>unzip<span>(</span>选项<span>)</span><span>(</span>参数<span>)</span></code></pre>
+<h3>选项</h3><pre><code>-c：将解压缩的结果显示到屏幕上，并对字符做适当的转换；
+-f：更新现有的文件；
+-l：显示压缩文件内所包含的文件；
+-p：与-c参数类似，会将解压缩的结果显示到屏幕上，但不会执行任何的转换；
+-t：检查压缩文件是否正确；
+-u：与-f参数类似，但是除了更新现有的文件外，也会将压缩文件中的其他文件解压缩到目录中；
+-v：执行时显示详细的信息；
+-z：仅显示压缩文件的备注文字；
+-a：对文本文件进行必要的字符转换；
+-b：不要对文本文件进行字符转换；
+-C：压缩文件中的文件名称区分大小写；
+-j：不处理压缩文件中原有的目录路径；
+-L：将压缩文件中的全部文件名改为小写；
+-M：将输出结果送到more程序处理；
+-n：解压缩时不要覆盖原有的文件；
+-o：不必先询问用户，unzip执行后覆盖原有的文件；
+-P<span>&lt;</span>密码<span>></span>：使用zip的密码选项；
+-q：执行时不显示任何信息；
+-s：将文件名中的空白字符转换为底线字符；
+-V：保留VMS的文件版本信息；
+-X：解压缩时同时回存文件原来的<span>UID</span>/GID；
+-d<span>&lt;</span>目录<span>></span>：指定文件解压缩后所要存储的目录；
+-x<span>&lt;</span>文件<span>></span>：指定不要处理.zip压缩文件中的哪些文件；
+-Z：unzip-Z等于执行zipinfo指令。</code></pre>
+<h3>参数</h3><p>压缩包：指定要解压的“.zip”压缩包。</p>
+<h3>实例</h3><p>将压缩文件text.zip在当前目录下解压缩。</p>
+<pre><code><span>unzip</span> test.zip</code></pre>
+<p>将压缩文件text.zip在指定目录<code>/tmp</code>下解压缩，如果已有相同的文件存在，要求unzip命令不覆盖原先的文件。</p>
+<pre><code><span>unzip</span> -n test.zip -d /tmp</code></pre>
+<p>查看压缩文件目录，但不解压。</p>
+<pre><code><span>unzip</span> -v test.zip</code></pre>
+<p>将压缩文件test.zip在指定目录<code>/tmp</code>下解压缩，如果已有相同的文件存在，要求unzip命令覆盖原先的文件。</p>
+<pre><code><span>unzip</span> -o test.zip -d tmp/</code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

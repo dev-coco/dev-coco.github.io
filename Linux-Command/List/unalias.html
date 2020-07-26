@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>unalias:删除由alias设置的别名</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="unalias:删除由alias设置的别名 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>unalias</h1><p>删除由alias设置的别名</p>
+<h2>概要</h2><pre><code><span>unalias</span> <span>[</span>-a<span>]</span> name <span>[</span>name <span>..</span>.<span>]</span></code></pre>
+<h2>主要用途</h2><ul>
+<li>删除一个或多个别名。</li>
+<li>删除全部已定义的别名。</li>
+</ul>
+<h2>选项</h2><pre><code>-a：删除全部已定义的别名。</code></pre>
+<h2>参数</h2><p>name：指定要删除的一个或多个已定义的别名。</p>
+<h3>返回值</h3><p>unalias返回true除非您要删除的别名未定义。</p>
+<h2>例子</h2><pre><code><span># 删除全部已定义的别名</span>
+<span>unalias</span> -a
+
+<span># 删除已定义的别名（假设当前环境存在以下别名）</span>
+<span>unalias</span> <span>vi</span>
+<span>unalias</span> <span>ls</span> <span>grep</span></code></pre>
+<h2>错误用法</h2><ul>
+<li><p>要删除的别名未定义。</p>
+</li>
+<li><p>不使用-a选项时没有传递name参数。</p>
+</li>
+</ul>
+<h3>注意</h3><ol>
+<li><strong>执行脚本时请注意：</strong></li>
+</ol>
+<blockquote>
+<p>使用<code>source</code>命令执行的bash脚本如果执行了<code>alias</code>或<code>unalias</code>命令，那么有可能会对终端环境的别名设置产生影响；终端环境的别名设置也可能改变运行结果；</p>
+<p>通过<code>sh</code>方式调用的bash脚本或直接运行当前用户有执行权限的脚本不受终端环境的别名影响。</p>
+</blockquote>
+<ol start="2">
+<li><p>查看及设置别名，请查看<code>alias</code>命令。</p>
+</li>
+<li><p>该命令是bash内建命令，相关的帮助信息请查看<code>help</code>命令。</p>
+</li>
+</ol>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

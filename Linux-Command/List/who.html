@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>who:显示当前所有登陆用户的信息</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="who:显示当前所有登陆用户的信息 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>who</h1><p>显示当前所有登陆用户的信息。</p>
+<h2>概要</h2><pre><code><span>who</span> <span>[</span>OPTION<span>]</span><span>..</span>. <span>[</span>file<span>]</span> <span>[</span>am i<span>]</span></code></pre>
+<h2>主要用途</h2><ul>
+<li>当没有给出非选项参数时，按以下字段顺序为每个当前用户打印信息：登录用户名称，终端信息，登录时间，远程主机或X display。</li>
+<li>当用户执行 <code>who am i</code> 时，只显示运行该命令的用户的信息。</li>
+</ul>
+<h2>选项</h2><pre><code>-a, --all                                等价于调用 <span>'-b -d --login -p -r -t -T -u'</span>。
+-b, --boot                               上次系统启动的时间。
+-d, --dead                               打印 dead 状态的进程。
+-H, --heading                            打印列标题行。
+-l, --login                              打印系统登录进程。
+--lookup                                 尝试通过 DNS 规范主机名。
+-m                                       仅显示和标准输入关联的主机名和用户。
+-p, --process                            打印由 init 生成的活动进程。
+-q, --count                              列出所有已登录的用户的名称和数量。
+-r, --runlevel                           打印当前运行级别。
+-s, --short                              仅打印名称、行和时间（默认）。
+-t, --time                               打印上次系统时钟更改。
+-T, -w, --mesg, --message, --writable    将 <span>'+、-、?'</span> 中的一个作为用户的消息状态添加到用户名称后面。
+-u, --users                              列出登录的用户。
+--help                                   显示帮助信息并退出。
+--version                                显示版本信息并退出。
+
+关于 -T 选项的 <span>'+、-、?'</span>：
+<span>'+'</span>  允许写入信息
+<span>'-'</span>  禁止写入信息
+<span>'?'</span>  不能查找到终端设备</code></pre>
+<h2>参数</h2><p>file（可选）：指定 <code>file</code> 代替默认的 <code>/var/run/utmp</code> 、<code>/etc/utmp</code> ；通常使用 <code>/var/log/wtmp</code> 作为参数用于查看过去登陆系统的用户。</p>
+<h2>返回值</h2><p>返回0表示成功，返回非0值表示失败。</p>
+<h2>例子</h2><pre><code><span>[</span>root@localhost ~<span>]</span><span># who</span>
+root     pts/0        <span>2013</span>-08-19 <span>15</span>:04 <span>(</span><span>192.168</span>.0.134<span>)</span>
+root     pts/1        <span>2013</span>-12-20 <span>10</span>:37 <span>(</span><span>180.111</span>.155.40<span>)</span>
+
+<span>[</span>root@localhost ~<span>]</span><span># who -q</span>
+root root
+<span># users=2</span>
+
+<span>[</span>root@localhost ~<span>]</span><span># who -H</span>
+NAME     LINE         <span>time</span>             COMMENT
+root     pts/0        <span>2013</span>-08-19 <span>15</span>:04 <span>(</span><span>192.168</span>.0.134<span>)</span>
+root     pts/1        <span>2013</span>-12-20 <span>10</span>:37 <span>(</span><span>180.111</span>.155.40<span>)</span>
+
+<span>[</span>root@localhost ~<span>]</span><span># who -w</span>
+root     + pts/0        <span>2013</span>-08-19 <span>15</span>:04 <span>(</span><span>192.168</span>.0.134<span>)</span>
+root     + pts/1        <span>2013</span>-12-20 <span>10</span>:37 <span>(</span><span>180.111</span>.155.40<span>)</span></code></pre>
+<h3>注意</h3><ol>
+<li>该命令是<code>GNU coreutils</code>包中的命令，相关的帮助信息请查看<code>man -s 1 who</code>，<code>info coreutils &#39;who invocation&#39;</code>。</li>
+</ol>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

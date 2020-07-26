@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>uptime:查看Linux系统负载信息</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="uptime:查看Linux系统负载信息 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>uptime</h1><p>查看Linux系统负载信息</p>
+<h2>补充说明</h2><p><strong>uptime命令</strong> 能够打印系统总共运行了多长时间和系统的平均负载。uptime命令可以显示的信息显示依次为：现在时间、系统已经运行了多长时间、目前有多少登陆用户、系统在过去的1分钟、5分钟和15分钟内的平均负载。</p>
+<h3>语法</h3><pre><code>uptime<span>(</span>选项<span>)</span></code></pre>
+<h3>选项</h3><pre><code>-V：显示指令的版本信息。</code></pre>
+<h3>实例</h3><p>使用uptime命令查看系统负载：</p>
+<pre><code><span>[</span>root@LinServ-1 ~<span>]</span><span># uptime -V    #显示uptime命令版本信息</span>
+procps version <span>3.2</span>.7
+
+<span>[</span>root@LinServ-1 ~<span>]</span><span># uptime</span>
+ <span>15</span>:31:30 up <span>127</span> days,  <span>3</span>:00,  <span>1</span> user,  load average: <span>0.00</span>, <span>0.00</span>, <span>0.00</span></code></pre>
+<p> <strong>显示内容说明：</strong> </p>
+<pre><code><span>15</span>:31:30             <span># 系统当前时间</span>
+up <span>127</span> days,  <span>3</span>:00   <span># 主机已运行时间,时间越大，说明你的机器越稳定。</span>
+<span>1</span> user               <span># 用户连接数，是总连接数而不是用户数</span>
+load average: <span>0.00</span>, <span>0.00</span>, <span>0.00</span>         <span>#  系统平均负载，统计最近1，5，15分钟的系统平均负载</span></code></pre>
+<p>那么什么是系统平均负载呢？ 系统平均负载是指在特定时间间隔内运行队列中的平均进程数。</p>
+<p>如果每个CPU内核的当前活动进程数不大于3的话，那么系统的性能是良好的。如果每个CPU内核的任务数大于5，那么这台机器的性能有严重问题。</p>
+<p>如果你的linux主机是1个双核CPU的话，当Load Average 为6的时候说明机器已经被充分使用了。</p>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

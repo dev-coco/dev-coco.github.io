@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>userdel:用于删除给定的用户以及与用户相关的文件</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="userdel:用于删除给定的用户以及与用户相关的文件 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>userdel</h1><p>用于删除给定的用户以及与用户相关的文件</p>
+<h2>补充说明</h2><p><strong>userdel命令</strong> 用于删除给定的用户，以及与用户相关的文件。若不加选项，则仅删除用户帐号，而不删除相关文件。</p>
+<h3>语法</h3><pre><code>userdel<span>(</span>选项<span>)</span><span>(</span>参数<span>)</span></code></pre>
+<h3>选项</h3><pre><code>-f：强制删除用户，即使用户当前已登录；
+-r：删除用户的同时，删除与用户相关的所有文件。</code></pre>
+<h3>参数</h3><p>用户名：要删除的用户名。</p>
+<h3>实例</h3><p>userdel命令很简单，比如我们现在有个用户linuxde，其家目录位于<code>/var</code>目录中，现在我们来删除这个用户：</p>
+<pre><code><span>userdel</span> linuxde       <span># 删除用户linuxde，但不删除其家目录及文件；</span>
+<span>userdel</span> -r linuxde    <span># 删除用户linuxde，其家目录及文件一并删除；</span></code></pre>
+<p>请不要轻易用<code>-r</code>选项；他会删除用户的同时删除用户所有的文件和目录，切记如果用户目录下有重要的文件，在删除前请备份。</p>
+<p>其实也有最简单的办法，但这种办法有点不安全，也就是直接在<code>/etc/passwd</code>中删除您想要删除用户的记录；但最好不要这样做，<code>/etc/passwd</code>是极为重要的文件，可能您一不小心会操作失误。</p>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

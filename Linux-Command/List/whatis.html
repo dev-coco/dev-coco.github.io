@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>whatis:查询一个命令执行什么功能</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="whatis:查询一个命令执行什么功能 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>whatis</h1><p>查询一个命令执行什么功能</p>
+<h2>补充说明</h2><p><strong>whatis命令</strong> 是用于查询一个命令执行什么功能，并将查询结果打印到终端上。</p>
+<p>whatis命令在用<code>catman -w</code>命令创建的数据库中查找command参数指定的命令、系统调用、库函数或特殊文件名。whatis命令显示手册部分的页眉行。然后可以发出man命令以获取附加的信息。whatis命令等同于使用<code>man -f</code>命令。</p>
+<h3>语法</h3><pre><code>whatis</code></pre>
+<h3>实例</h3><pre><code><span>[</span>root@localhost ~<span>]</span><span># whatis ls</span>
+<span>ls</span>                   <span>(</span><span>1</span><span>)</span>  - list directory contents
+<span>ls</span>                   <span>(</span>1p<span>)</span>  - list directory contents
+
+<span>[</span>root@localhost ~<span>]</span><span># whatis cp</span>
+<span>cp</span>                   <span>(</span><span>1</span><span>)</span>  - copy files and directories
+<span>cp</span>                   <span>(</span>1p<span>)</span>  - copy files
+
+<span>[</span>root@localhost ~<span>]</span><span># whatis chown</span>
+<span>chown</span>                <span>(</span><span>1</span><span>)</span>  - change <span>file</span> owner and group
+<span>chown</span>                <span>(</span>1p<span>)</span>  - change the <span>file</span> ownership
+<span>chown</span>                <span>(</span><span>2</span><span>)</span>  - change ownership of a <span>file</span>
+<span>chown</span>                <span>(</span>3p<span>)</span>  - change owner and group of a <span>file</span>
+
+<span>[</span>root@localhost ~<span>]</span><span># whatis man</span>
+<span>man</span>                  <span>(</span><span>1</span><span>)</span>  - <span>format</span> and display the on-line manual pages
+<span>man</span>                  <span>(</span>1p<span>)</span>  - display system documentation
+<span>man</span>                  <span>(</span><span>7</span><span>)</span>  - macros to <span>format</span> <span>man</span> pages
+<span>man</span>                 <span>(</span>rpm<span>)</span> - A <span>set</span> of documentation tools: man, <span>apropos</span> and whatis.
+man-pages           <span>(</span>rpm<span>)</span> - Man <span>(</span>manual<span>)</span> pages from the Linux Documentation Project.
+man.config <span>[</span>man<span>]</span>     <span>(</span><span>5</span><span>)</span>  - configuration data <span>for</span> <span>man</span></code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

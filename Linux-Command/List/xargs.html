@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>xargs:给其他命令传递参数的一个过滤器</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="xargs:给其他命令传递参数的一个过滤器 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>xargs</h1><p>给其他命令传递参数的一个过滤器</p>
+<h2>补充说明</h2><p><strong>xargs 命令</strong> 是给其他命令传递参数的一个过滤器，也是组合多个命令的一个工具。它擅长将标准输入数据转换成命令行参数，xargs 能够处理管道或者 stdin 并将其转换成特定命令的命令参数。xargs 也可以将单行或多行文本输入转换为其他格式，例如多行变单行，单行变多行。xargs 的默认命令是 echo，空格是默认定界符。这意味着通过管道传递给 xargs 的输入将会包含换行和空白，不过通过 xargs 的处理，换行和空白将被空格取代。xargs 是构建单行命令的重要组件之一。</p>
+<h3>xargs 命令用法</h3><p>xargs 用作替换工具，读取输入数据重新格式化后输出。</p>
+<p>定义一个测试文件，内有多行文本数据：</p>
+<pre><code><span>cat</span> test.txt
+
+a b c d e f g
+h i j k l m n
+o p q
+r s t
+u <span>v</span> w x y z</code></pre>
+<p>多行输入单行输出：</p>
+<pre><code><span>cat</span> test.txt <span>|</span> <span>xargs</span>
+
+a b c d e f g h i j k l m n o p q r s t u <span>v</span> w x y z</code></pre>
+<h4>使用 -n 进行多行输出</h4><p><strong>-n 选项</strong> 多行输出：</p>
+<pre><code><span>cat</span> test.txt <span>|</span> <span>xargs</span> -n3
+
+a b c
+d e f
+g h i
+j k l
+m n o
+p q r
+s t u
+<span>v</span> w x
+y z</code></pre>
+<h4>使用 -d 分割输入</h4><p><strong>-d 选项</strong> 可以自定义一个定界符：</p>
+<pre><code><span>echo</span> <span>"nameXnameXnameXname"</span> <span>|</span> <span>xargs</span> -dX
+
+name name name name</code></pre>
+<p>结合 <strong>-n 选项</strong> 使用：</p>
+<pre><code><span>echo</span> <span>"nameXnameXnameXname"</span> <span>|</span> <span>xargs</span> -dX -n2
+
+name name
+name name</code></pre>
+<h4>读取 stdin</h4><p><strong>读取 stdin，将格式化后的参数传递给命令</strong></p>
+<p>假设一个命令为 sk.sh 和一个保存参数的文件 arg.txt：</p>
+<pre><code><span class="token shebang important">#!/bin/bash</span>
+<span>#sk.sh 命令内容，打印出所有参数。</span>
+
+<span>echo</span> <span>&#36;*</span></code></pre>
+<p>arg.txt 文件内容：</p>
+<pre><code><span>cat</span> arg.txt
+
+aaa
+bbb
+ccc</code></pre>
+<h4>结合 -I 选项</h4><p>xargs 的一个 <strong>选项 -I</strong> ，使用 -I 指定一个替换字符串{}，这个字符串在 xargs 扩展时会被替换掉，当 -I 与 xargs 结合使用，每一个参数命令都会被执行一次：</p>
+<pre><code><span>cat</span> arg.txt <span>|</span> <span>xargs</span> -I <span>{</span><span>}</span> ./sk.sh -p <span>{</span><span>}</span> -l
+
+-p aaa -l
+-p bbb -l
+-p ccc -l</code></pre>
+<p>复制所有图片文件到 /data/images 目录下：</p>
+<pre><code><span>ls</span> *.jpg <span>|</span> <span>xargs</span> -n1 -I <span>cp</span> <span>{</span><span>}</span> /data/images</code></pre>
+<h4>结合 find 命令使用</h4><p><strong>xargs 结合 find 使用</strong></p>
+<p>用 rm 删除太多的文件时候，可能得到一个错误信息：<code>/bin/rm Argument list too long</code>. 用 <code>xargs</code> 去避免这个问题：</p>
+<pre><code><span>find</span> <span>.</span> -type f -name <span>"*.log"</span> -print0 <span>|</span> <span>xargs</span> -0 <span>rm</span> -f</code></pre>
+<p>xargs -0 将 <code>\0</code> 作为定界符。</p>
+<p>统计一个源代码目录中所有 php 文件的行数：</p>
+<pre><code><span>find</span> <span>.</span> -type f -name <span>"*.php"</span> -print0 <span>|</span> <span>xargs</span> -0 <span>wc</span> -l</code></pre>
+<p>查找所有的 jpg 文件，并且压缩它们：</p>
+<pre><code><span>find</span> <span>.</span> -type f -name <span>"*.jpg"</span> -print <span>|</span> <span>xargs</span> <span>tar</span> -czvf images.tar.gz</code></pre>
+<h4>打印出执行的命令</h4><p>结合 <code>-t</code> 选项可以打印出 <code>xargs</code> 执行的命令</p>
+<pre><code><span>ls</span> <span>|</span> <span>xargs</span> -t -I<span>{</span><span>}</span> <span>echo</span> <span>{</span><span>}</span></code></pre><p>会输出当前目录下的文件列表和执行的 echo 命令</p>
+<h4>使用 -p 选项确认执行的命令</h4><p><code>-p</code> 选项会在执行每一个命令时弹出确认，当你需要非常准确的确认每一次操作时可以使用 <code>-p</code> 参数，比如，查找当前目录下 <code>.log</code> 文件，每一次删除都需要确认：</p>
+<pre><code><span>find</span> <span>.</span> -maxdepth <span>1</span> -name <span>"*.log"</span> <span>|</span> <span>xargs</span> -p -I<span>{</span><span>}</span> <span>rm</span> <span>{</span><span>}</span></code></pre><h4>执行多个命令</h4><p>使用 <code>-I</code> 选项可以让 <code>xargs</code> 执行多个命令</p>
+<pre><code><span>cat</span> foo.txt
+one
+two
+three
+
+<span>cat</span> foo.txt <span>|</span> <span>xargs</span> -I % <span>sh</span> -c <span>'echo %; mkdir %'</span>
+one
+two
+three
+
+<span>ls</span>
+one two three</code></pre><h4>其他应用</h4><p><strong>xargs 其他应用</strong></p>
+<p>假如你有一个文件包含了很多你希望下载的 URL，你能够使用 xargs 下载所有链接：</p>
+<pre><code><span>cat</span> url-list.txt <span>|</span> <span>xargs</span> <span>wget</span> -c</code></pre>
+<h3>子 Shell（Subshells）</h3><p>运行一个 shell 脚本时会启动另一个命令解释器.，就好像你的命令是在命令行提示下被解释的一样，类似于批处理文件里的一系列命令。每个 shell 脚本有效地运行在父 shell(parent shell) 的一个子进程里。这个父 shell 是指在一个控制终端或在一个 xterm 窗口中给你命令指示符的进程。</p>
+<pre><code>cmd1 <span>|</span> <span>(</span> cmd2<span>;</span> cmd3<span>;</span> cmd4 <span>)</span> <span>|</span> cmd5</code></pre>
+<p>如果 cmd2 是 cd /，那么就会改变子 Shell 的工作目录，这种改变只是局限于子 shell 内部，cmd5 则完全不知道工作目录发生的变化。子 shell 是嵌在圆括号 () 内部的命令序列，子 Shell 内部定义的变量为局部变量。</p>
+<p>子 shell 可用于为一组命令设定临时的环境变量：</p>
+<pre><code>COMMAND1
+COMMAND2
+COMMAND3
+<span>(</span>
+  <span><span>IFS</span></span><span>=</span>:
+  <span><span>PATH</span></span><span>=</span>/bin
+  <span>unset</span> TERMINFO
+  <span>set</span> -C
+  <span>shift</span> <span>5</span>
+  COMMAND4
+  COMMAND5
+  <span>exit</span> <span>3</span> <span># 只是从子 shell 退出。</span>
+<span>)</span>
+<span># 父 shell 不受影响，变量值没有更改。</span>
+COMMAND6
+COMMAND7</code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>write:向指定登录用户终端上发送信息</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="write:向指定登录用户终端上发送信息 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>write</h1><p>向指定登录用户终端上发送信息</p>
+<h2>补充说明</h2><p><strong>write命令</strong> 用于向指定登录用户终端上发送信息。通过write命令可传递信息给另一位登入系统的用户，当输入完毕后，键入EOF表示信息结束，write命令就会将信息传给对方。如果接收信息的用户不只登入本地主机一次，你可以指定接收信息的终端机编号。</p>
+<h3>语法</h3><pre><code>write<span>(</span>参数<span>)</span></code></pre>
+<h3>参数</h3><pre><code>用户：指定要接受信息的登录用户；
+登陆终端：指定接收信息的用户的登录终端。</code></pre>
+<h3>实例</h3><p>传信息给Rollaend，此时Rollaend只有一个连线 : </p>
+<pre><code><span>write</span> Rollaend</code></pre>
+<p>接下来就是将信息打上去，结束请Ctrl+C：</p>
+<p>传信息给Rollaend、Rollaend的连线有pts/2、pts/3：</p>
+<pre><code><span>write</span> Rollaend pts/2</code></pre>
+<p>接下来就是将信息打上去，结束请Ctrl+C：</p>
+<p>若对方设定<code>mesg n</code>，则此时信息将无法传给对方。</p>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

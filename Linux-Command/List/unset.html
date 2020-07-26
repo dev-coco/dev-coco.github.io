@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>unset:删除指定的shell变量或函数</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="unset:删除指定的shell变量或函数 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>unset</h1><p>删除指定的shell变量或函数。</p>
+<h2>概要</h2><pre><code><span>unset</span> <span>[</span>-f<span>]</span> <span>[</span>-v<span>]</span> <span>[</span>-n<span>]</span> <span>[</span>name <span>..</span>.<span>]</span></code></pre>
+<h2>主要用途</h2><ul>
+<li>删除一到多个shell变量（不包括只读变量）。</li>
+<li>删除一到多个shell函数。</li>
+<li>删除一到多个具有引用属性的变量（如果-n选项存在）。</li>
+</ul>
+<h2>选项</h2><pre><code>-f：仅删除函数。
+-v：仅删除变量（不包括只读变量）。
+-n：删除具有引用属性的变量名（如果该选项存在）。</code></pre>
+<h2>参数</h2><p>name（可选）：要删除的变量或函数。</p>
+<h2>返回值</h2><p>返回成功除非选项错误或要删除的变量或函数有只读属性。</p>
+<h2>例子</h2><pre><code><span># 删除变量。</span>
+<span>declare</span> <span>paper_size</span><span>=</span><span>'B5'</span>
+<span>unset</span> -v paper_size</code></pre>
+<pre><code><span># 删除函数。</span>
+<span>function</span> <span class="token function-name function">show_result</span><span>(</span><span>)</span><span>{</span> <span>echo</span> <span>'Last Command Return: <span>&#36;?</span>'</span><span>;</span> <span>}</span>
+<span>unset</span> -f show_result</code></pre>
+<pre><code><span># 当不指定选项时，优先删除变量，如果失败则删除函数。</span>
+<span>declare</span> -i <span>aa</span><span>=</span><span>100</span>
+<span>function</span> <span class="token function-name function">aa</span><span>(</span><span>)</span><span>{</span> <span>echo</span> <span>'aa'</span><span>;</span> <span>}</span>
+<span>unset</span> aa
+<span># 变量'aa'已被删除。</span>
+<span>declare</span> -p aa
+<span># 函数'aa'存在。</span>
+<span>declare</span> -F<span>|</span><span>grep</span> aa</code></pre>
+<pre><code><span># 演示unset使用-n选项，name指定了引用变量时的情况。</span>
+<span>declare</span> <span>a</span><span>=</span><span>3</span>
+<span># 定义引用变量</span>
+<span>declare</span> -n <span>b</span><span>=</span>a
+<span># 查看属性，显示declare -n b="a"</span>
+<span>declare</span> -p b
+<span># 显示3</span>
+<span>echo</span> <span>&#36;{b}</span>
+<span># 显示a</span>
+<span>echo</span> <span>&#36;{<span>!</span>b}</span>
+<span># 指定-n选项时</span>
+<span>unset</span> -n b
+<span># 引用变量b已被删除</span>
+<span>declare</span> -p b
+<span># 被引用的变量a未被删除</span>
+<span>declare</span> -p a</code></pre>
+<pre><code><span># 演示unset不使用-n选项，name指定了引用变量时的情况。</span>
+<span>declare</span> <span>a</span><span>=</span><span>3</span>
+<span># 定义引用变量</span>
+<span>declare</span> -n <span>b</span><span>=</span>a
+<span># 查看属性，显示declare -n b="a"</span>
+<span>declare</span> -p b
+<span># 显示3</span>
+<span>echo</span> <span>&#36;{b}</span>
+<span># 显示a</span>
+<span>echo</span> <span>&#36;{<span>!</span>b}</span>
+<span># 不指定-n选项时</span>
+<span>unset</span> b
+<span># 引用变量b未被删除，显示declare -n b="a"</span>
+<span>declare</span> -p b
+<span># 被引用的变量a被删除</span>
+<span>declare</span> -p a</code></pre>
+<h3>注意</h3><ol>
+<li>该命令是bash内建命令，相关的帮助信息请查看<code>help</code>命令。</li>
+</ol>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

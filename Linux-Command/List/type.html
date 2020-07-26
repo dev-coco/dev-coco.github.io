@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>type:显示指定命令的类型</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="type:显示指定命令的类型 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>type</h1><p>显示指定命令的类型。</p>
+<h2>概要</h2><pre><code> <span>type</span> <span>[</span>-afptP<span>]</span> name <span>[</span>name <span>..</span>.<span>]</span></code></pre>
+<h2>主要用途</h2><ul>
+<li>显示要查找的命令的信息。</li>
+<li>控制查找范围和行为。</li>
+<li>显示要查找的命令优先级最高的类型。</li>
+</ul>
+<h2>选项</h2><pre><code>-a：在环境变量<span>PATH</span>中查找并显示所有包含name的可执行文件路径；当<span>'-p'</span>选项没有同时给出时，如果在别名、关键字，函数，内建的信息中存在name，则一并显示。
+-f：排除对shell函数的查找。
+-p：如果name在执行<span>'type -t name'</span>返回的不是<span>'file'</span>，那么什么也不返回；否则会在环境变量<span>PATH</span>中查找并返回可执行文件路径。
+-P：即使要查找的name是别名、内建、函数中的一个，仍然会在环境变量<span>PATH</span>中查找并返回可执行文件路径。
+-t：根据name的类型返回一个单词（别名，关键字，函数，内建，文件），否则返回空值。</code></pre>
+<h2>参数</h2><p>name：要查找的命令，可以为多个。</p>
+<h2>返回值</h2><p>当指定的命令可以找到时返回成功，如果有没找到的返回失败。</p>
+<h2>例子</h2><pre><code>接下来要用到的例子假设<span>'~/.bashrc'</span>文件定义了以下的内容：
+
+<span>alias</span> <span>ls</span><span>=</span><span>'ls --color=auto'</span>
+<span class="token function-name function">mybash</span><span>(</span><span>)</span><span>{</span> <span>vim</span> ~/.bashrc<span>;</span> <span>}</span>
+
+而且执行环境里没有使用enable禁用内建命令。</code></pre>
+<pre><code><span>type</span> -a mybash
+<span># 输出</span>
+mybash is a <span>function</span>
+<span class="token function-name function">mybash</span> <span>(</span><span>)</span>
+<span>{</span>
+    <span>vim</span> ~/.bashrc
+<span>}</span>
+
+<span>type</span> -a -f mybash
+<span># 输出（因为排除了函数，所以报错）</span>
+bash: type: mybash: not found
+
+<span>type</span> -a -p mybash
+<span># 输出为空（因为排除了函数，所以什么也不返回）</span>
+
+<span>type</span> -a <span>ls</span>
+<span># 输出</span>
+<span>ls</span> is aliased to `ls --color<span>=</span>suto'
+<span>ls</span> is /usr/bin/ls
+<span>ls</span> is /bin/ls
+
+<span>type</span> -a -p <span>ls</span>
+<span># 输出</span>
+/usr/bin/ls
+/bin/ls</code></pre>
+<pre><code><span># '-f'不会影响'-P'的范围，'-f'不建议和'-p'使用。</span>
+<span># 注意：printf同时是内建命令以及可执行文件（GNU coreutils），优先作为内建处理。</span>
+
+<span>type</span> -p <span>printf</span>
+<span># 输出为空</span>
+
+<span>type</span> -P <span>printf</span>
+<span># 输出</span>
+/usr/bin/printf
+/bin/printf</code></pre>
+<pre><code><span># 如果有多个类型，那么输出优先级最高的类型。</span>
+
+<span>type</span> -t <span>ls</span>
+<span># 输出</span>
+<span>alias</span>
+
+<span>type</span> -t <span>for</span>
+<span># 输出（bash关键字）</span>
+keyword
+
+<span>type</span> -t mybash
+<span># 输出</span>
+<span>function</span>
+
+<span>type</span> -t -f mybash
+<span># 输出空值</span>
+
+<span>type</span> -t <span>printf</span>
+<span># 输出（bash内建优先级高）</span>
+<span>builtin</span>
+
+<span>type</span> -t <span>chmod</span>
+<span># 输出</span>
+<span>file</span></code></pre>
+<h3>注意</h3><ol>
+<li><p>该命令是bash内建命令，相关的帮助信息请查看<code>help</code>命令。</p>
+</li>
+<li><p>命令优先级问题请查看<code>builtin</code>命令。</p>
+</li>
+</ol>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

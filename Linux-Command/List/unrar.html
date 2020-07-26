@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>unrar:解压rar文件命令，从rar档案中提取文件</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="unrar:解压rar文件命令，从rar档案中提取文件 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>unrar</h1><p>解压rar文件命令，从rar档案中提取文件</p>
+<h3>语法</h3><pre><code><span>unrar</span> <span>[</span>选项<span>]</span><span>[</span>switch 命令<span>]</span> <span>[</span>文件名<span>..</span>.<span>]</span><span>[</span>路径<span>]</span>
+   <span>unrar</span> <span>&lt;</span>command<span>></span> <span>[</span>-<span>&lt;</span>switch <span><span>1</span>></span> -<span>&lt;</span>switch N<span>></span><span>]</span> archive <span>[</span>files<span>..</span>.<span>]</span> <span>[</span>path<span>..</span>.<span>]</span></code></pre>
+<h3>选项</h3><pre><code>       - e  <span>#将文件解压缩到当前目录。</span>
+       -l    <span># 列出存档内容。</span>
+       -p   <span>#将文件打印到标准输出。</span>
+       -t    <span>#测试存档文件。</span>
+       -v    <span>#详细列出存档。</span>
+       -x    <span>#使用完整路径提取文件。</span></code></pre>
+<h3>SWITCHES  开关设置</h3><pre><code>       注意：每个开关必须用空格分隔。你不能把它们放在一起。
+       -av-      <span>#禁用真实性验证检查。</span>
+    -c-         <span>#禁用评论显示</span>
+       -f            <span>#刷新文件</span>
+       -kb        <span>#保留破碎的提取文件</span>
+       -ierr      <span>#将所有消息发送给stderr。</span>
+       -inul     <span>#禁用所有消息。</span>
+       -o+        <span>#覆盖现有文件。</span>
+       -o-         <span>#不要覆盖现有文件</span>
+       -p<span>&lt;</span>password<span>></span>
+                     <span>#设置密码。</span>
+       -p-        <span>#不查询密码</span>
+       -r           <span>#递归子目录。</span>
+       -u          <span>#更新文件。</span>
+       -v           <span>#列出所有卷。</span>
+       -x<span>&lt;</span>file<span>></span>
+                     <span>#排除指定的文件。</span>
+       -x@<span>&lt;</span>list<span>></span>
+                     <span>#排除指定列表文件中的文件。</span>
+       -x@      <span>#读取要从stdin中排除的文件名。</span>
+       -y          <span>#对所有查询都假设为是。</span></code></pre>
+<h3>参数</h3><p>目录：指定要显示列表的目录，也可以是具体的文件。</p>
+<h3>实例</h3><p>将压缩文件text.rar在当前目录下解压缩,并解压完整路径。</p>
+<pre><code><span>unrar</span> x test.rar</code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

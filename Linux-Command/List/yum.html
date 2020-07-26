@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>yum:基于RPM的软件包管理器</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="yum:基于RPM的软件包管理器 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>yum</h1><p>基于RPM的软件包管理器</p>
+<h2>补充说明</h2><p><strong>yum命令</strong> 是在Fedora和RedHat以及SUSE中基于rpm的软件包管理器，它可以使系统管理人员交互和自动化地更新与管理RPM软件包，能够从指定的服务器自动下载RPM包并且安装，可以自动处理依赖性关系，并且一次安装所有依赖的软体包，无须繁琐地一次次下载、安装。</p>
+<p>yum提供了查找、安装、删除某一个、一组甚至全部软件包的命令，而且命令简洁而又好记。</p>
+<h3>语法</h3><pre><code>yum<span>(</span>选项<span>)</span><span>(</span>参数<span>)</span></code></pre>
+<h3>选项</h3><pre><code>-h：显示帮助信息；
+-y：对所有的提问都回答“yes”；
+-c：指定配置文件；
+-q：安静模式；
+-v：详细模式；
+-d：设置调试等级（0-10）；
+-e：设置错误等级（0-10）；
+-R：设置yum处理一个命令的最大等待时间；
+-C：完全从缓存中运行，而不去下载或者更新任何头文件。</code></pre>
+<h3>参数</h3><pre><code>install：安装rpm软件包；
+update：更新rpm软件包；
+check-update：检查是否有可用的更新rpm软件包；
+remove：删除指定的rpm软件包；
+list：显示软件包的信息；
+search：检查软件包的信息；
+info：显示指定的rpm软件包的描述信息和概要信息；
+clean：清理yum过期的缓存；
+shell：进入yum的shell提示符；
+resolvedep：显示rpm软件包的依赖关系；
+localinstall：安装本地的rpm软件包；
+localupdate：显示本地rpm软件包进行更新；
+deplist：显示rpm软件包的所有依赖关系。</code></pre>
+<h3>实例</h3><p>部分常用的命令包括：</p>
+<ul>
+<li>自动搜索最快镜像插件：<code>yum install yum-fastestmirror</code></li>
+<li>安装yum图形窗口插件：<code>yum install yumex</code></li>
+<li>查看可能批量安装的列表：<code>yum grouplist</code></li>
+</ul>
+<p><strong>安装</strong></p>
+<pre><code>yum <span>install</span>              <span>#全部安装</span>
+yum <span>install</span> package1     <span>#安装指定的安装包package1</span>
+yum groupinsall group1   <span>#安装程序组group1</span></code></pre>
+<p><strong>更新和升级</strong></p>
+<pre><code>yum update               <span>#全部更新</span>
+yum update package1      <span>#更新指定程序包package1</span>
+yum check-update         <span>#检查可更新的程序</span>
+yum upgrade package1     <span>#升级指定程序包package1</span>
+yum groupupdate group1   <span>#升级程序组group1</span></code></pre>
+<p><strong>查找和显示</strong></p>
+<pre><code><span># 检查 MySQL 是否已安装</span>
+yum list installed <span>|</span> <span>grep</span> mysql
+yum list installed mysql*
+
+yum info package1      <span>#显示安装包信息package1</span>
+yum list               <span>#显示所有已经安装和可以安装的程序包</span>
+yum list package1      <span>#显示指定程序包安装情况package1</span>
+yum groupinfo group1   <span>#显示程序组group1信息yum search string 根据关键字string查找安装包</span></code></pre>
+<p><strong>删除程序</strong></p>
+<pre><code>yum remove <span>&amp;</span><span>#124; erase package1   #删除程序包package1</span>
+yum groupremove group1             <span>#删除程序组group1</span>
+yum deplist package1               <span>#查看程序package1依赖情况</span></code></pre>
+<p><strong>清除缓存</strong></p>
+<pre><code>yum clean packages       <span>#清除缓存目录下的软件包</span>
+yum clean headers        <span>#清除缓存目录下的 headers</span>
+yum clean oldheaders     <span>#清除缓存目录下旧的 headers</span></code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>
