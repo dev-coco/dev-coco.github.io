@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>make:GNU的工程化编译工具</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="make:GNU的工程化编译工具 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>make</h1><p>GNU的工程化编译工具</p>
+<h2>补充说明</h2><p><strong>make命令</strong> 是GNU的工程化编译工具，用于编译众多相互关联的源代码文件，以实现工程化的管理，提高开发效率。</p>
+<h3>语法</h3><pre><code>make<span>(</span>选项<span>)</span><span>(</span>参数<span>)</span></code></pre>
+<h3>选项</h3><pre><code>-f：指定“makefile”文件；
+-i：忽略命令执行返回的出错信息；
+-s：沉默模式，在执行之前不输出相应的命令行信息；
+-r：禁止使用build-in规则；
+-n：非执行模式，输出所有执行命令，但并不执行；
+-t：更新目标文件；
+-q：make操作将根据目标文件是否已经更新返回<span>"0"</span>或非<span>"0"</span>的状态信息；
+-p：输出所有宏定义和目标文件描述；
+-d：Debug模式，输出有关文件和检测时间的详细信息。</code></pre>
+<p>Linux下常用选项与Unix系统中稍有不同，下面是不同的部分：</p>
+<pre><code>-c dir：在读取 makefile 之前改变到指定的目录dir；
+-I dir：当包含其他 makefile文件时，利用该选项指定搜索目录；
+-h：help文挡，显示所有的make选项；
+-w：在处理 makefile 之前和之后，都显示工作目录。</code></pre>
+<h3>参数</h3><p>目标：指定编译目标。</p>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

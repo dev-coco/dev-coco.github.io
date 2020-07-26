@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>mapfile:从标准输入读取行并赋值到数组</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="mapfile:从标准输入读取行并赋值到数组 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>mapfile</h1><p>从标准输入读取行并赋值到数组。</p>
+<h2>概要</h2><pre><code><span>mapfile</span> <span>[</span>-d delim<span>]</span> <span>[</span>-n count<span>]</span> <span>[</span>-O origin<span>]</span> <span>[</span>-s count<span>]</span> <span>[</span>-t<span>]</span> <span>[</span>-u fd<span>]</span> <span>[</span>-C callback<span>]</span> <span>[</span>-c quantum<span>]</span> <span>[</span>array<span>]</span></code></pre>
+<h2>主要用途</h2><ul>
+<li>从标准输入或文件描述符读取行并赋值到数组。</li>
+</ul>
+<h2>选项</h2><pre><code>-d delim       将delim设为行分隔符，代替默认的换行符。
+-n count       从标准输入中获取最多count行，如果count为零那么获取全部。
+-O origin      从数组下标为origin的位置开始赋值，默认的下标为0。
+-s count       跳过对前count行的读取。
+-t             读取时移除行分隔符delim（默认为换行符）。
+-u fd          从文件描述符fd中读取。
+-C callback    每当读取了quantum行时，调用callback语句。
+-c quantum     设定读取的行数为quantum。
+
+如果使用-C时没有同时使用-c指定quantum的值，那么quantum默认为5000。
+当callback语句执行时，将数组下一个要赋值的下标以及读取的行作为额外的参数传递给callback语句。
+如果使用-O时没有提供起始位置，那么mapfile会在实际赋值之前清空该数组。</code></pre>
+<h2>参数</h2><p>array（可选）：用于输出的数组名称。如果没有指定数组名称，那么会默认写入到变量名为MAPFILE的数组中。</p>
+<h2>返回值</h2><p>返回成功除非使用了非法选项、指定的数组是只读的、指定的数组不是下标数组。</p>
+<h2>例子</h2><pre><code><span># 常见的读取形式。</span>
+<span>mapfile</span> <span>&lt;</span> source_file target_array
+<span>cat</span> source_file <span>|</span><span>mapfile</span> target_array
+<span>mapfile</span> -u fd target_array
+
+<span># 只读取前5行。</span>
+<span>mapfile</span> <span>&lt;</span> source_file -n <span>5</span> target_array
+
+<span># 跳过前5行。</span>
+<span>mapfile</span> <span>&lt;</span> source_file -s <span>5</span> target_array
+
+<span># 在数组指定的下标开始赋值。</span>
+<span># 请注意：这样做不会清空该数组。</span>
+<span>mapfile</span> <span>&lt;</span> source_file -O <span>2</span> target_array
+
+<span># 读取时设定行分隔符为tab。</span>
+<span># 注意，第二行的tab在终端需要用ctrl+v tab输入；</span>
+<span>mapfile</span> <span>&lt;</span> source_file -d &#36;<span>'<span title="\t">\t</span>'</span> target_array
+<span>mapfile</span> <span>&lt;</span> source_file -d <span>'    '</span> target_array
+
+<span># 读取时移除行分隔符（tab）。</span>
+<span>mapfile</span> <span>&lt;</span> source_file -d &#36;<span>'<span title="\t">\t</span>'</span> -t target_array
+<span># 读取时移除行分隔符（换行符）。</span>
+<span>mapfile</span> <span>&lt;</span> source_file -t target_array
+
+<span># 每读取2行，执行一次语句（在这里是echo）。</span>
+<span>mapfile</span> <span>&lt;</span> source_file -C <span>"echo CALLBACK:"</span> -c <span>2</span> target_array
+
+<span># 遍历下标，依次显示数组的元素。</span>
+<span>for</span> <span class="token for-or-select variable">i</span> <span>in</span> <span>&#36;{<span>!</span>target_array<span>[</span>@<span>]</span>}</span><span>;</span> <span>do</span>
+  <span>printf</span> <span>"%s"</span> <span>&#36;{target_array<span>[</span>i<span>]</span>}</span>
+<span>done</span></code></pre>
+<h3>注意</h3><ol>
+<li>该命令是bash内建命令，相关的帮助信息请查看<code>help</code>命令。</li>
+<li>bash内建命令readarray是mapfile的同义词。</li>
+</ol>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>lvcreate:用于创建LVM的逻辑卷</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="lvcreate:用于创建LVM的逻辑卷 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>lvcreate</h1><p>用于创建LVM的逻辑卷</p>
+<h2>补充说明</h2><p><strong>lvcreate命令</strong> 用于创建LVM的逻辑卷。逻辑卷是创建在卷组之上的。逻辑卷对应的设备文件保存在卷组目录下，例如：在卷组&quot;vg1000&quot;上创建一个逻辑卷&quot;lvol0&quot;，则此逻辑卷对应的设备文件为&quot;/dev/vg1000/lvol0&quot;。</p>
+<h3>语法</h3><pre><code>lvcreate<span>(</span>选项<span>)</span><span>(</span>参数<span>)</span></code></pre>
+<h3>选项</h3><pre><code>-L：指定逻辑卷的大小，单位为“kKmMgGtT”字节；
+-l：指定逻辑卷的大小（LE数）。</code></pre>
+<h3>参数</h3><p>逻辑卷：指定要创建的逻辑卷名称。</p>
+<h3>实例</h3><p>使用lvcreate命令在卷组&quot;vg1000&quot;上创建一个200MB的逻辑卷。在命令行中输入下面的命令：</p>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># lvcreate -L 200M vg1000    #创建大小为200M的逻辑卷</span></code></pre>
+<p>输出信息如下：</p>
+<pre><code>Logical volume <span>"lvol0"</span> created</code></pre>
+<p>说明：创建成功后，新的逻辑卷&quot;lvol0&quot;，将通过设备文件<code>/dev/vg1000/lvol0</code>进行访问。</p>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

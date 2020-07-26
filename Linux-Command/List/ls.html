@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>ls:显示目录内容列表</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="ls:显示目录内容列表 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>ls</h1><p>显示目录内容列表</p>
+<h2>补充说明</h2><p><strong>ls命令</strong> 用来显示目标列表，在Linux中是使用率较高的命令。ls命令的输出信息可以进行彩色加亮显示，以分区不同类型的文件。</p>
+<h3>语法</h3><pre><code><span>ls</span> <span>[</span>选项<span>]</span> <span>[</span>文件名<span>..</span>.<span>]</span>
+   <span>[</span>-1abcdfgiklmnopqrstuxABCDFGLNQRSUX<span>]</span> <span>[</span>-w cols<span>]</span> <span>[</span>-T cols<span>]</span> <span>[</span>-I pattern<span>]</span> <span>[</span>--full-time<span>]</span>
+   <span>[</span>--format<span>=</span><span>{</span>long,verbose,commas,across,vertical,single-col‐umn<span>}</span><span>]</span>
+   <span>[</span>--sort<span>=</span><span>{</span>none,time,size,extension<span>}</span><span>]</span> <span>[</span>--time<span>=</span><span>{</span>atime,access,use,ctime,status<span>}</span><span>]</span>
+   <span>[</span>--color<span>[</span><span>=</span><span>{</span>none,auto,always<span>}</span><span>]</span><span>]</span> <span>[</span>--help<span>]</span> <span>[</span>--version<span>]</span> <span>[</span>--<span>]</span></code></pre>
+<h3>选项</h3><pre><code>-C     <span># 多列输出，纵向排序。</span>
+-F     <span># 每个目录名加 "/" 后缀，每个 FIFO 名加 "|" 后缀， 每个可运行名加“ * ”后缀。</span>
+-R     <span># 递归列出遇到的子目录。</span>
+-a     <span># 列出所有文件，包括以 "." 开头的隐含文件。</span>
+-c     <span># 使用“状态改变时间”代替“文件修改时间”为依据来排序（使用“-t”选项时）或列出（使用“-l”选项时）。</span>
+-d     <span># 将目录名象其它文件一样列出，而不是列出它们的内容。</span>
+-i     <span># 输出文件前先输出文件系列号（即 i 节点号: i-node number）。 -l  列出（以单列格式）文件模式（file mode），文件的链     接数，所有者名，组名，文件大小（以字节为单位），时间信息，及文件名。缺省时，时间信息显示最近修改时间；可以以选项“-c”和“-u”选择显示其它两种时间信息。对于设    备文件，原先显示文件大小的区域通常显示的是主要和次要的号（majorand minor device numbers）。</span>
+-q     <span># 将文件名中的非打印字符输出为问号。（对于到终端的输出这是缺省的。）</span>
+-r     <span># 逆序排列。</span>
+-t     <span># 按时间信息排序。</span>
+-u     <span># 使用最近访问时间代替最近修改时间为依据来排序（使用“-t”选项时）或列出（使用“-l”选项时）。</span>
+-1     <span># 单列输出。</span>
+-1, --format<span>=</span>single-column  <span># 一行输出一个文件（单列输出）。如标准输出不是到终端，此选项就是缺省选项。</span>
+-a, --all <span># 列出目录中所有文件，包括以“.”开头的文件。</span>
+-b, --escape <span># 把文件名中不可输出的字符用反斜杠加字符编号(就象在 C 语言里一样)的形式列出。</span>
+-c, --time<span>=</span>ctime, --time<span>=</span>status
+      <span># 按文件状态改变时间（i节点中的ctime）排序并输出目录内</span>
+      <span># 容。如采用长格式输出（选项“-l”），使用文件的状态改</span>
+      <span># 变时间取代文件修改时间。【译注：所谓文件状态改变（i节</span>
+      <span># 点中以ctime标志），既包括文件被修改，又包括文件属性（ 如所有者、组、链接数等等）的变化】</span>
+-d, --directory
+      <span># 将目录名象其它文件一样列出，而不是列出它们的内容。</span>
+-f    <span>#  不排序目录内容；按它们在磁盘上存储的顺序列出。同时启 动“ -a ”选项，如果在“ -f ”之前存在“ -l</span>
+      <span># ”、“ - -color ”或“ -s ”，则禁止它们。</span>
+-g    <span># 忽略，为兼容UNIX用。</span>
+-i, --inode
+      <span># 在每个文件左边打印  i  节点号（也叫文件序列号和索引号:  file  serial  number and index num‐</span>
+      <span># ber）。i节点号在每个特定的文件系统中是唯一的。</span>
+-k, --kilobytes
+      <span># 如列出文件大小，则以千字节KB为单位。</span>
+-l, --format<span>=</span>long, --format<span>=</span>verbose
+      <span># 除每个文件名外，增加显示文件类型、权限、硬链接数、所       有者名、组名、大小（        byte</span>
+      <span># ）、及时间信息（如未指明是      其它时间即指修改时间）。对于6个月以上的文件或超出未来     1</span>
+      <span># 小时的文件，时间信息中的时分将被年代取代。</span>
+      <span># 每个目录列出前，有一行“总块数”显示目录下全部文件所       占的磁盘空间。块默认是        1024</span>
+      <span># 字节；如果设置了   POSIXLY_CORRECT  的环境变量，除非用“  -k  ”选项，则默认块大小是  512  字</span>
+      <span># 节。每一个硬链接都计入总块数（因此可能重复计数），这无 疑是个缺点。</span>
+
+<span># 列出的权限类似于以符号表示（文件）模式的规范。但是 ls</span>
+      <span># 在每套权限的第三个字符中结合了多位（ multiple bits ） 的信息，如下： s 如果设置了  setuid</span>
+      <span># 位或 setgid   位，而且也设置了相应的可执行位。 S 如果设置了 setuid 位或 setgid</span>
+      <span># 位，但是没有设置相应的可执行位。 t 如果设置了  sticky  位，而且也设置了相应的可执行位。  T</span>
+      <span># 如果设置了 sticky 位，但是没有设置相应的可执行位。              x</span>
+      <span># 如果仅仅设置了可执行位而非以上四种情况。 - 其它情况（即可执行位未设置）。</span>
+-m, --format<span>=</span>commas
+      <span># 水平列出文件，每行尽可能多，相互用逗号和一个空格分隔。</span>
+-n, --numeric-uid-gid
+      <span># 列出数字化的 UID 和 GID 而不是用户名和组名。</span>
+-o    <span>#  以长格式列出目录内容，但是不显示组信息。等于使用“         --format=long          --no-group</span>
+      <span># ”选项。提供此选项是为了与其它版本的 ls 兼容。</span>
+-p    <span>#  在每个文件名后附上一个字符以说明该文件的类型。类似“ -F ”选项但是不 标示可执行文件。</span>
+-q, --hide-control-chars
+      <span># 用问号代替文件名中非打印的字符。这是缺省选项。</span>
+-r, --reverse
+      <span># 逆序排列目录内容。</span>
+-s, --size
+      <span># 在每个文件名左侧输出该文件的大小，以    1024   字节的块为单位。如果设置了   POSIXLY_CORRECT</span>
+      <span># 的环境变量，除非用“ -k ”选项，块大小是 512 字节。</span>
+-t, --sort<span>=</span>time
+      <span># 按文件最近修改时间（ i 节点中的 mtime ）而不是按文件名字典序排序，新文件 靠前。</span>
+-u, --time<span>=</span>atime, --time<span>=</span>access, --time<span>=</span>use
+      <span># 类似选项“    -t    ”，但是用文件最近访问时间（    i     节点中的     atime     ）取代文件修</span>
+      <span># 改时间。如果使用长格式列出，打印的时间是最近访问时间。</span>
+-w, --width cols
+       <span># 假定屏幕宽度是      cols      （      cols     以实际数字取代）列。如未用此选项，缺省值是这</span>
+       <span># 样获得的：如可能先尝试取自终端驱动，否则尝试取自环境变量          COLUMNS          （如果设</span>
+       <span># 置了的话），都不行则取 80 。</span>
+
+-x, --format<span>=</span>across, --format<span>=</span>horizontal
+       <span># 多列输出，横向排序。</span>
+
+-A, --almost-all
+       <span># 显示除 "." 和 ".." 外的所有文件。</span>
+
+-B, --ignore-backups
+       <span># 不输出以“ ~ ”结尾的备份文件，除非已经在命令行中给出。</span>
+
+-C, --format<span>=</span>vertical
+       <span># 多列输出，纵向排序。当标准输出是终端时这是缺省项。使用命令名 dir 和 d 时， 则总是缺省的。</span>
+
+-D, --dired
+       <span># 当采用长格式（“-l”选项）输出时，在主要输出后，额外打印一行：  //DIRED//  BEG1 END1 BEG2</span>
+       <span># END2 ...</span>
+
+<span># BEGn 和 ENDn 是无符号整数，记录每个文件名的起始、结束位置在输出中的位置（</span>
+<span>#        字节偏移量）。这使得          Emacs          易于找到文件名，即使文件名包含空格或换行等非正</span>
+<span>#        常字符也无需特异的搜索。</span>
+<span># </span>
+<span># 如果目录是递归列出的（“ -R ”选项），每个子目录后列出类似一行：</span>
+       <span># //SUBDIRED//  BEG1 END1 ...  【译注：我测试了 TurboLinux4.0 和 RedHat6.1 ，发现它们都是在 “</span>
+       <span># //DIRED//     BEG1...     ”之后列出“     //SUBDIRED//     BEG1     ...      ”，也即只有一个</span>
+       <span># 而不是在每个子目录后都有。而且“ //SUBDIRED// BEG1 ... ”列出的是各个子目 录名的偏移。】</span>
+
+-F, --classify, --file-type
+       <span># 在每个文件名后附上一个字符以说明该文件的类型。“  * ”表示普通的可执行文件； “ / ”表示目录；“</span>
+       <span># @ ”表示符号链接；“ | ”表示FIFOs；“ = ”表示套接字 (sockets) ；什么也没有则表示普通文件。</span>
+
+-G, --no-group
+       <span># 以长格式列目录时不显示组信息。</span>
+
+-I, --ignorepattern
+       <span># 除非在命令行中给定，不要列出匹配shell文件名匹配式（pattern ，不是指一般</span>
+       <span># 表达式）的文件。在shell中，文件名以"."起始的不与在文件名匹配式(pattern)</span>
+       <span># 开头的通配符匹配。</span>
+
+-L, --dereference
+       <span># 列出符号链接指向的文件的信息，而不是符号链接本身。</span>
+
+-N, --literal
+       <span># 不要用引号引起文件名。</span>
+
+-Q, --quote-name
+       <span># 用双引号引起文件名，非打印字符以 C 语言的方法表示。</span>
+
+-R, --recursive
+       <span># 递归列出全部目录的内容。</span>
+
+-S, --sort<span>=</span>size
+       <span># 按文件大小而不是字典序排序目录内容，大文件靠前。</span>
+
+-T, --tabsize cols
+       <span># 假定每个制表符宽度是 cols 。缺省为 8。为求效率， ls 可能在输出中使用制表符。  若 cols 为</span>
+       <span>0</span>，则不使用制表符。
+
+-U, --sort<span>=</span>none
+       <span># 不排序目录内容；按它们在磁盘上存储的顺序列出。（选项“-U”和“-f”的不</span>
+       <span># 同是前者不启动或禁止相关的选项。）这在列很大的目录时特别有用，因为不加排序</span>
+       <span># 能显著的加快速度。</span>
+
+-X, --sort<span>=</span>extension
+       <span># 按文件扩展名（由最后的 "." 之后的字符组成）的字典序排序。没有扩展名的先列 出。</span>
+
+--color<span>[</span><span>=</span>when<span>]</span>
+       <span># 指定是否使用颜色区别文件类别。环境变量  LS_COLORS  指定使用的颜色。如何设置 这个变量见 dir‐</span>
+       <span># colors(1) 。 when 可以被省略，或是以下几项之一：</span>
+none <span># 不使用颜色，这是缺省项。</span>
+       <span># auto 仅当标准输出是终端时使用。 always 总是使用颜色。指定 --color 而且省略 when  时就等同于</span>
+       <span># --color=always 。</span>
+
+--full-time
+       <span># 列出完整的时间，而不是使用标准的缩写。格式如同          date(1)          的缺省格式；此格式</span>
+       <span># 是不能改变的，但是你可以用 cut(1) 取出其中的日期字串并将结果送至命令 “ date -d ”。</span>
+
+<span># 输出的时间包括秒是非常有用的。（ Unix 文件系统储存文件的时间信息精确到秒，</span>
+       <span># 因此这个选项已经给出了系统所知的全部信息。）例如，当你有一个         Makefile          文件</span>
+       <span># 不能恰当的生成文件时，这个选项会提供帮助。</span></code></pre>
+<h3>参数</h3><p>目录：指定要显示列表的目录，也可以是具体的文件。</p>
+<h3>实例</h3><pre><code>&#36; <span>ls</span>       <span># 仅列出当前目录可见文件</span>
+&#36; <span>ls</span> -l    <span># 列出当前目录可见文件详细信息</span>
+&#36; <span>ls</span> -hl   <span># 列出详细信息并以可读大小显示文件大小</span>
+&#36; <span>ls</span> -al   <span># 列出所有文件（包括隐藏）的详细信息</span></code></pre>
+<p>显示当前目录下包括影藏文件在内的所有文件列表</p>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># ls -a</span>
+<span>.</span>   anaconda-ks.cfg  .bash_logout   .bashrc  install.log         .mysql_history  satools  .tcshrc   .vimrc
+<span>..</span>  .bash_history    .bash_profile  .cshrc   install.log.syslog  .rnd            .ssh     .viminfo</code></pre>
+<p>输出长格式列表</p>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># ls -1</span>
+
+anaconda-ks.cfg
+install.log
+install.log.syslog
+satools</code></pre>
+<p>显示文件的inode信息</p>
+<p>索引节点（index inode简称为“inode”）是Linux中一个特殊的概念，具有相同的索引节点号的两个文本本质上是同一个文件（除文件名不同外）。</p>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># ls -i -l anaconda-ks.cfg install.log</span>
+<span>2345481</span> -rw------- <span>1</span> root root   <span>859</span> Jun <span>11</span> <span>22</span>:49 anaconda-ks.cfg
+<span>2345474</span> -rw-r--r-- <span>1</span> root root <span>13837</span> Jun <span>11</span> <span>22</span>:49 install.log</code></pre>
+<p>水平输出文件列表</p>
+<pre><code><span>[</span>root@localhost /<span>]</span><span># ls -m</span>
+
+bin, boot, data, dev, etc, home, lib, lost+found, media, misc, mnt, opt, proc, root, sbin, selinux, srv, sys, tmp, usr, var</code></pre>
+<p>修改最后一次编辑的文件</p>
+<p>最近修改的文件显示在最上面。</p>
+<pre><code><span>[</span>root@localhost /<span>]</span><span># ls -t</span>
+
+tmp  root  etc  dev  lib  boot  sys  proc  data  home  bin  sbin  usr  var  lost+found  media  mnt  opt  selinux  srv  misc</code></pre>
+<p>显示递归文件</p>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># ls -R</span>
+.:
+anaconda-ks.cfg  install.log  install.log.syslog  satools
+
+./satools:
+black.txt  freemem.sh  iptables.sh  lnmp.sh  mysql  php502_check.sh  ssh_safe.sh</code></pre>
+<p>打印文件的UID和GID</p>
+<pre><code><span>[</span>root@localhost /<span>]</span><span># ls -n</span>
+
+total <span>254</span>
+drwxr-xr-x   <span>2</span> <span>0</span> <span>0</span>  <span>4096</span> Jun <span>12</span> 04:03 bin
+drwxr-xr-x   <span>4</span> <span>0</span> <span>0</span>  <span>1024</span> Jun <span>15</span> <span>14</span>:45 boot
+drwxr-xr-x   <span>6</span> <span>0</span> <span>0</span>  <span>4096</span> Jun <span>12</span> <span>10</span>:26 data
+drwxr-xr-x  <span>10</span> <span>0</span> <span>0</span>  <span>3520</span> Sep <span>26</span> <span>15</span>:38 dev
+drwxr-xr-x  <span>75</span> <span>0</span> <span>0</span>  <span>4096</span> Oct <span>16</span> 04:02 etc
+drwxr-xr-x   <span>4</span> <span>0</span> <span>0</span>  <span>4096</span> Jun <span>12</span> <span>10</span>:26 home
+drwxr-xr-x  <span>14</span> <span>0</span> <span>0</span> <span>12288</span> Jun <span>16</span> 04:02 lib
+drwx------   <span>2</span> <span>0</span> <span>0</span> <span>16384</span> Jun <span>11</span> <span>22</span>:46 lost+found
+drwxr-xr-x   <span>2</span> <span>0</span> <span>0</span>  <span>4096</span> May <span>11</span>  <span>2011</span> media
+drwxr-xr-x   <span>2</span> <span>0</span> <span>0</span>  <span>4096</span> Nov  <span>8</span>  <span>2010</span> misc
+drwxr-xr-x   <span>2</span> <span>0</span> <span>0</span>  <span>4096</span> May <span>11</span>  <span>2011</span> mnt
+drwxr-xr-x   <span>2</span> <span>0</span> <span>0</span>  <span>4096</span> May <span>11</span>  <span>2011</span> opt
+dr-xr-xr-x <span>232</span> <span>0</span> <span>0</span>     <span>0</span> Jun <span>15</span> <span>11</span>:04 proc
+drwxr-x---   <span>4</span> <span>0</span> <span>0</span>  <span>4096</span> Oct <span>15</span> <span>14</span>:43 root
+drwxr-xr-x   <span>2</span> <span>0</span> <span>0</span> <span>12288</span> Jun <span>12</span> 04:03 sbin
+drwxr-xr-x   <span>2</span> <span>0</span> <span>0</span>  <span>4096</span> May <span>11</span>  <span>2011</span> selinux
+drwxr-xr-x   <span>2</span> <span>0</span> <span>0</span>  <span>4096</span> May <span>11</span>  <span>2011</span> srv
+drwxr-xr-x  <span>11</span> <span>0</span> <span>0</span>     <span>0</span> Jun <span>15</span> <span>11</span>:04 sys
+drwxrwxrwt   <span>3</span> <span>0</span> <span>0</span> <span>98304</span> Oct <span>16</span> 08:45 tmp
+drwxr-xr-x  <span>13</span> <span>0</span> <span>0</span>  <span>4096</span> Jun <span>11</span> <span>23</span>:38 usr
+drwxr-xr-x  <span>19</span> <span>0</span> <span>0</span>  <span>4096</span> Jun <span>11</span> <span>23</span>:38 var</code></pre>
+<p>列出文件和文件夹的详细信息</p>
+<pre><code><span>[</span>root@localhost /<span>]</span><span># ls -l</span>
+
+total <span>254</span>
+drwxr-xr-x   <span>2</span> root root  <span>4096</span> Jun <span>12</span> 04:03 bin
+drwxr-xr-x   <span>4</span> root root  <span>1024</span> Jun <span>15</span> <span>14</span>:45 boot
+drwxr-xr-x   <span>6</span> root root  <span>4096</span> Jun <span>12</span> <span>10</span>:26 data
+drwxr-xr-x  <span>10</span> root root  <span>3520</span> Sep <span>26</span> <span>15</span>:38 dev
+drwxr-xr-x  <span>75</span> root root  <span>4096</span> Oct <span>16</span> 04:02 etc
+drwxr-xr-x   <span>4</span> root root  <span>4096</span> Jun <span>12</span> <span>10</span>:26 home
+drwxr-xr-x  <span>14</span> root root <span>12288</span> Jun <span>16</span> 04:02 lib
+drwx------   <span>2</span> root root <span>16384</span> Jun <span>11</span> <span>22</span>:46 lost+found
+drwxr-xr-x   <span>2</span> root root  <span>4096</span> May <span>11</span>  <span>2011</span> media
+drwxr-xr-x   <span>2</span> root root  <span>4096</span> Nov  <span>8</span>  <span>2010</span> misc
+drwxr-xr-x   <span>2</span> root root  <span>4096</span> May <span>11</span>  <span>2011</span> mnt
+drwxr-xr-x   <span>2</span> root root  <span>4096</span> May <span>11</span>  <span>2011</span> opt
+dr-xr-xr-x <span>232</span> root root     <span>0</span> Jun <span>15</span> <span>11</span>:04 proc
+drwxr-x---   <span>4</span> root root  <span>4096</span> Oct <span>15</span> <span>14</span>:43 root
+drwxr-xr-x   <span>2</span> root root <span>12288</span> Jun <span>12</span> 04:03 sbin
+drwxr-xr-x   <span>2</span> root root  <span>4096</span> May <span>11</span>  <span>2011</span> selinux
+drwxr-xr-x   <span>2</span> root root  <span>4096</span> May <span>11</span>  <span>2011</span> srv
+drwxr-xr-x  <span>11</span> root root     <span>0</span> Jun <span>15</span> <span>11</span>:04 sys
+drwxrwxrwt   <span>3</span> root root <span>98304</span> Oct <span>16</span> 08:48 tmp
+drwxr-xr-x  <span>13</span> root root  <span>4096</span> Jun <span>11</span> <span>23</span>:38 usr
+drwxr-xr-x  <span>19</span> root root  <span>4096</span> Jun <span>11</span> <span>23</span>:38 var</code></pre>
+<p>列出可读文件和文件夹详细信息</p>
+<pre><code><span>[</span>root@localhost /<span>]</span><span># ls -lh</span>
+
+total 254K
+drwxr-xr-x   <span>2</span> root root <span>4</span>.0K Jun <span>12</span> 04:03 bin
+drwxr-xr-x   <span>4</span> root root <span>1</span>.0K Jun <span>15</span> <span>14</span>:45 boot
+drwxr-xr-x   <span>6</span> root root <span>4</span>.0K Jun <span>12</span> <span>10</span>:26 data
+drwxr-xr-x  <span>10</span> root root <span>3</span>.5K Sep <span>26</span> <span>15</span>:38 dev
+drwxr-xr-x  <span>75</span> root root <span>4</span>.0K Oct <span>16</span> 04:02 etc
+drwxr-xr-x   <span>4</span> root root <span>4</span>.0K Jun <span>12</span> <span>10</span>:26 home
+drwxr-xr-x  <span>14</span> root root  12K Jun <span>16</span> 04:02 lib
+drwx------   <span>2</span> root root  16K Jun <span>11</span> <span>22</span>:46 lost+found
+drwxr-xr-x   <span>2</span> root root <span>4</span>.0K May <span>11</span>  <span>2011</span> media
+drwxr-xr-x   <span>2</span> root root <span>4</span>.0K Nov  <span>8</span>  <span>2010</span> misc
+drwxr-xr-x   <span>2</span> root root <span>4</span>.0K May <span>11</span>  <span>2011</span> mnt
+drwxr-xr-x   <span>2</span> root root <span>4</span>.0K May <span>11</span>  <span>2011</span> opt
+dr-xr-xr-x <span>235</span> root root    <span>0</span> Jun <span>15</span> <span>11</span>:04 proc
+drwxr-x---   <span>4</span> root root <span>4</span>.0K Oct <span>15</span> <span>14</span>:43 root
+drwxr-xr-x   <span>2</span> root root  12K Jun <span>12</span> 04:03 sbin
+drwxr-xr-x   <span>2</span> root root <span>4</span>.0K May <span>11</span>  <span>2011</span> selinux
+drwxr-xr-x   <span>2</span> root root <span>4</span>.0K May <span>11</span>  <span>2011</span> srv
+drwxr-xr-x  <span>11</span> root root    <span>0</span> Jun <span>15</span> <span>11</span>:04 sys
+drwxrwxrwt   <span>3</span> root root  96K Oct <span>16</span> 08:49 tmp
+drwxr-xr-x  <span>13</span> root root <span>4</span>.0K Jun <span>11</span> <span>23</span>:38 usr
+drwxr-xr-x  <span>19</span> root root <span>4</span>.0K Jun <span>11</span> <span>23</span>:38 var</code></pre>
+<p>显示文件夹信息</p>
+<pre><code><span>[</span>root@localhost /<span>]</span><span># ls -ld /etc/</span>
+
+drwxr-xr-x <span>75</span> root root <span>4096</span> Oct <span>16</span> 04:02 /etc/</code></pre>
+<p>按时间列出文件和文件夹详细信息</p>
+<pre><code><span>[</span>root@localhost /<span>]</span><span># ls -lt</span>
+
+total <span>254</span>
+drwxrwxrwt   <span>3</span> root root <span>98304</span> Oct <span>16</span> 08:53 tmp
+drwxr-xr-x  <span>75</span> root root  <span>4096</span> Oct <span>16</span> 04:02 etc
+drwxr-x---   <span>4</span> root root  <span>4096</span> Oct <span>15</span> <span>14</span>:43 root
+drwxr-xr-x  <span>10</span> root root  <span>3520</span> Sep <span>26</span> <span>15</span>:38 dev
+drwxr-xr-x  <span>14</span> root root <span>12288</span> Jun <span>16</span> 04:02 lib
+drwxr-xr-x   <span>4</span> root root  <span>1024</span> Jun <span>15</span> <span>14</span>:45 boot
+drwxr-xr-x  <span>11</span> root root     <span>0</span> Jun <span>15</span> <span>11</span>:04 sys
+dr-xr-xr-x <span>232</span> root root     <span>0</span> Jun <span>15</span> <span>11</span>:04 proc
+drwxr-xr-x   <span>6</span> root root  <span>4096</span> Jun <span>12</span> <span>10</span>:26 data
+drwxr-xr-x   <span>4</span> root root  <span>4096</span> Jun <span>12</span> <span>10</span>:26 home
+drwxr-xr-x   <span>2</span> root root  <span>4096</span> Jun <span>12</span> 04:03 bin
+drwxr-xr-x   <span>2</span> root root <span>12288</span> Jun <span>12</span> 04:03 sbin
+drwxr-xr-x  <span>13</span> root root  <span>4096</span> Jun <span>11</span> <span>23</span>:38 usr
+drwxr-xr-x  <span>19</span> root root  <span>4096</span> Jun <span>11</span> <span>23</span>:38 var
+drwx------   <span>2</span> root root <span>16384</span> Jun <span>11</span> <span>22</span>:46 lost+found
+drwxr-xr-x   <span>2</span> root root  <span>4096</span> May <span>11</span>  <span>2011</span> media
+drwxr-xr-x   <span>2</span> root root  <span>4096</span> May <span>11</span>  <span>2011</span> mnt
+drwxr-xr-x   <span>2</span> root root  <span>4096</span> May <span>11</span>  <span>2011</span> opt
+drwxr-xr-x   <span>2</span> root root  <span>4096</span> May <span>11</span>  <span>2011</span> selinux
+drwxr-xr-x   <span>2</span> root root  <span>4096</span> May <span>11</span>  <span>2011</span> srv
+drwxr-xr-x   <span>2</span> root root  <span>4096</span> Nov  <span>8</span>  <span>2010</span> misc</code></pre>
+<p>按修改时间列出文件和文件夹详细信息</p>
+<pre><code><span>[</span>root@localhost /<span>]</span><span># ls -ltr</span>
+
+total <span>254</span>
+drwxr-xr-x   <span>2</span> root root  <span>4096</span> Nov  <span>8</span>  <span>2010</span> misc
+drwxr-xr-x   <span>2</span> root root  <span>4096</span> May <span>11</span>  <span>2011</span> srv
+drwxr-xr-x   <span>2</span> root root  <span>4096</span> May <span>11</span>  <span>2011</span> selinux
+drwxr-xr-x   <span>2</span> root root  <span>4096</span> May <span>11</span>  <span>2011</span> opt
+drwxr-xr-x   <span>2</span> root root  <span>4096</span> May <span>11</span>  <span>2011</span> mnt
+drwxr-xr-x   <span>2</span> root root  <span>4096</span> May <span>11</span>  <span>2011</span> media
+drwx------   <span>2</span> root root <span>16384</span> Jun <span>11</span> <span>22</span>:46 lost+found
+drwxr-xr-x  <span>19</span> root root  <span>4096</span> Jun <span>11</span> <span>23</span>:38 var
+drwxr-xr-x  <span>13</span> root root  <span>4096</span> Jun <span>11</span> <span>23</span>:38 usr
+drwxr-xr-x   <span>2</span> root root <span>12288</span> Jun <span>12</span> 04:03 sbin
+drwxr-xr-x   <span>2</span> root root  <span>4096</span> Jun <span>12</span> 04:03 bin
+drwxr-xr-x   <span>4</span> root root  <span>4096</span> Jun <span>12</span> <span>10</span>:26 home
+drwxr-xr-x   <span>6</span> root root  <span>4096</span> Jun <span>12</span> <span>10</span>:26 data
+dr-xr-xr-x <span>232</span> root root     <span>0</span> Jun <span>15</span> <span>11</span>:04 proc
+drwxr-xr-x  <span>11</span> root root     <span>0</span> Jun <span>15</span> <span>11</span>:04 sys
+drwxr-xr-x   <span>4</span> root root  <span>1024</span> Jun <span>15</span> <span>14</span>:45 boot
+drwxr-xr-x  <span>14</span> root root <span>12288</span> Jun <span>16</span> 04:02 lib
+drwxr-xr-x  <span>10</span> root root  <span>3520</span> Sep <span>26</span> <span>15</span>:38 dev
+drwxr-x---   <span>4</span> root root  <span>4096</span> Oct <span>15</span> <span>14</span>:43 root
+drwxr-xr-x  <span>75</span> root root  <span>4096</span> Oct <span>16</span> 04:02 etc
+drwxrwxrwt   <span>3</span> root root <span>98304</span> Oct <span>16</span> 08:54 tmp</code></pre>
+<p>按照特殊字符对文件进行分类</p>
+<pre><code><span>[</span>root@localhost nginx-1.2.1<span>]</span><span># ls -F</span>
+
+auto/  CHANGES  CHANGES.ru  conf/  configure*  contrib/  html/  LICENSE  Makefile  man/  objs/  README  src/</code></pre>
+<p>列出文件并标记颜色分类</p>
+<pre><code><span>[</span>root@localhost nginx-1.2.1<span>]</span><span># ls --color=auto</span>
+
+auto  CHANGES  CHANGES.ru  conf  configure  contrib  html  LICENSE  Makefile  <span>man</span>  objs  README  src</code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

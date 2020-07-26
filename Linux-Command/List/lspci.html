@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>lspci:显示当前主机的所有PCI总线信息</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="lspci:显示当前主机的所有PCI总线信息 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>lspci</h1><p>显示当前主机的所有PCI总线信息</p>
+<h2>补充说明</h2><p><strong>lspci命令</strong> 用于显示当前主机的所有PCI总线信息，以及所有已连接的PCI设备信息。</p>
+<h3>语法</h3><pre><code>lspci<span>(</span>选项<span>)</span></code></pre>
+<h3>选项</h3><pre><code>-n：以数字方式显示PCI厂商和设备代码；
+-t：以树状结构显示PCI设备的层次关系，包括所有的总线、桥、设备以及它们之间的联接；
+-b：以总线为中心的视图；
+-d：仅显示给定厂商和设备的信息；
+-s：仅显示指定总线、插槽上的设备和设备上的功能块信息；
+-i：指定PCI编号列表文件，而不使用默认的文件；
+-m：以机器可读方式显示PCI设备信息。</code></pre>
+<h3>实例</h3><pre><code><span>[</span>root@localhost ~<span>]</span><span># lspci</span>
+00:00.0 <span>host</span> bridge: Intel Corporation <span>5500</span> I/O Hub to ESI Port <span>(</span>rev <span>22</span><span>)</span>
+00:01.0 PCI bridge: Intel Corporation <span>5520</span>/5500/X58 I/O Hub PCI Express Root Port <span>1</span> <span>(</span>rev <span>22</span><span>)</span>
+00:02.0 PCI bridge: Intel Corporation <span>5520</span>/5500/X58 I/O Hub PCI Express Root Port <span>2</span> <span>(</span>rev <span>22</span><span>)</span>
+00:03.0 PCI bridge: Intel Corporation <span>5520</span>/5500/X58 I/O Hub PCI Express Root Port <span>3</span> <span>(</span>rev <span>22</span><span>)</span>
+00:07.0 PCI bridge: Intel Corporation <span>5520</span>/5500/X58 I/O Hub PCI Express Root Port <span>7</span> <span>(</span>rev <span>22</span><span>)</span>
+00:08.0 PCI bridge: Intel Corporation <span>5520</span>/5500/X58 I/O Hub PCI Express Root Port <span>8</span> <span>(</span>rev <span>22</span><span>)</span>
+00:09.0 PCI bridge: Intel Corporation <span>5520</span>/5500/X58 I/O Hub PCI Express Root Port <span>9</span> <span>(</span>rev <span>22</span><span>)</span>
+00:0a.0 PCI bridge: Intel Corporation <span>5520</span>/5500/X58 I/O Hub PCI Express Root Port <span>10</span> <span>(</span>rev <span>22</span><span>)</span>
+00:10.0 PIC: Intel Corporation <span>5520</span>/5500/X58 Physical and Link Layer Registers Port <span>0</span> <span>(</span>rev <span>22</span><span>)</span>
+00:10.1 PIC: Intel Corporation <span>5520</span>/5500/X58 Routing and Protocol Layer Registers Port <span>0</span> <span>(</span>rev <span>22</span><span>)</span>
+00:11.0 PIC: Intel Corporation <span>5520</span>/5500 Physical and Link Layer Registers Port <span>1</span> <span>(</span>rev <span>22</span><span>)</span>
+00:11.1 PIC: Intel Corporation <span>5520</span>/5500 Routing <span>&amp;</span> Protocol Layer Register Port <span>1</span> <span>(</span>rev <span>22</span><span>)</span>
+00:14.0 PIC: Intel Corporation <span>5520</span>/5500/X58 I/O Hub System Management Registers <span>(</span>rev <span>22</span><span>)</span>
+00:14.1 PIC: Intel Corporation <span>5520</span>/5500/X58 I/O Hub GPIO and Scratch Pad Registers <span>(</span>rev <span>22</span><span>)</span>
+00:14.2 PIC: Intel Corporation <span>5520</span>/5500/X58 I/O Hub Control Status and RAS Registers <span>(</span>rev <span>22</span><span>)</span>
+00:14.3 PIC: Intel Corporation <span>5520</span>/5500/X58 I/O Hub Throttle Registers <span>(</span>rev <span>22</span><span>)</span>
+00:16.0 System peripheral: Intel Corporation <span>5520</span>/5500/X58 Chipset QuickData Technology Device <span>(</span>rev <span>22</span><span>)</span>
+00:16.1 System peripheral: Intel Corporation <span>5520</span>/5500/X58 Chipset QuickData Technology Device <span>(</span>rev <span>22</span><span>)</span>
+00:16.2 System peripheral: Intel Corporation <span>5520</span>/5500/X58 Chipset QuickData Technology Device <span>(</span>rev <span>22</span><span>)</span>
+00:16.3 System peripheral: Intel Corporation <span>5520</span>/5500/X58 Chipset QuickData Technology Device <span>(</span>rev <span>22</span><span>)</span>
+00:16.4 System peripheral: Intel Corporation <span>5520</span>/5500/X58 Chipset QuickData Technology Device <span>(</span>rev <span>22</span><span>)</span>
+00:16.5 System peripheral: Intel Corporation <span>5520</span>/5500/X58 Chipset QuickData Technology Device <span>(</span>rev <span>22</span><span>)</span>
+00:16.6 System peripheral: Intel Corporation <span>5520</span>/5500/X58 Chipset QuickData Technology Device <span>(</span>rev <span>22</span><span>)</span>
+00:16.7 System peripheral: Intel Corporation <span>5520</span>/5500/X58 Chipset QuickData Technology Device <span>(</span>rev <span>22</span><span>)</span>
+00:1a.0 USB controller: Intel Corporation 82801JI <span>(</span>ICH10 Family<span>)</span> USB UHCI Controller <span>#4</span>
+00:1a.1 USB controller: Intel Corporation 82801JI <span>(</span>ICH10 Family<span>)</span> USB UHCI Controller <span>#5</span>
+00:1a.7 USB controller: Intel Corporation 82801JI <span>(</span>ICH10 Family<span>)</span> USB2 EHCI Controller <span>#2</span>
+00:1b.0 Audio device: Intel Corporation 82801JI <span>(</span>ICH10 Family<span>)</span> HD Audio Controller
+00:1c.0 PCI bridge: Intel Corporation 82801JI <span>(</span>ICH10 Family<span>)</span> PCI Express Root Port <span>1</span>
+00:1c.4 PCI bridge: Intel Corporation 82801JI <span>(</span>ICH10 Family<span>)</span> PCI Express Root Port <span>5</span>
+00:1c.5 PCI bridge: Intel Corporation 82801JI <span>(</span>ICH10 Family<span>)</span> PCI Express Root Port <span>6</span>
+00:1d.0 USB controller: Intel Corporation 82801JI <span>(</span>ICH10 Family<span>)</span> USB UHCI Controller <span>#1</span>
+00:1d.1 USB controller: Intel Corporation 82801JI <span>(</span>ICH10 Family<span>)</span> USB UHCI Controller <span>#2</span>
+00:1d.2 USB controller: Intel Corporation 82801JI <span>(</span>ICH10 Family<span>)</span> USB UHCI Controller <span>#3</span>
+00:1d.3 USB controller: Intel Corporation 82801JI <span>(</span>ICH10 Family<span>)</span> USB UHCI Controller <span>#6</span>
+00:1d.7 USB controller: Intel Corporation 82801JI <span>(</span>ICH10 Family<span>)</span> USB2 EHCI Controller <span>#1</span>
+00:1e.0 PCI bridge: Intel Corporation <span>82801</span> PCI Bridge <span>(</span>rev <span>90</span><span>)</span>
+00:1f.0 ISA bridge: Intel Corporation 82801JIR <span>(</span>ICH10R<span>)</span> <span>lpc</span> Interface Controller
+00:1f.2 IDE interface: Intel Corporation 82801JI <span>(</span>ICH10 Family<span>)</span> <span>4</span> port SATA IDE Controller <span>#1</span>
+00:1f.3 SMBus: Intel Corporation 82801JI <span>(</span>ICH10 Family<span>)</span> SMBus Controller
+00:1f.5 IDE interface: Intel Corporation 82801JI <span>(</span>ICH10 Family<span>)</span> <span>2</span> port SATA IDE Controller <span>#2</span>
+01:01.0 VGA compatible controller: ASPEED Technology, Inc. ASPEED Graphics Family <span>(</span>rev <span>10</span><span>)</span>
+02:00.0 Ethernet controller: Intel Corporation 82574L Gigabit Network Connection
+03:00.0 Ethernet controller: Intel Corporation 82574L Gigabit Network Connection
+04:00.0 Serial Attached SCSI controller: LSI Logic / Symbios Logic SAS2008 PCI-Express Fusion-MPT SAS-2 <span>[</span>Falcon<span>]</span> <span>(</span>rev 03<span>)</span></code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>ldd:打印程序或者库文件所依赖的共享库列表</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="ldd:打印程序或者库文件所依赖的共享库列表 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>ldd</h1><p>打印程序或者库文件所依赖的共享库列表</p>
+<h2>补充说明</h2><p><strong>ldd命令</strong> 用于打印程序或者库文件所依赖的共享库列表。</p>
+<h3>语法</h3><pre><code>ldd<span>(</span>选项<span>)</span><span>(</span>参数<span>)</span></code></pre>
+<h3>选项</h3><pre><code>--version：打印指令版本号；
+-v：详细信息模式，打印所有相关信息；
+-u：打印未使用的直接依赖；
+-d：执行重定位和报告任何丢失的对象；
+-r：执行数据对象和函数的重定位，并且报告任何丢失的对象和函数；
+--help：显示帮助信息。</code></pre>
+<h3>参数</h3><p>文件：指定可执行程序或者文库。</p>
+<h3>其他介绍</h3><p>首先ldd不是一个可执行程序，而只是一个shell脚本</p>
+<p>ldd能够显示可执行模块的dependency，其原理是通过设置一系列的环境变量，如下：<code>LD_TRACE_LOADED_OBJECTS、LD_WARN、LD_BIND_NOW、LD_LIBRARY_VERSION、LD_VERBOSE</code>等。当<code>LD_TRACE_LOADED_OBJECTS</code>环境变量不为空时，任何可执行程序在运行时，它都会只显示模块的dependency，而程序并不真正执行。要不你可以在shell终端测试一下，如下：</p>
+<pre><code><span>export</span> <span>LD_TRACE_LOADED_OBJECTS</span><span>=</span><span>1</span></code></pre>
+<p>再执行任何的程序，如ls等，看看程序的运行结果。</p>
+<p>ldd显示可执行模块的dependency的工作原理，其实质是通过ld-linux.so（elf动态库的装载器）来实现的。我们知道，ld-linux.so模块会先于executable模块程序工作，并获得控制权，因此当上述的那些环境变量被设置时，ld-linux.so选择了显示可执行模块的dependency。</p>
+<p>实际上可以直接执行ld-linux.so模块，如：<code>/lib/ld-linux.so.2 --list program</code>（这相当于ldd program）</p>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

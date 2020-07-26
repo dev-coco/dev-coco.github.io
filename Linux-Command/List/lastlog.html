@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>lastlog:显示系统中所有用户最近一次登录信息</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="lastlog:显示系统中所有用户最近一次登录信息 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>lastlog</h1><p>显示系统中所有用户最近一次登录信息</p>
+<h2>补充说明</h2><p><strong>lastlog命令</strong> 用于显示系统中所有用户最近一次登录信息。</p>
+<p>lastlog文件在每次有用户登录时被查询。可以使用lastlog命令检查某特定用户上次登录的时间，并格式化输出上次登录日志<code>/var/log/lastlog</code>的内容。它根据UID排序显示登录名、端口号（tty）和上次登录时间。如果一个用户从未登录过，lastlog显示<code>**Never logged**</code>。注意需要以root身份运行该命令。</p>
+<h3>语法</h3><pre><code>lastlog<span>(</span>选项<span>)</span></code></pre>
+<h3>选项</h3><pre><code>-b<span>&lt;</span>天数<span>></span>：显示指定天数前的登录信息；
+-h：显示召集令的帮助信息；
+-t<span>&lt;</span>天数<span>></span>：显示指定天数以来的登录信息；
+-u<span>&lt;</span>用户名<span>></span>：显示指定用户的最近登录信息。</code></pre>
+<h3>实例</h3><pre><code>lastlog
+Username         Port     From             Latest
+root             pts/0    <span>221.6</span>.45.34      Tue Dec <span>17</span> 09:40:48 +0800 <span>2013</span>
+bin                                         **Never logged in**
+daemon                                      **Never logged in**
+adm                                         **Never logged in**
+lp                                          **Never logged in**
+<span>sync</span>                                        **Never logged in**
+<span>shutdown</span>                                    **Never logged in**
+<span>halt</span>                                        **Never logged in**
+mail                                        **Never logged in**
+news                                        **Never logged in**
+uucp                                        **Never logged in**
+operator                                    **Never logged in**
+games                                       **Never logged in**
+gopher                                      **Never logged in**
+<span>ftp</span>                                         **Never logged in**
+nobody                                      **Never logged in**
+vcsa                                        **Never logged in**
+ntp                                         **Never logged in**
+sshd                                        **Never logged in**
+nscd                                        **Never logged in**
+ldap                                        **Never logged in**
+postfix                                     **Never logged in**
+www                                         **Never logged in**
+mysql                                       **Never logged in** </code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

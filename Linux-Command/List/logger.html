@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>logger:在系统日志中记录相应条目</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="logger:在系统日志中记录相应条目 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>logger</h1><p>在系统日志中记录相应条目</p>
+<h2>补充说明</h2><p><strong>logger命令</strong> 是用于往系统中写入日志，他提供一个shell命令接口到syslog系统模块</p>
+<h3>语法</h3><pre><code>logger <span>[</span>options<span>]</span> <span>[</span>message<span>]</span></code></pre>
+<h3>选项</h3><pre><code> -T, --tcp             使用流连接<span>(</span>TCP<span>)</span>
+ -d, --udp             使用数据报<span>(</span>UDP<span>)</span>
+ -i, --id              逐行记录每一次logger的进程ID
+ -f, --file <span>&lt;</span>file<span>></span>     记录特定的文件
+ -h, --help            显示帮助文本并退出
+ -n, --server <span>&lt;</span>name<span>></span>   写入指定的远程syslog服务器，使用UDP代替内装式syslog的例程
+ -P, --port <span>&lt;</span>port<span>></span>     使用指定的UDP端口。默认的端口号是514
+ -p, --priority <span>&lt;</span>prio<span>></span> 指定输入消息的优先级，优先级可以是数字或者指定为 <span>" facility.level"</span> 的格式。
+                       比如：<span>" -p local3.info "</span> local3 这个设备的消息级别为 info。
+                       默认级别是 <span>"user.notice"</span>
+ -s, --stderr          输出标准错误到系统日志。
+ -t, --tag <span>&lt;</span>tag<span>></span>       指定标记记录
+ -u, --socket <span>&lt;</span>socket<span>></span> 写入指定的socket，而不是到内置系统日志例程。
+ -V, --version         输出版本信息并退出</code></pre>
+<h3>例子</h3><pre><code>logger -p syslog.info <span>"backup.sh is starting"</span></code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

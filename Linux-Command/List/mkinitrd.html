@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>mkinitrd:建立要载入ramdisk的映像文件</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="mkinitrd:建立要载入ramdisk的映像文件 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>mkinitrd</h1><p>建立要载入ramdisk的映像文件</p>
+<h2>补充说明</h2><p><strong>mkinitrd命令</strong> 建立要载入ramdisk的映像文件，以供Linux开机时载入ramdisk。</p>
+<p>这个是重新封包核心的命令，例如你自己修改了一个设备的驱动，如果这个驱动要加入核心级别的话，就需要对核心进行重新封包，把新加的配置编译到核心内部去！</p>
+<h3>语法</h3><pre><code>mkinitrd<span>(</span>选项<span>)</span><span>(</span>参数<span>)</span></code></pre>
+<h3>选项</h3><pre><code>-f：若指定的映像问家名称与现有文件重复，则覆盖现有的文件；
+-v：执行时显示详细的信息；
+--omit-scsi-modules：不要载入SCSI模块；
+--preload<span>=</span><span>&lt;</span>模块名称<span>></span>：指定要载入的模块；
+--with<span>=</span><span>&lt;</span>模块名称<span>></span>：指定要载入的模块；
+--version：显示版本信息。</code></pre>
+<h3>参数</h3><ul>
+<li>映像文件：指定要创建的映像文件；</li>
+<li>内核版本：指定内核版本。</li>
+</ul>
+<h3>实例</h3><pre><code><span>[</span>root@localhost tmp<span>]</span><span># mkinitrd -v -f myinitrd.img &#36;(uname -r)</span>
+Creating initramfs
+WARNING: using /tmp <span>for</span> temporary files
+Looking <span>for</span> deps of module ide-disk
+Looking <span>for</span> deps of module ext3  jbd
+Looking <span>for</span> deps of module jbd
+Using modules:  ./kernel/fs/jbd/jbd.ko ./kernel/fs/ext3/ext3.ko
+/sbin/nash -<span>></span> /tmp/initrd.Vz3928/bin/nash
+/sbin/insmod.static -<span>></span> /tmp/initrd.Vz3928/bin/insmod
+/sbin/udev.static -<span>></span> /tmp/initrd.Vz3928/sbin/udev
+/etc/udev/udev.conf -<span>></span> /tmp/initrd.Vz3928/etc/udev/udev.conf
+copy from /lib/modules/2.6.9-5.EL/./kernel/fs/jbd/jbd.ko<span>(</span>elf32-i386<span>)</span> to /tmp/initrd.Vz3928/lib/jbd.ko<span>(</span>elf32-i386<span>)</span>
+copy from /lib/modules/2.6.9-5.EL/./kernel/fs/ext3/ext3.ko<span>(</span>elf32-i386<span>)</span> to /tmp/initrd.Vz3928/lib/ext3.ko<span>(</span>elf32-i386<span>)</span>
+Loading module jbd
+Loading module ext3
+
+<span>[</span>root@localhost tmp<span>]</span><span># file myinitrd.img</span>
+myinitrd.img: <span>gzip</span> compressed data, from Unix, max compression
+
+<span>[</span>root@localhost tmp<span>]</span><span># mv myinitrd.img  myinitrd.img.gz</span>
+<span>[</span>root@localhost tmp<span>]</span><span># gzip -d myinitrd.img.gz</span>
+<span>[</span>root@localhost tmp<span>]</span><span># file myinitrd.img</span>
+myinitrd.img: ASCII cpio archive <span>(</span>SVR4 with no CRC<span>)</span></code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

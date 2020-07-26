@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>let:简单的计算器，执行算术表达式</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="let:简单的计算器，执行算术表达式 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td,th{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>let</h1><p>简单的计算器，执行算术表达式。</p>
+<h2>概要</h2><pre><code><span>let</span> arg <span>[</span>arg <span>..</span>.<span>]</span></code></pre>
+<h2>主要用途</h2><ul>
+<li>执行一个或多个算术表达式。</li>
+</ul>
+<h2>参数</h2><p>arg：算术表达式</p>
+<h2>返回值</h2><p>当<code>let</code>最后一个执行的表达式的计算结果为0时返回<code>1</code>，否则返回<code>0</code>。
+当<code>let</code>执行的表达式的除数为0时，返回<code>1</code>并报错。</p>
+<h2>运算符优先级递减表</h2><table>
+<thead>
+<tr>
+<th align="center"><strong>运算符</strong></th>
+<th align="center"><strong>描述</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>id++, id--</code></td>
+<td align="center"><code>变量后增量、变量后减量</code></td>
+</tr>
+<tr>
+<td align="center"><code>++id, --id</code></td>
+<td align="center"><code>变量预增量、变量预减量</code></td>
+</tr>
+<tr>
+<td align="center"><code>-, +</code></td>
+<td align="center"><code>正号、负号</code></td>
+</tr>
+<tr>
+<td align="center"><code>!, ~</code></td>
+<td align="center"><code>逻辑否、按位取反</code></td>
+</tr>
+<tr>
+<td align="center"><code>**</code></td>
+<td align="center"><code>幂运算</code></td>
+</tr>
+<tr>
+<td align="center"><code>*, /, %</code></td>
+<td align="center"><code>乘法、除法、取余</code></td>
+</tr>
+<tr>
+<td align="center"><code>+, -</code></td>
+<td align="center"><code>加法、减法</code></td>
+</tr>
+<tr>
+<td align="center"><code>&lt;&lt;, &gt;&gt;</code></td>
+<td align="center"><code>按位左移、右移</code></td>
+</tr>
+<tr>
+<td align="center"><code>&lt;=, &gt;=, &lt;, &gt;</code></td>
+<td align="center"><code>比较</code></td>
+</tr>
+<tr>
+<td align="center"><code>==, !=</code></td>
+<td align="center"><code>等于、不等于</code></td>
+</tr>
+<tr>
+<td align="center"><code>&amp;</code></td>
+<td align="center"><code>按位与</code></td>
+</tr>
+<tr>
+<td align="center"><code>^</code></td>
+<td align="center"><code>按位异或</code></td>
+</tr>
+<tr>
+<td align="center"><code>|</code></td>
+<td align="center"><code>按位或</code></td>
+</tr>
+<tr>
+<td align="center"><code>&amp;&amp;</code></td>
+<td align="center"><code>逻辑与</code></td>
+</tr>
+<tr>
+<td align="center"><code>||</code></td>
+<td align="center"><code>逻辑或</code></td>
+</tr>
+<tr>
+<td align="center"><code>expr ? expr : expr</code></td>
+<td align="center"><code>条件运算符（三元运算符）</code></td>
+</tr>
+<tr>
+<td align="center"><code>=, *=, /=, %=, +=, -=,</code><br><code>&lt;&lt;=, &gt;&gt;=, &amp;=, ^=, |=</code></td>
+<td align="center"><code>赋值</code></td>
+</tr>
+</tbody></table>
+<h2>例子</h2><pre><code><span># 尝试直接在终端中执行算术表达式（就像在python的IDLE）。</span>
+<span>3</span>+4
+bash：3+4：command not found<span>..</span>.
+<span># 换一种方式。</span>
+<span>3</span> + <span>4</span>
+bash：3：command not found<span>..</span>.
+<span># 看来不行。</span></code></pre>
+<pre><code><span># let命令赋值。</span>
+<span>let</span> <span>a</span><span>=</span><span>3</span>**4
+<span>echo</span> <span>&#36;{a}</span>
+<span># 显示81。</span>
+<span># ((...))和let命令等效。</span>
+<span><span>((</span>a<span>=</span><span>3</span><span>**</span><span>4</span><span>))</span></span></code></pre>
+<pre><code><span># let常用于变量赋值，而外部命令expr可直接返回表达式的值。</span>
+<span>let</span> <span>3</span>+4
+<span># 没有显示7。</span>
+<span># 执行后显示7，注意空格。</span>
+<span>expr</span> <span>3</span> + <span>4</span></code></pre>
+<pre><code><span># 条件表达式。</span>
+<span>if</span> <span><span>((</span><span>8</span><span>></span><span>4</span><span>))</span></span><span>;</span> <span>then</span>
+  <span>echo</span> <span>'8 is greater than 4.'</span>
+<span>else</span>
+  <span>echo</span> <span>'error'</span>
+<span>fi</span>
+<span># 注意空格。</span>
+<span>if</span> <span>[</span><span>[</span> <span>12</span> -le <span>10</span> <span>]</span><span>]</span><span>;</span> <span>then</span>
+  <span>echo</span> <span>'error'</span>
+<span>else</span>
+  <span>echo</span> <span>'12 is greater than 10.'</span>
+<span>fi</span></code></pre>
+<pre><code><span># 可以通过declare命令设置整型属性的方法来进行算术运算。</span>
+<span># local命令与此类似。</span>
+
+<span># 没有指定整型属性，输出为字符串'a+b'。</span>
+<span>declare</span> <span>a</span><span>=</span><span>3</span> <span>b</span><span>=</span><span>4</span> c
+<span>c</span><span>=</span>a+b
+<span>echo</span> <span>&#36;{c}</span>
+<span># 不过可以使用以下方式赋值。</span>
+<span>c</span><span>=</span><span><span>&#36;((</span>a<span>+</span>b<span>))</span></span>
+<span>echo</span> <span>&#36;{c}</span>
+<span># 显示7</span>
+
+<span># 设置了整型属性就可以直接加了。</span>
+<span>declare</span> -i <span>a</span><span>=</span><span>3</span> <span>b</span><span>=</span><span>4</span> c
+<span>c</span><span>=</span>a+b
+<span>echo</span> <span>&#36;{c}</span>
+<span># 同上。</span>
+<span>declare</span> -i a
+<span>a</span><span>=</span><span>2</span>*3
+<span>echo</span> <span>&#36;{a}</span>
+<span># 显示6。</span></code></pre>
+<h3>注意</h3><ol>
+<li><p>该命令是bash内建命令，相关的帮助信息请查看<code>help</code>命令。</p>
+</li>
+<li><p>执行算术计算的命令除了<code>let</code>，还有外部命令<code>expr</code>、<code>bc</code>等。</p>
+</li>
+</ol>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

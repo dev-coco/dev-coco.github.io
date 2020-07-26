@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>logwatch:可定制和可插入式的日志监视系统</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="logwatch:可定制和可插入式的日志监视系统 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>logwatch</h1><p>可定制和可插入式的日志监视系统</p>
+<h2>补充说明</h2><p><strong>logwatch命令</strong> 是一个可定制和可插入式的日志监视系统，它通过遍历给定时间范围内的系统日志文件而产生日志报告。logwatch默认每天执行一次，可以从<code>/etc/cron.daily</code>里看到。</p>
+<h3>语法</h3><pre><code>logwatch<span>(</span>选项<span>)</span></code></pre>
+<h3>选项</h3><pre><code>--detail<span>&lt;</span>报告详细程度<span>></span>：指定日志报告的详细程度；
+--logfile<span>&lt;</span>日志文件<span>></span>：仅处理指定的日志文件；
+--service<span>&lt;</span>服务名<span>></span>：仅处理指定服务的日志文件；
+--print：打印结果到标准输出；
+--mailto<span>&lt;</span>邮件地址<span>></span>：将结果发送到指定邮箱；
+--range<span>&lt;</span>日期范围<span>></span>：指定处理日志的日期范围；
+--archives：处理归档日志文件；
+--debug<span>&lt;</span>调试等级<span>></span>：调试模式；
+--save<span>&lt;</span>文件名<span>></span>：将结果保存到指定文件中，而不显示或者发送到指定邮箱；
+--logdir<span>&lt;</span>目录<span>></span>：指定查找日志文件的目录，而不使用默认的日志目录；
+--hostname<span>&lt;</span>主机名<span>></span>：指定在日志报告中使用的主机名，不使用系统默认的主机名；
+--numeric：在报告中显示ip地址而不是主机名；
+--help：显示指令的帮助信息。</code></pre>
+<h3>实例</h3><p>检查你的主机上是否已经存在Logwatch（Redhat默认已经安装了Logwatch，不过版本比较旧）：</p>
+<pre><code><span>rpm</span> -qa logwatch</code></pre>
+<p>如果主机上没有logwatch，则执行：</p>
+<pre><code><span>rpm</span> -Ivh logwatch***.rpm</code></pre>
+<p>如果有老版本的logwatch，则执行：</p>
+<pre><code><span>rpm</span> -Uvh logwatch***.rpm</code></pre>
+<p>安装完毕后，开始配置：</p>
+<p>可以修改和添加它的logfiles、services和其他配置，但默认已经有很多脚本了，只要在1）里设置<code>Detail = High</code>就可以了。</p>
+<ul>
+<li>可以添加新的配置到<code>/etc/logwatch/conf/logwatch.conf</code></li>
+<li>也可以修改<code>/usr/share/logwatch/default.conf/logwatch.conf</code></li>
+</ul>
+<p><code>/etc/logwatch/conf/</code>会自动覆盖<code>/usr/share/logwatch/default.conf/</code>下的同名文件。</p>
+<p>如果没有设置logwatch.conf也没关系，可以直接在命令行下设置。</p>
+<pre><code>logwatch --detail High --Service All --range All --print    基本就可以显示出所有日志的情况了
+logwatch --service sshd --detail High                       只看sshd的日志情况</code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

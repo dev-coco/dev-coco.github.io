@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>lsblk:列出块设备信息</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="lsblk:列出块设备信息 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>lsblk</h1><p>列出块设备信息</p>
+<h2>补充说明</h2><p><strong>lsblk命令</strong> 用于列出所有可用块设备的信息，而且还能显示他们之间的依赖关系，但是它不会列出RAM盘的信息。块设备有硬盘，闪存盘，cd-ROM等等。lsblk命令包含在util-linux-ng包中，现在该包改名为util-linux。这个包带了几个其它工具，如dmesg。要安装lsblk，请在此处下载util-linux包。Fedora用户可以通过命令<code>sudo yum install util-linux-ng</code>来安装该包。</p>
+<h3>选项</h3><pre><code>-a, --all            <span># 显示所有设备。</span>
+-b, --bytes          <span># 以bytes方式显示设备大小。</span>
+-d, --nodeps         <span># 不显示 slaves 或 holders。</span>
+-D, --discard        <span># print discard capabilities。</span>
+-e, --exclude <span>&lt;</span>list<span>></span> <span># 排除设备 (default: RAM disks)。</span>
+-f, --fs             <span># 显示文件系统信息。</span>
+-h, --help           <span># 显示帮助信息。</span>
+-i, --ascii          <span># use ascii characters only。</span>
+-m, --perms          <span># 显示权限信息。</span>
+-l, --list           <span># 使用列表格式显示。</span>
+-n, --noheadings     <span># 不显示标题。</span>
+-o, --output <span>&lt;</span>list<span>></span>  <span># 输出列。</span>
+-P, --pairs          <span># 使用key="value"格式显示。</span>
+-r, --raw            <span># 使用原始格式显示。</span>
+-t, --topology       <span># 显示拓扑结构信息。</span></code></pre>
+<h3>实例</h3><p>lsblk命令默认情况下将以树状列出所有块设备。打开终端，并输入以下命令：</p>
+<pre><code>lsblk
+
+NAME   MAJ:MIN <span>rm</span>   SIZE RO <span>type</span> mountpoint
+sda      <span>8</span>:0    <span>0</span> <span>232</span>.9G  <span>0</span> disk
+├─sda1   <span>8</span>:1    <span>0</span>  <span>46</span>.6G  <span>0</span> part /
+├─sda2   <span>8</span>:2    <span>0</span>     1K  <span>0</span> part
+├─sda5   <span>8</span>:5    <span>0</span>   190M  <span>0</span> part /boot
+├─sda6   <span>8</span>:6    <span>0</span>   <span>3</span>.7G  <span>0</span> part <span>[</span>SWAP<span>]</span>
+├─sda7   <span>8</span>:7    <span>0</span>  <span>93</span>.1G  <span>0</span> part /data
+└─sda8   <span>8</span>:8    <span>0</span>  <span>89</span>.2G  <span>0</span> part /personal
+sr0     <span>11</span>:0    <span>1</span>  1024M  <span>0</span> rom</code></pre>
+<p>7个栏目名称如下：</p>
+<ol>
+<li><strong>NAME</strong> ：这是块设备名。</li>
+<li><strong>MAJ:MIN</strong> ：本栏显示主要和次要设备号。</li>
+<li><strong>RM</strong> ：本栏显示设备是否可移动设备。注意，在本例中设备sdb和sr0的RM值等于1，这说明他们是可移动设备。</li>
+<li><strong>SIZE</strong> ：本栏列出设备的容量大小信息。例如298.1G表明该设备大小为298.1GB，而1K表明该设备大小为1KB。</li>
+<li><strong>RO</strong> ：该项表明设备是否为只读。在本案例中，所有设备的RO值为0，表明他们不是只读的。</li>
+<li><strong>TYPE</strong> ：本栏显示块设备是否是磁盘或磁盘上的一个分区。在本例中，sda和sdb是磁盘，而sr0是只读存储（rom）。</li>
+<li><strong>MOUNTPOINT</strong> ：本栏指出设备挂载的挂载点。</li>
+</ol>
+<p>默认选项不会列出所有空设备。要查看这些空设备，请使用以下命令：</p>
+<pre><code>lsblk -a</code></pre>
+<p>lsblk命令也可以用于列出一个特定设备的拥有关系，同时也可以列出组和模式。可以通过以下命令来获取这些信息：</p>
+<pre><code>lsblk -m</code></pre>
+<p>该命令也可以只获取指定设备的信息。这可以通过在提供给lsblk命令的选项后指定设备名来实现。例如，你可能对了解以字节显示你的磁盘驱动器大小比较感兴趣，那么你可以通过运行以下命令来实现：</p>
+<pre><code>lsblk -b /dev/sda
+
+等价于
+
+lsblk --bytes /dev/sda</code></pre>
+<p>你也可以组合几个选项来获取指定的输出。例如，你也许想要以列表格式列出设备，而不是默认的树状格式。你可能也对移除不同栏目名称的标题感兴趣。可以将两个不同的选项组合，以获得期望的输出，命令如下：</p>
+<pre><code>lsblk -nl</code></pre>
+<p>要获取SCSI设备的列表，你只能使用-S选项。该选项是大写字母S，不能和-s选项混淆，该选项是用来以颠倒的顺序打印依赖的。</p>
+<pre><code>lsblk -S</code></pre>
+<p>lsblk列出SCSI设备，而-s是逆序选项（将设备和分区的组织关系逆转过来显示），其将给出如下输出。输入命令：</p>
+<pre><code>lsblk -s</code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

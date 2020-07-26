@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>lscpu:显示有关CPU架构的信息</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="lscpu:显示有关CPU架构的信息 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>lscpu</h1><p>显示有关CPU架构的信息</p>
+<h2>补充说明</h2><p><strong>lscpu命令</strong> 是显示有关CPU架构的信息。</p>
+<h3>语法</h3><pre><code>lscpu <span>[</span>选项<span>]</span></code></pre>
+<h3>选项</h3><pre><code> -a, --all               <span># 打印在线和离线CPU（默认为-e）</span>
+ -b, --online            <span># 仅打印在线CPU（-p的默认值）</span>
+ -c, --offline           <span># 打印离线CPU</span>
+ -e, --extended<span>[</span><span>=</span><span>&lt;</span>list<span>></span><span>]</span> <span># 打印出一个扩展的可读格式</span>
+ -p, --parse<span>[</span><span>=</span><span>&lt;</span>list<span>></span><span>]</span>    <span># 打印出可解析的格式</span>
+ -s, --sysroot <span>&lt;</span>dir<span>></span>     <span># 将指定的目录用作系统根目录</span>
+ -x, --hex               <span># 打印十六进制掩码，而不是CPU列表</span>
+
+ -h, --help     <span># 显示此帮助并退出</span>
+ -V, --version  <span># 输出版本信息并退出</span></code></pre>
+<h3>参数</h3><pre><code>可用列：
+           CPU  逻辑CPU编号
+          CORE  逻辑核心号码
+        SOCKET  逻辑套接字号
+          NODE  逻辑NUMA节点号
+          BOOK  逻辑书号
+         CACHE  显示了如何在CPU之间共享高速缓存
+  POLARIZATION  虚拟硬件上的CPU调度模式
+       ADDRESS  CPU的物理地址
+    CONFIGURED  显示管理程序是否分配了CPU
+        ONLINE  显示Linux是否正在使用CPU</code></pre>
+<h3>例子</h3><pre><code><span>[</span>root@localhost ~<span>]</span><span># lscpu</span>
+Architecture:          x86_64
+CPU op-mode<span>(</span>s<span>)</span>:        <span>32</span>-bit, <span>64</span>-bit
+Byte Order:            Little Endian
+CPU<span>(</span>s<span>)</span>:                <span>4</span>
+On-line CPU<span>(</span>s<span>)</span> list:   <span>0</span>-3
+Thread<span>(</span>s<span>)</span> per core:    <span>1</span>
+Core<span>(</span>s<span>)</span> per socket:    <span>4</span>
+Socket<span>(</span>s<span>)</span>:             <span>1</span>
+NUMA node<span>(</span>s<span>)</span>:          <span>1</span>
+Vendor ID:             GenuineIntel
+CPU family:            <span>6</span>
+Model:                 <span>30</span>
+Model name:            Intel<span>(</span>R<span>)</span> Xeon<span>(</span>R<span>)</span> CPU           X3430  @ <span>2</span>.40GHz
+Stepping:              <span>5</span>
+CPU MHz:               <span>2394.055</span>
+BogoMIPS:              <span>4788.11</span>
+Virtualization:        VT-x
+L1d cache:             32K
+L1i cache:             32K
+L2 cache:              256K
+L3 cache:              8192K
+NUMA node0 CPU<span>(</span>s<span>)</span>:     <span>0</span>-3</code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>ip:网络配置工具</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="ip:网络配置工具 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>ip</h1><p>网络配置工具</p>
+<h2>补充说明</h2><p><strong>ip命令</strong> 用来显示或操纵Linux主机的路由、网络设备、策略路由和隧道，是Linux下较新的功能强大的网络配置工具。</p>
+<h3>语法</h3><pre><code>ip<span>(</span>选项<span>)</span><span>(</span>参数<span>)</span>
+Usage: <span>ip</span> <span>[</span> OPTIONS <span>]</span> OBJECT <span>{</span> COMMAND <span>|</span> <span>help</span> <span>}</span>
+       <span>ip</span> <span>[</span> -force <span>]</span> -batch filename</code></pre>
+<h3>选项</h3><pre><code>OBJECT :<span>=</span> <span>{</span> <span>link</span> <span>|</span> address <span>|</span> addrlabel <span>|</span> route <span>|</span> rule <span>|</span> neigh <span>|</span> ntable <span>|</span>
+       tunnel <span>|</span> tuntap <span>|</span> maddress <span>|</span> mroute <span>|</span> mrule <span>|</span> monitor <span>|</span> xfrm <span>|</span>
+       netns <span>|</span> l2tp <span>|</span> macsec <span>|</span> tcp_metrics <span>|</span> token <span>}</span>
+
+-V：显示指令版本信息；
+-s：输出更详细的信息；
+-f：强制使用指定的协议族；
+-4：指定使用的网络层协议是IPv4协议；
+-6：指定使用的网络层协议是IPv6协议；
+-0：输出信息每条记录输出一行，即使内容较多也不换行显示；
+-r：显示主机时，不使用IP地址，而使用主机的域名。</code></pre>
+<h3>参数</h3><pre><code>OPTIONS :<span>=</span> <span>{</span> -V<span>[</span>ersion<span>]</span> <span>|</span> -s<span>[</span>tatistics<span>]</span> <span>|</span> -d<span>[</span>etails<span>]</span> <span>|</span> -r<span>[</span>esolve<span>]</span> <span>|</span>
+        -h<span>[</span>uman-readable<span>]</span> <span>|</span> -iec <span>|</span>
+        -f<span>[</span>amily<span>]</span> <span>{</span> inet <span>|</span> inet6 <span>|</span> ipx <span>|</span> dnet <span>|</span> bridge <span>|</span> <span>link</span> <span>}</span> <span>|</span>
+        -4 <span>|</span> -6 <span>|</span> -I <span>|</span> -D <span>|</span> -B <span>|</span> -0 <span>|</span>
+        -l<span>[</span>oops<span>]</span> <span>{</span> maximum-addr-flush-attempts <span>}</span> <span>|</span>
+        -o<span>[</span>neline<span>]</span> <span>|</span> -t<span>[</span>imestamp<span>]</span> <span>|</span> -ts<span>[</span>hort<span>]</span> <span>|</span> -b<span>[</span>atch<span>]</span> <span>[</span>filename<span>]</span> <span>|</span>
+        -rc<span>[</span>vbuf<span>]</span> <span>[</span>size<span>]</span> <span>|</span> -n<span>[</span>etns<span>]</span> name <span>|</span> -a<span>[</span>ll<span>]</span> <span>}</span>
+
+网络对象：指定要管理的网络对象；
+具体操作：对指定的网络对象完成具体操作；
+help：显示网络对象支持的操作命令的帮助信息。</code></pre>
+<h3>实例</h3><pre><code class="language-shellbash">ip link show                     # 显示网络接口信息
+ip link set eth0 up             # 开启网卡
+ip link set eth0 down            # 关闭网卡
+ip link set eth0 promisc on      # 开启网卡的混合模式
+ip link set eth0 promisc offi    # 关闭网卡的混个模式
+ip link set eth0 txqueuelen <span>1200</span> # 设置网卡队列长度
+ip link set eth0 mtu <span>1400</span>        # 设置网卡最大传输单元
+ip addr show     # 显示网卡IP信息
+ip addr add <span>192.168</span><span>.0</span><span>.1</span><span>/</span><span>24</span> dev eth0 # 设置eth0网卡IP地址<span>192.168</span><span>.0</span><span>.1</span>
+ip addr del <span>192.168</span><span>.0</span><span>.1</span><span>/</span><span>24</span> dev eth0 # 删除eth0网卡IP地址
+
+ip route show # 显示系统路由
+ip route add <span>default</span> via <span>192.168</span><span>.1</span><span>.254</span>   # 设置系统默认路由
+ip route list                 # 查看路由信息
+ip route add <span>192.168</span><span>.4</span><span>.0</span><span>/</span><span>24</span>  via  <span>192.168</span><span>.0</span><span>.254</span> dev eth0 # 设置<span>192.168</span><span>.4</span><span>.0</span>网段的网关为<span>192.168</span><span>.0</span><span>.254</span><span>,</span>数据走eth0接口
+ip route add <span>default</span> via  <span>192.168</span><span>.0</span><span>.254</span>  dev eth0        # 设置默认网关为<span>192.168</span><span>.0</span><span>.254</span>
+ip route del <span>192.168</span><span>.4</span><span>.0</span><span>/</span><span>24</span>   # 删除<span>192.168</span><span>.4</span><span>.0</span>网段的网关
+ip route del <span>default</span>          # 删除默认路由
+ip route delete <span>192.168</span><span>.1</span><span>.0</span><span>/</span><span>24</span> dev eth0 # 删除路由</code></pre>
+<p><strong>用ip命令显示网络设备的运行状态</strong> </p>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># ip link list</span>
+<span>1</span>: lo: <span>&lt;</span>LOOPBACK,UP,LOWER_UP<span>></span> mtu <span>16436</span> qdisc noqueue
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+<span>2</span>: eth0: <span>&lt;</span>BROADCAST,MULTICAST,UP,LOWER_UP<span>></span> mtu <span>1500</span> qdisc pfifo_fast qlen <span>1000</span>
+    link/ether 00:16:3e:00:1e:51 brd ff:ff:ff:ff:ff:ff
+<span>3</span>: eth1: <span>&lt;</span>BROADCAST,MULTICAST,UP,LOWER_UP<span>></span> mtu <span>1500</span> qdisc pfifo_fast qlen <span>1000</span>
+    link/ether 00:16:3e:00:1e:52 brd ff:ff:ff:ff:ff:ff</code></pre>
+<p><strong>显示更加详细的设备信息</strong> </p>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># ip -s link list</span>
+<span>1</span>: lo: <span>&lt;</span>LOOPBACK,UP,LOWER_UP<span>></span> mtu <span>16436</span> qdisc noqueue
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    RX: bytes  packets  errors  dropped overrun mcast
+    <span>5082831</span>    <span>56145</span>    <span>0</span>       <span>0</span>       <span>0</span>       <span>0</span>
+    TX: bytes  packets  errors  dropped carrier collsns
+    <span>5082831</span>    <span>56145</span>    <span>0</span>       <span>0</span>       <span>0</span>       <span>0</span>
+<span>2</span>: eth0: <span>&lt;</span>BROADCAST,MULTICAST,UP,LOWER_UP<span>></span> mtu <span>1500</span> qdisc pfifo_fast qlen <span>1000</span>
+    link/ether 00:16:3e:00:1e:51 brd ff:ff:ff:ff:ff:ff
+    RX: bytes  packets  errors  dropped overrun mcast
+    <span>3641655380</span> <span>62027099</span> <span>0</span>       <span>0</span>       <span>0</span>       <span>0</span>
+    TX: bytes  packets  errors  dropped carrier collsns
+    <span>6155236</span>    <span>89160</span>    <span>0</span>       <span>0</span>       <span>0</span>       <span>0</span>
+<span>3</span>: eth1: <span>&lt;</span>BROADCAST,MULTICAST,UP,LOWER_UP<span>></span> mtu <span>1500</span> qdisc pfifo_fast qlen <span>1000</span>
+    link/ether 00:16:3e:00:1e:52 brd ff:ff:ff:ff:ff:ff
+    RX: bytes  packets  errors  dropped overrun mcast
+    <span>2562136822</span> <span>488237847</span> <span>0</span>       <span>0</span>       <span>0</span>       <span>0</span>
+    TX: bytes  packets  errors  dropped carrier collsns
+    <span>3486617396</span> <span>9691081</span>  <span>0</span>       <span>0</span>       <span>0</span>       <span>0</span>     </code></pre>
+<p><strong>显示核心路由表</strong> </p>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># ip route list </span>
+<span>112.124</span>.12.0/22 dev eth1  proto kernel  scope <span>link</span>  src <span>112.124</span>.15.130
+<span>10.160</span>.0.0/20 dev eth0  proto kernel  scope <span>link</span>  src <span>10.160</span>.7.81
+<span>192.168</span>.0.0/16 via <span>10.160</span>.15.247 dev eth0
+<span>172.16</span>.0.0/12 via <span>10.160</span>.15.247 dev eth0
+<span>10.0</span>.0.0/8 via <span>10.160</span>.15.247 dev eth0
+default via <span>112.124</span>.15.247 dev eth1</code></pre>
+<p><strong>显示邻居表</strong> </p>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># ip neigh list</span>
+<span>112.124</span>.15.247 dev eth1 lladdr 00:00:0c:9f:f3:88 REACHABLE
+<span>10.160</span>.15.247 dev eth0 lladdr 00:00:0c:9f:f2:c0 STALE</code></pre>
+<p><strong>获取主机所有网络接口</strong></p>
+<pre><code><span>ip</span> <span>link</span> <span>|</span> <span>grep</span> -E <span>'^[0-9]'</span> <span>|</span> <span>awk</span> -F: <span>'{print <span>&#36;2</span>}'</span></code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

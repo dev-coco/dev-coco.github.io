@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>kill:发送信号到进程</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="kill:发送信号到进程 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>kill</h1><p>发送信号到进程。</p>
+<h2>目录</h2>
+<h2>内建命令</h2><h4>概要</h4><pre><code><span>kill</span> <span>[</span>-s sigspec <span>|</span> -n signum <span>|</span> -sigspec<span>]</span> pid <span>|</span> jobspec <span>..</span>.
+<span>kill</span> -l <span>[</span>sigspec<span>]</span></code></pre>
+<h4>主要用途</h4><ul>
+<li>发送信号到作业或进程（可以为多个）。</li>
+<li>列出信号。</li>
+</ul>
+<h4>选项</h4><pre><code>-s sig    信号名称。
+-n sig    信号名称对应的数字。
+-l        列出信号名称。如果在该选项后提供了数字那么假设它是信号名称对应的数字。
+-L        等价于-l选项。</code></pre>
+<h4>参数</h4><p>pid：进程ID</p>
+<p>jobspec：作业标识符</p>
+<h4>返回值</h4><p>返回状态为成功除非给出了非法选项、执行出现错误。</p>
+<h4>例子</h4><pre><code><span>[</span>user2@pc<span>]</span> <span>kill</span> -l <span>9</span>
+KILL
+
+<span># 列出所有信号名称：</span>
+<span>[</span>user2@pc<span>]</span> <span>kill</span> -l
+ <span>1</span><span>)</span> SIGHUP       <span>2</span><span>)</span> SIGINT       <span>3</span><span>)</span> SIGQUIT      <span>4</span><span>)</span> SIGILL
+ <span>5</span><span>)</span> SIGTRAP      <span>6</span><span>)</span> SIGABRT      <span>7</span><span>)</span> SIGBUS       <span>8</span><span>)</span> SIGFPE
+ <span>9</span><span>)</span> SIGKILL     <span>10</span><span>)</span> SIGUSR1     <span>11</span><span>)</span> SIGSEGV     <span>12</span><span>)</span> SIGUSR2
+<span>13</span><span>)</span> SIGPIPE     <span>14</span><span>)</span> SIGALRM     <span>15</span><span>)</span> SIGTERM     <span>16</span><span>)</span> SIGSTKFLT
+<span>17</span><span>)</span> SIGCHLD     <span>18</span><span>)</span> SIGCONT     <span>19</span><span>)</span> SIGSTOP     <span>20</span><span>)</span> SIGTSTP
+<span>21</span><span>)</span> SIGTTIN     <span>22</span><span>)</span> SIGTTOU     <span>23</span><span>)</span> SIGURG      <span>24</span><span>)</span> SIGXCPU
+<span>25</span><span>)</span> SIGXFSZ     <span>26</span><span>)</span> SIGVTALRM   <span>27</span><span>)</span> SIGPROF     <span>28</span><span>)</span> SIGWINCH
+<span>29</span><span>)</span> SIGIO       <span>30</span><span>)</span> SIGPWR      <span>31</span><span>)</span> SIGSYS      <span>34</span><span>)</span> SIGRTMIN
+<span>35</span><span>)</span> SIGRTMIN+1  <span>36</span><span>)</span> SIGRTMIN+2  <span>37</span><span>)</span> SIGRTMIN+3  <span>38</span><span>)</span> SIGRTMIN+4
+<span>39</span><span>)</span> SIGRTMIN+5  <span>40</span><span>)</span> SIGRTMIN+6  <span>41</span><span>)</span> SIGRTMIN+7  <span>42</span><span>)</span> SIGRTMIN+8
+<span>43</span><span>)</span> SIGRTMIN+9  <span>44</span><span>)</span> SIGRTMIN+10 <span>45</span><span>)</span> SIGRTMIN+11 <span>46</span><span>)</span> SIGRTMIN+12
+<span>47</span><span>)</span> SIGRTMIN+13 <span>48</span><span>)</span> SIGRTMIN+14 <span>49</span><span>)</span> SIGRTMIN+15 <span>50</span><span>)</span> SIGRTMAX-14
+<span>51</span><span>)</span> SIGRTMAX-13 <span>52</span><span>)</span> SIGRTMAX-12 <span>53</span><span>)</span> SIGRTMAX-11 <span>54</span><span>)</span> SIGRTMAX-10
+<span>55</span><span>)</span> SIGRTMAX-9  <span>56</span><span>)</span> SIGRTMAX-8  <span>57</span><span>)</span> SIGRTMAX-7  <span>58</span><span>)</span> SIGRTMAX-6
+<span>59</span><span>)</span> SIGRTMAX-5  <span>60</span><span>)</span> SIGRTMAX-4  <span>61</span><span>)</span> SIGRTMAX-3  <span>62</span><span>)</span> SIGRTMAX-2
+<span>63</span><span>)</span> SIGRTMAX-1  <span>64</span><span>)</span> SIGRTMAX
+
+<span># 下面是常用的信号。</span>
+<span># 只有第9种信号(SIGKILL)才可以无条件终止进程，其他信号进程都有权利忽略。</span>
+
+HUP     <span>1</span>    终端挂断
+INT     <span>2</span>    中断（同 Ctrl + C）
+QUIT    <span>3</span>    退出（同 Ctrl + <span>\</span>）
+KILL    <span>9</span>    强制终止
+<span>TERM</span>   <span>15</span>    终止
+CONT   <span>18</span>    继续（与STOP相反，fg/bg命令）
+STOP   <span>19</span>    暂停（同 Ctrl + Z）</code></pre>
+<pre><code><span># 以下发送KILL信号的形式等价。当然还有更多的等价形式，在此不一一列举了。</span>
+<span>[</span>user2@pc<span>]</span> <span>kill</span> -s SIGKILL PID
+<span>[</span>user2@pc<span>]</span> <span>kill</span> -s KILL PID
+<span>[</span>user2@pc<span>]</span> <span>kill</span> -n <span>9</span> PID
+<span>[</span>user2@pc<span>]</span> <span>kill</span> -9 PID
+
+<span>[</span>user2@pc<span>]</span> <span>sleep</span> <span>90</span> <span>&amp;</span>
+<span>[</span><span>1</span><span>]</span> <span>178420</span>
+
+<span># 终止作业标识符为1的作业。</span>
+<span>[</span>user2@pc<span>]</span> <span>kill</span> -9 %1
+
+<span>[</span>user2@pc<span>]</span> <span>jobs</span> -l
+<span>[</span><span>1</span><span>]</span>+ <span>178420</span> KILLED                  <span>ssh</span> <span>192.168</span>.1.4
+
+<span>[</span>user2@pc<span>]</span> <span>sleep</span> <span>90</span> <span>&amp;</span>
+<span>[</span><span>1</span><span>]</span> <span>181357</span>
+
+<span># 发送停止信号。</span>
+<span>[</span>user2@pc<span>]</span> <span>kill</span> -s STOP <span>181357</span>
+
+<span>[</span>user2@pc<span>]</span> <span>jobs</span> -l
+<span>[</span><span>1</span><span>]</span>+ <span>181537</span> Stopped <span>(</span>signal<span>)</span>        <span>sleep</span> <span>90</span>
+
+<span># 发送继续信号。</span>
+<span>[</span>user2@pc<span>]</span> <span>kill</span> -s CONT <span>181357</span>
+
+<span>[</span>user2@pc<span>]</span> <span>jobs</span> -l
+<span>[</span><span>1</span><span>]</span>+ <span>181537</span> Running                 <span>sleep</span> <span>90</span> <span>&amp;</span></code></pre>
+<h4>注意</h4><ol>
+<li><code>bash</code>的作业控制命令包括<code>bg fg kill wait disown suspend</code>。</li>
+<li>该命令是bash内建命令，相关的帮助信息请查看<code>help</code>命令。</li>
+</ol>
+<h2>外部命令</h2><h4>概要</h4><pre><code><span>kill</span> <span>[</span>-signal<span>|</span>-s signal<span>|</span>-p<span>]</span> <span>[</span>-q value<span>]</span> <span>[</span>-a<span>]</span> <span>[</span>--<span>]</span> pid<span>|</span>name<span>..</span>.
+<span>kill</span> -l <span>[</span>number<span>]</span> <span>|</span> -L</code></pre>
+<h4>主要用途</h4><ul>
+<li><p>发送信号到进程（可以为多个）。</p>
+</li>
+<li><p>列出信号。</p>
+</li>
+</ul>
+<h4>选项</h4><pre><code>-s, --signal signal    要发送的信号，可能是信号名称或信号对应的数字。
+-l, --list <span>[</span>number<span>]</span>    打印信号名称或转换给定数字到信号名称。信号名称可参考文件（/usr/include/linux/signal.h）。
+-L, --table            和<span>'-l'</span>选项类似，但是输出信号名称以及信号对应的数字。
+-a, --all              不要限制“命令名到pid”的转换为具有与当前进程相同的<span>UID</span>的进程。
+-p, --pid              打印目标进程的PID而不发送信号。
+--verbose              打印信号以及接收信号的PID。
+-q, --queue value      使用sigqueue<span>(</span><span>3</span><span>)</span>而不是kill<span>(</span><span>2</span><span>)</span>。参数value是信号对应的数字。
+                           如果接收进程已为此信号安装了处理程序将SA_SIGINFO标记为sigaction<span>(</span><span>2</span><span>)</span>，则可以获取
+                           该数据通过siginfo_t结构的si_sigval字段。
+--help                 显示帮助信息并退出。
+--version              显示版本信息并退出。</code></pre>
+<h4>参数</h4><p>接收信号的进程列表可以是PID以及name的混合组成。</p>
+<p>PID：每一个PID可以是以下四种情况之一：</p>
+<table>
+<thead>
+<tr>
+<th align="center">状态</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">n</td>
+<td align="center">当n大于0时，PID为n的进程接收信号。</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">当前进程组中的所有进程均接收信号。</td>
+</tr>
+<tr>
+<td align="center">-1</td>
+<td align="center">PID大于1的所有进程均接收信号。</td>
+</tr>
+<tr>
+<td align="center">-n</td>
+<td align="center">当n大于1时，进程组n中的所有进程接收信号。当给出了一个参数的形式为“-n”，想要让它表示一个进程组，那么必须首先指定一个信号，或参数前必须有一个“--”选项，否则它将被视为发送的信号。</td>
+</tr>
+</tbody></table>
+<p>name：使用此名称调用的所有进程将接收信号。</p>
+<h4>例子</h4><pre><code><span>></span> <span>sleep</span> <span>20</span> <span>&amp;</span>
+
+<span># 列出对应的PID。</span>
+<span>></span> <span>kill</span> -p <span>sleep</span>
+<span>23021</span></code></pre>
+<h4>返回值</h4><ul>
+<li>0 成功。</li>
+<li>1 失败。</li>
+<li>64 部分成功（当指定了多个进程时）。</li>
+</ul>
+<h4>注意</h4><ol>
+<li>该命令是<code>GNU coreutils</code>包中的命令，相关的帮助信息请查看<code>man -s 1 kill</code>或<code>info coreutils &#39;kill invocation&#39;</code>。</li>
+<li>启动或关闭内建命令请查看<code>enable</code>命令，关于同名优先级的问题请查看<code>builtin</code>命令的例子部分的相关讨论。</li>
+<li>与<code>kill</code>命令类似的有<code>xkill</code>，<code>pkill</code>,<code>killall</code>等，用于不同的目的和场景。</li>
+</ol>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

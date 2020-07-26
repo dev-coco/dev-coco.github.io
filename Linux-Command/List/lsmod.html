@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>lsmod:显示已载入系统的模块</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="lsmod:显示已载入系统的模块 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>lsmod</h1><p>显示已载入系统的模块</p>
+<h2>补充说明</h2><p><strong>lsmod命令</strong> 用于显示已经加载到内核中的模块的状态信息。执行lsmod命令后会列出所有已载入系统的模块。Linux操作系统的核心具有模块化的特性，应此在编译核心时，务须把全部的功能都放入核心。您可以将这些功能编译成一个个单独的模块，待需要时再分别载入。</p>
+<h3>语法</h3><pre><code>lsmod</code></pre>
+<h3>实例</h3><pre><code><span>[</span>root@LinServ-1 ~<span>]</span><span># lsmod</span>
+Module                  Size  Used by
+ipv6                  <span>272801</span>  <span>15</span>
+xfrm_nalgo             <span>13381</span>  <span>1</span> ipv6
+crypto_api             <span>12609</span>  <span>1</span> xfrm_nalgo
+ip_conntrack_ftp       <span>11569</span>  <span>0</span>
+xt_limit                <span>6721</span>  <span>2</span>
+xt_state                <span>6209</span>  <span>2</span>
+ip_conntrack           <span>53665</span>  <span>2</span> ip_conntrack_ftp,xt_state
+nfnetlink              <span>10713</span>  <span>1</span> ip_conntrack
+xt_tcpudp               <span>7105</span>  <span>6</span>
+xt_multiport            <span>7233</span>  <span>1</span>
+iptable_filter          <span>7105</span>  <span>1</span>
+ip_tables              <span>17029</span>  <span>1</span> iptable_filter
+x_tables               <span>17349</span>  <span>5</span> xt_limit,xt_state,xt_tcpudp,xt_multiport,ip_tables
+dm_mirror              <span>24393</span>  <span>0</span>
+dm_multipath           <span>27213</span>  <span>0</span>
+scsi_dh                <span>12481</span>  <span>1</span> dm_multipath
+video                  <span>21193</span>  <span>0</span>
+backlight              <span>10049</span>  <span>1</span> video
+sbs                    <span>18533</span>  <span>0</span>
+power_meter            <span>16461</span>  <span>0</span>
+hwmon                   <span>7365</span>  <span>1</span> power_meter
+i2c_ec                  <span>9025</span>  <span>1</span> sbs
+dell_wmi                <span>8401</span>  <span>0</span>
+wmi                    <span>12137</span>  <span>1</span> dell_wmi
+button                 <span>10705</span>  <span>0</span>
+battery                <span>13637</span>  <span>0</span>
+asus_acpi              <span>19289</span>  <span>0</span>
+ac                      <span>9157</span>  <span>0</span>
+lp                     <span>15849</span>  <span>0</span>
+snd_hda_intel         <span>401453</span>  <span>0</span>
+snd_seq_dummy           <span>7877</span>  <span>0</span>
+snd_seq_oss            <span>32577</span>  <span>0</span>
+snd_seq_midi_event     <span>11073</span>  <span>1</span> snd_seq_oss
+snd_seq                <span>49585</span>  <span>5</span> snd_seq_dummy,snd_seq_oss,snd_seq_midi_event
+snd_seq_device         <span>11725</span>  <span>3</span> snd_seq_dummy,snd_seq_oss,snd_seq
+snd_pcm_oss            <span>42817</span>  <span>0</span>
+snd_mixer_oss          <span>19009</span>  <span>1</span> snd_pcm_oss
+snd_pcm                <span>72517</span>  <span>2</span> snd_hda_intel,snd_pcm_oss
+ide_cd                 <span>40161</span>  <span>0</span>
+snd_timer              <span>24517</span>  <span>2</span> snd_seq,snd_pcm
+tpm_tis                <span>16713</span>  <span>0</span>
+r8169                  <span>43077</span>  <span>0</span>
+snd_page_alloc         <span>14281</span>  <span>2</span> snd_hda_intel,snd_pcm
+tpm                    <span>19041</span>  <span>1</span> tpm_tis
+i2c_i801               <span>12737</span>  <span>0</span>
+mii                     <span>9409</span>  <span>1</span> r8169
+serio_raw              <span>10693</span>  <span>0</span>
+i2c_core               <span>24897</span>  <span>2</span> i2c_ec,i2c_i801
+snd_hwdep              <span>12869</span>  <span>1</span> snd_hda_intel
+tpm_bios               <span>11073</span>  <span>1</span> tpm
+cdrom                  <span>36577</span>  <span>1</span> ide_cd
+pcspkr                  <span>7105</span>  <span>0</span>
+parport_pc             <span>29669</span>  <span>1</span>
+sg                     <span>36973</span>  <span>0</span>
+snd                    <span>57797</span>  <span>9</span> snd_hda_intel,snd_seq_oss,snd_seq,snd_seq_device,snd_pcm_oss,snd_mixer_oss,snd_pcm,snd_timer,snd_hwdep
+parport                <span>37513</span>  <span>2</span> lp,parport_pc
+soundcore              <span>11553</span>  <span>1</span> snd
+dm_raid45              <span>67273</span>  <span>0</span>
+dm_message              <span>6977</span>  <span>1</span> dm_raid45
+dm_region_hash         <span>15681</span>  <span>1</span> dm_raid45
+dm_log                 <span>14785</span>  <span>3</span> dm_mirror,dm_raid45,dm_region_hash
+dm_mod                 <span>63993</span>  <span>4</span> dm_mirror,dm_multipath,dm_raid45,dm_log
+dm_mem_cache            <span>9537</span>  <span>1</span> dm_raid45
+ata_piix               <span>23749</span>  <span>4</span>
+libata                <span>158085</span>  <span>1</span> ata_piix
+sd_mod                 <span>25409</span>  <span>6</span>
+scsi_mod              <span>144277</span>  <span>4</span> scsi_dh,sg,libata,sd_mod
+ext3                  <span>126281</span>  <span>3</span>
+jbd                    <span>57705</span>  <span>1</span> ext3
+uhci_hcd               <span>25421</span>  <span>0</span>
+ohci_hcd               <span>24937</span>  <span>0</span>
+ehci_hcd               <span>34509</span>  <span>0</span></code></pre>
+<ul>
+<li>第1列：表示模块的名称。</li>
+<li>第2列：表示模块的大小。</li>
+<li>第3列：表示依赖模块的个数。</li>
+<li>第4列：表示依赖模块的内容。</li>
+</ul>
+<p>通常在使用lsmod命令时，都会采用类似<code>lsmod | grep -i ext3</code>这样的命令来查询当前系统是否加载了某些模块。</p>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

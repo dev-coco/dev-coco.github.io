@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>jed:主要用于编辑代码的编辑器</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="jed:主要用于编辑代码的编辑器 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>jed</h1><p>主要用于编辑代码的编辑器</p>
+<h2>补充说明</h2><p><strong>jed命令</strong> 是由Slang所开发，其主要用用途是编辑程序的源代码。它支持彩色语法加亮显示，可以模拟emacs，EDT，wordstar和Brief编辑器。</p>
+<h3>语法</h3><pre><code>jed<span>(</span>选项<span>)</span><span>(</span>参数<span>)</span></code></pre>
+<h3>选项</h3><pre><code>-2：显示上下两个编辑区；
+-batch：以批处理模式来执行；
+-f<span>&lt;</span>函数<span>></span>：执行Slang函数；
+-g<span>&lt;</span>行数<span>></span>：移到缓冲区中指定的行数；
+-i<span>&lt;</span>文件<span>></span>：将指定的文件载入缓冲区；
+-n：不要载入jed.rc配置文件；
+-s<span>&lt;</span>字符串<span>></span>：查找并移到指定的字符串。</code></pre>
+<h3>参数</h3><p>文件：指定待编辑的文件列表。</p>
+<h3>实例</h3><p>以上下两个编辑区的方式，开启 mysource.c 原始代码文件。若要切换编辑区，可利用稍后介绍的命令，开启操作命令，开启功能表后，按 3 ，再按 2 ，即可切换编辑区：</p>
+<pre><code>jed -2 mysource.c</code></pre>
+<p> <strong>操作</strong> </p>
+<p>有些Emacs的组合键和jed菜单组合键冲突例如Alt+f在Emacs中应该是“前进一个单词”，而在jed中则是“文件菜单” 想使用Emacs风格的组合键的话，编辑<code>/usr/share/jed/lib/menus.slc</code>找到如下段落：</p>
+<pre><code>unsetsetkey <span>(</span><span>"selectmenubar"</span>, <span>"<span title="\e">\e</span>m"</span><span>)</span><span>;</span>
+unsetsetkey <span>(</span><span>"@<span title="\e">\e</span>mF"</span>, <span>"<span title="\e">\e</span>f"</span><span>)</span><span>;</span>
+unsetsetkey <span>(</span><span>"@<span title="\e">\e</span>mE"</span>, <span>"<span title="\e">\e</span>e"</span><span>)</span><span>;</span>
+unsetsetkey <span>(</span><span>"@<span title="\e">\e</span>mo"</span>, <span>"<span title="\e">\e</span>o"</span><span>)</span><span>;</span>
+% Mode menu unsetsetkey <span>(</span><span>"@<span title="\e">\e</span>mS"</span>, <span>"<span title="\e">\e</span>s"</span><span>)</span><span>;</span>
+unsetsetkey <span>(</span><span>"@<span title="\e">\e</span>mB"</span>, <span>"<span title="\e">\e</span>b"</span><span>)</span><span>;</span>
+unsetsetkey <span>(</span><span>"@<span title="\e">\e</span>mi"</span>, <span>"<span title="\e">\e</span>i"</span><span>)</span><span>;</span>
+unsetsetkey <span>(</span><span>"@<span title="\e">\e</span>mH"</span>, <span>"<span title="\e">\e</span>h"</span><span>)</span><span>;</span>
+unset_setkey <span>(</span><span>"@<span title="\e">\e</span>my"</span>, <span>"<span title="\e">\e</span>y"</span><span>)</span><span>;</span></code></pre>
+<p>可以根据自己的需要修改，也可以简单的注释掉；使用菜单可以用F10键。</p>
+<p>由于Jed可模拟多种编辑器，其各自按键指令也有所不同。这里以模拟 Emacs 为例，说明在编辑器中的操作方法。</p>
+<p> <strong>文件</strong> </p>
+<pre><code>/usr/share/jed/lib/*.sl 这是默认的运行jed slang的文件。
+/usr/share/jed/lib/site.sl 这是默认的启动文件。
+/etc/jed.rc 这是全局系统配置文件。
+~/.jedrc 这是用户配置文件。</code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

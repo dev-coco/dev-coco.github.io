@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>man:查看Linux中的指令帮助</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="man:查看Linux中的指令帮助 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>man</h1><p>查看Linux中的指令帮助</p>
+<h2>补充说明</h2><p><strong>man命令</strong> 是Linux下的帮助指令，通过man指令可以查看Linux中的指令帮助、配置文件帮助和编程帮助等信息。</p>
+<h3>语法</h3><pre><code>man<span>(</span>选项<span>)</span><span>(</span>参数<span>)</span></code></pre>
+<h3>选项</h3><pre><code>-a：在所有的man帮助手册中搜索；
+-f：等价于whatis指令，显示给定关键字的简短描述信息；
+-P：指定内容时使用分页程序；
+-M：指定man手册搜索的路径。</code></pre>
+<h3>参数</h3><ul>
+<li>数字：指定从哪本man手册中搜索帮助；</li>
+<li>关键字：指定要搜索帮助的关键字。</li>
+</ul>
+<h3>数字代表内容</h3><pre><code><span>1</span>：用户在shell环境可操作的命令或执行文件；
+<span>2</span>：系统内核可调用的函数与工具等
+<span>3</span>：一些常用的函数<span>(</span>function<span>)</span>与函数库<span>(</span>library<span>)</span>，大部分为C的函数库<span>(</span>libc<span>)</span>
+<span>4</span>：设备文件说明，通常在/dev下的文件
+<span>5</span>：配置文件或某些文件格式
+<span>6</span>：游戏<span>(</span>games<span>)</span>
+<span>7</span>：惯例与协议等，如Linux文件系统，网络协议，ASCII code等说明
+<span>8</span>：系统管理员可用的管理命令
+<span>9</span>：跟kernel有关的文件</code></pre>
+<h3>实例</h3><p>我们输入<code>man ls</code>，它会在最左上角显示“LS（1）”，在这里，“LS”表示手册名称，而“（1）”表示该手册位于第一节章，同样，我们输<code>man ifconfig</code>它会在最左上角显示“IFCONFIG（8）”。也可以这样输入命令：“man [章节号] 手册名称”。</p>
+<p>man是按照手册的章节号的顺序进行搜索的，比如：</p>
+<pre><code><span>man</span> <span>sleep</span></code></pre>
+<p>只会显示sleep命令的手册,如果想查看库函数sleep，就要输入:</p>
+<pre><code><span>man</span> <span>3</span> <span>sleep</span></code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

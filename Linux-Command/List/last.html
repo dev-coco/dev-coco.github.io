@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>last:列出目前与过去登入系统的用户相关信息</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="last:列出目前与过去登入系统的用户相关信息 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>last</h1><p>列出目前与过去登入系统的用户相关信息</p>
+<h2>补充说明</h2><p><strong>last命令</strong> 用于显示用户最近登录信息。单独执行last命令，它会读取<code>/var/log/wtmp</code>的文件，并把该给文件的内容记录的登入系统的用户名单全部显示出来。</p>
+<h3>语法</h3><pre><code>last<span>(</span>选项<span>)</span><span>(</span>参数<span>)</span></code></pre>
+<h3>选项</h3><pre><code>-a：把从何处登入系统的主机名称或ip地址，显示在最后一行；
+-d：将IP地址转换成主机名称；
+-f <span>&lt;</span>记录文件<span>></span>：指定记录文件。
+-n <span>&lt;</span>显示列数<span>></span>或-<span>&lt;</span>显示列数<span>></span>：设置列出名单的显示列数；
+-R：不显示登入系统的主机名称或IP地址；
+-x：显示系统关机，重新开机，以及执行等级的改变等信息。</code></pre>
+<h3>参数</h3><ul>
+<li>用户名：显示用户登录列表；</li>
+<li>终端：显示从指定终端的登录列表。</li>
+</ul>
+<h3>实例</h3><p>last命令用了显示用户登录情况，以下是直接显示固定行数的记录：</p>
+<pre><code>last -10
+root     pts/0        <span>221.6</span>.45.34      Tue Dec <span>17</span> 09:40   still logged <span>in</span>
+root     pts/0        <span>221.6</span>.45.34      Mon Dec <span>16</span> 09:00 - <span>11</span>:57  <span>(</span>02:56<span>)</span>
+root     pts/0        <span>222.94</span>.97.122    Sun Dec <span>15</span> <span>20</span>:39 - <span>23</span>:28  <span>(</span>02:48<span>)</span>
+root     pts/0        <span>222.95</span>.209.80    Sat Dec <span>14</span> <span>14</span>:39 - <span>14</span>:58  <span>(</span>00:18<span>)</span>
+root     pts/0        <span>221.6</span>.45.34      Thu Dec <span>12</span> <span>16</span>:55 - <span>17</span>:37  <span>(</span>00:41<span>)</span>
+root     pts/0        <span>49.65</span>.139.195    Wed Dec <span>11</span> <span>20</span>:40 - <span>21</span>:16  <span>(</span>00:35<span>)</span>
+root     pts/0        <span>49.65</span>.139.195    Wed Dec <span>11</span> <span>19</span>:46 - <span>20</span>:03  <span>(</span>00:17<span>)</span>
+root     pts/0        <span>221.6</span>.45.34      Tue Dec <span>10</span> <span>14</span>:41 - <span>15</span>:52  <span>(</span>01:10<span>)</span>
+root     pts/0        <span>221.6</span>.45.34      Mon Dec  <span>9</span> <span>17</span>:24 - <span>17</span>:30  <span>(</span>00:06<span>)</span>
+root     pts/0        <span>221.6</span>.45.34      Mon Dec  <span>9</span> 09:38 - <span>11</span>:41  <span>(</span>02:02<span>)</span></code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

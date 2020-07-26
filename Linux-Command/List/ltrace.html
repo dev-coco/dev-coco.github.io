@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>ltrace:用来跟踪进程调用库函数的情况</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="ltrace:用来跟踪进程调用库函数的情况 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>ltrace</h1><p>用来跟踪进程调用库函数的情况</p>
+<h2>补充说明</h2><p><strong>ltrace命令</strong> 是用来跟踪进程调用库函数的情况。</p>
+<h3>语法</h3><pre><code>ltrace <span>[</span>option <span>..</span>.<span>]</span> <span>[</span>command <span>[</span>arg <span>..</span>.<span>]</span><span>]</span></code></pre>
+<h3>选项</h3><pre><code>-a 对齐具体某个列的返回值。
+-c 计算时间和调用，并在程序退出时打印摘要。
+-C 解码低级别名称（内核级）为用户级名称。
+-d 打印调试信息。
+-e 改变跟踪的事件。
+-f 跟踪子进程。
+-h 打印帮助信息。
+-i 打印指令指针，当库调用时。
+-l 只打印某个库中的调用。
+-L 不打印库调用。
+-n, --indent<span>=</span>NR 对每个调用级别嵌套以NR个空格进行缩进输出。
+-o, --output<span>=</span>file 把输出定向到文件。
+-p PID 附着在值为PID的进程号上进行ltrace。
+-r 打印相对时间戳。
+-s STRLEN 设置打印的字符串最大长度。
+-S 显示系统调用。
+-t, -tt, -ttt 打印绝对时间戳。
+-T 输出每个调用过程的时间开销。
+-u USERNAME 使用某个用户id或组ID来运行命令。
+-V, --version 打印版本信息，然后退出。
+-x NAME treat the global NAME like a library subroutine.（求翻译）</code></pre>
+<h3>实例</h3><p>最基本应用，不带任何参数：</p>
+<pre><code><span>[</span>guest@localhost tmp<span>]</span>&#36; ltrace ./a.out
+__libc_start_main<span>(</span>0x80484aa, <span>1</span>, 0xbfc07744, 0x8048550, 0x8048540 <span>&lt;</span>unfinished <span>..</span>.<span>></span>
+printf<span>(</span><span>"no1:%d <span title="\t">\t</span> no2:%d <span title="\t">\t</span> diff:%d<span title="\n">\n</span>"</span>, <span>10</span>, <span>6</span>, 4no1:10 no2:6 diff:4 <span>)</span> <span>=</span> <span>24</span>
+printf<span>(</span><span>"no1:%d <span title="\t">\t</span> no2:%d <span title="\t">\t</span> diff:%d<span title="\n">\n</span>"</span>, <span>9</span>, <span>7</span>, 2no1:9 no2:7 diff:2 <span>)</span> <span>=</span> <span>23</span>
+printf<span>(</span><span>"no1:%d <span title="\t">\t</span> no2:%d <span title="\t">\t</span> diff:%d<span title="\n">\n</span>"</span>, <span>8</span>, <span>8</span>, 0no1:8 no2:8 diff:0 <span>)</span> <span>=</span> <span>23</span>
+--- SIGFPE <span>(</span>Floating point exception<span>)</span> ---
++++ killed by SIGFPE +++</code></pre>
+<p>输出调用时间开销：</p>
+<pre><code><span>[</span>guest@localhost tmp<span>]</span>&#36; ltrace -T ./a.out
+__libc_start_main<span>(</span>0x80484aa, <span>1</span>, 0xbf81d394, 0x8048550, 0x8048540 <span>&lt;</span>unfinished <span>..</span>.<span>></span>
+printf<span>(</span><span>"no1:%d <span title="\t">\t</span> no2:%d <span title="\t">\t</span> diff:%d<span title="\n">\n</span>"</span>, <span>10</span>, <span>6</span>, 4no1:10 no2:6 diff:4 <span>)</span> <span>=</span> <span>24</span> <span>&lt;</span><span>0.00097</span><span><span>2</span>></span>
+printf<span>(</span><span>"no1:%d <span title="\t">\t</span> no2:%d <span title="\t">\t</span> diff:%d<span title="\n">\n</span>"</span>, <span>9</span>, <span>7</span>, 2no1:9 no2:7 diff:2 <span>)</span> <span>=</span> <span>23</span> <span>&lt;</span><span>0.00015</span><span><span>5</span>></span>
+printf<span>(</span><span>"no1:%d <span title="\t">\t</span> no2:%d <span title="\t">\t</span> diff:%d<span title="\n">\n</span>"</span>, <span>8</span>, <span>8</span>, 0no1:8 no2:8 diff:0 <span>)</span> <span>=</span> <span>23</span> <span>&lt;</span><span>0.00015</span><span><span>3</span>></span>
+--- SIGFPE <span>(</span>Floating point exception<span>)</span> ---
++++ killed by SIGFPE +++</code></pre>
+<p>显示系统调用：</p>
+<pre><code><span>[</span>guest@localhost tmp<span>]</span>&#36; ltrace -S ./a.out
+SYS_brk<span>(</span>NULL<span>)</span> <span>=</span> 0x9e20000
+SYS_access<span>(</span>0xa4710f, <span>4</span>, 0xa4afc0, <span>0</span>, 0xa4b644<span>)</span> <span>=</span> <span>0</span>
+SYS_open<span>(</span><span>"/etc/ld.so.preload"</span>, <span>0</span>, 02<span>)</span> <span>=</span> <span>3</span>
+SYS_fstat64<span>(</span><span>3</span>, 0xbfbd7a94, 0xa4afc0, -1, <span>3</span><span>)</span> <span>=</span> <span>0</span>
+SYS_mmap2<span>(</span><span>0</span>, <span>17</span>, <span>3</span>, <span>2</span>, <span>3</span><span>)</span> <span>=</span> 0xb7f2a000
+SYS_close<span>(</span><span>3</span><span>)</span> <span>=</span> <span>0</span>
+SYS_open<span>(</span><span>"/lib/libcwait.so"</span>, <span>0</span>, 00<span>)</span> <span>=</span> <span>3</span>
+SYS_read<span>(</span><span>3</span>, <span>"<span title="\177">\177</span>ELF<span title="\001">\001</span><span title="\001">\001</span><span title="\001">\001</span>"</span>, <span>512</span><span>)</span> <span>=</span> <span>512</span>
+SYS_fstat64<span>(</span><span>3</span>, 0xbfbd76fc, 0xa4afc0, <span>4</span>, 0xa4b658<span>)</span> <span>=</span> <span>0</span>
+SYS_mmap2<span>(</span><span>0</span>, <span>4096</span>, <span>3</span>, <span>34</span>, -1<span>)</span> <span>=</span> 0xb7f29000
+SYS_mmap2<span>(</span><span>0</span>, <span>5544</span>, <span>5</span>, <span>2050</span>, <span>3</span><span>)</span> <span>=</span> 0x423000
+SYS_mmap2<span>(</span>0x424000, <span>4096</span>, <span>3</span>, <span>2066</span>, <span>3</span><span>)</span> <span>=</span> 0x424000
+<span>..</span><span>..</span><span>..</span><span>..</span><span>..</span><span>..</span>.省去若干行</code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

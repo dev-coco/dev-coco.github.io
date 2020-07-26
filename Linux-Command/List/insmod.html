@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>insmod:将给定的模块加载到内核中</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="insmod:将给定的模块加载到内核中 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>insmod</h1><p>将给定的模块加载到内核中</p>
+<h2>补充说明</h2><p><strong>insmod命令</strong> 用于将给定的模块加载到内核中。Linux有许多功能是通过模块的方式，在需要时才载入kernel。如此可使kernel较为精简，进而提高效率，以及保有较大的弹性。这类可载入的模块，通常是设备驱动程序。</p>
+<h3>语法</h3><pre><code>insmod<span>(</span>选项<span>)</span><span>(</span>参数<span>)</span></code></pre>
+<h3>选项</h3><pre><code>-f：不检查目前kernel版本与模块编译时的kernel版本是否一致，强制将模块载入；
+-k：将模块设置为自动卸除；
+-m：输出模块的载入信息；
+-o<span>&lt;</span>模块名称<span>></span>：指定模块的名称，可使用模块文件的文件名；
+-p：测试模块是否能正确地载入kernel；
+-s：将所有信息记录在系统记录文件中；
+-v：执行时显示详细的信息；
+-x：不要汇出模块的外部符号；
+-X：汇出模块所有的外部符号，此为预设置。</code></pre>
+<h3>参数</h3><p>内核模块：指定要加载的内核模块文件。</p>
+<h3>实例</h3><p>加载RAID1阵列级别模块，如下所示：</p>
+<pre><code><span>[</span>root@localhost boot<span>]</span><span># insmod /lib/modules/2.6.</span>
+<span>18</span>-8.el5/kernel/drivers/md/raid1.ko
+
+<span>[</span>root@localhost boot<span>]</span><span># lsmod | grep raid1</span>
+raid1                  <span>25153</span>  <span>0</span></code></pre>
+<p>从以上显示结果可知，RAID1模块已加载成功。只是在使用insmod命令加载模块时，需要使用绝对路径方能加载，且加载时无法自动解决依赖关系。</p>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>
