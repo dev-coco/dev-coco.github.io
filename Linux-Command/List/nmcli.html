@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>nmcli:地址配置工具</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="nmcli:地址配置工具 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>nmcli</h1><p>地址配置工具</p>
+<h2>补充说明</h2><p><strong>nmcli命令</strong> 是 NetworkManager client 网络管理客户端。</p>
+<h3>语法</h3><pre><code>nmcli <span>[</span>OPTIONS<span>]</span> OBJECT <span>{</span> COMMAND <span>|</span> <span>help</span> <span>}</span></code></pre>
+<h3>选项</h3><pre><code>OPTIONS
+  -t<span>[</span>erse<span>]</span>                                  <span># terse output 简洁的输出</span>
+  -p<span>[</span>retty<span>]</span>                                 <span># pretty output 漂亮的输出</span>
+  -m<span>[</span>ode<span>]</span> tabular<span>|</span>multiline                 <span># output mode  输出模式</span>
+  -f<span>[</span>ields<span>]</span> <span>&lt;</span>field1,field2,<span>..</span>.<span>>|</span>all<span>|</span>common  <span># specify fields to output 指定要输出的字段</span>
+  -e<span>[</span>scape<span>]</span> <span>yes</span><span>|</span>no                          <span># escape columns separators in values 在值中转义列分隔符</span>
+  -n<span>[</span>ocheck<span>]</span>                                <span># 不要检查nmcli和NetworkManager版本</span>
+  -a<span>[</span>sk<span>]</span>                                    <span># 要求缺少参数</span>
+  -w<span>[</span>ait<span>]</span> <span>&lt;</span>seconds<span>></span>                         <span># 设置超时等待整理操作</span>
+  -v<span>[</span>ersion<span>]</span>                                <span># 显示程序版本</span>
+  -h<span>[</span>elp<span>]</span>                                   <span># 打印此帮助</span>
+
+OBJECT
+  g<span>[</span>eneral<span>]</span>       NetworkManager的一般状态和操作
+  n<span>[</span>etworking<span>]</span>    整体组网控制
+  r<span>[</span>adio<span>]</span>         NetworkManager切换开关
+  c<span>[</span>onnection<span>]</span>    NetworkManager的连接
+  d<span>[</span>evice<span>]</span>        由NetworkManager管理的设备
+  a<span>[</span>gent<span>]</span>         NetworkManager秘密代理或polkit代理</code></pre>
+<h3>实例</h3><pre><code>nmcli connection show           <span># 查看当前连接状态</span>
+nmcli connection reload         <span># 重启服务</span>
+nmcli connection show -active   <span># 显示活动的连接</span>
+nmcli connection show <span>"lan eth0"</span># 显示指定一个网络连接配置
+nmcli device status             <span># 显示设备状态</span>
+nmcli device show eno16777736   <span># 显示指定接口属性</span>
+nmcli device show               <span># 显示全部接口属性</span>
+nmcli con up static             <span># 启用static连接配置</span>
+nmcli con up default            <span># 启用default连接配置 </span>
+nmcli con <span>add</span> <span>help</span>              <span># 查看帮助</span>
+</code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

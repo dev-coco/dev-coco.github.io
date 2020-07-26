@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>rintf:格式化并输出结果</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="rintf:格式化并输出结果 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3,h4{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>printf</h1><p>格式化并输出结果。</p>
+<h2>内建命令</h2><h4>概要</h4><pre><code><span>printf</span> <span>[</span>-v var<span>]</span> <span>format</span> <span>[</span>arguments<span>]</span></code></pre>
+<h4>主要用途</h4><ul>
+<li>格式化参数并输出。</li>
+</ul>
+<h4>选项</h4><pre><code>-v var：将结果输出到变量var中而不是输出到标准输出。</code></pre>
+<h4>参数</h4><p>format：输出格式。</p>
+<p>arguments：一到多个参数。</p>
+<pre><code>转义序列：除了支持printf<span>(</span><span>1</span><span>)</span>和printf<span>(</span><span>3</span><span>)</span>的转义序列，内建printf还支持以下转义序列：
+
+%b       展开参数中的反斜杠转义字符。
+%q       将参数扩起以用作shell输入。
+%<span>(</span>fmt<span>)</span>T  根据strftime<span>(</span><span>3</span><span>)</span>中的转义字符来输出日期时间字符串。</code></pre>
+<h4>返回值</h4><p>返回状态为成功除非给出了非法选项、写错误、赋值错误。</p>
+<h4>例子</h4><pre><code><span># %-5s 格式为左对齐且宽度为5的字符串代替（'-'表示左对齐），不使用则默认右对齐。</span>
+<span># %-4.2f 格式为左对齐宽度为4，保留两位小数。</span>
+
+<span>printf</span> <span>"%-5s %-10s %-4s<span title="\n">\n</span>"</span> NO Name Mark
+<span>printf</span> <span>"%-5s %-10s %-4.2f<span title="\n">\n</span>"</span> 01 Tom <span>90.3456</span>
+<span>printf</span> <span>"%-5s %-10s %-4.2f<span title="\n">\n</span>"</span> 02 Jack <span>89.2345</span>
+<span>printf</span> <span>"%-5s %-10s %-4.2f<span title="\n">\n</span>"</span> 03 Jeff <span>98.4323</span>
+
+<span># 输出</span>
+NO    Name       Mark
+01    Tom        <span>90.35</span>
+02    Jack       <span>89.23</span>
+03    Jeff       <span>98.43</span>
+
+
+<span># %b %q %(fmt)T 的例子。</span>
+<span># see it again with a newline.</span>
+<span>printf</span> <span>"%s<span title="\n">\n</span>"</span> <span>'hello world'</span>
+<span># 展开换行符，和上面的结果一样。</span>
+<span>printf</span> <span>"%b"</span> <span>'hello world<span title="\n">\n</span>'</span>
+
+<span>printf</span> <span>'%q<span title="\n">\n</span>'</span> <span>'a b c'</span>
+<span># 输出</span>
+a<span>\</span> b<span>\</span> c
+
+<span># %z为时区，%n为换行符。</span>
+<span>printf</span> <span>"%(%F %T %z%n)T"</span>
+<span># 输出</span>
+<span>2019</span>-09-10 01:48:07 +0000</code></pre>
+<h4>注意</h4><ol>
+<li>该命令是bash内建命令，相关的帮助信息请查看<code>help</code>命令。</li>
+</ol>
+<h2>外部命令</h2><h4>概要</h4><pre><code><span>printf</span> FORMAT <span>[</span>ARGUMENT<span>]</span><span>..</span>.
+<span>printf</span> OPTION</code></pre>
+<h4>主要用途</h4><ul>
+<li>格式化参数并输出。</li>
+</ul>
+<h4>选项</h4><pre><code>--help 显示帮助信息并退出。
+--version 显示版本信息并退出。</code></pre>
+<h4>参数</h4><p>format：输出格式。</p>
+<p>arguments：一到多个参数。</p>
+<pre><code>在这里忽略了（%b %q），如果你安装的coreutils版本支持它们，那么请参考上面的例子。
+支持的转义序列：
+
+<span>\</span>"          双引号
+<span>\</span><span>\</span>          反斜杠
+<span>\</span>a          响铃
+<span>\</span>b          退格
+<span>\</span>c          截断输出
+<span>\</span>e          退出
+<span>\</span>f          翻页
+<span>\</span>n          换行
+<span>\</span>r          回车
+<span>\</span>t          水平制表符
+<span>\</span>v          竖直制表符
+<span>\</span>NNN        八进制数 <span>(</span><span>1</span>到3位数字<span>)</span>
+<span>\</span>xHH        十六进制数 <span>(</span><span>1</span>到2位数字<span>)</span>
+<span>\</span>uHHHH      Unicode字符附加4位十六进制数字
+<span>\</span>UHHHHHHHH  Unicode字符附加8位十六进制数字
+%%          百分号
+
+以及<span>'diouxXfeEgGcs'</span>中的一个结尾的C格式规范，将被转换为正确的类型并处理可变宽度。</code></pre>
+<h4>例子</h4><pre><code><span># 使用 /usr/bin/printf 确保调用的不是内建命令。</span>
+<span># 当然，在你关闭内建printf以及确认当前环境没有printf函数的情况下，可直接使用printf，详见末尾"注意"的链接。</span>
+
+<span># 按行打印数组和关联数组的下标及值。</span>
+
+<span># 声明数组可以不加'declare -a'或'local -a'（在函数内声明的局部变量）。</span>
+<span>arr</span><span>=</span><span>(</span><span>'line1'</span> <span>'line2'</span><span>)</span>
+/usr/bin/printf <span>"%s<span title="\n">\n</span>"</span> <span>&#36;{<span>!</span>arr<span>[</span>@<span>]</span>}</span>
+<span># 输出下标</span>
+<span>0</span>
+<span>1</span>
+/usr/bin/printf <span>"%s<span title="\n">\n</span>"</span> <span>&#36;{arr<span>[</span>@<span>]</span>}</span>
+<span># 输出值</span>
+line1
+line2
+
+<span>#声明关联数组（也就是字典）必须加'declare -A'或'local -A'（在函数内声明的局部变量）。</span>
+<span>declare</span> -A <span>assoc_arr</span><span>=</span><span>(</span><span>[</span><span>'key1'</span><span>]</span><span>=</span><span>'value1'</span> <span>[</span><span>'key2'</span><span>]</span><span>=</span><span>'value2'</span><span>)</span>
+/usr/bin/printf <span>"%s<span title="\n">\n</span>"</span> <span>&#36;{<span>!</span>assoc_arr<span>[</span>@<span>]</span>}</span>
+<span># 输出键。</span>
+key2
+key1
+/usr/bin/printf <span>"%s<span title="\n">\n</span>"</span> <span>&#36;{assoc_arr<span>[</span>@<span>]</span>}</span>
+<span># 输出值。</span>
+value2
+value1</code></pre>
+<h4>返回值</h4><p>返回状态为成功除非给出了非法选项等。</p>
+<h4>注意</h4><ol>
+<li><p>该命令是<code>GNU coreutils</code>包中的命令，相关的帮助信息请查看<code>man -s 1 printf</code>或<code>info coreutils &#39;pwd invocation&#39;</code>。</p>
+</li>
+<li><p>启动或关闭内建命令请查看<code>enable</code>命令，关于同名优先级的问题请查看<code>builtin</code>命令的例子部分的相关讨论。</p>
+</li>
+<li><p>我通过和<code>bug-bash@gnu.org</code>的交流，得到了关于这几个格式说明符<code>%b %q %(fmt)T</code>的解释：</p>
+<blockquote>
+<p>printf(1)中的%b格式说明符是printf(3)支持的格式之外增加的一个POSIX特性。</p>
+<p>%q和%T说明符是非标准的，并且不受所有独立实现的printf的支持。</p>
+</blockquote>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

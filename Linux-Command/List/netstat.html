@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>netstat:查看Linux中网络系统状态信息</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="netstat:查看Linux中网络系统状态信息 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>netstat</h1><p>查看Linux中网络系统状态信息</p>
+<h2>补充说明</h2><p><strong>netstat命令</strong> 用来打印Linux中网络系统的状态信息，可让你得知整个Linux系统的网络情况。</p>
+<h3>语法</h3><pre><code>netstat<span>(</span>选项<span>)</span></code></pre>
+<h3>选项</h3><pre><code>-a或--all：显示所有连线中的Socket；
+-A<span>&lt;</span>网络类型<span>></span>或--<span>&lt;</span>网络类型<span>></span>：列出该网络类型连线中的相关地址；
+-c或--continuous：持续列出网络状态；
+-C或--cache：显示路由器配置的快取信息；
+-e或--extend：显示网络其他相关信息；
+-F或--fib：显示FIB；
+-g或--groups：显示多重广播功能群组组员名单；
+-h或--help：在线帮助；
+-i或--interfaces：显示网络界面信息表单；
+-l或--listening：显示监控中的服务器的Socket；
+-M或--masquerade：显示伪装的网络连线；
+-n或--numeric：直接使用ip地址，而不通过域名服务器；
+-N或--netlink或--symbolic：显示网络硬件外围设备的符号连接名称；
+-o或--timers：显示计时器；
+-p或--programs：显示正在使用Socket的程序识别码和程序名称；
+-r或--route：显示Routing Table；
+-s或--statistice：显示网络工作信息统计表；
+-t或--tcp：显示TCP传输协议的连线状况；
+-u或--udp：显示UDP传输协议的连线状况；
+-v或--verbose：显示指令执行过程；
+-V或--version：显示版本信息；
+-w或--raw：显示RAW传输协议的连线状况；
+-x或--unix：此参数的效果和指定<span>"-A unix"</span>参数相同；
+--ip或--inet：此参数的效果和指定<span>"-A inet"</span>参数相同。</code></pre>
+<h3>实例</h3><p> <strong>列出所有端口 (包括监听和未监听的)</strong> </p>
+<pre><code><span>netstat</span> -a     <span>#列出所有端口</span>
+<span>netstat</span> -at    <span>#列出所有tcp端口</span>
+<span>netstat</span> -au    <span>#列出所有udp端口                             </span></code></pre>
+<p> <strong>列出所有处于监听状态的 Sockets</strong> </p>
+<pre><code><span>netstat</span> -l        <span>#只显示监听端口</span>
+<span>netstat</span> -lt       <span>#只列出所有监听 tcp 端口</span>
+<span>netstat</span> -lu       <span>#只列出所有监听 udp 端口</span>
+<span>netstat</span> -lx       <span>#只列出所有监听 UNIX 端口</span></code></pre>
+<p> <strong>显示每个协议的统计信息</strong> </p>
+<pre><code><span>netstat</span> -s   显示所有端口的统计信息
+<span>netstat</span> -st   显示TCP端口的统计信息
+<span>netstat</span> -su   显示UDP端口的统计信息
+
+``<span><span>`</span>shell
+
+ **在netstat输出中显示 PID 和进程名称**
+
+<span>`</span></span>``shell
+<span>netstat</span> -pt</code></pre>
+<p><code>netstat -p</code>可以与其它开关一起使用，就可以添加“PID/进程名称”到netstat输出中，这样debugging的时候可以很方便的发现特定端口运行的程序。</p>
+<p> <strong>在netstat输出中不显示主机，端口和用户名(host, port or user)</strong> </p>
+<p>当你不想让主机，端口和用户名显示，使用<code>netstat -n</code>。将会使用数字代替那些名称。同样可以加速输出，因为不用进行比对查询。</p>
+<pre><code><span>netstat</span> -an</code></pre>
+<p>如果只是不想让这三个名称中的一个被显示，使用以下命令:</p>
+<pre><code>netsat -a --numeric-ports
+netsat -a --numeric-hosts
+netsat -a --numeric-users</code></pre>
+<p> <strong>持续输出netstat信息</strong> </p>
+<pre><code><span>netstat</span> -c   <span>#每隔一秒输出网络信息</span></code></pre>
+<p> <strong>显示系统不支持的地址族(Address Families)</strong> </p>
+<pre><code><span>netstat</span> --verbose</code></pre>
+<p>在输出的末尾，会有如下的信息：</p>
+<pre><code>netstat: no support <span>for</span> <span><span>`</span>AF IPX' on this system.
+netstat: no support <span>for</span> <span>`</span></span>AF AX25<span>' on this system.
+netstat: no support for <span><span>`</span>AF X25' on this system.
+netstat: no support <span>for</span> <span>`</span></span>AF NETROM'</span> on this system.</code></pre>
+<p> <strong>显示核心路由信息</strong> </p>
+<pre><code><span>netstat</span> -r</code></pre>
+<p>使用<code>netstat -rn</code>显示数字格式，不查询主机名称。</p>
+<p> <strong>找出程序运行的端口</strong> </p>
+<p>并不是所有的进程都能找到，没有权限的会不显示，使用 root 权限查看所有的信息。</p>
+<pre><code><span>netstat</span> -ap <span>|</span> <span>grep</span> <span>ssh</span></code></pre>
+<p>找出运行在指定端口的进程：</p>
+<pre><code><span>netstat</span> -an <span>|</span> <span>grep</span> <span>':80'</span></code></pre>
+<p> <strong>通过端口找进程ID</strong></p>
+<pre><code class="language-bash">netstat <span>-</span>anp<span>|</span>grep <span>8081</span> <span>|</span> grep LISTEN<span>|</span>awk <span>'{printf &#36;7}'</span><span>|</span>cut <span>-</span>d<span>/</span> <span>-</span>f1</code></pre>
+<p> <strong>显示网络接口列表</strong> </p>
+<pre><code><span>netstat</span> -i</code></pre>
+<p>显示详细信息，像是ifconfig使用<code>netstat -ie</code>。</p>
+<p> <strong>IP和TCP分析</strong> </p>
+<p>查看连接某服务端口最多的的IP地址：</p>
+<pre><code><span>netstat</span> -ntu <span>|</span> <span>grep</span> :80 <span>|</span> <span>awk</span> <span>'{print <span>&#36;5</span>}'</span> <span>|</span> <span>cut</span> -d: -f1 <span>|</span> <span>awk</span> <span>'{++ip[<span>&#36;1</span>]} END {for(i in ip) print ip[i],"<span title="\t">\t</span>",i}'</span> <span>|</span> <span>sort</span> -nr</code></pre>
+<p>TCP各种状态列表：</p>
+<pre><code><span>netstat</span> -nt <span>|</span> <span>grep</span> -e <span>127.0</span>.0.1 -e <span>0.0</span>.0.0 -e ::: -v <span>|</span> <span>awk</span> <span>'/^tcp/ {++state[<span>&#36;NF</span>]} END {for(i in state) print i,"<span title="\t">\t</span>",state[i]}'</span></code></pre>
+<p>查看phpcgi进程数，如果接近预设值，说明不够用，需要增加：</p>
+<pre><code><span>netstat</span> -anpo <span>|</span> <span>grep</span> <span>"php-cgi"</span> <span>|</span> <span>wc</span> -l</code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

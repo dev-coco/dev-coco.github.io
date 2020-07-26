@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>pvs:输出物理卷信息报表</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="pvs:输出物理卷信息报表 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>pvs</h1><p>输出物理卷信息报表</p>
+<h2>补充说明</h2><p><strong>pvs命令</strong> 用于输出格式化的物理卷信息报表。使用pvs命令仅能得到物理卷的概要信息，如果要得到更加详细的信息可以使用pvdisplay命令。</p>
+<h3>语法</h3><pre><code>pvs<span>(</span>选项<span>)</span><span>(</span>参数<span>)</span></code></pre>
+<h3>选项</h3><pre><code>--noheadings：不输出标题头；
+--nosuffix：不输出空间大小的单位。</code></pre>
+<h3>参数</h3><p>物理卷：要显示报表的物理卷列表。</p>
+<h3>实例</h3><p>使用pvs命令显示系统中所有物理卷的信息报表。在命令行中输入下面的命令：</p>
+<pre><code>pvs <span># 输出物理卷信息报表 </span></code></pre>
+<p>输出信息如下：</p>
+<pre><code>PV         VG     <span>fmt</span>  Attr PSize   PFree
+/dev/sdb1  vg1000 lvm2 --   <span>100</span>.00M <span>100</span>.00M
+/dev/sdb2         lvm2 --   <span>101</span>.98M <span>101</span>.98M</code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

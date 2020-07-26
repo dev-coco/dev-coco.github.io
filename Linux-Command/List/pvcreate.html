@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>pvcreate:将物理硬盘分区初始化为物理卷</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="pvcreate:将物理硬盘分区初始化为物理卷 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>pvcreate</h1><p>将物理硬盘分区初始化为物理卷</p>
+<h2>补充说明</h2><p><strong>pvcreate命令</strong> 用于将物理硬盘分区初始化为物理卷，以便LVM使用。</p>
+<h3>语法</h3><pre><code>pvcreate<span>(</span>选项<span>)</span><span>(</span>参数<span>)</span></code></pre>
+<h3>选项</h3><pre><code>-f：强制创建物理卷，不需要用户确认；
+-u：指定设备的UUID；
+-y：所有的问题都回答“yes”；
+-Z：是否利用前4个扇区。</code></pre>
+<h3>参数</h3><p>物理卷：指定要创建的物理卷对应的设备文件名。</p>
+<h3>实例</h3><p>查看磁盘信息：</p>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># fdisk -l</span>
+Disk /dev/hda: <span>41.1</span> GB, <span>41174138880</span> bytes
+<span>255</span> heads, <span>63</span> sectors/track, <span>5005</span> cylinders
+Units <span>=</span> cylinders of <span>16065</span> * <span>512</span> <span>=</span> <span>8225280</span> bytes
+
+   Device Boot      Start         End      Blocks   <span>id</span>  System
+/dev/hda1   *           <span>1</span>          <span>13</span>      <span>104391</span>   <span>83</span>  Linux
+/dev/hda2              <span>14</span>        <span>1288</span>    <span>10241437</span>+  <span>83</span>  Linux
+/dev/hda3            <span>1289</span>        <span>1925</span>     <span>5116702</span>+  <span>83</span>  Linux
+/dev/hda4            <span>1926</span>        <span>5005</span>    <span>24740100</span>    <span>5</span>  Extended
+/dev/hda5            <span>1926</span>        <span>2052</span>     <span>1020096</span>   <span>82</span>  Linux swap / Solaris
+/dev/hda6            <span>2053</span>        <span>2235</span>     <span>1469916</span>   8e  Linux LVM
+/dev/hda7            <span>2236</span>        <span>2418</span>     <span>1469916</span>   8e  Linux LVM
+/dev/hda8            <span>2419</span>        <span>2601</span>     <span>1469916</span>   8e  Linux LVM
+/dev/hda9            <span>2602</span>        <span>2784</span>     <span>1469916</span>   8e  Linux LVM</code></pre>
+<p>检查有无 PV 在系统上，然后将<code>/dev/hda6</code>到<code>/dev/hda9</code>建立成为PV格式</p>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># pvscan</span>
+No matching physical volumes found    <span>#找不到任何的 PV 存在！</span></code></pre>
+<p>将6-9分区转成pv，注意大括号的用途：</p>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># pvcreate /dev/hda{6,7,8,9}</span>
+  Physical volume <span>"/dev/hda6"</span> successfully created
+  Physical volume <span>"/dev/hda7"</span> successfully created
+  Physical volume <span>"/dev/hda8"</span> successfully created
+  Physical volume <span>"/dev/hda9"</span> successfully created</code></pre>
+<p>这就分別表示每个 PV 的信息与系统所有 PV 的信息：</p>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># pvscan</span>
+  PV /dev/hda6         lvm2 <span>[</span><span>1.40</span> GB<span>]</span>
+  PV /dev/hda7         lvm2 <span>[</span><span>1.40</span> GB<span>]</span>
+  PV /dev/hda8         lvm2 <span>[</span><span>1.40</span> GB<span>]</span>
+  PV /dev/hda9         lvm2 <span>[</span><span>1.40</span> GB<span>]</span>
+  Total: <span>4</span> <span>[</span><span>5.61</span> GB<span>]</span> / <span>in</span> use: <span>0</span> <span>[</span><span>0</span>   <span>]</span> / <span>in</span> no VG: <span>4</span> <span>[</span><span>5.61</span> GB<span>]</span></code></pre>
+<p>更详细的列示出系统上面每个 PV 信息：</p>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># pvdisplay</span>
+  <span>"/dev/hda6"</span> is a new physical volume of <span>"1.40 GB"</span>
+  --- NEW Physical volume ---
+  PV Name               /dev/hda6  <span>#实际的 partition 分区名称</span>
+  VG Name                          <span>#因为尚未分配出去，所以空白！</span>
+  PV Size               <span>1.40</span> GB    <span>#就是容量说明</span>
+  Allocatable           NO         <span>#是否已被分配，结果是 NO</span>
+  PE Size <span>(</span>KByte<span>)</span>       <span>0</span>          <span>#在此 PV 內的 PE 大小</span>
+  Total PE              <span>0</span>          <span>#共分割出几个 PE</span>
+  <span>free</span> PE               <span>0</span>          <span>#沒被 LV 用掉的 PE</span>
+  Allocated PE          <span>0</span>          <span>#尚可分配出去的 PE 数量</span>
+  PV UUID               Z13Jk5-RCls-UJ8B-HzDa-Gesn-atku-rf2biN
+<span>..</span><span>..</span><span>(</span>底下省略<span>)</span><span>..</span><span>..</span></code></pre>
+<p>删除物理卷：</p>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># pvremove /dev/sdb2</span>
+Labels on physical volume <span>"/dev/sdb2"</span> successfully wiped</code></pre>
+<p>修改物理卷属性：</p>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># pvchange -x n /dev/sdb1    #禁止分配指定物理卷上的PE</span>
+Physical volume <span>"/dev/sdb1"</span> changed
+<span>1</span> physical volume changed / <span>0</span> physical volumes not changed </code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

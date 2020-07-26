@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>popd:从目录堆栈中删除目录</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="popd:从目录堆栈中删除目录 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>popd</h1><p>从目录堆栈中删除目录。</p>
+<h2>概要</h2><pre><code><span>popd</span> <span>[</span>-n<span>]</span> <span>[</span>+N <span>|</span> -N<span>]</span></code></pre>
+<h2>主要用途</h2><ul>
+<li><p>从目录堆栈中删除目录，如果是顶部目录被删除，那么当前工作目录会切换到新的顶部目录。</p>
+</li>
+<li><p>没有参数时，删除目录堆栈顶部。</p>
+</li>
+</ul>
+<h2>选项</h2><pre><code>-n    抑制删除目录引起的当前工作目录变化。</code></pre>
+<h2>参数</h2><p>+N（可选）：不带参数执行<code>dirs</code>命令显示的列表中，左起的第N个目录将被删除。（从0开始计数）</p>
+<p>-N（可选）：不带参数执行<code>dirs</code>命令显示的列表中，右起的第N个目录将被删除。（从0开始计数）</p>
+<h2>返回值</h2><p>返回成功除非提供了非法选项或执行出现错误。</p>
+<h2>例子</h2><pre><code><span># 添加目录到堆栈，当前工作目录不变。</span>
+<span>[</span>user2@pc ~<span>]</span>&#36; <span>dirs</span>
+~
+<span>[</span>user2@pc ~<span>]</span>&#36; <span>pushd</span> -n ~/Desktop
+~ ~/Desktop
+<span>[</span>user2@pc ~<span>]</span>&#36; <span>pushd</span> -n ~/Pictures
+~ ~/Pictures ~/Desktop
+<span>[</span>user2@pc ~<span>]</span>&#36; <span>pushd</span> -n ~/bin
+~ ~/bin ~/Pictures ~/Desktop
+
+<span># 从目录堆栈中删除目录，删除顶部目录时会改变当前工作目录：</span>
+<span>[</span>user2@pc ~<span>]</span>&#36; <span>popd</span> -2
+~ ~/Pictures ~/Desktop
+<span>[</span>user2@pc ~<span>]</span>&#36; <span>popd</span> +1
+~ ~/Desktop
+<span>[</span>user2@pc ~<span>]</span>&#36; <span>popd</span>
+~/Desktop
+<span>[</span>user2@pc Desktop<span>]</span>&#36;</code></pre>
+<pre><code><span># 从目录堆栈中删除目录，删除顶部目录时不会改变当前工作目录：</span>
+<span>[</span>user2@pc ~<span>]</span>&#36; <span>dirs</span>
+~
+<span>[</span>user2@pc ~<span>]</span>&#36; <span>pushd</span> -n ~/Desktop
+~ ~/Desktop
+<span>[</span>user2@pc ~<span>]</span>&#36; <span>popd</span> -n
+~
+<span>[</span>user2@pc ~<span>]</span>&#36; </code></pre>
+<h3>注意</h3><ol>
+<li><code>bash</code>的目录堆栈命令包括<code>dirs popd pushd</code>。</li>
+<li>当前目录始终是目录堆栈的顶部。</li>
+<li>该命令是bash内建命令，相关的帮助信息请查看<code>help</code>命令。</li>
+</ol>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

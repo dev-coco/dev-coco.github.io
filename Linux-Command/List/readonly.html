@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>readonly:标记shell变量或函数为只读</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="readonly:标记shell变量或函数为只读 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>readonly</h1><p>标记shell变量或函数为只读</p>
+<h2>语法</h2><pre><code><span>readonly</span> <span>[</span>-aAf<span>]</span> <span>[</span>name<span>[</span><span>=</span>value<span>]</span> <span>..</span>.<span>]</span>
+<span>readonly</span> -p</code></pre>
+<h2>主要用途</h2><ul>
+<li>定义一到多个变量并设置只读属性。</li>
+<li>为已定义的一到多个变量设置只读属性。</li>
+<li>显示全部包含只读属性的变量。</li>
+<li>为已定义的一到多个函数设置只读属性。</li>
+<li>显示全部包含只读属性的函数。</li>
+</ul>
+<h2>选项</h2><pre><code>-a：指向数组。
+-A：指向关联数组。
+-f：指向函数。
+-p：显示全部只读变量。
+--：在它之后的选项无效。</code></pre>
+<h2>参数</h2><pre><code>name（可选）：变量名或函数名
+value（可选）：变量的值</code></pre>
+<h3>返回值</h3><p>readonly返回true除非你提供了非法选项或非法名称。</p>
+<h2>例子</h2><pre><code><span># 定义变量并增加只读属性</span>
+<span>readonly</span> <span>var1</span><span>=</span><span>13</span> var2
+<span>readonly</span> -a <span>arr1</span><span>=</span><span>(</span><span>1</span> <span>2</span> <span>3</span> <span>4</span> <span>5</span><span>)</span> <span>arr2</span><span>=</span><span>(</span><span>'z'</span> <span>'x'</span> <span>'c'</span><span>)</span>
+<span># 必须有 '-A' 选项</span>
+<span>readonly</span> -A <span>dict1</span><span>=</span><span>(</span><span>[</span><span>'key1'</span><span>]</span><span>=</span><span>'value1'</span><span>)</span></code></pre>
+<pre><code><span># 先定义变量、函数，然后再为它们添加只读属性</span>
+<span>max</span><span>=</span><span>3</span>
+<span>readonly</span> max
+
+<span># 数组定义时可以不加 `declare -a`</span>
+<span>seasons</span><span>=</span><span>(</span><span>'spring'</span> <span>'summer'</span> <span>'autumn'</span> <span>'winter'</span><span>)</span>
+<span># 为数组添加只读属性时可以不加 `-a` 选项</span>
+<span>readonly</span> seasons
+
+<span>declare</span> -A <span>man</span><span>=</span><span>(</span><span>[</span><span>'age'</span><span>]</span><span>=</span><span>23</span> <span>[</span><span>'height'</span><span>]</span><span>=</span><span>'190cm'</span><span>)</span>
+<span># 为关联数组添加只读属性时可以不加 `-A` 选项</span>
+<span>readonly</span> <span>man</span>
+
+<span>function</span> <span>foo</span><span>(</span><span>)</span><span>{</span> <span>echo</span> <span>'bar'</span><span>;</span> <span>}</span>
+<span># 为函数添加只读属性时必须加 `-f` 选项</span>
+<span>readonly</span> -f foo</code></pre>
+<pre><code><span># 显示全部只读变量，以下两个命令的显示结果一样</span>
+<span>readonly</span>
+<span>readonly</span> -p
+<span># 显示全部拥有只读属性的数组</span>
+<span>readonly</span> -a
+<span># 显示全部拥有只读属性的关联数组</span>
+<span>readonly</span> -A
+<span># 显示全部拥有只读属性的函数</span>
+<span>readonly</span> -f</code></pre>
+<h2>常见错误</h2><p>对于只读变量而言，若用户对其值进行修改，则会立即报错。例如，使用该指令定义一个只读变量&quot;test&quot;，并且将其值初始化为&quot;ok&quot;，输入如下命令：</p>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># readonly test='ok'        #定义只读变量并初始化 </span></code></pre>
+<p>那么当用户直接修改该只读变量时就会报错，如下所示：</p>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># test='my'                 #试图修改只读变量的值</span>
+-bash: test: <span>readonly</span> variable</code></pre>
+<p>当用户试图修改只读变量的值时，会被提示该变量为只读变量。</p>
+<h2>注意</h2><ol>
+<li>该命令是bash内建命令，相关的帮助信息请查看<code>help</code>命令。</li>
+<li><code>declare +r</code>不能去除只读属性， <code>unset</code>不能删除只读变量。</li>
+</ol>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

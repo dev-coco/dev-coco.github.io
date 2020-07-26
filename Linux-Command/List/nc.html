@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>nc:用于设置路由器，是网络工具中的瑞士军刀</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="nc:用于设置路由器，是网络工具中的瑞士军刀 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>nc</h1><p>用于设置路由器，是网络工具中的瑞士军刀</p>
+<h2>补充说明</h2><p><strong>nc命令</strong> 全称<strong>netcat</strong>，用于设置路由器。它能通过 TCP 和 UDP 在网络中读写数据。通过与其他工具结合和重定向，你可以在脚本中以多种方式使用它。使用 netcat 命令所能完成的事情令人惊讶。</p>
+<h3>语法</h3><pre><code><span>nc</span> <span>[</span>-hlnruz<span>]</span><span>[</span>-g<span>&lt;</span>网关<span>..</span>.<span>></span><span>]</span><span>[</span>-G<span>&lt;</span>指向器数目<span>></span><span>]</span><span>[</span>-i<span>&lt;</span>延迟秒数<span>></span><span>]</span><span>[</span>-o<span>&lt;</span>输出文件<span>></span><span>]</span><span>[</span>-p<span>&lt;</span>通信端口<span>></span><span>]</span>
+<span>[</span>-s<span>&lt;</span>来源位址<span>></span><span>]</span><span>[</span>-v<span>..</span>.<span>]</span><span>[</span>-w<span>&lt;</span>超时秒数<span>></span><span>]</span><span>[</span>主机名称<span>]</span><span>[</span>通信端口<span>..</span>.<span>]</span></code></pre>
+<h3>选项</h3><pre><code>-g<span>&lt;</span>网关<span>></span> 设置路由器跃程通信网关，最多可设置8个。
+-G<span>&lt;</span>指向器数目<span>></span> 设置来源路由指向器，其数值为4的倍数。
+-h 在线帮助。
+-i<span>&lt;</span>延迟秒数<span>></span> 设置时间间隔，以便传送信息及扫描通信端口。
+-l 使用监听模式，管控传入的资料。
+-n 直接使用IP地址，而不通过域名服务器。
+-o<span>&lt;</span>输出文件<span>></span> 指定文件名称，把往来传输的数据以16进制字码倾倒成该文件保存。
+-p<span>&lt;</span>通信端口<span>></span> 设置本地主机使用的通信端口。
+-r 乱数指定本地与远端主机的通信端口。
+-s<span>&lt;</span>来源位址<span>></span> 设置本地主机送出数据包的IP地址。
+-u 使用UDP传输协议。
+-v 显示指令执行过程。
+-w<span>&lt;</span>超时秒数<span>></span> 设置等待连线的时间。
+-z 使用0输入/输出模式，只在扫描通信端口时使用。</code></pre>
+<h3>实例</h3><p>TCP端口扫描</p>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># nc -v -z -w2 192.168.0.3 1-100 </span>
+<span>192.168</span>.0.3: inverse <span>host</span> lookup failed: Unknown <span>host</span>
+<span>(</span>UNKNOWN<span>)</span> <span>[</span><span>192.168</span>.0.3<span>]</span> <span>80</span> <span>(</span>http<span>)</span> <span>open</span>
+<span>(</span>UNKNOWN<span>)</span> <span>[</span><span>192.168</span>.0.3<span>]</span> <span>23</span> <span>(</span>telnet<span>)</span> <span>open</span>
+<span>(</span>UNKNOWN<span>)</span> <span>[</span><span>192.168</span>.0.3<span>]</span> <span>22</span> <span>(</span>ssh<span>)</span> <span>open</span></code></pre>
+<p>扫描192.168.0.3 的端口 范围是 1-100
+扫描UDP端口</p>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># nc -u -z -w2 192.168.0.1 1-1000  # 扫描192.168.0.3 的端口 范围是 1-1000</span></code></pre>
+<p>扫描指定端口</p>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># nc -nvv 192.168.0.1 80 # 扫描 80端口</span>
+<span>(</span>UNKNOWN<span>)</span> <span>[</span><span>192.168</span>.0.1<span>]</span> <span>80</span> <span>(</span>?<span>)</span> <span>open</span>
+y  //用户输入</code></pre>
+<p>查看从服务器到目的地的出站端口 443 是否被防火墙阻止</p>
+<pre><code>nc <span>-</span>vz acme<span>-</span>v02<span>.</span>api<span>.</span>example<span>.</span>org <span>443</span> <span>-</span>w2
+<span># Ncat: Version 7.50 ( https://nmap.org/ncat )</span>
+<span># Ncat: Connected to x.x.x.x:443.</span>
+<span># Ncat: 0 bytes sent, 0 bytes received in 0.07 seconds.</span></code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

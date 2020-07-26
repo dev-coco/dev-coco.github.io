@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>pstree:以树状图的方式展现进程之间的派生关系</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="pstree:以树状图的方式展现进程之间的派生关系 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>pstree</h1><p>以树状图的方式展现进程之间的派生关系</p>
+<h2>补充说明</h2><p><strong>pstree命令</strong> 以树状图的方式展现进程之间的派生关系，显示效果比较直观。</p>
+<h3>语法</h3><pre><code>pstree<span>(</span>选项<span>)</span></code></pre>
+<h3>选项</h3><pre><code>-a：显示每个程序的完整指令，包含路径，参数或是常驻服务的标示；
+-c：不使用精简标示法；
+-G：使用VT100终端机的列绘图字符；
+-h：列出树状图时，特别标明现在执行的程序；
+-H<span>&lt;</span>程序识别码<span>></span>：此参数的效果和指定<span>"-h"</span>参数类似，但特别标明指定的程序；
+-l：采用长列格式显示树状图；
+-n：用程序识别码排序。预设是以程序名称来排序；
+-p：显示程序识别码；
+-u：显示用户名称；
+-U：使用UTF-8列绘图字符；
+-V：显示版本信息。</code></pre>
+<h3>实例</h3><p>显示当前所有进程的进程号和进程id</p>
+<pre><code>pstree -p</code></pre>
+<p>显示所有进程的所有详细信息，遇到相同的进程名可以压缩显示。</p>
+<pre><code class="language-shellbash">pstree  <span>-</span>a</code></pre>
+<p>获取 SSH 会话的 PID</p>
+<pre><code>pstree -p <span>|</span> <span>grep</span> <span>ssh</span>
+
+<span>#  |-sshd(1221)-+-sshd(2768)---bash(2770)-+-grep(2810)</span>
+<span>#  |            `-sshd(2807)---sshd(2808)</span></code></pre>
+<p>从上方的输出中，你可以看到 sshd 进程与分支的树形图。sshd 的主进程是 sshd（1221），另两个分支分别为 sshd（2768） 和 sshd（2807）。</p>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

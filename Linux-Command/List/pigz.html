@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>pigz:可以用来解压缩文件，gzip的并行实现升级版</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="pigz:可以用来解压缩文件，gzip的并行实现升级版 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>pigz</h1><p>可以用来解压缩文件，gzip的并行实现升级版</p>
+<h2>补充说明</h2><p><strong>pigz命令</strong>可以用来解压缩文件，最重要的是支持多线程并行处理，解压缩比gzip快。主页: <a href="http://zlib.net/pigz/">http://zlib.net/pigz/</a></p>
+<h3>语法</h3><pre><code>pigz <span>[</span> -cdfhikKlLmMnNqrRtz0<span>..</span><span>9,11</span> <span>]</span> <span>[</span> -b blocksize <span>]</span> <span>[</span> -p threads <span>]</span> <span>[</span> -S suffix <span>]</span> <span>[</span> name <span>..</span>.  <span>]</span>
+unpigz <span>[</span> -cfhikKlLmMnNqrRtz <span>]</span> <span>[</span> -b blocksize <span>]</span> <span>[</span> -p threads <span>]</span> <span>[</span> -S suffix <span>]</span> <span>[</span> name <span>..</span>.  <span>]</span></code></pre>
+<h3>参数</h3><pre><code>-0 to -9, -11       <span># Compression level (level 11, zopfli, is much slower)</span>
+--fast, --best      <span># Compression levels 1 and 9 respectively</span>
+-b, --blocksize mmm <span># Set compression block size to mmmK (default 128K)</span>
+-c, --stdout        <span># Write all processed output to stdout (won't delete)</span>
+-d, --decompress    <span># Decompress the compressed input</span>
+-f, --force         <span># Force overwrite, compress .gz, links, and to terminal</span>
+-F  --first         <span># Do iterations first, before block split for -11</span>
+-h, --help          <span># Display a help screen and quit</span>
+-i, --independent   <span># Compress blocks independently for damage recovery</span>
+-I, --iterations n  <span># Number of iterations for -11 optimization</span>
+-J, --maxsplits n   <span># Maximum number of split blocks for -11</span>
+-k, --keep          <span># Do not delete original file after processing</span>
+-K, --zip           <span># Compress to PKWare zip (.zip) single entry format</span>
+-l, --list          <span># List the contents of the compressed input</span>
+-L, --license       <span># Display the pigz license and quit</span>
+-m, --no-time       <span># Do not store or restore mod time</span>
+-M, --time          <span># Store or restore mod time</span>
+-n, --no-name       <span># Do not store or restore file name or mod time</span>
+-N, --name          <span># Store or restore file name and mod time</span>
+-O  --oneblock      <span># Do not split into smaller blocks for -11</span>
+-p, --processes n   <span># Allow up to n compression threads (default is the number of online processors, or 8 if unknown)</span>
+-q, --quiet         <span># Print no messages, even on error</span>
+-r, --recursive     <span># Process the contents of all subdirectories</span>
+-R, --rsyncable     <span># Input-determined block locations for rsync</span>
+-S, --suffix .sss   <span># Use suffix .sss instead of .gz (for compression)</span>
+-t, --test          <span># Test the integrity of the compressed input</span>
+-v, --verbose       <span># Provide more verbose output</span>
+-V  --version       <span># Show the version of pigz</span>
+-Y  --synchronous   <span># Force output file write to permanent storage</span>
+-z, --zlib          <span># Compress to zlib (.zz) instead of gzip format</span>
+--                  <span># All arguments after "--" are treated as files</span></code></pre>
+<h3>实例</h3><p>可以结合<code>tar</code>使用, 压缩命令</p>
+<pre><code><span>tar</span> -cvf - dir1 dir2 dir3 <span>|</span> pigz -p <span>8</span> <span>></span> output.tgz</code></pre>
+<p>解压命令</p>
+<pre><code>pigz -p <span>8</span> -d output.tgz</code></pre>
+<p>如果是gzip格式，也支持用tar解压</p>
+<pre><code><span>tar</span> -xzvf output.tgz</code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

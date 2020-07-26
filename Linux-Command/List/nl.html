@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>nl:为每一个文件添加行号</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="nl:为每一个文件添加行号 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>nl</h1><p>为每一个文件添加行号。</p>
+<h2>概要</h2><pre><code><span>nl</span> <span>[</span>OPTION<span>]</span><span>..</span>. <span>[</span>FILE<span>]</span><span>..</span>.</code></pre>
+<h2>主要用途</h2><ul>
+<li>将每一个输入的文件添加行号后发送到标准输出。</li>
+<li>当没有文件或文件为<code>-</code>时，读取标准输入</li>
+<li>处理逻辑页（logical page）。</li>
+</ul>
+<h2>选项</h2><pre><code>-b, --body-numbering<span>=</span>STYLE           使用STYLE 为body部分的行附加行号。
+-d, --section-delimiter<span>=</span>CC           使用CC作为logical page的分隔符。
+-f, --footer-numbering<span>=</span>STYLE         使用STYLE 为footer部分的行附加行号。
+-h, --header-numbering<span>=</span>STYLE         使用STYLE 为header部分的行附加行号。
+-i, --line-increment<span>=</span>NUMBER          行号递增间隔为NUMBER。
+-l, --join-blank-lines<span>=</span>NUMBER        连续NUMBER行的空行作为一行处理。
+-n, --number-format<span>=</span>FORMAT           根据FORMAT插入行号。
+-p, --no-renumber                    不要在每个部分重置行号。
+-s, --number-separator<span>=</span>STRING        在行号后添加字符串STRING。
+-v, --starting-line-number<span>=</span>NUMBER    每部分的起始行号。
+-w, --number-width<span>=</span>NUMBER            行号宽度为NUMBER。
+--help                               显示帮助信息并退出。
+--version                            显示版本信息并退出。
+
+
+默认选项为：-bt -d<span>'\:'</span> -fn -hn -i1 -l1 -nrn -sTAB -v1 -w6
+
+CC是由两个字符组成的，默认为<span>\</span>: ,第二个字符如果缺失则默认为:
+
+STYLE可以为下列可用值之一：
+
+a       所有行标记行号。
+t       仅为非空行标记行号。
+n       不标记行号。
+pBRE    符合基础正则表达式（BRE）的行会标记行号。
+
+FORMAT可以为下列可用值之一：
+
+<span>ln</span>    左对齐，不会在开始部分补充0以满足宽度。
+rn    右对齐，不会在开始部分补充0以满足宽度。
+rz    右对齐，会在开始部分补充0以满足宽度。
+
+logical page
+三部分组成（header， body， footer）
+起始标记（header <span>\</span>:<span>\</span>:<span>\</span>:， body <span>\</span>:<span>\</span>:， footer <span>\</span>:）</code></pre>
+<h2>参数</h2><p>FILE（可选）：要处理的文件，可以为一或多个。</p>
+<h2>返回值</h2><p>返回0表示成功，返回非0值表示失败。</p>
+<h2>例子</h2><pre><code>nl_logicalpage.txt：该文件用于说明nl命令处理逻辑页，内容如下：
+<span>\</span>:<span>\</span>:<span>\</span>:
+header_1
+<span>\</span>:<span>\</span>:
+body_1
+<span>\</span>:
+footer_1
+<span>\</span>:<span>\</span>:<span>\</span>:
+header_2
+<span>\</span>:<span>\</span>:
+body_2
+<span>\</span>:
+footer_2</code></pre>
+<pre><code><span>[</span>user2@pc ~<span>]</span>&#36; <span>nl</span> nl_logicalpage.txt
+
+       header_1
+
+     <span>1</span>    body_1
+
+       footer_1
+
+       header_2
+
+     <span>1</span>    body_2
+
+       footer_2
+
+<span>[</span>user2@pc ~<span>]</span>&#36; <span>nl</span> -v0 -fa -ha nl_logicalpage.txt
+
+     <span>0</span>    header_1
+
+     <span>1</span>    body_1
+
+     <span>2</span>    footer_1
+
+     <span>0</span>    header_2
+
+     <span>1</span>    body_2
+
+     <span>2</span>    footer_2
+
+<span>[</span>user2@pc ~<span>]</span>&#36; <span>nl</span> -p -fa -ha nl_logicalpage.txt
+
+     <span>1</span>    header_1
+
+     <span>2</span>    body_1
+
+     <span>3</span>    footer_1
+
+     <span>4</span>    header_2
+
+     <span>5</span>    body_2
+
+     <span>6</span>    footer_2</code></pre>
+<pre><code>nl_normal.txt：该文件用于说明nl命令处理普通文件，内容如下：
+ZhuangZhu-74
+<span>2019</span>-11-21
+<span>127.0</span>.0.1</code></pre>
+<pre><code><span>[</span>user2@pc ~<span>]</span>&#36; <span>nl</span> nl_normal.txt
+     <span>1</span>    ZhuangZhu-74
+     <span>2</span>    <span>2019</span>-11-21
+     <span>3</span>    <span>127.0</span>.0.1
+
+<span>[</span>user2@pc ~<span>]</span>&#36; <span>nl</span> -b p<span>'1&#36;'</span> nl_normal.txt
+       ZhuangZhu-74
+     <span>1</span>    <span>2019</span>-11-21
+     <span>2</span>    <span>127.0</span>.0.1
+
+<span>[</span>user2@pc ~<span>]</span>&#36; <span>nl</span> -b p<span>'^[A-Z]'</span> nl_normal.txt
+     <span>1</span>    ZhuangZhu-74
+       <span>2019</span>-11-21
+       <span>127.0</span>.0.1</code></pre>
+<h3>注意</h3><ol>
+<li>该命令是<code>GNU coreutils</code>包中的命令，相关的帮助信息请查看<code>man -s 1 nl</code>，<code>info coreutils &#39;nl invocation&#39;</code>。</li>
+</ol>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

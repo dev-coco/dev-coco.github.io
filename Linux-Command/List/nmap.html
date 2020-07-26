@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>nmap:网络探测和安全审核</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="nmap:网络探测和安全审核 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>nmap</h1><p>网络探测和安全审核</p>
+<h2>补充说明</h2><p><strong>nmap命令</strong> 是一款开放源代码的网络探测和安全审核工具，它的设计目标是快速地扫描大型网络。</p>
+<h3>语法</h3><pre><code>nmap<span>(</span>选项<span>)</span><span>(</span>参数<span>)</span></code></pre>
+<h3>选项</h3><pre><code>-O：激活操作探测；
+-P0：值进行扫描，不ping主机；
+-PT：是同TCP的ping；
+-sV：探测服务版本信息；
+-sP：ping扫描，仅发现目标主机是否存活；
+-ps：发送同步（SYN）报文；
+-PU：发送udp ping；
+-PE：强制执行直接的ICMPping；
+-PB：默认模式，可以使用ICMPping和TCPping；
+-6：使用IPv6地址；
+-v：得到更多选项信息；
+-d：增加调试信息地输出；
+-oN：以人们可阅读的格式输出；
+-oX：以xml格式向指定文件输出信息；
+-oM：以机器可阅读的格式输出；
+-A：使用所有高级扫描选项；
+--resume：继续上次执行完的扫描；
+-P：指定要扫描的端口，可以是一个单独的端口，用逗号隔开多个端口，使用“-”表示端口范围；
+-e：在多网络接口Linux系统中，指定扫描使用的网络接口；
+-g：将指定的端口作为源端口进行扫描；
+--ttl：指定发送的扫描报文的生存期；
+--packet-trace：显示扫描过程中收发报文统计；
+--scanflags：设置在扫描报文中的TCP标志。
+--send-eth/--send-ip 使用原始以太网发送/构造指定IP发送</code></pre>
+<h3>参数</h3><p>ip地址：指定待扫描报文中的TCP地址。</p>
+<h3>实例</h3><p> <strong>安装nmap</strong> </p>
+<pre><code>yum <span>install</span> nmap</code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

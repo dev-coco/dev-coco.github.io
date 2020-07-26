@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>pwd:显示当前工作目录</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="pwd:显示当前工作目录 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>pwd</h1><p>显示当前工作目录。</p>
+<h2>内建命令</h2><h4>概要</h4><pre><code><span>pwd</span> <span>[</span>-LP<span>]</span></code></pre>
+<h4>主要用途</h4><ul>
+<li>显示当前工作目录。</li>
+</ul>
+<h4>选项</h4><pre><code>-L （默认值）打印环境变量<span>"<span>&#36;PWD</span>"</span>的值，可能为符号链接。
+-P 打印当前工作目录的物理位置。</code></pre>
+<h4>返回值</h4><p>返回状态为成功除非给出了非法选项或是当前目录无法读取。</p>
+<h4>注意</h4><ol>
+<li>该命令是bash内建命令，相关的帮助信息请查看<code>help</code>命令。</li>
+</ol>
+<h2>外部命令</h2><h4>概要</h4><pre><code><span>pwd</span> <span>[</span>OPTION<span>]</span><span>..</span>.</code></pre>
+<h4>主要用途</h4><ul>
+<li>显示当前工作目录。</li>
+</ul>
+<h4>选项</h4><pre><code>-L, --logical 打印环境变量<span>"<span>&#36;PWD</span>"</span>的值，可能为符号链接。
+-P, --physical （默认值）打印当前工作目录的物理位置。
+--help 显示帮助信息并退出。
+--version 显示版本信息并退出。</code></pre>
+<h4>返回值</h4><p>返回状态为成功除非给出了非法选项或是当前目录无法读取。</p>
+<h4>注意</h4><ol>
+<li><p>该命令是<code>GNU coreutils</code>包中的命令，相关的帮助信息请查看<code>man pwd</code>或<code>info coreutils &#39;pwd invocation&#39;</code>。</p>
+</li>
+<li><p>启动或关闭内建命令请查看<code>enable</code>命令，关于同名优先级的问题请查看<code>builtin</code>命令的例子部分的相关讨论。</p>
+</li>
+<li><p>在不禁用内建且当前环境没有定义<code>pwd</code>函数的情况下，使用<code>/usr/bin/pwd</code>指向<code>coreutils</code>的<code>pwd</code>，使用<code>pwd</code>指向bash内建的<code>pwd</code>。</p>
+</li>
+</ol>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

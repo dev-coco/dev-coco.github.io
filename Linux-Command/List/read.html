@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>read:从键盘读取变量值</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="read:从键盘读取变量值 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>read</h1><p>从键盘读取变量值</p>
+<h2>补充说明</h2><p><strong>read命令</strong> 从键盘读取变量的值，通常用在shell脚本中与用户进行交互的场合。该命令可以一次读取多个变量的值，变量和输入的值都需要使用空格隔开。在read命令后面，如果没有指定变量名，读取的数据将被自动赋值给特定的变量REPLY</p>
+<h3>语法</h3><pre><code>read<span>(</span>选项<span>)</span><span>(</span>参数<span>)</span></code></pre>
+<h3>选项</h3><pre><code>-p：指定读取值时的提示符；
+-t：指定读取值时等待的时间（秒）。</code></pre>
+<h3>参数</h3><p>变量：指定读取值的变量名。</p>
+<h3>实例</h3><p>下面的列表给出了read命令的常用方式：</p>
+<pre><code><span>read</span> 1987name
+从标准输入读取输入并赋值给变量1987name。</code></pre>
+<pre><code><span>read</span> first last
+从标准输入读取输入到第一个空格或者回车，将输入的第一个单词放到变量first中，并将该行其他的输入放在变量last中。</code></pre>
+<pre><code><span>read</span>
+从标准输入读取一行并赋值给特定变量<span>REPLY</span>。</code></pre>
+<pre><code><span>read</span> -a arrayname
+把单词清单读入arrayname的数组里。</code></pre>
+<pre><code><span>read</span> -p <span>"text"</span>
+打印提示（text），等待输入，并将输入存储在<span>REPLY</span>中。</code></pre>
+<pre><code><span>read</span> -r line
+允许输入包含反斜杠。</code></pre>
+<pre><code><span>read</span> -t <span>3</span>
+指定读取等待时间为3秒。</code></pre>
+<pre><code><span>read</span> -n <span>2</span> var
+从输入中读取两个字符并存入变量var，不需要按回车读取。</code></pre>
+<pre><code><span>read</span> -d <span>":"</span> var
+用定界符“:”结束输入行。</code></pre>
+<h2>read命令示例</h2><p>从标准输入读取输入并赋值给变量1987name。</p>
+<pre><code><span>#read 1987name        #等待读取输入，直到回车后表示输入完毕，并将输入赋值给变量answer</span>
+HelloWorld            <span>#控制台输入Hello</span>
+
+<span>#echo &#36;1987name       #打印变量</span>
+HelloWorld</code></pre>
+<p>等待一组输入，每个单词之间使用空格隔开，直到回车结束，并分别将单词依次赋值给这三个读入变量。</p>
+<pre><code><span>#read one two three</span>
+<span>1</span> <span>2</span> <span>3</span>                   <span>#在控制台输入1 2 3，它们之间用空格隔开。</span>
+
+<span>#echo "one = &#36;one, two = &#36;two, three = &#36;three"</span>
+one <span>=</span> <span>1</span>, two <span>=</span> <span>2</span>, three <span>=</span> <span>3</span></code></pre>
+<p>REPLY示例</p>
+<pre><code><span>#read                  #等待控制台输入，并将结果赋值给特定内置变量REPLY。</span>
+This is <span>REPLY</span>          <span>#在控制台输入该行。 </span>
+
+<span>#echo &#36;REPLY           #打印输出特定内置变量REPLY，以确认是否被正确赋值。</span>
+
+This is <span>REPLY</span></code></pre>
+<p>-p选项示例</p>
+<pre><code><span>#read -p "Enter your name: "            #输出文本提示，同时等待输入，并将结果赋值给REPLY。</span>
+Enter you name: stephen                 <span>#在提示文本之后输入stephen</span>
+
+<span>#echo &#36;REPLY</span>
+stephen</code></pre>
+<p>等待控制台输入，并将输入信息视为数组，赋值给数组变量friends，输入信息用空格隔开数组的每个元素。</p>
+<pre><code><span>#read -a friends</span>
+Tim Tom Helen
+
+<span>#echo "They are &#36;{friends[0]}, &#36;{friends[1]} and &#36;{friends[2]}."</span>
+They are Tim, Tom and Helen.</code></pre>
+<p> <strong>补充一个终端输入密码时候，不让密码显示出来的例子。</strong> </p>
+<p>方法1：</p>
+<pre><code><span class="token shebang important">#!/bin/bash</span>
+<span>read</span> -p <span>"输入密码："</span> -s <span>pwd</span>
+<span>echo</span>
+<span>echo</span> password read, is <span>"<span>&#36;pwd</span>"</span></code></pre>
+<p>方法2：</p>
+<pre><code><span class="token shebang important">#!/bin/bash</span>
+stty -echo
+<span>read</span> -p <span>"输入密码："</span> <span>pwd</span>
+stty <span>echo</span>
+<span>echo</span>
+<span>echo</span> 输入完毕。</code></pre>
+<p>其中，选项<code>-echo</code>禁止将输出发送到终端，而选项<code>echo</code>则允许发送输出。</p>
+<p>使用read命令从键盘读取变量值，并且将值赋给指定的变量，输入如下命令：</p>
+<pre><code><span>read</span> v1 v3          <span>#读取变量值</span></code></pre>
+<p>执行上面的指令以后，要求键入两个数据，如下所示：</p>
+<pre><code>Linux c+            <span>#输入数据</span></code></pre>
+<p>完成之后，可以使用echo命令将指定的变量值输出查看，输入如下命令：</p>
+<pre><code><span>echo</span> <span>&#36;v1</span> <span>&#36;v3</span>       <span>#输出变量的值</span></code></pre>
+<p>执行输出变量值的命令以后，将显示用户所输入的数据值，如下所示：</p>
+<pre><code>Linux c+           <span>#输出变量值</span></code></pre>
+<p>注意：使用echo命令输出变量值时，必须在变量名前添加符号<code>$</code>。否则，echo将直接输出变量名。</p>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

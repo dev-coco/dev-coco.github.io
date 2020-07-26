@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>pssh:批量管理执行</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="pssh:批量管理执行 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>pssh</h1><p>批量管理执行</p>
+<h2>补充说明</h2><p><strong>pssh命令</strong> 是一个python编写可以在多台服务器上执行命令的工具，同时支持拷贝文件，是同类工具中很出色的，类似pdsh，个人认为相对pdsh更为简便，使用必须在各个服务器上配置好密钥认证访问。</p>
+<h3>安装pssh</h3><p>在CentOS系统环境下，介绍yum的安装和源码安装的方式：</p>
+<p> <strong>yum方法</strong> </p>
+<pre><code>yum <span>install</span> pssh</code></pre>
+<p> <strong>编译安装</strong> </p>
+<pre><code><span>wget</span> http://parallel-ssh.googlecode.com/files/pssh-2.3.1.tar.gz
+<span>tar</span> xf pssh-2.3.1.tar.gz
+<span>cd</span> pssh-2.3.1/
+python setup.py <span>install</span></code></pre>
+<h3>选项</h3><pre><code>--version：查看版本
+--help：查看帮助，即此信息
+-h：主机文件列表，内容格式”<span>[</span>user@<span>]</span>host<span>[</span>:port<span>]</span>”
+-H：主机字符串，内容格式”<span>[</span>user@<span>]</span>host<span>[</span>:port<span>]</span>”
+-：登录使用的用户名
+-p：并发的线程数【可选】
+-o：输出的文件目录【可选】
+-e：错误输入文件【可选】
+-t：TIMEOUT 超时时间设置，0无限制【可选】
+-O：SSH的选项
+-v：详细模式
+-A：手动输入密码模式
+-x：额外的命令行参数使用空白符号，引号，反斜线处理
+-X：额外的命令行参数，单个参数模式，同-x
+-i：每个服务器内部处理信息输出
+-P：打印出服务器返回信息</code></pre>
+<h3>实例</h3><p>获取每台服务器的uptime：</p>
+<pre><code><span># pssh -h ip.txt -i uptime</span>
+<span>[</span><span>1</span><span>]</span> <span>11</span>:15:03 <span>[</span>SUCCESS<span>]</span> Mar.mars.he
+<span>11</span>:15:11 up <span>4</span> days, <span>16</span>:25,  <span>1</span> user,  load average: <span>0.00</span>, <span>0.00</span>, <span>0.00</span>
+<span>[</span><span>2</span><span>]</span> <span>11</span>:15:03 <span>[</span>SUCCESS<span>]</span> Jan.mars.he
+<span>11</span>:15:12 up <span>3</span> days, <span>23</span>:26,  <span>0</span> users,  load average: <span>0.00</span>, <span>0.00</span>, <span>0.00</span>
+<span>[</span><span>3</span><span>]</span> <span>11</span>:15:03 <span>[</span>SUCCESS<span>]</span> Feb.mars.he
+<span>11</span>:15:12 up <span>4</span> days, <span>16</span>:26,  <span>2</span> users,  load average: <span>0.08</span>, <span>0.02</span>, <span>0.01</span></code></pre>
+<p>查看每台服务器上mysql复制IO/SQL线程运行状态信息：</p>
+<pre><code><span># pssh -h IP.txt -i "/usr/local/mysql/bin/mysql -e 'show slave status \G'"|grep Running:</span>
+             Slave_IO_Running: <span>yes</span>
+            Slave_SQL_Running: Yes
+             Slave_IO_Running: Yes
+            Slave_SQL_Running: Yes
+             Slave_IO_Running: Yes
+            Slave_SQL_Running: Yes</code></pre>
+<p>保存每台服务器运行的结果：</p>
+<pre><code><span># pssh -h IP.txt -i -o /tmp/pssh/ uptime</span>
+<span>[</span><span>1</span><span>]</span> <span>11</span>:19:47 <span>[</span>SUCCESS<span>]</span> Feb.mars.he
+<span>11</span>:19:55 up <span>4</span> days, <span>16</span>:31,  <span>2</span> users,  load average: <span>0.02</span>, <span>0.03</span>, <span>0.00</span>
+<span>[</span><span>2</span><span>]</span> <span>11</span>:19:47 <span>[</span>SUCCESS<span>]</span> Jan.mars.he
+<span>11</span>:19:56 up <span>3</span> days, <span>23</span>:30,  <span>0</span> users,  load average: <span>0.01</span>, <span>0.00</span>, <span>0.00</span>
+<span>[</span><span>3</span><span>]</span> <span>11</span>:19:47 <span>[</span>SUCCESS<span>]</span> Mar.mars.he
+<span>11</span>:19:56 up <span>4</span> days, <span>16</span>:30,  <span>1</span> user,  load average: <span>0.00</span>, <span>0.00</span>, <span>0.00</span></code></pre>
+<p>我们来看一下/tmp/pssh/下的文件及其内容</p>
+<pre><code><span># ll /tmp/pssh/</span>
+总用量 <span>12</span>
+-rw-r--r--. <span>1</span> root root <span>70</span> <span>12</span>月  <span>1</span> <span>11</span>:19 Feb.mars.he
+-rw-r--r--. <span>1</span> root root <span>70</span> <span>12</span>月  <span>1</span> <span>11</span>:19 Jan.mars.he
+-rw-r--r--. <span>1</span> root root <span>69</span> <span>12</span>月  <span>1</span> <span>11</span>:19 Mar.mars.he
+
+<span># cat /tmp/pssh/*</span>
+<span>11</span>:19:55 up <span>4</span> days, <span>16</span>:31,  <span>2</span> users,  load average: <span>0.02</span>, <span>0.03</span>, <span>0.00</span>
+<span>11</span>:19:56 up <span>3</span> days, <span>23</span>:30,  <span>0</span> users,  load average: <span>0.01</span>, <span>0.00</span>, <span>0.00</span>
+<span>11</span>:19:56 up <span>4</span> days, <span>16</span>:30,  <span>1</span> user,  load average: <span>0.00</span>, <span>0.00</span>, <span>0.00</span></code></pre>
+<p>上面介绍的是pssh命令很少的一部分，大家可以将其用到适合自己的场景，发挥它的最大功效。</p>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

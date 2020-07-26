@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>passwd:用于让用户可以更改自己的密码</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="passwd:用于让用户可以更改自己的密码 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>passwd</h1><p>用于让用户可以更改自己的密码</p>
+<h2>补充说明</h2><p><strong>passwd命令</strong> 用于设置用户的认证信息，包括用户密码、密码过期时间等。系统管理者则能用它管理系统用户的密码。只有管理者可以指定用户名称，一般用户只能变更自己的密码。</p>
+<h3>语法</h3><pre><code>passwd<span>(</span>选项<span>)</span><span>(</span>参数<span>)</span></code></pre>
+<h3>选项</h3><pre><code>-d：删除密码，仅有系统管理者才能使用；
+-f：强制执行；
+-k：设置只有在密码过期失效后，方能更新；
+-l：锁住密码；
+-s：列出密码的相关信息，仅有系统管理者才能使用；
+-u：解开已上锁的帐号。</code></pre>
+<h3>参数</h3><p>用户名：需要设置密码的用户名。</p>
+<h3>知识扩展</h3><p>与用户、组账户信息相关的文件</p>
+<p>存放用户信息：</p>
+<pre><code>/etc/passwd
+/etc/shadow</code></pre>
+<p>存放组信息：</p>
+<pre><code>/etc/group
+/etc/gshadow</code></pre>
+<p>用户信息文件分析（每项用<code>:</code>隔开）</p>
+<pre><code>例如：jack:X:503:504:::/home/jack/:/bin/bash
+jack　　<span># 用户名</span>
+X　　<span># 口令、密码</span>
+<span>503</span>　　<span># 用户id（0代表root、普通新建用户从500开始）</span>
+<span>504</span>　　<span># 所在组</span>
+<span>:</span>　　<span># 描述</span>
+/home/jack/　　<span># 用户主目录</span>
+/bin/bash　　<span># 用户缺省Shell</span></code></pre>
+<p>组信息文件分析</p>
+<pre><code>例如：jack:<span>&#36;!</span>&#36;:???:13801:0:99999:7:*:*:
+jack　　<span># 组名</span>
+<span>&#36;!</span>&#36;　　<span># 被加密的口令</span>
+<span>13801</span>　　<span># 创建日期与今天相隔的天数</span>
+<span>0</span>　　<span># 口令最短位数</span>
+<span>99999</span>　　<span># 用户口令</span>
+<span>7</span>　　<span># 到7天时提醒</span>
+*　　<span># 禁用天数</span>
+*　　<span># 过期天数</span></code></pre>
+<h3>实例</h3><p>如果是普通用户执行passwd只能修改自己的密码。如果新建用户后，要为新用户创建密码，则用passwd用户名，注意要以root用户的权限来创建。</p>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># passwd linuxde     # 更改或创建linuxde用户的密码；</span>
+Changing password <span>for</span> user linuxde.
+New UNIX password:           <span># 请输入新密码；</span>
+Retype new UNIX password:    <span># 再输入一次；</span>
+passwd: all authentication tokens updated successfully.  <span># 成功；</span></code></pre>
+<p>普通用户如果想更改自己的密码，直接运行passwd即可，比如当前操作的用户是linuxde。</p>
+<pre><code><span>[</span>linuxde@localhost ~<span>]</span>&#36; <span>passwd</span>
+Changing password <span>for</span> user linuxde.  <span># 更改linuxde用户的密码；</span>
+<span>(</span>current<span>)</span> UNIX password:    <span># 请输入当前密码；</span>
+New UNIX password:          <span># 请输入新密码；</span>
+Retype new UNIX password:   <span># 确认新密码；</span>
+passwd: all authentication tokens updated successfully.  <span># 更改成功；</span></code></pre>
+<p>比如我们让某个用户不能修改密码，可以用<code>-l</code>选项来锁定：</p>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># passwd -l linuxde     # 锁定用户linuxde不能更改密码；</span>
+Locking password <span>for</span> user linuxde.
+passwd: Success            <span># 锁定成功；</span>
+
+<span>[</span>linuxde@localhost ~<span>]</span><span># su linuxde    # 通过su切换到linuxde用户；</span>
+<span>[</span>linuxde@localhost ~<span>]</span>&#36; <span>passwd</span>       <span># linuxde来更改密码；</span>
+Changing password <span>for</span> user linuxde.
+Changing password <span>for</span> linuxde
+<span>(</span>current<span>)</span> UNIX password:           <span># 输入linuxde的当前密码；</span>
+passwd: Authentication token manipulation error      <span># 失败，不能更改密码；</span></code></pre>
+<p>再来一例：</p>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># passwd -d linuxde   # 清除linuxde用户密码；</span>
+Removing password <span>for</span> user linuxde.
+passwd: Success                          <span># 清除成功；</span>
+
+<span>[</span>root@localhost ~<span>]</span><span># passwd -S linuxde     # 查询linuxde用户密码状态；</span>
+Empty password.                          <span># 空密码，也就是没有密码；</span></code></pre>
+<p>注意：当我们清除一个用户的密码时，登录时就无需密码，这一点要加以注意。</p>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

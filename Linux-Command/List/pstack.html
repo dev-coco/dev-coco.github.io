@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>pstack:显示每个进程的栈跟踪</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="pstack:显示每个进程的栈跟踪 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>pstack</h1><p>显示每个进程的栈跟踪</p>
+<h2>补充说明</h2><p><strong>pstack命令</strong> 可显示每个进程的栈跟踪。<kbd>pstack</kbd> 命令必须由相应进程的属主或 <tt>root</tt> 运行。可以使用 <kbd>pstack</kbd> 来确定进程挂起的位置。此命令允许使用的唯一选项是要检查的进程的 <tt>PID</tt>。</p>
+<p>命令软件包下载地址：<a href="https://packages.debian.org/sid/pstack">https://packages.debian.org/sid/pstack</a></p>
+<h3>实例</h3><p>pstree以树结构显示进程</p>
+<pre><code>pstree -p work <span>|</span> <span>grep</span> ad
+sshd<span>(</span><span>22669</span><span>)</span>---bash<span>(</span><span>22670</span><span>)</span>---ad_preprocess<span>(</span><span>4551</span><span>)</span>-+-<span>{</span>ad_preprocess<span>}</span><span>(</span><span>4552</span><span>)</span>
+                                                <span>|</span>-<span>{</span>ad_preprocess<span>}</span><span>(</span><span>4553</span><span>)</span>
+                                                <span>|</span>-<span>{</span>ad_preprocess<span>}</span><span>(</span><span>4554</span><span>)</span>
+                                                <span>|</span>-<span>{</span>ad_preprocess<span>}</span><span>(</span><span>4555</span><span>)</span>
+                                                <span>|</span>-<span>{</span>ad_preprocess<span>}</span><span>(</span><span>4556</span><span>)</span>
+                                                `-<span>{</span>ad_preprocess<span>}</span><span>(</span><span>4557</span><span>)</span></code></pre>
+<p>work为工作用户，-p为显示进程识别码，ad_preprocess共启动了6个子线程，加上主线程共7个线程。</p>
+<pre><code><span>ps</span> -Lf <span>4551</span>
+<span>UID</span>        PID  <span>PPID</span>   LWP  C NLWP STIME TTY      <span>stat</span>   <span>time</span> CMD
+work      <span>4551</span> <span>22670</span>  <span>4551</span>  <span>2</span>    <span>7</span> <span>16</span>:30 pts/2    Sl+    <span>0</span>:02 ./ad_preprocess
+work      <span>4551</span> <span>22670</span>  <span>4552</span>  <span>0</span>    <span>7</span> <span>16</span>:30 pts/2    Sl+    <span>0</span>:00 ./ad_preprocess
+work      <span>4551</span> <span>22670</span>  <span>4553</span>  <span>0</span>    <span>7</span> <span>16</span>:30 pts/2    Sl+    <span>0</span>:00 ./ad_preprocess
+work      <span>4551</span> <span>22670</span>  <span>4554</span>  <span>0</span>    <span>7</span> <span>16</span>:30 pts/2    Sl+    <span>0</span>:00 ./ad_preprocess
+work      <span>4551</span> <span>22670</span>  <span>4555</span>  <span>0</span>    <span>7</span> <span>16</span>:30 pts/2    Sl+    <span>0</span>:00 ./ad_preprocess
+work      <span>4551</span> <span>22670</span>  <span>4556</span>  <span>0</span>    <span>7</span> <span>16</span>:30 pts/2    Sl+    <span>0</span>:00 ./ad_preprocess
+work      <span>4551</span> <span>22670</span>  <span>4557</span>  <span>0</span>    <span>7</span> <span>16</span>:30 pts/2    Sl+    <span>0</span>:00 ./ad_preprocess</code></pre>
+<p>进程共启动了7个线程</p>
+<p>pstack显示每个进程的栈跟踪：</p>
+<pre><code>pstack <span>4551</span>
+Thread <span>7</span> <span>(</span>Thread <span>1084229984</span> <span>(</span>LWP <span>4552</span><span>))</span>:
+<span>#0  0x000000302afc63dc in epoll_wait () from /lib64/tls/libc.so.6</span>
+<span>#1  0x00000000006f0730 in ub::EPollEx::poll ()</span>
+<span>#2  0x00000000006f172a in ub::NetReactor::callback ()</span>
+<span>#3  0x00000000006fbbbb in ub::UBTask::CALLBACK ()</span>
+<span>#4  0x000000302b80610a in start_thread () from /lib64/tls/libpthread.so.0</span>
+<span>#5  0x000000302afc6003 in clone () from /lib64/tls/libc.so.6</span>
+<span>#6  0x0000000000000000 in ?? ()</span>
+Thread <span>6</span> <span>(</span>Thread <span>1094719840</span> <span>(</span>LWP <span>4553</span><span>))</span>:
+<span>#0  0x000000302afc63dc in epoll_wait () from /lib64/tls/libc.so.6</span>
+<span>#1  0x00000000006f0730 in ub::EPollEx::poll ()</span>
+<span>#2  0x00000000006f172a in ub::NetReactor::callback ()</span>
+<span>#3  0x00000000006fbbbb in ub::UBTask::CALLBACK ()</span>
+<span>#4  0x000000302b80610a in start_thread () from /lib64/tls/libpthread.so.0</span>
+<span>#5  0x000000302afc6003 in clone () from /lib64/tls/libc.so.6</span>
+<span>#6  0x0000000000000000 in ?? ()</span>
+Thread <span>5</span> <span>(</span>Thread <span>1105209696</span> <span>(</span>LWP <span>4554</span><span>))</span>:
+<span>#0  0x000000302b80baa5 in __nanosleep_nocancel ()</span>
+<span>#1  0x000000000079e758 in comcm::ms_sleep ()</span>
+<span>#2  0x00000000006c8581 in ub::UbClientManager::healthyCheck ()</span>
+<span>#3  0x00000000006c8471 in ub::UbClientManager::start_healthy_check ()</span>
+<span>#4  0x000000302b80610a in start_thread () from /lib64/tls/libpthread.so.0</span>
+<span>#5  0x000000302afc6003 in clone () from /lib64/tls/libc.so.6</span>
+<span>#6  0x0000000000000000 in ?? ()</span>
+Thread <span>4</span> <span>(</span>Thread <span>1115699552</span> <span>(</span>LWP <span>4555</span><span>))</span>:
+<span>#0  0x000000302b80baa5 in __nanosleep_nocancel ()</span>
+<span>#1  0x0000000000482b0e in armor::armor_check_thread ()</span>
+<span>#2  0x000000302b80610a in start_thread () from /lib64/tls/libpthread.so.0</span>
+<span>#3  0x000000302afc6003 in clone () from /lib64/tls/libc.so.6</span>
+<span>#4  0x0000000000000000 in ?? ()</span>
+Thread <span>3</span> <span>(</span>Thread <span>1126189408</span> <span>(</span>LWP <span>4556</span><span>))</span>:
+<span>#0  0x000000302af8f1a5 in __nanosleep_nocancel () from /lib64/tls/libc.so.6</span>
+<span>#1  0x000000302af8f010 in sleep () from /lib64/tls/libc.so.6</span>
+<span>#2  0x000000000044c972 in Business_config_manager::run ()</span>
+<span>#3  0x0000000000457b83 in Thread::run_thread ()</span>
+<span>#4  0x000000302b80610a in start_thread () from /lib64/tls/libpthread.so.0</span>
+<span>#5  0x000000302afc6003 in clone () from /lib64/tls/libc.so.6</span>
+<span>#6  0x0000000000000000 in ?? ()</span>
+Thread <span>2</span> <span>(</span>Thread <span>1136679264</span> <span>(</span>LWP <span>4557</span><span>))</span>:
+<span>#0  0x000000302af8f1a5 in __nanosleep_nocancel () from /lib64/tls/libc.so.6</span>
+<span>#1  0x000000302af8f010 in sleep () from /lib64/tls/libc.so.6</span>
+<span>#2  0x00000000004524bb in Process_thread::sleep_period ()</span>
+<span>#3  0x0000000000452641 in Process_thread::run ()</span>
+<span>#4  0x0000000000457b83 in Thread::run_thread ()</span>
+<span>#5  0x000000302b80610a in start_thread () from /lib64/tls/libpthread.so.0</span>
+<span>#6  0x000000302afc6003 in clone () from /lib64/tls/libc.so.6</span>
+<span>#7  0x0000000000000000 in ?? ()</span>
+Thread <span>1</span> <span>(</span>Thread <span>182894129792</span> <span>(</span>LWP <span>4551</span><span>))</span>:
+<span>#0  0x000000302af8f1a5 in __nanosleep_nocancel () from /lib64/tls/libc.so.6</span>
+<span>#1  0x000000302af8f010 in sleep () from /lib64/tls/libc.so.6</span>
+<span>#2  0x0000000000420d79 in Ad_preprocess::run ()</span>
+<span>#3  0x0000000000450ad0 in main ()</span></code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>quota:显示磁盘已使用的空间与限制</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="quota:显示磁盘已使用的空间与限制 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>quota</h1><p>显示磁盘已使用的空间与限制</p>
+<h2>补充说明</h2><p><strong>quota命令</strong> 用于显示用户或者工作组的磁盘配额信息。输出信息包括磁盘使用和配额限制。</p>
+<h3>语法</h3><pre><code>quota<span>(</span>选项<span>)</span><span>(</span>参数<span>)</span></code></pre>
+<h3>选项</h3><pre><code>-g：列出群组的磁盘空间限制；
+-q：简明列表，只列出超过限制的部分；
+-u：列出用户的磁盘空间限制；
+-v：显示该用户或群组，在所有挂入系统的存储设备的空间限制；
+-V：显示版本信息。</code></pre>
+<h3>参数</h3><p>用户或者工作组：指定要显示的用户或者工作组。</p>
+<h3>实例</h3><p>我们可以限制某一群组所能使用的最大磁盘配额，而且可以再限制某一使用者的最大磁盘配额 ，好比做一个收费的应用，vip可以得到空间更大一些。另外，以 Link 的方式，来使邮件可以作为限制的配额（更改<code>/var/spool/mail</code> 这个路径），不2，需要重新再规划一个硬盘！直接使用 Link 的方式指向 /home （或者其它已经做好的 quota 磁盘）就可以！这通常是用在原本规划不好，但是却又不想要更动原有主机架构的情况中！</p>
+<p>要求：Linux 主机里面主要针对 quser1 及 quser2 两个使用者来进行磁盘配额， 且这两个使用者都是挂在 qgroup 组里面的。每个使用者总共有 50MB 的磁盘空间 (不考虑 inode) 限制！并且 soft limit 为 45 MB；而宽限时间设定为 1 天， 但是在一天之内必须要将多余的文件删除掉，否则将无法使用剩下的空间 ；gquota 这个组考虑最大限额，所以设定为 90 MB！（注意，这样设置的好处是富有弹性，好比现在的邮件服务，那么多用户，承诺给用户每人最大空间为数GB，然而人们不可能每人都会使用那么大的空间，所以邮件服务的总空间，实际上肯定不是注册客户数乘以数GB，否则这样得多大啊。）</p>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># groupadd qgroup</span>
+<span>[</span>root@localhost ~<span>]</span><span># useradd -m -g qgroup quser1</span>
+<span>[</span>root@localhost ~<span>]</span><span># useradd -m -g qgroup quser2</span>
+<span>[</span>root@localhost ~<span>]</span><span># passwd quser1</span>
+<span>[</span>root@localhost ~<span>]</span><span># passwd quser2</span>
+<span>[</span>root@localhost ~<span>]</span><span># df     ===>  自己找一个合适的分区来做实验，这里用/disk2</span>
+Filesystem             1K-blocks        Used      Available   Use% Mounted on
+/dev/hda1              <span>5952252</span>   <span>3193292</span>     <span>2451720</span>     <span>57</span>%     /
+/dev/hdb1            <span>28267608</span>       <span>77904</span>   <span>26730604</span>       <span>1</span>%     /disk2
+/dev/hda5              <span>9492644</span>     <span>227252</span>     <span>8775412</span>       <span>3</span>%     /disk1
+
+<span>[</span>root@localhost ~<span>]</span><span># vi /etc/fstab</span>
+<span>LABEL</span><span>=</span>/             /                ext3      defaults                                     <span>1</span> <span>1</span>
+<span>LABEL</span><span>=</span>/disk1    /disk1        ext3      defaults                                      <span>1</span> <span>2</span>
+<span>LABEL</span><span>=</span>/disk2    /disk2        ext3      defaults,usrquota,grpquota       <span>1</span> <span>2</span>
+/dev/hda3         swap         swap     defaults                                     <span>0</span> <span>0</span></code></pre>
+<p>注意多了<code>usrquota,grpquota</code>，在<code>defaults,usrquota,grpquota</code>之间都没有空格，务必正确书写。这样就算加入了 quota 的磁盘格式了！不过，由于真正的 quota 在读取的时候是读取<code>/etc/mtab</code>这个文件的，而该文件需要重新开机之后才能够以/etc/fstab 的新数据进行改写！所以这个时候可以选择：重新开机 (reboot)。</p>
+<p>重新<code>remount filesystem</code>来驱动设定值。</p>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># umount /dev/hdb1</span>
+<span>[</span>root@localhost ~<span>]</span><span># mount -a</span>
+<span>[</span>root@localhost ~<span>]</span><span># grep '/disk2' /etc/mtab</span>
+/dev/hdb1 /disk2 ext3 rw,usrquota,grpquota <span>0</span> <span>0</span></code></pre>
+<p>事实上，也可以利用 mount 的 remount 功能。</p>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># mount -o remount /disk2</span></code></pre>
+<p>这样就已经成功的将 filesystem 的 quota 功能加入。</p>
+<p>扫瞄磁盘的使用者使用状况，并产生重要的 aquota.group 与 aquota.user：</p>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># quotacheck -avug</span>
+quotacheck: Scanning /dev/hdb1 <span>[</span>/disk2<span>]</span> <span>done</span>
+quotacheck: Checked <span>3</span> directories and <span>4</span> files
+
+<span>[</span>root@localhost ~<span>]</span><span># ll /disk2</span>
+-rw-------  <span>1</span> root root  <span>6144</span> Sep  <span>6</span> <span>11</span>:44 aquota.group
+-rw-------  <span>1</span> root root  <span>6144</span> Sep  <span>6</span> <span>11</span>:44 aquota.user</code></pre>
+<p>使用 quotacheck 就可以轻易的将所需要的数据给他输出了！但奇怪的是，在某些 Linux 版本中，不能够以 aquota.user(group) 来启动quota ，可能是因为旧版 quota 的关系， 所以就另外做了一个 link 文件按来欺骗 quota，这个动作非必要。（主要是学习这个思维很重要）</p>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># cd /disk2</span>
+<span>[</span>root@localhost ~<span>]</span><span># ln -s aquota.user quota.user</span>
+<span>[</span>root@localhost ~<span>]</span><span># ln -s aquota.group quota.group</span></code></pre>
+<p>启动 quota 的限额：</p>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># quotaon -avug</span>
+/dev/hdb1 <span>[</span>/disk2<span>]</span>: group quotas turned on
+/dev/hdb1 <span>[</span>/disk2<span>]</span>: user quotas turned on    <span>==</span><span>=</span><span>></span>  看到turned on，才是真的成功！</code></pre>
+<p>编辑使用者的可使用空间：</p>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># edquota -u quser1</span>
+Disk quotas <span>for</span> user quser1 <span>(</span>uid <span>502</span><span>)</span>:
+  Filesystem    blocks    soft    hard   inodes   soft   hard
+  /dev/hdb1           <span>0</span>     <span>45000</span>    <span>50000</span>         <span>0</span>      <span>0</span>      <span>0</span>
+<span>[</span>root@localhost ~<span>]</span><span># edquota -p quser1 quser2      ===>  直接复制给quser2</span></code></pre>
+<p>接下来要来设定宽限时间，还是使用 edquota</p>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># edquota -t</span>
+Grace period before enforcing soft limits <span>for</span> users:
+<span>time</span> <span>units</span> may be: days, hours, minutes, or seconds
+  Filesystem             Block grace period     Inode grace period
+  /dev/hdb1                     1days                  7days</code></pre>
+<p>使用<code>quota -v</code>来查询：</p>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># quota -vu quser1 quser2</span>
+Disk quotas <span>for</span> user quser1 <span>(</span>uid <span>502</span><span>)</span>:
+     Filesystem  blocks   <span>quota</span>      limit   grace   files   <span>quota</span>   limit   grace
+      /dev/hdb1         <span>0</span>    <span>45000</span>    <span>50000</span>                   <span>0</span>       <span>0</span>       <span>0</span>
+Disk quotas <span>for</span> user quser2 <span>(</span>uid <span>503</span><span>)</span>:
+     Filesystem  blocks   <span>quota</span>      limit   grace   files   <span>quota</span>   limit   grace
+      /dev/hdb1         <span>0</span>    <span>45000</span>    <span>50000</span>                   <span>0</span>       <span>0</span>       <span>0</span></code></pre>
+<p>注意，由于使用者尚未超过45 MB，所以 grace ( 宽限时间 ) 就不会出现。</p>
+<p>编辑群组可使用的空间：</p>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># edquota -g qgroup</span>
+Disk quotas <span>for</span> group qgroup <span>(</span>gid <span>502</span><span>)</span>:
+  Filesystem     blocks       soft       hard    inodes   soft   hard
+  /dev/hdb1            <span>0</span>      <span>80000</span>   <span>90000</span>           <span>0</span>      <span>0</span>      <span>0</span>
+
+<span>[</span>root@localhost ~<span>]</span><span># quota -vg qgroup</span>
+Disk quotas <span>for</span> group qgroup <span>(</span>gid <span>502</span><span>)</span>:
+     Filesystem   blocks    <span>quota</span>      limit      grace    files   <span>quota</span>   limit   grace
+      /dev/hdb1         <span>0</span>     <span>80000</span>   <span>90000</span>                       <span>0</span>        <span>0</span>        <span>0</span></code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

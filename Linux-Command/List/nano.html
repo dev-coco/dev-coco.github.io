@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>nano:字符终端文本编辑器</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="nano:字符终端文本编辑器 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>nano</h1><p>字符终端文本编辑器</p>
+<h2>补充说明</h2><p><strong>nano</strong> 是一个字符终端的文本编辑器，有点像DOS下的editor程序。它比vi/vim要简单得多，比较适合Linux初学者使用。某些Linux发行版的默认编辑器就是nano。</p>
+<p>nano命令可以打开指定文件进行编辑，默认情况下它会自动断行，即在一行中输入过长的内容时自动拆分成几行，但用这种方式来处理某些文件可能会带来问题，比如Linux系统的配置文件，自动断行就会使本来只能写在一行上的内容折断成多行了，有可能造成系统不灵了。因此，如果你想避免这种情况出现，就加上<code>-w</code>选项吧。</p>
+<h3>语法</h3><pre><code><span>nano</span> <span>[</span>选项<span>]</span> <span>[</span><span>[</span>+行,列<span>]</span> 文件名<span>]</span><span>..</span>.</code></pre>
+<h3>选项</h3><pre><code> -h, -?         --help                  显示此信息
+ +行,列                                 从所指列数与行数开始
+ -A             --smarthome             启用智能 <span>HOME</span> 键
+ -B             --backup                储存既有文件的备份
+ -C <span>&lt;</span>目录<span>></span>      --backupdir<span>=</span><span>&lt;</span>目录<span>></span>      用以储存独一备份文件的目录
+ -D             --boldtext              用粗体替代颜色反转
+ -E             --tabstospaces          将已输入的制表符转换为空白
+ -F             --multibuffer           启用多重文件缓冲区功能
+ -H             --historylog            记录与读取搜索/替换的历史字符串
+ -I             --ignorercfiles         不要参考nanorc 文件
+ -K             --rebindkeypad          修正数字键区按键混淆问题
+ -L             --nonewlines            不要将换行加到文件末端
+ -N             --noconvert             不要从 DOS/Mac 格式转换
+ -O             --morespace             编辑时多使用一行
+ -Q <span>&lt;</span>字符串<span>></span>    --quotestr<span>=</span><span>&lt;</span>字符串<span>></span>     引用代表字符串
+ -R             --restricted            限制模式
+ -S             --smooth                按行滚动而不是半屏
+ -T <span>&lt;</span><span>#列数>     --tabsize=&lt;#列数>       设定制表符宽度为 #列数</span>
+ -U             --quickblank            状态行快速闪动
+ -V             --version               显示版本资讯并离开
+ -W             --wordbounds            更正确地侦测单字边界
+ -Y <span>&lt;</span>字符串<span>></span>    --syntax<span>=</span><span>&lt;</span>字符串<span>></span>       用于加亮的语法定义
+ -c             --const                 持续显示游标位置
+ -d             --rebinddelete          修正退格键/删除键混淆问题
+ -i             --autoindent            自动缩进新行
+ -k             --cut                   从游标剪切至行尾
+ -l             --nofollow              不要依照符号连结，而是覆盖
+ -m             --mouse                 启用鼠标功能
+ -o <span>&lt;</span>目录<span>></span>      --operatingdir<span>=</span><span>&lt;</span>目录<span>></span>   设定操作目录
+ -p             --preserve              保留XON <span>(</span>^Q<span>)</span> 和XOFF <span>(</span>^S<span>)</span> 按键
+ -q             --quiet                 沉默忽略启动问题, 比如rc 文件错误
+ -r <span>&lt;</span><span>#列数>     --fill=&lt;#列数>          设定折行宽度为 #列数</span>
+ -s <span>&lt;</span>程序<span>></span>      --speller<span>=</span><span>&lt;</span>程序<span>></span>        启用替代的拼写检查程序
+ -t             --tempfile              离开时自动储存，不要提示
+ -u             --undo                  允许通用撤销<span>[</span>试验性特性<span>]</span>
+ -v             --view                  查看<span>(</span>只读<span>)</span>模式
+ -w             --nowrap                不要自动换行
+ -x             --nohelp                不要显示辅助区
+ -z             --suspend               启用暂停功能
+ -&#36;             --softwrap              启用软换行
+ -a, -b, -e,
+ -f, -g, -j                             <span>(</span>忽略，为与pico 相容<span>)</span></code></pre>
+<h3>用法</h3><p><strong>光标控制</strong> </p>
+<ul>
+<li>移动光标：使用用方向键移动。</li>
+<li>选择文字：按住鼠标左键拖到。</li>
+</ul>
+<p><strong>复制、剪贴和粘贴</strong> </p>
+<ul>
+<li>复制一整行：Alt+6</li>
+<li>剪贴一整行：Ctrl+K</li>
+</ul>
+<p><strong>粘贴：Ctrl+U</strong> </p>
+<p>如果需要复制／剪贴多行或者一行中的一部分，先将光标移动到需要复制／剪贴的文本的开头，按Ctrl+6（或者Alt+A）做标记，然后移动光标到 待复制／剪贴的文本末尾。这时选定的文本会反白，用Alt+6来复制，Ctrl+K来剪贴。若在选择文本过程中要取消，只需要再按一次Ctrl+6。</p>
+<p><strong>搜索</strong> </p>
+<p>按Ctrl+W，然后输入你要搜索的关键字，回车确定。这将会定位到第一个匹配的文本，接着可以用Alt+W来定位到下一个匹配的文本。</p>
+<p><strong>翻页</strong> </p>
+<ul>
+<li><code>Ctrl+Y</code> 到上一页</li>
+<li><code>Ctrl+V</code> 到下一页</li>
+</ul>
+<p><strong>保存</strong> </p>
+<p>使用Ctrl+O来保存所做的修改</p>
+<p><strong>退出</strong> </p>
+<p>按Ctrl+X</p>
+<p>如果你修改了文件，下面会询问你是否需要保存修改。输入Y确认保存，输入N不保存，按Ctrl+C取消返回。如果输入了Y，下一步会让你输入想要保存的文件名。如果不需要修改文件名直接回车就行；若想要保存成别的名字（也就是另存为）则输入新名称然后确 定。这个时候也可用Ctrl+C来取消返回。</p>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

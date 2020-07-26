@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>modprobe:自动处理可载入模块</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="modprobe:自动处理可载入模块 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>modprobe</h1><p>自动处理可载入模块</p>
+<h2>补充说明</h2><p><strong>modprobe命令</strong> 用于智能地向内核中加载模块或者从内核中移除模块。</p>
+<p>modprobe可载入指定的个别模块，或是载入一组相依的模块。modprobe会根据depmod所产生的相依关系，决定要载入哪些模块。若在载入过程中发生错误，在modprobe会卸载整组的模块。</p>
+<h3>语法</h3><pre><code>modprobe<span>(</span>选项<span>)</span><span>(</span>参数<span>)</span></code></pre>
+<h3>选项</h3><pre><code>-a或--all：载入全部的模块；
+-c或--show-conf：显示所有模块的设置信息；
+-d或--debug：使用排错模式；
+-l或--list：显示可用的模块；
+-r或--remove：模块闲置不用时，即自动卸载模块；
+-t或--type：指定模块类型；
+-v或--verbose：执行时显示详细的信息；
+-V或--version：显示版本信息；
+-help：显示帮助。</code></pre>
+<h3>参数</h3><p>模块名：要加载或移除的模块名称。</p>
+<h3>实例</h3><p> <strong>查看modules的配置文件：</strong> </p>
+<pre><code>modprobe -c</code></pre>
+<p>这里，可以查看modules的配置文件，比如模块的alias别名是什么等。会打印许多行信息，例如其中的一行会类似如下：</p>
+<pre><code><span>alias</span> symbol:ip_conntrack_unregister_notifier ip_conntrack</code></pre>
+<p> <strong>列出内核中所有已经或者未挂载的所有模块：</strong> </p>
+<pre><code>modprobe -l</code></pre>
+<p>这里，我们能查看到我们所需要的模块，然后根据我们的需要来挂载；其实<code>modprobe -l</code>读取的模块列表就位于/lib/modules/`uname -r `目录中；其中<code>uname -r</code>是内核的版本，例如输出结果的其中一行是：</p>
+<pre><code>/lib/modules/2.6.18-348.6.1.el5/kernel/net/netfilter/xt_statistic.ko</code></pre>
+<p> <strong>挂载vfat模块：</strong> </p>
+<pre><code>modprobe vfat</code></pre>
+<p>这里，使用格式<code>modprobe 模块名</code>来挂载一个模块。挂载之后，用lsmod可以查看已经挂载的模块。模块名是不能带有后缀的，我们通过<code>modprobe -l</code>所看到的模块，都是带有<code>.ko</code>或<code>.o</code>后缀。</p>
+<p> <strong>移除已经加载的模块：</strong> </p>
+<pre><code>modprobe -r 模块名</code></pre>
+<p>这里，移除已加载的模块，和rmmod功能相同。</p>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>ngrep:方便的数据包匹配和显示工具</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="ngrep:方便的数据包匹配和显示工具 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>ngrep</h1><p>方便的数据包匹配和显示工具</p>
+<h2>补充说明</h2><p><strong>ngrep命令</strong> 是grep命令的网络版，他力求更多的grep特征，用于搜寻指定的数据包。正由于安装ngrep需用到libpcap库， 所以支持大量的操作系统和网络协议。能识别TCP、UDP和ICMP包，理解bpf的过滤机制。</p>
+<h3>安装</h3><p>ngrep命令的下载地址：<a href="http://ngrep.sourceforge.net/">http://ngrep.sourceforge.net/</a>，libpcap下载地址：<a href="http://www.tcpdump.org/">http://www.tcpdump.org/</a>。先用`yum install libpcap`完全安装libpcap，注意有时候用libpcap安装包安装的不完整会影响ngrep的使用。</p>
+<p>如果yum无法安装就用以下步骤安装libpcap：</p>
+<pre><code><span>wget</span> http://www.tcpdump.org/release/libpcap-1.3.0.tar.gz
+<span>tar</span> -zxf libpcap-1.3.0.tar.gz
+<span>cd</span> libpcap-1.3.0
+./configure
+<span>make</span> <span>&amp;&amp;</span> <span>make</span> <span>install</span></code></pre>
+<p>ngrep的安装就是 configure/make/make install 三部曲。</p>
+<p>注：configure时是遇到 please wipe out all unused pcap installations，添加以下选项：</p>
+<pre><code>./configure --with-pcap-includes<span>=</span>/usr/local/include/pcap</code></pre>
+<p>在安装后输入ngrep来验证下安装是否成功。</p>
+<h3>语法</h3><pre><code>ngrep <span>&lt;</span>-LhNXViwqpevxlDtTRM<span>></span> <span>&lt;</span>-IO pcap_dump<span>></span> <span>&lt;</span>-n num<span>></span> <span>&lt;</span>-d dev<span>></span> <span>&lt;</span>-A num<span>></span>
+<span>&lt;</span>-s snaplen<span>></span> <span>&lt;</span>-S limitlen<span>></span> <span>&lt;</span>-w normal<span>|</span>byline<span>|</span>single<span>|</span>none<span>></span> <span>&lt;</span>-c cols<span>></span>
+<span>&lt;</span>-P char<span>></span> <span>&lt;</span>-F file<span>></span> <span>&lt;</span>match expression<span>></span> <span>&lt;</span>bpf filter<span>></span></code></pre>
+<h3>选项</h3><pre><code>-e <span># 显示空数据包</span>
+-i <span># 忽略大小写</span>
+-v <span># 反转匹配</span>
+-R <span># don't do privilege revocation logic</span>
+-x <span># 以16进制格式显示</span>
+-X <span># 以16进制格式匹配</span>
+-w <span># 整字匹配</span>
+-p <span># 不使用混杂模式</span>
+-l <span># make stdout line buffered</span>
+-D <span># replay pcap_dumps with their recorded time intervals</span>
+-t <span># 在每个匹配的包之前显示时间戳</span>
+-T <span># 显示上一个匹配的数据包之间的时间间隔</span>
+-M <span># 仅进行单行匹配</span>
+-I <span># 从文件中读取数据进行匹配</span>
+-O <span># 将匹配的数据保存到文件</span>
+-n <span># 仅捕获指定数目的数据包进行查看</span>
+-A <span># 匹配到数据包后dump随后的指定数目的数据包</span>
+-s <span># set the bpf caplen</span>
+-S <span># set the limitlen on matched packets</span>
+-W <span># 设置显示格式byline将解析包中的换行符</span>
+-c <span># 强制显示列的宽度</span>
+-P <span># set the non-printable display char to what is specified</span>
+-F <span># 使用文件中定义的bpf(Berkeley Packet Filter)</span>
+-N <span># 显示由IANA定义的子协议号</span>
+-d <span># 使用哪个网卡，可以用-L选项查询</span>
+-L <span># 查询网卡接口</span></code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

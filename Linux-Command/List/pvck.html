@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>pvck:检测物理卷的LVM元数据的一致性</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="pvck:检测物理卷的LVM元数据的一致性 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1 id="pvck">pvck</h1><p>检测物理卷的LVM元数据的一致性</p>
+<h2 id="补充说明">补充说明</h2><p><strong>pvck命令</strong> 用来检测物理卷的LVM元数据的一致性。默认情况下，物理卷中的前4个扇区保存着LVM卷标，可以使用<code>--labelsector</code>选项指定其他的位置（例如：数据恢复时）。</p>
+<h3 id="语法">语法</h3><pre><code class="language-shell">pvck<span class="token punctuation">(</span>选项<span class="token punctuation">)</span><span class="token punctuation">(</span>参数<span class="token punctuation">)</span></code></pre>
+<h3 id="选项">选项</h3><pre><code class="language-shell">-d：调试模式；
+-v：详细信息模式；
+--labelsector：指定LVE卷标所在扇区。</code></pre>
+<h3 id="参数">参数</h3><p>物理卷：指定要检查的物理卷对应的设备文件。</p>
+<h3 id="实例">实例</h3><p>使用pvck命令检查物理卷<code>/dev/sdb1</code>。在命令行中输入下面的命令：</p>
+<pre><code class="language-shell">pvck -v /dev/sdb1    <span class="token comment">#检查物理卷元数据</span>
+Scanning /dev/sdb1
+Found label on /dev/sdb1, sector <span class="token number">1</span>, <span class="token assign-left variable">type</span><span class="token operator">=</span>LVM2 001
+Found text metadata area: <span class="token assign-left variable">offset</span><span class="token operator">=</span><span class="token number">4096</span>, <span class="token assign-left variable">size</span><span class="token operator">=</span><span class="token number">192512</span>
+Found LVM2 metadata record at <span class="token assign-left variable">offset</span><span class="token operator">=</span><span class="token number">125952</span>,
+<span class="token assign-left variable">size</span><span class="token operator">=</span><span class="token number">70656</span>, <span class="token assign-left variable">offset2</span><span class="token operator">=</span><span class="token number">0</span> <span class="token assign-left variable">size2</span><span class="token operator">=</span><span class="token number">0</span></code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

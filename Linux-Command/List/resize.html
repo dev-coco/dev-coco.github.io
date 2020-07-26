@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>resize:命令设置终端机视窗的大小</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="resize:命令设置终端机视窗的大小 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>resize</h1><p>命令设置终端机视窗的大小</p>
+<h2>补充说明</h2><p><strong>resize命令</strong> 命令设置终端机视窗的大小。执行resize指令可设置虚拟终端机的视窗大小。</p>
+<h3>语法</h3><pre><code>resize <span>[</span>-cu<span>]</span><span>[</span>-s <span>&lt;</span>列数<span>></span> <span>&lt;</span>行数<span>></span><span>]</span></code></pre>
+<h3>选项</h3><pre><code>-c 　就算用户环境并非C Shell，也用C Shell指令改变视窗大小。
+-s <span>&lt;</span>列数<span>></span> <span>&lt;</span>行数<span>></span> 　设置终端机视窗的垂直高度和水平宽度。
+-u 　就算用户环境并非Bourne Shell，也用Bourne Shell指令改变视窗大小。</code></pre>
+<h3>实例</h3><p>使用 C shell</p>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># resize -c</span>
+<span>set</span> noglob<span>;</span>
+setenv <span>COLUMNS</span> <span>'99'</span><span>;</span>
+setenv <span>LINES</span> <span>'34'</span><span>;</span>
+<span>unset</span> noglob<span>;</span></code></pre>
+<p>使用 Bourne shell</p>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># resize -u</span>
+<span><span>COLUMNS</span></span><span>=</span><span>99</span><span>;</span>
+<span><span>LINES</span></span><span>=</span><span>34</span><span>;</span>
+<span>export</span> <span>COLUMNS</span> <span>LINES</span><span>;</span></code></pre>
+<p>设置指定大小</p>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># resize -s 80 160</span></code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

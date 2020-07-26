@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>restore:所进行的操作和dump指令相反</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="restore:所进行的操作和dump指令相反 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>restore</h1><p>所进行的操作和dump指令相反</p>
+<h2>补充说明</h2><p><strong>restore命令</strong> 是dump命令的逆过程，用于还原dump命令生成的备份文件。倾倒操作可用来备份文件，而还原操作则是写回这些已备份的文件。</p>
+<h3>语法</h3><pre><code>restore<span>(</span>选项<span>)</span></code></pre>
+<h3>选项</h3><pre><code>-b<span>&lt;</span>区块大小<span>></span>：设置区块大小，单位为Byte；
+-c：不检查倾倒操作的备份格式，仅准许读取使用旧格式的备份文件；
+-C：使用对比模式，将备份的文件与现行的文件相互对比；
+-D<span>&lt;</span>文件系统<span>></span>：允许用户指定文件系统的名称；
+-f<span>&lt;</span>备份文件<span>></span>：从指定的文件中读取备份数据，进行还原操作；
+-h：仅解除目录而不包括与该目录相关的所有文件；
+-i：使用互动模式，在进行还原操作时，restore指令将依序询问用户；
+-m：解开符合指定的inode编号的文件或目录而非用文件名称指定；
+-r：进行还原操作；
+-R：全面还原文件系统时，检查应从何处开始进行；
+-s<span>&lt;</span>文件编号<span>></span>：当备份数据超过一卷磁带时，用户可以指定备份文件的编号；
+-t：指定文件名称，若该文件已存在备份文件中，则列出它们的名称；
+-v：显示指令执行过程；
+-x：设置文件名称，且从指定的存储媒体里读入它们，若该文件已存在在备份文件中，则将其还原到文件系统内；
+-y：不询问任何问题，一律以同意回答并继续执行指令。</code></pre>
+<h3>实例</h3><pre><code>dump -9 -u -f /dev/hda3 /home/frank/</code></pre>
+<p>用restore命令来恢复备份：</p>
+<pre><code>restore rf /dev/hda3 /home/frank</code></pre>
+<p>用restore命令来查看备份文件里的文件列表：</p>
+<pre><code>restore ft /dev/hda3</code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

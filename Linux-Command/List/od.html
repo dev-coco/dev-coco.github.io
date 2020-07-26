@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>od:输出文件的八进制、十六进制等格式编码的字节</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="od:输出文件的八进制、十六进制等格式编码的字节 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>od</h1><p>输出文件的八进制、十六进制等格式编码的字节</p>
+<h2>补充说明</h2><p><strong>od命令</strong> 用于输出文件的八进制、十六进制或其它格式编码的字节，通常用于显示或查看文件中不能直接显示在终端的字符。</p>
+<p>常见的文件为文本文件和二进制文件。此命令主要用来查看保存在二进制文件中的值。比如，程序可能输出大量的数据记录，每个数据是一个单精度浮点数。这些数据记录存放在一个文件中，如果想查看下这个数据，这时候od命令就派上用场了。在我看来，od命令主要用来格式化输出文件数据，即对文件中的数据进行无二义性的解释。不管是IEEE754格式的浮点数还是ASCII码，od命令都能按照需求输出它们的值。</p>
+<h3>语法</h3><pre><code>od<span>(</span>选项<span>)</span><span>(</span>参数<span>)</span></code></pre>
+<h3>选项</h3><pre><code>-a：此参数的效果和同时指定“-ta”参数相同；
+-A：<span>&lt;</span>字码基数<span>></span>：选择以何种基数计算字码；
+-b：此参数的效果和同时指定“-toC”参数相同；
+-c：此参数的效果和同时指定“-tC”参数相同；
+-d：此参数的效果和同时指定“-tu2”参数相同；
+-f：此参数的效果和同时指定“-tfF”参数相同；
+-h：此参数的效果和同时指定“-tx2”参数相同；
+-i：此参数的效果和同时指定“-td2”参数相同；
+-j<span>&lt;</span>字符数目<span>></span>或--skip-bytes<span>=</span><span>&lt;</span>字符数目<span>></span>：略过设置的字符数目；
+-l：此参数的效果和同时指定“-td4”参数相同；
+-N<span>&lt;</span>字符数目<span>></span>或--read-bytes<span>=</span><span>&lt;</span>字符数目<span>></span>：到设置的字符树目为止；
+-o：此参数的效果和同时指定“-to2”参数相同；
+-s<span>&lt;</span>字符串字符数<span>></span>或--strings<span>=</span><span>&lt;</span>字符串字符数<span>></span>：只显示符合指定的字符数目的字符串；
+-t<span>&lt;</span>输出格式<span>></span>或--format<span>=</span><span>&lt;</span>输出格式<span>></span>：设置输出格式；
+-v或--output-duplicates：输出时不省略重复的数据；
+-w<span>&lt;</span>每列字符数<span>></span>或--width<span>=</span><span>&lt;</span>每列字符数<span>></span>：设置每列的最大字符数；
+-x：此参数的效果和同时指定“-h”参数相同；
+--help：在线帮助；
+--version：显示版本信息。</code></pre>
+<h3>参数</h3><p>文件：指定要显示的文件。</p>
+<h3>实例</h3><pre><code><span>[</span>linuxde@localhost ~<span>]</span>&#36; <span>echo</span> abcdef g <span>></span> tmp
+<span>[</span>linuxde@localhost ~<span>]</span>&#36; <span>cat</span> tmp
+abcdef g</code></pre>
+<p>说明：先准备一个tmp文件</p>
+<pre><code><span>[</span>linuxde@localhost ~<span>]</span>&#36; od -b tmp
+0000000 <span>141</span> <span>142</span> <span>143</span> <span>144</span> <span>145</span> <span>146</span> 040 <span>147</span> 012
+0000011</code></pre>
+<p>说明：使用单字节八进制解释进行输出，注意左侧的默认地址格式为八字节</p>
+<pre><code><span>[</span>linuxde@localhost ~<span>]</span>&#36; od -c tmp
+0000000   a   b   c   d   e   f       g  <span>\</span>n
+0000011</code></pre>
+<p>说明：使用ASCII码进行输出，注意其中包括转义字符</p>
+<pre><code><span>[</span>linuxde@localhost ~<span>]</span>&#36; od -t d1 tmp
+0000000   <span>97</span>   <span>98</span>   <span>99</span>  <span>100</span>  <span>101</span>  <span>102</span>   <span>32</span>  <span>103</span>   <span>10</span>
+0000011</code></pre>
+<p>说明：使用单字节十进制进行解释</p>
+<pre><code><span>[</span>linuxde@localhost ~<span>]</span>&#36; od -A d -c tmp
+0000000   a   b   c   d   e   f       g  <span>\</span>n
+0000009</code></pre>
+<p>说明：设置地址格式为十进制。</p>
+<pre><code><span>[</span>linuxde@localhost ~<span>]</span>&#36; od -A x -c tmp
+000000   a   b   c   d   e   f       g  <span>\</span>n
+000009</code></pre>
+<p>说明：设置地址格式为十六进制</p>
+<pre><code><span>[</span>linuxde@localhost ~<span>]</span>&#36; od -j <span>2</span> -c tmp
+0000002   c   d   e   f       g  <span>\</span>n
+0000011</code></pre>
+<p>说明：跳过开始的两个字节</p>
+<pre><code><span>[</span>linuxde@localhost ~<span>]</span>&#36; od -N <span>2</span> -j <span>2</span> -c tmp
+0000002   c   d
+0000004</code></pre>
+<p>说明：跳过开始的两个字节，并且仅输出两个字节</p>
+<pre><code><span>[</span>linuxde@localhost ~<span>]</span>&#36; od -w1 -c tmp
+0000000   a
+0000001   b
+0000002   c
+0000003   d
+0000004   e
+0000005   f
+0000006
+0000007   g
+0000010  <span>\</span>n
+0000011</code></pre>
+<p>说明：每行仅输出1个字节</p>
+<pre><code><span>[</span>linuxde@localhost ~<span>]</span>&#36; od -w2 -c tmp
+0000000   a   b
+0000002   c   d
+0000004   e   f
+0000006       g
+0000010  <span>\</span>n
+0000011</code></pre>
+<p>说明：每行输出两个字节</p>
+<pre><code><span>[</span>linuxde@localhost ~<span>]</span>&#36; od -w3 -b tmp
+0000000 <span>141</span> <span>142</span> <span>143</span>
+0000003 <span>144</span> <span>145</span> <span>146</span>
+0000006 040 <span>147</span> 012
+0000011</code></pre>
+<p>说明：每行输出3个字节，并使用八进制单字节进行解释</p>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>rename:用字符串替换的方式批量改变文件名</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="rename:用字符串替换的方式批量改变文件名 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>rename</h1><p>用字符串替换的方式批量改变文件名</p>
+<h2>补充说明</h2><p><strong>rename命令</strong> 用字符串替换的方式批量改变文件名。</p>
+<h3>语法</h3><pre><code>rename<span>(</span>参数<span>)</span></code></pre>
+<h3>参数</h3><pre><code>原字符串：将文件名需要替换的字符串；
+目标字符串：将文件名中含有的原字符替换成目标字符串；
+文件：指定要改变文件名的文件列表。</code></pre>
+<h3>实例</h3><p>将main1.c重命名为main.c</p>
+<pre><code><span>rename</span> main1.c main.c main1.c</code></pre>
+<p> <strong>rename支持通配符</strong> </p>
+<pre><code>?  可替代单个字符
+*  可替代多个字符
+<span>[</span>charset<span>]</span>  可替代charset集中的任意单个字符</code></pre>
+<p>文件夹中有这些文件foo1, ..., foo9, foo10, ..., foo278</p>
+<p>如果使用<code>rename foo foo0 foo?</code>，会把foo1到foo9的文件重命名为foo01到foo09，重命名的文件只是有4个字符长度名称的文件，文件名中的foo被替换为foo0。</p>
+<p>如果使用<code>rename foo foo0 foo??</code>，foo01到foo99的所有文件都被重命名为foo001到foo099，只重命名5个字符长度名称的文件，文件名中的foo被替换为foo0。</p>
+<p>如果使用<code>rename foo foo0 foo*</code>，foo001到foo278的所有文件都被重命名为foo0001到foo0278，所有以foo开头的文件都被重命名。</p>
+<p>如果使用<code>rename foo0 foo foo0[2]*</code>，从foo0200到foo0278的所有文件都被重命名为foo200到foo278，文件名中的foo0被替换为foo。</p>
+<p> <strong>rename支持正则表达式</strong> </p>
+<p>字母的替换</p>
+<pre><code><span>rename</span> <span>"s/AA/aa/"</span> *  <span># 把文件名中的AA替换成aa</span></code></pre>
+<p>修改文件的后缀</p>
+<pre><code><span>rename</span> <span>"s//.html//.php/"</span> *     <span># 把.html 后缀的改成 .php后缀</span></code></pre>
+<p>批量添加文件后缀</p>
+<pre><code><span>rename</span> <span>"s/&#36;//.txt/"</span> *  <span># 把所有的文件名都以txt结尾</span></code></pre>
+<p>批量删除文件名</p>
+<pre><code><span>rename</span> <span>"s//.txt//"</span> *   <span># 把所有以.txt结尾的文件名的.txt删掉</span></code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

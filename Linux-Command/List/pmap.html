@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>pmap:报告进程的内存映射关系</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="pmap:报告进程的内存映射关系 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>pmap</h1><p>报告进程的内存映射关系</p>
+<h2>补充说明</h2><p><strong>pmap命令</strong> 用于报告进程的内存映射关系，是Linux调试及运维一个很好的工具。</p>
+<h3>语法</h3><pre><code>pmap<span>(</span>选项<span>)</span><span>(</span>参数<span>)</span></code></pre>
+<h3>选项</h3><pre><code>-x：显示扩展格式；
+-d：显示设备格式；
+-q：不显示头尾行；
+-V：显示指定版本。</code></pre>
+<h3>参数</h3><p>进程号：指定需要显示内存映射关系的进程号，可以是多个进程号。</p>
+<h3>实例</h3><pre><code>pidof nginx
+<span>13312</span> <span>5371</span>
+
+pmap -x <span>5371</span>
+<span>5371</span>:   nginx: worker process
+Address           Kbytes     RSS   Dirty Mode   Mapping
+0000000000400000     <span>564</span>     <span>344</span>       <span>0</span> r-x--  nginx
+000000000068c000      <span>68</span>      <span>68</span>      <span>60</span> rw---  nginx
+000000000069d000      <span>56</span>      <span>12</span>      <span>12</span> rw---    <span>[</span> anon <span>]</span>
+000000000a0c8000    <span>1812</span>    <span>1684</span>    <span>1684</span> rw---    <span>[</span> anon <span>]</span>
+0000003ac0a00000     <span>112</span>      <span>40</span>       <span>0</span> r-x--  ld-2.5.so
+0000003ac0c1c000       <span>4</span>       <span>4</span>       <span>4</span> r----  ld-2.5.so
+0000003ac0c1d000       <span>4</span>       <span>4</span>       <span>4</span> rw---  ld-2.5.so
+0000003ac0e00000    <span>1340</span>     <span>284</span>       <span>0</span> r-x--  libc-2.5.so
+0000003ac0f4f000    <span>2044</span>       <span>0</span>       <span>0</span> -----  libc-2.5.so
+0000003ac114e000      <span>16</span>      <span>16</span>       <span>8</span> r----  libc-2.5.so
+0000003ac1152000       <span>4</span>       <span>4</span>       <span>4</span> rw---  libc-2.5.so
+0000003ac1153000      <span>20</span>      <span>20</span>      <span>20</span> rw---    <span>[</span> anon <span>]</span>
+0000003ac1200000       <span>8</span>       <span>4</span>       <span>0</span> r-x--  libdl-2.5.so
+0000003ac1202000    <span>2048</span>       <span>0</span>       <span>0</span> -----  libdl-2.5.so
+0000003ac1402000       <span>4</span>       <span>4</span>       <span>4</span> r----  libdl-2.5.so
+0000003ac1403000       <span>4</span>       <span>4</span>       <span>4</span> rw---  libdl-2.5.so
+0000003ac1600000      <span>84</span>       <span>0</span>       <span>0</span> r-x--  libselinux.so.1
+0000003ac1615000    <span>2048</span>       <span>0</span>       <span>0</span> -----  libselinux.so.1
+0000003ac1815000       <span>8</span>       <span>8</span>       <span>8</span> rw---  libselinux.so.1
+0000003ac1817000       <span>4</span>       <span>4</span>       <span>4</span> rw---    <span>[</span> anon <span>]</span>
+0000003ac1a00000     <span>236</span>       <span>0</span>       <span>0</span> r-x--  libsepol.so.1
+0000003ac1a3b000    <span>2048</span>       <span>0</span>       <span>0</span> -----  libsepol.so.1
+0000003ac1c3b000       <span>4</span>       <span>4</span>       <span>4</span> rw---  libsepol.so.1
+0000003ac1c3c000      <span>40</span>       <span>0</span>       <span>0</span> rw---    <span>[</span> anon <span>]</span>
+0000003ac1e00000      <span>88</span>      <span>44</span>       <span>0</span> r-x--  libpthread-2.5.so
+0000003ac1e16000    <span>2048</span>       <span>0</span>       <span>0</span> -----  libpthread-2.5.so
+0000003ac2016000       <span>4</span>       <span>4</span>       <span>4</span> r----  libpthread-2.5.so
+0000003ac2017000       <span>4</span>       <span>4</span>       <span>4</span> rw---  libpthread-2.5.so
+0000003ac2018000      <span>16</span>       <span>4</span>       <span>4</span> rw---    <span>[</span> anon <span>]</span>
+0000003ac2600000      <span>80</span>      <span>52</span>       <span>0</span> r-x--  libz.so.1.2.3
+0000003ac2614000    <span>2044</span>       <span>0</span>       <span>0</span> -----  libz.so.1.2.3
+0000003ac2813000       <span>4</span>       <span>4</span>       <span>4</span> rw---  libz.so.1.2.3
+0000003ac2a00000      <span>36</span>       <span>4</span>       <span>0</span> r-x--  libcrypt-2.5.so
+0000003ac2a09000    <span>2044</span>       <span>0</span>       <span>0</span> -----  libcrypt-2.5.so
+0000003ac2c08000       <span>4</span>       <span>4</span>       <span>4</span> r----  libcrypt-2.5.so
+0000003ac2c09000       <span>4</span>       <span>4</span>       <span>4</span> rw---  libcrypt-2.5.so
+0000003ac2c0a000     <span>184</span>       <span>0</span>       <span>0</span> rw---    <span>[</span> anon <span>]</span>
+0000003ac3600000       <span>8</span>       <span>0</span>       <span>0</span> r-x--  libkeyutils-1.2.so
+0000003ac3602000    <span>2044</span>       <span>0</span>       <span>0</span> -----  libkeyutils-1.2.so
+0000003ac3801000       <span>4</span>       <span>4</span>       <span>4</span> rw---  libkeyutils-1.2.so
+0000003ac3a00000      <span>68</span>       <span>0</span>       <span>0</span> r-x--  libresolv-2.5.so
+0000003ac3a11000    <span>2048</span>       <span>0</span>       <span>0</span> -----  libresolv-2.5.so
+0000003ac3c11000       <span>4</span>       <span>4</span>       <span>4</span> r----  libresolv-2.5.so
+0000003ac3c12000       <span>4</span>       <span>4</span>       <span>4</span> rw---  libresolv-2.5.so
+0000003ac3c13000       <span>8</span>       <span>0</span>       <span>0</span> rw---    <span>[</span> anon <span>]</span>
+0000003ac3e00000       <span>8</span>       <span>0</span>       <span>0</span> r-x--  libcom_err.so.2.1
+0000003ac3e02000    <span>2044</span>       <span>0</span>       <span>0</span> -----  libcom_err.so.2.1
+0000003ac4001000       <span>4</span>       <span>4</span>       <span>4</span> rw---  libcom_err.so.2.1
+0000003ac4200000    <span>1204</span>       <span>8</span>       <span>0</span> r-x--  libcrypto.so.0.9.8e
+0000003ac432d000    <span>2044</span>       <span>0</span>       <span>0</span> -----  libcrypto.so.0.9.8e
+0000003ac452c000     <span>132</span>      <span>88</span>      <span>12</span> rw---  libcrypto.so.0.9.8e
+0000003ac454d000      <span>16</span>      <span>12</span>      <span>12</span> rw---    <span>[</span> anon <span>]</span>
+0000003ac4600000     <span>176</span>       <span>0</span>       <span>0</span> r-x--  libgssapi_krb5.so.2.2
+0000003ac462c000    <span>2048</span>       <span>0</span>       <span>0</span> -----  libgssapi_krb5.so.2.2
+0000003ac482c000       <span>8</span>       <span>8</span>       <span>8</span> rw---  libgssapi_krb5.so.2.2
+0000003ac4a00000     <span>144</span>       <span>0</span>       <span>0</span> r-x--  libk5crypto.so.3.1
+0000003ac4a24000    <span>2044</span>       <span>0</span>       <span>0</span> -----  libk5crypto.so.3.1
+0000003ac4c23000       <span>8</span>       <span>8</span>       <span>8</span> rw---  libk5crypto.so.3.1
+0000003ac4e00000      <span>32</span>       <span>0</span>       <span>0</span> r-x--  libkrb5support.so.0.1
+0000003ac4e08000    <span>2044</span>       <span>0</span>       <span>0</span> -----  libkrb5support.so.0.1
+0000003ac5007000       <span>4</span>       <span>4</span>       <span>4</span> rw---  libkrb5support.so.0.1
+0000003ac5200000     <span>580</span>       <span>0</span>       <span>0</span> r-x--  libkrb5.so.3.3
+0000003ac5291000    <span>2048</span>       <span>0</span>       <span>0</span> -----  libkrb5.so.3.3
+0000003ac5491000      <span>16</span>      <span>16</span>      <span>12</span> rw---  libkrb5.so.3.3
+0000003ac5a00000     <span>288</span>       <span>4</span>       <span>0</span> r-x--  libssl.so.0.9.8e
+0000003ac5a48000    <span>2048</span>       <span>0</span>       <span>0</span> -----  libssl.so.0.9.8e
+0000003ac5c48000      <span>24</span>      <span>16</span>      <span>12</span> rw---  libssl.so.0.9.8e
+00002b5751808000       <span>8</span>       <span>8</span>       <span>8</span> rw---    <span>[</span> anon <span>]</span>
+00002b5751810000     <span>108</span>      <span>36</span>       <span>0</span> r-x--  libpcre.so.1.2.0
+00002b575182b000    <span>2044</span>       <span>0</span>       <span>0</span> -----  libpcre.so.1.2.0
+00002b5751a2a000       <span>4</span>       <span>4</span>       <span>4</span> rw---  libpcre.so.1.2.0
+00002b5751a2b000      <span>28</span>      <span>28</span>      <span>28</span> rw---    <span>[</span> anon <span>]</span>
+00002b5751a32000      <span>40</span>      <span>20</span>       <span>0</span> r-x--  libnss_files-2.5.so
+00002b5751a3c000    <span>2044</span>       <span>0</span>       <span>0</span> -----  libnss_files-2.5.so
+00002b5751c3b000       <span>4</span>       <span>4</span>       <span>4</span> r----  libnss_files-2.5.so
+00002b5751c3c000       <span>4</span>       <span>4</span>       <span>4</span> rw---  libnss_files-2.5.so
+00002b5751c3d000       <span>4</span>       <span>4</span>       <span>4</span> rw-s-  zero <span>(</span>deleted<span>)</span>
+00002b5751c3e000   <span>20012</span>   <span>20000</span>   <span>20000</span> rw---    <span>[</span> anon <span>]</span>
+00007fffbf2ce000      <span>84</span>      <span>20</span>      <span>20</span> rw---    <span>[</span> stack <span>]</span>
+00007fffbf35e000      <span>12</span>       <span>0</span>       <span>0</span> r-x--    <span>[</span> anon <span>]</span>
+ffffffffff600000    <span>8192</span>       <span>0</span>       <span>0</span> -----    <span>[</span> anon <span>]</span>
+----------------  ------  ------  ------
+total kB           <span>72880</span>   <span>22940</span>   <span>22000</span></code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

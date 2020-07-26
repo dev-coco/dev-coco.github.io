@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>mysqldump:MySQL数据库中备份工具</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="mysqldump:MySQL数据库中备份工具 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>mysqldump</h1><p>MySQL数据库中备份工具</p>
+<h2>补充说明</h2><p><strong>mysqldump命令</strong> 是mysql数据库中备份工具，用于将MySQL服务器中的数据库以标准的sql语言的方式导出，并保存到文件中。</p>
+<h3>语法</h3><pre><code>mysqldump<span>(</span>选项<span>)</span></code></pre>
+<h3>选项</h3><pre><code>--add-drop-table：在每个创建数据库表语句前添加删除数据库表的语句；
+--add-locks：备份数据库表时锁定数据库表；
+--all-databases：备份MySQL服务器上的所有数据库；
+--comments：添加注释信息；
+--compact：压缩模式，产生更少的输出；
+--complete-insert：输出完成的插入语句；
+--databases：指定要备份的数据库；
+--default-character-set：指定默认字符集；
+--force：当出现错误时仍然继续备份操作；
+--host：指定要备份数据库的服务器；
+--lock-tables：备份前，锁定所有数据库表；
+--no-create-db：禁止生成创建数据库语句；
+--no-create-info：禁止生成创建数据库库表语句；
+--password：连接MySQL服务器的密码；
+--port：MySQL服务器的端口号；
+--user：连接MySQL服务器的用户名。</code></pre>
+<h3>实例</h3><p> <strong>导出整个数据库</strong> </p>
+<pre><code>mysqldump -u 用户名 -p 数据库名 <span>></span> 导出的文件名
+mysqldump -u linuxde -p smgp_apps_linuxde <span>></span> linuxde.sql</code></pre>
+<p> <strong>导出一个表</strong> </p>
+<pre><code>mysqldump -u 用户名 -p 数据库名 表名<span>></span> 导出的文件名
+mysqldump -u linuxde -p smgp_apps_linuxde <span>users</span> <span>></span> linuxde_users.sql</code></pre>
+<p> <strong>导出一个数据库结构</strong> </p>
+<pre><code>mysqldump -u linuxde -p -d --add-drop-table smgp_apps_linuxde <span>></span> linuxde_db.sql</code></pre>
+<p><code>-d</code>没有数据，<code>--add-drop-tabl</code>e每个create语句之前增加一个<code>drop table</code></p>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

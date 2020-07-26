@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>mpstat:显示各个可用CPU的状态</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="mpstat:显示各个可用CPU的状态 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>mpstat</h1><p>显示各个可用CPU的状态</p>
+<h2>补充说明</h2><p><strong>mpstat命令</strong> 指令主要用于多CPU环境下，它显示各个可用CPU的状态系你想。这些信息存放在<code>/proc/stat</code>文件中。在多CPUs系统里，其不但能查看所有CPU的平均状况信息，而且能够查看特定CPU的信息。</p>
+<h3>语法</h3><pre><code>mpstat<span>(</span>选项<span>)</span><span>(</span>参数<span>)</span></code></pre>
+<h3>选项</h3><pre><code>-P：指定CPU编号。</code></pre>
+<h3>参数</h3><ul>
+<li>间隔时间：每次报告的间隔时间（秒）；</li>
+<li>次数：显示报告的次数。</li>
+</ul>
+<h3>实例</h3><p>当mpstat不带参数时，输出为从系统启动以来的平均值。</p>
+<pre><code>mpstat
+Linux <span>2.6</span>.9-5.31AXsmp <span>(</span>builder.redflag-linux.com<span>)</span> <span>12</span>/16/2005
+09:38:46 AM CPU %user %nice %system %iowait %irq %soft %idle intr/s
+09:38:48 AM all <span>23.28</span> <span>0.00</span> <span>1.75</span>     <span>0.50</span> <span>0.00</span> <span>0.00</span> <span>74.47</span> <span>1018.59</span></code></pre>
+<p> <strong>每2秒产生了2个处理器的统计数据报告：</strong> </p>
+<p>下面的命令可以每2秒产生了2个处理器的统计数据报告，一共产生三个interval 的信息，然后再给出这三个interval的平均信息。默认时，输出是按照CPU 号排序。第一个行给出了从系统引导以来的所有活跃数据。接下来每行对应一个处理器的活跃状态。。</p>
+<pre><code>mpstat -P ALL <span>2</span> <span>3</span>
+Linux <span>2.6</span>.18-164.el5 <span>(</span>server.sys.com<span>)</span>    01/04/2010
+09:34:20 PM CPU   %user   %nice    %sys %iowait    %irq   %soft %steal   %idle    intr/s
+09:34:22 PM all    <span>0.00</span>    <span>0.00</span>    <span>0.00</span>    <span>0.00</span>    <span>0.00</span>    <span>0.00</span>    <span>0.00</span> <span>100.00</span>   <span>1001.49</span>
+09:34:22 PM    <span>0</span>    <span>0.00</span>    <span>0.00</span>    <span>0.50</span>    <span>0.00</span>    <span>0.00</span>    <span>0.00</span>    <span>0.00</span>   <span>99.50</span>   <span>1001.00</span>
+09:34:22 PM    <span>1</span>    <span>0.00</span>    <span>0.00</span>    <span>0.00</span>    <span>0.00</span>    <span>0.00</span>    <span>0.00</span>    <span>0.00</span> <span>100.00</span>      <span>0.00</span></code></pre>
+<p> <strong>比较带参数和不带参数的mpstat的结果：</strong> </p>
+<p>在后台开一个2G的文件</p>
+<pre><code><span>cat</span> <span>1</span>.img <span>&amp;</span></code></pre>
+<p>然后在另一个终端运行mpstat命令</p>
+<pre><code>mpstat
+Linux <span>2.6</span>.18-164.el5 <span>(</span>server.sys.com<span>)</span>    01/04/2010
+<span>10</span>:17:31 PM CPU   %user   %nice    %sys %iowait    %irq   %soft %steal   %idle    intr/s
+<span>10</span>:17:31 PM all    <span>0.07</span>    <span>0.02</span>    <span>0.25</span>    <span>0.21</span>    <span>0.01</span>    <span>0.04</span>    <span>0.00</span>   <span>99.40</span>   <span>1004.57</span></code></pre>
+<pre><code>mpstat
+Linux <span>2.6</span>.18-164.el5 <span>(</span>server.sys.com<span>)</span>    01/04/2010
+<span>10</span>:17:35 PM CPU   %user   %nice    %sys %iowait    %irq   %soft %steal   %idle    intr/s
+<span>10</span>:17:35 PM all    <span>0.07</span>    <span>0.02</span>    <span>0.25</span>    <span>0.21</span>    <span>0.01</span>    <span>0.04</span>    <span>0.00</span>   <span>99.39</span>   <span>1004.73</span></code></pre>
+<pre><code>mpstat <span>3</span> <span>10</span>
+Linux <span>2.6</span>.18-164.el5 <span>(</span>server.sys.com<span>)</span>    01/04/2010
+<span>10</span>:17:55 PM CPU   %user   %nice    %sys %iowait    %irq   %soft %steal   %idle    intr/s
+<span>10</span>:17:58 PM all   <span>13.12</span>    <span>0.00</span>   <span>20.93</span>    <span>0.00</span>    <span>1.83</span>    <span>9.80</span>    <span>0.00</span>   <span>54.32</span>   <span>2488.08</span>
+<span>10</span>:18:01 PM all   <span>10.82</span>    <span>0.00</span>   <span>19.30</span>    <span>0.83</span>    <span>1.83</span>    <span>9.32</span>    <span>0.00</span>   <span>57.90</span>   <span>2449.83</span>
+<span>10</span>:18:04 PM all   <span>10.95</span>    <span>0.00</span>   <span>20.40</span>    <span>0.17</span>    <span>1.99</span>    <span>8.62</span>    <span>0.00</span>   <span>57.88</span>   <span>2384.05</span>
+<span>10</span>:18:07 PM all   <span>10.47</span>    <span>0.00</span>   <span>18.11</span>    <span>0.00</span>    <span>1.50</span>    <span>8.47</span>    <span>0.00</span>   <span>61.46</span>   <span>2416.00</span>
+<span>10</span>:18:10 PM all   <span>11.81</span>    <span>0.00</span>   <span>22.63</span>    <span>0.00</span>    <span>1.83</span>   <span>11.98</span>    <span>0.00</span>   <span>51.75</span>   <span>2210.60</span>
+<span>10</span>:18:13 PM all    <span>6.31</span>    <span>0.00</span>   <span>10.80</span>    <span>0.00</span>    <span>1.00</span>    <span>5.32</span>    <span>0.00</span>   <span>76.58</span>   <span>1795.33</span>
+<span>10</span>:18:19 PM all    <span>1.75</span>    <span>0.00</span>    <span>3.16</span>    <span>0.75</span>    <span>0.25</span>    <span>1.25</span>    <span>0.00</span>   <span>92.85</span>   <span>1245.18</span>
+<span>10</span>:18:22 PM all   <span>11.94</span>    <span>0.00</span>   <span>19.07</span>    <span>0.00</span>    <span>1.99</span>    <span>8.29</span>    <span>0.00</span>   <span>58.71</span>   <span>2630.46</span>
+<span>10</span>:18:25 PM all   <span>11.65</span>    <span>0.00</span>   <span>19.30</span>    <span>0.50</span>    <span>2.00</span>    <span>9.15</span>    <span>0.00</span>   <span>57.40</span>   <span>2673.91</span>
+<span>10</span>:18:28 PM all   <span>11.44</span>    <span>0.00</span>   <span>21.06</span>    <span>0.33</span>    <span>1.99</span>   <span>10.61</span>    <span>0.00</span>   <span>54.56</span>   <span>2369.87</span>
+Average:     all    <span>9.27</span>    <span>0.00</span>   <span>16.18</span>    <span>0.30</span>    <span>1.50</span>    <span>7.64</span>    <span>0.00</span>   <span>65.11</span>   <span>2173.54</span></code></pre>
+<p>上两表显示出当要正确反映系统的情况，需要正确使用命令的参数。vmstat 和iostat 也需要注意这一问题。</p>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

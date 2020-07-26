@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>restorecon:恢复文件的安全上下文</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="restorecon:恢复文件的安全上下文 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>restorecon</h1><p>恢复文件的安全上下文</p>
+<h2>补充说明</h2><p><strong>restorecon命令</strong> 用来恢复SELinux文件属性即恢复文件的安全上下文。</p>
+<h3>语法</h3><pre><code>restorecon <span>[</span>-iFnrRv<span>]</span> <span>[</span>-e excludedir <span>]</span> <span>[</span>-o filename <span>]</span> <span>[</span>-f filename <span>|</span> pathname<span>..</span>.<span>]</span></code></pre>
+<h3>选项</h3><pre><code>-i：忽略不存在的文件。
+-f：infilename 文件 infilename 中记录要处理的文件。
+-e：directory 排除目录。
+-R/-r：递归处理目录。
+-n：不改变文件标签。
+-o/outfilename：保存文件列表到 outfilename，在文件不正确情况下。
+-v：将过程显示到屏幕上。
+-F：强制恢复文件安全语境。</code></pre>
+<h3>实例</h3><p>假设CentOS安装了apache，网页默认的主目录是<code>/var/www/html</code>，我们经常遇到这样的问题，在其他目录中创建了一个网页文件，然后用mv移动到网页默认目录<code>/var/www/html</code>中，但是在浏览器中却打不开这个文件，这很可能是因为这个文件的SELinux配置信息是继承原来那个目录的，与<code>/var/www/html</code>目录不同，使用mv移动的时候，这个SELinux配置信息也一起移动过来了，从而导致无法打开页面，具体请看下面的实例：</p>
+<p>使用CentOS举例,如果默认没有安装apache，确保网络连接，使用下面的命令安装</p>
+<pre><code><span>[</span>root@jsdig.com ~<span>]</span><span># yum install httpd</span>
+ <span># 我们在root的家目录新建一个html文件 </span>
+<span>[</span>root@jsdig.com ~<span>]</span><span># pwd</span>
+/root
+
+<span>[</span>root@jsdig.com ~<span>]</span><span># vi index.html</span>
+
+<span># 随便输入一段文字，保存退出 </span>
+welcome to www.jsdig.com
+
+<span># 将这个文件mv到网页默认目录下 </span>
+<span>[</span>root@jsdig.com ~<span>]</span><span># mv index.html /var/www/html/</span>
+
+<span># </span>
+<span># 这个时候我们使用firefox浏览器输入127.0.0.1/index.html发现打不开，</span>
+<span># 查看一下SELinux的日志文件，发现了下面这一段报错信息，从这个报错信息不难看出，</span>
+<span># 进程httpd访问网页主目录中的index.html时被SELinux阻止，原因是因为，SELinux配置信息不正确,</span>
+<span># 正确的SELinux配置信息应该是scontext=后面的部分，</span>
+<span># 而index.html文件的SELinux配置信息却是tcontext=后面的部分，</span>
+<span># 从tcontext=的第三段“admin_home_t”不难看出，这个文件的SELinux配置信息是root用户家目录的。</span>
+<span># </span>
+<span>type</span><span>=</span>AVC <span>msg</span><span>=</span>audit<span>(</span><span>1378974214.610</span>:465<span>)</span>: avc:  denied  <span>{</span> <span>open</span> <span>}</span> <span>for</span>  <span>pid</span><span>=</span><span>2359</span> <span>comm</span><span>=</span><span>"httpd"</span> <span>path</span><span>=</span><span>"/var/www/html/index.html"</span> <span>dev</span><span>=</span><span>"sda1"</span> <span>ino</span><span>=</span><span>1317685</span> <span>scontext</span><span>=</span>system_u:system_r:httpd_t:s0 <span>tcontext</span><span>=</span>unconfined_u:object_r:admin_home_t:s0 <span>tclass</span><span>=</span>file</code></pre>
+<p>使用ls -Z也可以看出,文件和目录的SELinux信息不匹配</p>
+<pre><code><span>[</span>root@jsdig.com html<span>]</span><span># ls -Z /var/www/html/</span>
+<span>..</span><span>..</span> unconfined_u:object_r:admin_home_t:s0 index.html
+
+<span>[</span>root@jsdig.com html<span>]</span><span># ls -Zd /var/www/html/</span>
+<span>..</span><span>..</span> system_u:object_r:httpd_sys_content_t:s0 /var/www/html/</code></pre>
+<p>使用restorecon来恢复网页主目录中所有文件的SELinux配置信息(如果目标为一个目录，可以添加-R参数递归)</p>
+<pre><code><span>[</span>root@jsdig.com html<span>]</span><span># restorecon -R /var/www/html/</span></code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

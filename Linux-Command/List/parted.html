@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>parted:磁盘分区和分区大小调整工具</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="parted:磁盘分区和分区大小调整工具 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>parted</h1><p>磁盘分区和分区大小调整工具</p>
+<h2>补充说明</h2><p><strong>parted命令</strong> 是由GNU组织开发的一款功能强大的磁盘分区和分区大小调整工具，与fdisk不同，它支持调整分区的大小。作为一种设计用于Linux的工具，它没有构建成处理与fdisk关联的多种分区类型，但是，它可以处理最常见的分区格式，包括：ext2、ext3、fat16、fat32、NTFS、ReiserFS、JFS、XFS、UFS、HFS以及Linux交换分区。</p>
+<h3>语法</h3><pre><code class="language-shellshell">parted<span>(</span>选项<span>)</span><span>(</span>参数<span>)</span></code></pre>
+<h3>选项</h3><pre><code class="language-shellshell">-h：显示帮助信息；
+-i：交互式模式；
+-s：脚本模式，不提示用户；
+-v：显示版本号。</code></pre>
+<h3>参数</h3><ul>
+<li>设备：指定要分区的硬盘所对应的设备文件；</li>
+<li>命令：要执行的parted命令。</li>
+</ul>
+<h3>实例</h3><p>从串行技术出现以来，越来越多用户选择使用大容量的SATA硬盘创建磁盘阵列；特别是MD1000/MD3000，很轻易就突破2T的LUN，故在此给大家一些指引。</p>
+<p>红帽企业 Linux 4 Update 4供对大于 2 terabytes（TB）的磁盘设备的支持。</p>
+<p>请参考以下操作步骤：</p>
+<p>注：</p>
+<ul>
+<li>绿色代表你需要使用的命令。</li>
+<li>红色代表你需要注意到的输出信息，在后续需要使用。</li>
+</ul>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># fdisk -l</span>
+Disk /dev/sda: <span>35.8</span> GB, <span>35862976512</span> bytes
+<span>255</span> heads, <span>63</span> sectors/track, <span>4360</span> cylinders
+Units <span>=</span> cylinders of <span>16065</span> * <span>512</span> <span>=</span> <span>8225280</span> bytes
+   Device Boot      Start         End      Blocks   <span>id</span>  System
+/dev/sda1   *           <span>1</span>          <span>13</span>      <span>104391</span>   <span>83</span>  Linux
+/dev/sda2              <span>14</span>         <span>144</span>     <span>1052257</span>+  <span>82</span>  Linux swap
+/dev/sda3             <span>145</span>        <span>4360</span>    <span>33865020</span>   <span>83</span>  Linux
+Disk /dev/sdb: <span>2147</span> MB, <span>2147483648</span> bytes
+<span>255</span> heads, <span>63</span> sectors/track, <span>261</span> cylinders
+Units <span>=</span> cylinders of <span>16065</span> * <span>512</span> <span>=</span> <span>8225280</span> bytes
+Disk /dev/sdb doesn't contain a valid partition table</code></pre>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># parted /dev/sdb</span>
+GNU Parted Copyright <span>(</span>C<span>)</span> <span>1998</span> - <span>2004</span> <span>free</span> Software Foundation, Inc.
+This program is <span>free</span> software, covered by the GNU General Public License.
+This program is distributed <span>in</span> the hope that it will be useful, but WITHOUT ANY
+WARRANTY<span>;</span> without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+PARTICULAR PURPOSE.  See the GNU General Public License <span>for</span> <span>more</span> details.
+使用/dev/sdb
+<span>(</span>parted<span>)</span>mklabel gpt
+<span>(</span>parted<span>)</span>print
+/dev/sdb的磁盘几何结构：0.000-2048.000兆字节
+磁盘标签类型：gpt
+Minor   起始点       终止点 文件系统   名称                 标志
+<span>(</span>parted<span>)</span>mkpart primary <span>0</span> <span>2048</span>  <span>&lt;</span>-----上面print显示的数字
+<span>(</span>parted<span>)</span>print
+/dev/sdb的磁盘几何结构：0.000-2048.000兆字节
+磁盘标签类型：gpt
+Minor   起始点       终止点 文件系统   名称                 标志
+<span>1</span>          <span>0.017</span>   <span>2047.983</span>
+<span>(</span>parted<span>)</span>quit</code></pre>
+<p>如果必要，不要忘记更新<code>/etc/fstab</code>。</p>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># fdisk -l</span>
+Disk /dev/sda: <span>35.8</span> GB, <span>35862976512</span> bytes
+<span>255</span> heads, <span>63</span> sectors/track, <span>4360</span> cylinders
+Units <span>=</span> cylinders of <span>16065</span> * <span>512</span> <span>=</span> <span>8225280</span> bytes
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sda1   *           <span>1</span>          <span>13</span>      <span>104391</span>   <span>83</span>  Linux
+/dev/sda2              <span>14</span>         <span>144</span>     <span>1052257</span>+  <span>82</span>  Linux swap
+/dev/sda3             <span>145</span>        <span>4360</span>    <span>33865020</span>   <span>83</span>  Linux
+WARNING: GPT <span>(</span>GUID Partition Table<span>)</span> detected on <span>'/dev/sdb'</span><span>!</span> The util <span>fdisk</span> doesn't support GPT. Use GNU Parted.
+
+Disk /dev/sdb: <span>2147</span> MB, <span>2147483648</span> bytes
+<span>255</span> heads, <span>63</span> sectors/track, <span>261</span> cylinders
+Units <span>=</span> cylinders of <span>16065</span> * <span>512</span> <span>=</span> <span>8225280</span> bytes
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sdb1               <span>1</span>         <span>262</span>     <span>2097151</span>+  ee  EFI GPT
+Partition <span>1</span> has different physical/logical beginnings <span>(</span>non-Linux?<span>)</span>:
+     <span>phys</span><span>=</span><span>(</span><span>0</span>, <span>0</span>, <span>1</span><span>)</span> <span>logical</span><span>=</span><span>(</span><span>0,0</span>, <span>2</span><span>)</span>
+Partition <span>1</span> has different physical/logical endings:
+     <span>phys</span><span>=</span><span>(</span><span>1023</span>, <span>254</span>, <span>63</span><span>)</span> <span>logical</span><span>=</span><span>(</span><span>261</span>, <span>21</span>, <span>16</span><span>)</span></code></pre>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># mkfs.ext3 /dev/sdb1</span>
+<span>mke2fs</span> <span>1.35</span> <span>(</span><span>28</span>-Feb-2004<span>)</span>
+Filesystem <span>label</span><span>=</span>
+OS type: Linux
+Block <span>size</span><span>=</span><span>4096</span> <span>(</span>log<span>=</span><span>2</span><span>)</span>
+Fragment <span>size</span><span>=</span><span>4096</span> <span>(</span>log<span>=</span><span>2</span><span>)</span>
+<span>262144</span> inodes, <span>524279</span> blocks
+<span>26213</span> blocks <span>(</span><span>5.00</span>%<span>)</span> reserved <span>for</span> the super user
+First data <span>block</span><span>=</span><span>0</span>
+Maximum filesystem <span>blocks</span><span>=</span><span>536870912</span>
+<span>16</span> block <span>groups</span>
+<span>32768</span> blocks per group, <span>32768</span> fragments per group
+<span>16384</span> inodes per group
+Superblock backups stored on blocks:
+        <span>32768</span>, <span>98304</span>, <span>163840</span>, <span>229376</span>, <span>294912</span>
+Writing inode tables: <span>done</span>
+Creating journal <span>(</span><span>8192</span> blocks<span>)</span>: <span>done</span>
+Writing superblocks and filesystem accounting information: <span>done</span>
+This filesystem will be automatically checked every <span>28</span> mounts or
+<span>180</span> days, whichever comes first.  Use tune2fs -c or -i to override.</code></pre>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># mount /dev/sdb1 /mnt</span>
+<span>[</span>root@localhost ~<span>]</span><span># df -h</span>
+Filesystem            容量  已用 可用 已用% 挂载点
+/dev/sda3              <span>&lt;</span>?xml:namespace prefix <span>=</span> st1 /<span>></span>32G  <span>2</span>.6G   28G   <span>9</span>% /
+/dev/sda1              99M   12M   82M  <span>13</span>% /boot
+none                  252M     <span>0</span>  252M   <span>0</span>% /dev/shm
+/dev/sdb1             <span>2</span>.0G   36M  <span>1</span>.9G   <span>2</span>% /mnt</code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>
