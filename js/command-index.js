@@ -34,7 +34,7 @@
                 l = new RegExp("(" + t + ")", "ig");
             t && (r = e.n.replace(l, '<i class="kw">$1</i>'), i = e.d.replace(l, '<i class="kw">$1</i>') || "");
             var a = this.root_path.replace(/\/$/, "");
-            return s = n ? '<a href="' + a + '/List$url$.html"><strong>$name$</strong> - $des$</a><p></p>' : '<a href="' + a + '/List$url$.html"><strong>$name$</strong> - $des$</a>', this.simple(s, {
+            return s = n ? '<a href="' + a + '/Linux-Command/List$url$.html"><strong>$name$</strong> - $des$</a><p></p>' : '<a href="' + a + '/Linux-Command/List$url$.html"><strong>$name$</strong> - $des$</a>', this.simple(s, {
                 name: r,
                 url: e.p,
                 des: i
