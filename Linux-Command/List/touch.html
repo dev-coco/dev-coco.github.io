@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>touch:创建新的空文件</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="touch:创建新的空文件 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>touch</h1><p>创建新的空文件</p>
+<h2>补充说明</h2><p><strong>touch命令</strong> 有两个功能：一是用于把已存在文件的时间标签更新为系统当前的时间（默认方式），它们的数据将原封不动地保留下来；二是用来创建新的空文件。</p>
+<h3>语法</h3><pre><code>touch<span>(</span>选项<span>)</span><span>(</span>参数<span>)</span></code></pre>
+<h3>选项</h3><pre><code>-a：或--time<span>=</span>atime或--time<span>=</span>access或--time<span>=</span>use  只更改存取时间；
+-c：或--no-create  不建立任何文件；
+-d：<span>&lt;</span>时间日期<span>></span> 使用指定的日期时间，而非现在的时间；
+-f：此参数将忽略不予处理，仅负责解决BSD版本touch指令的兼容性问题；
+-m：或--time<span>=</span>mtime或--time<span>=</span>modify  只更该变动时间；
+-r：<span>&lt;</span>参考文件或目录<span>></span>  把指定文件或目录的日期时间，统统设成和参考文件或目录的日期时间相同；
+-t：<span>&lt;</span>日期时间<span>></span>  使用指定的日期时间，而非现在的时间；
+--help：在线帮助；
+--version：显示版本信息。</code></pre>
+<h3>参数</h3><p>文件：指定要设置时间属性的文件列表。</p>
+<h3>实例</h3><pre><code><span>touch</span> ex2</code></pre>
+<p>在当前目录下建立一个空文件ex2，然后，利用<code>ls -l</code>命令可以发现文件ex2的大小为0，表示它是空文件。</p>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

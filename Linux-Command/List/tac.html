@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>tac:连接多个文件并以行为单位反向打印到标准输出</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="tac:连接多个文件并以行为单位反向打印到标准输出 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>tac</h1><p>连接多个文件并以行为单位反向打印到标准输出。</p>
+<h2>概要</h2><pre><code><span>tac</span> <span>[</span>OPTION<span>]</span><span>..</span>. <span>[</span>FILE<span>]</span><span>..</span>.</code></pre>
+<h2>主要用途</h2><ul>
+<li>按行为单位反向显示文件内容，如果没有文件或文件为<code>-</code>则读取标准输入。</li>
+<li>处理多个文件时，依次将每个文件反向显示，而不是将所有文件连在一起再反向显示。</li>
+</ul>
+<h2>参数</h2><p>FILE（可选）：要处理的文件，可以为一或多个。</p>
+<h2>选项</h2><pre><code>长选项与短选项等价
+
+-b, --before              在之前而不是之后连接分隔符。
+-r, --regex               将分隔符作为基础正则表达式（BRE）处理。
+-s, --separator<span>=</span>STRING    使用STRING作为分隔符代替默认的换行符。
+--help                    显示帮助信息并退出。
+--version                 显示版本信息并退出。</code></pre>
+<h2>返回值</h2><p>返回状态为成功除非给出了非法选项或非法参数。</p>
+<h2>例子</h2><pre><code><span># 选自官方info文档的例子：</span>
+<span># 一个接着一个字符的反转一个文件：</span>
+<span>tac</span> -r -s <span>'x\|[^x]'</span> test.log
+
+<span># 关于-b选项：</span>
+<span>seq</span> <span>1</span> <span>3</span> <span>|</span><span>tac</span>
+<span># 输出</span>
+<span>3</span>
+<span>2</span>
+<span>1</span>
+<span># 使用-b选项：</span>
+<span>seq</span> <span>1</span> <span>3</span> <span>|</span><span>tac</span> -b
+<span># 输出，注意21后面没有换行符：</span>
+
+
+<span>3</span>
+<span>21</span>
+<span># 前一个例子相当于将 '1\n2\n3\n' 转换为 '3\n2\n1\n'</span>
+<span># 前一个例子相当于将 '1\n2\n3\n' 转换为 '\n\n3\n21'</span></code></pre>
+<h3>注意</h3><ol>
+<li>该命令是<code>GNU coreutils</code>包中的命令，相关的帮助信息请查看<code>man -s 1 tac</code>或<code>info coreutils &#39;tac invocation&#39;</code>。</li>
+<li>关于基础正则表达式（BRE）的内容，详见<code>man -s 1 grep</code>的<code>REGULAR EXPRESSIONS</code>段落。</li>
+</ol>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>startx:用来启动X Window</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="startx:用来启动X Window — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>startx</h1><p>用来启动X Window</p>
+<h2>补充说明</h2><p><strong>startx命令</strong> 用来启动X Window，实际上启动X Window的程序为xinit。</p>
+<h3>语法</h3><pre><code>startx<span>(</span>参数<span>)</span></code></pre>
+<h3>参数</h3><ul>
+<li>客户端及选项：X客户端及选项；</li>
+<li>服务器及选项：X服务器及选项。</li>
+</ul>
+<h3>实例</h3><p>要在工作站上或 X 终端上启动 X 会话，请输入：</p>
+<pre><code>startx</code></pre>
+<p>要在工作站上强制启动 X 会话，请输入： </p>
+<pre><code>startx -w</code></pre>
+<p>要为 X 终端启动 X 会话，并注销用户的 telnet 会话，请输入：</p>
+<pre><code>startx<span>;</span> <span>kill</span> -9 &#36;</code></pre>
+<p>要使用 .xinitrc 脚本启动 X 会话，请输入：</p>
+<pre><code>startx -x .xinitrc</code></pre>
+<p>要使用 mwm 窗口管理器启动 X 会话，请输入：</p>
+<pre><code>startx -m mwm</code></pre>
+<p>但是，如果找到启动脚本文件，则忽略<code>-w</code>选项。在启动脚本中，启动窗口管理器、装入X资源以及产生X客户机是用户的责任。以下是.xsession脚本的一个示例。</p>
+<pre><code><span class="token shebang important">#!/bin/csh</span>
+ <span>(</span>mwm <span>&amp;</span><span>)</span>
+ xrdb -load .Xdefaults
+ <span>(</span>xclock -g 75x75+0+0 <span>&amp;</span><span>)</span>
+ <span>(</span>xbiff -g 75x75+101-0 <span>&amp;</span><span>)</span>
+ <span>if</span> <span>(</span><span>"/dev/lft*"</span> <span>==</span> <span>"<span><span>`</span><span>tty</span><span>`</span></span>"</span><span>)</span> <span>then</span>
+  aixterm -g 80x24+0+0 +ut -C -T <span><span>`</span><span>hostname</span><span>`</span></span>
+ <span>else</span>
+  aixterm -g 80x24+0+0 +ut -T <span><span>`</span><span>hostname</span><span>`</span></span>
+ endif</code></pre>
+<p>对于工作站，startup脚本中的最后一行应该是前台aixterm命令，该命令带有<code>-C</code>选项表示控制台信息。对于X终端，startup脚本中的最后一行应该是不带有<code>-C</code>选项的前台aixterm命令。另外，由于某些X终端在关闭时不终止telnet会话，所以用户必须在使用热键切换至X会话前退出当前的telnet会话。</p>
+<p><code>/usr/lib/X11/xdm/Xsession</code>文件中的xdm命令也可以使用startx命令。这为xdm命令提供了startx命令的功能。</p>
+<p>以下是启动X会话一贯使用的文件名。</p>
+<pre><code><span>&#36;HOME</span>/.xerrors 其中，startx 用来重定向错误消息。在缺省情况下，startx 将错误重定向至用户主目录中的 .xerrors 文件中。
+<span>&#36;HOME</span>/.Xinit,
+<span>&#36;HOME</span>/.xinit,
+<span>&#36;HOME</span>/.Xinitrc,
+<span>&#36;HOME</span>/.xinitrc,
+<span>&#36;HOME</span>/.xsession 作为包含 shell 命令的“启动文件”来启动窗口管理器、装入 X 资源并产生 X 客户机。
+<span>&#36;HOME</span>/.Xdefaults,
+<span>&#36;HOME</span>/.xresources 作为装入的 X 资源文件来设置 X 客户机的用户首选项。
+<span>&#36;HOME</span>/.mwmrc mwm 配置文件。
+<span>&#36;HOME</span>/.twmrc twm 配置文件。
+<span>&#36;HOME</span>/.awmrc awm 配置文件。
+<span>&#36;HOME</span>/.uwmrc uwm 配置文件。
+/dev/lft* 终端或 tty、工作站初始 login shell 的界面。</code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

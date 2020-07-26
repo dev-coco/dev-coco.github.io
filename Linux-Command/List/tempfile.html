@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>tempfile:shell中给临时文件命名</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="tempfile:shell中给临时文件命名 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>tempfile</h1><p>shell中给临时文件命名</p>
+<h2>补充说明</h2><p>有时候在写Shell脚本的时候需要一些临时存储数据的才做，最适合存储临时文件数据的位置就是<code>/tmp</code>，因为该目录中所有的内容在系统重启后就会被清空。下面是两种方法为临时数据生成标准的文件名。</p>
+<h3>tempfile命令</h3><p><code>tempfile命令</code>只有在基于Debian的发行版中才默认自带，比如Ubuntu，其他发行版没有这个命令。</p>
+<p>用tempfile命令为一个临时文件命名：</p>
+<pre><code><span>temp_file_name</span><span>=</span><span><span>&#36;(</span>tempfile<span>)</span></span></code></pre>
+<p>用一个加带了随机数的文件名作为临时文件命名：</p>
+<pre><code><span>temp_file_name</span><span>=</span><span>"/tmp/file_<span>&#36;RANDOM</span>"</span></code></pre>
+<p>$RANDOM是一个返回随机数的环境变量。</p>
+<h3>$变量</h3><p>如果没有tempfile命令的Linux发行版，也可以使用自己的临时文件名：</p>
+<pre><code><span>temp_file_name</span><span>=</span><span>"/tmp/file.&#36;"</span></code></pre>
+<p><code>$</code>是系统预定义变量，显示当前所在进程的进程号，用<code>.$</code>作为添加的后缀会被扩展成当前运行脚本的进程id。</p>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

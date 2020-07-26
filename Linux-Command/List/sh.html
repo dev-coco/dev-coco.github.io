@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>sh:shell命令解释器</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="sh:shell命令解释器 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>sh</h1><p>shell命令解释器</p>
+<h2>补充说明</h2><p><strong>sh命令</strong> 是shell命令语言解释器，执行命令从标准输入读取或从一个文件中读取。通过用户输入命令，和内核进行沟通！Bourne Again Shell （即bash）是自由软件基金会（GNU）开发的一个Shell，它是Linux系统中一个默认的Shell。Bash不但与Bourne Shell兼容，还继承了C Shell、Korn Shell等优点。</p>
+<h3>语法</h3><pre><code><span>bash</span> <span>[</span>options<span>]</span> <span>[</span>file<span>]</span></code></pre>
+<h3>选项</h3><pre><code>-c string：命令从-c后的字符串读取。
+-i：实现脚本交互。
+-n：进行shell脚本的语法检查。
+-x：实现shell脚本逐条语句的跟踪。</code></pre>
+<h3>实例</h3><p>使用-x选项跟踪脚本调试shell脚本，能打印出所执行的每一行命令以及当前状态：</p>
+<pre><code><span>[</span>root@AY1307311912260196fcZ satools<span>]</span><span># sh -x check_ssh_login.sh</span>
++ <span>DEFINE</span><span>=</span><span>30</span>
++ <span>cat</span> /var/log/secure
++ <span>awk</span> <span>'/Failed/ {++ip[<span><span>&#36;(</span>NF-3<span>)</span></span>]} END {for (i in ip) print i"="ip[i]}'</span>
+++ <span>cat</span> /root/satools/black.txt
++ <span>for</span> <span class="token for-or-select variable">i</span> <span>in</span> <span>'<span><span>`</span><span>cat</span> /root/satools/black.txt<span>`</span></span>'</span>
+++ <span>echo</span> <span>121.42</span>.0.16<span>=</span><span>1427</span>
+++ <span>awk</span> -F<span>=</span> <span>'{print <span>&#36;1</span>}'</span>
++ <span>IP</span><span>=</span><span>121.42</span>.0.16
+++ <span>echo</span> <span>121.42</span>.0.16<span>=</span><span>1427</span>
+++ <span>awk</span> -F<span>=</span> <span>'{print <span>&#36;2</span>}'</span>
++ <span>NUM</span><span>=</span><span>1427</span>
++ <span>'['</span> <span>1427</span> -gt <span>30</span> <span>']'</span>
++ <span>grep</span> <span>121.42</span>.0.16 /etc/hosts.deny
++ <span>'['</span> <span>1</span> -gt <span>0</span> <span>']'</span>
++ <span>echo</span> sshd:121.42.0.16
++ <span>echo</span> vsftpd:121.42.0.16
++ <span>for</span> <span class="token for-or-select variable">i</span> <span>in</span> <span>'<span><span>`</span><span>cat</span> /root/satools/black.txt<span>`</span></span>'</span>
+++ <span>echo</span> <span>121.42</span>.0.72<span>=</span><span>276</span>
+++ <span>awk</span> -F<span>=</span> <span>'{print <span>&#36;1</span>}'</span>
++ <span>IP</span><span>=</span><span>121.42</span>.0.72
+++ <span>awk</span> -F<span>=</span> <span>'{print <span>&#36;2</span>}'</span>
+++ <span>echo</span> <span>121.42</span>.0.72<span>=</span><span>276</span>
++ <span>NUM</span><span>=</span><span>276</span>
++ <span>'['</span> <span>276</span> -gt <span>30</span> <span>']'</span>
++ <span>grep</span> <span>121.42</span>.0.72 /etc/hosts.deny
++ <span>'['</span> <span>1</span> -gt <span>0</span> <span>']'</span>
++ <span>echo</span> sshd:121.42.0.72
++ <span>echo</span> vsftpd:121.42.0.72</code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

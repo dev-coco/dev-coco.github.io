@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>shopt:显示和设置shell操作选项</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="shopt:显示和设置shell操作选项 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>shopt</h1><p>显示和设置shell操作选项</p>
+<h2>补充说明</h2><p><strong>shopt命令</strong> 用于显示和设置shell中的行为选项，通过这些选项以增强shell易用性。shopt命令若不带任何参数选项，则可以显示所有可以设置的shell操作选项。</p>
+<h3>语法</h3><pre><code>shopt<span>(</span>选项<span>)</span><span>(</span>参数<span>)</span></code></pre>
+<h3>选项</h3><pre><code>-s：激活指定的shell行为选项；
+-u：关闭指定的shell行为选项。</code></pre>
+<h3>参数</h3><p>shell选项：指定要操作的shell选项。</p>
+<h3>实例</h3><p>使用shopt命令显示当前所有可以设置的shell操作选项，输入如下命令：</p>
+<pre><code><span>shopt</span>           <span>#输出所有可以设置的shell操作选项</span>
+cdable_vars     off
+cdspell         off
+checkhash       off
+checkwinsize    on
+cmdhist         on
+dotglob         off
+execfail        off
+expand_aliases  on
+extdebug        off
+<span>..</span>.</code></pre>
+<p>如图上所示，选项&quot;cdspell&quot;的状态为&quot;off&quot;，即关闭cd拼写检查选项。现在，可以使用shopt命令将其开启，输入如下命令：</p>
+<pre><code><span>shopt</span> -s cdspell          <span>#开启cd拼写检查</span></code></pre>
+<p>执行上面的命令后，该选项的状态将变为&quot;on&quot;，即开启状态。可以再次通过该命令显示一下shell操作选项即可，输出信息如下：</p>
+<pre><code>cdspell on                <span>#开启cdspell选项</span></code></pre>
+<p>用户可以通过实际执行cd命令检查该选项是否被成功开启。</p>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

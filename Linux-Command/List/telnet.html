@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>telnet:登录远程主机和管理(测试ip端口是否连通)</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="telnet:登录远程主机和管理(测试ip端口是否连通) — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>telnet</h1><p>登录远程主机和管理(测试ip端口是否连通)</p>
+<h2>补充说明</h2><p><strong>telnet命令</strong> 用于登录远程主机，对远程主机进行管理。telnet因为采用明文传送报文，安全性不好，很多Linux服务器都不开放telnet服务，而改用更安全的ssh方式了。但仍然有很多别的系统可能采用了telnet方式来提供远程登录，因此弄清楚telnet客户端的使用方式仍是很有必要的。</p>
+<h3>语法</h3><pre><code>telnet<span>(</span>选项<span>)</span><span>(</span>参数<span>)</span></code></pre>
+<h3>选项</h3><pre><code>-8：允许使用8位字符资料，包括输入与输出；
+-a：尝试自动登入远端系统；
+-b<span>&lt;</span>主机别名<span>></span>：使用别名指定远端主机名称；
+-c：不读取用户专属目录里的.telnetrc文件；
+-d：启动排错模式；
+-e<span>&lt;</span>脱离字符<span>></span>：设置脱离字符；
+-E：滤除脱离字符；
+-f：此参数的效果和指定<span>"-F"</span>参数相同；
+-F：使用Kerberos V5认证时，加上此参数可把本地主机的认证数据上传到远端主机；
+-k<span>&lt;</span>域名<span>></span>：使用Kerberos认证时，加上此参数让远端主机采用指定的领域名，而非该主机的域名；
+-K：不自动登入远端主机；
+-l<span>&lt;</span>用户名称<span>></span>：指定要登入远端主机的用户名称；
+-L：允许输出8位字符资料；
+-n<span>&lt;</span>记录文件<span>></span>：指定文件记录相关信息；
+-r：使用类似rlogin指令的用户界面；
+-S<span>&lt;</span>服务类型<span>></span>：设置telnet连线所需的ip TOS信息；
+-x：假设主机有支持数据加密的功能，就使用它；
+-X<span>&lt;</span>认证形态<span>></span>：关闭指定的认证形态。</code></pre>
+<h3>参数</h3><ul>
+<li>远程主机：指定要登录进行管理的远程主机；</li>
+<li>端口：指定TELNET协议使用的端口号。</li>
+</ul>
+<h3>实例</h3><pre><code>&#36; telnet <span>192.168</span>.2.10
+Trying <span>192.168</span>.2.10<span>..</span>.
+Connected to <span>192.168</span>.2.10 <span>(</span><span>192.168</span>.2.10<span>)</span>.
+Escape character is <span>'^]'</span><span>.</span>
+
+    localhost <span>(</span>Linux release <span>2.6</span>.18-274.18.1.el5 <span>#1 SMP Thu Feb 9 12:45:44 EST 2012) (1)</span>
+
+login: root
+Password:
+Login incorrect</code></pre>
+<p>一般情况下不允许root从远程登录，可以先用普通账号登录，然后再用su -切到root用户。</p>
+<pre><code>&#36; telnet <span>192.168</span>.188.132
+Trying <span>192.168</span>.188.132<span>..</span>.
+telnet: connect to address <span>192.168</span>.188.132: Connection refused
+telnet: Unable to connect to remote <span>host</span></code></pre>
+<p>处理这种情况方法：</p>
+<ol>
+<li>确认ip地址是否正确？</li>
+<li>确认ip地址对应的主机是否已经开机？</li>
+<li>如果主机已经启动，确认路由设置是否设置正确？（使用route命令查看）</li>
+<li>如果主机已经启动，确认主机上是否开启了telnet服务？（使用netstat命令查看，TCP的23端口是否有LISTEN状态的行）</li>
+<li>如果主机已经启动telnet服务，确认防火墙是否放开了23端口的访问？（使用iptables-save查看）</li>
+</ol>
+<p><strong>启动telnet服务</strong></p>
+<pre><code><span>service</span> xinetd restart</code></pre>
+<p>配置参数，通常的配置如下：</p>
+<pre><code><span>service</span> telnet
+<span>{</span>
+    disable <span>=</span> no <span>#启用</span>
+    flags <span>=</span> REUSE <span>#socket可重用</span>
+    socket_type <span>=</span> stream <span>#连接方式为TCP</span>
+    <span>wait</span> <span>=</span> no <span>#为每个请求启动一个进程</span>
+    user <span>=</span> root <span>#启动服务的用户为root</span>
+    server <span>=</span> /usr/sbin/in.telnetd <span>#要激活的进程</span>
+    log_on_failure <span>+=</span> USERID <span>#登录失败时记录登录用户名</span>
+<span>}</span></code></pre>
+<p>如果要配置允许登录的客户端列表，加入</p>
+<pre><code>only_from <span>=</span> <span>192.168</span>.0.2 <span>#只允许192.168.0.2登录</span></code></pre><p>如果要配置禁止登录的客户端列表，加入</p>
+<pre><code>no_access <span>=</span> <span>192.168</span>.0.<span>{</span><span>2,3</span>,4<span>}</span> <span>#禁止192.168.0.2、192.168.0.3、192.168.0.4登录</span></code></pre><p>如果要设置开放时段，加入</p>
+<pre><code>access_times <span>=</span> <span>9</span>:00-12:00 <span>13</span>:00-17:00 <span># 每天只有这两个时段开放服务（我们的上班时间：P）</span></code></pre><p>如果你有两个IP地址，一个是私网的IP地址如192.168.0.2，一个是公网的IP地址如218.75.74.83，如果你希望用户只能从私网来登录telnet服务，那么加入</p>
+<pre><code><span>bind</span> <span>=</span> <span>192.168</span>.0.2</code></pre><p>各配置项具体的含义和语法可参考xined配置文件属性说明（man xinetd.conf）</p>
+<p>配置端口，修改services文件：</p>
+<pre><code><span># vi /etc/services</span></code></pre>
+<p>找到以下两句</p>
+<pre><code>telnet <span>23</span>/tcp
+telnet <span>23</span>/udp</code></pre>
+<p>如果前面有#字符，就去掉它。telnet的默认端口是23，这个端口也是黑客端口扫描的主要对象，因此最好将这个端口修改掉，修改的方法很简单，就是将23这个数字修改掉，改成大一点的数字，比如61123。注意，1024以下的端口号是internet保留的端口号，因此最好不要用，还应该注意不要与其它服务的端口冲突。</p>
+<p>启动服务：</p>
+<pre><code><span>service</span> xinetd restart</code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

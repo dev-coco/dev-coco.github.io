@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>test:执行条件表达式</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="test:执行条件表达式 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>test</h1><p>执行条件表达式。</p>
+<h2>概要</h2><pre><code><span>test</span> <span>[</span>expr<span>]</span></code></pre>
+<h2>主要用途</h2><ul>
+<li>执行条件表达式。</li>
+</ul>
+<h2>参数</h2><h3>文件操作符：</h3><pre><code>-a FILE    如果文件存在，则为true。
+-b FILE    如果文件是块特殊的，则为true。
+-c FILE    如果文件是特殊字符，则为true。
+-d FILE    如果文件是目录，则为true。
+-e FILE    如果文件存在，则为true。
+-f FILE    如果文件存在并且是常规文件，则为true。
+-g FILE    如果文件是set-group-id，则为true。
+-h FILE    如果文件是符号链接，则为true。
+-L FILE    如果文件是符号链接，则为true。
+-k FILE    如果文件的粘滞位（sticky）设置了，则为true。
+-p FILE    如果文件是命名管道，则为true。
+-r FILE    如果您可以读取文件，则为true。
+-s FILE    如果文件存在且不为空，则为true。
+-S FILE    如果文件是套接字，则为true。
+-t FD      如果在终端上打开FD，则为True。
+-u FILE    如果文件是set-user-id，则为true。
+-w FILE    如果文件可写，则为true。
+-x FILE    如果您可以执行文件，则为true。
+-O FILE    如果文件有效地归您所有，则为true。
+-G FILE    如果文件有效地归您的组所有，则为true。
+-N FILE    如果文件自上次读取以来已被修改，则为true。
+
+FILE1 -nt FILE2    根据修改日期，如果 file1 比 file2 新，则为true。
+FILE1 -ot FILE2    根据修改日期，如果 file1 比 file2 旧，则为true。
+FILE1 -ef FILE2    如果 file1 为 file2 的硬链接，则为true。</code></pre>
+<h3>字符串运算符：</h3><pre><code>-z STRING              如果字符串为空，则为true。
+-n STRING              如果字符串不为空，则为true。
+STRING                 如果字符串不为空，则为true。
+STRING1 <span>=</span> STRING2      如果字符串相等，则为true。
+STRING1 ！<span>=</span> STRING2    如果字符串不相等，则为true。
+STRING1 <span>&lt;</span> STRING2      如果 STRING1 的字典排序在 STRING2 之前，则为true。
+STRING1 <span>></span> STRING2      如果 STRING1 在字典排序在 STRING2 之后，则为true。</code></pre>
+<h3>其他运算符：</h3><pre><code>-o OPTION         如果启用了shell选项OPTION，则为true。
+-v VAR            如果设置了shell变量VAR，则为true。
+-R VAR            如果设置了shell变量VAR并且是变量引用，则为true。
+！EXPR            如果expr为假，则为true。
+EXPR1 -a EXPR2    如果expr1和expr2都为true，则为true。
+EXPR1 -o EXPR2    如果expr1或expr2为true，则为true。
+arg1 OP arg2      算术表达式测试； OP是 -eq，-ne，-lt，-le，-gt，-ge 中的一个；算术表达式为真时返回true。</code></pre>
+<h2>返回值</h2><p>如果表达式执行结果为成功时返回0，当表达式执行结果为失败或给出非法参数时返回1。</p>
+<h2>例子</h2><pre><code><span># 执行条件表达式并显示返回值。</span>
+<span>[</span>root@pc root<span>]</span>&#36; <span>test</span> <span>!</span> <span>"abc"</span> <span>==</span> <span>123</span><span>;</span> <span>echo</span> <span>&#36;?</span>
+<span>0</span>
+
+<span># 等价形式，注意：方括号 [ 后面的空格以及方括号 ] 前面的空格。</span>
+<span>[</span>root@pc root<span>]</span>&#36; <span>[</span> <span>!</span> <span>"abc"</span> <span>==</span> <span>123</span> <span>]</span><span>;</span> <span>echo</span> <span>&#36;?</span>
+<span>0</span>
+
+<span>[</span>root@pc root<span>]</span>&#36; <span>[</span><span>[</span> <span>!</span> <span>"abc"</span> <span>==</span> <span>123</span> <span>]</span><span>]</span><span>;</span> <span>echo</span> <span>&#36;?</span>
+<span>0</span></code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

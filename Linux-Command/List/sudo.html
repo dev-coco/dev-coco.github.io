@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>sudo:以其他身份来执行命令</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="sudo:以其他身份来执行命令 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>sudo</h1><p>以其他身份来执行命令</p>
+<h2>补充说明</h2><p><strong>sudo命令</strong> 用来以其他身份来执行命令，预设的身份为root。在<code>/etc/sudoers</code>中设置了可执行sudo指令的用户。若其未经授权的用户企图使用sudo，则会发出警告的邮件给管理员。用户使用sudo时，必须先输入密码，之后有5分钟的有效期限，超过期限则必须重新输入密码。</p>
+<h3>语法</h3><pre><code>sudo<span>(</span>选项<span>)</span><span>(</span>参数<span>)</span></code></pre>
+<h3>选项</h3><pre><code>-b：在后台执行指令；
+-h：显示帮助；
+-H：将<span>HOME</span>环境变量设为新身份的<span>HOME</span>环境变量；
+-k：结束密码的有效期限，也就是下次再执行sudo时便需要输入密码；。
+-l：列出目前用户可执行与无法执行的指令；
+-p：改变询问密码的提示符号；
+-s<span>&lt;</span>shell<span>></span>：执行指定的shell；
+-u<span>&lt;</span>用户<span>></span>：以指定的用户作为新的身份。若不加上此参数，则预设以root作为新的身份；
+-v：延长密码有效期限5分钟；
+-V ：显示版本信息。</code></pre>
+<h3>参数</h3><p>指令：需要运行的指令和对应的参数。</p>
+<h3>实例</h3><pre><code>&#36; <span>sudo</span> <span>su</span> -
+<span># env | grep -E '(HOME|SHELL|USER|LOGNAME|^PATH|PWD|TEST_ETC|TEST_ZSH|TEST_PRO|TEST_BASH|TEST_HOME|SUDO)'</span></code></pre>
+<p>这个命令相当于使用root超级用户重新登录一次shell，只不过密码是使用的当前用户的密码。而且重要是，该命令会 <strong>重新加载/etc/profile文件以及/etc/bashrc文件等系统配置文件，并且还会重新加载root用户的$SHELL环境变量所对应的配置文件</strong> ，比如：root超级用户的$SHELL是/bin/bash，则会加载/root/.bashrc等配置。如果是/bin/zsh，则会加载/root/.zshrc等配置，执行后是完全的root环境。</p>
+<pre><code>&#36; <span>sudo</span> -i
+<span># env | grep -E '(HOME|SHELL|USER|LOGNAME|^PATH|PWD|TEST_ETC|TEST_ZSH|TEST_PRO|TEST_BASH|TEST_HOME|SUDO)'</span></code></pre>
+<p>这个命令基本与 <code>sudo su -</code> 相同，执行后也是root超级用户的环境，只不过是多了一些当前用户的信息。</p>
+<pre><code>&#36; <span>sudo</span> -s
+<span># env|grep -E '(HOME|SHELL|USER|LOGNAME|^PATH|PWD|TEST_ETC|TEST_ZSH|TEST_PRO|TEST_BASH|TEST_HOME|SUDO)'  --color</span></code></pre>
+<p>这个命令相当于 <strong>以当前用户的$SHELL开启了一个root超级用户的no-login的shell，不会加载/etc/profile等系统配置</strong> 。所以/etc/profile文件中定义的TEST_ETC环境变量就看不到了，但是会<strong>加载root用户对应的配置文件</strong>，比如root用户的$SHELL是/bin/zsh，那么会加载/root/.zshrc配置文件，执行完后，不会切换当前用户的目录。</p>
+<p>配置sudo必须通过编辑<code>/etc/sudoers</code>文件，而且只有超级用户才可以修改它，还必须使用visudo编辑。之所以使用visudo有两个原因，一是它能够防止两个用户同时修改它；二是它也能进行有限的语法检查。所以，即使只有你一个超级用户，你也最好用visudo来检查一下语法。</p>
+<p>visudo默认的是在vi里打开配置文件，用vi来修改文件。我们可以在编译时修改这个默认项。visudo不会擅自保存带有语法错误的配置文件，它会提示你出现的问题，并询问该如何处理，就像：</p>
+<pre><code><span>>></span><span>></span> sudoers file: syntax error, line <span>22</span> <span>&lt;&lt;</span></code></pre>
+<p>此时我们有三种选择：键入“e”是重新编辑，键入“x”是不保存退出，键入“Q”是退出并保存。如果真选择Q，那么sudo将不会再运行，直到错误被纠正。</p>
+<p>现在，我们一起来看一下神秘的配置文件，学一下如何编写它。让我们从一个简单的例子开始：让用户Foobar可以通过sudo执行所有root可执行的命令。以root身份用visudo打开配置文件，可以看到类似下面几行：</p>
+<pre><code><span># Runas alias specification</span>
+<span># User privilege specificationroot    ALL=(ALL)ALL</span></code></pre>
+<p>我们一看就明白个差不多了，root有所有权限，只要仿照现有root的例子就行，我们在下面加一行（最好用tab作为空白）：</p>
+<pre><code>foobar <span>ALL</span><span>=</span><span>(</span>ALL<span>)</span>    ALL</code></pre>
+<p>保存退出后，切换到foobar用户，我们用它的身份执行命令：</p>
+<pre><code><span>[</span>foobar@localhost ~<span>]</span>&#36; <span>ls</span> /root
+ls: /root: 权限不够
+
+<span>[</span>foobar@localhost ~<span>]</span>&#36; <span>sudo</span> <span>ls</span> /root
+PassWord:
+anaconda-ks.cfg Desktop install.log install.log.syslog</code></pre>
+<p>好了，我们限制一下foobar的权利，不让他为所欲为。比如我们只想让他像root那样使用ls和ifconfig，把那一行改为：</p>
+<pre><code>foobar <span>localhost</span><span>=</span>    /sbin/ifconfig,   /bin/ls</code></pre>
+<p>再来执行命令：</p>
+<pre><code><span>[</span>foobar@localhost ~<span>]</span>&#36; <span>sudo</span> <span>head</span> -5 /etc/shadow
+Password:
+Sorry, user foobar is not allowed to execute <span>'/usr/bin/head -5 /etc/shadow'</span> as root on localhost.localdomain.
+
+<span>[</span>foobar@localhost ~<span>]</span>&#36; <span>sudo</span> /sbin/ifconfigeth0      Linkencap:Ethernet HWaddr 00:14:85:EC:E9:9B<span>..</span>.</code></pre>
+<p>现在让我们来看一下那三个ALL到底是什么意思。第一个ALL是指网络中的主机，我们后面把它改成了主机名，它指明foobar可以在此主机上执行后面的命令。第二个括号里的ALL是指目标用户，也就是以谁的身份去执行命令。最后一个ALL当然就是指命令名了。例如，我们想让foobar用户在linux主机上以jimmy或rene的身份执行kill命令，这样编写配置文件：</p>
+<pre><code>foobar    <span>linux</span><span>=</span><span>(</span>jimmy,rene<span>)</span>    /bin/kill</code></pre>
+<p>但这还有个问题，foobar到底以jimmy还是rene的身份执行？这时我们应该想到了<code>sudo -u</code>了，它正是用在这种时候。 foobar可以使用<code>sudo -u jimmy kill PID</code>或者<code>sudo -u rene kill PID</code>，但这样挺麻烦，其实我们可以不必每次加<code>-u</code>，把rene或jimmy设为默认的目标用户即可。再在上面加一行：</p>
+<pre><code>Defaults:foobar    <span>runas_default</span><span>=</span>rene</code></pre>
+<p>Defaults后面如果有冒号，是对后面用户的默认，如果没有，则是对所有用户的默认。就像配置文件中自带的一行：</p>
+<pre><code>Defaults    env_reset</code></pre>
+<p>另一个问题是，很多时候，我们本来就登录了，每次使用sudo还要输入密码就显得烦琐了。我们可不可以不再输入密码呢？当然可以，我们这样修改配置文件：</p>
+<pre><code>foobar <span>localhost</span><span>=</span>NOPASSWD:     /bin/cat, /bin/ls</code></pre>
+<p>再来sudo一下：</p>
+<pre><code><span>[</span>foobar@localhost ~<span>]</span>&#36; <span>sudo</span> <span>ls</span> /rootanaconda-ks.cfg Desktop install.log
+install.log.syslog</code></pre>
+<p>当然，你也可以说“某些命令用户foobar不可以运行”，通过使用!操作符，但这不是一个好主意。因为，用!操作符来从ALL中“剔出”一些命令一般是没什么效果的，一个用户完全可以把那个命令拷贝到别的地方，换一个名字后再来运行。</p>
+<p> <strong>日志与安全</strong> </p>
+<p>sudo为安全考虑得很周到，不仅可以记录日志，还能在有必要时向系统管理员报告。但是，sudo的日志功能不是自动的，必须由管理员开启。这样来做：</p>
+<pre><code><span>touch</span> /var/log/sudo
+<span>vi</span> /etc/syslog.conf</code></pre>
+<p>在syslog.conf最后面加一行（必须用tab分割开）并保存：</p>
+<pre><code>local2.debug                    /var/log/sudo</code></pre>
+<p>重启日志守候进程，</p>
+<pre><code><span>ps</span> aux <span>grep</span> syslogd</code></pre>
+<p>把得到的syslogd进程的PID（输出的第二列是PID）填入下面：</p>
+<pre><code><span>kill</span> –HUP PID</code></pre>
+<p>这样，sudo就可以写日志了：</p>
+<pre><code><span>[</span>foobar@localhost ~<span>]</span>&#36; <span>sudo</span> <span>ls</span> /rootanaconda-ks.cfg
+Desktop install.log
+install.log.syslog
+<span>&#36;cat</span> /var/log/sudoJul <span>28</span> <span>22</span>:52:54 localhost sudo:   foobar <span>:</span>
+<span>TTY</span><span>=</span>pts/1 <span>;</span> <span>pwd</span><span>=</span>/home/foobar <span>;</span> <span><span>USER</span></span><span>=</span>root <span>;</span> <span>command</span><span>=</span>/bin/ls /root</code></pre>
+<p>不过，有一个小小的“缺陷”，sudo记录日志并不是很忠实：</p>
+<pre><code><span>[</span>foobar@localhost ~<span>]</span>&#36; <span>sudo</span> <span>cat</span> /etc/shadow <span>></span> /dev/null
+<span>cat</span> /var/log/sudo<span>..</span>.Jul <span>28</span> <span>23</span>:10:24 localhost sudo:   foobar <span>:</span> <span>TTY</span><span>=</span>pts/1 <span>;</span>
+<span><span>PWD</span></span><span>=</span>/home/foobar <span>;</span> <span><span>USER</span></span><span>=</span>root <span>;</span> <span>COMMAND</span><span>=</span>/bin/cat /etc/shadow</code></pre>
+<p>重定向没有被记录在案！为什么？因为在命令运行之前，shell把重定向的工作做完了，sudo根本就没看到重定向。这也有个好处，下面的手段不会得逞：</p>
+<pre><code><span>[</span>foobar@localhost ~<span>]</span>&#36; <span>sudo</span> <span>ls</span> /root <span>></span> /etc/shadowbash: /etc/shadow: 权限不够</code></pre>
+<p>sudo 有自己的方式来保护安全。以root的身份执行<code>sudo-V</code>，查看一下sudo的设置。因为考虑到安全问题，一部分环境变量并没有传递给sudo后面的命令，或者被检查后再传递的，比如：PATH，HOME，SHELL等。当然，你也可以通过sudoers来配置这些环境变量。</p>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

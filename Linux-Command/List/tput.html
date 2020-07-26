@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>tput:通过terminfo数据库对终端会话进行初始化和操作</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="tput:通过terminfo数据库对终端会话进行初始化和操作 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>tput</h1><p>通过terminfo数据库对终端会话进行初始化和操作</p>
+<h2>补充说明</h2><p><strong>tput命令</strong> 将通过 terminfo 数据库对您的终端会话进行初始化和操作。通过使用 tput，您可以更改几项终端功能，如移动或更改光标、更改文本属性，以及清除终端屏幕的特定区域。</p>
+<h3>什么是 terminfo 数据库？</h3><p>UNIX 系统上的 terminfo 数据库用于定义终端和打印机的属性及功能，包括各设备（例如，终端和打印机）的行数和列数以及要发送至该设备的文本的属性。UNIX 中的几个常用程序都依赖 terminfo 数据库提供这些属性以及许多其他内容，其中包括 vi 和 emacs 编辑器以及 curses 和 man 程序。</p>
+<p>与 UNIX 中的大多数命令一样，tput 命令既可以用在 shell 命令行中也可以用在 shell 脚本中。为让您更好地理解 tput，本文首先从命令行讲起，然后紧接着讲述 shell 脚本示例。</p>
+<p> <strong>光标属性</strong> </p>
+<p>在 UNIX shell 脚本中或在命令行中，移动光标或更改光标属性可能是非常有用的。有些情况下，您可能需要输入敏感信息（如密码），或在屏幕上两个不同的区域输入信息。在此类情况下，使用 tput 可能会对您有所帮助。</p>
+<pre><code>tput <span>clear</span> <span># 清屏</span>
+tput sc <span># 保存当前光标位置</span>
+tput cup <span>10</span> <span>13</span> <span># 将光标移动到 row col</span>
+tput civis <span># 光标不可见</span>
+tput cnorm <span># 光标可见</span>
+tput rc <span># 显示输出</span>
+<span>exit</span> <span>0</span></code></pre>
+<p> <strong>移动光标</strong> </p>
+<p>使用 tput 可以方便地实现在各设备上移动光标的位置。通过在 tput 中使用 cup 选项，或光标位置，您可以在设备的各行和各列中将光标移动到任意 X 或 Y 坐标。设备左上角的坐标为 (0,0)。</p>
+<p>要在设备上将光标移动到第 5 列 (X) 的第 1 行 (Y)，只需执行 tput cup 5 1。另一个示例是 tput cup 23 45，此命令将使光标移动到第 23 列上的第 45 行。</p>
+<p> <strong>移动光标并显示信息</strong> </p>
+<p>另一种有用的光标定位技巧是移动光标，执行用于显示信息的命令，然后返回到前一光标位置：</p>
+<pre><code><span>(</span>tput sc <span>;</span> tput cup <span>23</span> <span>45</span> <span>;</span> <span>echo</span> “Input from tput/echo at <span>23</span>/45” <span>;</span> tput rc<span>)</span></code></pre>
+<p>下面我们分析一下 subshell 命令：</p>
+<pre><code>tput sc</code></pre>
+<p>必须首先保存当前的光标位置。要保存当前的光标位置，请包括 sc 选项或“save cursor position”。</p>
+<pre><code>tput cup <span>23</span> <span>45</span></code></pre>
+<p>在保存了光标位置后，光标坐标将移动到 (23,45)。</p>
+<pre><code><span>echo</span> “Input from tput/echo at <span>23</span>/45”</code></pre>
+<p>将信息显示到 stdout 中。</p>
+<pre><code>tput rc</code></pre>
+<p>在显示了这些信息之后，光标必须返回到使用 tput sc 保存的原始位置。要使光标返回到其上次保存的位置，请包括 rc 选项或“restore cursor position”。</p>
+<p>注意：由于本文首先详细介绍了通过命令行执行 tput，因此您可能会觉得在自己的 subshell 中执行命令要比单独执行每条命令然后在每条命令执行之前显示提示更简洁。</p>
+<p> <strong>更改光标的属性</strong> </p>
+<p>在向某一设备显示数据时，很多时候您并不希望看到光标。将光标转换为不可见可以使数据滚动时的屏幕看起来更整洁。要使光标不可见，请使用 civis 选项（例如，tput civis）。在数据完全显示之后，您可以使用 cnorm 选项将光标再次转变为可见。</p>
+<p> <strong>文本属性</strong> </p>
+<p>更改文本的显示方式可以让用户注意到菜单中的一组词或警惕用户注意某些重要的内容。您可以通过以下方式更改文本属性：使文本加粗、在文本下方添加下划线、更改背景颜色和前景颜色，以及逆转颜色方案等。</p>
+<p>要更改文本的颜色，请使用 setb 选项（用于设置背景颜色）和 setf 选项（用于设置前景颜色）以及在 terminfo 数据库中分配的颜色数值。通常情况下，分配的数值与颜色的对应关系如下，但是可能会因 UNIX 系统的不同而异：</p>
+<ul>
+<li>0：黑色</li>
+<li>1：蓝色</li>
+<li>2：绿色</li>
+<li>3：青色</li>
+<li>4：红色</li>
+<li>5：洋红色</li>
+<li>6：黄色</li>
+<li>7：白色</li>
+</ul>
+<p>执行以下示例命令可以将背景颜色更改为黄色，将前景颜色更改为红色：</p>
+<pre><code>tput setb <span>6</span> tput setf <span>4</span></code></pre>
+<p>要反显当前的颜色方案，只需执行<code>tput rev</code>。</p>
+<p>有时，仅为文本着色还不够，也就是说，您想要通过另一种方式引起用户的注意。可以通过两种方式达到这一目的：一是将文本设置为粗体，二是为文本添加下划线。</p>
+<p>要将文本更改为粗体，请使用 bold 选项。要开始添加下划线，请使用 smul 选项。在完成显示带下划线的文本后，请使用 rmul 选项。</p>
+<h3>实例</h3><p>使输出的字符串有颜色，底色，加粗：</p>
+<pre><code><span class="token shebang important">#!/bin/bash</span>
+<span>printf</span> <span><span>&#36;(</span>tput setaf <span>2</span><span>;</span> tput bold<span>)</span></span><span>'color show<span title="\n">\n</span><span title="\n">\n</span>'</span><span><span>&#36;(</span>tput sgr0<span>)</span></span>
+
+<span>for</span><span><span>((</span>i<span>=</span><span>0</span><span>;</span> i<span>&lt;=</span><span>7</span><span>;</span> i<span>++</span><span>))</span></span><span>;</span> <span>do</span>
+    <span>echo</span> <span><span>&#36;(</span>tput setaf &#36;i<span>)</span></span><span>"show me the money"</span><span><span>&#36;(</span>tput sgr0<span>)</span></span>
+<span>done</span>
+
+<span>printf</span> <span>'<span title="\n">\n</span>'</span><span><span>&#36;(</span>tput setaf <span>2</span><span>;</span> tput setab <span>0</span><span>;</span> tput bold<span>)</span></span><span>'background color show'</span><span><span>&#36;(</span>tput sgr0<span>)</span></span><span>'<span title="\n">\n</span><span title="\n">\n</span>'</span>
+
+<span>for</span><span><span>((</span>i<span>=</span><span>0</span><span>,</span>j<span>=</span><span>7</span><span>;</span> i<span>&lt;=</span><span>7</span><span>;</span> i<span>++</span><span>,</span>j<span>--</span><span>))</span></span><span>;</span> <span>do</span>
+    <span>echo</span> <span><span>&#36;(</span>tput setaf &#36;i<span>;</span> tput setab &#36;j<span>;</span> tput bold<span>)</span></span><span>"show me the money"</span><span><span>&#36;(</span>tput sgr0<span>)</span></span>
+<span>done</span>
+
+<span>exit</span> <span>0</span></code></pre>
+<p>输出格式控制函数：</p>
+<pre><code><span class="token shebang important">#!/bin/bash</span>
+
+<span># &#36;1 str       print string</span>
+<span># &#36;2 color     0-7 设置颜色</span>
+<span># &#36;3 bgcolor   0-7 设置背景颜色</span>
+<span># &#36;4 bold      0-1 设置粗体</span>
+<span># &#36;5 underline 0-1 设置下划线</span>
+
+<span>function</span> <span class="token function-name function">format_output</span><span>(</span><span>)</span><span>{</span>
+    <span>str</span><span>=</span><span>&#36;1</span>
+    <span>color</span><span>=</span><span>&#36;2</span>
+    <span>bgcolor</span><span>=</span><span>&#36;3</span>
+    <span>bold</span><span>=</span><span>&#36;4</span>
+    <span>underline</span><span>=</span><span>&#36;5</span>
+    <span>normal</span><span>=</span><span><span>&#36;(</span>tput sgr0<span>)</span></span>
+
+    <span>case</span> <span>"<span>&#36;color</span>"</span> <span>in</span>
+        <span>0</span><span>|</span><span>1</span><span>|</span><span>2</span><span>|</span><span>3</span><span>|</span><span>4</span><span>|</span><span>5</span><span>|</span><span>6</span><span>|</span><span>7</span><span>)</span>
+            <span>setcolor</span><span>=</span><span><span>&#36;(</span>tput setaf &#36;color<span>;</span><span>)</span></span> <span>;</span><span>;</span>
+        *<span>)</span>
+            <span>setcolor</span><span>=</span><span>""</span> <span>;</span><span>;</span>
+    <span>esac</span>
+
+    <span>case</span> <span>"<span>&#36;bgcolor</span>"</span> <span>in</span>
+        <span>0</span><span>|</span><span>1</span><span>|</span><span>2</span><span>|</span><span>3</span><span>|</span><span>4</span><span>|</span><span>5</span><span>|</span><span>6</span><span>|</span><span>7</span><span>)</span>
+            <span>setbgcolor</span><span>=</span><span><span>&#36;(</span>tput setab &#36;bgcolor<span>;</span><span>)</span></span> <span>;</span><span>;</span>
+        *<span>)</span>
+            <span>setbgcolor</span><span>=</span><span>""</span> <span>;</span><span>;</span>
+    <span>esac</span>
+
+    <span>if</span> <span>[</span> <span>"<span>&#36;bold</span>"</span> <span>=</span> <span>"1"</span> <span>]</span><span>;</span> <span>then</span>
+        <span>setbold</span><span>=</span><span><span>&#36;(</span>tput bold<span>;</span><span>)</span></span>
+    <span>else</span>
+        <span>setbold</span><span>=</span><span>""</span>
+    <span>fi</span>
+
+    <span>if</span> <span>[</span> <span>"<span>&#36;underline</span>"</span> <span>=</span> <span>"1"</span> <span>]</span><span>;</span> <span>then</span>
+        <span>setunderline</span><span>=</span><span><span>&#36;(</span>tput smul<span>;</span><span>)</span></span>
+    <span>else</span>
+        <span>setunderline</span><span>=</span><span>""</span>
+    <span>fi</span>
+
+    <span>printf</span> <span>"<span>&#36;setcolor</span><span>&#36;setbgcolor</span><span>&#36;setbold</span><span>&#36;setunderline</span><span>&#36;str</span><span>&#36;normal</span><span title="\n">\n</span>"</span>
+<span>}</span>
+
+format_output <span>"Yesterday Once more"</span> <span>2</span> <span>5</span> <span>1</span> <span>1</span>
+
+<span>exit</span> <span>0</span></code></pre>
+<p>光标属性例子：</p>
+<pre><code><span class="token shebang important">#!/bin/bash</span>
+<span># clear the screen</span>
+tput <span>clear</span>
+<span># Move cursor to screen location X,Y (top left is 0,0)</span>
+tput cup <span>3</span> <span>15</span>
+<span># set a foreground colour using ANSI escape</span>
+tput setaf <span>3</span>
+<span>echo</span> <span>"XYX Corp LTD."</span>
+tput sgr0
+tput cup <span>5</span> <span>17</span>
+<span># Set reverse video mode</span>
+tput <span>rev</span>
+<span>echo</span> <span>"M A I N - M E N U"</span>
+tput sgr0
+tput cup <span>7</span> <span>15</span>
+<span>echo</span> <span>"1\. User Management"</span>
+tput cup <span>8</span> <span>15</span>
+<span>echo</span> <span>"2\. service Management"</span>
+tput cup <span>9</span> <span>15</span>
+<span>echo</span> <span>"3\. Process Management"</span>
+tput cup <span>10</span> <span>15</span>
+<span>echo</span> <span>"4\. Backup"</span>
+<span># Set bold mode</span>
+tput bold
+tput cup <span>12</span> <span>15</span>
+<span>read</span> -p <span>"Enter your choice [1-4] "</span> choice
+tput <span>clear</span>
+tput sgr0
+tput rc
+
+<span>exit</span> <span>0</span></code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

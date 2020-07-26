@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>slabtop:实时显示内核slab内存缓存信息</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="slabtop:实时显示内核slab内存缓存信息 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>slabtop</h1><p>实时显示内核slab内存缓存信息</p>
+<h2>补充说明</h2><p><strong>slabtop命令</strong> 以实时的方式显示内核“slab”缓冲区的细节信息。</p>
+<h3>语法</h3><pre><code>slabtop<span>(</span>选项<span>)</span></code></pre>
+<h3>选项</h3><pre><code>--delay<span>=</span>n, -d n：每n秒更新一次显示的信息，默认是每3秒；
+--sort<span>=</span>S, -s S：指定排序标准进行排序（排序标准，参照下面或者man手册）；
+--once, -o：显示一次后退出；
+--version, -V：显示版本；
+--help：显示帮助信息。</code></pre>
+<p>排序标准：</p>
+<ul>
+<li>a: sort by number of active objects</li>
+<li>b: sort by objects per slab</li>
+<li>c: sort by cache size</li>
+<li>l: sort by number of slabs</li>
+<li>v：sort by number of active slabs</li>
+<li>n: sort by name</li>
+<li>o: sort by number of objects</li>
+<li>p: sort by pages per slab</li>
+<li>s: sort by object size</li>
+<li>u: sort by cache utilization</li>
+</ul>
+<h3>知识扩展</h3><p>内核的模块在分配资源的时候，为了提高效率和资源的利用率，都是透过slab来分配的。通过slab的信息，再配合源码能粗粗了解系统的运行情况，比如说什么资源有没有不正常的多，或者什么资源有没有泄漏。linux系统透过/proc/slabinfo来向用户暴露slab的使用情况。</p>
+<p>Linux 所使用的 slab 分配器的基础是 Jeff Bonwick 为 SunOS 操作系统首次引入的一种算法。Jeff 的分配器是围绕对象缓存进行的。在内核中，会为有限的对象集（例如文件描述符和其他常见结构）分配大量内存。Jeff 发现对内核中普通对象进行初始化所需的时间超过了对其进行分配和释放所需的时间。因此他的结论是不应该将内存释放回一个全局的内存池，而是将内存保持为针对特定目而初始化的状态。Linux slab 分配器使用了这种思想和其他一些思想来构建一个在空间和时间上都具有高效性的内存分配器。</p>
+<p>保存着监视系统中所有活动的 slab 缓存的信息的文件为/proc/slabinfo。</p>
+<h3>实例</h3><pre><code>slabtop
+
+ Active / Total Objects <span>(</span>% used<span>)</span>    <span>:</span> <span>897519</span> / <span>1245930</span> <span>(</span><span>72.0</span>%<span>)</span>
+ Active / Total Slabs <span>(</span>% used<span>)</span>      <span>:</span> <span>38605</span> / <span>38605</span> <span>(</span><span>100.0</span>%<span>)</span>
+ Active / Total Caches <span>(</span>% used<span>)</span>     <span>:</span> <span>94</span> / <span>145</span> <span>(</span><span>64.8</span>%<span>)</span>
+ Active / Total Size <span>(</span>% used<span>)</span>       <span>:</span> <span>129558</span>.22K / <span>153432</span>.58K <span>(</span><span>84.4</span>%<span>)</span>
+ Minimum / Average / Maximum Object <span>:</span> <span>0</span>.01K / <span>0</span>.12K / <span>128</span>.00K
+
+  OBJS ACTIVE  USE OBJ SIZE  SLABS OBJ/SLAB CACHE SIZE NAME
+<span>440136</span> <span>171471</span>  <span>38</span>%    <span>0</span>.05K   <span>6113</span>       <span>72</span>     24452K buffer_head
+<span>190086</span> <span>148576</span>  <span>78</span>%    <span>0</span>.05K   <span>2437</span>       <span>78</span>      9748K selinux_inode_security
+<span>151840</span> <span>146366</span>  <span>96</span>%    <span>0</span>.48K  <span>18980</span>        <span>8</span>     75920K ext3_inode_cache
+<span>144333</span> <span>144143</span>  <span>99</span>%    <span>0</span>.02K    <span>711</span>      <span>203</span>      2844K avtab_node
+<span>130529</span> <span>128488</span>  <span>98</span>%    <span>0</span>.13K   <span>4501</span>       <span>29</span>     18004K dentry_cache
+ <span>99214</span>  <span>99071</span>  <span>99</span>%    <span>0</span>.03K    <span>878</span>      <span>113</span>      3512K size-32
+ <span>43834</span>  <span>28475</span>  <span>64</span>%    <span>0</span>.27K   <span>3131</span>       <span>14</span>     12524K radix_tree_node
+ <span>17818</span>   <span>9450</span>  <span>53</span>%    <span>0</span>.06K    <span>302</span>       <span>59</span>      1208K size-64
+  <span>4602</span>   <span>4562</span>  <span>99</span>%    <span>0</span>.05K     <span>59</span>       <span>78</span>       236K sysfs_dir_cache
+  <span>3220</span>   <span>2855</span>  <span>88</span>%    <span>0</span>.08K     <span>70</span>       <span>46</span>       280K vm_area_struct
+  <span>2460</span>   <span>2114</span>  <span>85</span>%    <span>0</span>.12K     <span>82</span>       <span>30</span>       328K size-128
+  <span>1564</span>   <span>1461</span>  <span>93</span>%    <span>0</span>.04K     <span>17</span>       <span>92</span>        68K Acpi-Operand
+  <span>1540</span>   <span>1540</span> <span>100</span>%    <span>0</span>.33K    <span>140</span>       <span>11</span>       560K inode_cache
+  <span>1524</span>    <span>466</span>  <span>30</span>%    <span>0</span>.01K      <span>6</span>      <span>254</span>        24K anon_vma
+  <span>1440</span>    <span>515</span>  <span>35</span>%    <span>0</span>.05K     <span>20</span>       <span>72</span>        80K avc_node
+  <span>1440</span>   <span>1154</span>  <span>80</span>%    <span>0</span>.19K     <span>72</span>       <span>20</span>       288K filp
+  <span>1170</span>   <span>1023</span>  <span>87</span>%    <span>0</span>.05K     <span>15</span>       <span>78</span>        60K ext3_xattr
+   <span>845</span>    <span>724</span>  <span>85</span>%    <span>0</span>.02K      <span>5</span>      <span>169</span>        20K Acpi-Namespace
+   <span>638</span>    <span>315</span>  <span>49</span>%    <span>0</span>.35K     <span>58</span>       <span>11</span>       232K proc_inode_cache
+   <span>450</span>    <span>434</span>  <span>96</span>%    <span>0</span>.25K     <span>30</span>       <span>15</span>       120K size-256
+   <span>424</span>    <span>386</span>  <span>91</span>%    <span>0</span>.50K     <span>53</span>        <span>8</span>       212K size-512
+   <span>312</span>    <span>107</span>  <span>34</span>%    <span>0</span>.05K      <span>4</span>       <span>78</span>        16K delayacct_cache
+   <span>306</span>    <span>284</span>  <span>92</span>%    <span>0</span>.43K     <span>34</span>        <span>9</span>       136K shmem_inode_cache
+   <span>303</span>    <span>108</span>  <span>35</span>%    <span>0</span>.04K      <span>3</span>      <span>101</span>        12K pid
+   <span>300</span>    <span>261</span>  <span>87</span>%    <span>0</span>.19K     <span>15</span>       <span>20</span>        60K skbuff_head_cache
+   <span>300</span>    <span>300</span> <span>100</span>%    <span>0</span>.12K     <span>10</span>       <span>30</span>        40K bio
+   <span>260</span>    <span>260</span> <span>100</span>%   <span>32</span>.00K    <span>260</span>        <span>1</span>      8320K size-32768
+   <span>254</span>      <span>6</span>   <span>2</span>%    <span>0</span>.01K      <span>1</span>      <span>254</span>         4K revoke_table
+   <span>236</span>     <span>55</span>  <span>23</span>%    <span>0</span>.06K      <span>4</span>       <span>59</span>        16K fs_cache
+   <span>216</span>    <span>203</span>  <span>93</span>%    <span>1</span>.00K     <span>54</span>        <span>4</span>       216K size-1024
+   <span>214</span>    <span>214</span> <span>100</span>%    <span>2</span>.00K    <span>107</span>        <span>2</span>       428K size-2048
+   <span>203</span>     <span>83</span>  <span>40</span>%    <span>0</span>.02K      <span>1</span>      <span>203</span>         4K biovec-1</code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

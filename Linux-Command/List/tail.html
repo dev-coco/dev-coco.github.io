@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>tail:在屏幕上显示指定文件的末尾若干行</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="tail:在屏幕上显示指定文件的末尾若干行 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>tail</h1><p>在屏幕上显示指定文件的末尾若干行</p>
+<h2>补充说明</h2><p><strong>tail命令</strong> 用于输入文件中的尾部内容。tail命令默认在屏幕上显示指定文件的末尾10行。如果给定的文件不止一个，则在显示的每个文件前面加一个文件名标题。如果没有指定文件或者文件名为“-”，则读取标准输入。</p>
+<p>注意：如果表示字节或行数的N值之前有一个”+”号，则从文件开头的第N项开始显示，而不是显示文件的最后N项。N值后面可以有后缀：b表示512，k表示1024，m表示1 048576(1M)。</p>
+<h3>语法</h3><pre><code>tail<span>(</span>选项<span>)</span><span>(</span>参数<span>)</span></code></pre>
+<h3>选项</h3><pre><code>--retry：即是在tail命令启动时，文件不可访问或者文件稍后变得不可访问，都始终尝试打开文件。使用此选项时需要与选项“——follow<span>=</span>name”连用；
+-c<span>&lt;</span>N<span>></span>或——bytes<span>=</span><span>&lt;</span>N<span>></span>：输出文件尾部的N（N为整数）个字节内容；
+-f<span>&lt;</span>name/descriptor<span>></span>或；--follow<span>&lt;</span>nameldescript<span>></span>：显示文件最新追加的内容。“name”表示以文件名的方式监视文件的变化。“-f”与“-fdescriptor”等效；
+-F：与选项“-follow<span>=</span>name”和“--retry"连用时功能相同；
+-n<span>&lt;</span>N<span>></span>或——line<span>=</span><span>&lt;</span>N<span>></span>：输出文件的尾部N（N位数字）行内容。
+--pid<span>=</span><span>&lt;</span>进程号<span>></span>：与“-f”选项连用，当指定的进程号的进程终止后，自动退出tail命令；
+-q或——quiet或——silent：当有多个文件参数时，不输出各个文件名；
+-s<span>&lt;</span>秒数<span>></span>或——sleep-interal<span>=</span><span>&lt;</span>秒数<span>></span>：与“-f”选项连用，指定监视文件变化时间隔的秒数；
+-v或——verbose：当有多个文件参数时，总是输出各个文件名；
+--help：显示指令的帮助信息；
+--version：显示指令的版本信息。</code></pre>
+<h3>参数</h3><p>文件列表：指定要显示尾部内容的文件列表。</p>
+<h3>实例</h3><pre><code><span>tail</span> <span>file</span> <span>#（显示文件file的最后10行）</span>
+<span>tail</span> -n +20 <span>file</span> <span>#（显示文件file的内容，从第20行至文件末尾）</span>
+<span>tail</span> -c <span>10</span> <span>file</span> <span>#（显示文件file的最后10个字符）</span>
+
+<span>tail</span> -25 mail.log <span># 显示 mail.log 最后的 25 行</span>
+<span>tail</span> -f mail.log <span># 等同于--follow=descriptor，根据文件描述符进行追踪，当文件改名或被删除，追踪停止</span>
+<span>tail</span> -F mail.log <span># 等同于--follow=name  --retry，根据文件名进行追踪，并保持重试，即该文件被删除或改名后，如果再次创建相同的文件名，会继续追踪</span></code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

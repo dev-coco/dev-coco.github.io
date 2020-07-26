@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>tee:从标准输入读取数据并重定向到标准输出和文件</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="tee:从标准输入读取数据并重定向到标准输出和文件 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>tee</h1><p>从标准输入读取数据并重定向到标准输出和文件。</p>
+<h2>概要</h2><pre><code><span>tee</span> <span>[</span>OPTION<span>]</span><span>..</span>. <span>[</span>FILE<span>]</span><span>..</span>.</code></pre>
+<h2>主要用途</h2><ul>
+<li>需要同时查看数据内容并输出到文件时使用。</li>
+</ul>
+<h2>参数</h2><p>FILE（可选）：要输出的文件，可以为一或多个。</p>
+<h2>选项</h2><pre><code>长选项与短选项等价
+
+-a, --append               追加到文件中而不是覆盖。
+-i, --ignore-interrupts    忽略中断信号（Ctrl+c中断操作无效）。
+-p                         诊断写入非管道的错误。
+--output-error<span>[</span><span>=</span>MODE<span>]</span>      设置写错误时的行为，请查看下方的MODE部分。
+--help                     显示帮助信息并退出。
+--version                  显示版本信息并退出。
+
+MODE决定了当出现写错误时的输出行为，可用的MODE如下：
+
+<span>'warn'</span>           当写入到任何输出报错时诊断。
+<span>'warn-nopipe'</span>    当写入到任何输出（而不是管道）报错时诊断。
+<span>'exit'</span>           当写入到任何输出报错时退出。
+<span>'exit-nopipe'</span>    当写入到任何输出（而不是管道）报错时退出。
+
+-p选项的指定的默认MODE为<span>'warn-nopipe'</span>。
+当<span>'--output-error'</span>没有在选项中时，默认的操作是当写入到管道报错时立刻退出，诊断错误信息并写入到非管道输出。</code></pre>
+<h2>返回值</h2><p>返回状态为成功除非给出了非法选项或非法参数。</p>
+<h2>例子</h2><pre><code><span># 将进程信息通过管道输出到标准输出（终端）并覆盖写入到文件中。</span>
+<span>ps</span> -ef <span>|</span><span>tee</span> info_a.log info_b.log
+
+<span># 将进程信息通过管道输出到标准输出（终端）并追加写入到文件中。</span>
+<span>ps</span> -ef <span>|</span><span>tee</span> -a info_a.log info_b.log</code></pre>
+<h3>注意</h3><ol>
+<li>该命令是<code>GNU coreutils</code>包中的命令，相关的帮助信息请查看<code>man -s 1 tee</code>或<code>info coreutils &#39;tee invocation&#39;</code>。</li>
+<li>存在缓存机制，每1024个字节将输出一次。若从管道接收输入数据，应该是缓冲区满，才将数据转存到指定的文件中。若文件内容不到1024个字节，则接收从标准输入设备读入的数据后，将刷新一次缓冲区，并转存数据到指定文件。</li>
+</ol>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

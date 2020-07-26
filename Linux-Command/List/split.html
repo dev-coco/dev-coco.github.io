@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>split:分割任意大小的文件</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="split:分割任意大小的文件 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>split</h1><p>分割任意大小的文件</p>
+<h2>补充说明</h2><p><strong>split命令</strong> 可以将一个大文件分割成很多个小文件，有时需要将文件分割成更小的片段，比如为提高可读性，生成日志等。</p>
+<h3>选项</h3><pre><code>-b：值为每一输出档案的大小，单位为 byte。
+-C：每一输出档中，单行的最大 byte 数。
+-d：使用数字作为后缀。
+-l：值为每一输出档的行数大小。
+-a：指定后缀长度<span>(</span>默认为2<span>)</span>。</code></pre>
+<h3>实例</h3><p>生成一个大小为100KB的测试文件：</p>
+<pre><code><span>[</span>root@localhost split<span>]</span><span># dd if=/dev/zero bs=100k count=1 of=date.file</span>
+<span>1</span>+0 records <span>in</span>
+<span>1</span>+0 records out
+<span>102400</span> bytes <span>(</span><span>102</span> kB<span>)</span> copied, <span>0.00043</span> seconds, <span>238</span> MB/s</code></pre>
+<p>使用split命令将上面创建的date.file文件分割成大小为10KB的小文件：</p>
+<pre><code><span>[</span>root@localhost split<span>]</span><span># split -b 10k date.file </span>
+<span>[</span>root@localhost split<span>]</span><span># ls</span>
+date.file  xaa  xab  xac  xad  xae  xaf  xag  xah  xai  xaj</code></pre>
+<p>文件被分割成多个带有字母的后缀文件，如果想用数字后缀可使用-d参数，同时可以使用-a length来指定后缀的长度：</p>
+<pre><code><span>[</span>root@localhost split<span>]</span><span># split -b 10k date.file -d -a 3</span>
+<span>[</span>root@localhost split<span>]</span><span># ls</span>
+date.file  x000  x001  x002  x003  x004  x005  x006  x007  x008  x009</code></pre>
+<p>为分割后的文件指定文件名的前缀：</p>
+<pre><code><span>[</span>root@localhost split<span>]</span><span># split -b 10k date.file -d -a 3 split_file</span>
+<span>[</span>root@localhost split<span>]</span><span># ls</span>
+date.file  split_file000  split_file001  split_file002  split_file003  split_file004  split_file005  split_file006  split_file007  split_file008  split_file009</code></pre>
+<p>使用-l选项根据文件的行数来分割文件，例如把文件分割成每个包含10行的小文件：</p>
+<pre><code><span>split</span> -l <span>10</span> date.file</code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>runlevel:打印当前Linux系统的运行等级</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="runlevel:打印当前Linux系统的运行等级 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>runlevel</h1><p>打印当前Linux系统的运行等级</p>
+<h2>补充说明</h2><p><strong>runlevel命令</strong> 用于打印当前Linux系统的运行等级。</p>
+<h3>语法</h3><pre><code>runlevel</code></pre>
+<h3>知识扩展</h3><p>linux操作系统自从开始启动至启动完毕需要经历几个不同的阶段，这几个阶段就叫做runlevel，同样，当linux操作系统关闭时也要经历另外几个不同的runlevel，下面我们就准备详细介绍一下runlevel，并向您展示一些小技巧来让您的linux系统避免不必要的重启动。</p>
+<p>runlevel可以认为是系统状态，形象一点，您可以认为runlevel有点象微软的windows操作系统中的Normal，safemode，和command prompt only。进入每个runlevel都需要启动或关闭相应的一系列服务(services)，这些服务(services)以初始化脚本的方式放置于目录<code>/etc/rc.d/rc?.d/</code>或者<code>/etc/rc?.d</code>下面（?代表runlevel的对应序号）。</p>
+<p>在大多数的linux发行版本中，通常有8个runlevel：</p>
+<pre><code><span>0</span> 停机
+<span>1</span> 单用户模式
+<span>2</span> 多用户，没有 NFS
+<span>3</span> 完全多用户模式
+<span>4</span> 没有用到
+<span>5</span> 图形界面
+<span>6</span> 重新启动
+S s Single user mode</code></pre>
+<p>多数的桌面的linux系统缺省的runlevel是5，用户登陆时是图形界面，而多数的服务器版本的linux系统缺省的runlevel是3，用户登陆时是字符界面，runlevel 1和2除了调试之外很少使用，runlevel s和S并不是直接给用户使用，而是用来为Single user mode作准备。</p>
+<p>linux的运行模式比起windows的启动模式的优势在于：你可以在系统空闲时使用init命令切换你现在使用的runlevel，另外，当你关闭或者启动linux系统时你已经不知不觉中切换你的runlevel，系统关机进程需要调用runlevel(0或6)来关闭所有正在运行中的进程。</p>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

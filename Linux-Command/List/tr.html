@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>tr:将字符进行替换压缩和删除</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="tr:将字符进行替换压缩和删除 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>tr</h1><p>将字符进行替换压缩和删除</p>
+<h2>补充说明</h2><p><strong>tr命令</strong> 可以对来自标准输入的字符进行替换、压缩和删除。它可以将一组字符变成另一组字符，经常用来编写优美的单行命令，作用很强大。</p>
+<h3>语法</h3><pre><code>tr<span>(</span>选项<span>)</span><span>(</span>参数<span>)</span></code></pre>
+<h3>选项</h3><pre><code>-c或——complerment：取代所有不属于第一字符集的字符；
+-d或——delete：删除所有属于第一字符集的字符；
+-s或--squeeze-repeats：把连续重复的字符以单独一个字符表示；
+-t或--truncate-set1：先删除第一字符集较第二字符集多出的字符。</code></pre>
+<h3>参数</h3><ul>
+<li>字符集1：指定要转换或删除的原字符集。当执行转换操作时，必须使用参数“字符集2”指定转换的目标字符集。但执行删除操作时，不需要参数“字符集2”；</li>
+<li>字符集2：指定要转换成的目标字符集。</li>
+</ul>
+<h3>实例</h3><p>将输入字符由大写转换为小写：</p>
+<pre><code><span>echo</span> <span>"HELLO WORLD"</span> <span>|</span> <span>tr</span> <span>'A-Z'</span> <span>'a-z'</span>
+hello world</code></pre>
+<p>&#39;A-Z&#39; 和 &#39;a-z&#39;都是集合，集合是可以自己制定的，例如：&#39;ABD-}&#39;、&#39;bB.,&#39;、&#39;a-de-h&#39;、&#39;a-c0-9&#39;都属于集合，集合里可以使用&#39;\n&#39;、&#39;\t&#39;，可以可以使用其他ASCII字符。</p>
+<p>使用tr删除字符：</p>
+<pre><code><span>echo</span> <span>"hello 123 world 456"</span> <span>|</span> <span>tr</span> -d <span>'0-9'</span>
+hello  world </code></pre>
+<p>将制表符转换为空格：</p>
+<pre><code><span>cat</span> text <span>|</span> <span>tr</span> <span>'<span title="\t">\t</span>'</span> <span>' '</span></code></pre>
+<p>字符集补集，从输入文本中将不在补集中的所有字符删除：</p>
+<pre><code><span>echo</span> aa.,a <span>1</span> b<span>#&#36;bb 2 c*/cc 3 ddd 4 | tr -d -c '0-9 \n'</span>
+ <span>1</span>  <span>2</span>  <span>3</span>  <span>4</span></code></pre>
+<p>此例中，补集中包含了数字0~9、空格和换行符\n，所以没有被删除，其他字符全部被删除了。</p>
+<p>用tr压缩字符，可以压缩输入中重复的字符：</p>
+<pre><code><span>echo</span> <span>"thissss is      a text linnnnnnne."</span> <span>|</span> <span>tr</span> -s <span>' sn'</span>
+this is a text line.</code></pre>
+<p>巧妙使用tr做数字相加操作：</p>
+<pre><code><span>echo</span> <span>1</span> <span>2</span> <span>3</span> <span>4</span> <span>5</span> <span>6</span> <span>7</span> <span>8</span> <span>9</span> <span>|</span> <span>xargs</span> -n1 <span>|</span> <span>echo</span> &#36;<span>[</span> <span><span>&#36;(</span><span>tr</span> <span>'<span title="\n">\n</span>'</span> <span>'+'</span><span>)</span></span> <span>0</span> <span>]</span></code></pre>
+<p>删除Windows文件“造成”的&#39;^M&#39;字符：</p>
+<pre><code><span>cat</span> <span>file</span> <span>|</span> <span>tr</span> -s <span>"<span title="\r">\r</span>"</span> <span>"<span title="\n">\n</span>"</span> <span>></span> new_file
+或
+<span>cat</span> <span>file</span> <span>|</span> <span>tr</span> -d <span>"<span title="\r">\r</span>"</span> <span>></span> new_file</code></pre>
+<p> <strong>tr可以使用的字符类：</strong> </p>
+<pre><code><span>[</span>:alnum:<span>]</span>：字母和数字
+<span>[</span>:alpha:<span>]</span>：字母
+<span>[</span>:cntrl:<span>]</span>：控制（非打印）字符
+<span>[</span>:digit:<span>]</span>：数字
+<span>[</span>:graph:<span>]</span>：图形字符
+<span>[</span>:lower:<span>]</span>：小写字母
+<span>[</span>:print:<span>]</span>：可打印字符
+<span>[</span>:punct:<span>]</span>：标点符号
+<span>[</span>:space:<span>]</span>：空白字符
+<span>[</span>:upper:<span>]</span>：大写字母
+<span>[</span>:xdigit:<span>]</span>：十六进制字符  </code></pre>
+<p>使用方式：</p>
+<pre><code><span>tr</span> <span>'[:lower:]'</span> <span>'[:upper:]'</span></code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

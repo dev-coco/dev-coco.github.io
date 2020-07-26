@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>seq:以指定增量从首数开始打印数字到尾数</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="seq:以指定增量从首数开始打印数字到尾数 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>seq</h1><p>以指定增量从首数开始打印数字到尾数</p>
+<h2>补充说明</h2><p><strong>seq命令</strong> 用于产生从某个数到另外一个数之间的所有整数。</p>
+<h3>语法</h3><pre><code><span>seq</span> <span>[</span>选项<span>]</span><span>..</span>. 尾数
+<span>seq</span> <span>[</span>选项<span>]</span><span>..</span>. 首数 尾数
+<span>seq</span> <span>[</span>选项<span>]</span><span>..</span>. 首数 增量 尾数</code></pre>
+<h3>选项</h3><pre><code>-f, --format<span>=</span>格式        使用printf 样式的浮点格式
+-s, --separator<span>=</span>字符串   使用指定字符串分隔数字（默认使用：<span>\</span>n）
+-w, --equal-width        在列前添加0 使得宽度相同</code></pre>
+<h3>实例</h3><p> <strong>-f选项：指定格式</strong> </p>
+<pre><code><span>#seq -f"%3g" 9 11</span>
+<span>9</span>
+<span>10</span>
+<span>11</span></code></pre>
+<p><code>%</code>后面指定数字的位数 默认是<code>%g</code>，<code>%3g</code>那么数字位数不足部分是空格。</p>
+<pre><code><span>#sed -f"%03g" 9 11</span>
+<span>#seq -f"str%03g" 9 11</span>
+str009
+str010
+str011</code></pre>
+<p>这样的话数字位数不足部分是0，<code>%</code>前面制定字符串。</p>
+<p> <strong>-w选项：指定输出数字同宽</strong> </p>
+<pre><code><span>seq</span> -w <span>98</span> <span>101</span>
+098
+099
+<span>100</span>
+<span>101</span></code></pre>
+<p>不能和<code>-f</code>一起用，输出是同宽的。</p>
+<p> <strong>-s选项：指定分隔符（默认是回车）</strong> </p>
+<pre><code><span>seq</span> -s<span>" "</span> -f<span>"str%03g"</span> <span>9</span> <span>11</span>
+str009 str010 str011</code></pre>
+<p>要指定<code>/t</code>做为分隔符号：</p>
+<pre><code><span>seq</span> -s<span>"<span><span>`</span><span>echo</span> -e <span>"/t"</span><span>`</span></span>"</span> <span>9</span> <span>11</span></code></pre>
+<p>指定<code>\n</code>作为分隔符号：</p>
+<pre><code><span>seq</span> -s<span>"<span><span>`</span><span>echo</span> -e <span>"<span title="\n">\n</span>"</span><span>`</span></span>"</span> <span>9</span> <span>11</span>
+<span>19293949596979899910911</span></code></pre>
+<p>得到的是个错误结果，不过一般也没有这个必要，它默认的就是回车作为分隔符。</p>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>smbclient:交互方式访问samba服务器</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="smbclient:交互方式访问samba服务器 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>smbclient</h1><p>交互方式访问samba服务器</p>
+<h2>补充说明</h2><p><strong>smbclient命令</strong> 属于samba套件，它提供一种命令行使用交互式方式访问samba服务器的共享资源。</p>
+<h3>语法</h3><pre><code>smbclient<span>(</span>选项<span>)</span><span>(</span>参数<span>)</span></code></pre>
+<h3>选项</h3><pre><code>-B<span>&lt;</span>ip地址<span>></span>：传送广播数据包时所用的IP地址；
+-d<span>&lt;</span>排错层级<span>></span>：指定记录文件所记载事件的详细程度；
+-E：将信息送到标准错误输出设备；
+-h：显示帮助；
+-i<span>&lt;</span>范围<span>></span>：设置NetBIOS名称范围；
+-I<span>&lt;</span>IP地址<span>></span>：指定服务器的IP地址；
+-l<span>&lt;</span>记录文件<span>></span>：指定记录文件的名称；
+-L：显示服务器端所分享出来的所有资源；
+-M<span>&lt;</span>NetBIOS名称<span>></span>：可利用WinPopup协议，将信息送给选项中所指定的主机；
+-n<span>&lt;</span>NetBIOS名称<span>></span>：指定用户端所要使用的NetBIOS名称；
+-N：不用询问密码；
+-O<span>&lt;</span>连接槽选项<span>></span>：设置用户端TCP连接槽的选项；
+-p<span>&lt;</span>TCP连接端口<span>></span>：指定服务器端TCP连接端口编号；
+-R<span>&lt;</span>名称解析顺序<span>></span>：设置NetBIOS名称解析的顺序；
+-s<span>&lt;</span>目录<span>></span>：指定smb.conf所在的目录；
+-t<span>&lt;</span>服务器字码<span>></span>：设置用何种字符码来解析服务器端的文件名称；
+-T<span>&lt;</span>tar选项<span>></span>：备份服务器端分享的全部文件，并打包成tar格式的文件；
+-U<span>&lt;</span>用户名称<span>></span>：指定用户名称；
+-w<span>&lt;</span>工作群组<span>></span>：指定工作群组名称。</code></pre>
+<h3>参数</h3><p>smb服务器：指定要连接的smb服务器。</p>
+<h3>实例</h3><p> <strong>列出某个IP地址所提供的共享文件夹</strong> </p>
+<pre><code>smbclient -L <span>198.168</span>.0.1 -U username%password</code></pre>
+<p> <strong>像ftp客户端一样使用smbclient</strong> </p>
+<pre><code>smbclient //192.168.0.1/tmp  -U username%password</code></pre>
+<p>执行smbclient命令成功后，进入smbclient环境，出现提示符：<code>smb:/&gt;</code></p>
+<p>这里有许多命令和ftp命令相似，如cd 、lcd、get、megt、put、mput等。通过这些命令，我们可以访问远程主机的共享资源。</p>
+<p> <strong>直接一次性使用smbclient命令</strong> </p>
+<pre><code>smbclient -c <span>"ls"</span>  //192.168.0.1/tmp  -U username%password</code></pre>
+<p>和</p>
+<pre><code>smbclient //192.168.0.1/tmp  -U username%password
+smb:/<span>></span>ls</code></pre>
+<p>功能一样的。</p>
+<p> <strong>创建一个共享文件夹</strong> </p>
+<pre><code>smbclient -c <span>"mkdir share1"</span> //192.168.0.1/tmp -U username%password</code></pre>
+<p>如果用户共享<code>//192.168.0.1/tmp</code>的方式是只读的，会提示<code>NT_STATUS_ACCESS_DENIED making remote directory /share1</code></p>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

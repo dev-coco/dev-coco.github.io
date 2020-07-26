@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>skill:向选定的进程发送信号冻结进程</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="skill:向选定的进程发送信号冻结进程 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>skill</h1><p>向选定的进程发送信号冻结进程</p>
+<h2>补充说明</h2><p><strong>skill命令</strong> 用于向选定的进程发送信号，冻结进程。这个命令初学者并不常用，深入之后牵涉到系统服务优化之后可能会用到。</p>
+<h3>语法</h3><pre><code>skill<span>(</span>选项<span>)</span></code></pre>
+<h3>选项</h3><pre><code>-f：快速模式；
+-i：交互模式，每一步操作都需要确认；
+-v：冗余模式；
+-w：激活模式；
+-V：显示版本号；
+-t：指定开启进程的终端号；
+-u：指定开启进程的用户；
+-p：指定进程的id号；
+-c：指定开启进程的指令名称。</code></pre>
+<h3>实例</h3><p>如果您发现了一个占用大量CPU和内存的进程，但又不想停止它，该怎么办？考虑下面的top命令输出：</p>
+<pre><code><span>top</span> -c -p <span>16514</span>
+<span>23</span>:00:44  up <span>12</span> days,  <span>2</span>:04,  <span>4</span> users,  load average: <span>0.47</span>, <span>0.35</span>, <span>0.31</span>
+<span>1</span> processes: <span>1</span> sleeping, <span>0</span> running, <span>0</span> zombie, <span>0</span> stopped
+CPU states:  cpu    user    <span>nice</span>  system    irq  softirq  iowait    idle
+           total    <span>0.0</span>%    <span>0.6</span>%    <span>8.7</span>%   <span>2.2</span>%     <span>0.0</span>%   <span>88.3</span>%    <span>0.0</span>%
+Mem:  1026912k av, 1010476k used,   16436k free,       0k shrd,   52128k buff
+                    766724k actv,  143128k in_d,   14264k in_c
+Swap: 2041192k av,   83160k used, 1958032k <span>free</span>                  799432k cached
+
+  PID <span>USER</span>     PRI  NI  SIZE  RSS SHARE <span>stat</span> %CPU %MEM   <span>time</span> CPU <span>command</span>
+<span>16514</span> oracle    <span>19</span>   <span>4</span> <span>28796</span>  26M <span>20252</span> D N   <span>7.0</span>  <span>2.5</span>   <span>0</span>:03   <span>0</span> oraclePRODB2<span>..</span>.</code></pre>
+<p>既然您确认进程16514占用了大量内存，您就可以使用skill命令“冻结”它，而不是停止它。</p>
+<pre><code>skill -STOP <span>1</span></code></pre>
+<p>之后，检查top输出：</p>
+<pre><code><span>23</span>:01:11  up <span>12</span> days,  <span>2</span>:05,  <span>4</span> users,  load average: <span>1.20</span>, <span>0.54</span>, <span>0.38</span>
+<span>1</span> processes: <span>0</span> sleeping, <span>0</span> running, <span>0</span> zombie, <span>1</span> stopped
+CPU states:  cpu    user    <span>nice</span>  system    irq  softirq  iowait    idle
+           total    <span>2.3</span>%    <span>0.0</span>%    <span>0.3</span>%   <span>0.0</span>%     <span>0.0</span>%    <span>2.3</span>%   <span>94.8</span>%
+Mem:  1026912k av, 1008756k used,   18156k free,       0k shrd,    3976k buff
+                    770024k actv,  143496k in_d,   12876k in_c
+Swap: 2041192k av,   83152k used, 1958040k <span>free</span>                  851200k cached
+
+  PID <span>USER</span>     PRI  NI  SIZE  RSS SHARE STAT %CPU %MEM   TIME CPU COMMAND
+<span>16514</span> oracle    <span>19</span>   <span>4</span> <span>28796</span>  26M <span>20252</span> T N   <span>0.0</span>  <span>2.5</span>   <span>0</span>:04   <span>0</span> oraclePRODB2<span>..</span>.</code></pre>
+<p>现在，CPU 从 0% 空闲变为 94% 空闲。该进程被有效冻结。过一段时间之后，您可能希望唤醒该进程：</p>
+<pre><code>skill -CONT <span>16514</span></code></pre>
+<p>如果希望暂时冻结进程以便为完成更重要的进程腾出空间，该方法非常有用。</p>
+<p>此命令用途很广。如果您要停止 &quot;oracle&quot; 用户的所有进程，只需要一个命令即可实现：</p>
+<pre><code>skill -STOP oracle</code></pre>
+<p>可以使用用户、PID、命令或终端 id 作为参数。以下命令可停止所有 rman 命令。</p>
+<pre><code>skill -STOP rman</code></pre>
+<p>如您所见，skill 决定您输入的参数（进程 ID、用户 ID 或命令）并进行相应操作。这可能会导致在某些情况下出现这样的问题：您可能具有同名的用户和命令。最好的示例是 &quot;oracle&quot; 进程，通常由用户 &quot;oracle&quot; 运行。因此，当您希望停止名为 &quot;oracle&quot; 的进程时，可执行以下命令：</p>
+<pre><code>skill -STOP oracle</code></pre>
+<p>用户 &quot;oracle&quot; 的所有进程都停止，包括您可能要使用的会话。要非常明确地执行命令，您可以选择使用一个新参数指定参数的类型。要停止一个名为 oracle 的命令，可执行以下命令：</p>
+<pre><code>skill -STOP -c oracle</code></pre>
+<p>snice命令的功能与skill类似。但它用于降低进程的优先级，而不是停止进程。首先，检查 top 输出：</p>
+<pre><code>  PID <span>USER</span>     PRI  NI  SIZE  RSS SHARE STAT %CPU %MEM   TIME CPU COMMAND
+    <span>3</span> root      <span>15</span>   <span>0</span>     <span>0</span>    <span>0</span>     <span>0</span> RW    <span>0.0</span>  <span>0.0</span>   <span>0</span>:00   <span>0</span> kapmd
+<span>13680</span> oracle    <span>15</span>   <span>0</span> <span>11336</span>  10M  <span>8820</span> T     <span>0.0</span>  <span>1.0</span>   <span>0</span>:00   <span>0</span> oracle
+<span>13683</span> oracle    <span>15</span>   <span>0</span>  <span>9972</span> <span>9608</span>  <span>7788</span> T     <span>0.0</span>  <span>0.9</span>   <span>0</span>:00   <span>0</span> oracle
+<span>13686</span> oracle    <span>15</span>   <span>0</span>  <span>9860</span> <span>9496</span>  <span>7676</span> T     <span>0.0</span>  <span>0.9</span>   <span>0</span>:00   <span>0</span> oracle
+<span>13689</span> oracle    <span>15</span>   <span>0</span> <span>10004</span> <span>9640</span>  <span>7820</span> T     <span>0.0</span>  <span>0.9</span>   <span>0</span>:00   <span>0</span> oracle
+<span>13695</span> oracle    <span>15</span>   <span>0</span>  <span>9984</span> <span>9620</span>  <span>7800</span> T     <span>0.0</span>  <span>0.9</span>   <span>0</span>:00   <span>0</span> oracle
+<span>13698</span> oracle    <span>15</span>   <span>0</span> <span>10064</span> <span>9700</span>  <span>7884</span> T     <span>0.0</span>  <span>0.9</span>   <span>0</span>:00   <span>0</span> oracle
+<span>13701</span> oracle    <span>15</span>   <span>0</span> <span>22204</span>  21M <span>16940</span> T     <span>0.0</span>  <span>2.1</span>   <span>0</span>:00   <span>0</span> oracle</code></pre>
+<p>现在，将 &quot;oracle&quot; 进程的优先级降低四个点。注意，该值越高，优先级越低。</p>
+<pre><code>snice +4 -u oracle
+  PID <span>USER</span>     PRI  NI  SIZE  RSS SHARE STAT %CPU %MEM   TIME CPU COMMAND
+<span>16894</span> oracle    <span>20</span>   <span>4</span> <span>38904</span>  32M <span>26248</span> D N   <span>5.5</span>  <span>3.2</span>   <span>0</span>:01   <span>0</span> oracle</code></pre>
+<p>注意，NI 列（nice 值）现在是 4，优先级现在设置为 20，而不是 15。这对于降低优先级非常有帮助。</p>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

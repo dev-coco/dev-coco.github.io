@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>stat:用于显示文件的状态信息</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="stat:用于显示文件的状态信息 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>stat</h1><p>用于显示文件的状态信息</p>
+<h2>补充说明</h2><p><strong>stat命令</strong> 用于显示文件的状态信息。stat命令的输出信息比ls命令的输出信息要更详细。</p>
+<h3>语法</h3><pre><code>stat<span>(</span>选项<span>)</span><span>(</span>参数<span>)</span></code></pre>
+<h3>选项</h3><pre><code>-L：支持符号连接；
+-f：显示文件系统状态而非文件状态；
+-t：以简洁方式输出信息；
+--help：显示指令的帮助信息；
+--version：显示指令的版本信息。</code></pre>
+<h3>参数</h3><p>文件：指定要显示信息的普通文件或者文件系统对应的设备文件名。</p>
+<h3>实例</h3><pre><code><span>[</span>root@localhost ~<span>]</span><span># ls -l myfile</span>
+-rw-r--r-- <span>1</span> root root <span>0</span> <span>2010</span>-10-09 myfile
+
+<span>[</span>root@localhost ~<span>]</span><span># stat myfile</span>
+file: “myfile”
+Size: <span>0</span>               Blocks: <span>8</span>          IO Block: <span>4096</span>   一般空文件
+Device: fd00h/64768d    Inode: <span>194805815</span>   Links: <span>1</span>
+Access: <span>(</span>0644/-rw-r--r--<span>)</span>  Uid: <span>(</span>    <span>0</span>/    root<span>)</span>   Gid: <span>(</span>    <span>0</span>/    root<span>)</span>
+Access: <span>2010</span>-12-12 <span>12</span>:22:35.000000000 +0800
+Modify: <span>2010</span>-10-09 <span>20</span>:44:21.000000000 +0800
+Change: <span>2010</span>-10-09 <span>20</span>:44:21.000000000 +0800
+
+<span>[</span>root@localhost ~<span>]</span><span># stat -f myfile</span>
+File: <span>"myfile"</span>
+id: <span>0</span>        Namelen: <span>255</span>     type: ext2/ext3
+Block size: <span>4096</span>       Fundamental block size: <span>4096</span>
+Blocks: Total: <span>241555461</span>  free: <span>232910771</span>  Available: <span>220442547</span>
+Inodes: Total: <span>249364480</span>  Free: <span>249139691</span>
+
+<span>[</span>root@localhost ~<span>]</span><span># stat -t myfile</span>
+myfile <span>0</span> <span>8</span> 81a4 <span>0</span> <span>0</span> fd00 <span>194805815</span> <span>1</span> <span>0</span> <span>0</span> <span>1292127755</span> <span>1286628261</span> <span>1286628261</span> <span>4096</span></code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

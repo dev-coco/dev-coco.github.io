@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>time:统计给定命令所花费的总时间</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="time:统计给定命令所花费的总时间 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>time</h1><p>统计给定命令所花费的总时间</p>
+<h2>补充说明</h2><p><strong>time命令</strong> 用于统计给定命令所花费的总时间。</p>
+<h3>语法</h3><pre><code>time<span>(</span>参数<span>)</span></code></pre>
+<h3>参数</h3><p>指令：指定需要运行的额指令及其参数。</p>
+<h3>实例</h3><p>当测试一个程序或比较不同算法时，执行时间是非常重要的，一个好的算法应该是用时最短的。所有类UNIX系统都包含time命令，使用这个命令可以统计时间消耗。例如：</p>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># time ls</span>
+anaconda-ks.cfg  install.log  install.log.syslog  satools  text
+
+real    0m0.009s
+user    0m0.002s
+sys     0m0.007s</code></pre>
+<p>输出的信息分别显示了该命令所花费的real时间、user时间和sys时间。</p>
+<ul>
+<li>real时间是指挂钟时间，也就是命令开始执行到结束的时间。这个短时间包括其他进程所占用的时间片，和进程被阻塞时所花费的时间。</li>
+<li>user时间是指进程花费在用户模式中的CPU时间，这是唯一真正用于执行进程所花费的时间，其他进程和花费阻塞状态中的时间没有计算在内。</li>
+<li>sys时间是指花费在内核模式中的CPU时间，代表在内核中执系统调用所花费的时间，这也是真正由进程使用的CPU时间。</li>
+</ul>
+<p>shell内建也有一个time命令，当运行time时候是调用的系统内建命令，应为系统内建的功能有限，所以需要时间其他功能需要使用time命令可执行二进制文件<code>/usr/bin/time</code>。</p>
+<p>使用<code>-o</code>选项将执行时间写入到文件中：</p>
+<pre><code>/usr/bin/time -o outfile.txt <span>ls</span></code></pre>
+<p>使用<code>-a</code>选项追加信息：</p>
+<pre><code>/usr/bin/time -a -o outfile.txt <span>ls</span></code></pre>
+<p>使用<code>-f</code>选项格式化时间输出：</p>
+<pre><code>/usr/bin/time -f <span>"time: %U"</span> <span>ls</span></code></pre>
+<p><code>-f</code>选项后的参数：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>%E</code></td>
+<td>real时间，显示格式为[小时:]分钟:秒</td>
+</tr>
+<tr>
+<td><code>%U</code></td>
+<td>user时间。</td>
+</tr>
+<tr>
+<td><code>%S</code></td>
+<td>sys时间。</td>
+</tr>
+<tr>
+<td><code>%C</code></td>
+<td>进行计时的命令名称和命令行参数。</td>
+</tr>
+<tr>
+<td><code>%D</code></td>
+<td>进程非共享数据区域，以KB为单位。</td>
+</tr>
+<tr>
+<td><code>%x</code></td>
+<td>命令退出状态。</td>
+</tr>
+<tr>
+<td><code>%k</code></td>
+<td>进程接收到的信号数量。</td>
+</tr>
+<tr>
+<td><code>%w</code></td>
+<td>进程被交换出主存的次数。</td>
+</tr>
+<tr>
+<td><code>%Z</code></td>
+<td>系统的页面大小，这是一个系统常量，不用系统中常量值也不同。</td>
+</tr>
+<tr>
+<td><code>%P</code></td>
+<td>进程所获取的CPU时间百分百，这个值等于 <code>user+system</code> 时间除以总共的运行时间。</td>
+</tr>
+<tr>
+<td><code>%K</code></td>
+<td>进程的平均总内存使用量（data+stack+text），单位是 <code>KB</code>。</td>
+</tr>
+<tr>
+<td><code>%w</code></td>
+<td>进程主动进行上下文切换的次数，例如等待I/O操作完成。</td>
+</tr>
+<tr>
+<td><code>%c</code></td>
+<td>进程被迫进行上下文切换的次数（由于时间片到期）。</td>
+</tr>
+</tbody></table>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

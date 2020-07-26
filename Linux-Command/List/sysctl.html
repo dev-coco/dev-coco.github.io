@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>sysctl:时动态地修改内核的运行参数</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="sysctl:时动态地修改内核的运行参数 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>sysctl</h1><p>时动态地修改内核的运行参数</p>
+<h2>补充说明</h2><p><strong>sysctl命令</strong> 被用于在内核运行时动态地修改内核的运行参数，可用的内核参数在目录<code>/proc/sys</code>中。它包含一些TCP/ip堆栈和虚拟内存系统的高级选项， 这可以让有经验的管理员提高引人注目的系统性能。用sysctl可以读取设置超过五百个系统变量。</p>
+<h3>语法</h3><pre><code>sysctl<span>(</span>选项<span>)</span><span>(</span>参数<span>)</span></code></pre>
+<h3>选项</h3><pre><code>-n：打印值时不打印关键字；
+-e：忽略未知关键字错误；
+-N：仅打印名称；
+-w：当改变sysctl设置时使用此项；
+-p：从配置文件“/etc/sysctl.conf”加载内核参数设置；
+-a：打印当前所有可用的内核参数变量和值；
+-A：以表格方式打印当前所有可用的内核参数变量和值。</code></pre>
+<h3>参数</h3><p>变量=值：设置内核参数对应的变量值。</p>
+<h3>实例</h3><p>查看所有可读变量：</p>
+<p>sysctl -a</p>
+<p>读一个指定的变量，例如<code>kern.maxproc</code>：</p>
+<p>sysctl kern.maxproc kern.maxproc: 1044</p>
+<p>要设置一个指定的变量，直接用<code>variable=value</code>这样的语法：</p>
+<pre><code>sysctl kern.maxfiles<span>=</span><span>5000</span>
+kern.maxfiles: <span>2088</span> -<span>></span> <span>5000</span></code></pre>
+<p>您可以使用sysctl修改系统变量，也可以通过编辑sysctl.conf文件来修改系统变量。sysctl.conf看起来很像rc.conf。它用<code>variable=value</code>的形式来设定值。指定的值在系统进入多用户模式之后被设定。并不是所有的变量都可以在这个模式下设定。</p>
+<p>sysctl变量的设置通常是字符串、数字或者布尔型。（布尔型用 1 来表示&#39;yes&#39;，用 0 来表示&#39;no&#39;）。</p>
+<pre><code>sysctl -w kernel.sysrq<span>=</span><span>0</span>
+sysctl -w kernel.core_uses_pid<span>=</span><span>1</span>
+sysctl -w net.ipv4.conf.default.accept_redirects<span>=</span><span>0</span>
+sysctl -w net.ipv4.conf.default.accept_source_route<span>=</span><span>0</span>
+sysctl -w net.ipv4.conf.default.rp_filter<span>=</span><span>1</span>
+sysctl -w net.ipv4.tcp_syncookies<span>=</span><span>1</span>
+sysctl -w net.ipv4.tcp_max_syn_backlog<span>=</span><span>2048</span>
+sysctl -w net.ipv4.tcp_fin_timeout<span>=</span><span>30</span>
+sysctl -w net.ipv4.tcp_synack_retries<span>=</span><span>2</span>
+sysctl -w net.ipv4.tcp_keepalive_time<span>=</span><span>3600</span>
+sysctl -w net.ipv4.tcp_window_scaling<span>=</span><span>1</span>
+sysctl -w net.ipv4.tcp_sack<span>=</span><span>1</span></code></pre>
+<h3>配置sysctl</h3><p>编辑此文件：<code>/etc/sysctl.conf</code></p>
+<p>如果该文件为空，则输入以下内容，否则请根据情况自己做调整：</p>
+<pre><code><span># Controls source route verification</span>
+<span># Default should work for all interfaces</span>
+net.ipv4.conf.default.rp_filter <span>=</span> <span>1</span>
+<span># net.ipv4.conf.all.rp_filter = 1</span>
+<span># net.ipv4.conf.lo.rp_filter = 1</span>
+<span># net.ipv4.conf.eth0.rp_filter = 1</span>
+
+<span># Disables IP source routing</span>
+<span># Default should work for all interfaces</span>
+net.ipv4.conf.default.accept_source_route <span>=</span> <span>0</span>
+<span># net.ipv4.conf.all.accept_source_route = 0</span>
+<span># net.ipv4.conf.lo.accept_source_route = 0</span>
+<span># net.ipv4.conf.eth0.accept_source_route = 0</span>
+
+<span># Controls the System Request debugging functionality of the kernel</span>
+kernel.sysrq <span>=</span> <span>0</span>
+
+<span># Controls whether core dumps will append the PID to the core filename.</span>
+<span># Useful for debugging multi-threaded applications.</span>
+kernel.core_uses_pid <span>=</span> <span>1</span>
+
+<span># Increase maximum amount of memory allocated to shm</span>
+<span># Only uncomment if needed!</span>
+<span># kernel.shmmax = 67108864</span>
+
+<span># Disable ICMP Redirect Acceptance</span>
+<span># Default should work for all interfaces</span>
+net.ipv4.conf.default.accept_redirects <span>=</span> <span>0</span>
+<span># net.ipv4.conf.all.accept_redirects = 0</span>
+<span># net.ipv4.conf.lo.accept_redirects = 0</span>
+<span># net.ipv4.conf.eth0.accept_redirects = 0</span>
+
+<span># enable Log Spoofed Packets, Source Routed Packets, Redirect Packets</span>
+<span># Default should work for all interfaces</span>
+net.ipv4.conf.default.log_martians <span>=</span> <span>1</span>
+<span># net.ipv4.conf.all.log_martians = 1</span>
+<span># net.ipv4.conf.lo.log_martians = 1</span>
+<span># net.ipv4.conf.eth0.log_martians = 1</span>
+
+<span># Decrease the time default value for tcp_fin_timeout connection</span>
+net.ipv4.tcp_fin_timeout <span>=</span> <span>25</span>
+
+<span># Decrease the time default value for tcp_keepalive_time connection</span>
+net.ipv4.tcp_keepalive_time <span>=</span> <span>1200</span>
+
+<span># Turn on the tcp_window_scaling</span>
+net.ipv4.tcp_window_scaling <span>=</span> <span>1</span>
+
+<span># Turn on the tcp_sack</span>
+net.ipv4.tcp_sack <span>=</span> <span>1</span>
+
+<span># tcp_fack should be on because of sack</span>
+net.ipv4.tcp_fack <span>=</span> <span>1</span>
+
+<span># Turn on the tcp_timestamps</span>
+net.ipv4.tcp_timestamps <span>=</span> <span>1</span>
+
+<span># Enable TCP SYN Cookie Protection</span>
+net.ipv4.tcp_syncookies <span>=</span> <span>1</span>
+
+<span># Enable ignoring broadcasts request</span>
+net.ipv4.icmp_echo_ignore_broadcasts <span>=</span> <span>1</span>
+
+<span># Enable bad error message Protection</span>
+net.ipv4.icmp_ignore_bogus_error_responses <span>=</span> <span>1</span>
+
+<span># make more local ports available</span>
+<span># net.ipv4.ip_local_port_range = 1024 65000</span>
+
+<span># set TCP Re-Ordering value in kernel to ‘5′</span>
+net.ipv4.tcp_reordering <span>=</span> <span>5</span>
+
+<span># Lower syn retry rates</span>
+net.ipv4.tcp_synack_retries <span>=</span> <span>2</span>
+net.ipv4.tcp_syn_retries <span>=</span> <span>3</span>
+
+<span># Set Max SYN Backlog to ‘2048′</span>
+net.ipv4.tcp_max_syn_backlog <span>=</span> <span>2048</span>
+
+<span># Various Settings</span>
+net.core.netdev_max_backlog <span>=</span> <span>1024</span>
+
+<span># Increase the maximum number of skb-heads to be cached</span>
+net.core.hot_list_length <span>=</span> <span>256</span>
+
+<span># Increase the tcp-time-wait buckets pool size</span>
+net.ipv4.tcp_max_tw_buckets <span>=</span> <span>360000</span>
+
+<span># This will increase the amount of memory available for socket input/output queues</span>
+net.core.rmem_default <span>=</span> <span>65535</span>
+net.core.rmem_max <span>=</span> <span>8388608</span>
+net.ipv4.tcp_rmem <span>=</span> <span>4096</span> <span>87380</span> <span>8388608</span>
+net.core.wmem_default <span>=</span> <span>65535</span>
+net.core.wmem_max <span>=</span> <span>8388608</span>
+net.ipv4.tcp_wmem <span>=</span> <span>4096</span> <span>65535</span> <span>8388608</span>
+net.ipv4.tcp_mem <span>=</span> <span>8388608</span> <span>8388608</span> <span>8388608</span>
+net.core.optmem_max <span>=</span> <span>40960</span></code></pre>
+<p>如果希望屏蔽别人 ping 你的主机，则加入以下代码：</p>
+<pre><code><span># Disable ping requests</span>
+net.ipv4.icmp_echo_ignore_all <span>=</span> <span>1</span></code></pre>
+<p>编辑完成后，请执行以下命令使变动立即生效：</p>
+<pre><code>/sbin/sysctl -p
+/sbin/sysctl -w net.ipv4.route.flush<span>=</span><span>1</span></code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

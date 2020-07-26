@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>service:控制系统服务的实用工具</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="service:控制系统服务的实用工具 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>service</h1><p>控制系统服务的实用工具</p>
+<h2>补充说明</h2><p><strong>service命令</strong> 是Redhat Linux兼容的发行版中用来控制系统服务的实用工具，它以启动、停止、重新启动和关闭系统服务，还可以显示所有系统服务的当前状态。</p>
+<h3>语法</h3><pre><code>service<span>(</span>选项<span>)</span><span>(</span>参数<span>)</span></code></pre>
+<h3>选项</h3><pre><code>-h：显示帮助信息；
+--status-all：显示所服务的状态。</code></pre>
+<h3>参数</h3><ul>
+<li>服务名：自动要控制的服务名，即<code>/etc/init.d</code>目录下的脚本文件名；</li>
+<li>控制命令：系统服务脚本支持的控制命令。</li>
+</ul>
+<h3>实例</h3><p>当修改了主机名、ip地址等信息时，经常需要把网络重启使之生效。</p>
+<pre><code><span>service</span> network status
+配置设备：
+lo eth0
+当前的活跃设备：
+lo eth0
+
+<span>service</span> network restart
+正在关闭接口 eth0：                                        <span>[</span>  确定  <span>]</span>
+关闭环回接口：                                             <span>[</span>  确定  <span>]</span>
+设置网络参数：                                             <span>[</span>  确定  <span>]</span>
+弹出环回接口：                                             <span>[</span>  确定  <span>]</span>
+弹出界面 eth0:                                            <span>[</span>  确定  <span>]</span></code></pre>
+<p>重启mysql</p>
+<pre><code><span>service</span> mysqld status
+mysqld <span>(</span>pid <span>1638</span><span>)</span> 正在运行<span>..</span>.
+
+<span>service</span> mysqld restart
+停止 MySQL：                                               <span>[</span>  确定  <span>]</span>
+启动 MySQL：                                               <span>[</span>  确定  <span>]</span></code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

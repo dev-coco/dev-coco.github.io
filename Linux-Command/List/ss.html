@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>ss:比 netstat 好用的socket统计信息，iproute2 包附带的另一个工具，允许你查询 socket 的有关统计信息</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="ss:比 netstat 好用的socket统计信息，iproute2 包附带的另一个工具，允许你查询 socket 的有关统计信息 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>ss</h1><p>比 netstat 好用的socket统计信息，iproute2 包附带的另一个工具，允许你查询 socket 的有关统计信息</p>
+<h2>补充说明</h2><p><strong>ss命令</strong> 用来显示处于活动状态的套接字信息。ss命令可以用来获取socket统计信息，它可以显示和netstat类似的内容。但ss的优势在于它能够显示更多更详细的有关TCP和连接状态的信息，而且比netstat更快速更高效。</p>
+<p>当服务器的socket连接数量变得非常大时，无论是使用netstat命令还是直接<code>cat /proc/net/tcp</code>，执行速度都会很慢。可能你不会有切身的感受，但请相信我，当服务器维持的连接达到上万个的时候，使用netstat等于浪费 生命，而用ss才是节省时间。</p>
+<p>天下武功唯快不破。ss快的秘诀在于，它利用到了TCP协议栈中tcp_diag。tcp_diag是一个用于分析统计的模块，可以获得Linux 内核中第一手的信息，这就确保了ss的快捷高效。当然，如果你的系统中没有tcp_diag，ss也可以正常运行，只是效率会变得稍慢。</p>
+<h3>语法</h3><pre><code>ss <span>[</span>参数<span>]</span>
+ss <span>[</span>参数<span>]</span> <span>[</span>过滤<span>]</span></code></pre>
+<h3>选项</h3><pre><code>-h, --help      帮助信息
+-V, --version   程序版本信息
+-n, --numeric   不解析服务名称
+-r, --resolve   解析主机名
+-a, --all       显示所有套接字（sockets）
+-l, --listening 显示监听状态的套接字（sockets）
+-o, --options   显示计时器信息
+-e, --extended  显示详细的套接字（sockets）信息
+-m, --memory    显示套接字（socket）的内存使用情况
+-p, --processes 显示使用套接字（socket）的进程
+-i, --info      显示 TCP内部信息
+-s, --summary   显示套接字（socket）使用概况
+-4, --ipv4      仅显示IPv4的套接字（sockets）
+-6, --ipv6      仅显示IPv6的套接字（sockets）
+-0, --packet    显示 PACKET 套接字（socket）
+-t, --tcp       仅显示 TCP套接字（sockets）
+-u, --udp       仅显示 UCP套接字（sockets）
+-d, --dccp      仅显示 DCCP套接字（sockets）
+-w, --raw       仅显示 RAW套接字（sockets）
+-x, --unix      仅显示 Unix套接字（sockets）
+-f, --family<span>=</span>FAMILY  显示 FAMILY类型的套接字（sockets），FAMILY可选，支持  unix, inet, inet6, link, netlink
+-A, --query<span>=</span>QUERY, --socket<span>=</span>QUERY
+      QUERY :<span>=</span> <span>{</span>all<span>|</span>inet<span>|</span>tcp<span>|</span>udp<span>|</span>raw<span>|</span>unix<span>|</span>packet<span>|</span>netlink<span>}</span><span>[</span>,QUERY<span>]</span>
+-D, --diag<span>=</span>FILE     将原始TCP套接字（sockets）信息转储到文件
+ -F, --filter<span>=</span>FILE  从文件中都去过滤器信息
+       FILTER :<span>=</span> <span>[</span> state TCP-STATE <span>]</span> <span>[</span> EXPRESSION <span>]</span></code></pre>
+<h3>实例</h3><pre><code>ss -t -a    <span># 显示TCP连接</span>
+ss -s       <span># 显示 Sockets 摘要</span>
+ss -l       <span># 列出所有打开的网络连接端口</span>
+ss -pl      <span># 查看进程使用的socket</span>
+ss -lp <span>|</span> <span>grep</span> <span>3306</span>  <span># 找出打开套接字/端口应用程序</span>
+ss -u -a    显示所有UDP Sockets
+ss -o state established <span>'( dport = :smtp or sport = :smtp )'</span> <span># 显示所有状态为established的SMTP连接</span>
+ss -o state established <span>'( dport = :http or sport = :http )'</span> <span># 显示所有状态为Established的HTTP连接</span>
+ss -o state fin-wait-1 <span>'( sport = :http or sport = :https )'</span> dst <span>193.233</span>.7/24  <span># 列举出处于 FIN-WAIT-1状态的源端口为 80或者 443，目标网络为 193.233.7/24所有 tcp套接字</span>
+
+<span># ss 和 netstat 效率对比</span>
+<span>time</span> <span>netstat</span> -at
+<span>time</span> ss
+
+<span># 匹配远程地址和端口号</span>
+<span># ss dst ADDRESS_PATTERN</span>
+ss dst <span>192.168</span>.1.5
+ss dst <span>192.168</span>.119.113:http
+ss dst <span>192.168</span>.119.113:smtp
+ss dst <span>192.168</span>.119.113:443
+
+<span># 匹配本地地址和端口号</span>
+<span># ss src ADDRESS_PATTERN</span>
+ss src <span>192.168</span>.119.103
+ss src <span>192.168</span>.119.103:http
+ss src <span>192.168</span>.119.103:80
+ss src <span>192.168</span>.119.103:smtp
+ss src <span>192.168</span>.119.103:25</code></pre>
+<p><strong>将本地或者远程端口和一个数比较</strong></p>
+<pre><code><span># ss dport OP PORT 远程端口和一个数比较；</span>
+<span># ss sport OP PORT 本地端口和一个数比较</span>
+<span># OP 可以代表以下任意一个:</span>
+<span># &lt;= or le : 小于或等于端口号</span>
+<span># >= or ge : 大于或等于端口号</span>
+<span># == or eq : 等于端口号</span>
+<span># != or ne : 不等于端口号</span>
+<span># &lt; or gt : 小于端口号</span>
+<span># > or lt : 大于端口号</span>
+ss  sport <span>=</span> :http
+ss  dport <span>=</span> :http
+ss  dport <span>\</span><span>></span> :1024
+ss  sport <span>\</span><span>></span> :1024
+ss sport <span>\</span><span>&lt;</span> :32000
+ss  sport eq :22
+ss  dport <span>!=</span> :22
+ss  state connected sport <span>=</span> :http
+ss <span>\</span><span>(</span> sport <span>=</span> :http or sport <span>=</span> :https <span>\</span><span>)</span>
+ss -o state fin-wait-1 <span>\</span><span>(</span> sport <span>=</span> :http or sport <span>=</span> :https <span>\</span><span>)</span> dst <span>192.168</span>.1/24</code></pre>
+<p><strong>用TCP 状态过滤Sockets</strong></p>
+<pre><code>ss -4 state closing
+<span># ss -4 state FILTER-NAME-HERE</span>
+<span># ss -6 state FILTER-NAME-HERE</span>
+<span># FILTER-NAME-HERE 可以代表以下任何一个：</span>
+<span># established、 syn-sent、 syn-recv、 fin-wait-1、 fin-wait-2、 time-wait、 closed、 close-wait、 last-ack、 listen、 closing、</span>
+<span># all : 所有以上状态</span>
+<span># connected : 除了listen and closed的所有状态</span>
+<span># synchronized :所有已连接的状态除了syn-sent</span>
+<span># bucket : 显示状态为maintained as minisockets,如：time-wait和syn-recv.</span>
+<span># big : 和bucket相反.</span></code></pre>
+<p> <strong>显示ICP连接</strong></p>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># ss -t -a</span>
+State       Recv-Q Send-Q                            Local Address:Port                                Peer Address:Port
+LISTEN      <span>0</span>      <span>0</span>                                             *:3306                                           *:*
+LISTEN      <span>0</span>      <span>0</span>                                             *:http                                           *:*
+LISTEN      <span>0</span>      <span>0</span>                                             *:ssh                                            *:*
+LISTEN      <span>0</span>      <span>0</span>                                     <span>127.0</span>.0.1:smtp                                           *:*
+ESTAB       <span>0</span>      <span>0</span>                                <span>112.124</span>.15.130:42071                              <span>42.156</span>.166.25:http
+ESTAB       <span>0</span>      <span>0</span>                                <span>112.124</span>.15.130:ssh                              <span>121.229</span>.196.235:33398</code></pre>
+<p> <strong>显示 Sockets 摘要</strong></p>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># ss -s</span>
+Total: <span>172</span> <span>(</span>kernel <span>189</span><span>)</span>
+TCP:   <span>10</span> <span>(</span>estab <span>2</span>, closed <span>4</span>, orphaned <span>0</span>, synrecv <span>0</span>, timewait <span>0</span>/0<span>)</span>, ports <span>5</span>
+
+Transport Total     <span>ip</span>        IPv6
+*         <span>189</span>       -         -
+RAW       <span>0</span>         <span>0</span>         <span>0</span>
+UDP       <span>5</span>         <span>5</span>         <span>0</span>
+TCP       <span>6</span>         <span>6</span>         <span>0</span>
+INET      <span>11</span>        <span>11</span>        <span>0</span>
+FRAG      <span>0</span>         <span>0</span>         <span>0</span></code></pre>
+<p>列出当前的established, closed, orphaned and waiting TCP sockets</p>
+<p> <strong>列出所有打开的网络连接端口</strong></p>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># ss -l</span>
+Recv-Q Send-Q                                 Local Address:Port                                     Peer Address:Port
+<span>0</span>      <span>0</span>                                                  *:3306                                                *:*
+<span>0</span>      <span>0</span>                                                  *:http                                                *:*
+<span>0</span>      <span>0</span>                                                  *:ssh                                                 *:*
+<span>0</span>      <span>0</span>                                          <span>127.0</span>.0.1:smtp                                                *:*</code></pre>
+<p> <strong>查看进程使用的socket</strong></p>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># ss -pl</span>
+Recv-Q Send-Q                                          Local Address:Port                                              Peer Address:Port
+<span>0</span>      <span>0</span>                                                           *:3306                                                         *:*        users:<span><span>((</span>"mysqld"<span>,</span><span>1718</span><span>,</span><span>10</span><span>))</span></span>
+<span>0</span>      <span>0</span>                                                           *:http                                                         *:*        users:<span><span>((</span>"nginx"<span>,</span><span>13312</span><span>,</span><span>5</span><span>)</span><span>,</span><span>(</span>"nginx"<span>,</span><span>13333</span><span>,</span><span>5</span><span>))</span></span>
+<span>0</span>      <span>0</span>                                                           *:ssh                                                          *:*        users:<span><span>((</span>"sshd"<span>,</span><span>1379</span><span>,</span><span>3</span><span>))</span></span>
+<span>0</span>      <span>0</span>                                                   <span>127.0</span>.0.1:smtp                                                         *:*        us</code></pre>
+<p> <strong>找出打开套接字/端口应用程序</strong></p>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># ss -pl | grep 3306</span>
+<span>0</span>      <span>0</span>                            *:3306                          *:*        users:<span><span>((</span>"mysqld"<span>,</span><span>1718</span><span>,</span><span>10</span><span>))</span></span></code></pre>
+<p> <strong>显示所有UDP Sockets</strong></p>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># ss -u -a</span>
+State       Recv-Q Send-Q                                     Local Address:Port                                         Peer Address:Port
+UNCONN      <span>0</span>      <span>0</span>                                                      *:syslog                                                  *:*
+UNCONN      <span>0</span>      <span>0</span>                                         <span>112.124</span>.15.130:ntp                                                     *:*
+UNCONN      <span>0</span>      <span>0</span>                                            <span>10.160</span>.7.81:ntp                                                     *:*
+UNCONN      <span>0</span>      <span>0</span>                                              <span>127.0</span>.0.1:ntp                                                     *:*
+UNCONN      <span>0</span>      <span>0</span>                                                      *:ntp                                                     *:*</code></pre>
+<h4>出所有端口为 22（ssh）的连接</h4><pre><code>ss state all sport <span>=</span> :ssh
+
+Netid State      Recv-Q Send-Q     Local Address:Port                      Peer Address:Port
+tcp   LISTEN     <span>0</span>      <span>128</span>                    *:ssh                                  *:*
+tcp   ESTAB      <span>0</span>      <span>0</span>          <span>192.168</span>.0.136:ssh                      <span>192.168</span>.0.102:46540
+tcp   LISTEN     <span>0</span>      <span>128</span>                   :::ssh                                 :::*</code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

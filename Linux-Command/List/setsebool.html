@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>setsebool:修改SElinux策略内各项规则的布尔值</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="setsebool:修改SElinux策略内各项规则的布尔值 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>setsebool</h1><p>修改SElinux策略内各项规则的布尔值</p>
+<h2>补充说明</h2><p><strong>setsebool命令</strong> 是用来修改SElinux策略内各项规则的布尔值。setsebool命令和getsebool命令是SELinux修改和查询布尔值的一套工具组。SELinux的策略与规则管理相关命令：seinfo命令、sesearch命令、getsebool命令、setsebool命令、semanage命令。</p>
+<h3>语法</h3><pre><code>setsebool <span>[</span>-P<span>]</span> 布尔值<span>=</span><span>[</span><span>0</span><span>|</span><span>1</span><span>]</span></code></pre>
+<h3>选项</h3><pre><code>-P:直接将设置值写入配置文件，该设置数据将来会生效的。</code></pre>
+<h3>实例</h3><p>允许vsvtp匿名用户写入权限：</p>
+<pre><code>setsebool -P <span>allow_ftpd_anon_write</span><span>=</span><span>1</span></code></pre>
+<p>如果你希望你的ftp用户可以访问自己的家目录的话，需要开启：</p>
+<pre><code>setsebool -P ftp_home_dir <span>1</span></code></pre>
+<p>如果你希望将vsftpd以daemon的方式运行的话，需要开启：</p>
+<pre><code>setsebool -P ftpd_is_daemon <span>1</span></code></pre>
+<p>你可以让SElinux停止保护vsftpd的daemon方式动行：</p>
+<pre><code>setsebool -P ftpd_disable_trans <span>1</span> </code></pre>
+<p>HTTP被设置允许cgi的设置：</p>
+<pre><code>setsebool -P httpd_enable_cgi <span>1</span></code></pre>
+<p>允许用户HHTP访问其家目录，该设定限仅于用户的家目录主页：</p>
+<pre><code>setsebool -P httpd_enable_homedirs <span>1</span>
+chcon -R -t httpd_sys_content_t ~user/public_html</code></pre>
+<p>允许httpd访问终端：</p>
+<pre><code>setsebool -P httpd_tty_comm <span>1</span></code></pre>
+<p>关闭Selinux的关于httpd进程守护的保护：</p>
+<pre><code>setsebool -P httpd_disable_trans <span>1</span>
+<span>service</span> httpd restart</code></pre>
+<p>关于named、master更新selinux设定：</p>
+<pre><code>setsebool -P named_write_master_zones <span>1</span></code></pre>
+<p>关闭named的进程守护保护：</p>
+<pre><code>setsebool -P named_disable_trans <span>1</span>
+<span>service</span> named restart</code></pre>
+<p>Selinux将本机的NFS共享设置成只读：</p>
+<pre><code>setsebool -P nfs_export_all_ro <span>1</span></code></pre>
+<p>SElinux将本机的NFS共享设置成可读可写：</p>
+<pre><code>setsebool -P nfs_export_all_rw <span>1</span></code></pre>
+<p>如果你想要将远程NFS的家目录共享到本机，需要开启：</p>
+<pre><code>setsebool -P use_nfs_home_dirs <span>1</span></code></pre>
+<p>如果samba服务器共享目录给多个域，则需要：</p>
+<pre><code>setsebool -P <span>allow_smbd_anon_write</span><span>=</span><span>1</span></code></pre>
+<p>samba服务器要共享家目录时：</p>
+<pre><code>setsebool -P samba_enable_home_dirs <span>1</span></code></pre>
+<p>如果你需在本机上使用远程samba服务器的家目录：</p>
+<pre><code>setsebool -P use_samba_home_dirs <span>1</span></code></pre>
+<p>关闭selinux关于samba的进程守护的保护：</p>
+<pre><code>setsebool -P smbd_disable_trans <span>1</span>
+<span>service</span> smb restart</code></pre>
+<p>允许rsync其他用户写入时：</p>
+<pre><code>setsebool -P <span>allow_rsync_anon_write</span><span>=</span><span>1</span></code></pre>
+<p>停止rsync的进程保护</p>
+<pre><code>setsebool -P rsync_disable_trans <span>1</span></code></pre>
+<p>允许系统使用kerberos：</p>
+<pre><code>setsebool -P allow_kerberos <span>1</span></code></pre>
+<p>系统工作在nis环境时：</p>
+<pre><code>setsebool -P allow_ypbind <span>1</span></code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

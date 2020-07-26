@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>strings:在对象文件或二进制文件中查找可打印的字符串</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="strings:在对象文件或二进制文件中查找可打印的字符串 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>strings</h1><p>在对象文件或二进制文件中查找可打印的字符串</p>
+<h2>补充说明</h2><p><strong>strings命令</strong> 在对象文件或二进制文件中查找可打印的字符串。字符串是4个或更多可打印字符的任意序列，以换行符或空字符结束。 strings命令对识别随机对象文件很有用。</p>
+<h3>语法</h3><pre><code>strings <span>[</span> -a <span>]</span> <span>[</span> - <span>]</span> <span>[</span> -o <span>]</span> <span>[</span> -t Format <span>]</span> <span>[</span> -n Number <span>]</span> <span>[</span> -Number <span>]</span>  <span>[</span>file <span>..</span>. <span>]</span></code></pre>
+<h3>选项</h3><pre><code>-a --all：扫描整个文件而不是只扫描目标文件初始化和装载段
+-f –print-file-name：在显示字符串前先显示文件名
+-n –bytes<span>=</span><span>[</span>number<span>]</span>：找到并且输出所有NUL终止符序列
+- ：设置显示的最少的字符数，默认是4个字符
+-t --radix<span>=</span><span>{</span>o,d,x<span>}</span> ：输出字符的位置，基于八进制，十进制或者十六进制
+-o ：类似--radix<span>=</span>o
+-T --target<span>=</span> ：指定二进制文件格式
+-e --encoding<span>=</span><span>{</span>s,S,b,l,B,L<span>}</span> ：选择字符大小和排列顺序:s <span>=</span> <span>7</span>-bit, S <span>=</span> <span>8</span>-bit, <span>{</span>b,l<span>}</span> <span>=</span> <span>16</span>-bit, <span>{</span>B,L<span>}</span> <span>=</span> <span>32</span>-bit
+@ ：读取中选项</code></pre>
+<h3>实例</h3><p>列出ls中所有的ASCII文本：</p>
+<pre><code>strings /bin/ls</code></pre>
+<p>列出ls中所有的ASCII文本：</p>
+<pre><code><span>cat</span> /bin/ls strings</code></pre>
+<p>查找ls中包含libc的字符串，不区分大小写：</p>
+<pre><code>strings /bin/ls <span>|</span> <span>grep</span> -i libc</code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

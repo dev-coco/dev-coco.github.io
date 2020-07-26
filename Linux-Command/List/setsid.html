@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>setsid:在新的会话中运行程序</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="setsid:在新的会话中运行程序 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>setsid</h1><p>在新的会话中运行程序</p>
+<h2>补充说明</h2><p><strong>setsid命令</strong> 子进程从父进程继承了：SessionID、进程组ID和打开的终端。子进程如果要脱离这些，代码中可通过调用setsid来实现。，而命令行或脚本中可以通过使用命令setsid来运行程序实现。setsid帮助一个进程脱离从父进程继承而来的已打开的终端、隶属进程组和隶属的会话。</p>
+<h3>语法</h3><pre><code>setsid<span>[</span>options<span>]</span> <span>&lt;</span>program<span>></span> <span>[</span>arguments <span>..</span>.<span>]</span></code></pre>
+<h3>选项</h3><pre><code>-c, --ctty   将控制终端设置为当前控制终端
+-f, --fork   总是 fork
+-w, --wait   等待程序退出，并使用相同的返回</code></pre>
+<h3>实例</h3><p>可见 setsid 的使用也是非常方便的，也只需在要处理的命令前加上 setsid 即可</p>
+<pre><code><span>[</span>root@root ~<span>]</span><span># setsid ping www.example.com</span>
+<span>[</span>root@root ~<span>]</span><span># ps -ef |grep www.example.com</span>
+root <span>31094</span> <span>1</span> <span>0</span> 07:28 ? 00:00:00 <span>ping</span> www.example.com
+root <span>31102</span> <span>29217</span> <span>0</span> 07:29 pts/4 00:00:00 <span>grep</span> www.example.com
+<span>[</span>root@root ~<span>]</span><span>#</span></code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

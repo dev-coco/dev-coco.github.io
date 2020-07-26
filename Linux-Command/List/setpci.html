@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>setpci:查询和配置PCI设备的使用工具</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="setpci:查询和配置PCI设备的使用工具 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>setpci</h1><p>查询和配置PCI设备的使用工具</p>
+<h2>补充说明</h2><p><strong>setpci命令</strong> 是一个查询和配置PCI设备的使用工具。</p>
+<h3>语法</h3><pre><code>setpci<span>(</span>选项<span>)</span><span>(</span>参数<span>)</span></code></pre>
+<h3>选项</h3><pre><code>-v：显示指令执行的细节信息；
+-f：当没有任何操作需要完成时，不显示任何信息；
+-D：测试模式，并不真正将配置信息写入寄存器；
+-d：仅显示给定厂商和设备的信息；
+-s：仅显示指定总线、插槽上的设备或设备上的功能块信息。</code></pre>
+<h3>参数</h3><ul>
+<li>PCI设备：指定要配置的PCI设备；</li>
+<li>操作：指定要完成的配置操作。</li>
+</ul>
+<h3>实例</h3><p>Linux下调节笔记本屏幕亮度方法：</p>
+<p>首先进入终端输入lspci命令，列出各种设备的地址：</p>
+<pre><code>lspci
+00:00.0 <span>host</span> bridge: Intel Corporation Mobile 945GM/PM/GMS, <span>943</span>/940GML and 945GT Express Memory Controller Hub <span>(</span>rev 03<span>)</span>
+00:02.0 VGA compatible controller: Intel Corporation Mobile 945GM/GMS, <span>943</span>/940GML Express Integrated Graphics Controller <span>(</span>rev 03<span>)</span>
+00:02.1 Display controller: Intel Corporation Mobile 945GM/GMS/GME, <span>943</span>/940GML Express Integrated Graphics Controller <span>(</span>rev 03<span>)</span>
+00:1b.0 Audio device: Intel Corporation N10/ICH <span>7</span> Family High Definition Audio Controller <span>(</span>rev 02<span>)</span>
+00:1c.0 PCI bridge: Intel Corporation N10/ICH <span>7</span> Family PCI Express Port <span>1</span> <span>(</span>rev 02<span>)</span>
+00:1c.1 PCI bridge: Intel Corporation N10/ICH <span>7</span> Family PCI Express Port <span>2</span> <span>(</span>rev 02<span>)</span>
+<span>..</span><span>..</span><span>..</span></code></pre>
+<p>发现00:02.0是VGA设备，于是我们修改它的属性：</p>
+<pre><code><span>sudo</span> setpci -s 00:02.0 F4.B<span>=</span>FF</code></pre>
+<p>解释一下：</p>
+<ul>
+<li><strong>setpci</strong>  是修改设备属性的命令。</li>
+<li><strong>-s</strong>  表示接下来输入的是设备的地址。</li>
+<li><strong>00:02.0</strong>  VGA设备地址（&lt;总线&gt;:&lt;接口&gt;.&lt;功能&gt;）。</li>
+<li><strong>F4</strong>  要修改的属性的地址，这里应该表示“亮度”。</li>
+<li><strong>.B</strong>  修改的长度（B应该是字节（Byte），还有w（应该是Word，两个字节）、L（应该是Long，4个字节））。</li>
+<li><strong>=FF</strong>  要修改的值（可以改）。</li>
+</ul>
+<p>我这里00是最暗，FF是最亮，不同的电脑可能不一样。比如说我嫌FF太闪眼了，我就可以：</p>
+<pre><code><span>sudo</span> setpci -s 00:02.0 F4.B<span>=</span>CC</code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>
