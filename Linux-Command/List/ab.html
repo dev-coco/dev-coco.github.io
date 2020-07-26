@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>ab:Apache服务器的性能测试工具</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="ab:Apache服务器的性能测试工具 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1 style="text-align:center;">ab</h1><p>Apache服务器的性能测试工具</p>
+<h2>补充说明</h2><p><strong>ab命令</strong> 是一个测试你 Apache http 服务器的工具，你可以通过这个工具，指定一个单位时间内向 apache 发出的请求数量来看看你的 Apache 和机器配合的性能如何。</p>
+<h3>语法</h3><pre><code>ab <span>[</span> -A auth-username:password <span>]</span> <span>[</span> -c concurrency <span>]</span> <span>[</span> -C cookie-name<span>=</span>value
+<span>]</span> <span>[</span> -d <span>]</span> <span>[</span> -e csv-file <span>]</span> <span>[</span> -g gnuplot-file <span>]</span> <span>[</span> -h <span>]</span> <span>[</span> -H custom-header <span>]</span> <span>[</span>
+-i  <span>]</span>  <span>[</span>  -k  <span>]</span>  <span>[</span>  -n  requests  <span>]</span> <span>[</span> -p POST-file <span>]</span> <span>[</span> -P proxy-auth-user‐
+name:password <span>]</span> <span>[</span> -q <span>]</span> <span>[</span> -s <span>]</span> <span>[</span> -S <span>]</span> <span>[</span> -t timelimit <span>]</span> <span>[</span> -T content-type  <span>]</span>
+<span>[</span>  -v verbosity<span>]</span> <span>[</span> -V <span>]</span> <span>[</span> -w <span>]</span> <span>[</span> -x <span>&lt;</span>table<span>></span>-attributes <span>]</span> <span>[</span> -X proxy<span>[</span>:port<span>]</span>
+<span>]</span>  <span>[</span>  -y  <span>&lt;</span>tr<span>></span>-attributes  <span>]</span>  <span>[</span>  -z   <span>&lt;</span>td<span>></span>-attributes   <span>]</span>   <span>[</span>http://<span>]</span>host‐
+name<span>[</span>:port<span>]</span>/path</code></pre>
+<h3>选项</h3><pre><code>-A auth-username:password
+      <span>#  支持基本的验证证书,用户名和密码之间使用"冒号":</span>
+      <span># 分隔开,ab将以明文方式传送过去.不管服务器是不是需要</span>
+      <span># ,也就是说你的服务器需要支持401认证.</span>
+
+-c concurrency
+      <span># 同时向服务器端发送的请求数目，默认状态下是一次 只执行一个http请求.</span>
+
+-C cookie-name<span>=</span>value
+      <span># Add a Cookie: line to the request. The argument is typically in the</span>
+      <span># form of a name=value pair. This field is repeatable.</span>
+
+-d    <span>#  Do not display  the  "percentage  served  within  XX  [ms]  table".</span>
+      <span># (legacy support).</span>
+
+-e csv-file
+      <span># Write  a  Comma  separated value (CSV) file which contains for each</span>
+      <span># percentage (from 1% to 100%) the time (in milli seconds) it took to</span>
+      <span># serve  that percentage of the requests. This is usually more useful</span>
+      <span># than the 'gnuplot' file; as the results are already 'binned'.</span>
+
+-g gnuplot-file
+      <span># Write all measured values out as a 'gnuplot' or TSV  (Tab  separate</span>
+      <span># values)  file.  This file can easily be imported into packages like</span>
+      <span># Gnuplot, IDL, Mathematica, Igor or even Excell. The labels  are  on</span>
+      <span># the first line of the file.</span>
+-h    <span># 显示使用说明</span>
+-H custom-header
+      <span># 向请求包追加附加的标题字串.此参数应该是有效的标题         行(header</span>
+      <span># line)形式,通常使用冒号":"来分隔有效配对 (valid  pair)例如  'Accept-</span>
+      <span># Encoding: zip/zop;8 bit';</span>
+
+-i    <span># 使用一个 http 头(HEAD) 来替换 GET方法.不可以掺入POST 方法</span>
+
+-k    <span>#  允许http      KeepAlive      ；也就是说执行多个请求在一个      http</span>
+      <span># 会话当中，默认是不允许的也就是no KeepAlive啦;)</span>
+
+-n requests
+      <span># 执行一次测试会话的时候所发出的请求数目,默认是执行一个单一的请求</span>
+      <span># 当然了这样的测试结果也就没什么意义了</span>
+
+-p POST-file
+      <span># 测试程序也就是ab,将向Apache server发送带有HTTP POST 的请求.</span>
+
+-P proxy-auth-username:password
+      <span># 当需要通过代理测试一台 HTTP 服务器的时候而你的代理</span>
+      <span># 又需要用户名密码验证,这时你可以使用这个选项,同样</span>
+      <span># 用户名与密码之间使用冒号":"分隔开,ab将之以明文的方式</span>
+      <span># 发送出去,当然,前提是你的代理是处于407认证状态的</span>
+
+-q    <span>#  When processing more than 150 requests, ab outputs a progress count</span>
+      <span># on  stderr  every  10% or 100 requests or so. The -q flag will sup‐</span>
+      <span># press these messages.</span>
+
+-s    <span>#  When compiled in (ab -h will show you) use the SSL protected  https</span>
+      <span># rather  than  the  http  protocol. This feature is experimental and</span>
+      <span># very rudimentary. You probably do not want to use it.</span>
+
+-S    <span>#  Do not display the median and standard deviation values,  nor  dis‐</span>
+      <span># play  the  warning/error  messages  when the average and median are</span>
+      <span># more than one or two times the standard deviation  apart.  And  de‐</span>
+      <span># fault to the min/avg/max values. (legacy support).</span>
+
+-t timelimit
+      <span>#  设置测试的时间的长短，使用这个选项ab将自动设置</span>
+      <span># 测试请求会话数目为50000，然后以你设置的时间为</span>
+      <span># 固定周期.默认状态下是没有时限的，也就是直到完成</span>
+      <span># 你所设置的请求数目为止.</span>
+
+-T content-type
+      <span># 内容类型标头,使用在POST数据的时候.</span>
+
+-v verbosity
+      <span># 设置冗余级别,4级打印出每个请求标头的详细信息,</span>
+      <span># 3级打印出回应代码(例如,404,200),2级打印出警告 信息和指示消息</span>
+
+-V    <span># 显示版本号并且退出</span>
+-w    <span># 打印输出结果到HTML表中. 默认的表是两列n行白底黑框</span>
+
+-x <span>&lt;</span>table<span>></span>-attributes
+      <span># 使用字串来描述表的属性,该属性字串应该插入到&lt;table 这里 ></span>
+
+-X proxy<span>[</span>:port<span>]</span>
+      <span># Use a proxy server for the requests.</span>
+
+-y <span>&lt;</span>tr<span>></span>-attributes
+      <span># 用于生成html表格每行的属性名 (&lt;tr>)</span>
+
+-z <span>&lt;</span>td<span>></span>-attributes
+      <span># 用于生成html表格每列的属性名 (&lt;td>)</span></code></pre>
+<h3>参数</h3><p>主机：被测试主机。</p>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>apk:Alpine Linux 下的包管理工具</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="apk:Alpine Linux 下的包管理工具 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>apk</h1><p>Alpine Linux 下的包管理工具</p>
+<h2>使用实例</h2><pre><code>apk <span>install</span> xxx
+apk search xxx <span># 支持正则</span>
+apk info xxx <span># 查看包的详细信息</span>
+apk show <span># list local package</span>
+<span># 卸载并删除 包</span>
+apk del openssh openntp <span>vim</span></code></pre>
+<h3>升级</h3><p>upgrade命令升级系统已安装的所以软件包（一般包括内核），当然也可指定仅升级部分软件包（通过-u或–upgrade选择指定）。</p>
+<pre><code>apk update <span># 更新最新本地镜像源</span>
+apk upgrade <span># 升级软件</span>
+apk <span>add</span> --upgrade busybox <span># 指定升级部分软件包</span></code></pre>
+<h3>搜索</h3><pre><code>apk search <span># 查找所以可用软件包</span>
+apk search -v <span># 查找所以可用软件包及其描述内容</span>
+apk search -v <span>'acf*'</span> <span># 通过软件包名称查找软件包</span>
+apk search -v -d <span>'docker'</span> <span># 通过描述文件查找特定的软件包</span></code></pre>
+<h3>查看包信息</h3><p>info命令用于显示软件包的信息。</p>
+<pre><code>apk info <span># 列出所有已安装的软件包</span>
+apk info -a zlib <span># 显示完整的软件包信息</span>
+apk info --who-owns /sbin/lbu <span># 显示指定文件属于的包</span></code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

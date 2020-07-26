@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>aptitude:Debian Linux系统中软件包管理工具</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="aptitude:Debian Linux系统中软件包管理工具 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+
+<h1>aptitude</h1><p>Debian Linux系统中软件包管理工具</p>
+<h2>补充说明</h2><p><strong>aptitude命令</strong> 与apt-get命令一样，都是Debian Linux及其衍生系统中功能极其强大的包管理工具。与apt-get不同的是，aptitude在处理依赖问题上更佳一些。举例来说，aptitude在删除一个包时，会同时删除本身所依赖的包。这样，系统中不会残留无用的包，整个系统更为干净。它通过文本操作菜单和命令两种方式管理软件包。</p>
+<h3>语法</h3><pre><code>aptitude<span>(</span>选项<span>)</span><span>(</span>参数<span>)</span></code></pre>
+<h3>选项</h3><pre><code>-h：显示帮助信息；
+-d：仅下载软件包，不执行安装操作；
+-P：每一步操作都要求确认；
+-y：所有问题都回答“yes”；
+-v：显示附加信息；
+-u：启动时下载新的软件包列表。</code></pre>
+<h3>参数</h3><p>操作命令：用户管理软件包的操作命令。</p>
+<h3>实例</h3><p>以下是我总结的一些常用aptitude命令，仅供参考：</p>
+<pre><code><span>aptitude</span> update            <span># 更新可用的包列表</span>
+<span>aptitude</span> upgrade           <span># 升级可用的包</span>
+<span>aptitude</span> dist-upgrade      <span># 将系统升级到新的发行版</span>
+<span>aptitude</span> <span>install</span> pkgname   <span># 安装包</span>
+<span>aptitude</span> remove pkgname    <span># 删除包</span>
+<span>aptitude</span> purge pkgname     <span># 删除包及其配置文件</span>
+<span>aptitude</span> search string     <span># 搜索包</span>
+<span>aptitude</span> show pkgname      <span># 显示包的详细信息</span>
+<span>aptitude</span> clean             <span># 删除下载的包文件</span>
+<span>aptitude</span> autoclean         <span># 仅删除过期的包文件</span></code></pre>
+<p>当然，你也可以在文本界面模式中使用 aptitude。</p>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>
