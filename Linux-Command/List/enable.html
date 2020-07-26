@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>enable:启动或禁用shell内建命令</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="enable:启动或禁用shell内建命令 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>enable</h1><p>启动或禁用shell内建命令</p>
+<h3>概要</h3><p>enable [-a] [-dnps] [-f filename] [name ...]</p>
+<h3>主要用途</h3><ul>
+<li><p>禁用一到多个内建命令。</p>
+</li>
+<li><p>启用一到多个内建命令。</p>
+</li>
+<li><p>直接调用与禁用的内建命令同名且在<code>$PATH</code>路径下找到的外部命令。</p>
+</li>
+<li><p>打印所有内建命令，无论是否禁用。</p>
+</li>
+<li><p>打印处于启用状态的内建命令。</p>
+</li>
+<li><p>打印处于禁用状态的内建命令。</p>
+</li>
+<li><p>打印处于启用状态的posix标准内建命令。</p>
+</li>
+<li><p>打印处于禁用状态的posix标准内建命令。</p>
+</li>
+<li><p>打印posix标准内建命令，无论是否禁用。</p>
+</li>
+<li><p>从动态库中加载内建命令。</p>
+</li>
+<li><p>移除从动态库中加载的内建命令。</p>
+</li>
+</ul>
+<h4>选项</h4><pre><code>-a 打印所有内建命令，无论是否禁用。
+-d 移除从动态库中加载的内建命令。
+-n 禁用内建命令或显示已禁用的内建命令。
+-p 以可复用格式打印。
+-s 只显示处于启动状态的posix标准内建命令。
+-f 动态库中加载内建命令。
+-ns 打印处于禁用状态的posix标准内建命令。
+-as 打印posix标准内建命令，无论是否禁用。</code></pre>
+<h4>参数</h4><p>filename：动态库文件名。</p>
+<p>name（可选）：内建命令，可以为多个。</p>
+<h4>返回值</h4><p>enable返回成功，除非name不是内建命令或有错误发生。</p>
+<h3>例子（以下内容限于篇幅不再列出返回值部分）</h3><pre><code><span># posix special builtin</span>
+<span># 假设没有任何内建命令被禁用</span>
+<span># 禁用两个posix标准内建命令</span>
+<span>enable</span> -n <span>set</span> <span>source</span>
+<span># 打印处于禁用状态的posix标准内建命令</span>
+<span>enable</span> -ns
+<span># 打印posix标准内建命令，无论是否禁用。</span>
+<span>enable</span> -as
+<span># 打印处于启用状态的posix标准内建命令</span>
+<span>enable</span> -s</code></pre>
+<pre><code><span># 假设没有任何内建命令被禁用</span>
+<span># 禁用一到多个内建命令</span>
+<span>enable</span> -n <span>echo</span> <span>pwd</span>
+<span># 打印所有内建命令，无论是否禁用。</span>
+<span>enable</span> -a
+<span># 打印处于启用状态的内建命令</span>
+<span>enable</span>
+<span># 打印处于禁用状态的内建命令</span>
+<span>enable</span> -n
+<span># 启用一到多个内建命令</span>
+<span>enable</span> <span>pwd</span></code></pre>
+<h3>Q&amp;A</h3><p>Q：请问<code>-f</code>，<code>-d</code>，<code>-p</code>的演示呢？</p>
+<p>A：说明一下，<code>-f</code>与<code>-d</code>限于个人能力没有找到合适的例子，如果您有更好的例子欢迎提pr；
+经过我验证<code>-p</code>选项是否使用好像没有区别，可以比较<code>enable -p|cat -A</code>和<code>enable|cat -A</code> 有什么区别。（注：<code>cat -A</code>用于显示不可见字符）</p>
+<p>Q：是否可以禁用<code>enable</code>自己？之后还能禁用或启用内建命令吗？</p>
+<p>A：可以；不能。</p>
+<h3>注意</h3><blockquote>
+<p>linux shell命令执行时，shell总是先在自己的shell builtin中查找该命令，如果找到则执行该命令；如果找不到该命令，则会从环境变量<code>$PATH</code>指定的路径中依次去查找待执行的命令。看起来好像没有办法编写用户自己的命令来替代shell builtin命令。幸运的是，有了<code>enable</code>命令我们就能做到了。</p>
+</blockquote>
+<ol>
+<li><p>关于同名命令调用的优先级的知识，请先参考<code>builtin</code>命令的<em>提示</em>部分，然后继续阅读下面部分；</p>
+<p>当内建命令<code>echo</code>没有禁用时，如果要调用外部命令<code>echo</code>，只能这样写<code>/usr/bin/echo</code>；</p>
+<p>当我们禁用了<code>echo</code>后，优先级顺序变成了这样：</p>
+<p>函数 &gt; 外部命令</p>
+<p>如果执行命令的环境没有<code>echo</code>函数，那么调用的<code>echo</code>就是外部命令。</p>
+</li>
+<li><p>该命令是bash内建命令，相关的帮助信息请查看 <code>help</code> 命令。</p>
+</li>
+</ol>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

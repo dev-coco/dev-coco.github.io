@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>grep:强大的文本搜索工具</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="grep:强大的文本搜索工具 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>grep</h1><p>强大的文本搜索工具</p>
+<h2>补充说明</h2><p><strong>grep</strong> （global search regular expression(RE) and print out the line，全面搜索正则表达式并把行打印出来）是一种强大的文本搜索工具，它能使用正则表达式搜索文本，并把匹配的行打印出来。用于过滤/搜索的特定字符。可使用正则表达式能配合多种命令使用，使用上十分灵活。</p>
+<h3>选项</h3><pre><code>-a --text  <span># 不要忽略二进制数据。</span>
+-A <span>&lt;</span>显示行数<span>></span>   --after-context<span>=</span><span>&lt;</span>显示行数<span>></span>   <span># 除了显示符合范本样式的那一行之外，并显示该行之后的内容。</span>
+-b --byte-offset                           <span># 在显示符合范本样式的那一行之外，并显示该行之前的内容。</span>
+-B<span>&lt;</span>显示行数<span>></span>   --before-context<span>=</span><span>&lt;</span>显示行数<span>></span>   <span># 除了显示符合样式的那一行之外，并显示该行之前的内容。</span>
+-c --count    <span># 计算符合范本样式的列数。</span>
+-C<span>&lt;</span>显示行数<span>></span> --context<span>=</span><span>&lt;</span>显示行数<span>></span>或-<span>&lt;</span>显示行数<span>></span> <span># 除了显示符合范本样式的那一列之外，并显示该列之前后的内容。</span>
+-d<span>&lt;</span>进行动作<span>></span> --directories<span>=</span><span>&lt;</span>动作<span>></span>  <span># 当指定要查找的是目录而非文件时，必须使用这项参数，否则grep命令将回报信息并停止动作。</span>
+-e<span>&lt;</span>范本样式<span>></span> --regexp<span>=</span><span>&lt;</span>范本样式<span>></span>   <span># 指定字符串作为查找文件内容的范本样式。</span>
+-E --extended-regexp             <span># 将范本样式为延伸的普通表示法来使用，意味着使用能使用扩展正则表达式。</span>
+-f<span>&lt;</span>范本文件<span>></span> --file<span>=</span><span>&lt;</span>规则文件<span>></span>     <span># 指定范本文件，其内容有一个或多个范本样式，让grep查找符合范本条件的文件内容，格式为每一列的范本样式。</span>
+-F --fixed-regexp   <span># 将范本样式视为固定字符串的列表。</span>
+-G --basic-regexp   <span># 将范本样式视为普通的表示法来使用。</span>
+-h --no-filename    <span># 在显示符合范本样式的那一列之前，不标示该列所属的文件名称。</span>
+-H --with-filename  <span># 在显示符合范本样式的那一列之前，标示该列的文件名称。</span>
+-i --ignore-case    <span># 忽略字符大小写的差别。</span>
+-l --file-with-matches   <span># 列出文件内容符合指定的范本样式的文件名称。</span>
+-L --files-without-match <span># 列出文件内容不符合指定的范本样式的文件名称。</span>
+-n --line-number         <span># 在显示符合范本样式的那一列之前，标示出该列的编号。</span>
+-P --perl-regexp         <span># PATTERN 是一个 Perl 正则表达式</span>
+-q --quiet或--silent     <span># 不显示任何信息。</span>
+-R/-r  --recursive       <span># 此参数的效果和指定“-d recurse”参数相同。</span>
+-s --no-messages  <span># 不显示错误信息。</span>
+-v --revert-match <span># 反转查找。</span>
+-V --version      <span># 显示版本信息。   </span>
+-w --word-regexp  <span># 只显示全字符合的列。</span>
+-x --line-regexp  <span># 只显示全列符合的列。</span>
+-y <span># 此参数效果跟“-i”相同。</span>
+-o <span># 只输出文件中匹配到的部分。</span>
+-m <span>&lt;</span>num<span>></span> --max-count<span>=</span><span>&lt;</span>num<span>></span> <span># 找到num行结果后停止查找，用来限制匹配行数</span></code></pre>
+<h3>规则表达式</h3><pre><code>^    <span># 锚定行的开始 如：'^grep'匹配所有以grep开头的行。    </span>
+&#36;    <span># 锚定行的结束 如：'grep&#36;' 匹配所有以grep结尾的行。</span>
+<span>.</span>    <span># 匹配一个非换行符的字符 如：'gr.p'匹配gr后接一个任意字符，然后是p。    </span>
+*    <span># 匹配零个或多个先前字符 如：'*grep'匹配所有一个或多个空格后紧跟grep的行。    </span>
+.*   <span># 一起用代表任意字符。   </span>
+<span>[</span><span>]</span>   <span># 匹配一个指定范围内的字符，如'[Gg]rep'匹配Grep和grep。    </span>
+<span>[</span>^<span>]</span>  <span># 匹配一个不在指定范围内的字符，如：'[^A-FH-Z]rep'匹配不包含A-R和T-Z的一个字母开头，紧跟rep的行。    </span>
+<span>\</span><span>(</span><span>..</span><span>\</span><span>)</span>  <span># 标记匹配字符，如'\(love\)'，love被标记为1。    </span>
+<span>\</span><span>&lt;</span>      <span># 锚定单词的开始，如:'\&lt;grep'匹配包含以grep开头的单词的行。    </span>
+<span>\</span><span>></span>      <span># 锚定单词的结束，如'grep\>'匹配包含以grep结尾的单词的行。    </span>
+x<span>\</span><span>{</span>m<span>\</span><span>}</span>  <span># 重复字符x，m次，如：'0\{5\}'匹配包含5个o的行。    </span>
+x<span>\</span><span>{</span>m,<span>\</span><span>}</span>   <span># 重复字符x,至少m次，如：'o\{5,\}'匹配至少有5个o的行。    </span>
+x<span>\</span><span>{</span>m,n<span>\</span><span>}</span>  <span># 重复字符x，至少m次，不多于n次，如：'o\{5,10\}'匹配5--10个o的行。   </span>
+<span>\</span>w    <span># 匹配文字和数字字符，也就是[A-Za-z0-9]，如：'G\w*p'匹配以G后跟零个或多个文字或数字字符，然后是p。   </span>
+<span>\</span>W    <span># \w的反置形式，匹配一个或多个非单词字符，如点号句号等。   </span>
+<span>\</span>b    <span># 单词锁定符，如: '\bgrep\b'只匹配grep。  </span></code></pre>
+<h2>grep命令常见用法</h2><p>在文件中搜索一个单词，命令会返回一个包含 <strong>“match_pattern”</strong> 的文本行：</p>
+<pre><code><span>grep</span> match_pattern file_name
+<span>grep</span> <span>"match_pattern"</span> file_name</code></pre>
+<p>在多个文件中查找：</p>
+<pre><code><span>grep</span> <span>"match_pattern"</span> file_1 file_2 file_3 <span>..</span>.</code></pre>
+<p>输出除之外的所有行  <strong>-v</strong>  选项：</p>
+<pre><code><span>grep</span> -v <span>"match_pattern"</span> file_name</code></pre>
+<p>标记匹配颜色  <strong>--color=auto</strong>  选项：</p>
+<pre><code><span>grep</span> <span>"match_pattern"</span> file_name --color<span>=</span>auto</code></pre>
+<p>使用正则表达式  <strong>-E</strong>  选项：</p>
+<pre><code><span>grep</span> -E <span>"[1-9]+"</span>
+<span># 或</span>
+<span>egrep</span> <span>"[1-9]+"</span></code></pre>
+<p>使用正则表达式  <strong>-P</strong>  选项：</p>
+<pre><code><span>grep</span> -P <span>"(\d{3}\-){2}\d{4}"</span> file_name</code></pre>
+<p>只输出文件中匹配到的部分  <strong>-o</strong>  选项：</p>
+<pre><code><span>echo</span> this is a <span>test</span> line. <span>|</span> <span>grep</span> -o -E <span>"[a-z]+\."</span>
+line.
+
+<span>echo</span> this is a <span>test</span> line. <span>|</span> <span>egrep</span> -o <span>"[a-z]+\."</span>
+line.</code></pre>
+<p>统计文件或者文本中包含匹配字符串的行数  <strong>-c</strong>  选项：</p>
+<pre><code><span>grep</span> -c <span>"text"</span> file_name</code></pre>
+<p>输出包含匹配字符串的行数  <strong>-n</strong>  选项：</p>
+<pre><code><span>grep</span> <span>"text"</span> -n file_name
+<span># 或</span>
+<span>cat</span> file_name <span>|</span> <span>grep</span> <span>"text"</span> -n
+
+<span>#多个文件</span>
+<span>grep</span> <span>"text"</span> -n file_1 file_2</code></pre>
+<p>打印样式匹配所位于的字符或字节偏移：</p>
+<pre><code><span>echo</span> gun is not unix <span>|</span> <span>grep</span> -b -o <span>"not"</span>
+<span>7</span>:not
+<span>#一行中字符串的字符便宜是从该行的第一个字符开始计算，起始值为0。选项  **-b -o**  一般总是配合使用。</span></code></pre>
+<p>搜索多个文件并查找匹配文本在哪些文件中：</p>
+<pre><code><span>grep</span> -l <span>"text"</span> file1 file2 file3<span>..</span>.</code></pre>
+<h3>grep递归搜索文件</h3><p>在多级目录中对文本进行递归搜索：</p>
+<pre><code><span>grep</span> <span>"text"</span> <span>.</span> -r -n
+<span># .表示当前目录。</span></code></pre>
+<p>忽略匹配样式中的字符大小写：</p>
+<pre><code><span>echo</span> <span>"hello world"</span> <span>|</span> <span>grep</span> -i <span>"HELLO"</span>
+<span># hello</span></code></pre>
+<p>选项  <strong>-e</strong>  制动多个匹配样式：</p>
+<pre><code><span>echo</span> this is a text line <span>|</span> <span>grep</span> -e <span>"is"</span> -e <span>"line"</span> -o
+is
+line
+
+<span>#也可以使用 **-f** 选项来匹配多个样式，在样式文件中逐行写出需要匹配的字符。</span>
+<span>cat</span> patfile
+aaa
+bbb
+
+<span>echo</span> aaa bbb ccc ddd eee <span>|</span> <span>grep</span> -f patfile -o</code></pre>
+<p>在grep搜索结果中包括或者排除指定文件：</p>
+<pre><code><span># 只在目录中所有的.php和.html文件中递归搜索字符"main()"</span>
+<span>grep</span> <span>"main()"</span> <span>.</span> -r --include *.<span>{</span>php,html<span>}</span>
+
+<span># 在搜索结果中排除所有README文件</span>
+<span>grep</span> <span>"main()"</span> <span>.</span> -r --exclude <span>"README"</span>
+
+<span># 在搜索结果中排除filelist文件列表里的文件</span>
+<span>grep</span> <span>"main()"</span> <span>.</span> -r --exclude-from filelist
+</code></pre>
+<p>使用0值字节后缀的grep与xargs：</p>
+<pre><code><span># 测试文件：</span>
+<span>echo</span> <span>"aaa"</span> <span>></span> file1
+<span>echo</span> <span>"bbb"</span> <span>></span> file2
+<span>echo</span> <span>"aaa"</span> <span>></span> file3
+
+<span>grep</span> <span>"aaa"</span> file* -lZ <span>|</span> <span>xargs</span> -0 <span>rm</span>
+
+<span># 执行后会删除file1和file3，grep输出用-Z选项来指定以0值字节作为终结符文件名（\0），xargs -0 读取输入并用0值字节终结符分隔文件名，然后删除匹配文件，-Z通常和-l结合使用。</span></code></pre>
+<p>grep静默输出：</p>
+<pre><code><span>grep</span> -q <span>"test"</span> filename
+<span># 不会输出任何信息，如果命令运行成功返回0，失败则返回非0值。一般用于条件测试。</span></code></pre>
+<p>打印出匹配文本之前或者之后的行：</p>
+<pre><code><span># 显示匹配某个结果之后的3行，使用 -A 选项：</span>
+<span>seq</span> <span>10</span> <span>|</span> <span>grep</span> <span>"5"</span> -A <span>3</span>
+<span>5</span>
+<span>6</span>
+<span>7</span>
+<span>8</span>
+
+<span># 显示匹配某个结果之前的3行，使用 -B 选项：</span>
+<span>seq</span> <span>10</span> <span>|</span> <span>grep</span> <span>"5"</span> -B <span>3</span>
+<span>2</span>
+<span>3</span>
+<span>4</span>
+<span>5</span>
+
+<span># 显示匹配某个结果的前三行和后三行，使用 -C 选项：</span>
+<span>seq</span> <span>10</span> <span>|</span> <span>grep</span> <span>"5"</span> -C <span>3</span>
+<span>2</span>
+<span>3</span>
+<span>4</span>
+<span>5</span>
+<span>6</span>
+<span>7</span>
+<span>8</span>
+
+<span># 如果匹配结果有多个，会用“--”作为各匹配结果之间的分隔符：</span>
+<span>echo</span> -e <span>"a<span title="\n">\n</span>b<span title="\n">\n</span>c<span title="\n">\n</span>a<span title="\n">\n</span>b<span title="\n">\n</span>c"</span> <span>|</span> <span>grep</span> a -A <span>1</span>
+a
+b
+--
+a
+b</code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

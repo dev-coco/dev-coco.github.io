@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>find:在指定目录下查找文件</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="find:在指定目录下查找文件 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>find</h1><p>在指定目录下查找文件</p>
+<h2>补充说明</h2><p><strong>find命令</strong> 用来在指定目录下查找文件。任何位于参数之前的字符串都将被视为欲查找的目录名。如果使用该命令时，不设置任何参数，则find命令将在当前目录下查找子目录与文件。并且将查找到的子目录和文件全部进行显示。</p>
+<h3>语法</h3><pre><code>find<span>(</span>选项<span>)</span><span>(</span>参数<span>)</span></code></pre>
+<h3>选项</h3><pre><code>-amin<span>&lt;</span>分钟<span>></span>：查找在指定时间曾被存取过的文件或目录，单位以分钟计算；
+-anewer<span>&lt;</span>参考文件或目录<span>></span>：查找其存取时间较指定文件或目录的存取时间更接近现在的文件或目录；
+-atime<span>&lt;</span><span>24</span>小时数<span>></span>：查找在指定时间曾被存取过的文件或目录，单位以24小时计算；
+-cmin<span>&lt;</span>分钟<span>></span>：查找在指定时间之时被更改过的文件或目录；
+-cnewer<span>&lt;</span>参考文件或目录<span>></span>查找其更改时间较指定文件或目录的更改时间更接近现在的文件或目录；
+-ctime<span>&lt;</span><span>24</span>小时数<span>></span>：查找在指定时间之时被更改的文件或目录，单位以24小时计算；
+-daystart：从本日开始计算时间；
+-depth：从指定目录下最深层的子目录开始查找；
+-expty：寻找文件大小为0 Byte的文件，或目录下没有任何子目录或文件的空目录；
+-exec<span>&lt;</span>执行指令<span>></span>：假设find指令的回传值为True，就执行该指令；
+-false：将find指令的回传值皆设为False；
+-fls<span>&lt;</span>列表文件<span>></span>：此参数的效果和指定“-ls”参数类似，但会把结果保存为指定的列表文件；
+-follow：排除符号连接；
+-fprint<span>&lt;</span>列表文件<span>></span>：此参数的效果和指定“-print”参数类似，但会把结果保存成指定的列表文件；
+-fprint<span><span>0</span>&lt;</span>列表文件<span>></span>：此参数的效果和指定“-print0”参数类似，但会把结果保存成指定的列表文件；
+-fprintf<span>&lt;</span>列表文件<span>></span><span>&lt;</span>输出格式<span>></span>：此参数的效果和指定“-printf”参数类似，但会把结果保存成指定的列表文件；
+-fstype<span>&lt;</span>文件系统类型<span>></span>：只寻找该文件系统类型下的文件或目录；
+-gid<span>&lt;</span>群组识别码<span>></span>：查找符合指定之群组识别码的文件或目录；
+-group<span>&lt;</span>群组名称<span>></span>：查找符合指定之群组名称的文件或目录；
+-help或--help：在线帮助；
+-ilname<span>&lt;</span>范本样式<span>></span>：此参数的效果和指定“-lname”参数类似，但忽略字符大小写的差别；
+-iname<span>&lt;</span>范本样式<span>></span>：此参数的效果和指定“-name”参数类似，但忽略字符大小写的差别；
+-inum<span>&lt;</span>inode编号<span>></span>：查找符合指定的inode编号的文件或目录；
+-ipath<span>&lt;</span>范本样式<span>></span>：此参数的效果和指定“-path”参数类似，但忽略字符大小写的差别；
+-iregex<span>&lt;</span>范本样式<span>></span>：此参数的效果和指定“-regexe”参数类似，但忽略字符大小写的差别；
+-links<span>&lt;</span>连接数目<span>></span>：查找符合指定的硬连接数目的文件或目录；
+-lname<span>&lt;</span>范本样式<span>></span>：指定字符串作为寻找符号连接的范本样式；
+-ls：假设find指令的回传值为Ture，就将文件或目录名称列出到标准输出；
+-maxdepth<span>&lt;</span>目录层级<span>></span>：设置最大目录层级；
+-mindepth<span>&lt;</span>目录层级<span>></span>：设置最小目录层级；
+-mmin<span>&lt;</span>分钟<span>></span>：查找在指定时间曾被更改过的文件或目录，单位以分钟计算；
+-mount：此参数的效果和指定“-xdev”相同；
+-mtime<span>&lt;</span><span>24</span>小时数<span>></span>：查找在指定时间曾被更改过的文件或目录，单位以24小时计算；
+-name<span>&lt;</span>范本样式<span>></span>：指定字符串作为寻找文件或目录的范本样式；
+-newer<span>&lt;</span>参考文件或目录<span>></span>：查找其更改时间较指定文件或目录的更改时间更接近现在的文件或目录；
+-nogroup：找出不属于本地主机群组识别码的文件或目录；
+-noleaf：不去考虑目录至少需拥有两个硬连接存在；
+-nouser：找出不属于本地主机用户识别码的文件或目录；
+-ok<span>&lt;</span>执行指令<span>></span>：此参数的效果和指定“-exec”类似，但在执行指令之前会先询问用户，若回答“y”或“Y”，则放弃执行命令；
+-path<span>&lt;</span>范本样式<span>></span>：指定字符串作为寻找目录的范本样式；
+-perm<span>&lt;</span>权限数值<span>></span>：查找符合指定的权限数值的文件或目录；
+-print：假设find指令的回传值为Ture，就将文件或目录名称列出到标准输出。格式为每列一个名称，每个名称前皆有“./”字符串；
+-print0：假设find指令的回传值为Ture，就将文件或目录名称列出到标准输出。格式为全部的名称皆在同一行；
+-printf<span>&lt;</span>输出格式<span>></span>：假设find指令的回传值为Ture，就将文件或目录名称列出到标准输出。格式可以自行指定；
+-prune：不寻找字符串作为寻找文件或目录的范本样式<span>;</span>
+-regex<span>&lt;</span>范本样式<span>></span>：指定字符串作为寻找文件或目录的范本样式；
+-size<span>&lt;</span>文件大小<span>></span>：查找符合指定的文件大小的文件；
+-true：将find指令的回传值皆设为True；
+-type<span>&lt;</span>文件类型<span>></span>：只寻找符合指定的文件类型的文件；
+-uid<span>&lt;</span>用户识别码<span>></span>：查找符合指定的用户识别码的文件或目录；
+-used<span>&lt;</span>日数<span>></span>：查找文件或目录被更改之后在指定时间曾被存取过的文件或目录，单位以日计算；
+-user<span>&lt;</span>拥有者名称<span>></span>：查找符和指定的拥有者名称的文件或目录；
+-version或——version：显示版本信息；
+-xdev：将范围局限在先行的文件系统中；
+-xtype<span>&lt;</span>文件类型<span>></span>：此参数的效果和指定“-type”参数类似，差别在于它针对符号连接检查。</code></pre>
+<h3>参数</h3><p>起始目录：查找文件的起始目录。</p>
+<h3>实例</h3><pre><code><span># 当前目录搜索所有文件，文件内容 包含 “140.206.111.111” 的内容</span>
+<span>find</span> <span>.</span> -type f -name <span>"*"</span> <span>|</span> <span>xargs</span> <span>grep</span> <span>"140.206.111.111"</span></code></pre>
+<h4>根据文件或者正则表达式进行匹配</h4><p>列出当前目录及子目录下所有文件和文件夹</p>
+<pre><code><span>find</span> <span>.</span></code></pre>
+<p>在<code>/home</code>目录下查找以.txt结尾的文件名</p>
+<pre><code><span>find</span> /home -name <span>"*.txt"</span></code></pre>
+<p>同上，但忽略大小写</p>
+<pre><code><span>find</span> /home -iname <span>"*.txt"</span></code></pre>
+<p>当前目录及子目录下查找所有以.txt和.pdf结尾的文件</p>
+<pre><code><span>find</span> <span>.</span> <span>\</span><span>(</span> -name <span>"*.txt"</span> -o -name <span>"*.pdf"</span> <span>\</span><span>)</span>
+
+或
+
+<span>find</span> <span>.</span> -name <span>"*.txt"</span> -o -name <span>"*.pdf"</span></code></pre>
+<p>匹配文件路径或者文件</p>
+<pre><code><span>find</span> /usr/ -path <span>"*local*"</span></code></pre>
+<p>基于正则表达式匹配文件路径</p>
+<pre><code><span>find</span> <span>.</span> -regex <span>".*\(\.txt\|\.pdf\)&#36;"</span></code></pre>
+<p>同上，但忽略大小写</p>
+<pre><code><span>find</span> <span>.</span> -iregex <span>".*\(\.txt\|\.pdf\)&#36;"</span></code></pre>
+<h4>否定参数</h4><p>找出/home下不是以.txt结尾的文件</p>
+<pre><code><span>find</span> /home <span>!</span> -name <span>"*.txt"</span></code></pre>
+<h4>根据文件类型进行搜索</h4><pre><code><span>find</span> <span>.</span> -type 类型参数</code></pre>
+<p>类型参数列表：</p>
+<ul>
+<li><strong>f</strong>  普通文件</li>
+<li><strong>l</strong>  符号连接</li>
+<li><strong>d</strong>  目录</li>
+<li><strong>c</strong>  字符设备</li>
+<li><strong>b</strong>  块设备</li>
+<li><strong>s</strong>  套接字</li>
+<li><strong>p</strong>  Fifo</li>
+</ul>
+<h4>基于目录深度搜索</h4><p>向下最大深度限制为3</p>
+<pre><code><span>find</span> <span>.</span> -maxdepth <span>3</span> -type f</code></pre>
+<p>搜索出深度距离当前目录至少2个子目录的所有文件</p>
+<pre><code><span>find</span> <span>.</span> -mindepth <span>2</span> -type f</code></pre>
+<h4>根据文件时间戳进行搜索</h4><pre><code><span>find</span> <span>.</span> -type f 时间戳</code></pre>
+<p>UNIX/Linux文件系统每个文件都有三种时间戳：</p>
+<ul>
+<li><strong>访问时间</strong> （-atime/天，-amin/分钟）：用户最近一次访问时间。</li>
+<li><strong>修改时间</strong> （-mtime/天，-mmin/分钟）：文件最后一次修改时间。</li>
+<li><strong>变化时间</strong> （-ctime/天，-cmin/分钟）：文件数据元（例如权限等）最后一次修改时间。</li>
+</ul>
+<p>搜索最近七天内被访问过的所有文件</p>
+<pre><code><span>find</span> <span>.</span> -type f -atime -7</code></pre>
+<p>搜索恰好在七天前被访问过的所有文件</p>
+<pre><code><span>find</span> <span>.</span> -type f -atime <span>7</span></code></pre>
+<p>搜索超过七天内被访问过的所有文件</p>
+<pre><code><span>find</span> <span>.</span> -type f -atime +7</code></pre>
+<p>搜索访问时间超过10分钟的所有文件</p>
+<pre><code><span>find</span> <span>.</span> -type f -amin +10</code></pre>
+<p>找出比file.log修改时间更长的所有文件</p>
+<pre><code><span>find</span> <span>.</span> -type f -newer file.log</code></pre>
+<h4>根据文件大小进行匹配</h4><pre><code><span>find</span> <span>.</span> -type f -size 文件大小单元</code></pre>
+<p>文件大小单元：</p>
+<ul>
+<li><strong>b</strong>  —— 块（512字节）</li>
+<li><strong>c</strong>  —— 字节</li>
+<li><strong>w</strong>  —— 字（2字节）</li>
+<li><strong>k</strong>  —— 千字节</li>
+<li><strong>M</strong>  —— 兆字节</li>
+<li><strong>G</strong>  —— 吉字节</li>
+</ul>
+<p>搜索大于10KB的文件</p>
+<pre><code><span>find</span> <span>.</span> -type f -size +10k</code></pre>
+<p>搜索小于10KB的文件</p>
+<pre><code><span>find</span> <span>.</span> -type f -size -10k</code></pre>
+<p>搜索等于10KB的文件</p>
+<pre><code><span>find</span> <span>.</span> -type f -size 10k</code></pre>
+<h4>删除匹配文件</h4><p>删除当前目录下所有.txt文件</p>
+<pre><code><span>find</span> <span>.</span> -type f -name <span>"*.txt"</span> -delete</code></pre>
+<h4>根据文件权限/所有权进行匹配</h4><p>当前目录下搜索出权限为777的文件</p>
+<pre><code><span>find</span> <span>.</span> -type f -perm <span>777</span></code></pre>
+<p>找出当前目录下权限不是644的php文件</p>
+<pre><code><span>find</span> <span>.</span> -type f -name <span>"*.php"</span> <span>!</span> -perm <span>644</span></code></pre>
+<p>找出当前目录用户tom拥有的所有文件</p>
+<pre><code><span>find</span> <span>.</span> -type f -user tom</code></pre>
+<p>找出当前目录用户组sunk拥有的所有文件</p>
+<pre><code><span>find</span> <span>.</span> -type f -group sunk</code></pre>
+<h4>借助<code>-exec</code>选项与其他命令结合使用</h4><p>找出当前目录下所有root的文件，并把所有权更改为用户tom</p>
+<pre><code><span>find</span> .-type f -user root -exec <span>chown</span> tom <span>{</span><span>}</span> <span>\</span><span>;</span></code></pre>
+<p>上例中， <strong>{}</strong>  用于与 <strong>-exec</strong> 选项结合使用来匹配所有文件，然后会被替换为相应的文件名。</p>
+<p>找出自己家目录下所有的.txt文件并删除</p>
+<pre><code><span>find</span> <span>&#36;HOME</span>/. -name <span>"*.txt"</span> -ok <span>rm</span> <span>{</span><span>}</span> <span>\</span><span>;</span></code></pre>
+<p>上例中， <strong>-ok</strong> 和 <strong>-exec</strong> 行为一样，不过它会给出提示，是否执行相应的操作。</p>
+<p>查找当前目录下所有.txt文件并把他们拼接起来写入到all.txt文件中</p>
+<pre><code><span>find</span> <span>.</span> -type f -name <span>"*.txt"</span> -exec <span>cat</span> <span>{</span><span>}</span> <span>\</span><span>;</span><span>></span> /all.txt</code></pre>
+<p>将30天前的.log文件移动到old目录中</p>
+<pre><code><span>find</span> <span>.</span> -type f -mtime +30 -name <span>"*.log"</span> -exec <span>cp</span> <span>{</span><span>}</span> old <span>\</span><span>;</span></code></pre>
+<p>找出当前目录下所有.txt文件并以“File:文件名”的形式打印出来</p>
+<pre><code><span>find</span> <span>.</span> -type f -name <span>"*.txt"</span> -exec <span>printf</span> <span>"File: %s<span title="\n">\n</span>"</span> <span>{</span><span>}</span> <span>\</span><span>;</span></code></pre>
+<p>因为单行命令中-exec参数中无法使用多个命令，以下方法可以实现在-exec之后接受多条命令</p>
+<pre><code>-exec ./text.sh <span>{</span><span>}</span> <span>\</span><span>;</span></code></pre>
+<h4>搜索但跳出指定的目录</h4><p>查找当前目录或者子目录下所有.txt文件，但是跳过子目录sk</p>
+<pre><code><span>find</span> <span>.</span> -path <span>"./sk"</span> -prune -o -name <span>"*.txt"</span> -print</code></pre>
+<h4>find其他技巧收集</h4><p>要列出所有长度为零的文件</p>
+<pre><code><span>find</span> <span>.</span> -empty</code></pre>
+<h4>其它实例</h4><pre><code><span>find</span> ~ -name <span>'*jpg'</span> <span># 主目录中找到所有的 jpg 文件。 -name 参数允许你将结果限制为与给定模式匹配的文件。</span>
+<span>find</span> ~ -iname <span>'*jpg'</span> <span># -iname 就像 -name，但是不区分大小写</span>
+<span>find</span> ~ <span>(</span> -iname <span>'jpeg'</span> -o -iname <span>'jpg'</span> <span>)</span> <span># 一些图片可能是 .jpeg 扩展名。幸运的是，我们可以将模式用“或”（表示为 -o）来组合。</span>
+<span>find</span> ~ <span>\</span><span>(</span> -iname <span>'*jpeg'</span> -o -iname <span>'*jpg'</span> <span>\</span><span>)</span> -type f <span># 如果你有一些以 jpg 结尾的目录呢？ （为什么你要命名一个 bucketofjpg 而不是 pictures 的目录就超出了本文的范围。）我们使用 -type 参数修改我们的命令来查找文件。</span>
+<span>find</span> ~ <span>\</span><span>(</span> -iname <span>'*jpeg'</span> -o -iname <span>'*jpg'</span> <span>\</span><span>)</span> -type d <span># 也许你想找到那些命名奇怪的目录，以便稍后重命名它们</span></code></pre>
+<p>最近拍了很多照片，所以让我们把它缩小到上周更改的文件</p>
+<pre><code><span>find</span> ~ <span>\</span><span>(</span> -iname <span>'*jpeg'</span> -o -iname <span>'*jpg'</span> <span>\</span><span>)</span> -type f -mtime -7</code></pre>
+<p>你可以根据文件状态更改时间 （ctime）、修改时间 （mtime） 或访问时间 （atime） 来执行时间过滤。 这些是在几天内，所以如果你想要更细粒度的控制，你可以表示为在几分钟内（分别是 cmin、mmin 和 amin）。 除非你确切地知道你想要的时间，否则你可能会在 + （大于）或 - （小于）的后面加上数字。</p>
+<p>但也许你不关心你的照片。也许你的磁盘空间不够用，所以你想在 log 目录下找到所有巨大的（让我们定义为“大于 1GB”）文件：</p>
+<pre><code><span>find</span> /var/log -size +1G</code></pre>
+<p>或者，也许你想在 /data 中找到 bcotton 拥有的所有文件：</p>
+<pre><code><span>find</span> /data -owner bcotton</code></pre>
+<p>你还可以根据权限查找文件。也许你想在你的主目录中找到对所有人可读的文件，以确保你不会过度分享。</p>
+<pre><code><span>find</span> ~ -perm -o<span>=</span>r</code></pre>
+<p>删除 mac 下自动生成的文件</p>
+<pre><code><span>find</span> ./ -name <span>'__MACOSX'</span> -depth -exec <span>rm</span> -rf <span>{</span><span>}</span> <span>\</span><span>;</span></code></pre>
+<p>统计代码行数</p>
+<pre><code><span>find</span> <span>.</span> -name <span>"*.java"</span><span>|</span><span>xargs</span> <span>cat</span><span>|</span><span>grep</span> -v ^&#36;<span>|</span><span>wc</span> -l <span># 代码行数统计, 排除空行</span></code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

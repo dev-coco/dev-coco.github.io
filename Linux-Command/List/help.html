@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>help:该命令是bash内建命令，用于显示bash内建命令的帮助信息</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="help:该命令是bash内建命令，用于显示bash内建命令的帮助信息 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>help</h1><p>该命令是bash内建命令，用于显示bash内建命令的帮助信息。</p>
+<h2>补充说明</h2><p><strong>help命令</strong> help命令只能显示bash内建命令的帮助信息，而对于外部命令的帮助信息只能使用man或者info命令查看。</p>
+<h3>语法</h3><pre><code>help<span>(</span>选项<span>)</span><span>(</span>参数<span>)</span></code></pre>
+<h3>选项</h3><pre><code>-d：显示内建命令的简要描述。
+-m：按照man手册的格式输出内建命令的帮助信息。
+-s：仅输出内建命令的命令格式。
+不指定选项时：输出的帮助信息类似于-m选项，但是缺少段落名称和<span>'SEE ALSO'</span>，<span>'IMPLEMENTATION'</span>部分。</code></pre>
+<h3>参数</h3><p>bash内建命令（可以为多个，请用空格分隔开）。</p>
+<h3>常见问题</h3><p>Q：有哪些命令是bash内建命令？我如何判断一个命令是否为bash内建命令？</p>
+<p>A：您可以在终端使用 &#39;man builtin&#39; 或 &#39;man builtins&#39; 来获取；您可以查看bash内建命令 &#39;type&#39; 的帮助信息。</p>
+<p>Q：那么help命令本身的帮助信息如何获取？</p>
+<p>A：把help作为参数传给help命令；）</p>
+<p>Q：为什么echo也可以用 &#39;man echo&#39; 来查看帮助信息？</p>
+<p>A：因为除了bash内建的echo，GNU/linux的coreutils包里也有该命令；在echo的man手册中，DESCRIPTION段落的 &#39;NOTE&#39; 也提示了和同名内建的不同。</p>
+<p>PS：当你在shell脚本里定义了一个叫 &#39;echo&#39; 的函数，那么调用的时候优先级会如何呢？</p>
+<p>请参考 &#39;builtin&#39; 命令</p>
+<p>Q：我需要获得更多的bash的相关帮助信息</p>
+<p>A：限于篇幅和主题，您可以在终端执行 &#39;man bash&#39; ， &#39;info bash&#39; 等。</p>
+<h3>实例</h3><p>使用help命令显示shell内部shopt命令的帮助信息，输入如下命令：</p>
+<pre><code><span>help</span> <span>shopt</span>                <span>#获取shopt命令的帮助信息</span>
+shopt: <span>shopt</span> <span>[</span>-pqsu<span>]</span> <span>[</span>-o long-option<span>]</span> optname <span>[</span>optname<span>..</span>.<span>]</span>
+    Toggle the values of variables controlling optional behavior.
+    The -s flag means to <span>enable</span> <span>(</span>set<span>)</span> each OPTNAME<span>;</span> the -u flag
+    unsets each OPTNAME.  The -q flag suppresses output<span>;</span> the <span>exit</span>
+    status indicates whether each OPTNAME is <span>set</span> or unset.  The -o
+    option restricts the OPTNAMEs to those defined <span>for</span> use with
+    `set -o'.  With no options, or with the -p option, a list of all
+    settable options is displayed, with an indication of whether or
+    not each is set.</code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

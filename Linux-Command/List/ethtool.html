@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>ethtool:显示或修改以太网卡的配置信息</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="ethtool:显示或修改以太网卡的配置信息 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>ethtool</h1><p>显示或修改以太网卡的配置信息</p>
+<h2>补充说明</h2><p>ethtool命令用于获取以太网卡的配置信息，或者修改这些配置。这个命令比较复杂，功能特别多。</p>
+<h3>语法</h3><pre><code><span>ethtool</span> <span>[</span> -a <span>|</span> -c <span>|</span> -g <span>|</span> -i <span>|</span> -d <span>|</span> -k <span>|</span> -r <span>|</span> -S <span>|</span><span>]</span> ethX
+<span>ethtool</span> <span>[</span>-A<span>]</span> ethX <span>[</span>autoneg on<span>|</span>off<span>]</span> <span>[</span>rx on<span>|</span>off<span>]</span> <span>[</span>tx on<span>|</span>off<span>]</span>
+<span>ethtool</span> <span>[</span>-C<span>]</span> ethX <span>[</span>adaptive-rx on<span>|</span>off<span>]</span> <span>[</span>adaptive-tx on<span>|</span>off<span>]</span> <span>[</span>rx-usecs N<span>]</span> <span>[</span>rx-frames N<span>]</span> <span>[</span>rx-usecs-irq N<span>]</span> <span>[</span>rx-frames-irq N<span>]</span> <span>[</span>tx-usecs N<span>]</span> <span>[</span>tx-frames N<span>]</span> <span>[</span>tx-usecs-irq N<span>]</span> <span>[</span>tx-frames-irq N<span>]</span> <span>[</span>stats-block-usecs N<span>]</span><span>[</span>pkt-rate-low N<span>]</span><span>[</span>rx-usecs-low N<span>]</span> <span>[</span>rx-frames-low N<span>]</span> <span>[</span>tx-usecs-low N<span>]</span> <span>[</span>tx-frames-lowN<span>]</span> <span>[</span>pkt-rate-high N<span>]</span> <span>[</span>rx-usecs-high N<span>]</span> <span>[</span>rx-frames-high N<span>]</span> <span>[</span>tx-usecs-high N<span>]</span> <span>[</span>tx-frames-high N<span>]</span> <span>[</span>sample-interval N<span>]</span>
+<span>ethtool</span> <span>[</span>-G<span>]</span> ethX <span>[</span>rx N<span>]</span> <span>[</span>rx-mini N<span>]</span> <span>[</span>rx-jumbo N<span>]</span> <span>[</span>tx N<span>]</span>
+<span>ethtool</span> <span>[</span>-e<span>]</span> ethX <span>[</span>raw on<span>|</span>off<span>]</span> <span>[</span>offset N<span>]</span> <span>[</span>length N<span>]</span>
+<span>ethtool</span> <span>[</span>-E<span>]</span> ethX <span>[</span>magic N<span>]</span> <span>[</span>offset N<span>]</span> <span>[</span>value N<span>]</span>
+<span>ethtool</span> <span>[</span>-K<span>]</span> ethX <span>[</span>rx on<span>|</span>off<span>]</span> <span>[</span>tx on<span>|</span>off<span>]</span> <span>[</span>sg on<span>|</span>off<span>]</span> <span>[</span>tso on<span>|</span>off<span>]</span>
+<span>ethtool</span> <span>[</span>-p<span>]</span> ethX <span>[</span>N<span>]</span>
+<span>ethtool</span> <span>[</span>-t<span>]</span> ethX <span>[</span>offline<span>|</span>online<span>]</span>
+<span>ethtool</span> <span>[</span>-s<span>]</span> ethX <span>[</span>speed <span>10</span><span>|</span><span>100</span><span>|</span><span>1000</span><span>]</span> <span>[</span>duplex half<span>|</span>full<span>]</span> <span>[</span>autoneg on<span>|</span>off<span>]</span> <span>[</span>port tp<span>|</span>aui<span>|</span>bnc<span>|</span>mii<span>]</span> <span>[</span>phyad N<span>]</span> <span>[</span>xcvr internal<span>|</span>external<span>]</span>
+<span>[</span>wol p<span>|</span>u<span>|</span>m<span>|</span>b<span>|</span>a<span>|</span>g<span>|</span>s<span>|</span>d<span>..</span>.<span>]</span> <span>[</span>sopass xx:yy:zz:aa:bb:cc<span>]</span> <span>[</span>msglvl N<span>]</span></code></pre>
+<h3>选项</h3><pre><code>-a 查看网卡中 接收模块RX、发送模块TX和Autonegotiate模块的状态：启动on 或 停用off。
+-A 修改网卡中 接收模块RX、发送模块TX和Autonegotiate模块的状态：启动on 或 停用off。
+-c display the Coalesce information of the specified ethernet card。
+-C Change the Coalesce setting of the specified ethernet card。
+-g Display the rx/tx ring parameter information of the specified ethernet card。
+-G change the rx/tx ring setting of the specified ethernet card。
+-i 显示网卡驱动的信息，如驱动的名称、版本等。
+-d 显示register dump信息, 部分网卡驱动不支持该选项。
+-e 显示EEPROM dump信息，部分网卡驱动不支持该选项。
+-E 修改网卡EEPROM byte。
+-k 显示网卡Offload参数的状态：on 或 off，包括rx-checksumming、tx-checksumming等。
+-K 修改网卡Offload参数的状态。
+-p 用于区别不同ethX对应网卡的物理位置，常用的方法是使网卡port上的led不断的闪；N指示了网卡闪的持续时间，以秒为单位。
+-r 如果auto-negotiation模块的状态为on，则restarts auto-negotiation。
+-S 显示NIC- and driver-specific 的统计参数，如网卡接收/发送的字节数、接收/发送的广播包个数等。
+-t 让网卡执行自我检测，有两种模式：offline or online。
+-s 修改网卡的部分配置，包括网卡速度、单工/全双工模式、mac地址等。</code></pre>
+<h3>数据来源</h3><p>Ethtool命令显示的信息来源于网卡驱动层，即TCP/ip协议的链路层。该命令在Linux内核中实现的逻辑层次为：</p>
+<p>最重要的结构体<code>struct ethtool_ops</code>，该结构体成员为用于显示或修改以太网卡配置的一系列函数指针，见下表中的第二列。</p>
+<p>网卡驱动负责实现（部分）这些函数，并将其封装入<code>ethtool_ops</code>结构体，为网络核心层提供统一的调用接口。因此，不同的网卡驱动会给应用层返回不同的信息。<code>Ethtool命令选项</code>、<code>struct ethtool_ops成员函数</code>、<code>Ethtool命令显示参数的来源</code>，三者间的对应关系如下表所示：</p>
+<table>
+<tbody>
+<tr>
+<th style="width: 100px;">命令选项</th>
+<th>struct ethtool_ops成员函数</th>
+<th>Ethtool命令显示参数的来源（以网卡驱动BNX2为例）</th></tr>
+<tr>
+<td>无 -s</td>
+<td>get_settingsget_wol get_msglevel get_link set_settings set_wol set_msglevel</td>
+<td>从网卡寄存器中获得网卡速度等信息，可配置。</td>
+</tr>
+<tr>
+<td>-a -A</td>
+<td>get_pauseparam set_pauseparam</td>
+<td>从网卡寄存器中获得Autonegotiate/RX/TX模块的状态：on oroff，可配置。</td>
+</tr>
+<tr>
+<td>-c -C</td>
+<td>get_coalesceset_coalesce</td>
+<td>从网卡寄存器中获得coalescing参数：TX/RX一个数据包后，推迟发生TX/RX中断的时间(us)/数据包个数。—减小该值可以提高网卡的响应时间。 当rx-usecs&rx-frames同时被设为0时，RX中断停止。 当tx-usecs&tx-frames同时被设为0时，TX中断停止。</td>
+</tr>
+<tr>
+<td>-g -G</td>
+<td>get_ringparam set_ringparam</td>
+<td>除当前TX/RX ring的值（从网卡寄存器中读取得到，可配置）外，其它为网卡bnx2自己固定的信息。</td>
+</tr>
+<tr>
+<td>-k -K</td>
+<td>get_rx_csumget_tx_csum get_sg get_tso set_rx_csum set_tx_csum set_sg set_tso</td>
+<td>显示信息从保存该状态的变量中读取得到，没有对应的寄存器。因此，TX/RX校验等模块一直处于on状态，实际上是无法修改的。</td>
+</tr>
+<tr>
+<td>-i</td>
+<td>get_drvinfo[self_test_count, get_stats_coun,t get_regs_len, get_eeprom_len]</td>
+<td>网卡bnx2自己固定的信息，如：
+——————————————————–
+driver: bnx2 version: 1.4.30 firmware-version: 1.8.0.5 bus-info: 0000:09:00.0
+——————————————————–</td>
+</tr>
+<tr>
+<td>-d</td>
+<td>get_drvinfoget_regs</td>
+<td>不支持，即bnx2中没有实现函数get_regs。</td>
+</tr>
+<tr>
+<td>-e -E</td>
+<td>get_eepromset_eeprom</td>
+<td>不支持，即bnx2中没有实现函数get_eeprom。</td>
+</tr>
+<tr>
+<td>-r</td>
+<td>nway_reset</td>
+<td>配置网卡MII_BMCR寄存器，重启Auto negotiation模块。</td>
+</tr>
+<tr>
+<td>-p</td>
+<td>phys_id</td>
+<td>配置网卡BNX2_EMAC_LED寄存器，实现LED闪功能。</td>
+</tr>
+<tr>
+<td>-t</td>
+<td>self_test</td>
+<td>通过配置网卡寄存器，逐一测试网卡的硬件模块：registers，memory，loopback，Link stat，interrupt。</td>
+</tr>
+<tr>
+<td>-S</td>
+<td>get_ethtool_stats</td>
+<td>显示信息来源于网卡驱动中的结构体变量stats_blk。（网卡通过DMA方式，将寄存器BNX2_HC_STATISTICS _ADDR_L和BNX2_HC_STATISTICS_ADDR_H中的数据实时地读取到结构体变量struct statistics_block *stats_blk中。） —显示的数据都是从网卡寄存器中统计得到的，各项的含义需查询网卡（芯片）手册。</td>
+</tr>
+</tbody>
+</table>
+
+<p>由上可见，ethtool命令用于显示/配置网卡硬件（寄存器）。  </p>
+<h3>实例</h3><p>查看机器上网卡的速度：百兆还是千兆，请输入：</p>
+<pre><code>ethool eth0</code></pre>
+<p>操作完毕后，输出信息中<code>Speed:</code>这一项就指示了网卡的速度。停止网卡的发送模块TX，请输入：</p>
+<pre><code><span>ethtool</span> -A tx off eth0</code></pre>
+<p>操作完毕后，可输入<code>ethtool -a eth0</code>，查看tx模块是否已被停止。查看网卡eth0采用了何种驱动，请输入：</p>
+<pre><code><span>ethtool</span> -i eth0</code></pre>
+<p>操作完毕后，显示 driver: bnx2；version: 1.4.30 等信息。关闭网卡对收到的数据包的校验功能，请输入：</p>
+<pre><code><span>ethtool</span> -K eth0 rx off</code></pre>
+<p>操作完毕后，可输入<code>ethtool –k eth0</code>，查看校验功能是否已被停止。如果机器上安装了两块网卡，那么eth0对应着哪块网卡呢？输入：</p>
+<pre><code><span>ethtool</span> -p eth0 <span>10</span></code></pre>
+<p>操作完毕后，看哪块网卡的led灯在闪，eth0就对应着哪块网卡。查看网卡，在接收/发送数据时，有没有出错？请输入：</p>
+<pre><code><span>ethtool</span> –S eth0</code></pre>
+<p>将千兆网卡的速度降为百兆，请输入：</p>
+<pre><code><span>ethtool</span> -s eth0 speed <span>100</span></code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

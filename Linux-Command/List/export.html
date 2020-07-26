@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>export:为shell变量或函数设置导出属性</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="export:为shell变量或函数设置导出属性 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>export</h1><p>为shell变量或函数设置导出属性。</p>
+<h2>概要</h2><pre><code><span>export</span> <span>[</span>-fn<span>]</span> <span>[</span>name<span>[</span><span>=</span>word<span>]</span><span>]</span><span>..</span>.
+<span>export</span> -p</code></pre><h2>主要用途</h2><ul>
+<li>定义一到多个变量并设置导出属性。</li>
+<li>修改一到多个变量的值并设置导出属性。</li>
+<li>删除一到多个变量的导出属性。</li>
+<li>显示全部拥有导出属性的变量。</li>
+<li>为一到多个已定义函数新增导出属性。</li>
+<li>删除一到多个函数的导出属性。</li>
+<li>显示全部拥有导出属性的函数。</li>
+</ul>
+<h2>选项</h2><pre><code>-f：指向函数。
+-n：删除变量的导出属性。
+-p：显示全部拥有导出属性的变量。
+-pf：显示全部拥有导出属性的函数。
+-nf：删除函数的导出属性。
+--：在它之后的选项无效。</code></pre>
+<h2>参数</h2><p>name（可选）：变量名或已定义函数名。</p>
+<p>value（可选）：变量的值。</p>
+<h3>返回值</h3><p>export返回true除非你提供了非法选项或非法名称。</p>
+<h2>例子</h2><pre><code><span># 显示全部拥有导出属性的变量。</span>
+<span># export -p</span>
+<span># export</span>
+<span># 显示全部拥有导出属性的函数。</span>
+<span># export -pf</span></code></pre>
+<pre><code><span># 首先删除要演示的变量名</span>
+<span>#unset a b</span>
+<span># 定义变量的同时增加导出属性</span>
+<span>export</span> a <span>b</span><span>=</span><span>3</span>
+<span># 当然也可以先定义后增加导出属性</span>
+<span>b</span><span>=</span><span>3</span>
+<span>export</span> b
+
+<span># 修改拥有导出属性的变量的值</span>
+<span>export</span> <span>a</span><span>=</span><span>5</span> <span>b</span><span>=</span><span>7</span>
+<span># 当然也可以直接赋值修改</span>
+<span>a</span><span>=</span><span>5</span><span>;</span><span>b</span><span>=</span><span>7</span>
+
+<span># 删除变量的导出属性</span>
+<span>export</span> -n a b</code></pre>
+<pre><code><span># 首先删除要演示的函数名</span>
+<span>unset</span> func_1 func_2
+<span># 创建函数</span>
+<span>function</span> <span>func_1</span><span>(</span><span>)</span><span>{</span> <span>echo</span> <span>'123'</span><span>;</span> <span>}</span>
+<span>function</span> <span>func_2</span><span>(</span><span>)</span><span>{</span> <span>echo</span> <span>'890'</span><span>;</span> <span>}</span>
+
+<span># 为已定义函数增加导出属性</span>
+<span>export</span> -f func_1 func_2
+
+<span># 删除函数的导出属性</span>
+<span>export</span> -fn a b</code></pre>
+<pre><code><span># 添加环境变量（JAVA）到`~/.bashrc`</span>
+<span><span>PATH</span></span><span>=</span>/usr/local/jdk1.7.0/bin:<span>&#36;PATH</span>
+<span># 添加当前位置到动态库环境变量</span>
+<span>export</span> <span>LD_LIBRARY_PATH</span><span>=</span><span><span>&#36;(</span><span>pwd</span><span>)</span></span><span>:</span><span>&#36;{LD_LIBRARY_PATH}</span></code></pre>
+<h2>错误用法</h2><ul>
+<li>对未定义的函数添加导出属性。</li>
+<li>对没有导出属性的函数/变量执行删除导出属性操作。</li>
+<li>在 <code>--</code> 后使用选项。</li>
+</ul>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

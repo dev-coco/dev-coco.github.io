@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>dump:用于备份ext2或者ext3文件系统</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="dump:用于备份ext2或者ext3文件系统 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>dump</h1><p>用于备份ext2或者ext3文件系统</p>
+<h2>补充说明</h2><p><strong>dump命令</strong> 用于备份ext2或者ext3文件系统。可将目录或整个文件系统备份至指定的设备，或备份成一个大文件。</p>
+<h3>语法</h3><pre><code>dump<span>(</span>选项<span>)</span><span>(</span>参数<span>)</span></code></pre>
+<h3>选项</h3><pre><code>-0123456789：备份的层级；
+-b<span>&lt;</span>区块大小<span>></span>：指定区块的大小，单位为KB；
+-B<span>&lt;</span>区块数目<span>></span>：指定备份卷册的区块数目；
+-c：修改备份磁带预设的密度与容量；
+-d<span>&lt;</span>密度<span>></span>：设置磁带的密度。单位为BPI；
+-f<span>&lt;</span>设备名称<span>></span>：指定备份设备；
+-h<span>&lt;</span>层级<span>></span>：当备份层级等于或大于指定的层级时，将不备份用户标示为“nodump”的文件；
+-n：当备份工作需要管理员介入时，向所有“operator”群组中的使用者发出通知；
+-s<span>&lt;</span>磁带长度<span>></span>：备份磁带的长度，单位为英尺；
+-T<span>&lt;</span>日期<span>></span>：指定备份的时间与日期；
+-u：备份完毕后，在/etc/dumpdates中记录备份的文件系统、层级、日期与时间等；
+-w：与-W类似，但仅显示需要备份的文件；
+-W：显示需要备份的文件及其最后一次备份的层级、时间与日期。</code></pre>
+<h3>参数</h3><p>备份源：指定要备份的文件、目录或者文件系统。</p>
+<h3>实例</h3><p>将<code>/home</code>目录所有内容备份到<code>/tmp/homeback.bak</code>文件中，备份层级为<code>0</code>并在<code>/etc/dumpdates</code>中记录相关信息：</p>
+<pre><code>‍dump -0u -f /tmp/homeback.bak /home</code></pre>
+<p>将<code>/home</code>目录所有内容备份到<code>/tmp/homeback.bak</code>文件中，备份层级为<code>1</code>（只备份上次使用层次<code>0</code>备份后发生过改变的数据）并在<code>/etc/dumpdates</code>中记录相关信息：</p>
+<pre><code>dump -1u -f /tmp/homeback.bak /home</code></pre>
+<p>通过dump命令的备份层级，可实现完整+增量备份、完整+差异备份，在配合crontab可以实现无人值守备份。</p>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

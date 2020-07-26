@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>grpck:用于验证组文件的完整性</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="grpck:用于验证组文件的完整性 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>grpck</h1><p>用于验证组文件的完整性</p>
+<h2>补充说明</h2><p><strong>grpck命令</strong> 用于验证组文件的完整性，在验证之前，需要先锁定（lock）组文件<code>/etc/group</code>和<code>/etc/shadow</code>。</p>
+<p>grpck命令检查数据是否正确存放，每条记录是否都包含足够的信息，是否有一个唯一的组名，是否包含正确的用户，是否正确设置了组的管理员等。grpck检查发现错误以后，在命令行提示用户是否删除错误的记录。如果用户没有明确回答删除记录，grpck终止运行。</p>
+<h3>语法</h3><pre><code>grpck<span>(</span>选项<span>)</span></code></pre>
+<h3>选项</h3><pre><code>-r：只读模式；
+-s：排序组id。</code></pre>
+<h3>实例</h3><p>对组账号和影子文件进行验证：</p>
+<pre><code>grpck   <span># 必须以管理员身份运行</span>
+grpck /etc/group /etc/gshadow   <span># 后面两句一样，如果没有输出信息，则表示没有错误。</span></code></pre>
+<p>测试错误的实例：</p>
+<pre><code>**echo check_user:x: <span>>></span> /etc/group    <span># 添加一行错误的格式数据</span>
+<span>cat</span> /etc/group <span>|</span> <span>grep</span> check_user**
+check_user:x:  <span># 这儿GID字段为空，是错误的。</span>
+
+ **grpck /etc/group**
+invalid group <span>file</span> entry
+delete line <span>'check_user:x:'</span>? y      <span># 提示是否删除</span>
+grpck: the files have been updated  <span># 这时已经删除了错误的行，提示文件已经更新。</span>
+
+ **cat /etc/group  <span>|</span> <span>grep</span> check_user   <span># 没有查到，已经删除了。** </span></code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

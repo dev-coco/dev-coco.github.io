@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>ifstat:统计网络接口流量状态</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="ifstat:统计网络接口流量状态 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>ifstat</h1><p>统计网络接口流量状态</p>
+<h2>补充说明</h2><p><strong>ifstat命令</strong> 就像iostat/vmstat描述其它的系统状况一样，是一个统计网络接口活动状态的工具。ifstat工具系统中并不默认安装，需要自己下载源码包，重新编译安装，使用过程相对比较简单。</p>
+<h3>下载</h3><pre><code>http://gael.roualland.free.fr/ifstat/  （官网）
+<span>wget</span> http://gael.roualland.free.fr/ifstat/ifstat-1.1.tar.gz</code></pre>
+<h3>编译安装</h3><pre><code><span>tar</span> -zxvf ifstat-1.1.tar.gz
+<span>cd</span> ifstat-1.1
+./configure
+<span>make</span>
+<span>make</span> <span>install</span> <span># 默认会安装到/usr/local/bin/目录中</span></code></pre>
+<p>注释：执行<code>which ifstat</code>输出<code>/usr/local/bin/ifstat</code></p>
+<h3>选项</h3><pre><code>-l 监测环路网络接口（lo）。缺省情况下，ifstat监测活动的所有非环路网络接口。经使用发现，加上-l参数能监测所有的网络接口的信息，而不是只监测 lo的接口信息，也就是说，加上-l参数比不加-l参数会多一个lo接口的状态信息。
+-a 监测能检测到的所有网络接口的状态信息。使用发现，比加上-l参数还多一个plip0的接口信息，搜索一下发现这是并口（网络设备中有一 个叫PLIP <span>(</span>Parallel Line Internet Protocol<span>)</span>. 它提供了并口<span>..</span>.）
+-z 隐藏流量是无的接口，例如那些接口虽然启动了但是未用的
+-i 指定要监测的接口,后面跟网络接口名
+-s 等于加-d snmp:<span>[</span>comm@<span>]</span><span>[</span><span>#]host[/nn]] 参数，通过SNMP查询一个远程主机</span>
+-h 显示简短的帮助信息
+-n 关闭显示周期性出现的头部信息（也就是说，不加-n参数运行ifstat时最顶部会出现网络接口的名称，当一屏显示不下时，会再一次出现接口的名称，提示我们显示的流量信息具体是哪个网络接口的。加上-n参数把周期性的显示接口名称关闭，只显示一次）
+-t 在每一行的开头加一个时间 戳（能告诉我们具体的时间）
+-T 报告所有监测接口的全部带宽（最后一列有个total，显示所有的接口的in流量和所有接口的out流量，简单的把所有接口的in流量相加,out流量相 加）
+-w  用指定的列宽，而不是为了适应接口名称的长度而去自动放大列宽
+-W 如果内容比终端窗口的宽度还要宽就自动换行
+-S 在同一行保持状态更新（不滚动不换行）注：如果不喜欢屏幕滚动则此项非常方便，与bmon的显示方式类似
+-b 用kbits/s显示带宽而不是kbytes/s
+-q 安静模式，警告信息不出现
+-v 显示版本信息
+-d 指定一个驱动来收集状态信息</code></pre>
+<h3>实例</h3><p>默认使用</p>
+<pre><code><span>[</span>root@localhost ifstat-1.1<span>]</span> <span>#ifstat</span>
+       eth0                eth1
+ KB/s <span>in</span>  KB/s out   KB/s <span>in</span>  KB/s out
+    <span>0.07</span>      <span>0.20</span>      <span>0.00</span>      <span>0.00</span>
+    <span>0.07</span>      <span>0.15</span>      <span>0.58</span>      <span>0.00</span></code></pre>
+<p>默认ifstat不监控回环接口，显示的流量单位是KB。</p>
+<pre><code><span>[</span>root@localhost ifstat-1.1<span>]</span><span># ifstat -tT</span>
+  <span>time</span>           eth0                eth1                eth2                eth3               Total
+HH:MM:ss   KB/s <span>in</span>  KB/s out   KB/s <span>in</span>  KB/s out   KB/s <span>in</span>  KB/s out   KB/s <span>in</span>  KB/s out   KB/s <span>in</span>  KB/s out
+<span>16</span>:53:04      <span>0.84</span>      <span>0.62</span>   <span>1256.27</span>   <span>1173.05</span>      <span>0.12</span>      <span>0.18</span>      <span>0.00</span>      <span>0.00</span>   <span>1257.22</span>   <span>1173.86</span>
+<span>16</span>:53:05      <span>0.57</span>      <span>0.40</span>      <span>0.57</span>      <span>0.76</span>      <span>0.00</span>      <span>0.00</span>      <span>0.00</span>      <span>0.00</span>      <span>1.14</span>      <span>1.17</span>
+<span>16</span>:53:06      <span>1.58</span>      <span>0.71</span>      <span>0.42</span>      <span>0.78</span>      <span>0.00</span>      <span>0.00</span>      <span>0.00</span>      <span>0.00</span>      <span>2.01</span>      <span>1.48</span>
+<span>16</span>:53:07      <span>0.57</span>      <span>0.40</span>      <span>1.91</span>      <span>2.61</span>      <span>0.00</span>      <span>0.00</span>      <span>0.00</span>      <span>0.00</span>      <span>2.48</span>      <span>3.01</span>
+<span>16</span>:53:08      <span>0.73</span>      <span>0.40</span>    <span>924.02</span>   <span>1248.91</span>      <span>0.00</span>      <span>0.00</span>      <span>0.00</span>      <span>0.00</span>    <span>924.76</span>   <span>1249.31</span></code></pre>
+<p>监控所有网络接口</p>
+<pre><code><span>[</span>root@localhost ifstat-1.1<span>]</span> <span># ifstat -a</span>
+        lo                 eth0                eth1
+ KB/s <span>in</span>  KB/s out   KB/s <span>in</span>  KB/s out   KB/s <span>in</span>  KB/s out
+    <span>0.00</span>      <span>0.00</span>      <span>0.28</span>      <span>0.58</span>      <span>0.06</span>      <span>0.06</span>
+    <span>0.00</span>      <span>0.00</span>      <span>1.41</span>      <span>1.13</span>      <span>0.00</span>      <span>0.00</span>
+    <span>0.61</span>      <span>0.61</span>      <span>0.26</span>      <span>0.23</span>      <span>0.00</span>      <span>0.00</span></code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>hexdump:显示文件十六进制格式</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="hexdump:显示文件十六进制格式 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>hexdump</h1><p>显示文件十六进制格式</p>
+<h2>补充说明</h2><p><strong>hexdump命令</strong> 一般用来查看“二进制”文件的十六进制编码，但实际上它能查看任何文件，而不只限于二进制文件。</p>
+<h3>语法</h3><pre><code>hexdump <span>[</span>选项<span>]</span> <span>[</span>文件<span>]</span><span>..</span>.</code></pre>
+<h3>选项</h3><pre><code>-n length 只格式化输入文件的前length个字节。
+-C 输出规范的十六进制和ASCII码。
+-b 单字节八进制显示。
+-c 单字节字符显示。
+-d 双字节十进制显示。
+-o 双字节八进制显示。
+-x 双字节十六进制显示。
+-s 从偏移量开始输出。
+-e 指定格式字符串，格式字符串包含在一对单引号中，格式字符串形如：<span>'a/b "format1" "format2"'</span>。</code></pre>
+<p>每个格式字符串由三部分组成，每个由空格分隔，第一个形如a/b，b表示对每b个输入字节应用format1格式，a表示对每a个输入字节应用format2格式，一般a&gt;b，且b只能为1，2，4，另外a可以省略，省略则a=1。format1和format2中可以使用类似printf的格式字符串，如：</p>
+<pre><code>%02d：两位十进制
+%03x：三位十六进制
+%02o：两位八进制
+%c：单个字符等</code></pre>
+<p>还有一些特殊的用法：</p>
+<pre><code>%_ad：标记下一个输出字节的序号，用十进制表示。
+%_ax：标记下一个输出字节的序号，用十六进制表示。
+%_ao：标记下一个输出字节的序号，用八进制表示。
+%_p：对不能以常规字符显示的用 <span>.</span> 代替。</code></pre>
+<p>同一行如果要显示多个格式字符串，则可以跟多个<code>-e</code>选项。</p>
+<h3>实例</h3><pre><code>hexdump -e <span>'16/1 "%02X " "  |  "'</span> -e <span>'16/1 "%_p" "<span title="\n">\n</span>"'</span> <span>test</span>
+00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F  <span>|</span>  <span>..</span><span>..</span><span>..</span><span>..</span><span>..</span><span>..</span><span>..</span><span>..</span>
+<span>10</span> <span>11</span> <span>12</span> <span>13</span> <span>14</span> <span>15</span> <span>16</span> <span>17</span> <span>18</span> <span>19</span> 1A 1B 1C 1D 1E 1F  <span>|</span>  <span>..</span><span>..</span><span>..</span><span>..</span><span>..</span><span>..</span><span>..</span><span>..</span>
+<span>20</span> <span>21</span> <span>22</span> <span>23</span> <span>24</span> <span>25</span> <span>26</span> <span>27</span> <span>28</span> <span>29</span> 2A 2B 2C 2D 2E 2F  <span>|</span>   <span>!</span>"#&#36;%<span>&amp;</span>'<span>(</span><span>)</span>*+,-./ </code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

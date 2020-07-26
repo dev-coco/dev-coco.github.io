@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>exportfs:管理NFS共享文件系统列表</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="exportfs:管理NFS共享文件系统列表 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>exportfs</h1><p>管理NFS共享文件系统列表</p>
+<h2>补充说明</h2><p>exportfs 命令用来管理当前NFS共享的文件系统列表。</p>
+<p>参数：</p>
+<pre><code>-a 打开或取消所有目录共享。
+-o options,<span>..</span>.指定一列共享选项，与 exports<span>(</span><span>5</span><span>)</span> 中讲到的类似。
+-i 忽略 /etc/exports 文件，从而只使用默认的和命令行指定的选项。
+-r 重新共享所有目录。它使 /var/lib/nfs/xtab 和 /etc/exports 同步。 它将 /etc/exports 中已删除的条目从 /var/lib/nfs/xtab 中删除，将内核共享表中任何不再有效的条目移除。
+-u 取消一个或多个目录的共享。
+-f 在“新”模式下，刷新内核共享表之外的任何东西。 任何活动的客户程序将在它们的下次请求中得到 mountd添加的新的共享条目。
+-v 输出详细信息。当共享或者取消共享时，显示在做什么。 显示当前共享列表的时候，同时显示共享的选项。</code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

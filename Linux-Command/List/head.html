@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>head:显示文件的开头部分</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="head:显示文件的开头部分 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>head</h1><p>显示文件的开头部分。</p>
+<h2>概要</h2><pre><code><span>head</span> <span>[</span>OPTION<span>]</span><span>..</span>. <span>[</span>FILE<span>]</span><span>..</span>.</code></pre>
+<h2>主要用途</h2><ul>
+<li>在未指定行数时默认显示前10行。</li>
+<li>处理多个文件时会在各个文件之前附加含有文件名的行。</li>
+<li>当没有文件或文件为<code>-</code>时，读取标准输入。</li>
+</ul>
+<h2>选项</h2><pre><code>-c, --bytes<span>=</span><span>[</span>-<span>]</span>NUM       显示前NUM字节；如果NUM前有<span>"-"</span>，那么会打印除了文件末尾的NUM字节以外的其他内容。
+-n, --lines<span>=</span><span>[</span>-<span>]</span>NUM       显示前NUM行而不是默认的10行；如果NUM前有<span>"-"</span>，那么会打印除了文件末尾的NUM行以外的其他行。
+-q, --quiet, --silent    不打印文件名行。
+-v, --verbose            总是打印文件名行。
+-z, --zero-terminated    行终止符为NUL而不是换行符。
+--help                   显示帮助信息并退出。
+--version                显示版本信息并退出。
+
+NUM可以有一个乘数后缀：
+b <span>512</span>
+kB <span>1000</span>
+k <span>1024</span>
+MB <span>1000</span>*1000
+M <span>1024</span>*1024
+GB <span>1000</span>*1000*1000
+G <span>1024</span>*1024*1024
+T、P、E、Z、Y等以此类推。
+
+也可以使用二进制前缀：
+<span>KiB</span><span>=</span>K
+<span>MiB</span><span>=</span>M
+以此类推。</code></pre>
+<h2>参数</h2><p>FILE（可选）：要处理的文件，可以为一或多个。</p>
+<h2>返回值</h2><p>返回0表示成功，返回非0值表示失败。</p>
+<h2>例子</h2><pre><code><span># 查看历史文件的前6行：</span>
+<span>[</span>user2@pc ~<span>]</span>&#36; <span>head</span> -n <span>6</span> ~/.bash_history
+<span>#1575425555</span>
+<span>cd</span> ~
+<span>#1575425558</span>
+<span>ls</span> -lh
+<span>#1575425562</span>
+<span>vi</span> ~/Desktop/ZhuangZhu-74.txt</code></pre>
+<pre><code><span># 查看多个文件：</span>
+<span>[</span>user2@pc ~<span>]</span>&#36; <span>head</span> -n ~/.bash_history ~/.bashrc
+<span>==</span><span>></span> /allhome/user2/.bash_history <span>&lt;</span><span>==</span>
+<span>#1575425555</span>
+<span>cd</span> ~
+<span>#1575425558</span>
+<span>ls</span> -lh
+<span>#1575425562</span>
+<span>vi</span> ~/Desktop/ZhuangZhu-74.txt
+<span>#1575425566</span>
+<span>uptime</span>
+<span>#1575425570</span>
+<span>find</span> ~/ -maxdepth <span>3</span> -name <span>'test.sh'</span> -exec lh <span>{</span><span>}</span> <span>\</span><span>;</span>
+
+<span>==</span><span>></span> /allhome/user2/.bashrc <span>&lt;</span><span>==</span>
+<span># .bashrc</span>
+
+<span># forbid use Ctrl+D to exit shell.</span>
+<span>set</span> -o ignoreeof
+
+<span># Source global definitions.</span>
+<span>if</span> <span>[</span> -f /etc/bashrc <span>]</span><span>;</span> <span>then</span>
+        <span>.</span> /etc/bashrc
+<span>fi</span>
+</code></pre>
+<h3>注意</h3><ol>
+<li>该命令是<code>GNU coreutils</code>包中的命令，相关的帮助信息请查看<code>man -s 1 head</code>，<code>info coreutils &#39;head invocation&#39;</code>。</li>
+</ol>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

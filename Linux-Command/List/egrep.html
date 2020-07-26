@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>egrep:在文件内查找指定的字符串</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="egrep:在文件内查找指定的字符串 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>egrep</h1><p>在文件内查找指定的字符串</p>
+<h2>补充说明</h2><p><strong>egrep命令</strong> 用于在文件内查找指定的字符串。egrep执行效果与<code>grep -E</code>相似，使用的语法及参数可参照grep指令，与grep的不同点在于解读字符串的方法。egrep是用extended regular expression语法来解读的，而grep则用basic regular expression 语法解读，extended regular expression比basic regular expression的表达更规范。</p>
+<h3>语法</h3><pre><code>egrep<span>(</span>选项<span>)</span><span>(</span>查找模式<span>)</span><span>(</span>文件名1，文件名2，……<span>)</span></code></pre>
+<h3>实例</h3><p>显示文件中符合条件的字符。例如，查找当前目录下所有文件中包含字符串&quot;Linux&quot;的文件，可以使用如下命令：</p>
+<pre><code><span>egrep</span> Linux *</code></pre>
+<p>结果如下所示：</p>
+<pre><code><span># 以下五行为 testfile 中包含Linux字符的行</span>
+testfile:hello Linux<span>!</span>
+testfile:Linux is a <span>free</span> Unix-type operating system.
+testfile:This is a Linux testfile<span>!</span>
+testfile:Linux
+testfile:Linux
+
+<span># 以下两行为testfile1中含Linux字符的行</span>
+testfile1:helLinux<span>!</span>
+testfile1:This a Linux testfile<span>!</span>
+
+<span># 以下两行为 testfile_2 中包含Linux字符的行</span>
+testfile_2:Linux is a <span>free</span> unix-type opterating system
+testfile_2:Linux <span>test</span></code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

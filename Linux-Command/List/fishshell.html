@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>fishshell:比 bash 更好用的 shell</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="fishshell:比 bash 更好用的 shell — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>fishshell</h1><p>比 bash 更好用的 shell</p>
+<h2>安装</h2><pre><code><span># Ubuntu 和 Debian 的安装方法。</span>
+<span>sudo</span> <span>apt-get</span> <span>install</span> fish
+<span># Mac 的安装方法。</span>
+brew <span>install</span> fish</code></pre>
+<h2>启动与帮助</h2><p>由于 <code>Fish</code> 的语法与 <code>Bash</code> 有很大差异，<code>Bash</code> 脚本一般不兼容。因此，建议不要将 <code>Fish</code> 设为默认 <code>Shell</code>，而是每次手动启动它。</p>
+<pre><code><span># 安装完成后，就可以启动 Fish。</span>
+&#36; fish
+<span># 使用过程中，如果需要帮助，可以输入 help 命令</span>
+&#36; <span>help</span></code></pre>
+<h2>彩色显示</h2><pre><code><span># 无效命令为红色</span>
+&#36; mkd
+<span># 有效命令为蓝色</span>
+&#36; <span>mkdir</span>
+<span># 有效路径会有下划线。如果没有下划线，你就知道这个路径不存在。</span>
+&#36; <span>cat</span> ~/somefi </code></pre>
+<h2>自动建议</h2><p>Fish 会自动在光标后面给出建议，表示可能的选项，颜色为灰色。如果采纳建议，可以按下 <code>→</code> 或 <code>Control + F</code> 。如果只采纳一部分，可以按下 <code>Alt + →</code>。</p>
+<pre><code>&#36; /bin/hostname <span># 命令建议</span>
+&#36; <span>grep</span> --ignore-case <span># 参数建议</span>
+&#36; <span>ls</span> node_modules <span># 路径建议</span></code></pre>
+<h2>自动补全</h2><p>输入命令时，<code>Fish</code> 会自动显示匹配的上一条历史记录。如果没有匹配的历史记录，<code>Fish</code> 会猜测可能的结果，自动补全各种输入。比如，输入 <code>pyt</code> 再按下 <code>Tab</code> ，就会自动补全为 <code>python</code> 命令。</p>
+<p><code>Fish</code> 还可以自动补全 <code>Git</code> 分支。</p>
+<h2>脚本语法</h2><h3>if 语句</h3><pre><code><span>if</span> <span>grep</span> fish /etc/shells
+    <span>echo</span> Found fish
+<span>else</span> <span>if</span> <span>grep</span> <span>bash</span> /etc/shells
+    <span>echo</span> Found <span>bash</span>
+<span>else</span>
+    <span>echo</span> Got nothing
+end</code></pre>
+<h3>switch 语句</h3><pre><code>switch <span>(</span>uname<span>)</span>
+<span>case</span> Linux
+    <span>echo</span> Hi Tux<span>!</span>
+<span>case</span> Darwin
+    <span>echo</span> Hi Hexley<span>!</span>
+<span>case</span> FreeBSD NetBSD DragonFly
+    <span>echo</span> Hi Beastie<span>!</span>
+<span>case</span> <span>'*'</span>
+    <span>echo</span> Hi, stranger<span>!</span>
+end</code></pre>
+<h3>while 循环</h3><pre><code><span>while</span> <span class="token boolean">true</span>
+    <span>echo</span> <span>"Loop forever"</span>
+end</code></pre>
+<h3>for 循环</h3><pre><code><span>for</span> <span class="token for-or-select variable">file</span> <span>in</span> *.txt
+    <span>cp</span> <span>&#36;file</span> <span>&#36;file</span>.bak
+end</code></pre>
+<h3>函数</h3><p><code>Fish</code> 的函数用来封装命令，或者为现有的命令起别名。</p>
+<pre><code><span>function</span> ll
+    <span>ls</span> -lhG <span>&#36;argv</span>
+end</code></pre>
+<p>上面代码定义了一个 <code>ll</code> 函数。命令行执行这个函数以后，就可以用 <code>ll</code> 命令替代 <code>ls -lhG</code>。其中，变量 <code>$argv</code> 表示函数的参数。</p>
+<pre><code><span>function</span> <span>ls</span>
+    <span>command</span> <span>ls</span> -hG <span>&#36;argv</span>
+end</code></pre>
+<p>上面的代码重新定义 <code>ls</code> 命令。注意，函数体内的 <code>ls</code> 之前，要加上 <code>command</code>，否则会因为无限循环而报错。</p>
+<h3>提示符</h3><p><code>fish_prompt</code> 函数用于定义命令行提示符（prompt）。</p>
+<pre><code><span>function</span> fish_prompt
+  set_color purple
+  <span>date</span> <span>"+%m/%d/%y"</span>
+  set_color FF0
+  <span>echo</span> <span>(</span>pwd<span>)</span> <span>'>'</span>
+  set_color normal
+end</code></pre>
+<p>执行上面的函数以后，你的命令行提示符就会变成下面这样。</p>
+<pre><code>02/06/13
+/home/tutorial <span>></span> </code></pre><h2>配置</h2><p>Fish 的配置文件是 <code>~/.config/fish/config.fish</code>，每次 <code>Fish</code> 启动，就会自动加载这个文件。Fish 还提供 Web 界面配置该文件。</p>
+<pre><code>&#36; fish_config <span># 浏览器打开 Web 界面配置</span></code></pre>
+<p>Running Commands: 兼容 bash 等shell的命令执行方式<br>Getting Help: <code>help/man cmd -&gt; browser/terminal</code><br>Syntax Highlighting: 实时检查命令是否正确<br>Wildcards: 支持缩写  <code>*</code> 递归 匹配<br>Pipes and Redirections: 使用 <code>^</code> 代表 stderr<br>Autosuggestions: 自动建议, 可以使用 <code>Ctrl-f / -&gt;</code> 来补全<br>Tab Completions: 更强大的 tab 补全<br>Variables: 使用 set 设置<br>Exit Status: 使用 <code>echo $status</code> 替代 <code>$?</code><br>Exports (Shell Variables)<br>Lists: all variables in fish are really lists<br>Command Substitutions: 使用 <code>(cmd)</code> 来执行命令, 而不是 反引号、<code>$()</code><br>Combiners (And, Or, Not): 不支持使用符合来表示逻辑运算<br>Functions：使用 <code>$argv</code> 替代 <code>$1</code><br>Conditionals (If, Else, Switch) / Functions / Loops: 更人性化的写法(参考 py)<br>Prompt: <code>function fish_prompt</code> 实现<br>Startup (Where&#39;s .bashrc?): <code>~/.config/fish/config.fish</code>，更好的方式是 autoloading-function、universal-variables<br>Autoloading Functions: <code>~/.config/fish/functions/.</code><br>Universal Variables：a variable whose value is shared across all instances of fish  </p>
+<pre><code><span>set</span> name <span>'czl'</span> <span># 设置变量，替代 name=czl</span>
+<span>echo</span> <span>&#36;name</span>
+<span>echo</span> <span>&#36;status</span> <span># exit status，替代 &#36;?</span>
+<span>env</span> <span># 环境变量</span>
+<span>set</span> -x MyVariable SomeValue <span># 替代 export</span>
+<span>set</span> -e MyVariable
+<span>set</span> <span>PATH</span> <span>&#36;PATH</span> /usr/local/bin <span># 使用 lists 记录 PATH</span>
+<span>set</span> -U fish_user_paths /usr/local/bin <span>&#36;fish_user_paths</span> <span># 永久生效</span>
+<span>touch</span> <span>"testing_"</span><span>(</span>date +%s<span>)</span><span>".txt"</span> <span># command subtitution，替代 `date +%s`</span>
+<span>cp</span> file.txt file.txt.bak<span>;</span> and <span>echo</span> <span>'back success'</span><span>;</span> or <span>echo</span> <span>'back fail'</span> <span># combiner</span>
+functions <span># 列出 fish 下定义的函数</span></code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

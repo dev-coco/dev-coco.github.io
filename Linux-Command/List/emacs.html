@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>emacs:功能强大的全屏文本编辑器</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="emacs:功能强大的全屏文本编辑器 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>emacs</h1><p>功能强大的全屏文本编辑器</p>
+<h2>补充说明</h2><p><strong>emacs命令</strong> 是由GNU组织的创始人Richard Stallman开发的一个功能强大的全屏文本编辑器，它支持多种编程语言，具有很多优良的特性。有众多的系统管理员和软件开发者使用emacs。</p>
+<h3>语法</h3><pre><code>emacs<span>(</span>选项<span>)</span><span>(</span>参数<span>)</span></code></pre>
+<h3>选项</h3><pre><code>+<span>&lt;</span>行号<span>></span>：启动emacs编辑器，并将光标移动到制定行号的行；
+-q：启动emacs编辑器，而不加载初始化文件；
+-u<span>&lt;</span>用户<span>></span>：启动emacs编辑器时，加载指定用户的初始化文件；
+-t<span>&lt;</span>文件<span>></span>：启动emacs编辑器时，把指定的文件作为中端，不适用标准输入（stdin）与标准输出（stdout）；
+-f<span>&lt;</span>函数<span>></span>：执行指定lisp（广泛应用于人工智能领域的编程语言）函数；
+-l<span>&lt;</span>lisp代码文件<span>></span>：加载指定的lisp代码文件；
+-batch：以批处理模式运行emacs编辑器。</code></pre>
+<h3>参数</h3><p>文件：指定要编辑的文本文件。</p>
+<h2>emacs命令操作大全</h2><p>基本命令</p>
+<pre><code>C-x C-c <span>:</span> 退出Emacs
+C-x C-f <span>:</span> 打开一个文件，如果文件不存在，则创建一个文件
+C-g <span>:</span> 取消未完成的命令</code></pre>
+<p>编辑</p>
+<pre><code>C-z <span>(</span>redefined<span>)</span>: Undo；原来C-z是挂起Emacs（然后用fg命令调出）；C-x u 是默认的命令； 移动一下光标，再C-z就可以redo
+M-d <span>:</span> 删除光标后的词语</code></pre>
+<p>移动光标</p>
+<pre><code>C-v <span>:</span> 向前翻页
+M-v <span>:</span> 向后翻页
+M-r <span>:</span> 将光标移动到屏幕中间那行
+C-a <span>:</span> 移到行首
+M-a <span>:</span> 移到句首，从行首到句首之间可能有空格
+C-e <span>:</span> 移到行尾
+M-e <span>:</span> 移到句尾
+M-<span>{</span> <span>:</span> 向上移动一段
+M-<span>}</span> <span>:</span> 向下移动一段
+C-right <span>:</span> 向前移动一个单词
+C-left <span>:</span> 向后移动一个单词
+C-up <span>:</span> 向前移动一段
+C-down <span>:</span> 向后移动一段
+M-<span>&lt;</span> <span>:</span> 移到整个文本开头
+M-<span>></span> <span>:</span> 移到整个文本末尾
+C-u 数字 命令 <span>:</span> 执行多次<span>(</span>数字表示次数<span>)</span>该命令；<span>"M-数字 命令"</span> 也可以
+M-x goto-line <span>:</span> 移动到某一行
+C-l <span>:</span> 重绘屏幕，效果就是当前编辑行移动窗口中央</code></pre>
+<p>Buffer 相关</p>
+<pre><code>C-x k <span>:</span> 关闭当前buffer
+C-x b <span>:</span> 切换到前一个编辑的buffer
+C-x C-b <span>:</span> 列出当前所有buffer
+C-x C-s <span>:</span> 保存当前buffer
+C-x s <span>:</span> 保存所有未保存的buffer，会提示你是否需要保存
+C-x C-w <span>:</span> 文件另存为</code></pre>
+<p>拷贝与粘贴</p>
+<pre><code>M-space <span>(</span>redefined<span>)</span>: 设置mark<span>;</span> C-@ 是默认命令
+C-w <span>(</span>redefined<span>)</span> <span>:</span> 剪切一块区域；如果没有设置mark，则是剪切一行
+M-w <span>(</span>redefined<span>)</span> <span>:</span> 拷贝一块区域；如果没有设置mark, 则是拷贝一行
+C-k <span>:</span> 从当前位置剪切到行尾
+C-y <span>:</span> 粘贴
+M-y <span>:</span> 用C-y拉回最近被除去的文本后，换成 M-y可以拉回以前被除去的文本。键入多次的M-y可以拉回更早以前被除去的文本。
+C-x r k <span>:</span> 执行矩形区域的剪切
+C-x r y <span>:</span> 执行矩形区域的粘贴</code></pre>
+<pre><code>窗口操作
+C-x <span>0</span> <span>:</span> 关闭当前窗口
+C-x <span>1</span> <span>:</span> 将当前窗口最大化
+C-x <span>2</span> <span>:</span> 垂直分割窗口
+C-x <span>3</span> <span>:</span> 水平分割窗口
+M-o <span>(</span>redefined<span>)</span> <span>:</span> 在窗口之间切换<span>;</span> C-x o 是默认命令
+C-x <span>5</span> <span>1</span>/2/3/0 <span>:</span> 对frame类似的操作
+C-x <span>&lt;</span> <span>:</span> 窗口内容右卷
+C-x <span>></span> <span>:</span> 窗口内容左卷（这两个命令在垂直分割窗口后比较有用）
+<span>(</span>C-u<span>)</span> C-x ^ <span>:</span> 加高当前窗口，如果有C-u，则每次加高4行
+<span>(</span>C-u<span>)</span> C-x <span>}</span> <span>:</span> 加宽当前窗口
+<span>(</span>C-u<span>)</span> C-x <span>{</span> <span>:</span> 压窄当前窗口
+ESC C-v <span>:</span> 在其它窗口进行卷屏操作</code></pre>
+<p>搜索和替换</p>
+<pre><code>C-s <span>:</span> 向前搜索（增量式搜索）；连续C-s，跳到下一个搜索到的目标
+C-s RET <span>:</span> 普通搜索
+C-r <span>:</span> 向前搜索
+C-s RET C-w <span>:</span> 按单词查询
+M-% <span>:</span> 查询替换，也就是替换前会询问一下
+M-x replace-string <span>:</span> 普通替换</code></pre>
+<p>Tags</p>
+<pre><code>M-<span>!</span> etags .c .h <span>:</span> 创建TAGS文件
+M-. <span>:</span> 跳到tag所在位置
+M-x list-tags <span>:</span> 列出tags</code></pre>
+<p>书签</p>
+<pre><code>C-x r m <span>:</span> 设置书签bookmark
+C-x r b <span>:</span> 跳到bookmark处</code></pre>
+<p>帮助</p>
+<pre><code>C-h ? <span>:</span> 查看帮助信息
+C-h f <span>:</span> 查看一个函数
+C-h <span>v</span> <span>:</span> 查看一个变量
+C-h k <span>:</span> 查看一个键绑定 <span>(</span>C－h c 也是查看键绑定，但是信息较简略<span>)</span>
+C-h C-f <span>:</span> 查看一个函数的info，非常有用
+C-h i <span>:</span> 看Info</code></pre>
+<p>其它</p>
+<pre><code>C-M-<span>\</span> <span>:</span> 对选中区域，按照某种格式<span>(</span>比如C程序<span>)</span>进行格式化
+C-x h <span>:</span> 全部选中
+M-<span>!</span> <span>:</span> 执行外部shell命令
+M-x shell <span>:</span> 模拟shell的buffer
+M-x term <span>:</span> 模拟terminal, C-c k 关闭terminal
+C-x C-q <span>:</span> 修改buffer的只读属性</code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>indent:格式化C语言的源文件</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="indent:格式化C语言的源文件 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>indent</h1><p>格式化C语言的源文件</p>
+<h2>补充说明</h2><p><strong>indent命令</strong> 可辨识C的原始代码文件，并加以格式化，以方便程序员阅读、修改等操作。</p>
+<h3>语法</h3><pre><code>indent<span>(</span>选项<span>)</span><span>(</span>源文件<span>)</span>
+或
+indent（选项<span>)</span><span>(</span>源文件<span>)</span><span>(</span>-o 目标文件<span>)</span></code></pre>
+<h3>选项</h3><pre><code>-bad：在声明区加上空白行；
+-bap：添加空白行；
+-bbb：在注释后面添加空白行；
+-bc：在声明段中，如果出现逗号就换行；
+-bl：if（或是else、for等）与后面执行区段的“<span>{</span>”不同行，且“<span>}</span>”自成一行-bli<span>&lt;</span>缩排格数<span>></span>设置<span>{</span><span>}</span>缩排的格数；
+-br：if（或是else、for等）与后面执行区段的“<span>{</span>”同行，且“<span>}</span>”自成一行；
+-bs：在sizeof之后空一格；
+-c<span>&lt;</span>栏数<span>></span>：将注释置于程序右侧指定的栏位；
+-cd<span>&lt;</span>栏数<span>></span>：将注释置于声明右侧指定的栏位；
+-cdb：注释符号自成一行；
+-ce：将else置于“<span>}</span>”（if执行区段的结尾）之后；
+-ci：<span>&lt;</span>缩排格数<span>></span>：叙述过长而换行时，指定换行后缩排的格数；
+-cli<span>&lt;</span>缩排格数<span>></span>：使用case时，switch缩排的格数；
+-cp<span>&lt;</span>栏数<span>></span>：将注释置于else与elseif叙述右侧指定的栏位；
+-cs：在case之后空一格；
+-d<span>&lt;</span>缩排格数<span>></span>：针对不是放在程序码右侧的注释，设置其缩排格数；
+-di<span>&lt;</span>栏数<span>></span>：将声明区段的变量置于指定的栏位；
+-fc1：针对放在每行最前端的注释，设置其格式；
+-fca：设置所有注释的格式；
+-gnu：使用指定的GNU格式，该参数为默认值；
+-i<span>&lt;</span>格数<span>></span>：设置缩排的格数；
+-ip<span>&lt;</span>格数<span>></span>：设置参数的缩排格数；
+-kr：指定使用Kernighan<span>&amp;</span>Ritchie的格式；
+-lp：叙述过长而换行，且叙述中包含了括号时，将括号中的每行起始栏位内容垂直对其排列；
+-nbad：在声明区段后不要加上空白行；
+-nbap：在程序后面不添加空白行；
+-nbbb：在注释段后面不添加空白行；
+-nbc：在声明段中，即使出现逗号，也不换行；
+-ncdb：注释符号不自成一行；
+-nce：不将else置于“<span>}</span>”后面；
+-ncs：不在case后面空一格；
+-nfc1：不要格式化放在每行最前端的注释；
+-nfca：不用格式化任何的注释；
+-nip：参数不要缩排；
+-nlp：叙述过长而换行，且叙述中包含了括号时，不用将括号中的每行起始栏位垂直对其排列；
+-npcs：在调用函数名之后，不要添加空格；
+-npro：不要读取indent的配置文件“.indent.pro”；
+-npsl：程序类型与程序名称放在同一行；
+-nsc：注释左侧不要添加星号；
+-nsob：不用处理多余的空白行；
+-nss：若for或while区段仅有一行时，在分号前不加空格；
+-nv：不显示详细的信息；
+-orig：使用berkeley格式；
+-pcs：在调用函数名与“<span>{</span>”之间添加空格；
+-psl：程序类型置于程序名称的前一行；
+-sc：在每行注释左侧添加星号；
+-sob：删除多余的空白行；
+-ss：若for或swile区段仅有一行时，在分号前加上空格；
+-st：将结果显示在标准输出设备上；
+-T：数据类型名称缩排；
+-ts<span>&lt;</span>格数<span>></span>：设置tab的长度；
+-v：显示详细的执行过程；
+--version：显示版本信息。</code></pre>
+<h3>实例</h3><p>使用indent命令将C语言源文件&quot;test.c&quot;中所有的sizeof后面添加一个空格，输入如下命令：</p>
+<pre><code>indent -bs /home/rootlocal/桌面/test.c</code></pre>
+<p>执行上面的命令后，用户可以打开指定的源文件查看在sizeof后面是否都添加了一个空格。由于该命令的参数非常多，所以用户可以根据实际需要选择适合的参数进行使用即可。</p>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

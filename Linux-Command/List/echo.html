@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>echo:输出指定的字符串或者变量</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="echo:输出指定的字符串或者变量 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>echo</h1><p>输出指定的字符串或者变量</p>
+<h2>补充说明</h2><p><strong>echo命令</strong> 用于在shell中打印shell变量的值，或者直接输出指定的字符串。linux的echo命令，在shell编程中极为常用, 在终端下打印变量value的时候也是常常用到的，因此有必要了解下echo的用法echo命令的功能是在显示器上显示一段文字，一般起到一个提示的作用。</p>
+<h3>语法</h3><pre><code>echo<span>(</span>选项<span>)</span><span>(</span>参数<span>)</span></code></pre>
+<h3>选项</h3><pre><code>-e：激活转义字符。</code></pre>
+<p>使用<code>-e</code>选项时，若字符串中出现以下字符，则特别加以处理，而不会将它当成一般文字输出：</p>
+<ul>
+<li><code>\a</code> 发出警告声；</li>
+<li><code>\b</code> 删除前一个字符；</li>
+<li><code>\c</code> 不产生进一步输出 (\c 后面的字符不会输出)；</li>
+<li><code>\f</code> 换行但光标仍旧停留在原来的位置；</li>
+<li><code>\n</code> 换行且光标移至行首；</li>
+<li><code>\r</code> 光标移至行首，但不换行；</li>
+<li><code>\t</code> 插入tab；</li>
+<li><code>\v</code> 与\f相同；</li>
+<li><code>\\</code> 插入\字符；</li>
+<li><code>\nnn</code> 插入 <code>nnn</code>（八进制）所代表的ASCII字符；</li>
+</ul>
+<h3>参数</h3><p>变量：指定要打印的变量。</p>
+<h3>实例</h3><p>用echo命令打印带有色彩的文字：</p>
+<p> <strong>文字色：</strong> </p>
+<pre><code><span>echo</span> -e <span>"<span class="token entity" title="\e">\e</span>[1;31mThis is red text<span class="token entity" title="\e">\e</span>[0m"</span>
+This is red text</code></pre>
+<ul>
+<li><code>\e[1;31m</code> 将颜色设置为红色</li>
+<li><code>\e[0m</code> 将颜色重新置回</li>
+</ul>
+<p>颜色码：重置=0，黑色=30，红色=31，绿色=32，黄色=33，蓝色=34，洋红=35，青色=36，白色=37</p>
+<p> <strong>背景色</strong> ：</p>
+<pre><code><span>echo</span> -e <span>"<span class="token entity" title="\e">\e</span>[1;42mGreed Background<span class="token entity" title="\e">\e</span>[0m"</span>
+Greed Background</code></pre>
+<p>颜色码：重置=0，黑色=40，红色=41，绿色=42，黄色=43，蓝色=44，洋红=45，青色=46，白色=47</p>
+<p> <strong>文字闪动：</strong> </p>
+<pre><code><span>echo</span> -e <span>"<span class="token entity" title="\033">\033</span>[37;31;5mMySQL Server Stop...<span class="token entity" title="\033">\033</span>[39;49;0m"</span></code></pre>
+<p>红色数字处还有其他数字参数：0 关闭所有属性、1 设置高亮度（加粗）、4 下划线、5 闪烁、7 反显、8 消隐</p>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

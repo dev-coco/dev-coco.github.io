@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>dpkg-reconfigure:Debian Linux中重新配制一个已经安装的软件包</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="dpkg-reconfigure:Debian Linux中重新配制一个已经安装的软件包 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>dpkg-reconfigure</h1><p>Debian Linux中重新配制一个已经安装的软件包</p>
+<h2>补充说明</h2><p><strong>dpkg-reconfigure命令</strong> 是Debian Linux中重新配置已经安装过的软件包，可以将一个或者多个已安装的软件包传递给此指令，它将询问软件初次安装后的配置问题。</p>
+<p>当用户需要再次对软件包配置的时候，可以使用dpkg-reconfigure命令来对指定的软件包进行配置。</p>
+<h3>语法</h3><pre><code>dpkg-reconfigure<span>(</span>选项<span>)</span><span>(</span>参数<span>)</span></code></pre>
+<h3>选项</h3><pre><code>-a：重新配置所有的软件包；
+-u或--unseen-only：仅显示未提过的问题；
+--default-priority：使用默认优先级，而非“低”级；
+--force：强制执行操作，需谨慎使用此选项；
+--no-reload：不要轻易的重装模板（使用时请慎重考虑）；
+-f或--frontend：指定 debconf 前端界面；
+-p或--priority：指定要显示的问题的最优先级；
+--terse：开启简要模式。</code></pre>
+<h3>参数</h3><p>软件包名：需要重新配置的已安装的软件包。</p>
+<h3>实例</h3><p>用于配置语言：</p>
+<pre><code><span>sudo</span> dpkg-reconfigure locales</code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

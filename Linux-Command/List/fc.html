@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>fc:显示历史列表中的命令或修改指定的历史命令并执行</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="fc:显示历史列表中的命令或修改指定的历史命令并执行 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>fc</h1><p>显示历史列表中的命令或修改指定的历史命令并执行。</p>
+<h2>概要</h2><pre><code>fc <span>[</span>-e ename<span>]</span> <span>[</span>-lnr<span>]</span> <span>[</span>first<span>]</span> <span>[</span>last<span>]</span>
+fc -s <span>[</span>pat<span>=</span>rep<span>]</span> <span>[</span>command<span>]</span></code></pre>
+<h2>主要用途</h2><ul>
+<li><p>显示历史列表中的命令。</p>
+</li>
+<li><p>编辑并重新执行历史列表的命令。</p>
+</li>
+</ul>
+<h2>选项</h2><pre><code>-e ename                  选择使用的编辑器，默认调用次序为环境变量<span><span>`</span>FCEDIT<span>`</span></span>、环境变量<span><span>`</span>EDITOR<span>`</span></span>、<span><span>`</span><span>vi</span><span>`</span></span>。
+-l                        列出而不是编辑。
+-n                        列出时不输出行号（需配合-l选项）。
+-r                        倒序列出命令，最近执行的先列出（需配合-l选项）。
+-s <span>[</span>pat<span>=</span>rep<span>]</span> <span>[</span>command<span>]</span>    command（未指定时为最后执行的命令）将在pat替换为rep后重新执行。</code></pre>
+<h2>参数</h2><p>first：可选；可以是字符串（以该字符串开头的最新命令）、数字（历史列表索引，负数代表当前命令号的偏移）；未指定时设置为前一个命令并且偏移量为-16（最近的16条命令）。</p>
+<p>last：可选；可以是字符串（以该字符串开头的最新命令）、数字（历史列表索引，负数代表当前命令号的偏移）；未指定时设置为参数first。</p>
+<h2>返回值</h2><p>返回成功或执行命令的状态，当错误出现时返回非0值。</p>
+<h2>例子</h2><p>替换命令参数:</p>
+<pre><code><span># 列出 ~ 目录</span>
+<span>ls</span> ~
+<span># 替换 ~ 为 / ，替换后列出根目录， </span>
+fc -s ~<span>=</span>/</code></pre>
+<p>显示最近使用的10条历史命令：</p>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># fc -l -10</span>
+<span>1039</span>     <span>type</span> -a <span>grep</span>
+<span>1040</span>     <span>export</span>
+<span>1041</span>     <span>history</span> <span>10</span>
+<span>1042</span>     <span>ulimit</span> -a
+<span>1043</span>     <span>shopt</span>
+<span>1044</span>     <span>help</span> <span>ls</span>
+<span>1045</span>     <span>help</span> <span>env</span>
+<span>1046</span>     <span>help</span> short
+<span>1047</span>     <span>help</span> <span>shopt</span>
+<span>1048</span>     showkey -a</code></pre>
+<p>编辑第1040条历史命令：</p>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># fc 1040</span></code></pre>
+<h3>注意</h3><ol>
+<li>关闭终端后，历史列表将被写入历史文件<code>~/.bash_history</code>。</li>
+<li>环境变量<code>FCEDIT</code>的值为<code>fc</code>默认的编辑器。</li>
+<li>该命令是bash内建命令，相关的帮助信息请查看<code>help</code>命令。</li>
+</ol>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

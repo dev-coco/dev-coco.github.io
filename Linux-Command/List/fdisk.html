@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>fdisk:查看磁盘使用情况和磁盘分区</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="fdisk:查看磁盘使用情况和磁盘分区 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>fdisk</h1><p>查看磁盘使用情况和磁盘分区</p>
+<h2>补充说明</h2><p><strong>fdisk命令</strong> 用于观察硬盘实体使用情况，也可对硬盘分区。它采用传统的问答式界面，而非类似DOS fdisk的cfdisk互动式操作界面，因此在使用上较为不便，但功能却丝毫不打折扣。</p>
+<h3>语法</h3><pre><code>fdisk<span>(</span>选项<span>)</span><span>(</span>参数<span>)</span></code></pre>
+<h3>选项</h3><pre><code> -b <span>&lt;</span>大小<span>></span>             扇区大小<span>(</span><span>512</span>、1024、2048或4096<span>)</span>
+ -c<span>[</span><span>=</span><span>&lt;</span>模式<span>></span><span>]</span>           兼容模式：“dos”或“nondos”<span>(</span>默认<span>)</span>
+ -h                    打印此帮助文本
+ -u<span>[</span><span>=</span><span>&lt;</span>单位<span>></span><span>]</span>           显示单位：“cylinders”<span>(</span>柱面<span>)</span>或“sectors”<span>(</span>扇区，默认<span>)</span>
+ -v                    打印程序版本
+ -C <span>&lt;</span>数字<span>></span>             指定柱面数
+ -H <span>&lt;</span>数字<span>></span>             指定磁头数
+ -S <span>&lt;</span>数字<span>></span>             指定每个磁道的扇区数</code></pre>
+<h3>参数</h3><p>设备文件：指定要进行分区或者显示分区的硬盘设备文件。</p>
+<h3>实例</h3><p>首先选择要进行操作的磁盘：</p>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># fdisk /dev/sdb</span></code></pre>
+<p>输入<code>m</code>列出可以执行的命令：</p>
+<pre><code><span>command</span> <span>(</span>m <span>for</span> <span>help</span><span>)</span>: m
+Command action
+   a   toggle a bootable flag
+   b   edit bsd disklabel
+   c   toggle the dos compatibility flag
+   d   delete a partition
+   l   list known partition types
+   m   print this menu
+   n   <span>add</span> a new partition
+   o   create a new empty DOS partition table
+   p   print the partition table
+   q   quit without saving changes
+   s   create a new empty Sun disklabel
+   t   change a partition's system <span>id</span>
+   u   change display/entry <span>units</span>
+   <span>v</span>   verify the partition table
+   w   <span>write</span> table to disk and <span>exit</span>
+   x   extra functionality <span>(</span>experts only<span>)</span></code></pre>
+<p>输入<code>p</code>列出磁盘目前的分区情况：</p>
+<pre><code>Command <span>(</span>m <span>for</span> <span>help</span><span>)</span>: p
+
+Disk /dev/sdb: <span>3221</span> MB, <span>3221225472</span> bytes
+<span>255</span> heads, <span>63</span> sectors/track, <span>391</span> cylinders
+Units <span>=</span> cylinders of <span>16065</span> * <span>512</span> <span>=</span> <span>8225280</span> bytes
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sdb1               <span>1</span>           <span>1</span>        <span>8001</span>   8e  Linux LVM
+/dev/sdb2               <span>2</span>          <span>26</span>      <span>200812</span>+  <span>83</span>  Linux</code></pre>
+<p>输入<code>d</code>然后选择分区，删除现有分区：</p>
+<pre><code>Command <span>(</span>m <span>for</span> <span>help</span><span>)</span>: d
+Partition number <span>(</span><span>1</span>-4<span>)</span>: <span>1</span>
+
+Command <span>(</span>m <span>for</span> <span>help</span><span>)</span>: d
+Selected partition <span>2</span></code></pre>
+<p>查看分区情况，确认分区已经删除：</p>
+<pre><code>Command <span>(</span>m <span>for</span> <span>help</span><span>)</span>: print
+
+Disk /dev/sdb: <span>3221</span> MB, <span>3221225472</span> bytes
+<span>255</span> heads, <span>63</span> sectors/track, <span>391</span> cylinders
+Units <span>=</span> cylinders of <span>16065</span> * <span>512</span> <span>=</span> <span>8225280</span> bytes
+
+   Device Boot      Start         End      Blocks   Id  System
+
+Command <span>(</span>m <span>for</span> <span>help</span><span>)</span>:</code></pre>
+<p>输入<code>n</code>建立新的磁盘分区，首先建立两个主磁盘分区：</p>
+<pre><code>Command <span>(</span>m <span>for</span> <span>help</span><span>)</span>: n
+Command action
+   e   extended
+   p   primary partition <span>(</span><span>1</span>-4<span>)</span>
+p    //建立主分区
+Partition number <span>(</span><span>1</span>-4<span>)</span>: <span>1</span>  //分区号
+First cylinder <span>(</span><span>1</span>-391, default <span>1</span><span>)</span>:  //分区起始位置
+Using default value <span>1</span>
+last cylinder or +size or +sizeM or +sizeK <span>(</span><span>1</span>-391, default <span>391</span><span>)</span>: <span>100</span>  //分区结束位置，单位为扇区
+
+Command <span>(</span>m <span>for</span> <span>help</span><span>)</span>: n  //再建立一个分区
+Command action
+   e   extended
+   p   primary partition <span>(</span><span>1</span>-4<span>)</span>
+p
+Partition number <span>(</span><span>1</span>-4<span>)</span>: <span>2</span>  //分区号为2
+First cylinder <span>(</span><span>101</span>-391, default <span>101</span><span>)</span>:
+Using default value <span>101</span>
+Last cylinder or +size or +sizeM or +sizeK <span>(</span><span>101</span>-391, default <span>391</span><span>)</span>: +200M  //分区结束位置，单位为M</code></pre>
+<p>确认分区建立成功：</p>
+<pre><code>Command <span>(</span>m <span>for</span> <span>help</span><span>)</span>: p
+
+Disk /dev/sdb: <span>3221</span> MB, <span>3221225472</span> bytes
+<span>255</span> heads, <span>63</span> sectors/track, <span>391</span> cylinders
+Units <span>=</span> cylinders of <span>16065</span> * <span>512</span> <span>=</span> <span>8225280</span> bytes
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sdb1               <span>1</span>         <span>100</span>      <span>803218</span>+  <span>83</span>  Linux
+/dev/sdb2             <span>101</span>         <span>125</span>      <span>200812</span>+  <span>83</span>  Linux</code></pre>
+<p>再建立一个逻辑分区：</p>
+<pre><code>Command <span>(</span>m <span>for</span> <span>help</span><span>)</span>: n
+Command action
+   e   extended
+   p   primary partition <span>(</span><span>1</span>-4<span>)</span>
+e  //选择扩展分区
+Partition number <span>(</span><span>1</span>-4<span>)</span>: <span>3</span>
+First cylinder <span>(</span><span>126</span>-391, default <span>126</span><span>)</span>:
+Using default value <span>126</span>
+Last cylinder or +size or +sizeM or +sizeK <span>(</span><span>126</span>-391, default <span>391</span><span>)</span>:
+Using default value <span>391</span></code></pre>
+<p>确认扩展分区建立成功：</p>
+<pre><code>Command <span>(</span>m <span>for</span> <span>help</span><span>)</span>: p
+
+Disk /dev/sdb: <span>3221</span> MB, <span>3221225472</span> bytes
+<span>255</span> heads, <span>63</span> sectors/track, <span>391</span> cylinders
+Units <span>=</span> cylinders of <span>16065</span> * <span>512</span> <span>=</span> <span>8225280</span> bytes
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sdb1               <span>1</span>         <span>100</span>      <span>803218</span>+  <span>83</span>  Linux
+/dev/sdb2             <span>101</span>         <span>125</span>      <span>200812</span>+  <span>83</span>  Linux
+/dev/sdb3             <span>126</span>         <span>391</span>     <span>2136645</span>    <span>5</span>  Extended</code></pre>
+<p>在扩展分区上建立两个逻辑分区：</p>
+<pre><code>Command <span>(</span>m <span>for</span> <span>help</span><span>)</span>: n
+Command action
+   l   logical <span>(</span><span>5</span> or over<span>)</span>
+   p   primary partition <span>(</span><span>1</span>-4<span>)</span>
+l //选择逻辑分区
+First cylinder <span>(</span><span>126</span>-391, default <span>126</span><span>)</span>:
+Using default value <span>126</span>
+Last cylinder or +size or +sizeM or +sizeK <span>(</span><span>126</span>-391, default <span>391</span><span>)</span>: +400M
+
+Command <span>(</span>m <span>for</span> <span>help</span><span>)</span>: n
+Command action
+   l   logical <span>(</span><span>5</span> or over<span>)</span>
+   p   primary partition <span>(</span><span>1</span>-4<span>)</span>
+l
+First cylinder <span>(</span><span>176</span>-391, default <span>176</span><span>)</span>:
+Using default value <span>176</span>
+Last cylinder or +size or +sizeM or +sizeK <span>(</span><span>176</span>-391, default <span>391</span><span>)</span>:
+Using default value <span>391</span></code></pre>
+<p>确认逻辑分区建立成功：</p>
+<pre><code>Command <span>(</span>m <span>for</span> <span>help</span><span>)</span>: p
+
+Disk /dev/sdb: <span>3221</span> MB, <span>3221225472</span> bytes
+<span>255</span> heads, <span>63</span> sectors/track, <span>391</span> cylinders
+Units <span>=</span> cylinders of <span>16065</span> * <span>512</span> <span>=</span> <span>8225280</span> bytes
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sdb1               <span>1</span>         <span>100</span>      <span>803218</span>+  <span>83</span>  Linux
+/dev/sdb2             <span>101</span>         <span>125</span>      <span>200812</span>+  <span>83</span>  Linux
+/dev/sdb3             <span>126</span>         <span>391</span>     <span>2136645</span>    <span>5</span>  Extended
+/dev/sdb5             <span>126</span>         <span>175</span>      <span>401593</span>+  <span>83</span>  Linux
+/dev/sdb6             <span>176</span>         <span>391</span>     <span>1734988</span>+  <span>83</span>  Linux
+
+Command <span>(</span>m <span>for</span> <span>help</span><span>)</span>:</code></pre>
+<p>从上面的结果我们可以看到，在硬盘sdb我们建立了2个主分区（sdb1，sdb2），1个扩展分区（sdb3），2个逻辑分区（sdb5，sdb6）</p>
+<p>注意：主分区和扩展分区的磁盘号位1-4，也就是说最多有4个主分区或者扩展分区，逻辑分区开始的磁盘号为5，因此在这个实验中试没有sdb4的。</p>
+<p>最后对分区操作进行保存：</p>
+<pre><code>Command <span>(</span>m <span>for</span> <span>help</span><span>)</span>: w
+The partition table has been altered<span>!</span>
+
+Calling ioctl<span>(</span><span>)</span> to re-read partition table.
+Syncing disks.</code></pre>
+<p>建立好分区之后我们还需要对分区进行格式化才能在系统中使用磁盘。</p>
+<p>在sdb1上建立ext2分区：</p>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># mkfs.ext2 /dev/sdb1</span>
+<span>mke2fs</span> <span>1.39</span> <span>(</span><span>29</span>-May-2006<span>)</span>
+Filesystem <span>label</span><span>=</span>
+OS type: Linux
+Block <span>size</span><span>=</span><span>4096</span> <span>(</span>log<span>=</span><span>2</span><span>)</span>
+Fragment <span>size</span><span>=</span><span>4096</span> <span>(</span>log<span>=</span><span>2</span><span>)</span>
+<span>100576</span> inodes, <span>200804</span> blocks
+<span>10040</span> blocks <span>(</span><span>5.00</span>%<span>)</span> reserved <span>for</span> the super user
+First data <span>block</span><span>=</span><span>0</span>
+Maximum filesystem <span>blocks</span><span>=</span><span>209715200</span>
+<span>7</span> block <span>groups</span>
+<span>32768</span> blocks per group, <span>32768</span> fragments per group
+<span>14368</span> inodes per group
+Superblock backups stored on blocks:
+        <span>32768</span>, <span>98304</span>, <span>163840</span>
+
+Writing inode tables: <span>done</span>
+Writing superblocks and filesystem accounting information: <span>done</span>
+
+This filesystem will be automatically checked every <span>32</span> mounts or
+<span>180</span> days, whichever comes first.  Use tune2fs -c or -i to override.</code></pre>
+<p>在sdb6上建立ext3分区：</p>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># mkfs.ext3 /dev/sdb6</span>
+<span>mke2fs</span> <span>1.39</span> <span>(</span><span>29</span>-May-2006<span>)</span>
+Filesystem <span>label</span><span>=</span>
+OS type: Linux
+Block <span>size</span><span>=</span><span>4096</span> <span>(</span>log<span>=</span><span>2</span><span>)</span>
+Fragment <span>size</span><span>=</span><span>4096</span> <span>(</span>log<span>=</span><span>2</span><span>)</span>
+<span>217280</span> inodes, <span>433747</span> blocks
+<span>21687</span> blocks <span>(</span><span>5.00</span>%<span>)</span> reserved <span>for</span> the super user
+First data <span>block</span><span>=</span><span>0</span>
+Maximum filesystem <span>blocks</span><span>=</span><span>444596224</span>
+<span>14</span> block <span>groups</span>
+<span>32768</span> blocks per group, <span>32768</span> fragments per group
+<span>15520</span> inodes per group
+Superblock backups stored on blocks:
+        <span>32768</span>, <span>98304</span>, <span>163840</span>, <span>229376</span>, <span>294912</span>
+
+Writing inode tables: <span>done</span>
+Creating journal <span>(</span><span>8192</span> blocks<span>)</span>: <span>done</span>
+Writing superblocks and filesystem accounting information: <span>done</span>
+
+This filesystem will be automatically checked every <span>32</span> mounts or
+<span>180</span> days, whichever comes first.  Use tune2fs -c or -i to override.
+<span>[</span>root@localhost ~<span>]</span><span>#</span></code></pre>
+<p>建立两个目录<code>/oracle</code>和<code>/web</code>，将新建好的两个分区挂载到系统：</p>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># mkdir /oracle</span>
+<span>[</span>root@localhost ~<span>]</span><span># mkdir /web</span>
+<span>[</span>root@localhost ~<span>]</span><span># mount /dev/sdb1 /oracle</span>
+<span>[</span>root@localhost ~<span>]</span><span># mount /dev/sdb6 /web</span></code></pre>
+<p>查看分区挂载情况：</p>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># df -h</span>
+文件系统              容量  已用 可用 已用% 挂载点
+/dev/mapper/VolGroup00-LogVol00
+                      <span>6</span>.7G  <span>2</span>.8G  <span>3</span>.6G  <span>44</span>% /
+/dev/sda1              99M   12M   82M  <span>13</span>% /boot
+tmpfs                 125M     <span>0</span>  125M   <span>0</span>% /dev/shm
+/dev/sdb1             773M  808K  733M   <span>1</span>% /oracle
+/dev/sdb6             <span>1</span>.7G   35M  <span>1</span>.6G   <span>3</span>% /web</code></pre>
+<p>如果需要每次开机自动挂载则需要修改<code>/etc/fstab</code>文件，加入两行配置：</p>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># vim /etc/fstab</span>
+
+/dev/VolGroup00/LogVol00 /                       ext3    defaults        <span>1</span> <span>1</span>
+<span>LABEL</span><span>=</span>/boot             /boot                   ext3    defaults        <span>1</span> <span>2</span>
+tmpfs                   /dev/shm                tmpfs   defaults        <span>0</span> <span>0</span>
+devpts                  /dev/pts                devpts  <span>gid</span><span>=</span><span>5</span>,mode<span>=</span><span>620</span>  <span>0</span> <span>0</span>
+sysfs                   /sys                    sysfs   defaults        <span>0</span> <span>0</span>
+proc                    /proc                   proc    defaults        <span>0</span> <span>0</span>
+/dev/VolGroup00/LogVol01 swap                    swap    defaults        <span>0</span> <span>0</span>
+/dev/sdb1               /oracle                 ext2    defaults        <span>0</span> <span>0</span>
+/dev/sdb6               /web                    ext3    defaults        <span>0</span> <span>0</span></code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

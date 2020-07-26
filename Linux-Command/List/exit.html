@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>exit:退出当前的shell</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="exit:退出当前的shell — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>exit</h1><p>退出当前的shell。</p>
+<h2>概要</h2><pre><code><span>exit</span> <span>[</span>n<span>]</span></code></pre>
+<h2>主要用途</h2><ul>
+<li>执行exit可使shell以指定的状态值退出。若不设置参数，则以最后一条命令的返回值作为exit的返回值退出。</li>
+</ul>
+<h2>参数</h2><p>n（可选）：指定的shell返回值（整数）。</p>
+<h2>返回值</h2><p>返回值为你指定的参数n的值，如果你指定的参数大于255或小于0，那么会通过加或减256的方式使得返回值总是处于0到255之间。</p>
+<h2>例子</h2><p>退出当前shell：</p>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># exit</span>
+<span>logout</span></code></pre>
+<p>也可以使用<code>ctrl+d</code>退出当前终端，下面列出了打开或关闭该功能的方法：</p>
+<pre><code><span># 打开ctrl+d退出终端</span>
+<span>set</span> -o ignoreeof
+<span># 关闭ctrl+d退出终端</span>
+<span>set</span> +o ignoreeof</code></pre>
+<p>在脚本中，进入脚本所在目录，否则退出：</p>
+<pre><code><span>cd</span> <span><span>&#36;(</span><span>dirname</span> &#36;0<span>)</span></span> <span>||</span> <span>exit</span> <span>1</span></code></pre>
+<p>在脚本中，判断参数数量，不匹配就打印使用方式，退出：</p>
+<pre><code><span>if</span> <span>[</span> <span>"<span>&#36;#</span>"</span> -ne <span>"2"</span> <span>]</span><span>;</span> <span>then</span>
+    <span>echo</span> <span>"usage: <span>&#36;0</span> &lt;area> &lt;hours>"</span>
+    <span>exit</span> <span>2</span>
+<span>fi</span></code></pre>
+<p>在脚本中，退出时删除临时文件：</p>
+<pre><code><span>trap</span> <span>"rm -f tmpfile; echo Bye."</span> EXIT</code></pre>
+<p>检查上一命令的退出码：</p>
+<pre><code>./mycommand.sh
+<span>EXCODE</span><span>=</span><span>&#36;?</span>
+<span>if</span> <span>[</span> <span>"<span>&#36;EXCODE</span>"</span> <span>==</span> <span>"0"</span> <span>]</span><span>;</span> <span>then</span>
+    <span>echo</span> <span>"O.K"</span>
+<span>fi</span></code></pre>
+<h3>注意</h3><ol>
+<li>该命令是bash内建命令，相关的帮助信息请查看<code>help</code>命令。</li>
+</ol>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

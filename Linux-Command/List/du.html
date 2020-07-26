@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>du:显示每个文件和目录的磁盘使用空间</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="du:显示每个文件和目录的磁盘使用空间 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>du</h1><p>显示每个文件和目录的磁盘使用空间</p>
+<h2>补充说明</h2><p><strong>du命令</strong> 也是查看使用空间的，但是与df命令不同的是Linux du命令是对文件和目录磁盘使用的空间的查看，还是和df命令有一些区别的。</p>
+<h3>语法</h3><pre><code><span>du</span> <span>[</span>选项<span>]</span><span>[</span>文件<span>]</span></code></pre>
+<h3>选项</h3><pre><code>-a或-all 显示目录中个别文件的大小。
+-b或-bytes 显示目录或文件大小时，以byte为单位。
+-c或--total 除了显示个别目录或文件的大小外，同时也显示所有目录或文件的总和。
+-k或--kilobytes 以KB<span>(</span>1024bytes<span>)</span>为单位输出。
+-m或--megabytes 以MB为单位输出。
+-s或--summarize 仅显示总计，只列出最后加总的值。
+-h或--human-readable 以K，M，G为单位，提高信息的可读性。
+-x或--one-file-xystem 以一开始处理时的文件系统为准，若遇上其它不同的文件系统目录则略过。
+-L<span>&lt;</span>符号链接<span>></span>或--dereference<span>&lt;</span>符号链接<span>></span> 显示选项中所指定符号链接的源文件大小。
+-S或--separate-dirs 显示个别目录的大小时，并不含其子目录的大小。
+-X<span>&lt;</span>文件<span>></span>或--exclude-from<span>=</span><span>&lt;</span>文件<span>></span> 在<span>&lt;</span>文件<span>></span>指定目录或文件。
+--exclude<span>=</span><span>&lt;</span>目录或文件<span>></span> 略过指定的目录或文件。
+-D或--dereference-args 显示指定符号链接的源文件大小。
+-H或--si 与-h参数相同，但是K，M，G是以1000为换算单位。
+-l或--count-links 重复计算硬件链接的文件。</code></pre>
+<h3>实例</h3><p>显示目录或者文件所占空间：</p>
+<pre><code>root@localhost <span>[</span>test<span>]</span><span># du</span>
+<span>608</span> ./test6
+<span>308</span> ./test4
+<span>4</span> ./scf/lib
+<span>4</span> ./scf/service/deploy/product
+<span>4</span> ./scf/service/deploy/info
+<span>12</span> ./scf/service/deploy
+<span>16</span> ./scf/service
+<span>4</span> ./scf/doc
+<span>4</span> ./scf/bin
+<span>32</span> ./scf
+<span>8</span> ./test3
+<span>1288</span> <span>.</span></code></pre>
+<p>只显示当前目录下面的子目录的目录大小和当前目录的总的大小，最下面的1288为当前目录的总大小</p>
+<p>显示指定文件所占空间：</p>
+<pre><code><span>[</span>root@localhost test<span>]</span><span># du log2012.log</span>
+<span>300</span> log2012.log</code></pre>
+<p>查看指定目录的所占空间：</p>
+<pre><code><span>[</span>root@localhost test<span>]</span><span># du scf</span>
+<span>4</span> scf/lib
+<span>4</span> scf/service/deploy/product
+<span>4</span> scf/service/deploy/info
+<span>12</span> scf/service/deploy
+<span>16</span> scf/service
+<span>4</span> scf/doc
+<span>4</span> scf/bin
+<span>32</span> scf</code></pre>
+<p>显示多个文件所占空间：</p>
+<pre><code><span>[</span>root@localhost test<span>]</span><span># du log30.tar.gz log31.tar.gz</span>
+<span>4</span> log30.tar.gz
+<span>4</span> log31.tar.gz</code></pre>
+<p>只显示总和的大小:</p>
+<pre><code><span>[</span>root@localhost test<span>]</span><span># du -s</span>
+<span>1288</span> <span>.</span>
+
+<span>[</span>root@localhost test<span>]</span><span># du -s scf</span>
+<span>32</span> scf
+
+<span>[</span>root@localhost test<span>]</span><span># cd ..</span>
+<span>[</span>root@localhost soft<span>]</span><span># du -s test</span>
+<span>1288</span> <span>test</span></code></pre>
+<p>显示总和的大小且易读:</p>
+<pre><code><span>du</span> -sh <span>&#36;dir</span></code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

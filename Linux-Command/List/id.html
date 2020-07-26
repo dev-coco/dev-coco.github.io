@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>id:打印真实以及有效的用户和所在组的信息</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="id:打印真实以及有效的用户和所在组的信息 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>id</h1><p>打印真实以及有效的用户和所在组的信息</p>
+<h2>概要</h2><pre><code><span>id</span> <span>[</span>OPTION<span>]</span><span>..</span>. <span>[</span><span>USER</span><span>]</span><span>..</span>.</code></pre>
+<h2>主要用途</h2><ul>
+<li>没有选项时，打印指定用户ID信息。</li>
+</ul>
+<h2>选项</h2><pre><code>-a               兼容性选项，没有实际作用。
+-Z, --context    只打印进程的安全上下文。
+-g, --group      只打印有效的组ID。
+-G, --groups     打印全部组ID。
+-u, --user       只打印有效的用户ID。
+-z, --zero       使用空字符代替默认的空格来分隔条目。
+--help           显示帮助信息并退出。
+--version        显示版本信息并退出。</code></pre>
+<p>只有在使用 <code>-u</code> <code>-g</code> <code>-G</code> 选项中一到多个时，以下选项可以使用：</p>
+<pre><code>-n, --name    打印名称而不是数字。
+-r, --real    打印真实ID而不是有效ID。</code></pre>
+<h2>参数</h2><p>user（可选）：可以为一到多个，默认为当前用户。</p>
+<h2>返回值</h2><p>返回0表示成功，返回非0值表示失败。</p>
+<h2>例子</h2><pre><code><span>[</span>root@localhost ~<span>]</span><span># id</span>
+<span>uid</span><span>=</span><span>0</span><span>(</span>root<span>)</span> <span>gid</span><span>=</span><span>0</span><span>(</span>root<span>)</span> <span>groups</span><span>=</span><span>0</span><span>(</span>root<span>)</span>,1<span>(</span>bin<span>)</span>,2<span>(</span>daemon<span>)</span>,3<span>(</span>sys<span>)</span>,4<span>(</span>adm<span>)</span>,6<span>(</span>disk<span>)</span>,10<span>(</span>wheel<span>)</span></code></pre>
+<p>解释：用户root的UID号码 = 0，GID号码 = 0。用户root是下面组的成员：</p>
+<ul>
+<li>root组GID号是：0</li>
+<li>bin组GID号是：1</li>
+<li>daemon组GID号是：2</li>
+<li>sys组GID号是：3</li>
+<li>adm组GID号是：4</li>
+<li>disk组GID号是：6</li>
+<li>wheel组GID号是：10</li>
+</ul>
+<p>打印用户名、UID 和该用户所属的所有组，要这么做，我们可以使用 -a 选项：</p>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># id -a</span>
+<span>uid</span><span>=</span><span>0</span><span>(</span>root<span>)</span> <span>gid</span><span>=</span><span>0</span><span>(</span>root<span>)</span> <span>groups</span><span>=</span><span>0</span><span>(</span>root<span>)</span>,1<span>(</span>bin<span>)</span>,2<span>(</span>daemon<span>)</span>,3<span>(</span>sys<span>)</span>,4<span>(</span>adm<span>)</span>,6<span>(</span>disk<span>)</span>,10<span>(</span>wheel<span>)</span></code></pre>
+<p>输出所有不同的组ID ，有效的，真实的和补充的，我们可以使用 -G 选项来实现：</p>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># id -G</span>
+<span>0</span> <span>1</span> <span>2</span> <span>3</span> <span>4</span> <span>6</span> <span>10</span></code></pre>
+<p>结果只会显示GID号。你可以和<code>/etc/group</code>文件比较。下面是<code>/etc/group</code>文件的示例内容：</p>
+<p>只输出有效的组ID，通过使用 -g 选项来只输出有效组ID：</p>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># id -g</span>
+<span>0</span></code></pre>
+<p>输出特定用户信息，我们可以输出特定的用户信息相关的UID和GID。只需要在id命令后跟上用户名：</p>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># id www</span>
+<span>uid</span><span>=</span><span>500</span><span>(</span>www<span>)</span> <span>gid</span><span>=</span><span>500</span><span>(</span>www<span>)</span> <span>groups</span><span>=</span><span>500</span><span>(</span>www<span>)</span></code></pre>
+<h3>注意</h3><ol>
+<li><p>该命令可以显示真实有效的用户ID(UID)和组ID(GID)。UID 是对一个用户的单一身份标识。组ID（GID）则对应多个UID；一些程序可能需要UID/GID来运行。<code>id</code> 使我们更加容易地找出用户的UID以及GID，而不必在 <code>/etc/group</code> 文件中搜寻。</p>
+</li>
+<li><p>该命令是<code>GNU coreutils</code>包中的命令，相关的帮助信息请查看<code>man -s 1 id</code>，<code>info coreutils &#39;id invocation&#39;</code>。</p>
+</li>
+</ol>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>fmt:读取文件后优化处理并输出</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="fmt:读取文件后优化处理并输出 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>fmt</h1><p>读取文件后优化处理并输出</p>
+<h2>补充说明</h2><p><strong>fmt命令</strong> 读取文件的内容，根据选项的设置对文件格式进行简单的优化处理，并将结果送到标准输出设备。</p>
+<h3>语法</h3><pre><code>fmt<span>(</span>选项<span>)</span><span>(</span>参数<span>)</span></code></pre>
+<h3>选项</h3><pre><code>-c或--crown-margin：每段前两列缩排；
+-p<span>&lt;</span>列起始字符串<span>></span>或-prefix<span>=</span><span>&lt;</span>列起始字符串<span>></span>：仅合并含有指定字符串的列，通常运用在程序语言的注解方面；
+-s或--split-only：只拆开字数超出每列字符数的列，但不合并字数不足每列字符数的列；
+-t或--tagged-paragraph：每列前两列缩排，但第1列和第2列的缩排格式不同；
+-u或--uniform-spacing：每列字符之间都以一个空格字符间隔，每个句子之间则两个空格字符分隔；
+-w<span>&lt;</span>每列字符数<span>></span>或--width<span>=</span><span>&lt;</span>每列字符数<span>></span>或-<span>&lt;</span>每列字符数<span>></span>：设置每列的最大字符数。</code></pre>
+<h3>参数</h3><p>指定要优化格式的文件。</p>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

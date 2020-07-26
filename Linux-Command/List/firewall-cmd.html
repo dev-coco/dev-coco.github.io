@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>firewall-cmd:Linux上新用的防火墙软件，跟iptables差不多的工具</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="firewall-cmd:Linux上新用的防火墙软件，跟iptables差不多的工具 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>firewall-cmd</h1><p>Linux上新用的防火墙软件，跟iptables差不多的工具</p>
+<h2>补充说明</h2><p>firewall-cmd 是 firewalld的字符界面管理工具，firewalld是centos7的一大特性，最大的好处有两个：支持动态更新，不用重启服务；第二个就是加入了防火墙的“zone”概念。</p>
+<p>firewalld跟iptables比起来至少有两大好处：</p>
+<ol>
+<li>firewalld可以动态修改单条规则，而不需要像iptables那样，在修改了规则后必须得全部刷新才可以生效。</li>
+<li>firewalld在使用上要比iptables人性化很多，即使不明白“五张表五条链”而且对TCP/IP协议也不理解也可以实现大部分功能。</li>
+</ol>
+<p>firewalld自身并不具备防火墙的功能，而是和iptables一样需要通过内核的netfilter来实现，也就是说firewalld和 iptables一样，他们的作用都是用于维护规则，而真正使用规则干活的是内核的netfilter，只不过firewalld和iptables的结 构以及使用方法不一样罢了。</p>
+<p><strong>命令格式</strong> </p>
+<pre><code>firewall-cmd <span>[</span>选项 <span>..</span>. <span>]</span></code></pre>
+<h3>选项</h3><p>通用选项</p>
+<pre><code>-h, --help    <span># 显示帮助信息；</span>
+-V, --version <span># 显示版本信息. （这个选项不能与其他选项组合）；</span>
+-q, --quiet   <span># 不打印状态消息；</span></code></pre>
+<p>状态选项</p>
+<pre><code>--state                <span># 显示firewalld的状态；</span>
+--reload               <span># 不中断服务的重新加载；</span>
+--complete-reload      <span># 中断所有连接的重新加载；</span>
+--runtime-to-permanent <span># 将当前防火墙的规则永久保存；</span>
+--check-config         <span># 检查配置正确性；</span></code></pre>
+<p>日志选项</p>
+<pre><code>--get-log-denied         <span># 获取记录被拒绝的日志；</span>
+--set-log-denied<span>=</span><span>&lt;</span>value<span>></span> <span># 设置记录被拒绝的日志，只能为 'all','unicast','broadcast','multicast','off' 其中的一个；</span></code></pre>
+<h3>实例</h3><pre><code><span># 安装firewalld</span>
+yum <span>install</span> firewalld firewall-config
+
+systemctl start  firewalld <span># 启动</span>
+systemctl stop firewalld  <span># 停止</span>
+systemctl <span>enable</span> firewalld <span># 启用自动启动</span>
+systemctl disable firewalld <span># 禁用自动启动</span>
+systemctl status firewalld <span># 或者 firewall-cmd --state 查看状态</span>
+
+<span># 关闭服务的方法</span>
+<span># 你也可以关闭目前还不熟悉的FirewallD防火墙，而使用iptables，命令如下：</span>
+
+systemctl stop firewalld
+systemctl disable firewalld
+yum <span>install</span> iptables-services
+systemctl start iptables
+systemctl <span>enable</span> iptables</code></pre>
+<p>配置firewalld</p>
+<pre><code>firewall-cmd --version  <span># 查看版本</span>
+firewall-cmd --help     <span># 查看帮助</span>
+
+<span># 查看设置：</span>
+firewall-cmd --state  <span># 显示状态</span>
+firewall-cmd --get-active-zones  <span># 查看区域信息</span>
+firewall-cmd --get-zone-of-interface<span>=</span>eth0  <span># 查看指定接口所属区域</span>
+firewall-cmd --panic-on  <span># 拒绝所有包</span>
+firewall-cmd --panic-off  <span># 取消拒绝状态</span>
+firewall-cmd --query-panic  <span># 查看是否拒绝</span>
+
+firewall-cmd --reload <span># 更新防火墙规则</span>
+firewall-cmd --complete-reload
+<span># 两者的区别就是第一个无需断开连接，就是firewalld特性之一动态添加规则，第二个需要断开连接，类似重启服务</span>
+
+
+<span># 将接口添加到区域，默认接口都在public</span>
+firewall-cmd --zone<span>=</span>public --add-interface<span>=</span>eth0
+<span># 永久生效再加上 --permanent 然后reload防火墙</span>
+
+<span># 设置默认接口区域，立即生效无需重启</span>
+firewall-cmd --set-default-zone<span>=</span>public
+
+<span># 查看所有打开的端口：</span>
+firewall-cmd --zone<span>=</span>dmz --list-ports
+
+<span># 加入一个端口到区域：</span>
+firewall-cmd --zone<span>=</span>dmz --add-port<span>=</span><span>8080</span>/tcp
+<span># 若要永久生效方法同上</span>
+
+<span># 打开一个服务，类似于将端口可视化，服务需要在配置文件中添加，/etc/firewalld 目录下有services文件夹，这个不详细说了，详情参考文档</span>
+firewall-cmd --zone<span>=</span>work --add-service<span>=</span>smtp
+
+<span># 移除服务</span>
+firewall-cmd --zone<span>=</span>work --remove-service<span>=</span>smtp
+
+<span># 显示支持的区域列表</span>
+firewall-cmd --get-zones
+
+<span># 设置为家庭区域</span>
+firewall-cmd --set-default-zone<span>=</span>home
+
+<span># 查看当前区域</span>
+firewall-cmd --get-active-zones
+
+<span># 设置当前区域的接口</span>
+firewall-cmd --get-zone-of-interface<span>=</span>enp03s
+
+<span># 显示所有公共区域（public）</span>
+firewall-cmd --zone<span>=</span>public --list-all
+
+<span># 临时修改网络接口（enp0s3）为内部区域（internal）</span>
+firewall-cmd --zone<span>=</span>internal --change-interface<span>=</span>enp03s
+
+<span># 永久修改网络接口enp03s为内部区域（internal）</span>
+firewall-cmd --permanent --zone<span>=</span>internal --change-interface<span>=</span>enp03s</code></pre>
+<p>服务管理</p>
+<pre><code><span># 显示服务列表  </span>
+Amanda, FTP, Samba和TFTP等最重要的服务已经被FirewallD提供相应的服务，可以使用如下命令查看：
+
+firewall-cmd --get-services
+
+<span># 允许SSH服务通过</span>
+firewall-cmd --new-service<span>=</span>ssh
+
+<span># 禁止SSH服务通过</span>
+firewall-cmd --delete-service<span>=</span>ssh
+
+<span># 打开TCP的8080端口</span>
+firewall-cmd --enable <span>ports</span><span>=</span><span>8080</span>/tcp
+
+<span># 临时允许Samba服务通过600秒</span>
+firewall-cmd --enable <span>service</span><span>=</span>samba --timeout<span>=</span><span>600</span>
+
+<span># 显示当前服务</span>
+firewall-cmd --list-services
+
+<span># 添加HTTP服务到内部区域（internal）</span>
+firewall-cmd --permanent --zone<span>=</span>internal --add-service<span>=</span>http
+firewall-cmd --reload     <span># 在不改变状态的条件下重新加载防火墙</span></code></pre>
+<p>端口管理</p>
+<pre><code><span># 打开443/TCP端口</span>
+firewall-cmd --add-port<span>=</span><span>443</span>/tcp
+
+<span># 永久打开3690/TCP端口</span>
+firewall-cmd --permanent --add-port<span>=</span><span>3690</span>/tcp
+
+<span># 永久打开端口好像需要reload一下，临时打开好像不用，如果用了reload临时打开的端口就失效了</span>
+<span># 其它服务也可能是这样的，这个没有测试</span>
+firewall-cmd --reload
+
+<span># 查看防火墙，添加的端口也可以看到</span>
+firewall-cmd --list-all</code></pre>
+<p>直接模式</p>
+<pre><code><span># FirewallD包括一种直接模式，使用它可以完成一些工作，例如打开TCP协议的9999端口</span>
+
+firewall-cmd --direct -add-rule ipv4 filter INPUT <span>0</span> -p tcp --dport <span>9000</span> -j ACCEPT
+firewall-cmd --reload</code></pre>
+<p><strong>自定义服务管理</strong></p>
+<p>选项</p>
+<pre><code>（末尾带有 <span>[</span>P only<span>]</span> 的话表示该选项除了与（--permanent）之外，不能与其他选项一同使用！）
+--new-service<span>=</span><span>&lt;</span>服务名<span>></span> 新建一个自定义服务 <span>[</span>P only<span>]</span>
+--new-service-from-file<span>=</span><span>&lt;</span>文件名<span>></span> <span>[</span>--name<span>=</span><span>&lt;</span>服务名<span>></span><span>]</span>
+                      从文件中读取配置用以新建一个自定义服务 <span>[</span>P only<span>]</span>
+--delete-service<span>=</span><span>&lt;</span>服务名<span>></span>
+                      删除一个已存在的服务 <span>[</span>P only<span>]</span>
+--load-service-defaults<span>=</span><span>&lt;</span>服务名<span>></span>
+                      Load icmptype default settings <span>[</span>P only<span>]</span>
+--info-service<span>=</span><span>&lt;</span>服务名<span>></span>
+                      显示该服务的相关信息
+--path-service<span>=</span><span>&lt;</span>服务名<span>></span>
+                      显示该服务的文件的相关路径 <span>[</span>P only<span>]</span>
+--service<span>=</span><span>&lt;</span>服务名<span>></span> --set-description<span>=</span><span>&lt;</span>描述<span>></span>
+                      给该服务设置描述信息 <span>[</span>P only<span>]</span>
+--service<span>=</span><span>&lt;</span>服务名<span>></span> --get-description
+                      显示该服务的描述信息 <span>[</span>P only<span>]</span>
+--service<span>=</span><span>&lt;</span>服务名<span>></span> --set-short<span>=</span><span>&lt;</span>描述<span>></span>
+                      给该服务设置一个简短的描述 <span>[</span>P only<span>]</span>
+--service<span>=</span><span>&lt;</span>服务名<span>></span> --get-short
+                      显示该服务的简短描述 <span>[</span>P only<span>]</span>
+
+--service<span>=</span><span>&lt;</span>服务名<span>></span> --add-port<span>=</span><span>&lt;</span>端口号<span>></span><span>[</span>-<span>&lt;</span>端口号<span>></span><span>]</span>/<span>&lt;</span>protocol<span>></span>
+                      给该服务添加一个新的端口<span>(</span>端口段<span>)</span> <span>[</span>P only<span>]</span>
+
+--service<span>=</span><span>&lt;</span>服务名<span>></span> --remove-port<span>=</span><span>&lt;</span>端口号<span>></span><span>[</span>-<span>&lt;</span>端口号<span>></span><span>]</span>/<span>&lt;</span>protocol<span>></span>
+                      从该服务上移除一个端口<span>(</span>端口段<span>)</span> <span>[</span>P only<span>]</span>
+
+--service<span>=</span><span>&lt;</span>服务名<span>></span> --query-port<span>=</span><span>&lt;</span>端口号<span>></span><span>[</span>-<span>&lt;</span>端口号<span>></span><span>]</span>/<span>&lt;</span>protocol<span>></span>
+                      查询该服务是否添加了某个端口<span>(</span>端口段<span>)</span> <span>[</span>P only<span>]</span>
+
+--service<span>=</span><span>&lt;</span>服务名<span>></span> --get-ports
+                      显示该服务添加的所有端口 <span>[</span>P only<span>]</span>
+
+--service<span>=</span><span>&lt;</span>服务名<span>></span> --add-protocol<span>=</span><span>&lt;</span>protocol<span>></span>
+                      为该服务添加一个协议 <span>[</span>P only<span>]</span>
+
+--service<span>=</span><span>&lt;</span>服务名<span>></span> --remove-protocol<span>=</span><span>&lt;</span>protocol<span>></span>
+                      从该服务上移除一个协议 <span>[</span>P only<span>]</span>
+
+--service<span>=</span><span>&lt;</span>服务名<span>></span> --query-protocol<span>=</span><span>&lt;</span>protocol<span>></span>
+                      查询该服务是否添加了某个协议 <span>[</span>P only<span>]</span>
+
+--service<span>=</span><span>&lt;</span>服务名<span>></span> --get-protocols
+                      显示该服务添加的所有协议 <span>[</span>P only<span>]</span>
+
+--service<span>=</span><span>&lt;</span>服务名<span>></span> --add-source-port<span>=</span><span>&lt;</span>端口号<span>></span><span>[</span>-<span>&lt;</span>端口号<span>></span><span>]</span>/<span>&lt;</span>protocol<span>></span>
+                      添加新的源端口<span>(</span>端口段<span>)</span>到该服务 <span>[</span>P only<span>]</span>
+
+--service<span>=</span><span>&lt;</span>服务名<span>></span> --remove-source-port<span>=</span><span>&lt;</span>端口号<span>></span><span>[</span>-<span>&lt;</span>端口号<span>></span><span>]</span>/<span>&lt;</span>protocol<span>></span>
+                      从该服务中删除源端口<span>(</span>端口段<span>)</span> <span>[</span>P only<span>]</span>
+
+--service<span>=</span><span>&lt;</span>服务名<span>></span> --query-source-port<span>=</span><span>&lt;</span>端口号<span>></span><span>[</span>-<span>&lt;</span>端口号<span>></span><span>]</span>/<span>&lt;</span>protocol<span>></span>
+                      查询该服务是否添加了某个源端口<span>(</span>端口段<span>)</span> <span>[</span>P only<span>]</span>
+
+--service<span>=</span><span>&lt;</span>服务名<span>></span> --get-source-ports
+                      显示该服务所有源端口 <span>[</span>P only<span>]</span>
+
+--service<span>=</span><span>&lt;</span>服务名<span>></span> --add-module<span>=</span><span>&lt;</span>module<span>></span>
+                      为该服务添加一个模块 <span>[</span>P only<span>]</span>
+--service<span>=</span><span>&lt;</span>服务名<span>></span> --remove-module<span>=</span><span>&lt;</span>module<span>></span>
+                      为该服务移除一个模块 <span>[</span>P only<span>]</span>
+--service<span>=</span><span>&lt;</span>服务名<span>></span> --query-module<span>=</span><span>&lt;</span>module<span>></span>
+                      查询该服务是否添加了某个模块 <span>[</span>P only<span>]</span>
+--service<span>=</span><span>&lt;</span>服务名<span>></span> --get-modules
+                      显示该服务添加的所有模块 <span>[</span>P only<span>]</span>
+--service<span>=</span><span>&lt;</span>服务名<span>></span> --set-destination<span>=</span><span>&lt;</span>ipv<span>></span>:<span>&lt;</span>address<span>></span><span>[</span>/<span>&lt;</span>mask<span>></span><span>]</span>
+                      Set destination <span>for</span> ipv to address <span>in</span> <span>service</span> <span>[</span>P only<span>]</span>
+--service<span>=</span><span>&lt;</span>服务名<span>></span> --remove-destination<span>=</span><span>&lt;</span>ipv<span>></span>
+                      Disable destination <span>for</span> ipv i <span>service</span> <span>[</span>P only<span>]</span>
+--service<span>=</span><span>&lt;</span>服务名<span>></span> --query-destination<span>=</span><span>&lt;</span>ipv<span>></span>:<span>&lt;</span>address<span>></span><span>[</span>/<span>&lt;</span>mask<span>></span><span>]</span>
+                      Return whether destination ipv is <span>set</span> <span>for</span> <span>service</span> <span>[</span>P only<span>]</span>
+--service<span>=</span><span>&lt;</span>服务名<span>></span> --get-destinations
+                      List destinations <span>in</span> <span>service</span> <span>[</span>P only<span>]</span></code></pre>
+<p><strong>控制端口 / 服务</strong></p>
+<p>可以通过两种方式控制端口的开放，一种是指定端口号另一种是指定服务名。虽然开放 http 服务就是开放了 80 端口，但是还是不能通过端口号来关闭，也就是说通过指定服务名开放的就要通过指定服务名关闭；通过指定端口号开放的就要通过指定端口号关闭。还有一个要注意的就是指定端口的时候一定要指定是什么协议，tcp 还是 udp。知道这个之后以后就不用每次先关防火墙了，可以让防火墙真正的生效。</p>
+<pre><code>firewall-cmd --add-service<span>=</span>mysql        <span># 开放mysql端口</span>
+firewall-cmd --remove-service<span>=</span>http      <span># 阻止http端口</span>
+firewall-cmd --list-services            <span># 查看开放的服务</span>
+firewall-cmd --add-port<span>=</span><span>3306</span>/tcp        <span># 开放通过tcp访问3306</span>
+firewall-cmd --remove-port<span>=</span>80tcp        <span># 阻止通过tcp访问3306</span>
+firewall-cmd --add-port<span>=</span><span>233</span>/udp         <span># 开放通过udp访问233</span>
+firewall-cmd --list-ports               <span># 查看开放的端口</span></code></pre>
+<p>伪装 IP</p>
+<pre><code>firewall-cmd --query-masquerade <span># 检查是否允许伪装IP</span>
+firewall-cmd --add-masquerade   <span># 允许防火墙伪装IP</span>
+firewall-cmd --remove-masquerade<span># 禁止防火墙伪装IP</span></code></pre>
+<p><strong>端口转发</strong></p>
+<p>端口转发可以将指定地址访问指定的端口时，将流量转发至指定地址的指定端口。转发的目的如果不指定 ip 的话就默认为本机，如果指定了 ip 却没指定端口，则默认使用来源端口。
+如果配置好端口转发之后不能用，可以检查下面两个问题：</p>
+<ol>
+<li>比如我将 80 端口转发至 8080 端口，首先检查本地的 80 端口和目标的 8080 端口是否开放监听了</li>
+<li>其次检查是否允许伪装 IP，没允许的话要开启伪装 IP</li>
+</ol>
+<pre><code>firewall-cmd --add-forward-port<span>=</span>port<span>=</span><span>80</span>:proto<span>=</span>tcp:toport<span>=</span><span>8080</span>   <span># 将80端口的流量转发至8080</span>
+firewall-cmd --add-forward-port<span>=</span>port<span>=</span><span>80</span>:proto<span>=</span>tcp:toaddr<span>=</span><span>192.168</span>.0.1 <span># 将80端口的流量转发至192.168.0.1</span>
+firewall-cmd --add-forward-port<span>=</span>port<span>=</span><span>80</span>:proto<span>=</span>tcp:toaddr<span>=</span><span>192.168</span>.0.1:toport<span>=</span><span>8080</span> <span># 将80端口的流量转发至192.168.0.1的8080端口</span></code></pre>
+<ol>
+<li>当我们想把某个端口隐藏起来的时候，就可以在防火墙上阻止那个端口访问，然后再开一个不规则的端口，之后配置防火墙的端口转发，将流量转发过去。</li>
+<li>端口转发还可以做流量分发，一个防火墙拖着好多台运行着不同服务的机器，然后用防火墙将不同端口的流量转发至不同机器。</li>
+</ol>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

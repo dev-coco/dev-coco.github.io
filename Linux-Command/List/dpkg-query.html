@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>dpkg-query:Debian Linux中软件包的查询工具</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="dpkg-query:Debian Linux中软件包的查询工具 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>dpkg-query</h1><p>Debian Linux中软件包的查询工具</p>
+<h2>补充说明</h2><p><strong>dpkg-query命令</strong> 是Debian Linux中软件包的查询工具，它从dpkg软件包数据库中查询并辨识软件包的信息。</p>
+<h3>语法</h3><pre><code>dpkg-query<span>(</span>选项<span>)</span><span>(</span>参数<span>)</span></code></pre>
+<h3>选项</h3><pre><code>-l：列出符合匹配模式的软件包；
+-s：查询软件包的状态信息；
+-L：显示软件包所安装的文件列表；
+-S：从安装的软件包中查询文件；
+-w：显示软件包信息；
+-c：显示软件包的控制文件路径；
+-p：显示软件包的细节。</code></pre>
+<h3>参数</h3><p>软件包名称：指定需要查询的软件包。</p>
+<h3>实例</h3><p>查找文件file1在哪个包里安装：</p>
+<pre><code>dpkg-query -S file1</code></pre>
+<p>列出ubuntu下所安装软件列表：</p>
+<pre><code>dpkg-query -W --showformat<span>=</span><span>'<span>&#36;{Package}</span> <span>&#36;{Version}</span><span class="token entity" title="\n">\n</span>'</span> <span>></span> filename</code></pre>
+<p>查看软件包详细信息：</p>
+<pre><code>dpkg-query -s capistrano</code></pre>
+<p>查看软件包安装时安装到系统的文件列表：</p>
+<pre><code>dpkg-query -L capistrano</code></pre>
+<p>列出所有安装的包：</p>
+<pre><code>dpkg-query -l</code></pre>
+<p>查看软件包的确切状态（是否安装）以及版本号：</p>
+<pre><code>dpkg-query -W -f<span>=</span><span>'<span>&#36;{Status}</span> <span>&#36;{Version}</span><span class="token entity" title="\n">\n</span>'</span> apache-perl</code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>
