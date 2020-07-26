@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>clock:用于调整 RTC 时间</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="clock:用于调整 RTC 时间 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>clock</h1><p>用于调整 RTC 时间</p>
+<h2>补充说明</h2><p><strong>clock命令</strong>用于调整 RTC 时间。 RTC 是电脑内建的硬件时间，执行这项指令可以显示现在时刻，调整硬件时钟的时间，将系统时间设成与硬件时钟之时间一致，或是把系统时间回存到硬件时钟。</p>
+<h3>语法</h3><pre><code>clock <span>[</span>--adjust<span>]</span><span>[</span>--debug<span>]</span><span>[</span>--directisa<span>]</span><span>[</span>--getepoch<span>]</span><span>[</span>--hctosys<span>]</span><span>[</span>--set --date<span>=</span><span>"&lt;日期时间>"</span><span>]</span>
+<span>[</span>--setepoch --epoch<span>=</span><span>&lt;</span> <span>></span><span>]</span><span>[</span>--show<span>]</span><span>[</span>--systohc<span>]</span><span>[</span>--test<span>]</span><span>[</span>--utc<span>]</span><span>[</span>--version<span>]</span></code></pre>
+<h3>选项</h3><pre><code>--adjust 　第一次使用<span>"--set"</span>或<span>"--systohc"</span>参数设置硬件时钟，会在/etc目录下产生一个名称为adjtime的文件。当再次使用这两个参数调整硬件时钟，此文件便会记录两次调整间之差异，日后执行clock指令加上<span>"--adjust"</span>参数时，程序会自动根 据记录文件的数值差异，计算出平均值，自动调整硬件时钟的时间。
+--debug 　详细显示指令执行过程，便于排错或了解程序执行的情形。
+--directisa 　告诉clock指令不要通过/dev/rtc设备文件，直接对硬件时钟进行存取。这个参数适用于仅有ISA总线结构的老式电脑。
+--getepoch 　把系统核心内的硬件时钟新时代数值，呈现到标准输出设备。
+--hctosys 　Hardware Clock to System Time，把系统时间设成和硬件时钟一致。由于这个动作将会造成系统全面更新文件的存取时间，所以最好在系统启动时就执行它。
+--set--date 　设置硬件时钟的日期和时间。
+--setepoch--epoch<span>=</span><span>&lt;</span>年份<span>></span> 　设置系统核心之硬件时钟的新时代数值，年份以四位树字表示。
+--show 　读取硬件时钟的时间，并将其呈现至标准输出设备。
+--systohc 　System Time to Hardware Clock，将系统时间存回硬件时钟内。
+--test 　仅作测试，并不真的将时间写入硬件时钟或系统时间。
+--utc 　把硬件时钟上的时间时为CUT，有时也称为UTC或UCT。
+--version 　显示版本信息。</code></pre>
+<h3>实例</h3><p>获取当前的时间</p>
+<pre><code>clock <span># 获取当前的时间</span></code></pre>
+<p>显示UTC时间</p>
+<pre><code>clock -utc <span>#显示UTC时间</span></code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>date:显示或设置系统时间与日期</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="date:显示或设置系统时间与日期 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>date</h1><p>显示或设置系统时间与日期</p>
+<h2>概要</h2><pre><code><span>date</span> <span>[</span>OPTION<span>]</span><span>..</span>. <span>[</span>+FORMAT<span>]</span>
+<span>date</span> <span>[</span>-u<span>|</span>--utc<span>|</span>--universal<span>]</span> <span>[</span>MMDDhhmm<span>[</span><span>[</span>CC<span>]</span>YY<span>]</span><span>[</span>.ss<span>]</span><span>]</span></code></pre>
+<h2>主要用途</h2><ul>
+<li>转换时间到选定的格式，默认为当前。</li>
+<li>设置系统时间。</li>
+</ul>
+<h2>参数</h2><p>format：输出的时间格式。</p>
+<pre><code>format可用的转义序列如下：
+
+%%      百分号
+%a      当地缩写的工作日名称（例如，Sun）
+%A      当地完整的工作日名称（例如，Sunday）
+%b      当地缩写的月份名称（例如，Jan）
+%B      当地完整的月份名称（例如，January）
+%c      当地的日期和时间（例如，Thu Mar  <span>3</span> <span>23</span>:05:25 <span>2005</span>）
+%C      世纪，和%Y类似，但是省略后两位（例如，20）
+%d      一月中的一天（例如，01）
+%D      日期，等价于%m/%d/%y
+%e      一月中的一天，格式使用空格填充，等价于%_d
+%F      完整的日期；等价于%+4Y-%m-%d
+%g      ISO标准计数周的年份的最后两位数字
+%G      ISO标准计数周的年份，通常只对%V有用
+%h      等价于%b
+%H      小时，范围（00<span>..</span><span>23</span>）
+%I      小时，范围（00<span>..</span><span>23</span>）
+%j      一年中的一天，范围（001<span>..</span><span>366</span>）
+%k      小时，使用空格填充，范围（0<span>..</span><span>23</span>），等价于%_H
+%l      小时，使用空格填充，范围（1<span>..</span><span>12</span>），等价于%_I
+%m      月，范围（01<span>..</span><span>12</span>）
+%M      分钟，范围（00<span>..</span><span>59</span>）
+%n      换行符
+%N      纳秒，范围（000000000<span>..</span>000000000）
+%p      用于表示当地的AM或PM，如果未知则为空白
+%P      类似于%p，但用小写表示
+%q      季度，范围（1<span>..</span><span>4</span>）
+%r      当地以12小时表示的时钟时间（例如，11:11:04 PM）
+%R      <span>24</span>小时每分钟；等价于%H:%M
+%s      自协调世界时1970年01月01日00时00分以来的秒数
+%S      秒数，范围（00<span>..</span><span>60</span>）
+%t      水平制表符
+%T      时间；等价于%H:%M:%S
+%u      一周中的一天（1<span>..</span><span>7</span>），1代表星期一
+%U      一年中的第几周，周日作为一周的起始（00<span>..</span><span>53</span>）
+%V      ISO标准计数周，该方法将周一作为一周的起始（01<span>..</span><span>53</span>）
+%w      一周中的一天（0<span>..</span><span>6</span>），0代表星期天
+%W      一年中的第几周，周一作为一周的起始（00<span>..</span><span>53</span>）
+%x      当地的日期表示（例如，12/31/99）
+%X      当地的时间表示（例如，23:13:48）
+%y      年份后两位数字，范围（00<span>..</span><span>99</span>）
+%Y      年份
+%z      +hhmm格式的数值化时区格式（例如，-0400）
+%:z     +hh:mm格式的数值化时区格式（例如，-04:00）
+%::z    +hh:mm:ss格式的数值化时区格式（例如，-04:00:00）
+%:::z   数值化时区格式，相比上一个格式增加<span>':'</span>以显示必要的精度（例如，-04，+05:30）
+%Z      时区缩写（如EDT）
+
+默认情况下，日期用零填充数字字段；以下可选的符号可以跟在<span>'%'</span>后面:
+
+-      <span>(</span>连字符<span>)</span> 不要填充相应的字段。
+_      <span>(</span>下划线<span>)</span> 使用空格填充相应的字段。
+<span>0</span>      <span>(</span>数字0<span>)</span> 使用数字0填充相应的字段。
++      用数字0填充，未来年份大于4位数字则在前面加上<span>'+'</span>号。
+^      允许的情况下使用大写。
+<span>#      允许的情况下将默认的大写转换为小写，默认的小写转换为大写。</span>
+
+在任何标志之后都有一个可选的字段宽度，如小数；然后是一个可选的修饰符，在可用的情况下，使用E来使用当地语言环境的替代表示，
+使用O来使用当地语言环境的替代数字符号。</code></pre>
+<h2>选项</h2><pre><code>长选项与短选项等价
+
+-d, --date<span>=</span>STRING          解析字符串并按照指定格式输出，字符串不能是<span>'now'</span>。
+--debug                    注释已解析的日期，并将有疑问的用法发送到标准错误。
+-f, --file<span>=</span>DATEFILE        类似于--date<span>;</span> 一次从DATEFILE处理一行。
+-I<span>[</span>FMT<span>]</span>, --iso-8601<span>[</span><span>=</span>FMT<span>]</span>  按照ISO <span>8601</span>格式输出，FMT可以为<span>'date'</span><span>(</span>默认<span>)</span>，<span>'hours'</span>，<span>'minutes'</span>，<span>'seconds'</span>，<span>'ns'</span>。
+                           例如：2006-08-14T02:34:56-06:00
+-R, --rfc-email            按照RFC <span>5322</span>格式输出，例如: Mon, <span>14</span> Aug <span>2006</span> 02:34:56 -0600
+--rfc-3339<span>=</span>FMT             按照RFC <span>3339</span>格式输出，FMT可以为<span>'date'</span>, <span>'seconds'</span>,<span>'ns'</span>中的一个，
+                           例如：2006-08-14 02:34:56-06:00
+-r, --reference<span>=</span>FILE       显示文件的上次修改时间。
+-s, --set<span>=</span>STRING           根据字符串设置系统时间。
+-u, --utc, --universal     显示或设置世界协调时<span>(</span>UTC<span>)</span>。
+--help                     显示帮助信息并退出。
+--version                  显示版本信息并退出。</code></pre>
+<h2>返回值</h2><p>返回状态为成功除非给出了非法选项或非法参数。</p>
+<h2>例子</h2><pre><code><span># 格式化输出：</span>
+<span>date</span> +<span>"%Y-%m-%d"</span>
+<span>2009</span>-12-07
+
+<span># 输出昨天日期：</span>
+<span>date</span> -d <span>"1 day ago"</span> +<span>"%Y-%m-%d"</span>
+<span>2012</span>-11-19
+
+<span># 2秒后输出：</span>
+<span>date</span> -d <span>"2 second"</span> +<span>"%Y-%m-%d %H:%M.%S"</span>
+<span>2012</span>-11-20 <span>14</span>:21.31
+
+<span># 传说中的 1234567890 秒：</span>
+<span>date</span> -d <span>"1970-01-01 1234567890 seconds"</span> +<span>"%Y-%m-%d %H:%M:%S"</span>
+<span># 或者</span>
+<span>date</span> -d@1234567890 +<span>"%F %T"</span>
+<span># 输出结果</span>
+<span>2009</span>-02-13 <span>23</span>:02:30
+
+<span># 时间格式转换：</span>
+<span>date</span> -d <span>"2009-12-12"</span> +<span>"%Y/%m/%d %H:%M.%S"</span>
+<span># 输出结果</span>
+<span>2009</span>/12/12 00:00.00
+
+<span># apache格式转换：</span>
+<span>date</span> -d <span>"Dec 5, 2009 12:00:37 AM"</span> +<span>"%Y-%m-%d %H:%M.%S"</span>
+<span># 输出结果</span>
+<span>2009</span>-12-05 00:00.37
+
+<span># 格式转换后时间游走：</span>
+<span>date</span> -d <span>"Dec 5, 2009 12:00:37 AM 2 year ago"</span> +<span>"%Y-%m-%d %H:%M.%S"</span>
+<span># 输出结果</span>
+<span>2007</span>-12-05 00:00.37
+
+<span># 时间加减操作：</span>
+<span>date</span> +%Y%m%d                   <span># 显示年月日</span>
+<span>date</span> -d <span>"+1 day"</span> +%Y%m%d       <span># 显示前一天的日期</span>
+<span>date</span> -d <span>"-1 day"</span> +%Y%m%d       <span># 显示后一天的日期</span>
+<span>date</span> -d <span>"-1 month"</span> +%Y%m%d     <span># 显示上一月的日期</span>
+<span>date</span> -d <span>"+1 month"</span> +%Y%m%d     <span># 显示下一月的日期</span>
+<span>date</span> -d <span>"-1 year"</span> +%Y%m%d      <span># 显示前一年的日期</span>
+<span>date</span> -d <span>"+1 year"</span> +%Y%m%d      <span># 显示下一年的日期</span>
+
+<span># 设定时间：</span>
+<span>date</span> -s                         <span># 设置当前时间，只有root权限才能设置，其他只能查看</span>
+<span>date</span> -s <span>20120523</span>                <span># 设置成20120523，这样会把具体时间设置成00:00:00</span>
+<span>date</span> -s 01:01:01                <span># 设置具体时间，不会对日期做更改</span>
+<span>date</span> -s <span>"01:01:01 2012-05-23"</span>   <span># 这样可以设置全部时间</span>
+<span>date</span> -s <span>"01:01:01 20120523"</span>     <span># 这样可以设置全部时间</span>
+<span>date</span> -s <span>"2012-05-23 01:01:01"</span>   <span># 这样可以设置全部时间</span>
+<span>date</span> -s <span>"20120523 01:01:01"</span>     <span># 这样可以设置全部时间</span>
+
+<span># 有时需要检查一组命令花费的时间：</span>
+<span>start</span><span>=</span><span><span>&#36;(</span><span>date</span> +%s<span>)</span></span>
+nmap wangchujiang.com <span>&amp;></span> /dev/null
+<span>end</span><span>=</span><span><span>&#36;(</span><span>date</span> +%s<span>)</span></span>
+<span>difference</span><span>=</span><span><span>&#36;((</span> end <span>-</span> start <span>))</span></span>
+<span># 显示执行时间</span>
+<span>echo</span> <span>&#36;difference</span> seconds.
+
+<span># 当你考虑输出带有时间的字符串时，例如（Current time: 2019/05/19）：</span>
+<span># 通常使用的方法：</span>
+<span>echo</span> <span>"Current time: <span><span>&#36;(</span><span>date</span> +<span>"%Y/%m/%d"</span><span>)</span></span>"</span>
+<span># 另一种方法：</span>
+<span>suffix</span><span>=</span><span>'Current time:'</span>
+<span># 注意如果换成单引号就不能替换变量了。</span>
+<span>date</span> +<span>"<span>&#36;{suffix}</span> %Y/%m/%d"</span></code></pre>
+<h3>注意</h3><ol>
+<li>该命令是<code>GNU coreutils</code>包中的命令，相关的帮助信息请查看<code>man -s 1 date</code>或<code>info coreutils &#39;date invocation&#39;</code>。</li>
+</ol>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

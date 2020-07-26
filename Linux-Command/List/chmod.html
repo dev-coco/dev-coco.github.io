@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>chmod:用来变更文件或目录的权限</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="chmod:用来变更文件或目录的权限 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>chmod</h1><p>用来变更文件或目录的权限</p>
+<h2>概要</h2><pre><code><span>chmod</span> <span>[</span>OPTION<span>]</span><span>..</span>. MODE<span>[</span>,MODE<span>]</span><span>..</span>. FILE<span>..</span>.
+<span>chmod</span> <span>[</span>OPTION<span>]</span><span>..</span>. OCTAL-MODE FILE<span>..</span>.
+<span>chmod</span> <span>[</span>OPTION<span>]</span><span>..</span>. --reference<span>=</span>RFILE FILE<span>..</span>.</code></pre>
+<h2>主要用途</h2><ul>
+<li>通过符号组合的方式更改目标文件或目录的权限。</li>
+<li>通过八进制数的方式更改目标文件或目录的权限。</li>
+<li>通过参考文件的权限来更改目标文件或目录的权限。</li>
+</ul>
+<h2>参数</h2><p>mode：八进制数或符号组合。</p>
+<p>file：指定要更改权限的一到多个文件。</p>
+<h2>选项</h2><pre><code>-c, --changes：当文件的权限更改时输出操作信息。
+--no-preserve-root：不将<span>'/'</span>特殊化处理，默认选项。
+--preserve-root：不能在根目录下递归操作。
+-f, --silent, --quiet：抑制多数错误消息的输出。
+-v, --verbose：无论文件是否更改了权限，一律输出操作信息。
+--reference<span>=</span>RFILE：使用参考文件或参考目录RFILE的权限来设置目标文件或目录的权限。
+-R, --recursive：对目录以及目录下的文件递归执行更改权限操作。
+--help：显示帮助信息并退出。
+--version：显示版本信息并退出。</code></pre>
+<h2>返回值</h2><p>返回状态为成功除非给出了非法选项或非法参数。</p>
+<h2>例子</h2><blockquote>
+<p>参考<code>man chmod</code>文档的<code>DESCRIPTION</code>段落得知：</p>
+<ul>
+<li><code>u</code>符号代表当前用户。</li>
+<li><code>g</code>符号代表和当前用户在同一个组的用户，以下简称组用户。</li>
+<li><code>o</code>符号代表其他用户。</li>
+<li><code>a</code>符号代表所有用户。</li>
+<li><code>r</code>符号代表读权限以及八进制数<code>4</code>。</li>
+<li><code>w</code>符号代表写权限以及八进制数<code>2</code>。</li>
+<li><code>x</code>符号代表执行权限以及八进制数<code>1</code>。</li>
+<li><code>X</code>符号代表如果目标文件是可执行文件或目录，可给其设置可执行权限。</li>
+<li><code>s</code>符号代表设置权限suid和sgid，使用权限组合<code>u+s</code>设定文件的用户的ID位，<code>g+s</code>设置组用户ID位。</li>
+<li><code>t</code>符号代表只有目录或文件的所有者才可以删除目录下的文件。</li>
+<li><code>+</code>符号代表添加目标用户相应的权限。</li>
+<li><code>-</code>符号代表删除目标用户相应的权限。</li>
+<li><code>=</code>符号代表添加目标用户相应的权限，删除未提到的权限。</li>
+</ul>
+</blockquote>
+<pre><code>linux文件的用户权限说明：
+
+<span># 查看当前目录（包含隐藏文件）的长格式。</span>
+<span>ls</span> -la
+  -rw-r--r--   <span>1</span> user  staff   <span>651</span> Oct <span>12</span> <span>12</span>:53 .gitmodules
+
+<span># 第1位如果是d则代表目录，是-则代表普通文件。</span>
+<span># 更多详情请参阅info coreutils 'ls invocation'（ls命令的info文档）的'-l'选项部分。</span>
+<span># 第2到4位代表当前用户的权限。</span>
+<span># 第5到7位代表组用户的权限。</span>
+<span># 第8到10位代表其他用户的权限。</span></code></pre>
+<pre><code><span># 添加组用户的写权限。</span>
+<span>chmod</span> g+w ./test.log
+<span># 删除其他用户的所有权限。</span>
+<span>chmod</span> <span>o</span><span>=</span> ./test.log
+<span># 使得所有用户都没有写权限。</span>
+<span>chmod</span> a-w ./test.log
+<span># 当前用户具有所有权限，组用户有读写权限，其他用户只有读权限。</span>
+<span>chmod</span> <span>u</span><span>=</span>rwx, <span>g</span><span>=</span>rw, <span>o</span><span>=</span>r ./test.log
+<span># 等价的八进制数表示：</span>
+<span>chmod</span> <span>754</span> ./test.log
+<span># 将目录以及目录下的文件都设置为所有用户拥有读写权限。</span>
+<span># 注意，使用'-R'选项一定要保留当前用户的执行和读取权限，否则会报错！</span>
+<span>chmod</span> -R <span>a</span><span>=</span>rw ./testdir/
+<span># 根据其他文件的权限设置文件权限。</span>
+<span>chmod</span> --reference<span>=</span>./1.log  ./test.log</code></pre>
+<h3>注意</h3><ol>
+<li><p>该命令是<code>GNU coreutils</code>包中的命令，相关的帮助信息请查看<code>man chmod</code>或<code>info coreutils &#39;chmod invocation&#39;</code>。</p>
+</li>
+<li><p>符号连接的权限无法变更，如果用户对符号连接修改权限，其改变会作用在被连接的原始文件。</p>
+</li>
+<li><p>使用<code>-R</code>选项一定要保留当前用户的执行和读取权限，否则会报错！</p>
+</li>
+</ol>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

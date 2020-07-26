@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>dircolors:置ls命令在显示目录或文件时所用的色彩</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="dircolors:置ls命令在显示目录或文件时所用的色彩 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>dircolors</h1><p>置ls命令在显示目录或文件时所用的色彩</p>
+<h2>补充说明</h2><p><strong>dircolors命令</strong> 设置ls命令在显示目录或文件时所用的色彩。dircolors可根据[色彩配置文件]来设置LS_COLORS环境变量或是显示设置LS_COLORS环境变量的命令。</p>
+<h3>语法</h3><pre><code>dircolors<span>(</span>选项<span>)</span><span>(</span>参数<span>)</span></code></pre>
+<h3>选项</h3><pre><code>-b或--sh或--bourne-shell：显示在Boume shell中，将<span>LS_COLORS</span>设为目前预设置的shell指令；
+-c或--csh或--c-shell：显示在C shell中，将<span>LS_COLORS</span>设为目前预设置的shell指令；
+-p或--print-database：显示预设置；
+-help：显示帮助；
+-version：显示版本信息。</code></pre>
+<h3>参数</h3><p>文件：指定用来设置颜色的文件。</p>
+<h3>实例</h3><pre><code><span>[</span>root@localhost ~<span>]</span><span># dircolors -p</span>
+<span># Configuration file for dircolors, a utility to help you set the</span>
+<span># LS_COLORS environment variable used by GNU ls with the --color option.</span>
+<span># The keywords COLOR, OPTIONS, and EIGHTBIT (honored by the</span>
+<span># slackware version of dircolors) are recognized but ignored.</span>
+<span># Below, there should be one TERM entry for each termtype that is colorizable</span>
+<span>TERM</span> linux
+<span>TERM</span> linux-c
+<span>TERM</span> mach-color
+<span>TERM</span> console
+<span>TERM</span> con132x25
+<span>TERM</span> con132x30
+<span>TERM</span> con132x43
+<span>TERM</span> con132x60
+<span>TERM</span> con80x25
+<span>TERM</span> con80x28
+<span>TERM</span> con80x30
+<span>TERM</span> con80x43
+<span>TERM</span> con80x50
+<span>TERM</span> con80x60
+<span>TERM</span> cygwin
+<span>TERM</span> dtterm
+<span>TERM</span> putty
+<span>TERM</span> xterm
+<span>TERM</span> xterm-color
+<span>TERM</span> xterm-debian
+<span>TERM</span> rxvt
+<span>TERM</span> <span>screen</span>
+<span>TERM</span> screen-bce
+<span>TERM</span> screen-w
+<span>TERM</span> vt100
+<span>TERM</span> Eterm
+<span># Below are the color init strings for the basic file types. A color init</span>
+<span># string consists of one or more of the following numeric codes:</span>
+<span># Attribute codes:</span>
+<span># 00=none 01=bold 04=underscore 05=blink 07=reverse 08=concealed</span>
+<span># Text color codes:</span>
+<span># 30=black 31=red 32=green 33=yellow 34=blue 35=magenta 36=cyan 37=white</span>
+<span># Background color codes:</span>
+<span># 40=black 41=red 42=green 43=yellow 44=blue 45=magenta 46=cyan 47=white</span>
+NORMAL 00 <span># global default, although everything should be something.</span>
+FILE 00 <span># normal file</span>
+DIR 01<span>;</span><span>34</span> <span># directory</span>
+LINK 01<span>;</span><span>36</span> <span># symbolic link. (If you set this to 'target' instead of a</span>
+ <span># numerical value, the color is as for the file pointed to.)</span>
+FIFO <span>40</span><span>;</span><span>33</span> <span># pipe</span>
+SOCK 01<span>;</span><span>35</span> <span># socket</span>
+DOOR 01<span>;</span><span>35</span> <span># door</span>
+BLK <span>40</span><span>;</span><span>33</span><span>;</span>01 <span># block device driver</span>
+CHR <span>40</span><span>;</span><span>33</span><span>;</span>01 <span># character device driver</span>
+ORPHAN <span>40</span><span>;</span><span>31</span><span>;</span>01 <span># symlink to nonexistent file</span>
+SETUID <span>37</span><span>;</span><span>41</span> <span># file that is setuid (u+s)</span>
+SETGID <span>30</span><span>;</span><span>43</span> <span># file that is setgid (g+s)</span>
+STICKY_OTHER_WRITABLE <span>30</span><span>;</span><span>42</span> <span># dir that is sticky and other-writable (+t,o+w)</span>
+OTHER_WRITABLE <span>34</span><span>;</span><span>42</span> <span># dir that is other-writable (o+w) and not sticky</span>
+STICKY <span>37</span><span>;</span><span>44</span> <span># dir with the sticky bit set (+t) and not other-writable</span>
+<span># This is for files with execute permission:</span>
+<span>exec</span> 01<span>;</span><span>32</span>
+<span># List any file extensions like '.gz' or '.tar' that you would like ls</span>
+<span># to colorize below. Put the extension, a space, and the color init string.</span>
+<span># (and any comments you want to add after a '#')</span>
+<span># If you use DOS-style suffixes, you may want to uncomment the following:</span>
+<span>#.cmd 01;32 # executables (bright green)</span>
+<span>#.exe 01;32</span>
+<span>#.com 01;32</span>
+<span>#.btm 01;32</span>
+<span>#.bat 01;32</span>
+.tar 01<span>;</span><span>31</span> <span># archives or compressed (bright red)</span>
+.tgz 01<span>;</span><span>31</span>
+.arj 01<span>;</span><span>31</span>
+.taz 01<span>;</span><span>31</span>
+.lzh 01<span>;</span><span>31</span>
+.zip 01<span>;</span><span>31</span>
+.z 01<span>;</span><span>31</span>
+.Z 01<span>;</span><span>31</span>
+.gz 01<span>;</span><span>31</span>
+.bz2 01<span>;</span><span>31</span>
+.deb 01<span>;</span><span>31</span>
+.rpm 01<span>;</span><span>31</span>
+.jar 01<span>;</span><span>31</span>
+<span># image formats</span>
+.jpg 01<span>;</span><span>35</span>
+.jpeg 01<span>;</span><span>35</span>
+.gif 01<span>;</span><span>35</span>
+.bmp 01<span>;</span><span>35</span>
+.pbm 01<span>;</span><span>35</span>
+.pgm 01<span>;</span><span>35</span>
+.ppm 01<span>;</span><span>35</span>
+.tga 01<span>;</span><span>35</span>
+.xbm 01<span>;</span><span>35</span>
+.xpm 01<span>;</span><span>35</span>
+.tif 01<span>;</span><span>35</span>
+.tiff 01<span>;</span><span>35</span>
+.png 01<span>;</span><span>35</span>
+.mov 01<span>;</span><span>35</span>
+.mpg 01<span>;</span><span>35</span>
+.mpeg 01<span>;</span><span>35</span>
+.avi 01<span>;</span><span>35</span>
+.fli 01<span>;</span><span>35</span>
+.gl 01<span>;</span><span>35</span>
+.dl 01<span>;</span><span>35</span>
+.xcf 01<span>;</span><span>35</span>
+.xwd 01<span>;</span><span>35</span>
+<span># audio formats</span>
+.flac 01<span>;</span><span>35</span>
+.mp3 01<span>;</span><span>35</span>
+.mpc 01<span>;</span><span>35</span>
+.ogg 01<span>;</span><span>35</span>
+.wav 01<span>;</span><span>35</span></code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

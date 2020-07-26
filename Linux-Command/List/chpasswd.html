@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>chpasswd:批量更新用户口令的工具</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="chpasswd:批量更新用户口令的工具 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>chpasswd</h1><p>批量更新用户口令的工具</p>
+<h2>补充说明</h2><p><strong>chpasswd命令</strong> 是批量更新用户口令的工具，是把一个文件内容重新定向添加到<code>/etc/shadow</code>中。</p>
+<h3>语法</h3><pre><code>chpasswd<span>(</span>选项<span>)</span></code></pre>
+<h3>选项</h3><pre><code>-e：输入的密码是加密后的密文；
+-h：显示帮助信息并退出；
+-m：当被支持的密码未被加密时，使用MD5加密代替DES加密。</code></pre>
+<h3>实例</h3><p>先创建用户密码对应文件，格式为<code>username:password</code>，如<code>abc:abc123</code>，必须以这种格式来书写，并且不能有空行，保存成文本文件user.txt，然后执行chpasswd命令：</p>
+<pre><code>chpasswd <span>&lt;</span> user.txt</code></pre>
+<p>以上是运用chpasswd命令来批量修改密码。是linux系统管理中的捷径。</p>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

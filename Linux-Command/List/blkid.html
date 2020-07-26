@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>blkid:查看块设备的文件系统类型、LABEL、UUID等信息</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="blkid:查看块设备的文件系统类型、LABEL、UUID等信息 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>blkid</h1><p>查看块设备的文件系统类型、LABEL、UUID等信息</p>
+<h2>补充说明</h2><p>在Linux下可以使用 <strong>blkid命令</strong> 对查询设备上所采用文件系统类型进行查询。blkid主要用来对系统的块设备（包括交换分区）所使用的文件系统类型、LABEL、UUID等信息进行查询。要使用这个命令必须安装e2fsprogs软件包。</p>
+<h3>语法</h3><pre><code>blkid -L <span>|</span> -U
+blkid <span>[</span>-c <span>]</span> <span>[</span>-ghlLv<span>]</span> <span>[</span>-o<span>]</span> <span>[</span>-s <span>]</span><span>[</span>-t <span>]</span> -<span>[</span>w <span>]</span> <span>[</span> <span>..</span>.<span>]</span>
+blkid -p <span>[</span>-s <span>]</span> <span>[</span>-O <span>]</span> <span>[</span>-S <span>]</span><span>[</span>-o<span>]</span> <span>..</span>.
+blkid -i <span>[</span>-s <span>]</span> <span>[</span>-o<span>]</span> <span>..</span>.</code></pre>
+<h3>选项</h3><pre><code>-c <span>&lt;</span>file<span>></span>   <span># 指定cache文件(default: /etc/blkid.tab, /dev/null = none)</span>
+-d          <span># don't encode non-printing characters</span>
+-h          <span># 显示帮助信息</span>
+-g          <span># garbage collect the blkid cache</span>
+-o <span>&lt;</span>format<span>></span> <span># 指定输出格式</span>
+-k          <span># list all known filesystems/RAIDs and exit</span>
+-s <span>&lt;</span>tag<span>></span>    <span># 显示指定信息，默认显示所有信息</span>
+-t <span>&lt;</span>token<span>></span>  <span># find device with a specific token (NAME=value pair)</span>
+-l          <span># look up only first device with token specified by -t</span>
+-L <span>&lt;</span>label<span>></span>  <span># convert LABEL to device name</span>
+-U <span>&lt;</span>uuid<span>></span>   <span># convert UUID to device name</span>
+-v          <span># 显示版本信息</span>
+-w <span>&lt;</span>file<span>></span>   <span># write cache to different file (/dev/null = no write)</span>
+<span>&lt;</span>dev<span>></span>       <span># specify device(s) to probe (default: all devices)</span>
+Low-level probing options:
+-p          <span># low-level superblocks probing (bypass cache)</span>
+-i          <span># gather information about I/O limits</span>
+-S <span>&lt;</span>size<span>></span>   <span># overwrite device size</span>
+-O <span>&lt;</span>offset<span>></span> <span># probe at the given offset</span>
+-u <span>&lt;</span>list<span>></span>   <span># filter by "usage" (e.g. -u filesystem,raid)</span>
+-n <span>&lt;</span>list<span>></span>   <span># filter by filesystem type (e.g. -n vfat,ext3)</span></code></pre>
+<h3>实例</h3><p>1、列出当前系统中所有已挂载文件系统的类型：</p>
+<pre><code><span>sudo</span> blkid</code></pre>
+<p>2、显示指定设备 UUID：</p>
+<pre><code><span>sudo</span> blkid -s UUID /dev/sda5</code></pre>
+<p>3、显示所有设备 UUID：</p>
+<pre><code><span>sudo</span> blkid -s UUID</code></pre>
+<p>4、显示指定设备 LABEL：</p>
+<pre><code><span>sudo</span> blkid -s LABEL /dev/sda5</code></pre>
+<p>5、显示所有设备 LABEL：</p>
+<pre><code><span>sudo</span> blkid -s LABEL</code></pre>
+<p>6、显示所有设备文件系统：</p>
+<pre><code><span>sudo</span> blkid -s TYPE</code></pre>
+<p>7、显示所有设备：</p>
+<pre><code><span>sudo</span> blkid -o device</code></pre>
+<p>8、以列表方式查看详细信息：</p>
+<pre><code><span>sudo</span> blkid -o list</code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>cdrecord:Linux系统下光盘刻录功能命令</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="cdrecord:Linux系统下光盘刻录功能命令 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>cdrecord</h1><p>Linux系统下光盘刻录功能命令</p>
+<h2>补充说明</h2><p><strong>cdrecord命令</strong> 用于Linux系统下光盘刻录，它支持cd和DVD格式。linux下一般都带有cdrecord软件。</p>
+<h3>语法</h3><pre><code>cdrecord<span>(</span>选项<span>)</span><span>(</span>参数<span>)</span></code></pre>
+<h3>选项</h3><pre><code>-v：显示刻录光盘的详细过程；
+-eject：刻录完成后弹出光盘；
+<span>speed</span><span>=</span><span>&lt;</span>刻录倍速<span>></span>：指定光盘刻录的倍速；
+<span>dev</span><span>=</span><span>&lt;</span>刻录机设备号<span>></span>：指定使用“-scanbus”参数扫描到的刻录机的设备号；
+-scanbus：扫描系统中可用的刻录机。</code></pre>
+<h3>参数</h3><p>ISO文件：指定刻录光盘使用的ISO映像文件。</p>
+<h3>实例</h3><p>查看系统所有 CD-R(w) 设备：</p>
+<pre><code>cdrecord -scanbus
+scsibus0:
+  <span>0,0</span>,0     <span>0</span><span>)</span> *
+  <span>0,1</span>,0     <span>1</span><span>)</span> *
+  <span>0,2</span>,0     <span>2</span><span>)</span> *
+  <span>0,3</span>,0     <span>3</span><span>)</span> <span>'HP      '</span> <span>'CD-Writer+ 9200 '</span> <span>'1.0c'</span> Removable CD-ROM</code></pre>
+<p>用iso文件刻录一张光盘：</p>
+<pre><code>cdrecord -v -eject <span>speed</span><span>=</span><span>4</span> <span>dev</span><span>=</span><span>0,3</span>,0 backup.iso</code></pre>
+<p>参数解释</p>
+<ul>
+<li>-v：显示刻录光盘的详细过程</li>
+<li>-eject：刻完自动弹出光盘</li>
+<li>speed=4 dev=0,3,0：四速刻录到HP CD-writer设备上。</li>
+</ul>
+<p>擦写光驱：</p>
+<pre><code>cdrecord --dev<span>=</span><span>0,3</span>,0 --blank<span>=</span>fast</code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>cksum:检查文件的CRC是否正确</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="cksum:检查文件的CRC是否正确 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>cksum</h1><p>检查文件的CRC是否正确</p>
+<h2>补充说明</h2><p><strong>cksum命令</strong> 是检查文件的CRC是否正确，确保文件从一个系统传输到另一个系统的过程中不被损坏。这种方法要求校验和在源系统中被计算出来，在目的系统中又被计算一次，两个数字进行比较，如果校验和相等，则该文件被认为是正确传输了。</p>
+<p>注意：CRC是指一种排错检查方法，即循环冗余校验法。</p>
+<p>指定文件交由cksum命令进行校验后，会返回校验结果供用户核对文件是否正确无误。若不指定任何文件名称或是所给予的文件名为&quot;-&quot;，则cksum命令会从标准输入设备中读取数据。</p>
+<h3>语法</h3><pre><code>cksum<span>(</span>选项<span>)</span><span>(</span>参数<span>)</span></code></pre>
+<h3>选项</h3><pre><code>--help：在线帮助；
+--version：显示版本信息。</code></pre>
+<h3>参数</h3><p>文件：指定要计算校验的版本信息。</p>
+<h3>实例</h3><p>使用cksum命令计算文件&quot;testfile1&quot;的完整性，输入如下命令：</p>
+<pre><code><span>cksum</span> testfile1            <span>#对指定文件进行CRC校验</span></code></pre>
+<p>以上命令执行后，将输出校验码等相关的信息，具体输出信息如下所示：</p>
+<pre><code><span>1263453430</span> <span>78</span> testfile1     <span>#输出信息</span></code></pre>
+<p>上面的输出信息中，&quot;1263453430&quot;表示校验码，&quot;78&quot;表示字节数。</p>
+<p>注意：如果文件中有任何字符被修改，都将改变计算后CRC校验码的值。</p>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

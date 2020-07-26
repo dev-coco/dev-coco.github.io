@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>at:在指定时间执行一个任务</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="at:在指定时间执行一个任务 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+
+<h1>at</h1><p>在指定时间执行一个任务</p>
+<h2>补充说明</h2><p><strong>at命令</strong> 用于在指定时间执行命令。at允许使用一套相当复杂的指定时间的方法。它能够接受在当天的hh:mm（小时:分钟）式的时间指定。假如该时间已过去，那么就放在第二天执行。当然也能够使用midnight（深夜），noon（中午），teatime（饮茶时间，一般是下午4点）等比较模糊的 词语来指定时间。用户还能够采用12小时计时制，即在时间后面加上AM（上午）或PM（下午）来说明是上午还是下午。 也能够指定命令执行的具体日期，指定格式为month day（月 日）或mm/dd/yy（月/日/年）或dd.mm.yy（日.月.年）。指定的日期必须跟在指定时间的后面。</p>
+<p>上面介绍的都是绝对计时法，其实还能够使用相对计时法，这对于安排不久就要执行的命令是很有好处的。指定格式为：<code>now + count time-units</code>，now就是当前时间，time-units是时间单位，这里能够是minutes（分钟）、hours（小时）、days（天）、weeks（星期）。count是时间的数量，究竟是几天，还是几小时，等等。 更有一种计时方法就是直接使用today（今天）、tomorrow（明天）来指定完成命令的时间。</p>
+<h3>语法</h3><pre><code>at <span>[</span>-V<span>]</span> <span>[</span>-q 队列<span>]</span> <span>[</span>-f 文件<span>]</span> <span>[</span>-mldbv<span>]</span> 时间 at -c 作业 <span>[</span>作业<span>..</span>.<span>]</span></code></pre>
+<h3>选项</h3><pre><code>-f：指定包含具体指令的任务文件；
+-q：指定新任务的队列名称；
+-l：显示待执行任务的列表；
+-d：删除指定的待执行任务；
+-m：任务执行完成后向用户发送E-mail。</code></pre>
+<h3>参数</h3><p>日期时间：指定任务执行的日期时间。</p>
+<h3>实例</h3><p>三天后的下午 5 点锺执行<code>/bin/ls</code>：</p>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># at 5pm+3 days</span>
+at<span>></span> /bin/ls
+at<span>></span> <span>&lt;</span>EOT<span>></span>
+job <span>7</span> at <span>2013</span>-01-08 <span>17</span>:00</code></pre>
+<p>明天17点钟，输出时间到指定文件内：</p>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># at 17:20 tomorrow</span>
+at<span>></span> <span>date</span> <span>></span>/root/2013.log
+at<span>></span> <span>&lt;</span>EOT<span>></span>
+job <span>8</span> at <span>2013</span>-01-06 <span>17</span>:20</code></pre>
+<p>计划任务设定后，在没有执行之前我们可以用atq命令来查看系统没有执行工作任务：</p>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># atq</span>
+<span>8</span>       <span>2013</span>-01-06 <span>17</span>:20 a root
+<span>7</span>       <span>2013</span>-01-08 <span>17</span>:00 a root</code></pre>
+<p>删除已经设置的任务：</p>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># atq</span>
+<span>8</span>       <span>2013</span>-01-06 <span>17</span>:20 a root
+<span>7</span>       <span>2013</span>-01-08 <span>17</span>:00 a root
+
+<span>[</span>root@localhost ~<span>]</span><span># atrm 7</span>
+<span>[</span>root@localhost ~<span>]</span><span># atq</span>
+<span>8</span>       <span>2013</span>-01-06 <span>17</span>:20 a root</code></pre>
+<p>显示已经设置的任务内容：</p>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># at -c 8</span>
+<span>#!/bin/sh</span>
+<span># atrun uid=0 gid=0</span>
+<span># mail     root 0</span>
+<span>umask</span> <span>22</span>此处省略n个字符
+<span>date</span> <span>></span>/root/2013.log</code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

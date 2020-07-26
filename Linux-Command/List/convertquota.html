@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>convertquota:把老的配额文件转换为新的格式</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="convertquota:把老的配额文件转换为新的格式 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>convertquota</h1><p>把老的配额文件转换为新的格式</p>
+<h2>补充说明</h2><p><strong>convertquota命令</strong> 用于将老的磁盘额数据文件（“quota.user”和“quota.group”）转换为新格式的文件（“quota.user”和“quota.group”）。</p>
+<h3>语法</h3><pre><code>convertquota<span>(</span>选项<span>)</span><span>(</span>参数<span>)</span></code></pre>
+<h3>选项</h3><pre><code>-u：仅转换用户磁盘配额数据文件；
+-g：仅转换组磁盘配额数据文件；
+-f：将老的磁盘配额文件转换为新的格式；
+-e：将新的文件格式从大字节序换为小字节序。</code></pre>
+<h3>参数</h3><p>文件系统：指定要转换磁盘配额数据文件格式的文件系统（硬盘分区）。</p>
+<h3>实例</h3><p>使用convertquota指令转换指定文件系统<code>/data</code>的磁盘配额数据文件。在命令行中输入下面的命令：</p>
+<pre><code>convertquota -u /data     //转换文件系统<span>"/data"</span>上的用户磁盘配额文件</code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

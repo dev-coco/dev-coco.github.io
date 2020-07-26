@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>continue:结束本次循环，继续执行下一个for，while或until循环</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="continue:结束本次循环，继续执行下一个for，while或until循环 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>continue</h1><p>结束本次循环，继续执行下一个for，while或until循环。</p>
+<h2>概要</h2><pre><code><span>continue</span> <span>[</span>n<span>]</span></code></pre>
+<h2>主要用途</h2><ul>
+<li>结束本次循环，继续执行下一个for，while或until循环；可指定从第几层循环继续执行。</li>
+</ul>
+<h2>参数</h2><p>n（可选）：大于等于1的整数，用于指定从第几层循环继续执行。</p>
+<h2>返回值</h2><p>返回状态为成功除非n小于1。</p>
+<h2>例子</h2><pre><code><span># continue的可选参数n缺省值为1。</span>
+<span>for</span><span><span>((</span>i<span>=</span><span>3</span><span>;</span>i<span>></span><span>0</span><span>;</span>i<span>--</span><span>))</span></span><span>;</span> <span>do</span>
+  <span># 跳到内层for循环继续执行。</span>
+  <span>for</span><span><span>((</span>j<span>=</span><span>3</span><span>;</span>j<span>></span><span>0</span><span>;</span>j<span>--</span><span>))</span></span><span>;</span> <span>do</span>
+    <span>if</span><span><span>((</span>j<span>==</span><span>2</span><span>))</span></span><span>;</span> <span>then</span>
+      <span># 换成continue 1时结果一样</span>
+      <span>continue</span>
+    <span>fi</span>
+  <span>printf</span> <span>"%s %s<span class="token entity" title="\n">\n</span>"</span> <span>&#36;{i}</span> <span>&#36;{j}</span>
+  <span>done</span>
+<span>done</span>
+<span># 输出结果</span>
+<span>3</span> <span>3</span>
+<span>3</span> <span>1</span>
+<span>2</span> <span>3</span>
+<span>2</span> <span>1</span>
+<span>1</span> <span>3</span>
+<span>1</span> <span>1</span></code></pre>
+<pre><code><span># 当n为2时：</span>
+<span># 跳到外层for循环继续执行。</span>
+<span>for</span><span><span>((</span>i<span>=</span><span>3</span><span>;</span>i<span>></span><span>0</span><span>;</span>i<span>--</span><span>))</span></span><span>;</span> <span>do</span>
+  <span>for</span><span><span>((</span>j<span>=</span><span>3</span><span>;</span>j<span>></span><span>0</span><span>;</span>j<span>--</span><span>))</span></span><span>;</span> <span>do</span>
+    <span>if</span><span><span>((</span>j<span>==</span><span>2</span><span>))</span></span><span>;</span> <span>then</span>
+      <span>continue</span> <span>2</span>
+    <span>fi</span>
+  <span>printf</span> <span>"%s %s<span class="token entity" title="\n">\n</span>"</span> <span>&#36;{i}</span> <span>&#36;{j}</span>
+  <span>done</span>
+<span>done</span>
+<span># 输出结果</span>
+<span>3</span> <span>3</span>
+<span>2</span> <span>3</span>
+<span>1</span> <span>3</span></code></pre>
+<h3>注意</h3><ol>
+<li>该命令是bash内建命令，相关的帮助信息请查看<code>help</code>命令。</li>
+</ol>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

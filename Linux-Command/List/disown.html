@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>disown:从当前的shell中移除作业</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="disown:从当前的shell中移除作业 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>disown</h1><p>从当前的shell中移除作业。</p>
+<h2>概要</h2><pre><code>disown <span>[</span>-h<span>]</span> <span>[</span>-ar<span>]</span> <span>[</span>jobspec <span>..</span>. <span>|</span> pid <span>..</span>.<span>]</span></code></pre>
+<h2>主要用途</h2><ul>
+<li><p>从当前shell的作业列表中移除全部作业。</p>
+</li>
+<li><p>从当前shell的作业列表中移除指定的一到多个作业。</p>
+</li>
+<li><p>从当前shell的作业列表中移除正在运行的作业。</p>
+</li>
+<li><p>标记作业，使得它们在当前shell退出后也不会结束。</p>
+</li>
+</ul>
+<h2>选项</h2><pre><code>-h    标记每个作业标识符，这些作业将不会在shell接收到sighup信号时接收到sighup信号。
+-a    移除所有的作业。
+-r    移除运行的作业。</code></pre>
+<h2>参数</h2><p>jobspec（可选）：要移除的作业标识符，可以是一到多个。</p>
+<p>pid（可选）：要移除的作业对应的进程ID，可以是一到多个。</p>
+<h2>返回值</h2><p>返回成功除非未开启作业控制或执行出现错误。</p>
+<h2>例子</h2><pre><code><span># 演示。</span>
+<span>[</span>user2@pc<span>]</span> <span>ssh</span> <span>192.168</span>.1.4
+user2@192.168.1.4<span>'s password:
+# 此时按下ctrl+z使得交互停止。
+[1]+  Stopped                 ssh 192.168.1.4
+
+[user2@pc] ssh 192.168.1.7
+user2@192.168.1.7'</span>s password:
+<span># 此时按下ctrl+z使得交互停止。</span>
+<span>[</span><span>1</span><span>]</span>+  Stopped                 <span>ssh</span> <span>192.168</span>.1.7
+
+<span>[</span>user2@pc<span>]</span> <span>sleep</span> <span>120</span> <span>&amp;</span>
+<span>[</span><span>3</span><span>]</span> <span>28986</span>
+
+<span># 列出作业及pid信息。</span>
+<span>[</span>user2@pc<span>]</span> <span>jobs</span> -l
+<span>[</span><span>1</span><span>]</span>- <span>28756</span> Stopped                 <span>ssh</span> <span>192.168</span>.1.4
+<span>[</span><span>2</span><span>]</span>+ <span>28833</span> Stopped                 <span>ssh</span> <span>192.168</span>.1.7
+<span>[</span><span>3</span><span>]</span>  <span>28986</span> Running                 <span>sleep</span> <span>120</span> <span>&amp;</span>
+
+<span># 删除运行状态的作业。</span>
+<span>[</span>user2@pc<span>]</span> disown -r
+
+<span>[</span>user2@pc<span>]</span> <span>jobs</span> -l
+<span>[</span><span>1</span><span>]</span>- <span>28756</span> Stopped                 <span>ssh</span> <span>192.168</span>.1.4
+<span>[</span><span>2</span><span>]</span>+ <span>28833</span> Stopped                 <span>ssh</span> <span>192.168</span>.1.7
+
+<span># 注意disown只是移除作业，并没有停止。</span>
+<span>[</span>user2@pc<span>]</span> pgrep -a -u user2 -f <span>'sleep 120'</span>
+<span>28986</span> <span>sleep</span> <span>120</span>
+
+<span># 删除指定的作业。</span>
+<span>[</span>user2@pc<span>]</span> disown %2
+bash: warning: deleting stopped job <span>2</span> with process group <span>28833</span>
+
+<span>[</span>user2@pc<span>]</span> <span>jobs</span> -l
+<span>[</span><span>1</span><span>]</span>- <span>28756</span> Stopped                 <span>ssh</span> <span>192.168</span>.1.4
+
+<span># 注意disown只是移除作业，并没有停止。</span>
+<span>[</span>user2@pc<span>]</span> pgrep -a -u user2 -f <span>'ssh 192.168.1.7'</span>
+<span>28833</span> <span>ssh</span> <span>192.168</span>.1.7
+
+<span># 删除全部作业。</span>
+<span>[</span>user2@pc<span>]</span> disown -a
+bash: warning: deleting stopped job <span>1</span> with process group <span>28756</span>
+
+<span>[</span>user2@pc<span>]</span> <span>jobs</span> -l
+
+<span># 注意disown只是移除作业，并没有停止。</span>
+<span>[</span>user2@pc<span>]</span> pgrep -a -u user2 -f <span>'ssh 192.168.1.4'</span>
+<span>28756</span> <span>ssh</span> <span>192.168</span>.1.4</code></pre>
+<pre><code><span># 演示-h选项的作用。</span>
+<span>[</span>user2@pc<span>]</span> <span>sleep</span> <span>90</span> <span>&amp;</span>
+<span>[</span><span>1</span><span>]</span> <span>109080</span>
+
+<span>[</span>user2@pc<span>]</span> <span>jobs</span> -l
+<span>[</span><span>1</span><span>]</span>+ <span>109080</span> Running                 <span>sleep</span> <span>90</span> <span>&amp;</span>
+
+<span>[</span>user2@pc<span>]</span> disown -h %1
+
+<span>[</span>user2@pc<span>]</span> <span>exit</span>
+
+<span># 此时前一个终端已经关闭，现在打开新终端查找该作业。</span>
+<span>[</span>user2@pc<span>]</span> pgrep -a -u user2 -f <span>'sleep 90'</span>
+<span>109080</span> <span>sleep</span> <span>90</span></code></pre>
+<h3>注意</h3><ol>
+<li><code>bash</code>的作业控制命令包括<code>bg fg kill wait disown suspend</code>。</li>
+<li>该命令需要<code>set</code>选项<code>monitor</code>处于开启状态时才能执行；查看作业控制状态：输入<code>set -o</code>查看<code>monitor</code>行；执行<code>set -o monitor</code>或<code>set -m</code>开启该选项。</li>
+<li>该命令是bash内建命令，相关的帮助信息请查看<code>help</code>命令。</li>
+</ol>
+</ul>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

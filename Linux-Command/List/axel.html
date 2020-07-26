@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>axel:多线程下载工具</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="axel:多线程下载工具 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>axel</h1><p>多线程下载工具</p>
+<h2>补充说明</h2><p><strong>axel</strong> 是Linux下一个不错的HTTP/ftp高速下载工具。支持多线程下载、断点续传，且可以从多个地址或者从一个地址的多个连接来下载同一个文件。适合网速不给力时多线程下载提高下载速度。比如在国内VPS或服务器上下载lnmp一键安装包用Axel就比wget快。</p>
+<h3>安装</h3><p>CentOS安装Axel：</p>
+<p>目前yum源上没有Axel，我们可以到 <a href="http://pkgs.repoforge.org/axel/">http://pkgs.repoforge.org/axel/</a> 下载rpm包安装。</p>
+<p>32位CentOS执行下面命令：</p>
+<pre><code><span>wget</span> -c http://pkgs.repoforge.org/axel/axel-2.4-1.el5.rf.i386.rpm
+<span>rpm</span> -ivh axel-2.4-1.el5.rf.i386.rpm</code></pre>
+<p>64位CentOS执行下面命令：</p>
+<pre><code><span>wget</span> -c http://pkgs.repoforge.org/axel/axel-2.4-1.el5.rf.x86_64.rpm
+<span>rpm</span> -ivh axel-2.4-1.el5.rf.x86_64.rpm</code></pre>
+<p>Debian/Ubuntu安装Axel：</p>
+<pre><code><span>apt-get</span> <span>install</span> axel</code></pre>
+<h3>语法</h3><pre><code>axel <span>[</span>options<span>]</span> url1 <span>[</span>url2<span>]</span> <span>[</span>url<span>..</span>.<span>]</span></code></pre>
+<h3>选项</h3><pre><code>--max-speed<span>=</span>x , -s x         <span># 最高速度x</span>
+--num-connections<span>=</span>x , -n x   <span># 连接数x</span>
+--output<span>=</span>f , -o f            <span># 下载为本地文件f</span>
+--search<span>[</span><span>=</span>x<span>]</span> , -S <span>[</span>x<span>]</span>        <span># 搜索镜像</span>
+--header<span>=</span>x , -H x            <span># 添加头文件字符串x（指定 HTTP header）</span>
+--user-agent<span>=</span>x , -U x        <span># 设置用户代理（指定 HTTP user agent）</span>
+--no-proxy ， -N             <span># 不使用代理服务器</span>
+--quiet ， -q                <span># 静默模式</span>
+--verbose ，-v               <span># 更多状态信息</span>
+--alternate ， -a            <span># Alternate progress indicator</span>
+--help ，-h                  <span># 帮助</span>
+--version ，-V               <span># 版本信息</span></code></pre>
+<h3>实例</h3><p>如下载lnmp安装包指定10个线程，存到 <code>/tmp/</code>：</p>
+<pre><code>axel -n <span>10</span> -o /tmp/ http://example.com/lnmp.tar.gz</code></pre>
+<p>如果下载过程中下载中断可以再执行下载命令即可恢复上次的下载进度。</p>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

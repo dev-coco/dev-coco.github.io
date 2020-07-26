@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>df:显示磁盘的相关信息</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="df:显示磁盘的相关信息 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>df</h1><p>显示磁盘的相关信息</p>
+<h2>补充说明</h2><p><strong>df命令</strong> 用于显示磁盘分区上的可使用的磁盘空间。默认显示单位为KB。可以利用该命令来获取硬盘被占用了多少空间，目前还剩下多少空间等信息。</p>
+<h3>语法</h3><pre><code>df<span>(</span>选项<span>)</span><span>(</span>参数<span>)</span></code></pre>
+<h3>选项</h3><pre><code>-a或--all：包含全部的文件系统；
+--block-size<span>=</span><span>&lt;</span>区块大小<span>></span>：以指定的区块大小来显示区块数目；
+-h或--human-readable：以可读性较高的方式来显示信息；
+-H或--si：与-h参数相同，但在计算时是以1000 Bytes为换算单位而非1024 Bytes；
+-i或--inodes：显示inode的信息；
+-k或--kilobytes：指定区块大小为1024字节；
+-l或--local：仅显示本地端的文件系统；
+-m或--megabytes：指定区块大小为1048576字节；
+--no-sync：在取得磁盘使用信息前，不要执行sync指令，此为预设值；
+-P或--portability：使用POSIX的输出格式；
+--sync：在取得磁盘使用信息前，先执行sync指令；
+-t<span>&lt;</span>文件系统类型<span>></span>或--type<span>=</span><span>&lt;</span>文件系统类型<span>></span>：仅显示指定文件系统类型的磁盘信息；
+-T或--print-type：显示文件系统的类型；
+-x<span>&lt;</span>文件系统类型<span>></span>或--exclude-type<span>=</span><span>&lt;</span>文件系统类型<span>></span>：不要显示指定文件系统类型的磁盘信息；
+--help：显示帮助；
+--version：显示版本信息。</code></pre>
+<h3>参数</h3><p>文件：指定文件系统上的文件。</p>
+<h3>大小格式</h3><p>显示值以 <code>--block-size</code> 和 <code>DF_BLOCK_SIZE</code>，<code>BLOCK_SIZE</code> 和 <code>BLOCKSIZE</code> 环境变量中的第一个可用 <code>SIZE</code> 为单位。 否则，单位默认为 <code>1024</code> 个字节（如果设置 <code>POSIXLY_CORRECT</code>，则为<code>512</code>）。</p>
+<p>SIZE是一个整数和可选单位（例如：10M是10 * 1024 * 1024）。 单位是K，M，G，T，P，E，Z，Y（1024的幂）或KB，MB，...（1000的幂）。</p>
+<h3>实例</h3><p>查看系统磁盘设备，默认是KB为单位：</p>
+<pre><code><span>[</span>root@LinServ-1 ~<span>]</span><span># df</span>
+文件系统               1K-块        已用     可用 已用% 挂载点
+/dev/sda2            <span>146294492</span>  <span>28244432</span> <span>110498708</span>  <span>21</span>% /
+/dev/sda1              <span>1019208</span>     <span>62360</span>    <span>904240</span>   <span>7</span>% /boot
+tmpfs                  <span>1032204</span>         <span>0</span>   <span>1032204</span>   <span>0</span>% /dev/shm
+/dev/sdb1            <span>2884284108</span> <span>218826068</span> <span>2518944764</span>   <span>8</span>% /data1</code></pre>
+<p>使用<code>-h</code>选项以KB以上的单位来显示，可读性高：</p>
+<pre><code><span>[</span>root@LinServ-1 ~<span>]</span><span># df -h</span>
+文件系统              容量  已用 可用 已用% 挂载点
+/dev/sda2             140G   27G  106G  <span>21</span>% /
+/dev/sda1             996M   61M  884M   <span>7</span>% /boot
+tmpfs                1009M     <span>0</span> 1009M   <span>0</span>% /dev/shm
+/dev/sdb1             <span>2</span>.7T  209G  <span>2</span>.4T   <span>8</span>% /data1</code></pre>
+<p>查看全部文件系统：</p>
+<pre><code><span>[</span>root@LinServ-1 ~<span>]</span><span># df -a</span>
+文件系统               1K-块        已用     可用 已用% 挂载点
+/dev/sda2            <span>146294492</span>  <span>28244432</span> <span>110498708</span>  <span>21</span>% /
+proc                         <span>0</span>         <span>0</span>         <span>0</span>   -  /proc
+sysfs                        <span>0</span>         <span>0</span>         <span>0</span>   -  /sys
+devpts                       <span>0</span>         <span>0</span>         <span>0</span>   -  /dev/pts
+/dev/sda1              <span>1019208</span>     <span>62360</span>    <span>904240</span>   <span>7</span>% /boot
+tmpfs                  <span>1032204</span>         <span>0</span>   <span>1032204</span>   <span>0</span>% /dev/shm
+/dev/sdb1            <span>2884284108</span> <span>218826068</span> <span>2518944764</span>   <span>8</span>% /data1
+none                         <span>0</span>         <span>0</span>         <span>0</span>   -  /proc/sys/fs/binfmt_misc</code></pre>
+<p>显示 <code>public</code> 目录中的可用空间量，如以下输出中所示：</p>
+<pre><code><span>df</span> public
+<span># Filesystem     1K-blocks     Used Available Use% Mounted on</span>
+<span># /dev/loop0      18761008 15246924   2554392  86% /d Avail</span></code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

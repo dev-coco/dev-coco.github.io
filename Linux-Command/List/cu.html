@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>cu:用于连接另一个系统主机</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="cu:用于连接另一个系统主机 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>cu</h1><p>用于连接另一个系统主机</p>
+<h2>补充说明</h2><p><strong>cu命令</strong> 用于连接另一个系统主机。cu(call up)指令可连接另一台主机，并采用类似拨号终端机的接口工作，也可执行简易的文件传输作业。</p>
+<h3>语法</h3><pre><code>cu <span>[</span>dehnotv<span>]</span><span>[</span>-a<span>&lt;</span>通信端口<span>></span><span>]</span><span>[</span>-c<span>&lt;</span>电话号码<span>></span><span>]</span><span>[</span>-E<span>&lt;</span>脱离字符<span>></span><span>]</span><span>[</span>-I<span>&lt;</span>设置文件<span>></span><span>]</span><span>[</span>-l<span>&lt;</span>外围设备代号<span>></span><span>]</span>
+<span>[</span>-s<span>&lt;</span>连线速率<span>></span><span>]</span><span>[</span>-x<span>&lt;</span>排错模式<span>></span><span>]</span><span>[</span>-z<span>&lt;</span>系统主机<span>></span><span>]</span><span>[</span>--help<span>]</span><span>[</span>-nostop<span>]</span><span>[</span>--parity<span>=</span>none<span>]</span><span>[</span><span>&lt;</span>系统主机<span>></span>/<span>&lt;</span>电话号码<span>></span><span>]</span></code></pre>
+<h3>选项</h3><pre><code>-a<span>&lt;</span>通信端口<span>></span>或-p<span>&lt;</span>通信端口<span>></span>或--port<span>&lt;</span>通信端口<span>></span> 使用指定的通信端口进行连线。
+-c<span>&lt;</span>电话号码<span>></span>或--phone<span>&lt;</span>电话号码<span>></span> 拨打该电话号码。
+-d 进入排错模式。
+-e或--parity<span>=</span>even 使用双同位检查。
+-E<span>&lt;</span>脱离字符<span>></span>或--escape<span>&lt;</span>脱离字符<span>></span> 设置脱离字符。
+-h或--halfduple 使用半双工模式。
+-I<span>&lt;</span>配置文件<span>></span>或--config<span>&lt;</span>配置文件<span>></span> 指定要使用的配置文件。
+-l<span>&lt;</span>外围设备代号<span>></span>或--line<span>&lt;</span>外围设备代号<span>></span> 指定某项外围设备，作为连接的设备。
+-n或--prompt 拨号时等待用户输入电话号码。
+-o或--parity<span>=</span>odd 使用单同位检查。
+-s<span>&lt;</span>连线速率<span>></span>或--speed<span>&lt;</span>连线速率<span>></span>或--baud<span>&lt;</span>连线速率<span>></span>或-<span>&lt;</span>连线速率<span>></span> 设置连线的速率，单位以鲍率计算。
+-t或--maper 把CR字符置换成LF+CR字符。
+-v或--version 显示版本信息。
+-x<span>&lt;</span>排错模式<span>></span>或--debug<span>&lt;</span>排错模式<span>></span> 使用排错模式。
+-z<span>&lt;</span>系统主机<span>></span>或--system<span>&lt;</span>系统主机<span>></span> 连接该系统主机。
+--help 在线帮助。
+--nostop 关闭Xon/Xoff软件流量控制。
+--parity<span>=</span>none 不使用同位检查。</code></pre>
+<h3>实例</h3><p>与远程主机连接</p>
+<pre><code>cu -c 0102377765
+cu -s <span>38400</span> <span>9</span><span>=</span><span>12015551234</span></code></pre>
+
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

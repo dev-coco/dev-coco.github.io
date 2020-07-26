@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>cal:显示当前日历或指定日期的日历</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="cal:显示当前日历或指定日期的日历 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>cal</h1><p>显示当前日历或指定日期的日历</p>
+<h2>补充说明</h2><p><strong>cal命令</strong> 用于显示当前日历，或者指定日期的日历，如果没有指定参数，则显示当前月份。</p>
+<p>一个单一的参数指定要显示的年份  (1  -  9999)  ;  注意年份必须被完全地指定:  cal 89 不会 显示1989年的日历.  两个参数表示月份 (1 - 12) 和年份.  如果没有指定参数,
+则显示当前月份的日历.</p>
+<p>一年从Jan 1 (1 月 1 日) 开始.</p>
+<p>格里高利历法改革(Gregorian Reformation)被认为发生于 1752 年 9 月 3 日.  在此之前, 多数国家已经认可这项改革(尽管有一些直到 20  世纪初才认可它).   那天之后的  10
+天在这项改革被略去了, 所以那个月的日历有点不太寻常.</p>
+<h3>语法</h3><pre><code><span>cal</span> <span>[</span> -mjy <span>]</span> <span>[</span> 月份 <span>]</span> <span>[</span> 年份 <span>]</span></code></pre>
+<h3>选项</h3><pre><code>-l <span># 显示单月输出；</span>
+-3 <span># 显示临近三个月的日历；</span>
+-s <span># 将星期日作为月的第一天；</span>
+-m <span># 显示星期一作为一周的第一天..  (缺省为星期日.)</span>
+-j <span># 显示儒略历的(Julian)日期 (以 1 为基的天数, 从 1 月 1 日开始计数) .</span>
+-y <span># 显示当前年份的日历..</span></code></pre>
+<h3>参数</h3><pre><code>月：指定月份；
+年：指定年份。</code></pre>
+<h3>实例</h3><p>单独执行cal命令会打印出日历：</p>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># cal</span>
+    十二月 <span>2013</span>
+日 一 二 三 四 五 六
+ <span>1</span>  <span>2</span>  <span>3</span>  <span>4</span>  <span>5</span>  <span>6</span>  <span>7</span>
+ <span>8</span>  <span>9</span> <span>10</span> <span>11</span> <span>12</span> <span>13</span> <span>14</span>
+<span>15</span> <span>16</span> <span>17</span> <span>18</span> <span>19</span> <span>20</span> <span>21</span>
+<span>22</span> <span>23</span> <span>24</span> <span>25</span> <span>26</span> <span>27</span> <span>28</span>
+<span>29</span> <span>30</span> <span>31</span></code></pre>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># cal -j</span>
+        十二月 <span>2013</span>
+  日   一   二   三   四   五   六
+<span>335</span> <span>336</span> <span>337</span> <span>338</span> <span>339</span> <span>340</span> <span>341</span>
+<span>342</span> <span>343</span> <span>344</span> <span>345</span> <span>346</span> <span>347</span> <span>348</span>
+<span>349</span> <span>350</span> <span>351</span> <span>352</span> <span>353</span> <span>354</span> <span>355</span>
+<span>356</span> <span>357</span> <span>358</span> <span>359</span> <span>360</span> <span>361</span> <span>362</span>
+<span>363</span> <span>364</span> <span>365</span></code></pre>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># cal -3</span>
+    十一月 <span>2013</span>           十二月 <span>2013</span>            一月 <span>2014</span>
+日 一 二 三 四 五 六  日 一 二 三 四 五 六  日 一 二 三 四 五 六
+                <span>1</span>  <span>2</span>   <span>1</span>  <span>2</span>  <span>3</span>  <span>4</span>  <span>5</span>  <span>6</span>  <span>7</span>            <span>1</span>  <span>2</span>  <span>3</span>  <span>4</span>
+ <span>3</span>  <span>4</span>  <span>5</span>  <span>6</span>  <span>7</span>  <span>8</span>  <span>9</span>   <span>8</span>  <span>9</span> <span>10</span> <span>11</span> <span>12</span> <span>13</span> <span>14</span>   <span>5</span>  <span>6</span>  <span>7</span>  <span>8</span>  <span>9</span> <span>10</span> <span>11</span>
+<span>10</span> <span>11</span> <span>12</span> <span>13</span> <span>14</span> <span>15</span> <span>16</span>  <span>15</span> <span>16</span> <span>17</span> <span>18</span> <span>19</span> <span>20</span> <span>21</span>  <span>12</span> <span>13</span> <span>14</span> <span>15</span> <span>16</span> <span>17</span> <span>18</span>
+<span>17</span> <span>18</span> <span>19</span> <span>20</span> <span>21</span> <span>22</span> <span>23</span>  <span>22</span> <span>23</span> <span>24</span> <span>25</span> <span>26</span> <span>27</span> <span>28</span>  <span>19</span> <span>20</span> <span>21</span> <span>22</span> <span>23</span> <span>24</span> <span>25</span>
+<span>24</span> <span>25</span> <span>26</span> <span>27</span> <span>28</span> <span>29</span> <span>30</span>  <span>29</span> <span>30</span> <span>31</span>              <span>26</span> <span>27</span> <span>28</span> <span>29</span> <span>30</span> <span>31</span>  </code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

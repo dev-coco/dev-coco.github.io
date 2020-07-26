@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>cut:连接文件并打印到标准输出设备上</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="cut:连接文件并打印到标准输出设备上 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>cut</h1><p>连接文件并打印到标准输出设备上</p>
+<h2>补充说明</h2><p><strong>cut 命令</strong> 用来显示行中的指定部分，删除文件中指定字段。cut 经常用来显示文件的内容，类似于 type 命令。</p>
+<p>说明：该命令有两项功能，其一是用来显示文件的内容，它依次读取由参数 file 所指 明的文件，将它们的内容输出到标准输出上；其二是连接两个或多个文件，如<code>cut fl f2 &gt; f3</code>将把文件 fl 和 f2 的内容合并起来，然后通过输出重定向符“&gt;”的作用，将它们放入文件 f3 中。</p>
+<p>当文件较大时，文本在屏幕上迅速闪过（滚屏），用户往往看不清所显示的内容。因此，一般用 more 等命令分屏显示。为了控制滚屏，可以按 Ctrl+S 键，停止滚屏；按 Ctrl+Q 键可以恢复滚屏。按 Ctrl+C（中断）键可以终止该命令的执行，并且返回 Shell 提示符状态。</p>
+<h3>语法</h3><pre><code>cut（选项）（参数）</code></pre>
+<h3>选项</h3><pre><code>-b：仅显示行中指定直接范围的内容；
+-c：仅显示行中指定范围的字符；
+-d：指定字段的分隔符，默认的字段分隔符为“TAB”；
+-f：显示指定字段的内容；
+-n：与“-b”选项连用，不分割多字节字符；
+--complement：补足被选择的字节、字符或字段；
+--out-delimiter<span>=</span> 字段分隔符：指定输出内容是的字段分割符；
+--help：显示指令的帮助信息；
+--version：显示指令的版本信息。</code></pre>
+<h3>参数</h3><p>文件：指定要进行内容过滤的文件。</p>
+<h3>实例</h3><p>例如有一个学生报表信息，包含 No、Name、Mark、Percent：</p>
+<pre><code><span>[</span>root@localhost text<span>]</span><span># cat test.txt</span>
+No Name Mark Percent
+01 tom <span>69</span> <span>91</span>
+02 jack <span>71</span> <span>87</span>
+03 alex <span>68</span> <span>98</span>
+</code></pre>
+<p>使用  <strong>-f</strong>  选项提取指定字段（这里的 f 参数可以简单记忆为 <code>--fields</code>的缩写）：</p>
+<pre><code><span>[</span>root@localhost text<span>]</span><span># cut -f 1 test.txt</span>
+No
+01
+02
+03</code></pre>
+<pre><code><span>[</span>root@localhost text<span>]</span><span># cut -f2,3 test.txt</span>
+Name Mark
+tom <span>69</span>
+jack <span>71</span>
+alex <span>68</span>
+</code></pre>
+<p> <strong>--complement</strong>  选项提取指定字段之外的列（打印除了第二列之外的列）：</p>
+<pre><code><span>[</span>root@localhost text<span>]</span><span># cut -f2 --complement test.txt</span>
+No Mark Percent
+01 <span>69</span> <span>91</span>
+02 <span>71</span> <span>87</span>
+03 <span>68</span> <span>98</span></code></pre>
+<p>使用  <strong>-d</strong>  选项指定字段分隔符：</p>
+<pre><code><span>[</span>root@localhost text<span>]</span><span># cat test2.txt</span>
+No<span>;</span>Name<span>;</span>Mark<span>;</span>Percent
+01<span>;</span>tom<span>;</span><span>69</span><span>;</span><span>91</span>
+02<span>;</span>jack<span>;</span><span>71</span><span>;</span><span>87</span>
+03<span>;</span>alex<span>;</span><span>68</span><span>;</span><span>98</span></code></pre>
+<pre><code><span>[</span>root@localhost text<span>]</span><span># cut -f2 -d";" test2.txt</span>
+Name
+tom
+jack
+alex
+</code></pre>
+<h3>指定字段的字符或者字节范围</h3><p>cut 命令可以将一串字符作为列来显示，字符字段的记法：</p>
+<ul>
+<li><strong>N-</strong> ：从第 N 个字节、字符、字段到结尾；</li>
+<li><strong>N-M</strong> ：从第 N 个字节、字符、字段到第 M 个（包括 M 在内）字节、字符、字段；</li>
+<li><strong>-M</strong> ：从第 1 个字节、字符、字段到第 M 个（包括 M 在内）字节、字符、字段。</li>
+</ul>
+<p>上面是记法，结合下面选项将摸个范围的字节、字符指定为字段：</p>
+<ul>
+<li><strong>-b</strong>  表示字节；</li>
+<li><strong>-c</strong>  表示字符；</li>
+<li><strong>-f</strong>  表示定义字段。</li>
+</ul>
+<p><strong>示例</strong></p>
+<pre><code><span>[</span>root@localhost text<span>]</span><span># cat test.txt</span>
+abcdefghijklmnopqrstuvwxyz
+abcdefghijklmnopqrstuvwxyz
+abcdefghijklmnopqrstuvwxyz
+abcdefghijklmnopqrstuvwxyz
+abcdefghijklmnopqrstuvwxyz
+</code></pre>
+<p>打印第 1 个到第 3 个字符：</p>
+<pre><code><span>[</span>root@localhost text<span>]</span><span># cut -c1-3 test.txt</span>
+abc
+abc
+abc
+abc
+abc
+</code></pre>
+<p>打印前 2 个字符：</p>
+<pre><code><span>[</span>root@localhost text<span>]</span><span># cut -c-2 test.txt</span>
+ab
+ab
+ab
+ab
+ab
+</code></pre>
+<p>打印从第 5 个字符开始到结尾：</p>
+<pre><code><span>[</span>root@localhost text<span>]</span><span># cut -c5- test.txt</span>
+efghijklmnopqrstuvwxyz
+efghijklmnopqrstuvwxyz
+efghijklmnopqrstuvwxyz
+efghijklmnopqrstuvwxyz
+efghijklmnopqrstuvwxyz</code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

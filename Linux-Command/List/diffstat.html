@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>diffstat:显示diff命令输出信息的柱状图</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="diffstat:显示diff命令输出信息的柱状图 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1 id="diffstat">diffstat</h1><p>显示diff命令输出信息的柱状图</p>
+<h2 id="补充说明">补充说明</h2><p><strong>diffstat命令</strong> 用来显示diff命令输出信息的柱状图，用以显示diff命令比较两个文件的不同统计信息。用户也可以直接使用<code>|</code>将diff命令所输出的结果直接送给diffstat命令进行统计结果的显示。使用该命令时，若所比较的文件或者子目录不在当前目录下，则应该使用其完整路径。</p>
+<h3 id="语法">语法</h3><pre><code class="language-shell">diffstat<span class="token punctuation">(</span>选项<span class="token punctuation">)</span><span class="token punctuation">(</span>参数<span class="token punctuation">)</span></code></pre>
+<h3 id="选项">选项</h3><pre><code class="language-shell">-n<span class="token operator">&lt;</span>文件名长度<span class="token operator">></span>：指定文件名长度，指定的长度必须大于或等于所有文件中最长的文件名；
+-p<span class="token operator">&lt;</span>文件名长度<span class="token operator">></span>：与-n参数相同，但此处的<span class="token operator">&lt;</span>文件名长度<span class="token operator">></span>包括了文件的路径；
+-w：指定要输出时栏位的宽度；
+-v：显示版本信息。</code></pre>
+<h3 id="参数">参数</h3><p>文件：指定保存有diff命令的输出信息文件。</p>
+<h3 id="实例">实例</h3><p>将目录&quot;test1&quot;和&quot;test2&quot;下的同名文件&quot;testf.txt&quot;使用diff命令进行比较。然后使用diffstat命令对结果进行统计显示，输入如下命令：</p>
+<pre><code class="language-shell"><span class="token function">diff</span> test1 test2 <span class="token operator">|</span> diffstat    <span class="token comment">#进行比较结果的统计显示</span></code></pre>
+<p>注意：使用这条命令可以非常方便地实现统计显示的功能。</p>
+<p>对于查看文件中的内容，用户可以通过cat命令进行查看即可，具体操作如下：</p>
+<pre><code class="language-shell"><span class="token function">cat</span> test1/testf.txt           <span class="token comment">#查看test1/testf的内容</span>
+abc
+def
+ghi
+jkl
+mno
+pqr
+stu
+vws
+
+<span class="token function">cat</span> test2/testf.txt          <span class="token comment">#查看test2/testf的内容</span>
+abc
+def
+ghi
+jkl
+mno</code></pre>
+<p>从上面的文件内容显示，可以看到两个文件内容的差别。现在来运行刚才的命令，对文件比较的结果进行统计显示，结果如下：</p>
+<pre><code class="language-shell">testfile <span class="token operator">|</span> <span class="token number">2</span> +-             <span class="token comment">#统计信息输出显示</span>
+<span class="token number">1</span> <span class="token function">file</span> changed, <span class="token number">1</span> insertion<span class="token punctuation">(</span>+<span class="token punctuation">)</span>, <span class="token number">1</span> deletion<span class="token punctuation">(</span>-<span class="token punctuation">)</span></code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

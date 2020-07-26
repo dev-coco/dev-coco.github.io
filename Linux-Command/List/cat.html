@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>cat:连接多个文件并打印到标准输出</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="cat:连接多个文件并打印到标准输出 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>cat</h1><p>连接多个文件并打印到标准输出。</p>
+<h2>概要</h2><pre><code><span>cat</span> <span>[</span>OPTION<span>]</span><span>..</span>. <span>[</span>FILE<span>]</span><span>..</span>.</code></pre>
+<h2>主要用途</h2><ul>
+<li>显示文件内容，如果没有文件或文件为<code>-</code>则读取标准输入。</li>
+<li>将多个文件的内容进行连接并打印到标准输出。</li>
+<li>显示文件内容中的不可见字符（控制字符、换行符、制表符等）。</li>
+</ul>
+<h2>参数</h2><p>FILE（可选）：要处理的文件，可以为一或多个。</p>
+<h2>选项</h2><pre><code>长选项与短选项等价
+
+-A, --show-all           等价于<span>"-vET"</span>组合选项。
+-b, --number-nonblank    只对非空行编号，从1开始编号，覆盖<span>"-n"</span>选项。
+-e                       等价于<span>"-vE"</span>组合选项。
+-E, --show-ends          在每行的结尾显示<span>'&#36;'</span>字符。
+-n, --number             对所有行编号，从1开始编号。
+-s, --squeeze-blank      压缩连续的空行到一行。
+-t                       等价于<span>"-vT"</span>组合选项。
+-T, --show-tabs          使用<span>"^I"</span>表示TAB（制表符）。
+-u                       POSIX兼容性选项，无意义。
+-v, --show-nonprinting   使用<span>"^"</span>和<span>"M-"</span>符号显示控制字符，除了LFD（line feed，即换行符<span>'<span class="token entity" title="\n">\n</span>'</span>）和TAB（制表符）。
+
+--help                   显示帮助信息并退出。
+--version                显示版本信息并退出。</code></pre>
+<h2>返回值</h2><p>返回状态为成功除非给出了非法选项或非法参数。</p>
+<h2>例子</h2><pre><code><span># 合并显示多个文件</span>
+<span>cat</span> ./1.log ./2.log ./3.log
+<span># 显示文件中的非打印字符、tab、换行符</span>
+<span>cat</span> -A test.log
+<span># 压缩文件的空行</span>
+<span>cat</span> -s test.log
+<span># 显示文件并在所有行开头附加行号</span>
+<span>cat</span> -n test.log
+<span># 显示文件并在所有非空行开头附加行号</span>
+<span>cat</span> -b test.log
+<span># 将标准输入的内容和文件内容一并显示</span>
+<span>echo</span> <span>'######'</span> <span>|</span><span>cat</span> - test.log</code></pre>
+<h3>注意</h3><ol>
+<li>该命令是<code>GNU coreutils</code>包中的命令，相关的帮助信息请查看<code>man -s 1 cat</code>或<code>info coreutils &#39;cat invocation&#39;</code>。</li>
+<li>当使用<code>cat</code>命令查看<strong>体积较大的文件</strong>时，文本在屏幕上迅速闪过（滚屏），用户往往看不清所显示的内容，为了控制滚屏，可以按<code>Ctrl+s</code>键停止滚屏；按<code>Ctrl+q</code>键恢复滚屏；按<code>Ctrl+c</code>（中断）键可以终止该命令的执行，返回Shell提示符状态。</li>
+<li>建议您查看<strong>体积较大的文件</strong>时使用<code>less</code>、<code>more</code>命令或<code>emacs</code>、<code>vi</code>等文本编辑器。</li>
+</ol>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

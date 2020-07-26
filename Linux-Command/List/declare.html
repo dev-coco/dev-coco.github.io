@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>declare:声明变量，设置或显示变量的值和属性</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="declare:声明变量，设置或显示变量的值和属性 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li,td{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>declare</h1><p>声明变量，设置或显示变量的值和属性。</p>
+<h2>语法</h2><pre><code><span>declare</span> <span>[</span>-aAfFgilnrtux<span>]</span> <span>[</span>-p<span>]</span> <span>[</span>name<span>[</span><span>=</span>value<span>]</span> <span>..</span>.<span>]</span></code></pre>
+<h2>主要用途</h2><ul>
+<li>显示包含指定属性的全部变量和值</li>
+<li>显示包含指定属性的一到多个变量和值</li>
+<li>显示一到多个变量的属性和值</li>
+<li>显示所有变量的属性和值并显示函数的定义</li>
+<li>显示所有变量的属性和值</li>
+<li>显示所有全局变量的属性和值</li>
+<li>显示全部函数名和函数定义</li>
+<li>只显示全部函数名</li>
+<li>显示一到多个函数名和函数定义</li>
+<li>只显示一到多个函数名</li>
+<li>声明全局变量（可选：赋值）</li>
+<li>声明变量（可选：赋值、属性）</li>
+<li>增加、删除变量的属性（可选：赋值）</li>
+</ul>
+<h2>选项</h2><pre><code>-f 将操作或显示限制为函数名及函数定义。
+-F 只显示函数名（调试时附加行号和源文件）。
+-g 在shell函数中使用时创建全局变量；其他情况下忽略。
+-p 显示每个名称的属性和值。
+
+*设置属性的选项:
+-a 创建数组（如果支持）。
+-A 创建关联数组（如果支持）。
+-i 增加整型属性。
++i 删除整型属性。
+-l 增加小写属性，变量的值将转换为小写。
++l 删除小写属性。
+-n 增加引用属性（如果该选项存在）。
++n 删除引用属性（如果该选项存在）。
+-r 增加只读属性。
+-t 增加追踪属性。
++t 删除追踪属性。
+-u 增加大写属性，变量的值将转换为大写。
++u 删除大写属性。
+-x 增加导出属性。
++x 删除导出属性。</code></pre>
+<h2>参数</h2><pre><code>name（可选）：变量名或函数名。
+value（可选）：变量的值。</code></pre>
+<h2>返回值</h2><p>declare 返回true除非你提供了非法选项或赋值错误。具体导致异常的情况请查看<strong>讨论</strong>章节的<strong>关于异常情况</strong>。</p>
+<h2>例子</h2><pre><code><span># 声明变量，当然也欢迎您在这个网站（感谢本项目发起人 @jaywcjlove）查询linux命令。</span>
+<span>declare</span> <span>reference_website</span><span>=</span><span>'https://wangchujiang.com/linux-command/'</span>
+
+<span># 显示所有包含整型属性的变量和值。</span>
+<span>declare</span> -i
+<span># 定义变量b并赋值为3，具有整型属性。</span>
+<span>declare</span> -i <span>b</span><span>=</span><span>5</span>
+<span># 显示属性，返回 declare -i b="5"。</span>
+<span>declare</span> -p b
+<span># 删除整型属性。</span>
+<span>declare</span> +i b
+<span># 显示属性，返回 declare -- b="5"。</span>
+<span>declare</span> -p b
+<span># 根据变量属性强制转换值的英文大小写。</span>
+<span>declare</span> -u <span>uc_var</span><span>=</span><span>'abc'</span>
+<span>declare</span> -l <span>lc_var</span><span>=</span><span>'ABC'</span>
+<span># 显示'ABC abc';</span>
+<span>echo</span> <span>"<span>&#36;{uc_var}</span> <span>&#36;{lc_var}</span>"</span></code></pre>
+<pre><code><span># 定义函数内的全局变量</span>
+<span>function</span> <span class="token function-name function">test</span><span>(</span><span>)</span><span>{</span>
+  <span>declare</span> -g <span>a</span><span>=</span><span>3</span>
+  <span># 或者</span>
+  <span>local</span> -g <span>b</span><span>=</span><span>3</span>
+  <span># 或者</span>
+  <span>c</span><span>=</span><span>3</span>
+  <span># 让我们查看它们的属性。</span>
+  <span>declare</span> -p a b c
+<span>}</span>
+<span># 执行函数。</span>
+<span>test</span>
+<span># 返回结果。</span>
+<span># declare -- a="3"</span>
+<span># declare -- b="3"</span>
+<span># declare -- c="3"</span>
+
+<span># 定义函数外的全局变量</span>
+<span>declare</span> <span>a</span><span>=</span><span>3</span>
+<span>b</span><span>=</span><span>3</span>
+<span>declare</span> –p a b
+<span># 返回结果如下。</span>
+<span># declare -- a="3"</span>
+<span># declare -- b="3"</span>
+
+<span># 定义局部变量</span>
+<span>function</span> <span class="token function-name function">test2</span><span>(</span><span>)</span><span>{</span>
+  <span>local</span> -i <span>a</span><span>=</span><span>3</span>
+  <span>declare</span> -i <span>b</span><span>=</span><span>3</span>
+<span>}</span>
+test2
+<span># 没有该变量（已经被销毁了）</span>
+<span>echo</span> <span>"<span>&#36;{a}</span> <span>&#36;{b}</span>"</span>
+<span># 因此，我们日常脚本中最常见的类似于'a=3'实际上是声明并赋值了一个全局变量。</span>
+<span># 在接下来的 **讨论** 环节会延伸讨论全局和局部变量问题。</span></code></pre>
+<pre><code><span># 注意，不能使用 `+a` 或 `+A` 取消数组，也不能使用 `+r` 取消只读属性。</span>
+
+<span># 定义只读数组，设置属性的同时定义赋值。</span>
+<span>declare</span> -ar <span>season</span><span>=</span><span>(</span><span>'Spring'</span> <span>'Summer'</span> <span>'Autumn'</span> <span>'Winter'</span><span>)</span>
+<span># 或者这样。</span>
+<span>season</span><span>=</span><span>(</span><span>'Spring'</span> <span>'Summer'</span> <span>'Autumn'</span> <span>'Winter'</span><span>)</span>
+<span>declare</span> -ar season
+<span># 显示所有数组。</span>
+<span>declare</span> -a
+<span># 定义关联数组。</span>
+
+<span>declare</span> -A <span>fruits</span><span>=</span><span>(</span><span>[</span><span>'apple'</span><span>]</span><span>=</span><span>'red'</span> <span>[</span><span>'banana'</span><span>]</span><span>=</span><span>'yellow'</span><span>)</span>
+<span># 显示所有关联数组。</span>
+<span>declare</span> -A</code></pre>
+<pre><code><span># 显示所有变量的属性和值并显示函数的定义，输出很长。</span>
+<span>declare</span>
+<span># 显示所有变量的属性和值。</span>
+<span>declare</span> -p
+<span># 显示所有全局变量的属性和值。</span>
+<span>declare</span> -g</code></pre>
+<pre><code><span># 显示全部函数名和函数定义。</span>
+<span>declare</span> -f
+<span># 只显示全部函数名。</span>
+<span>declare</span> -F
+
+<span># 定义两个函数。</span>
+<span>function</span> <span class="token function-name function">func_a</span><span>(</span><span>)</span><span>{</span> <span>echo</span> <span><span>&#36;(</span><span>date</span> +<span>"%F %T"</span><span>)</span></span><span>;</span> <span>}</span>
+<span>function</span> <span class="token function-name function">func_b</span><span>(</span><span>)</span><span>{</span> <span>cd</span> /<span>;</span> <span>ls</span> -lh --sort<span>=</span>time<span>;</span> <span>}</span>
+<span># 显示一到多个函数名和函数定义。</span>
+<span>declare</span> -f func_a func_b
+<span># 只显示一到多个函数名，验证某个名称是否已经定义为函数时有用。</span>
+<span>declare</span> -F func_a func_b
+<span># 最好不要让函数名和变量名相同。</span></code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

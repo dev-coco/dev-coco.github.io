@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>bmodinfo:显示给定模块的详细信息</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="bmodinfo:显示给定模块的详细信息 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>bmodinfo</h1><p>显示给定模块的详细信息</p>
+<h2>补充说明</h2><p><strong>bmodinfo命令</strong> 用于显示给定模块的详细信息。</p>
+<h3>语法</h3><pre><code>bmodinfo<span>(</span>选项<span>)</span><span>(</span>参数<span>)</span></code></pre>
+<h3>选项</h3><pre><code>-a：显示模块作者；
+-d：显示模块的描述信息；
+-l：显示模块的许可信息；
+-p：显示模块的参数信息；
+-n：显示模块对应的文字信息；
+-0：用ASCII码的0字符分割字段值，而不使用新行。</code></pre>
+<h3>参数</h3><p>模块名：要显示详细信息的模块名称。</p>
+<h3>实例</h3><p>显示sg模块的信息：</p>
+<pre><code><span>[</span>root@localhost ~<span>]</span><span># modinfo sg</span>
+filename:    /lib/modules/2.6.9-42.ELsmp/kernel/drivers/scsi/sg.ko
+author:     Douglas Gilbert
+description:  SCSI generic <span>(</span>sg<span>)</span> driver
+license:    GPL
+version:    <span>3.5</span>.31 B0B0CB1BB59F0669A1F0D6B
+parm:      def_reserved_size:size of buffer reserved <span>for</span> each fd
+parm:      allow_dio:allow direct I/O <span>(</span>default: <span>0</span> <span>(</span>disallow<span>))</span>
+alias:     char-major-21-*
+vermagic:    <span>2.6</span>.9-42.ELsmp SMP <span>686</span> REGPARM 4KSTACKS gcc-3.4
+depends:    scsi_mod</code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

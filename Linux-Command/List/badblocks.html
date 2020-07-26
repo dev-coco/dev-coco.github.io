@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>badblocks:查找磁盘中损坏的区块</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="badblocks:查找磁盘中损坏的区块 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p,li{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+
+<h1>badblocks</h1><p>查找磁盘中损坏的区块</p>
+<h2>补充说明</h2><p><strong>badblock命令</strong> 用于查找磁盘中损坏的区块。 硬盘是一个损耗设备，当使用一段时间后可能会出现坏道等物理故障。电脑硬盘出现坏道后，如果不及时更换或进行技术处理，坏道就会越来越多，并会造成频繁死机和数据丢失。最好的处理方式是更换磁盘，但在临时的情况下，应及时屏蔽坏道部分的扇区，不要触动它们。badblocks就是一个很好的检查坏道位置的工具。</p>
+<h3>语法</h3><pre><code>badblock<span>(</span>选项<span>)</span><span>(</span>参数<span>)</span></code></pre>
+<h3>选项</h3><pre><code>-b<span>&lt;</span>区块大小<span>></span>：指定磁盘的区块大小，单位为字节；
+-o<span>&lt;</span>输出文件<span>></span>：将检查的结果写入指定的输出文件；
+-s：在检查时显示进度；
+-v：执行时显示详细的信息；
+-w：在检查时，执行写入测试。</code></pre>
+<h3>参数</h3><ul>
+<li>磁盘装置：指定要检查的磁盘装置；</li>
+<li>磁盘区块数：指定磁盘装置的区块总数；</li>
+<li>启始区块：指定要从哪个区块开始检查。</li>
+</ul>
+<h3>实例</h3><p>badblocks以 4096 的一个block，每一个block检查16次，将结果输出到“hda-badblocks-list”文件里。</p>
+<pre><code>badblocks -b <span>4096</span> -c <span>16</span> /dev/hda1 -o hda-badblocks-list</code></pre>
+<p>hda-badblocks-list是个文本文件，内容如下：</p>
+<pre><code><span>cat</span> hda-badblocks-list
+<span>51249</span>
+<span>51250</span>
+<span>51251</span>
+<span>51253</span>
+<span>51254</span>
+……
+<span>61245</span>
+……</code></pre>
+<p>可以针对可疑的区块多做几次操作。下面，badblocks以4096字节为一个“block”,每一个“block”检查1次, 将结果输出到“hda-badblocks-list.1”文件中，由第51000 block开始，到63000 block结束。</p>
+<pre><code>badblocks -b <span>4096</span> -c <span>1</span> /dev/hda1 -o hda-badblocks-list.1 <span>63000</span> <span>51000</span></code></pre>
+<p>这次花费的时间比较短，硬盘在指定的情况下在很短的时间就产生“嘎嘎嘎嘎”的响声。由于检查条件的不同，其输出的结果也不完全是相同的。重复几次同样的操作，因条件多少都有些不同，所以结果也有所不同。进行多次操作后，直到产生最后的hda-badblock-list.final文件。</p>
+<h3>其他</h3><p><strong>1、fsck使用badblocks的信息</strong> </p>
+<p>badblocks只会在日志文件中标记出坏道的信息，但若希望在检测磁盘时也能跳过这些坏块不检测，可以使用fsck的-l参数：</p>
+<pre><code>fsck.ext3 -l /tmp/hda-badblock-list.final /dev/hda1</code></pre><p><strong>2、在创建文件系统前检测坏道</strong> </p>
+<p>badblocks可以随e2fsck和mke2fs的-c删除一起运行（对ext3文件系统也一样），在创建文件系统前就先检测坏道信息：</p>
+<pre><code>mkfs.ext3 -c /dev/hda1</code></pre>
+<p>代码表示使用-c在创建文件系统前检查坏道的硬盘。</p>
+<p>这个操作已经很清楚地告知我们可以采用<code>mkfs.ext3 -c</code>选项用<code>read-only</code>方式检查硬盘。这个命令会在格式化硬盘时检查硬盘，并标出错误的硬盘“block”。用这个方法格式化硬盘，需要有相当大的耐心，因为命令运行后，会一个个用读的方式检查硬盘。</p>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

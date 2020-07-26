@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>chfn:用来改变finger命令显示的信息</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="chfn:用来改变finger命令显示的信息 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>chfn</h1><p>用来改变finger命令显示的信息</p>
+<h2>补充说明</h2><p><strong>chfn命令</strong> 用来改变finger命令显示的信息。这些信息都存放在/etc目录里的passwd文件里。若不指定任何选项，则chfn命令会进入问答式界面。</p>
+<h3>语法</h3><pre><code>chfn<span>(</span>选项<span>)</span><span>(</span>参数<span>)</span></code></pre>
+<h3>选项</h3><pre><code>-f<span>&lt;</span>真实姓名<span>></span>或--full-name<span>&lt;</span>真实姓名<span>></span>：设置真实姓名；
+-h<span>&lt;</span>家中电话<span>></span>或--home-phone<span>&lt;</span>家中电话<span>></span>：设置家中的电话号码；
+-o<span>&lt;</span>办公地址<span>></span>或--office<span>&lt;</span>办公地址<span>></span>：设置办公室的地址；
+-p<span>&lt;</span>办公电话<span>></span>或--office-phone<span>&lt;</span>办公电话<span>></span>：设置办公室的电话号码；
+-u或--help：在线帮助；
+-v或-version：显示版本信息。</code></pre>
+<h3>参数</h3><p>用户名：指定要改变finger信息的用户名。</p>
+<h3>实例</h3><p>范例1，改变finger信息：</p>
+<pre><code><span>[</span>root@localhost Desktop<span>]</span><span># chfn</span>
+Changing finger information <span>for</span> root.
+Name <span>[</span>root<span>]</span>: jack
+Office <span>[</span><span>]</span>: hn
+Office Phone <span>[</span><span>]</span>: <span>888888</span>
+Home Phone <span>[</span><span>]</span>: <span>9999999</span>
+
+Finger information changed.</code></pre>
+<p>范例2，改变账号真实姓名：</p>
+<pre><code><span>[</span>root@localhost Desktop<span>]</span><span># chfn -f jack</span>
+Changing finger information <span>for</span> root.
+Finger information changed.</code></pre>
+<p>范例3：</p>
+<pre><code>shell<span>>></span> chfn
+Changing finger information <span>for</span> user
+Password: <span>[</span>del<span>]</span>
+Name<span>[</span><span>]</span>:linuxde <span>### 提供 finger 时的资料</span>
+Office<span>[</span><span>]</span>:NCCU
+Office Phone<span>[</span><span>]</span>: <span>[</span>del<span>]</span>
+Home Phone<span>[</span><span>]</span>: <span>[</span>del<span>]</span></code></pre>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>

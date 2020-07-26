@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>depmod:分析可载入模块的相依性</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Linux命令手册, Linux命令"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="depmod:分析可载入模块的相依性 — 最专业的Linux命令大全"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}p{font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;text-align: center;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>depmod</h1><p>分析可载入模块的相依性</p>
+<h2>补充说明</h2><p><strong>depmod命令</strong> 可产生模块依赖的映射文件，在构建嵌入式系统时，需要由这个命令来生成相应的文件，由modprobe使用。</p>
+<h3>语法</h3><pre><code>depmod<span>(</span>选项<span>)</span></code></pre>
+<h3>选项</h3><pre><code>-a或--all：分析所有可用的模块；
+-d或debug：执行排错模式；
+-e：输出无法参照的符号；
+-i：不检查符号表的版本；
+-m<span>&lt;</span>文件<span>></span>或system-map<span>&lt;</span>文件<span>></span>：使用指定的符号表文件；
+-s或--system-log：在系统记录中记录错误；
+-v或--verbose：执行时显示详细的信息；
+-V或--version：显示版本信息；
+--help：显示帮助。</code></pre>
+<h3>实例</h3><pre><code>depmod -b /home/windsome/EMMA3PF-KernelSource-20080626/install_pos -e -F ./boot/System.map -v <span>2.6</span>.18_pro500-bcm91250-mips2_fp_be -A -a</code></pre>
+<ul>
+<li><code>/home/windsome/EMMA3PF-KernelSource-20080626/install_pos</code>是我<code>make mod_install</code>后，所有模块的存放路径。</li>
+<li><code>./boot/System.map</code>是<code>make linux</code>后生成，我拷贝到此目录的。</li>
+<li><code>2.6.18_pro500-bcm91250-mips2_fp_be</code>是我build的linux的版本。</li>
+</ul>
+<p>编译linux过程及执行depmod的例子：</p>
+<pre><code>genkernel.sh <span>(</span>at linux-2.6.18_pro500<span>)</span>
+<span>#######</span>
+<span>export</span> <span>INSTALL_ROOT_EMMA3PF</span><span>=</span><span>"/home/windsome/EMMA3PF-KernelSource-20080626/install_pos"</span>
+<span>export</span> <span>INSTALL_MOD_EMMA3PF</span><span>=</span><span>"/home/windsome/EMMA3PF-KernelSource-20080626/install_pos"</span>
+<span>rm</span> /home/windsome/EMMA3PF-KernelSource-20080626/install_pos/lib -rf
+<span>rm</span> /home/windsome/EMMA3PF-KernelSource-20080626/install_pos/boot/* -rf
+<span>cd</span> <span>&lt;</span>linux_src_dir<span>></span>
+<span>make</span>
+<span>make</span> modules_install
+<span>cp</span> vmlinux System.map /home/windsome/EMMA3PF-KernelSource-20080626/install_pos/boot/ -p
+<span>cd</span> /home/windsome/EMMA3PF-KernelSource-20080626/install_pos
+depmod -b /home/windsome/EMMA3PF-KernelSource-20080626/install_pos -e -F ./boot/System.map -v <span>2.6</span>.18_pro500-bcm91250-mips2_fp_be -A -a</code></pre>
+<p>其他用法：</p>
+<p>在linux桌面系统中，当你编译了新的驱动，为了能够用<code>modprobe ***</code>加载模块, 你需要先将模块拷贝到<code>/lib/modules /2.6.31-20-generic</code>目录下，然后运行<code>sudo depmod -a</code>将模块信息写入modules.dep、modules.dep.bin、modules.alias.bin、modules.alias和modules.pcimap文件中。</p>
+<p>如，我编译了一个新的wifi驱动r8192se_pci.ko，将其拷贝到<code>/lib/modules/2.6.31-20-generic/wireless</code>下，然后到<code>/lib/modules/2.6.31-20-generic</code>运行<code>depmod -a</code>，之后可以在任意目录运行modprobe r8192se_pci。</p>
+<p style="text-align:right"><a href="https://dev-coco.github.io/Linux-Command/"><img alt="Linux命令, Linux命令手册" src="https://dev-coco.github.io/images/Linux-Penguin-Icon.png" style="width:48px" />Linux命令手册</a></p>
+        </div>
+</body>
+</html>
