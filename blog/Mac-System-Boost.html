@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>Mac系统优化|系统加速</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Mac系统优化, 系统加速, 系统优化"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="Mac系统优化，加快系统流畅度，学会这几招，让你告别Mac卡顿，启动慢，速度慢的问题。"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}</style>
+  <style>p{text-indent: 2em;font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>Mac系统优化</h1>
+<p>你的电脑是否经常遇到卡顿，运行缓慢的问题呢？Mac系统是否能提供最佳的性能是办公的关键，本文将告诉你如何优化Mac系统的运行速度，主要围绕软件方面和硬件方面。</p>
+<h2>软件方面</h2>
+<h3>1.清理垃圾缓存</h3>
+<p>系统和软件在运行过程中会产生各种各样的文件，例如：缓存文件(Cache Files)，文件缓冲(File Cache)，临时文件(Temporary Files)，日志（Logs），软件卸载残留文件等等。</p>
+<p>这里给大家推荐一款<a href="https://dev-coco.github.io/blog/Mac-Cleaner.html" target="_blank">Mac清理垃圾</a>软件，简单易用，清理效果好。使用方法特别简单，运行程序，选择&ldquo;清理缓存&rdquo;，点击&ldquo;好&rdquo;就清理完成了。</p>
+<p><img class="img" alt="Mac Cleaner, Mac清理垃圾, Mac清理缓存" src="https://dev-coco.github.io/images/Mac-Cleaner-wiki/7.png" /></p>
+<h3>2.系统优化</h3>
+<p>Mac系统其实有自带的性能模式。可以通过命令来开启。开启后需要重启一次电脑，界面不会有任何的提示或者变化，静默运行的。更多详细内容可以查看<a href="https://support.apple.com/zh-cn/HT202528" target="_blank">苹果官方文档</a>。</p>
+<p>10.0 ~ 10.10.5版本</p>
+<pre><code>开启性能模式
+serverinfo --setperfmode 1
+
+关闭性能模式
+serverinfo --setperfmode 0
+
+查看当前模式
+serverinfo --perfmode</code></pre>
+<p>10.11及更高版本</p>
+<pre><code>开启性能模式
+sudo nvram boot-args=&quot;serverperfmode=1 $(nvram boot-args 2&gt;/dev/null | cut -f 2-)&quot;
+
+关闭性能模式
+sudo nvram boot-args=&quot;$(nvram boot-args 2&gt;/dev/null | sed -e $&#39;s/boot-args\t//;s/serverperfmode=1//&#39;)&quot;
+
+查看当前模式
+nvram boot-args</code></pre>
+<p>在<a href="https://dev-coco.github.io/blog/Mac-Cleaner.html" target="_blank">Mac清理垃圾</a>软件内也包含了这个功能，使用系统优化功能即可开启性能模式。</p>
+<p><img class="img" alt="Mac系统优化, 系统优化, 系统加速" src="https://dev-coco.github.io/images/Mac-System-Boost-wiki/1.png" /></p>
+<h3>3.管理启动项</h3>
+<p>过多的启动项会拖慢系统的开机速度，在启动的时候消耗过多的RAM，如果不是必要的程序，可以在启动后再运行。</p>
+<p>打开系统偏好设定&mdash;&mdash;使用者与群组&mdash;&mdash;登陆项目</p>
+<p><img class="img" alt="启动项, Mac系统优化, 系统加速" src="https://dev-coco.github.io/images/Mac-System-Boost-wiki/2.png" /></p>
+<p>把需要关闭的启动项选中，点击&mdash;符号删除。</p>
+<p>以下三个是启动项的目录，有的启动项不会在系统偏好内显示，但是可以在下面的目录中找到，可以使用launchctl命令关闭不需要的进程后再删除文件。</p>
+<pre><code>/Library/LaunchAgents
+/Library/LaunchDaemons
+/Users/$USER/Library/LaunchAgents
+</code></pre>
+<p>4.关闭Dashboard</p>
+<p>Mac系统上有个叫Dashboard的东西，也叫仪表盘，这个东西在日常使用中几乎用不到，而且还占用着CPU使用率和内存。</p>
+<p><img class="img" alt="Dashboard, 仪表盘, Mac系统优化" src="https://dev-coco.github.io/images/Mac-System-Boost-wiki/3.png" /></p>
+<p>打开系统偏好设定&mdash;&mdash;指挥中心&mdash;&mdash;仪表盘（关闭）</p>
+<p><img class="img" alt="Dashboard, 仪表盘, Mac系统优化" src="https://dev-coco.github.io/images/Mac-System-Boost-wiki/4.png" /></p>
+<p>如果你想彻底关它可以使用以下命令</p>
+<pre><code>defaults write com.apple.dashboard mcx-disabled -boolean YES</code></pre>
+<p>如果你想关闭后再重新开启，可以使用以下命令</p>
+<pre><code>defaults write com.apple.dashboard mcx-disabled -boolean NO</code></pre>
+<h3>5.关闭独显</h3>
+<p>当Mac使用独立显卡的时候，将会更多的消耗设备的内存和CPU使用，同时设备的温度也会升高，如果是用不到独显的话，建议禁用。</p>
+<p>禁用独显</p>
+<pre><code>sudo pmset -a GPUSwitch 0</code></pre>
+<p>如果想要强制使用独显可以把值设置成1，2是自动切换显卡。</p>
+<h3>6.关闭Spotlight</h3>
+<p>Spotlight是Mac上的一个搜索引擎，能够快速的搜索到想要的文档，但是Spotlight也有一个弊端，它会不断的索引文件，所以会看到Spotlight在后台默默的占用资源，关闭这个功能后会降低设备的温度也会加快设备的流畅度。</p>
+<p><img class="img" alt="Spotlight, Mac系统优化, Mac系统加速" src="https://dev-coco.github.io/images/Mac-System-Boost-wiki/5.png" /></p>
+<p>打开系统偏好设定&mdash;&mdash;Spotlight&mdash;&mdash;搜索结果（全部取消选择）</p>
+<p><img class="img" alt="Spotlight, Mac系统优化, 系统加速" src="https://dev-coco.github.io/images/Mac-System-Boost-wiki/6.png" /></p>
+<p>然后再运行以下命令关闭Spotlight功能</p>
+<pre><code>关闭Spotlight
+sudo mdutil -a -i off
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.Spotlight.plist
+
+开启Spotlight
+sudo mdutil -a -i on
+sudo launchctl load -w /System/Library/LaunchAgents/com.apple.Spotlight.plist</code></pre>
+<p>不过在操作前需要暂时关闭SIP保护。在Mac开机的时候按Command(⌘)+R进入恢复模式，然后执行SIP相关命令。</p>
+<pre><code>关闭SIP
+csrutil disable
+
+开启SIP
+csrutil enable</code></pre>
+<h3>7.风扇</h3>
+<p>设备的温度如果过高会导致CPU降频，降低设备的运行速度。Mac虽然有自动调节风扇转速的机制，但是有时候不太精准。推荐使用<a href="https://crystalidea.com/macs-fan-control" target="_blank">Macs Fan Control</a>这个软件，可以自定义设置风扇的转速来调节。在使用的过程中有一点需要注意，不要开了风扇忘记关了，这样让风扇长时间在高转速的状态下运行，会过多的消耗风扇的寿命。</p>
+<p><img class="img" alt="Mac Fan Control, Mac系统优化, 系统加速" src="https://dev-coco.github.io/images/Mac-System-Boost-wiki/7.png" /></p>
+<h3>8.优化内存</h3>
+<p>有时候有的程序会大量的占用内存，使用下面这个命令可以暂时的释放出内存。</p>
+<pre><code>sudo purge</code></pre>
+<h3>9.清理DNS缓存</h3>
+<p>Mac开机使用一段时间后就会发现，网络没问题，但是Mac打开网页加载就特别慢，或者无法打开网页。那么这个时候就需要清理一下DNS缓存了，可以使用以下命令。</p>
+<pre><code>dscacheutil -flushcache</code></pre>
+<p>推荐使用<a href="https://dev-coco.github.io/blog/Mac-Cleaner.html" target="_blank">Mac清理垃圾</a>软件内置的系统优化功能，可以在每30分钟清理一次DNS缓存和释放内存。</p>
+<p><img class="img" alt="Mac系统优化, 系统优化, 系统加速" src="https://dev-coco.github.io/images/Mac-System-Boost-wiki/1.png" /></p>
+<h3>10.限制CPU使用率</h3>
+<p>当Mac多个程序同时运行的时候，个别程序如果占用CPU太高，会导致系统整体卡顿，设备发热。这时候就可以使用<a href="https://dev-coco.github.io/blog/CPU-Limit-GUI.html" target="_blank">限制软件CPU使用率</a>这个程序，合理分配程序的CPU使用率，可以让多个程序运行的同时，系统还可以流畅运行。</p>
+<p><img class="img" alt="限制软件CPU使用率, Mac系统优化, 系统加速" src="https://dev-coco.github.io/images/Mac-System-Boost-wiki/8.png" /></p>
+<h2>硬件层</h2>
+<h3>1.配件</h3>
+<p>有的人喜欢使用键盘膜，可以反止灰尘从键盘进入，而且还可以防止水溅到键盘流到设备内部，但是有利也有弊。使用键盘膜的时候同时也会阻挡了设备更好的散热，当设备温度过高的时候CPU就会降频，降低流畅度。</p>
+<p>Mac机身的材质是使用铝合金，铝合金材质本身散热效果就不错，但是有的人喜欢使用保护壳，避免磕磕碰碰对Mac的机身造成损伤，不过使用保护壳会导致Mac的散热效果降低，如果需要使用保护壳切记要记得避免皮质和毛绒材质的保护壳，这类材质散热效果差。在选用保护壳之前需要先了解Mac设备的出风口在哪，避免遮挡保护壳导致无法正常散热。</p>
+<h3>2.内存</h3>
+<p>增加系统流畅度最有效的方法就是给Mac安装内存条，增加运行内存。</p>
+<h3>3.清理灰尘</h3>
+<p>当Mac用过几年后，设备内就会积攒了灰尘，影响散热，同时也会影响系统的流畅度，可以定期清理一次设备内的灰尘。</p>
+<h3>4.散热</h3>
+<p>当Mac设备温度过高的时候就会造成CPU降频，影响系统的流畅度。这里就给大家介绍几种常见的散热方式。</p>
+<p style="text-indent: 4em;">① 散热底座</p>
+<p>散热底座是从底部向上吹风，用于吹Mac的底部。</p>
+<p style="text-indent: 4em;">② 抽风式散热器</p>
+<p>大风量抽出设备内部的热气。</p>
+<p style="text-indent: 4em;">③ 支架</p>
+<p>将Mac架高，让设备的底部有更多的空间散热。支架的造型和价格参差不齐，不过想和大家推荐一个廉价而又不错的代替方法。使用瓶盖或小木块将四个角垫高，这样底部就有更多的空间散热，个人测试效果还不错。</p>
+</div>
+</body>
+</html>
