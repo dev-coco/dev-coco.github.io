@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>Google Excel 超链接</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Google Excel, Excel超链接"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="解决Google Excel链接不会自带超链接的问题。"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}</style>
+  <style>p{text-indent: 2em;font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width: 50%;}h1,h2,h3{text-align:center}</style>
+</head>
+<body>
+    <div class="container">
+<h1 style="text-align:left;"><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1>Google Excel 超链接</h1>
+<p>最近在使用Google Excel的时候发现了一个问题，表格里面的链接不知道是什么原因不会自带超链接。不过后来写了一个Applescript解决了这个问题，<a href="applescript://com.apple.scripteditor?action=new&amp;script=set+RepeatTimes+to+display+dialog+%22%E8%AF%B7%E8%BE%93%E5%85%A5%E6%95%B0%E9%87%8F%22+default+answer+%22%22+with+title+%22Excel+Hyperlink%22+buttons+%7B%22%E5%85%B3%E9%97%AD%22%2C+%22%E7%BB%A7%E7%BB%AD%22%7D+default+button+%22%E7%BB%A7%E7%BB%AD%22%0D%0Aset+DoubleRepeatTimes+to+%28text+returned+of+RepeatTimes%29+%2A+2%0D%0Atell+application+%22System+Events%22%0D%0A%09delay+3%0D%0A%09repeat+DoubleRepeatTimes+times%0D%0A%09%09--+delay+0.08%0D%0A%09%09key+code+36%0D%0A%09end+repeat%0D%0Aend+tell" >点击下载</a>。</p>
+<p>源码如下：</p>
+<pre>
+<code>set RepeatTimes to display dialog &quot;请输入数量&quot; default answer &quot;&quot; with title &quot;Excel Hyperlink&quot; buttons {&quot;关闭&quot;, &quot;继续&quot;} default button &quot;继续&quot;
+set DoubleRepeatTimes to (text returned of RepeatTimes) * 2
+tell application &quot;System Events&quot;
+    delay 3
+    repeat DoubleRepeatTimes times
+        -- delay 0.08
+        key code 36
+    end repeat
+end tell</code></pre>
+<h2>使用方法</h2>
+<p>输入需要换上超链接的数量（要在同一列），选中第一个单元格，等待3秒后就会开始运行。如果电脑配置不高可以设置延时，不过在运行的过程中只能等待，其他什么也做不了。</p>
+<h2>效果</h2>
+<p><img class="img" alt="Google Excel, Excel超链接" src="https://dev-coco.github.io/images/Google-Excel/1.gif"/></p>
+</div>
+</body>
+</html>
