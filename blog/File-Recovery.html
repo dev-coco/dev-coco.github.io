@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>删除文件恢复</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, 文件恢复, 数据恢复, 删除文件恢复"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="恢复已被删除的文件和数据。"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}</style>
+  <style>p,td{text-indent: 2em;font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}h2{text-align:center}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;width:60%;}</style>
+</head>
+<body>
+    <div class="container">
+<h1><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1 style="text-align:center">恢复删除的文件</h1>
+<p>从<a href="https://dev-coco.github.io/Featured-Software.html" target="_blank">软件列表</a>下载File Recovery软件。这个软件可以从分区中恢复已经被删除或被格式化的文件。</p>
+<h2>说明</h2>
+<p>此软件基于foremost制作了GUI界面，如果文件被覆盖重写，那就无法被恢复了。支持的文件格式如下：</p>
+<table border="1" style="width:500px;margin-left: auto; margin-right: auto;">
+    <tbody>
+        <tr>
+            <td>avi</td>
+            <td>bmp</td>
+            <td>dll</td>
+            <td>doc</td>
+        </tr>
+        <tr>
+            <td>docx</td>
+            <td>exe</td>
+            <td>gif</td>
+            <td>htm</td>
+        </tr>
+        <tr>
+            <td>jar</td>
+            <td>jpg</td>
+            <td>mbd</td>
+            <td>mov</td>
+        </tr>
+        <tr>
+            <td>mp4</td>
+            <td>mpg</td>
+            <td>ole</td>
+            <td>pdf</td>
+        </tr>
+        <tr>
+            <td>png</td>
+            <td>ppt</td>
+            <td>pptx</td>
+            <td>rar</td>
+        </tr>
+        <tr>
+            <td>rif</td>
+            <td>sdw</td>
+            <td>sx</td>
+            <td>sxc</td>
+        </tr>
+        <tr>
+            <td>sxi</td>
+            <td>sxw</td>
+            <td>vis</td>
+            <td>wav</td>
+        </tr>
+        <tr>
+            <td>wmv</td>
+            <td>xls</td>
+            <td>xlsx</td>
+            <td>zip</td>
+        </tr>
+    </tbody>
+</table>
+<h2>使用方法</h2>
+<p>运行程序后，输入需要恢复的文件类型，如果要恢复多种文件类型，中间使用英文逗号隔开，不要加空格，例如：<code>png,pdf,jpg</code>。输入完成后点击继续。</p>
+<p><img class="img" alt="File Recovery, 文件恢复, 数据恢复" src="https://dev-coco.github.io/images/File-Recovery-wiki/1.png" /></p>
+<p>然后在预设的内容后面输入分区，例如：<code>/dev/rdisk</code>。</p>
+<p><img class="img" alt="File Recovery, 文件恢复, 数据恢复" src="https://dev-coco.github.io/images/File-Recovery-wiki/2.png" /></p>
+<p>设备的分区可以在磁碟工具程式里面找到。输入完成后点击继续。</p>
+<p><img class="img" alt="File Recovery, 文件恢复, 数据恢复" src="https://dev-coco.github.io/images/File-Recovery-wiki/3.png" /></p>
+<p>如果出现下图的提示，点击好。</p>
+<p><img class="img" alt="File Recovery, 文件恢复, 数据恢复" src="https://dev-coco.github.io/images/File-Recovery-wiki/5.png" /></p>
+<p>接下来程序会自动打开终端机，输入开机密码（不会显示），然后按下回车键就开始运行了。</p>
+<p><img class="img" alt="File Recovery, 文件恢复, 数据恢复" src="https://dev-coco.github.io/images/File-Recovery-wiki/4.png" /></p>
+<p>在桌面会看到一个Recovery加日期命名的文件夹，里面有恢复出来的文件。分区的空间越大，恢复所耗的时间就越久。</p>
+<p>如果是恢复系统分区，需要在使用前需要暂时先关闭SIP保护。在Mac开机的时候按Command(⌘)+R进入恢复模式，然后执行SIP相关命令。</p>
+<pre>
+<code>关闭SIP
+csrutil disable
+
+开启SIP
+csrutil enable</code>
+</pre>
+</div>
+</body>
+</html>

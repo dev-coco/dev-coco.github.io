@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>Skype定时发送消息</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, 定时发送消息, 自动发送消息"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="Skype定时自动发送消息。"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}</style>
+  <style>p{text-indent: 2em;font-size: 16pt;font-family: arial, helvetica, sans-serif;}pre{background-color:#eee}h2{text-align:center}.img{border-radius: 10px;display: block;margin-left: auto;margin-right: auto;}</style>
+</head>
+<body>
+    <div class="container">
+<h1><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<h1 style="text-align:center;">Skype自动发送消息</h1>
+<p>每天要在Skype准时发送消息，想着有没有什么方法可以让设备自动去执行定时发布消息呢？主要有三个问题需要解决。</p>
+<p>一、打开Skype指定用户的对话界面。</p>
+<p>二、发送指定内容。</p>
+<p>三、定时发送。</p>
+<p>我在微软的官网上查到一个关于<a href="https://docs.microsoft.com/en-us/skype-sdk/skypeuris/skypeuriapireference#opencreate-chat" target="_blank">Skype URI API</a>的介绍。简单的看了一下，使用以下方法调用Skype打开指定用户的对话界面。代码如下：</p>
+<pre><code>skype:用户ID?chat</code></pre>
+<p>接下来要解决的是发送指定内容的问题。这里我打算使用AppleScript + Shell来实现这个功能。大概思路：复制指定内容到剪切板，打开Skype指定用户对话框，粘贴，发送。在Mac中pbcopy命令负责将内容复制到剪切板。</p>
+<pre><code>echo &quot;自定义内容&quot; | pbcopy</code></pre>
+<p>不过在AppleScript需要调用Terminal来运行，将内容复制到剪切板后再关闭Terminal。</p>
+<pre><code>tell application &quot;Terminal&quot;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;do script &quot;echo \&quot;自定义内容\&quot; | pbcopy&quot;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;do script &quot;killall Terminal&quot;
+end tell</code></pre>
+<p>这里解释一下<code>\&quot;</code>，因为在AppleScript中do script已经使用了<code>&quot;</code>，那么在引号里面使用引号需要使用转义字符。然后再打开指定用户的对话界面，使用open命令来打开链接，然后就会跳转到Skype应用程序内了。</p>
+<pre><code>do shell script &quot;skype:用户ID?chat&quot;</code></pre>
+<p>do shell script和do script有些不同，do shell script不需要调用Terminal即可运行，但是do script就需要调用Terminal后运行，这里就不过多细说了。最后再使用keystroke模拟键盘操作粘贴和回车键。这里需要调用System Events，然后使用<code>keystroke &quot;v&quot; using command down</code>，模拟Command + V操作，最后使用<code>key code 36</code>模拟回车键操作。代码如下：</p>
+<pre><code>tell application &quot;System Events&quot;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;delay 0.3
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;keystroke &quot;v&quot; using command down
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;delay 0.3
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;key code 36
+end tell</code></pre>
+<p>这里解释一下delay，需要设置延时，如果操作太快，界面还没跳转过来，就进行下面的操作，这样整个流程就会出现问题。</p>
+<p>最后要解决定时发送的问题。可以做一个守护进程，设置好时间，然后用launchctl启用即可。</p>
+<pre><code>&lt;key&gt;StartCalendarInterval&lt;/key&gt;
+&nbsp;&nbsp; &nbsp;&lt;dict&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;key&gt;Minute&lt;/key&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;integer&gt;分钟&lt;/integer&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;key&gt;Hour&lt;/key&gt;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;integer&gt;小时&lt;/integer&gt;
+&nbsp;&nbsp; &nbsp;&lt;/dict&gt;</code></pre>
+<p>这里有个地方需要注意一下，需要调用AppleScript输出程序的路径，如果单单调用AppleScript是无法直接使用的，需要把AppleScript输出为应用程序后再使用。完整代码--><a href="https://github.com/dev-coco/Skype-Schedule-Messages" target="_blank">Github</a>。</p>
+</div>
+</body>
+</html>
