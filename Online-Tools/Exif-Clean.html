@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>Exif清理</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, Exif, 图片元数据"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description" content="清理图片Exif数据。"/>
+    <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <style>div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}</style>
+    <style>p{text-indent: 2em;font-size: 16pt;font-family: arial, helvetica, sans-serif;}.canvas-container{margin:0 auto}#exportBtn,.hide{display:none}.upload{margin:4rem auto 3rem;height:10rem;width:10rem;border:solid 1px #aaa;box-shadow:0 0 5px #aaa;border-radius:1rem;line-height:10rem;position:relative}#export{display:none;margin:0 auto;width:250px;height:250px}button{font-size:18px;color:#fff;padding:0 30px;height:3rem;background:#8fd16f;border:0;border-radius:20px}input[type=file]{font-size:1.8em}canvas{display:none}#output a{display:inline-block;margin-top:1em;background:#030;color:#fff;padding:1em;border-radius:4px;text-decoration:none;font-size:1.3em}#output ul{float:left}</style>
+</head>
+<body>
+    <div class="container">
+<h1><img alt="dev-coco" style="width:58px;" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<div class="menu">
+  <a href="https://dev-coco.github.io/">主页</a>
+  <a href="https://dev-coco.github.io/blog">博客</a>
+  <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+  <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+  <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+  <a target="_blank" href="https://github.com/dev-coco">Github</a>
+</div>
+<div id="app" style="position: absolute;left: 50%;top: 30%;text-align:center;-webkit-transform: translate(-50%, 0);">
+<input id="getfile" type="file" accept="image/*" />
+<div id="output"></div>
+<canvas></canvas>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/exif-js/2.3.0/exif.min.js"></script>
+<script>!function(){var e=document.querySelector("#output"),t=window.URL||window.webkitURL,a=t.createObjectURL||!1,n=document.querySelector("#getfile"),r=document.querySelector("canvas"),o=r.getContext("2d"),d="",i=document.querySelector("#app");function c(n){document.body.classList.remove("dragdrop"),0;var r=n.dataTransfer?n.dataTransfer.files[0]:n.target.files[0];EXIF.getData(r,function(){d="<ul>";var n=EXIF.getAllTags(this);for(var o in n)"MakerNote"!==o&&(disp=n[o],d+="<li>"+o+": "+disp+"</li>");if(e.innerHTML=d+"</ul>",0!==o)if(a)l(t.createObjectURL(r),r.name);else{var i=new FileReader;i.readAsDataURL(r),i.onload=function(e){l(e.target.result,r.name)}}else output.innerHTML="Exif已清理"}),n.preventDefault()}function l(t,a){var n=new Image;n.src=t,n.onload=function(){!function(t,a,n,d){r.width=a,r.height=n,o.drawImage(t,0,0,a,n);var i=d.replace(/\.([^\.]+)$/,"-cleaned.jpg");e.innerHTML+='<a href="'+r.toDataURL("image/jpeg",.9)+'" download="'+i+'">下载图片</a>'}(this,n.naturalWidth,n.naturalHeight,a)}}i.addEventListener("dragover",function(e){document.body.classList.add("dragdrop"),e.preventDefault()},!1),i.addEventListener("drop",c,!1),n.addEventListener("change",c,!1)}();</script>
+</div>
+</body>
+</html>
