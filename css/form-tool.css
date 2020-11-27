@@ -1,0 +1,50 @@
+body {
+    margin: 0;
+    padding: 20 px;
+}
+table {
+    margin: 0;
+    padding: 10 px;
+}
+textarea {
+    width: 400 px;
+    height: 550 px;
+}
+.column1 {
+    width: 400 px;
+}
+.column2 {
+    width: 120 px;
+}
+.column3 {
+    width: 400 px;
+}
+.bnt {
+    margin: 10 px 0;
+    padding: 3 px 5 px;
+}
+@media (prefers-color-scheme:dark) {
+    .night-mode {
+        background: #323336;
+    }
+    .title {
+        color: #fff;
+    }
+}
+@media (prefers-color-scheme:light) {
+    .title {
+        color: #000;
+    }
+}
+.row {
+    margin-bottom: 0px;
+}
+.dropdown1 {
+    display: inline-block;
+}
+.dropdown1-content {
+    display: none;
+}
+.dropdown1:hover .dropdown1-content {
+    display: block;
+}
