@@ -564,7 +564,7 @@ function generate_other_code() {
     `+fill_other_close_alert+`
     `+fill_other_auto_complete+`
     `+fill_other_update+`
-    &lt;/script&gt;
+&lt;/script&gt;
     </code></pre>
     `;
 }
