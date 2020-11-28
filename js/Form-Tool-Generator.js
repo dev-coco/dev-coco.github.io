@@ -219,12 +219,12 @@ document.getElementById("generate_form_code").innerHTML = `<pre><code>&lt;!DOCTY
       &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;/&gt;
       &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css&quot;&gt;
       &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js&quot;&gt;&lt;/script&gt;
-      &lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js&quot;&gt;&lt;/script&gt;
       &lt;script src=&quot;https://dev-coco.github.io/js/form-tool.js&quot;&gt;&lt;/script&gt;
       &lt;link rel=&quot;stylesheet&quot; href=&quot;https://dev-coco.github.io/css/form-tool.css&quot;&gt;
       &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css&quot;&gt;
       &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js&quot;&gt;&lt;/script&gt;
       &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js&quot;&gt;&lt;/script&gt;
+      &lt;!-- 预留 --&gt;
    &lt;/head&gt;
    &lt;body class=&quot;night-mode&quot; background = &quot;&quot;&gt;
       &lt;div  class=&quot;night-dark&quot; style=&quot; width:950px;margin:0 auto;border:solid 1px ;padding:5px;&quot;&gt;
