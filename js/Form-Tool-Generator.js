@@ -31,6 +31,17 @@ var check_required_original_link = document.getElementById("required_original_li
 var check_required_is_review = document.getElementById("required_is_review").checked;
 var check_required_materialize_textarea = document.getElementById("required_materialize_textarea").checked;
 var check_required_post_link = document.getElementById("required_post_link").checked;
+// 其他项目
+var check_other_close_alert = document.getElementById("other_close_alert").checked;
+var check_other_auto_complete = document.getElementById("other_auto_complete").checked;
+var check_other_update = document.getElementById("other_update").checked;
+
+if (check_other_close_alert == true || check_other_auto_complete == true || check_other_update == true) {
+    var other_code = `&lt;?!= include(&quot;自定义&quot;); ?&gt;`;
+}
+else {
+    var other_code = ``;
+}
 // 检测选择项目
 if (check_selectName == true) {
 var hide_selectName = ``;
@@ -224,7 +235,7 @@ document.getElementById("generate_form_code").innerHTML = `<pre><code>&lt;!DOCTY
       &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css&quot;&gt;
       &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js&quot;&gt;&lt;/script&gt;
       &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js&quot;&gt;&lt;/script&gt;
-      &lt;!-- 预留 --&gt;
+      `+other_code+`
    &lt;/head&gt;
    &lt;body class=&quot;night-mode&quot; background = &quot;&quot;&gt;
       &lt;div  class=&quot;night-dark&quot; style=&quot; width:950px;margin:0 auto;border:solid 1px ;padding:5px;&quot;&gt;
@@ -400,123 +411,162 @@ function generate_form_code() {
     // 检测填表项目
     if (check_fill_new_Date == true) {
     var form_fill_new_Date = `new Date(),`;
+    var desc_form_fill_new_Date = `详细日期new Date(),`;
     }
     else {
     var form_fill_new_Date = ``;
+    var desc_form_fill_new_Date = ``;
     }
     if (check_fill_date == true) {
     var form_fill_date = `date,`;
+    var desc_form_fill_date = `日期date,`;
     }
     else {
     var form_fill_date = ``;
+    var desc_form_fill_date = ``;
     }
     if (check_fill_filter_name == true) {
     var form_fill_filter_name = `filter_name,`;
+    var desc_form_fill_filter_name = `名字filter_name,`;
     }
     else {
     var form_fill_filter_name = ``;
+    var desc_form_fill_filter_name = ``;
     }
     if (check_fill_fb_name == true) {
     var form_fill_fb_name = `fb_name,`;
+    var desc_form_fill_fb_name = `账号名称fb_name,`;
     }
     else {
     var form_fill_fb_name = ``;
+    var desc_form_fill_fb_name = ``;
     }
     if (check_fill_fb_article_place == true) {
     var form_fill_fb_article_place = `fb_article_place,`;
+    var desc_form_fill_fb_article_place = `发帖位置fb_article_place,`;
     }
     else {
     var form_fill_fb_article_place = ``;
+    var desc_form_fill_fb_article_place = ``;
     }
     if (check_fill_fb_post_type == true) {
     var form_fill_fb_post_type = `fb_post_type,`;
+    var desc_form_fill_fb_post_type = `发帖类型fb_post_type,`;
     }
     else {
     var form_fill_fb_post_type = ``;
+    var desc_form_fill_fb_post_type = ``;
     }
     if (check_fill_fb_place_name == true) {
     var form_fill_fb_place_name = `fb_place_name,`;
+    var desc_form_fill_fb_place_name = `小组名称fb_place_name,`;
     }
     else {
     var form_fill_fb_place_name = ``;
+    var desc_form_fill_fb_place_name = ``;
     }
     if (check_fill_fb_group_status == true) {
     var form_fill_fb_group_status = `fb_group_status,`;
+    var desc_form_fill_fb_group_status = `小组状态fb_group_status,`;
     }
     else {
     var form_fill_fb_group_status = ``;
+    var desc_form_fill_fb_group_status = ``;
     }
     if (check_fill_fb_title == true) {
     var form_fill_fb_title = `fb_title,`;
+    var desc_form_fill_fb_title = `中文标题fb_title,`;
     }
     else {
     var form_fill_fb_title = ``;
+    var desc_form_fill_fb_title = ``;
     }
     if (check_fill_fb_image_name == true) {
     var form_fill_fb_image_name = `fb_image_name,`;
+    var desc_form_fill_fb_image_name = `图片名称fb_image_name,`;
     }
     else {
     var form_fill_fb_image_name = ``;
+    var desc_form_fill_fb_image_name = ``;
     }
     if (check_fill_fb_guide == true) {
     var form_fill_fb_guide = `fb_guide,`;
+    var desc_form_fill_fb_guide = `引导语fb_guide,`;
     }
     else {
     var form_fill_fb_guide = ``;
+    var desc_form_fill_fb_guide = ``;
     }
     if (check_fill_fb_cn_guide == true) {
     var form_fill_fb_cn_guide = `fb_cn_guide,`;
+    var desc_form_fill_fb_cn_guide = `中文引导语fb_cn_guide,`;
     }
     else {
     var form_fill_fb_cn_guide = ``;
+    var desc_form_fill_fb_cn_guide = ``;
     }
     if (check_fill_fn_image_origin == true) {
     var form_fill_fn_image_origin = `fn_image_origin,`;
+    var desc_form_fill_fn_image_origin = `图片来源fn_image_origin,`;
     }
     else {
     var form_fill_fn_image_origin = ``;
+    var desc_form_fill_fn_image_origin = ``;
     }
     if (check_fill_fn_web_link == true) {
     var form_fill_fn_web_link = `fn_web_link,`;
+    var desc_form_fill_fn_web_link = `网站原链接fn_web_link,`;
     }
     else {
     var form_fill_fn_web_link = ``;
+    var desc_form_fill_fn_web_link = ``;
     }
     if (check_fill_fn_posting_status == true) {
     var form_fill_fn_posting_status = `fn_posting_status,`;
+    var desc_form_fill_fn_posting_status = `发帖状态fn_posting_status,`;
     }
     else {
     var form_fill_fn_posting_status = ``;
+    var desc_form_fill_fn_posting_status = ``;
     }
     if (check_fill_fb_pose_link == true) {
     var form_fill_fb_pose_link = `fb_pose_link,`;
+    var desc_form_fill_fb_pose_link = `贴文链接fb_pose_link,`;
     }
     else {
     var form_fill_fb_pose_link = ``;
+    var desc_form_fill_fb_pose_link = ``;
     }
     if (check_fill_track_link == true) {
     var form_fill_track_link = `track_link,`;
+    var desc_form_fill_track_link = `追踪链接track_link,`;
     }
     else {
     var form_fill_track_link = ``;
+    var desc_form_fill_track_link = ``;
     }
     if (check_fill_fb_hyperlink == true) {
     var form_fill_fb_hyperlink = `fb_hyperlink,`;
+    var desc_form_fill_fb_hyperlink = `超文本链接fb_hyperlink,`;
     }
     else {
     var form_fill_fb_hyperlink = ``;
+    var desc_form_fill_fb_hyperlink = ``;
     }
     if (check_fill_split_sheet == true) {
     var form_fill_split_sheet = `selectName`;
+    var desc_form_fill_split_sheet = `分表selectName`;
     }
     else {
     var form_fill_split_sheet = `"总数据"`;
+    var desc_form_fill_split_sheet = ``;
     }
-    document.getElementById("generate_form_code").innerHTML = `<pre><code>function userClicked2(date,selectName,filter_name,user_id,fb_name,fb_article_place,fb_post_type,fb_place_name,fb_group_status,fb_title,fb_image_name,fb_guide,fb_cn_guide,fn_image_origin,fn_web_link,fn_posting_status,fb_pose_link,track_link,fb_hyperlink,none){
+    document.getElementById("generate_form_code").innerHTML = `<pre><code>// `+desc_form_fill_new_Date+``+desc_form_fill_date+``+desc_form_fill_filter_name+``+desc_form_fill_fb_name+``+desc_form_fill_fb_article_place+``+desc_form_fill_fb_post_type+``+desc_form_fill_fb_place_name+``+desc_form_fill_fb_group_status+``+desc_form_fill_fb_title+``+desc_form_fill_fb_image_name+``+desc_form_fill_fb_guide+``+desc_form_fill_fb_cn_guide+``+desc_form_fill_fn_image_origin+``+desc_form_fill_fn_web_link+``+desc_form_fill_fn_posting_status+``+desc_form_fill_fb_pose_link+``+desc_form_fill_track_link+``+desc_form_fill_fb_hyperlink+`空值none
+function userClicked2(date,selectName,filter_name,user_id,fb_name,fb_article_place,fb_post_type,fb_place_name,fb_group_status,fb_title,fb_image_name,fb_guide,fb_cn_guide,fn_image_origin,fn_web_link,fn_posting_status,fb_pose_link,track_link,fb_hyperlink,none){
       var ss = SpreadsheetApp.openById(sheetID);
       var ws = ss.getSheetByName(`+form_fill_split_sheet+`);
       ws.appendRow([`+form_fill_new_Date+``+form_fill_date+``+form_fill_filter_name+``+form_fill_fb_name+``+form_fill_fb_article_place+``+form_fill_fb_post_type+``+form_fill_fb_place_name+``+form_fill_fb_group_status+``+form_fill_fb_title+``+form_fill_fb_image_name+``+form_fill_fb_guide+``+form_fill_fb_cn_guide+``+form_fill_fn_image_origin+``+form_fill_fn_web_link+``+form_fill_fn_posting_status+``+form_fill_fb_pose_link+``+form_fill_track_link+``+form_fill_fb_hyperlink+`none]);
-    }
+}
     </code></pre>
     `;
 }
