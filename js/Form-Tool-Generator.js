@@ -36,91 +36,91 @@ if (check_selectName == true) {
 var hide_selectName = ``;
 }
 else {
-var hide_selectName = `style=&quot;visibility: hidden;&quot;`;
+var hide_selectName = `style=&quot;visibility: hidden;height:0px;&quot;`;
 }
 if (check_account_name == true) {
 var hide_account_name = ``;
 }
 else {
-var hide_account_name = `style=&quot;visibility: hidden;&quot;`;
+var hide_account_name = `style=&quot;visibility: hidden;height:0px;&quot;`;
 }
 if (check_article_place == true) {
 var hide_article_place = ``;
 }
 else {
-var hide_article_place = `style=&quot;visibility: hidden;&quot;`;
+var hide_article_place = `style=&quot;visibility: hidden;height:0px;&quot;`;
 }
 if (check_post_type == true) {
 var hide_post_type = ``;
 }
 else {
-var hide_post_type = `style=&quot;visibility: hidden;&quot;`;
+var hide_post_type = `style=&quot;visibility: hidden;height:0px;&quot;`;
 }
 if (check_group_name == true) {
 var hide_group_name = ``;
 }
 else {
-var hide_group_name = `style=&quot;visibility: hidden;&quot;`;
+var hide_group_name = `style=&quot;visibility: hidden;height:0px;&quot;`;
 }
 if (check_group_status == true) {
 var hide_group_status = ``;
 }
 else {
-var hide_group_status = `style=&quot;visibility: hidden;&quot;`;
+var hide_group_status = `style=&quot;visibility: hidden;height:0px;&quot;`;
 }
 if (check_cn_title == true) {
 var hide_cn_title = ``;
 }
 else {
-var hide_cn_title = `style=&quot;visibility: hidden;&quot;`;
+var hide_cn_title = `style=&quot;visibility: hidden;height:0px;&quot;`;
 }
 if (check_image_name == true) {
 var hide_image_name = ``;
 }
 else {
-var hide_image_name = `style=&quot;visibility: hidden;&quot;`;
+var hide_image_name = `style=&quot;visibility: hidden;height:0px;&quot;`;
 }
 if (check_posting_status == true) {
 var hide_posting_status = ``;
 }
 else {
-var hide_posting_status = `style=&quot;visibility: hidden;&quot;`;
+var hide_posting_status = `style=&quot;visibility: hidden;height:0px;&quot;`;
 }
 if (check_guide == true) {
 var hide_guide = ``;
 }
 else {
-var hide_guide = `style=&quot;visibility: hidden;&quot;`;
+var hide_guide = `style=&quot;visibility: hidden;height:0px;&quot;`;
 }
 if (check_cn_guide == true) {
 var hide_cn_guide = ``;
 }
 else {
-var hide_cn_guide = `style=&quot;visibility: hidden;&quot;`;
+var hide_cn_guide = `style=&quot;visibility: hidden;height:0px;&quot;`;
 }
 if (check_original_link == true) {
 var hide_original_link = ``;
 }
 else {
-var hide_original_link = `style=&quot;visibility: hidden;&quot;`;
+var hide_original_link = `style=&quot;visibility: hidden;height:0px;&quot;`;
 }
 if (check_is_review == true) {
 var hide_is_review = ``;
 }
 else {
-var hide_is_review = `style=&quot;visibility: hidden;&quot;`;
+var hide_is_review = `style=&quot;visibility: hidden;height:0px;&quot;`;
 }
 if (check_materialize_textarea == true) {
 var hide_materialize_textarea = ``;
 }
 else {
-var hide_materialize_textarea = `style=&quot;visibility: hidden;&quot;`;
+var hide_materialize_textarea = `style=&quot;visibility: hidden;height:0px;&quot;`;
 }
 if (check_post_link == true) {
 var hide_post_link = ``;
 }
 else {
-var hide_post_link = `style=&quot;visibility: hidden;&quot;`;
+var hide_post_link = `style=&quot;visibility: hidden;height:0px;&quot;`;
 }
 // 检测必填项目
 if (check_required_selectName == true) {
