@@ -59,6 +59,10 @@
                 alert("请输入中文标题!");
                 return;
             }
+	    if (selectName == null, selectName == undefined) {
+   		alert("请选择名字!");
+ 		return;
+	    }
         } else {}
         var num = Math.floor(Math.random() * 10000000);
         if (user_id || "undefined" == typeof user_id || 0 == user_id) lastLink = fn_web_link + "?source=" + fb_article_place + user_id + "&num=" + num;
