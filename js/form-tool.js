@@ -293,12 +293,20 @@
     // 获取index
     function getSheetName(selectID) {
         //1:拿到select对象
+	try {
         var myselect = document.getElementById(selectID);
+	} catch {}
         //2：拿到选中项的索引
+	try {
         var index = myselect.selectedIndex;
+	} catch {}
         //3:拿到选中项options的value
+	try {
         var value = myselect.options[index].value;
+	} catch {}
         //4:拿到选中项options的text：
+	try {
         var text = myselect.options[index].text;
+	} catch {}
         return value
     } 
