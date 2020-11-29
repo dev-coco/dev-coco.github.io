@@ -9,7 +9,7 @@
         // 筛选后的名字
         var filter_name = getSheetName("selectName").replace(/[0-9].+/g, "");
         // 用户ID
-        var user_id = getSheetName("selectName").match(/[0-9][0-9]/g);
+        var user_id = getSheetName("selectName").match(/[0-9].+[0-9]/g);
         // 帐号名称
         var fb_name = document.getElementsByClassName("account_name")[0].value.replace(/^ | $/g, "");
         //发帖位置
@@ -98,7 +98,7 @@
         // 筛选后的名字
         var filter_name = getSheetName("selectName").replace(/[0-9].+/g, "");
         // 用户ID
-        var user_id = getSheetName("selectName").match(/[0-9][0-9]/g);
+        var user_id = getSheetName("selectName").match(/[0-9].+[0-9]/g);
         // 帐号名称
         var fb_name = document.getElementsByClassName("account_name")[0].value.replace(/^ | $/g, "");
         // 发帖位置
