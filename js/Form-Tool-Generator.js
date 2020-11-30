@@ -37,7 +37,7 @@ var check_other_auto_complete = document.getElementById("other_auto_complete").c
 var check_other_update = document.getElementById("other_update").checked;
 
 if (check_other_close_alert == true || check_other_auto_complete == true || check_other_update == true) {
-    var other_code = `&lt;?!= include(&quot;自定义&quot;); ?&gt;`;
+    var other_code = `&lt;?!= include(&quot;main-js&quot;); ?&gt;`;
 }
 else {
     var other_code = ``;
@@ -45,93 +45,123 @@ else {
 // 检测选择项目
 if (check_selectName == true) {
 var hide_selectName = ``;
+var hide_class_selectName = `input-field col s6`;
 }
 else {
 var hide_selectName = `style=&quot;visibility: hidden;height:0px;&quot;`;
+var hide_class_selectName = ``;
 }
 if (check_account_name == true) {
 var hide_account_name = ``;
+var hide_class_account_name = `input-field col s6`;
 }
 else {
 var hide_account_name = `style=&quot;visibility: hidden;height:0px;&quot;`;
+var hide_class_account_name = ``;
 }
 if (check_article_place == true) {
 var hide_article_place = ``;
+var hide_class_article_place = `input-field col s6`;
 }
 else {
 var hide_article_place = `style=&quot;visibility: hidden;height:0px;&quot;`;
+var hide_class_article_place = ``;
 }
 if (check_post_type == true) {
 var hide_post_type = ``;
+var hide_class_post_type = `input-field col s6`;
 }
 else {
 var hide_post_type = `style=&quot;visibility: hidden;height:0px;&quot;`;
+var hide_class_post_type = ``;
 }
 if (check_group_name == true) {
 var hide_group_name = ``;
+var hide_class_group_name = `input-field col s6`;
 }
 else {
 var hide_group_name = `style=&quot;visibility: hidden;height:0px;&quot;`;
+var hide_class_group_name = ``;
 }
 if (check_group_status == true) {
 var hide_group_status = ``;
+var hide_class_group_status = `input-field col s6`;
 }
 else {
 var hide_group_status = `style=&quot;visibility: hidden;height:0px;&quot;`;
+var hide_class_group_status = ``;
 }
 if (check_cn_title == true) {
 var hide_cn_title = ``;
+var hide_class_cn_title = `input-field col s6`;
 }
 else {
 var hide_cn_title = `style=&quot;visibility: hidden;height:0px;&quot;`;
+var hide_class_cn_title = ``;
 }
 if (check_image_name == true) {
 var hide_image_name = ``;
+var hide_class_image_name = `input-field col s6`;
 }
 else {
 var hide_image_name = `style=&quot;visibility: hidden;height:0px;&quot;`;
+var hide_class_image_name = ``;
 }
 if (check_posting_status == true) {
 var hide_posting_status = ``;
+var hide_class_posting_status = `input-field col s6`;
 }
 else {
 var hide_posting_status = `style=&quot;visibility: hidden;height:0px;&quot;`;
+var hide_class_posting_status = ``;
 }
 if (check_guide == true) {
 var hide_guide = ``;
+var hide_class_guide = `input-field col s6`;
 }
 else {
 var hide_guide = `style=&quot;visibility: hidden;height:0px;&quot;`;
+var hide_class_guide = ``;
 }
 if (check_cn_guide == true) {
 var hide_cn_guide = ``;
+var hide_class_cn_guide = `input-field col s6`;
 }
 else {
 var hide_cn_guide = `style=&quot;visibility: hidden;height:0px;&quot;`;
+var hide_class_cn_guide = ``;
 }
 if (check_original_link == true) {
 var hide_original_link = ``;
+var hide_class_original_link = `input-field col s6`;
 }
 else {
 var hide_original_link = `style=&quot;visibility: hidden;height:0px;&quot;`;
+var hide_class_original_link = ``;
 }
 if (check_is_review == true) {
 var hide_is_review = ``;
+var hide_class_is_review = `input-field col s6`;
 }
 else {
 var hide_is_review = `style=&quot;visibility: hidden;height:0px;&quot;`;
+var hide_class_is_review = ``;
 }
 if (check_materialize_textarea == true) {
 var hide_materialize_textarea = ``;
+var hide_class_materialize_textarea = `input-field col s6`;
 }
 else {
 var hide_materialize_textarea = `style=&quot;visibility: hidden;height:0px;&quot;`;
+var hide_class_materialize_textarea = ``;
 }
 if (check_post_link == true) {
 var hide_post_link = ``;
+var hide_class_post_link = `input-field col s6`;
 }
 else {
 var hide_post_link = `style=&quot;visibility: hidden;height:0px;&quot;`;
+var hide_class_post_link = ``;
 }
 // 检测必填项目
 if (check_required_selectName == true) {
@@ -242,7 +272,7 @@ document.getElementById("generate_form_code").innerHTML = `<pre><code>&lt;!DOCTY
          &lt;h3 style=&quot;text-align:center;&quot; class=&quot;title&quot;&gt;发帖登记工具&lt;/h3&gt;
          &lt;div class = &quot;row&quot;&gt;
             &lt;!-- 选择名字 --&gt;
-            &lt;div class=&quot;input-field col s6&quot; `+hide_selectName+`&gt;
+            &lt;div class=&quot;`+hide_class_selectName+`&quot; `+hide_selectName+`&gt;
                &lt;select class='headSelect' id='selectName' onchange=&quot;getSheetName(selectName);&quot;&gt;
                   &lt;option value='' &gt;=请选择你的名字=&lt;/option&gt;
                   &lt;?!= namelist ?&gt;
@@ -250,12 +280,12 @@ document.getElementById("generate_form_code").innerHTML = `<pre><code>&lt;!DOCTY
                &lt;label style=&quot;font-size:15px;&quot; class=&quot;title&quot; &gt;`+show_required_selectName+`请选择你的名字&lt;/label&gt;
             &lt;/div&gt;
             &lt;!-- 帐号名称 --&gt;
-            &lt;div class=&quot;input-field col s6&quot; `+hide_account_name+`&gt;
+            &lt;div class=&quot;`+hide_class_account_name+`&quot; `+hide_account_name+`&gt;
                &lt;input placeholder=&quot;请输入帐号名称&quot; id=&quot;username&quot; type=&quot;text&quot; class=&quot;account_name&quot;&gt;
                &lt;label style=&quot;font-size:18px;&quot;&gt;`+show_required_account_name+`帐号名称&lt;/label&gt;
             &lt;/div&gt;
             &lt;!-- 发帖位置 --&gt;
-            &lt;div class=&quot;input-field col s6&quot; `+hide_article_place+`&gt;
+            &lt;div class=&quot;`+hide_class_article_place+`&quot; `+hide_article_place+`&gt;
                &lt;select class='headSelect' id='article_place' onchange = &quot;getSheetName(article_place);&quot; &gt;
                   &lt;option value=''&gt;=请选择发帖位置=&lt;/option&gt;
                   &lt;?!= article_place ?&gt;
@@ -296,7 +326,7 @@ document.getElementById("generate_form_code").innerHTML = `<pre><code>&lt;!DOCTY
                &lt;/label&gt;
             &lt;/div&gt;
             &lt;!-- 发帖类型 --&gt;
-            &lt;div class=&quot;input-field col s6&quot; `+hide_post_type+`&gt;
+            &lt;div class=&quot;`+hide_class_post_type+`&quot; `+hide_post_type+`&gt;
                &lt;select id='post_type' onchange=&quot;getSheetName(post_type);&quot;&gt;
                   &lt;option value='' &gt;=请选择发帖类型=&lt;/option&gt;
                   &lt;?!= post_type ?&gt;
@@ -304,12 +334,12 @@ document.getElementById("generate_form_code").innerHTML = `<pre><code>&lt;!DOCTY
                &lt;label style=&quot;font-size:15px;&quot;&gt;`+show_required_post_type+`请选择发帖类型&lt;/label&gt;
             &lt;/div&gt;
             &lt;!-- 小组名称 --&gt;
-            &lt;div class=&quot;input-field col s6&quot; `+hide_group_name+`&gt;
+            &lt;div class=&quot;`+hide_class_group_name+`&quot; `+hide_group_name+`&gt;
                &lt;input placeholder=&quot;请输入发帖位置(小组)名称&quot; type=&quot;text&quot; class=&quot;group_name&quot;&gt;
                &lt;label style=&quot;font-size:18px;&quot;&gt;`+show_required_group_name+`小组名称&lt;/label&gt;
             &lt;/div&gt;
             &lt;!-- 小组状态 --&gt;
-            &lt;div class=&quot;input-field col s6&quot; `+hide_group_status+`&gt;
+            &lt;div class=&quot;`+hide_class_group_status+`&quot; `+hide_group_status+`&gt;
                &lt;select id='group_status' onchange=&quot;getSheetName(group_status);&quot;&gt;
                   &lt;option value='' &gt;=请选择小组状态=&lt;/option&gt;
                   &lt;?!= group_status ?&gt;
@@ -317,12 +347,12 @@ document.getElementById("generate_form_code").innerHTML = `<pre><code>&lt;!DOCTY
                &lt;label style=&quot;font-size:15px;&quot;&gt;`+show_required_group_status+`请选择小组状态&lt;/label&gt;
             &lt;/div&gt;
             &lt;!-- 图片名称 --&gt;
-            &lt;div class=&quot;input-field col s6&quot; `+hide_image_name+`&gt;
+            &lt;div class=&quot;`+hide_class_image_name+`&quot; `+hide_image_name+`&gt;
                &lt;input placeholder=&quot;请输入图片名称&quot; type=&quot;text&quot; class=&quot;image_name&quot;&gt;
                &lt;label style=&quot;font-size:18px;&quot;&gt;`+show_required_image_name+`图片名称&lt;/label&gt;
             &lt;/div&gt;
             &lt;!-- 图片来源 --&gt;
-            &lt;div class=&quot;input-field col s6&quot; `+hide_posting_status+`&gt;
+            &lt;div class=&quot;`+hide_class_posting_status+`&quot; `+hide_posting_status+`&gt;
                &lt;select class='headSelect' id='posting_status' onchange=&quot;getSheetName(posting_status);&quot;&gt;
                   &lt;option value='' &gt;=请选择图片来源=&lt;/option&gt;
                   &lt;?!= posting_status ?&gt;
@@ -330,22 +360,22 @@ document.getElementById("generate_form_code").innerHTML = `<pre><code>&lt;!DOCTY
                &lt;label style=&quot;font-size:15px;&quot;&gt;`+show_required_posting_status+`请选择图片来源&lt;/label&gt;
             &lt;/div&gt;
             &lt;!-- 引导语 --&gt;
-            &lt;div class=&quot;input-field col s6&quot; `+hide_guide+`&gt;
+            &lt;div class=&quot;`+hide_class_guide+`&quot; `+hide_guide+`&gt;
                &lt;input placeholder=&quot;请输入引导语&quot; type=&quot;text&quot; class=&quot;guide&quot;&gt;
                &lt;label style=&quot;font-size:18px;&quot;&gt;`+show_required_guide+`引导语&lt;/label&gt;
             &lt;/div&gt;
             &lt;!-- 中文引导语 --&gt;
-            &lt;div class=&quot;input-field col s6&quot; `+hide_cn_guide+`&gt;
+            &lt;div class=&quot;`+hide_class_cn_guide+`&quot; `+hide_cn_guide+`&gt;
                &lt;input placeholder=&quot;请输入中文引导语&quot; type=&quot;text&quot; class=&quot;cn_guide&quot;&gt;
                &lt;label style=&quot;font-size:18px;&quot;&gt;`+show_required_cn_guide+`中文引导语&lt;/label&gt;
             &lt;/div&gt;
             &lt;!-- 标题 --&gt;
-            &lt;div class=&quot;input-field col s6&quot; `+hide_cn_title+`&gt;
+            &lt;div class=&quot;`+hide_class_cn_title+`&quot; `+hide_cn_title+`&gt;
                &lt;input placeholder=&quot;请输入标题&quot; type=&quot;text&quot; class=&quot;cn_title&quot;&gt;
                &lt;label style=&quot;font-size:18px;&quot;&gt;`+show_required_cn_title+`标题&lt;/label&gt;
             &lt;/div&gt;
             &lt;!-- 发帖状态 --&gt;
-            &lt;div class=&quot;input-field col s6&quot; `+hide_is_review+`&gt;
+            &lt;div class=&quot;`+hide_class_is_review+`&quot; `+hide_is_review+`&gt;
                &lt;select class='headSelect' id='is_review' onchange = &quot;getSheetName(is_review);&quot;&gt;
                   &lt;option value='' &gt;=请选择发帖状态=&lt;/option&gt;
                   &lt;?!= is_review ?&gt;
@@ -353,12 +383,12 @@ document.getElementById("generate_form_code").innerHTML = `<pre><code>&lt;!DOCTY
                &lt;label style=&quot;font-size:15px;&quot; class=&quot;title&quot;&gt;`+show_required_is_review+`请选择发帖状态&lt;/label&gt;
             &lt;/div&gt;
             &lt;!-- 网站原链接--&gt;
-            &lt;div class=&quot;input-field col s6&quot; `+hide_original_link+`&gt;
+            &lt;div class=&quot;`+hide_class_original_link+`&quot; `+hide_original_link+`&gt;
                &lt;input placeholder=&quot;请输入原链接&quot; type=&quot;text&quot; class=&quot;original_link&quot;&gt;
                &lt;label style=&quot;font-size:18px;&quot;&gt;`+show_required_original_link+`原链接（网站链接）&lt;/label&gt;
             &lt;/div&gt;
             &lt;!-- 超文本链接 --&gt;
-            &lt;div class=&quot;input-field col s6&quot; `+hide_materialize_textarea+`&gt;
+            &lt;div class=&quot;`+hide_class_materialize_textarea+`&quot; `+hide_materialize_textarea+`&gt;
                &lt;textarea placeholder=&quot;请输入内容&quot; type=&quot;text&quot; class=&quot;materialize-textarea&quot;&gt;&lt;/textarea&gt;
                &lt;label style=&quot;font-size:18px;&quot;&gt;`+show_required_materialize_textarea+`超文本链接&lt;/label&gt;
             &lt;/div&gt;
@@ -373,7 +403,7 @@ document.getElementById("generate_form_code").innerHTML = `<pre><code>&lt;!DOCTY
             &lt;/div&gt;
             &lt;!--  贴文链接 --&gt;
           &lt;div class=&quot;row&quot;&gt;
-               &lt;div class=&quot;input-field col s6&quot; `+hide_post_link+`&gt;
+               &lt;div class=&quot;`+hide_class_post_link+`&quot; `+hide_post_link+`&gt;
                   &lt;input placeholder=&quot;请输入贴文链接&quot; id=&quot;first_name&quot; type=&quot;text&quot; data-length=&quot;6&quot; class=&quot;post_link&quot;&gt;
                   &lt;label style=&quot;font-size:18px;&quot; for=&quot;first_name2&quot;&gt;`+show_required_post_link+`请输入FB贴文链接&lt;/label&gt;
                &lt;/div&gt;
@@ -591,8 +621,8 @@ function generate_form_code() {
     var desc_form_check_fill_detect_link_type = ``;
     }
     if (check_fill_split_sheet == true) {
-    var form_fill_split_sheet = `selectName`;
-    var desc_form_fill_split_sheet = `分表selectName`;
+    var form_fill_split_sheet = `filter_name`;
+    var desc_form_fill_split_sheet = `分表filter_name`;
     }
     else {
     var form_fill_split_sheet = `"总数据"`;
