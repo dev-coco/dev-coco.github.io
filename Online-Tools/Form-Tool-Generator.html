@@ -373,10 +373,10 @@
                             <input id="other_update" type="checkbox"/>
                             </td>
                         </tr>
-                        <tr style="visibility: hidden;">
+                        <tr>
                             <td>
-                            <label></label>
-                            <input id="" type="checkbox"/>
+                            <label>小组提交</label>
+                            <input id="group_form" type="checkbox"/>
                             </td>
                         </tr>
                         <tr style="visibility: hidden;">
@@ -473,8 +473,10 @@
 <button id="btn" onclick="generate_code()">生成代码</button>
 <button id="btn" onclick="generate_form_code()">填表代码</button>
 <button id="btn" onclick="generate_other_code()">其他功能</button>
+<button id="btn" onclick="copy_code()">复制代码</button>
 <br>
 <p id="generate_form_code"></p>
+<textarea id="input"></textarea>
 </div>
 </body>
 </html>
