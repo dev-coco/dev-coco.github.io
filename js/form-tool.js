@@ -310,4 +310,31 @@
         var text = myselect.options[index].text;
 	} catch {}
         return value
-    } 
+    }
+    function show_frame() {
+    	var iframe = document.getElementById("myiframe");
+    	var box = document.getElementById("show_notice");
+    	var status = iframe.style.display;
+    	if (status == "none") {
+            iframe.style.display = "block";
+            document.getElementById("notice").innerHTML = `<div id="show_notice"><div class="txt"><p>提交前请先检查小组是否能被识别出来，如果无法识别出来再提交，以免提交重复数据！</p><p>如果是已经能识别出来的小组，但是信息不对，请联系相关人员修改，请勿重复提交表单。</p></div><div id="countdown">倒计时<span id="time"></span>秒自动关闭</div></div>`;
+            var obj = document.getElementById("time");
+            var num = 3;
+            obj.innerHTML = num;
+            function timFn() {
+                num--;
+                obj.innerHTML = num;
+                if (num == 0) {
+                    document.getElementById("countdown").innerHTML = `<button class="btn waves-effect waves-teal" onclick="cloase_notice()">关闭</button>`;
+                }
+            }
+            setInterval(timFn, 1000);
+        } else {
+            iframe.style.display = "none";
+            box.style.display = "none";
+        }
+    }
+    function cloase_notice() {
+        var box = document.getElementById("show_notice");
+        box.style.display = "none";
+    }
