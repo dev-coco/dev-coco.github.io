@@ -1,50 +1,73 @@
 body {
-    margin: 0;
-    padding: 20 px;
+	margin: 0;
+	padding: 20 px;
 }
 table {
-    margin: 0;
-    padding: 10 px;
+	margin: 0;
+	padding: 10 px;
 }
 textarea {
-    width: 400 px;
-    height: 550 px;
+	width: 400 px;
+	height: 550 px;
 }
 .column1 {
-    width: 400 px;
+	width: 400 px;
 }
 .column2 {
-    width: 120 px;
+	width: 120 px;
 }
 .column3 {
-    width: 400 px;
-}
-.bnt {
-    margin: 10 px 0;
-    padding: 3 px 5 px;
+	width: 400 px;
 }
 @media (prefers-color-scheme:dark) {
-    .night-mode {
-        background: #323336;
-    }
-    .title {
-        color: #fff;
-    }
+	.night-mode {
+		background: #323336;
+	}
+	.title {
+		color: #fff;
+	}
 }
 @media (prefers-color-scheme:light) {
-    .title {
-        color: #000;
-    }
+	.title {
+		color: #000;
+	}
 }
 .row {
-    margin-bottom: 0px;
+	margin-bottom: 0px;
 }
 .dropdown1 {
-    display: inline-block;
+	display: inline-block;
 }
 .dropdown1-content {
-    display: none;
+	display: none;
 }
 .dropdown1:hover .dropdown1-content {
-    display: block;
+	display: block;
+}
+#show_notice {
+	z-index: 9999;
+	width: 500px;
+	height: 300px;
+	background: #eff0f7;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	border: thick double #25a79a;
+	position: fixed;
+}
+.txt {
+	padding: 18px;
+	text-align: justify;
+	font-size: 20px;
+}
+#countdown {
+	position: absolute;
+	bottom: 0;
+	text-align: center;
+	padding: 6px 0;
+	width: 100%;
+}
+#time {
+	color: red;
 }
