@@ -35,6 +35,7 @@ var check_required_post_link = document.getElementById("required_post_link").che
 var check_other_close_alert = document.getElementById("other_close_alert").checked;
 var check_other_auto_complete = document.getElementById("other_auto_complete").checked;
 var check_other_update = document.getElementById("other_update").checked;
+var check_group_form = document.getElementById("group_form").checked;
 
 if (check_other_close_alert == true || check_other_auto_complete == true || check_other_update == true) {
     var other_code = `&lt;?!= include(&quot;main-js&quot;); ?&gt;`;
@@ -254,6 +255,14 @@ var show_required_post_link = `&lt;span style=&quot;color:red;&quot;&gt;* &lt;/s
 else {
 var show_required_post_link = ``;
 }
+if (check_group_form == true) {
+var show_group_form = ``;
+}
+else {
+var show_group_form = `style=&quot;display:none;&quot;`;
+}
+
+
 document.getElementById("generate_form_code").innerHTML = `<pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
    &lt;head&gt;
@@ -268,8 +277,13 @@ document.getElementById("generate_form_code").innerHTML = `<pre><code>&lt;!DOCTY
       `+other_code+`
    &lt;/head&gt;
    &lt;body class=&quot;night-mode&quot; background = &quot;&quot;&gt;
+      &lt;div id=&quot;notice&quot;&gt;&lt;/div&gt;
       &lt;div  class=&quot;night-dark&quot; style=&quot; width:950px;margin:0 auto;border:solid 1px ;padding:5px;&quot;&gt;
          &lt;h3 style=&quot;text-align:center;&quot; class=&quot;title&quot;&gt;发帖登记工具&lt;/h3&gt;
+         &lt;h5 style=&quot;text-align:center;&quot; class=&quot;title&quot;&gt;
+         &lt;a onclick=&quot;show_frame();&quot; `+show_group_form+`&gt;提交小组&lt;/a&gt;
+         &lt;/h5&gt;
+         &lt;iframe id=&quot;myiframe&quot; style=&quot;display:none;&quot; src=&quot;#&quot; width=&quot;900&quot; height=&quot;1100&quot; frameborder=&quot;0&quot; marginheight=&quot;0&quot; marginwidth=&quot;0&quot;&gt;正在加载&hellip;&lt;/iframe&gt;
          &lt;div class = &quot;row&quot;&gt;
             &lt;!-- 选择名字 --&gt;
             &lt;div class=&quot;`+hide_class_selectName+`&quot; `+hide_selectName+`&gt;
@@ -685,4 +699,12 @@ function generate_other_code() {
 &lt;/script&gt;
     </code></pre>
     `;
+}
+function copy_code() {
+  var text = document.getElementById("generate_form_code").innerText;
+  var input = document.getElementById("input");
+  input.value = text;
+  input.select();
+  document.execCommand("copy");
+  alert("复制成功");
 }
