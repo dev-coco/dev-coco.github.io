@@ -2,7 +2,7 @@
         var elems = document.querySelectorAll('select');
         var instances = M.FormSelect.init(elems);
     });
-    alert("发帖表在纽约时间晚上12点进行升级维护。");
+    alert("通知：发帖表在纽约时间晚上12点进行升级维护。");
     //获取值
     function getValue1() {
         // 中文名字
