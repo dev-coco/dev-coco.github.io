@@ -137,6 +137,7 @@
         var none = "";
         // 检测
         var detect = document.getElementsByClassName("btn waves-effect waves-teal one");
+	var detect1 = document.getElementsByClassName("btn waves-effect waves-teal two");
         // 自动识别小组状态
         var auto_detect_group_statusA = `=IFERROR(VLOOKUP((REGEXEXTRACT($A:$A,"groups\\\/.*?\\\/|messages\\\/t\\\/|\\\/posts\\\/|photo\\.php|permalink\\.php|watchparty|videos")),'小组数据库'!B:D,3,0))`;
         var auto_detect_group_statusB = `=IFERROR(VLOOKUP((REGEXEXTRACT($B:$B,"groups\\\/.*?\\\/|messages\\\/t\\\/|\\\/posts\\\/|photo\\.php|permalink\\.php|watchparty|videos")),'小组数据库'!B:D,3,0))`;
@@ -261,6 +262,12 @@
             }
         } else {
             if (selectName == null, selectName == undefined) {
+                alert("请选择名字!");
+                return;
+            }
+        }
+	if (detect1.length == 1) {
+                if (selectName == null, selectName == undefined) {
                 alert("请选择名字!");
                 return;
             }
