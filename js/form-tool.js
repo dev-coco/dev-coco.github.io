@@ -71,11 +71,11 @@
         res = res.join('');
         document.getElementsByClassName("track_link")[0].value = res;
         // 检测原链接是否包含关键词
-        var reg = RegExp(/holyspiritspeaks|kingdomsalvation/);
+        var reg = RegExp(/holyspiritspeaks|kingdomsalvation|bible-nl|bibbia-it/);
         if (fn_web_link.match(reg)) {
             var aa = '<a href="' + res + '" target = "_blank">' + res + '</a>';
         } else {
-            var aa = "";
+            return;
         }
         document.getElementById("show_track_link").innerHTML = aa;
         if (fb_hyperlink == "") {} else {
