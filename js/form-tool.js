@@ -266,13 +266,17 @@
                 return;
             }
         }
+	var fb_post_url = fb_pose_link.match(/facebook\.com/g);
 	if (detect1.length == 1) {
                 if (selectName == null, selectName == undefined) {
                 alert("请选择名字!");
                 return;
             }
+	if (fb_pose_link.length == 0) {
+            alert("请输入贴文链接!");
+            return;
         }
-        var fb_post_url = fb_pose_link.match(/facebook\.com/g);
+        }
         if (fb_pose_link.length == 0) {
             alert("请输入贴文链接!");
             return;
