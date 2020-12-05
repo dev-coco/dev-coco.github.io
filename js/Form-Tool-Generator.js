@@ -700,7 +700,7 @@ setInterval(function () {
     </code></pre>
     `;
 }
-function hide_banners {
+function hide_banners() {
     document.getElementById("generate_form_code").innerHTML = `<pre><code>script.google.com###warning</code></pre>`;
 }
 function copy_code() {
