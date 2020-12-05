@@ -307,6 +307,10 @@
 	google.script.run.cleaner();
 	} catch {}
         $(".post_link").val('');
+        try { 
+        $('#show_track_link').val("");
+        $('#show_track_link').html("");
+        } catch {}
     }
 
     // 获取index
