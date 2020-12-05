@@ -662,9 +662,9 @@ function generate_other_code() {
     // 检测其他项目
     if (check_other_close_alert == true) {
     var fill_other_close_alert = `// 关闭提示
-    window.onbeforeunload = function (n) {
-        (n = window.event || n).returnValue = &quot;&quot;
-    };
+window.onbeforeunload = function (n) {
+    (n = window.event || n).returnValue = &quot;&quot;
+};
     `;
     }
     else {
@@ -672,11 +672,11 @@ function generate_other_code() {
     }
     if (check_other_auto_complete == true) {
     var fill_other_auto_complete = `// 账号名称自动填充
-    $(function () {
-        $(&quot;#username&quot;).autocomplete({
-            source: [&quot;aaa&quot;,&quot;bbb&quot;,&quot;ccc&quot;]
-        })
-    });
+$(function () {
+    $(&quot;#username&quot;).autocomplete({
+        source: [&quot;aaa&quot;,&quot;bbb&quot;,&quot;ccc&quot;]
+    })
+});
     `;
     }
     else {
@@ -684,21 +684,24 @@ function generate_other_code() {
     }
     if (check_other_update == true) {
     var fill_other_update = `// 维护升级
-    setInterval(function () {
-        alert(&quot;正在维护升级中，请稍后查看&quot;);
-    }, 1000);
+setInterval(function () {
+    alert(&quot;正在维护升级中，请稍后查看&quot;);
+}, 1000);
     `;
     }
     else {
     var fill_other_update = ``;
     }
     document.getElementById("generate_form_code").innerHTML = `<pre><code>&lt;script&gt;
-    `+fill_other_close_alert+`
-    `+fill_other_auto_complete+`
-    `+fill_other_update+`
+`+fill_other_close_alert+`
+`+fill_other_auto_complete+`
+`+fill_other_update+`
 &lt;/script&gt;
     </code></pre>
     `;
+}
+function hide_banners {
+    document.getElementById("generate_form_code").innerHTML = `<pre><code>script.google.com###warning</code></pre>`;
 }
 function copy_code() {
   var text = document.getElementById("generate_form_code").innerText;
