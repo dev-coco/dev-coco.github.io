@@ -47,7 +47,7 @@ code {
 .dropdown {
     position: relative;
     display: inline-block;
-    right: 300px;
+    right: 330px;
     z-index: 9999;
     position: fixed;
 }
