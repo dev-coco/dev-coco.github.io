@@ -48,6 +48,7 @@ code {
     position: relative;
     display: inline-block;
     right: 330px;
+    top: 4px;
     z-index: 9999;
     position: fixed;
 }
