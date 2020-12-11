@@ -138,6 +138,7 @@
         // 检测
         var detect = document.getElementsByClassName("btn waves-effect waves-teal one");
 	var detect1 = document.getElementsByClassName("btn waves-effect waves-teal two");
+	var detect2 = document.getElementsByClassName("btn waves-effect waves-teal vk");
         // 自动识别小组状态
         var auto_detect_group_statusA = `=IFERROR(VLOOKUP((REGEXEXTRACT($A:$A,"groups\\\/.*?\\\/|messages\\\/t\\\/|\\\/posts\\\/|photo\\.php|permalink\\.php|watchparty|videos")),'小组数据库'!B:D,3,0))`;
         var auto_detect_group_statusB = `=IFERROR(VLOOKUP((REGEXEXTRACT($B:$B,"groups\\\/.*?\\\/|messages\\\/t\\\/|\\\/posts\\\/|photo\\.php|permalink\\.php|watchparty|videos")),'小组数据库'!B:D,3,0))`;
@@ -276,6 +277,19 @@
             }
             if (fb_pose_link.length == 0) {
                 alert("请输入链接!");
+                return;
+            }
+	}
+	else if (detect2.length == 1) {
+		if (selectName == null, selectName == undefined) {
+                alert("请选择名字!");
+                return;
+            }
+            if (fb_pose_link.length == 0) {
+                alert("请输入贴文链接!");
+                return;
+            } else if (fb_post_url != "vk.com") {
+                alert("请输入VK链接!");
                 return;
             }
 	}
