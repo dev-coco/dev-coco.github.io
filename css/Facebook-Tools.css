@@ -98,3 +98,7 @@ code {
 .img {
     transition: all 0.15s ease-in-out;
 }
+#invite_count {
+    text-align: center;
+    font-size: 16px;
+}
