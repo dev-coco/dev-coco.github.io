@@ -9,6 +9,21 @@ img {
 	width: 50%;
 	text-align: center;
 }
+.left {
+         float: left;
+         width:33.33333%;
+         text-align:left;
+    }
+    .center {
+         float: left;
+         width:33.33333%;
+         text-align:center;
+    }
+    .right {
+        float: left;
+        width:33.33333%;
+        text-align:right;
+    }
     div.menu {
         background-color: #f5f5f5;
     }
