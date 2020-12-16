@@ -64,7 +64,7 @@
     }
     @media (prefers-color-scheme:dark) {
         body {
-            background: #17191a;
+            background-color: #17191a;
             color: #d0cec8;
         }
         pre {
@@ -87,7 +87,7 @@
     background-color:#292c34;
 }
 	    .list-group-item {
-background: #2e3033;
+background-color: #2e3033;
             color: #d0cec8;
 }
     }
