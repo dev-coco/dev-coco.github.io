@@ -59,4 +59,10 @@ img {
         div.menu a {
             color:#d0cec8;
         }
+	    .page-link {
+        background-color:#292c34;
+    }
+.card-body {
+    background-color:#292c34;
+}
     }
