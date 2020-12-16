@@ -9,6 +9,12 @@ img {
 	width: 50%;
 	text-align: center;
 }
+.card-body img {
+	float:left;
+}
+.card-body p {
+	font-size:14pt;
+}
 .left {
          float: left;
          width:33.33333%;
