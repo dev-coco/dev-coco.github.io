@@ -99,4 +99,7 @@ h3 {
 	.list-group a:hover {
 		background-color: #777;
 	}
+	textarea {
+		background-color: #292c34;
+	}
 }
