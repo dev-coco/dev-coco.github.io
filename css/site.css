@@ -14,7 +14,7 @@ img {
     div.menu a:hover {
         background-color: #777;
     }
-    p {
+    p,li,td{
         font-size: 16pt;
         font-family: arial, helvetica, sans-serif;
     }
