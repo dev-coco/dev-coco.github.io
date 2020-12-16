@@ -86,4 +86,8 @@
 .card-body {
     background-color:#292c34;
 }
+	    .list-group-item {
+background: #17191a;
+            color: #d0cec8;
+}
     }
