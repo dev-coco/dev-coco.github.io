@@ -68,7 +68,6 @@ h3 {
 	text-align: center
 }
 .button {
-    width: 150px;
     text-align: center;
     border: 1px solid;
     padding: .375rem .75rem;
@@ -139,7 +138,4 @@ h3 {
 	select {
             background-color: #292c34;
         }
-	.btn {
-	    background-color: #292c34;
-	}
 }
