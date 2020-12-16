@@ -52,7 +52,7 @@ td {
 	font-family: arial, helvetica, sans-serif;
 }
 pre {
-	background-color: #eee
+	background-color: #eee;
 }
 .img {
 	border-radius: 10px;
@@ -105,4 +105,7 @@ h3 {
 	input {
 		background-color: #292c34;
 	}
+	select {
+            background-color: #292c34;
+        }
 }
