@@ -67,6 +67,36 @@ h2,
 h3 {
 	text-align: center
 }
+.button {
+    width: 150px;
+    text-align: center;
+    border: 1px solid;
+    padding: .375rem .75rem;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    color: #fff;
+}
+.blue {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+.blue:hover {
+    background-color: #0069d9;
+}
+.green {
+    background-color: #198754;
+    border-color: #198754;
+}
+.green:hover {
+    background-color: #157347;
+}
+.red {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+.red:hover {
+    background-color: #bb2d3b;
+}
 @media (prefers-color-scheme:dark) {
 	body {
 		background-color: #17191a;
