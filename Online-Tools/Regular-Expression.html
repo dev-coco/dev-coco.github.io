@@ -11,14 +11,14 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
-    <style>img{width:58px;}div.menu{background-color:#f5f5f5;}div.menu a{display:inline-block;color:black;text-align:center;padding:14px;text-decoration:none;}div.menu a:hover{background-color:#777;}</style>
+    <link rel="stylesheet" href="https://dev-coco.github.io/css/site.css">
     <style>
         .c_data{width:300px;height:100px;}input{margin-top:10px;}.re{width:300px;margin:0 auto;}.reg{width:200px;}select{width:300px;}#copy_sel{width:230px;}#copy_tool{width:300px;}
     </style>
 </head>
 <body>
     <div class="container">
-<h1><img alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+<h1 style="text-align:left;"><img class="logo" alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
 <div class="menu">
   <a href="https://dev-coco.github.io/">主页</a>
   <a href="https://dev-coco.github.io/blog">博客</a>
@@ -32,31 +32,30 @@
         <textarea type="text" class="c_data" id="data1" autofocus></textarea>
         <br>
         <select id="sel1" onchange="chan()">
-            <option value=""></option>
+        <option value=""></option>
         </select>
         <br> <span>正则表达式</span>
         <input type="text" id="regular1" class="reg">
-        <button type="button" id="btn1">确认</button>
+        <button class="button blue" type="button" id="btn1">确认</button>
         <input type="checkbox" id="ck"> 按列显示
         <p>第一次输出结果</p>
         <textarea type="text" class="c_data" id="data2"></textarea>
         <br>
         <select id="sel2" onchange="chan1()">
-            <option value=""></option>
+        <option value=""></option>
         </select>
         <br> <span>正则表达式</span>
         <input type="text" id="regular2" class="reg">
-        <button type="button" id='btn2'>确认</button>
+        <button class="button blue" type="button" id='btn2'>确认</button>
         <input type="checkbox" id="ck1"> 按列显示
         <input type="checkbox" id="u_char">转换成字符
         <p>第二次输出结果</p>
         <textarea type="text" class="c_data" id="data3"></textarea>
         <hr>
         <select id="copy_sel" onchange="copyTool()">
-            <option value=""></option>></select>
-        <button onclick="copyText()">复制</button>
+        <option value=""></option>></select>
+        <button class="button blue" onclick="copyText()">复制</button>
         <textarea type="text" id="copy_tool"></textarea>
-        <p>2020/6/8 更新</p>
     </div>
 </div>
 </body>
