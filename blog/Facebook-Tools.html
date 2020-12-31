@@ -92,24 +92,28 @@
                  <td>● <a href="#好友列印">好友列印</a></td>
              </tr>
              <tr>
-                 <td>● <a href="#自动戳一戳">自动戳一戳</a></td>
-                 <td>● <a href="#好友列印">好友列印</a></td>
-             </tr>
-             <tr>
-                 <td>● <a href="#统计发送好友请求数">统计发送好友请求数</a></td>
+                 <td>● <a href="#批量拉黑用户">批量拉黑用户</a></td>
                  <td>● <a href="#点赞列印">点赞列印</a></td>
              </tr>
              <tr>
-                 <td>● <a href="#小组智能搜索">小组智能搜索</a></td>
+                 <td>● <a href="#统计发送好友请求数">统计发送好友请求数</a></td>
                  <td>● <a href="#小组信息列印">小组信息列印</a></td>
              </tr>
              <tr>
-                 <td>● <a href="#批量拉黑用户">批量拉黑用户</a></td>
+                 <td>● <a href="#小组智能搜索">小组智能搜索</a></td>
                  <td>● <a href="#所有小组列印">所有小组列印</a></td>
+             </tr>
+             <tr>
+                 <td>● <a href="#寻找标记用户">寻找标记用户</a></td>
+                 <td>● <a href="#自动戳一戳">自动戳一戳</a></td>
              </tr>
              <tr>
                  <td>● <a href="#隐藏标记用户">隐藏标记用户</a></td>
                  <td>● <a href="#开包厢辅助">开包厢辅助</a></td>
+             </tr>
+             <tr>
+                 <td>● <a href="#智能隐藏标记用户">智能隐藏标记用户</a></td>
+                 <td>● <a href="#链接转换">链接转换</a></td>
              </tr>
              <tr>
                  <td>● <a href="#Excel超链接文本合并">Excel超链接文本合并</a></td>
@@ -140,7 +144,39 @@
          <h2 id="自动戳一戳">自动戳一戳</h2>
          <p>点击下方的链接，向下滚动，然后点击插件可以随机延时自动“戳”一下好友。</p>
          <a href="https://www.facebook.com/pokes" target="_blank">https://www.facebook.com/pokes</a>
+         <h2 id="寻找标记用户">寻找标记用户</h2>
+         <p>目前仅支持在时间线好友列表、小组成员和小组贴文点赞这三个界面使用。在链接的末尾输入<code>?findmark</code>，如果是数字ID的链接在末尾输入<code>&amp;?findmark</code>，如果变成了<code>&amp;%3Ffindmark</code>是正常现象。</p>
+         <p>例子：</p>
+         <p>添加前：https://www.facebook.com/abcdefg
+         <br>
+         添加后：https://www.facebook.com/abcdefg<span style="color:red;">?findmark</span></p>
+         <p>添加前：https://www.facebook.com/profile.php?id=12345678
+         <br>
+         添加后：https://www.facebook.com/profile.php?id=12345678<span style="color:red;">&amp;?findmark</span></p>
+         <p>添加前：https://www.facebook.com/groups/12345678
+         <br>
+         添加后：https://www.facebook.com/groups/12345678<span style="color:red;">?findmark</span></p>
+         <p>添加前：https://www.facebook.com/groups/12345678/members
+         <br>
+         添加后：https://www.facebook.com/groups/12345678/members<span style="color:red;">?findmark</span></p>
+         <p>设置完链接后按回车键（return），然后点击插件即可自动隐藏页面非标记用户。</p>
          <h2 id="隐藏标记用户">隐藏标记用户</h2>
+         <p>目前仅支持在时间线好友列表、小组成员和小组贴文点赞这三个界面使用。在链接的末尾输入<code>?hidemark</code>，如果是数字ID的链接在末尾输入<code>&amp;?hidemark</code>，如果变成了<code>&amp;%3Fhidemark</code>是正常现象。</p>
+         <p>例子：</p>
+         <p>添加前：https://www.facebook.com/abcdefg
+         <br>
+         添加后：https://www.facebook.com/abcdefg<span style="color:red;">?hidemark</span></p>
+         <p>添加前：https://www.facebook.com/profile.php?id=12345678
+         <br>
+         添加后：https://www.facebook.com/profile.php?id=12345678<span style="color:red;">&amp;?hidemark</span></p>
+         <p>添加前：https://www.facebook.com/groups/12345678
+         <br>
+         添加后：https://www.facebook.com/groups/12345678<span style="color:red;">?hidemark</span></p>
+         <p>添加前：https://www.facebook.com/groups/12345678/members
+         <br>
+         添加后：https://www.facebook.com/groups/12345678/members<span style="color:red;">?hidemark</span></p>
+         <p>设置完链接后按回车键（return），然后点击插件即可自动隐藏页面出现的所有标记用户。</p>
+         <h2 id="智能隐藏标记用户">智能隐藏标记用户</h2>
          <p>目前仅支持在时间线好友列表、小组成员和小组贴文点赞这三个界面使用。在链接的末尾输入<code>?add</code>，如果是数字ID的链接在末尾输入<code>&amp;?add</code>，如果变成了<code>&amp;%3Fadd</code>是正常现象。</p>
          <p>例子：</p>
          <p>添加前：https://www.facebook.com/abcdefg
@@ -155,7 +191,7 @@
          <p>添加前：https://www.facebook.com/groups/12345678/members
          <br>
          添加后：https://www.facebook.com/groups/12345678/members<span style="color:red;">?add</span></p>
-         <p>设置完链接后按回车键（return），然后点击插件即可自动隐藏页面出现的所有标记用户。</p>
+         <p>设置完链接后按回车键（return），然后点击插件即可智能隐藏页面出现的部分标记用户。</p>
          <h2 id="统计发送好友请求数">统计发送好友请求数</h2>
          <p>点击下方的链接，点击插件，即可显示最新日期的发送好友请求的数量。</p>
          <a href="https://m.facebook.com/allactivity?category_key=sentfriendrequests" target="_blank">https://m.facebook.com/allactivity?category_key=sentfriendrequests</a>
