@@ -7,4 +7,4 @@ function loadScript(url) {
     scr.async = true;
     last.parentNode.insertBefore(scr, last);
 }
-loadScript('test.js');
+loadScript('https://dev-coco.github.io/js/encryption.js');
