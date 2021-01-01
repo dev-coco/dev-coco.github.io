@@ -229,6 +229,43 @@
          <p>首先，需要把链接换成下面的这种格式，{user_id}替换成用户的数字ID。</p>
          <p>https://m.facebook.com/privacy/touch/block/confirm/?back_uri&bid={user_id}&source=privacy_settings_page</p>
          <p>然后打开链接，插件会自动拉黑此用户。可以在表格内设置好链接，批量打开链接，即可实现批量拉黑用户。</p>
+         <h2 id="链接转换">链接转换</h2>
+         <p style="text-align:center;"><b>ID转换真实链接</b></p>
+         <p>在链接的末尾输入<code>?crealid</code>，如果是数字ID的链接在末尾输入<code>&amp;?crealid</code>，如果变成了<code>&amp;%3Fcrealid</code>是正常现象。</p>
+         <p>例子：</p>
+         <p>添加前：https://www.facebook.com/abcdefg
+         <br>
+         添加后：https://www.facebook.com/abcdefg<span style="color:red;">?crealid</span></p>
+         <p>添加前：https://www.facebook.com/profile.php?id=12345678
+         <br>
+         添加后：https://www.facebook.com/profile.php?id=12345678<span style="color:red;">&amp;?crealid</span></p>
+         <p>点击插件后，会出现一个弹窗。在弹窗内放入ID或者ID链接，点击确定后将会自动转换链接。</p>
+         <img src="https://dev-coco.github.io/images/Facebook-Tools/16.png" />
+         <p>例子：</p>
+         <p>转换前：https://www.facebook.com/123456
+         <br>
+         转换后：https://www.facebook.com/abcdef</p>
+         <p>转换前：654321
+         <br>
+         转换后：https://www.facebook.com/profile.php?id=654321</p>
+         <p style="text-align:center;"><b>链接转换ID</b></p>
+         <p>在链接的末尾输入<code>?cnumid</code>，如果是数字ID的链接在末尾输入<code>&amp;?cnumid</code>，如果变成了<code>&amp;%3Fcnumid</code>是正常现象。</p>
+         <p>例子：</p>
+         <p>添加前：https://www.facebook.com/abcdefg
+         <br>
+         添加后：https://www.facebook.com/abcdefg<span style="color:red;">?cnumid</span></p>
+         <p>添加前：https://www.facebook.com/profile.php?id=12345678
+         <br>
+         添加后：https://www.facebook.com/profile.php?id=12345678<span style="color:red;">&amp;?cnumid</span></p>
+         <p>点击插件后，会出现一个弹窗。在弹窗内放入ID或者ID链接，点击确定后将会自动转换链接。</p>
+         <img src="https://dev-coco.github.io/images/Facebook-Tools/16.png" />
+         <p>例子：</p>
+         <p>转换前：123456
+         <br>
+         转换后：https://www.facebook.com/123456</p>
+         <p>转换前：https://www.facebook.com/profile.php?id=654321
+         <br>
+         转换后：654321</p>
          <h2 id="Excel超链接文本合并">Excel超链接文本合并</h2>
          <p>将文本和超链接在Excel表格内并排放，如下图所示。然后全部选中，复制。</p>
          <img src="https://dev-coco.github.io/images/Facebook-Tools/8.png" />
