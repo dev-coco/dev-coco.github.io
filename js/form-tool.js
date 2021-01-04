@@ -55,10 +55,6 @@
                 alert("请输入发帖位置!");
                 return;
             }
-            if (fb_title.length == 0) {
-                alert("请输入中文标题!");
-                return;
-            }
 	    if (selectName == null, selectName == undefined) {
    		alert("请选择名字!");
  		return;
