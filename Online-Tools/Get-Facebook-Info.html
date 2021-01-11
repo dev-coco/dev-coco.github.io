@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh">
+   <head>
+      <title>获取Facebook信息</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta name="keywords" content="dev-coco, get facebook info, 获取Facebook信息, 获取FB信息"/>
+      <meta name="robots" content="index,follow"/>
+      <meta name="description" content="全新Mac清理垃圾缓存软件，超彻底深度清理，优化系统运行速度。"/>
+      <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+      <link rel="stylesheet" href="https://dev-coco.github.io/css/site.css">
+      <script src="https://dev-coco.github.io/js/get-facebook-info.js"></script>
+      <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+      <link rel="stylesheet" href="https://dev-coco.github.io/css/get-facebook-info.css">
+   </head>
+   <body>
+      <div class="container">
+         <h1 style="text-align:left;"><img class="logo" alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+         <div class="menu">
+            <a href="https://dev-coco.github.io/">主页</a>
+            <a href="https://dev-coco.github.io/blog">博客</a>
+            <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+            <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+            <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+            <a target="_blank" href="https://github.com/dev-coco">Github</a>
+         </div>
+         <form class="smart-green">
+            <h1>获取Facebook信息</h1>
+            <label>
+            <span>列印信息</span>
+            <input id="printf_info_token" placeholder="请输入token" />
+            <textarea id="printf_info_url" placeholder="请输入ID"></textarea>
+            </label>
+            <button class="button" type="button" onclick="get_printf_info()" ondblclick="get_printf_info_fast(event)">获取信息</button>
+            <hr class="hr_style">
+            <label>
+            <span>获取高清头像</span>
+            <input id="avatar_token" placeholder="请输入token" />
+            <textarea id="avatar_url" placeholder="请输入ID"></textarea>
+            </label>
+            <button class="button" type="button" type="button" onclick="get_avatar()" ondblclick="get_avatar_fast(event)">获取高清头像</button>
+            <hr class="hr_style">
+            <label>
+            <span>导出所有好友</span>
+            <input id="printf_all_friends_token" placeholder="请输入token" />
+            </label>
+            <button class="button" type="button" type="button" onclick="printf_all_friends()">导出</button>
+         </form>
+      </div>
+   </body>
+</html>
