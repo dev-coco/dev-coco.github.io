@@ -1,7 +1,7 @@
 var time = 200;
 var timeOut = null;
 
-function get_printf_info() {
+function get_printf_info(e) {
     clearTimeout(timeOut);
     timeOut = setTimeout(function() {
         var token = document.getElementById("printf_info_token").value;
@@ -113,7 +113,7 @@ function get_printf_info_fast(e) {
     }
 }
 
-function get_avatar() {
+function get_avatar(e) {
     clearTimeout(timeOut);
     timeOut = setTimeout(function() {
         var token = document.getElementById("avatar_token").value;
