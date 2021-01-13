@@ -104,6 +104,7 @@ function get_printf_info_fast() {
 
             }, 50 * k);
         })(k);
+    }
 }
 
 function get_avatar() {
