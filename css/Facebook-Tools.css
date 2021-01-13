@@ -102,3 +102,34 @@ code {
     text-align: center;
     font-size: 16px;
 }
+.switch-button {
+	width: 52px;
+	height: 31px;
+	position: relative;
+	border: 1px solid #dfdfdf;
+	background-color: #fdfdfd;
+	border-radius: 20px;
+	-webkit-appearance: none;
+	user-select: none;
+	outline: none;
+}
+
+.switch-button:before {
+	content: '';
+	width: 29px;
+	height: 29px;
+	position: absolute;
+	left: 0;
+	border-radius: 20px;
+	background-color: #fff;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.switch-button:checked {
+	border-color: #64bd63;
+	background-color: #64bd63;
+}
+
+.switch-button:checked:before {
+	left: 21px;
+}
