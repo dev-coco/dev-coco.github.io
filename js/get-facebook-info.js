@@ -1,9 +1,5 @@
-var time = 200;
-var timeOut = null;
 
-function get_printf_info(e) {
-    clearTimeout(timeOut);
-    timeOut = setTimeout(function() {
+function get_printf_info() {
         var token = document.getElementById("printf_info_token").value;
         var get_id = document.getElementById("printf_info_url").value;
         var facebookID = get_id.match(/[0-9].+/g);
@@ -55,11 +51,9 @@ function get_printf_info(e) {
                 }, 1500 * k);
             })(k);
         }
-    }, time)
 }
 
-function get_printf_info_fast(e) {
-    clearTimeout(timeOut);
+function get_printf_info_fast() {
     var token = document.getElementById("printf_info_token").value;
     var get_id = document.getElementById("printf_info_url").value;
     var facebookID = get_id.match(/[0-9].+/g);
@@ -110,12 +104,9 @@ function get_printf_info_fast(e) {
 
             }, 50 * k);
         })(k);
-    }
 }
 
-function get_avatar(e) {
-    clearTimeout(timeOut);
-    timeOut = setTimeout(function() {
+function get_avatar() {
         var token = document.getElementById("avatar_token").value;
         var get_id = document.getElementById("avatar_url").value;
         var facebookID = get_id.match(/.+/g);
@@ -129,11 +120,9 @@ function get_avatar(e) {
                 }, 1500 * k);
             })(k);
         }
-    }, time)
 }
 
 function get_avatar_fast(e) {
-    clearTimeout(timeOut);
     var token = document.getElementById("avatar_token").value;
     var get_id = document.getElementById("avatar_url").value;
     var facebookID = get_id.match(/.+/g);
@@ -146,7 +135,6 @@ function get_avatar_fast(e) {
                 new_page.document.write('<table><tbody><tr><td>' + [k + 1] + '</td><td>=IMAGE("' + response.url + '")</td></tr></tbody></table>');
             }, 50 * k);
         })(k);
-    }
 }
 
 async function printf_all_friends() {
