@@ -136,6 +136,7 @@ function get_avatar_fast(e) {
                 new_page.document.write('<table><tbody><tr><td>' + [k + 1] + '</td><td>=IMAGE("' + response.url + '")</td></tr></tbody></table>');
             }, 50 * k);
         })(k);
+    }
 }
 
 async function printf_all_friends() {
