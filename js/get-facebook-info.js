@@ -1,13 +1,15 @@
-
 function get_printf_info() {
-        var token = document.getElementById("printf_info_token").value;
-        var get_id = document.getElementById("printf_info_url").value;
-        var facebookID = get_id.match(/[0-9].+/g);
-        new_page = window.open('');
-        for (var k = 0; k < facebookID.length; k++) {
-            (function(k) {
-                setTimeout(async function() {
-                    let response1 = await fetch(`https://graph.facebook.com/` + facebookID[k] + `?fields=location,hometown,name,languages,religion,education&access_token=` + token + `&pretty=0`)
+    var token = document.getElementById("printf_info_token").value;
+    var get_id = document.getElementById("printf_info_url").value;
+    var facebookID = get_id.match(/[0-9].+/g);
+    new_page = window.open('');
+    for (var k = 0; k < facebookID.length; k++) {
+        (function(k) {
+            setTimeout(async function() {
+                let response1 = await fetch(`https://graph.facebook.com/` + facebookID[k] + `?fields=location,hometown,name,languages,religion,education&access_token=` + token + `&pretty=0`)
+                if (response1.status == "400") {
+                    new_page.document.write('<table><tbody><tr><td></td><td>' + [k + 1] + '</td><td><a href="https://www.facebook.com/' + facebookID[k] + '" target="_blank">' + facebookID[k] + '</a></td><td>请求受限</td></tr></tbody></table>');
+                } else {
                     let text1 = await response1.text()
                     try {
                         try {
@@ -47,21 +49,24 @@ function get_printf_info() {
                         var college_str = eval(`"` + college + `"`);
                     } catch {}
                     new_page.document.write('<table><tbody><tr><td><img src="https://graph.facebook.com/' + facebookID[k] + '/picture?width=999&access_token=' + token + '" style="width:200;"></td><td>' + [k + 1] + '</td><td><a href="https://www.facebook.com/' + facebookID[k] + '" target="_blank">' + facebookID[k] + '</a></td><td>所在地：' + city_str + '</td><td>家乡：' + hometown_str + '</td><td>信仰：' + religion_str + '</td><td>语言：' + language_str + '</td><td>大学：' + college_str + '</td></tr></tbody></table>');
-
-                }, 1500 * k);
-            })(k);
-        }
+                }
+            }, 1500 * k);
+        })(k);
+    }
 }
 
 function get_printf_info_fast() {
-            var token = document.getElementById("printf_info_token").value;
-        var get_id = document.getElementById("printf_info_url").value;
-        var facebookID = get_id.match(/[0-9].+/g);
-        new_page = window.open('');
-        for (var k = 0; k < facebookID.length; k++) {
-            (function(k) {
-                setTimeout(async function() {
-                    let response1 = await fetch(`https://graph.facebook.com/` + facebookID[k] + `?fields=location,hometown,name,languages,religion,education&access_token=` + token + `&pretty=0`)
+    var token = document.getElementById("printf_info_token").value;
+    var get_id = document.getElementById("printf_info_url").value;
+    var facebookID = get_id.match(/[0-9].+/g);
+    new_page = window.open('');
+    for (var k = 0; k < facebookID.length; k++) {
+        (function(k) {
+            setTimeout(async function() {
+                let response1 = await fetch(`https://graph.facebook.com/` + facebookID[k] + `?fields=location,hometown,name,languages,religion,education&access_token=` + token + `&pretty=0`)
+                if (response1.status == "400") {
+                    new_page.document.write('<table><tbody><tr><td></td><td>' + [k + 1] + '</td><td><a href="https://www.facebook.com/' + facebookID[k] + '" target="_blank">' + facebookID[k] + '</a></td><td>请求受限</td></tr></tbody></table>');
+                } else {
                     let text1 = await response1.text()
                     try {
                         try {
@@ -101,26 +106,30 @@ function get_printf_info_fast() {
                         var college_str = eval(`"` + college + `"`);
                     } catch {}
                     new_page.document.write('<table><tbody><tr><td><img src="https://graph.facebook.com/' + facebookID[k] + '/picture?width=999&access_token=' + token + '" style="width:200;"></td><td>' + [k + 1] + '</td><td><a href="https://www.facebook.com/' + facebookID[k] + '" target="_blank">' + facebookID[k] + '</a></td><td>所在地：' + city_str + '</td><td>家乡：' + hometown_str + '</td><td>信仰：' + religion_str + '</td><td>语言：' + language_str + '</td><td>大学：' + college_str + '</td></tr></tbody></table>');
-
-                }, 75 * k);
-            })(k);
-        }
+                }
+            }, 75 * k);
+        })(k);
+    }
 }
 
 function get_avatar() {
-        var token = document.getElementById("avatar_token").value;
-        var get_id = document.getElementById("avatar_url").value;
-        var facebookID = get_id.match(/.+/g);
-        new_page = window.open('');
-        for (var k = 0; k < facebookID.length; k++) {
-            (function(k) {
-                setTimeout(async function() {
-                    let response = await fetch(`https://graph.facebook.com/` + facebookID[k] + `/picture?width=999&access_token=` + token)
+    var token = document.getElementById("avatar_token").value;
+    var get_id = document.getElementById("avatar_url").value;
+    var facebookID = get_id.match(/.+/g);
+    new_page = window.open('');
+    for (var k = 0; k < facebookID.length; k++) {
+        (function(k) {
+            setTimeout(async function() {
+                let response = await fetch(`https://graph.facebook.com/` + facebookID[k] + `/picture?width=999&access_token=` + token)
+                if (response.status == "400") {
+                    new_page.document.write('<table><tbody><tr><td>' + [k + 1] + '</td><td>请求受限</td></tr></tbody></table>');
+                } else {
                     let text = await response.url
                     new_page.document.write('<table><tbody><tr><td>' + [k + 1] + '</td><td>=IMAGE("' + response.url + '")</td></tr></tbody></table>');
-                }, 1500 * k);
-            })(k);
-        }
+                }
+            }, 1500 * k);
+        })(k);
+    }
 }
 
 function get_avatar_fast(e) {
@@ -132,8 +141,12 @@ function get_avatar_fast(e) {
         (function(k) {
             setTimeout(async function() {
                 let response = await fetch(`https://graph.facebook.com/` + facebookID[k] + `/picture?width=999&access_token=` + token)
-                let text = await response.url
-                new_page.document.write('<table><tbody><tr><td>' + [k + 1] + '</td><td>=IMAGE("' + response.url + '")</td></tr></tbody></table>');
+                if (response.status == "400") {
+                    new_page.document.write('<table><tbody><tr><td>' + [k + 1] + '</td><td>请求受限</td></tr></tbody></table>');
+                } else {
+                    let text = await response.url
+                    new_page.document.write('<table><tbody><tr><td>' + [k + 1] + '</td><td>=IMAGE("' + response.url + '")</td></tr></tbody></table>');
+                }
             }, 50 * k);
         })(k);
     }
