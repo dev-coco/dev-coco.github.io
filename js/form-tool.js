@@ -1,3 +1,5 @@
+alert("纽约时间2021年1月28日 12:30将会进行暂停维护，预计时间5分钟左右。");
+
     document.addEventListener('DOMContentLoaded', function () {
         var elems = document.querySelectorAll('select');
         var instances = M.FormSelect.init(elems);
