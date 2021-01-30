@@ -72,7 +72,7 @@
         res = res.join('');
         document.getElementsByClassName("track_link")[0].value = res;
         // 检测原链接是否包含关键词
-        var reg = RegExp(/holyspiritspeaks|kingdomsalvation|bible-..|alkitabonline|bibbia-..|bibliadeestudo|biblia-..|godfootsteps|jesucristo|evangelio|easternlightning/);
+        var reg = RegExp(/holyspiritspeaks|kingdomsalvation|answerforchristians|bible-..|alkitabonline|bibbia-..|bibliadeestudo|biblia-..|godfootsteps|jesucristo|evangelio|easternlightning/);
         if (fn_web_link.match(reg)) {
             var aa = '<a href="' + res + '" target = "_blank">' + res + '</a>';
         } else {
