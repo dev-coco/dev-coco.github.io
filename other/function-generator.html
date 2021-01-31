@@ -32,23 +32,24 @@
           if (name.length !== 0) {
               var form1 = `=SUMPRODUCT(('`+name+`'!$B:$B=OFFSET(INDIRECT(SUBSTITUTE(ADDRESS(ROW(),COLUMN()),"$","")),0,-`;
               var form2 = `))*('`+name+`'!$G:$G=OFFSET(INDIRECT(SUBSTITUTE(ADDRESS(ROW(),COLUMN()),"$","")),-`;
+              var form3 = form2.replace(/\$G:\$G/g,"$K:$K");
               var c = `,0)))`;
-              str = form1+`1`+form2+`1`+c+`\t`+form1+`2`+form2+`1`+c+`\t`+form1+`3`+form2+`1`+c+`\t`+form1+`4`+form2+`1`+c+`\t`+form1+`5`+form2+`1`+c+`\t`+form1+`6`+form2+`1`+c+`\t`+form1+`7`+form2+`1`+c+`
-      `+form1+`1`+form2+`2`+c+`\t`+form1+`2`+form2+`2`+c+`\t`+form1+`3`+form2+`2`+c+`\t`+form1+`4`+form2+`2`+c+`\t`+form1+`5`+form2+`2`+c+`\t`+form1+`6`+form2+`2`+c+`\t`+form1+`7`+form2+`2`+c+`
-      `+form1+`1`+form2+`3`+c+`\t`+form1+`2`+form2+`3`+c+`\t`+form1+`3`+form2+`3`+c+`\t`+form1+`4`+form2+`3`+c+`\t`+form1+`5`+form2+`3`+c+`\t`+form1+`6`+form2+`3`+c+`\t`+form1+`7`+form2+`3`+c+`
-      `+form1+`1`+form2+`4`+c+`\t`+form1+`2`+form2+`4`+c+`\t`+form1+`3`+form2+`4`+c+`\t`+form1+`4`+form2+`4`+c+`\t`+form1+`5`+form2+`4`+c+`\t`+form1+`6`+form2+`4`+c+`\t`+form1+`7`+form2+`4`+c+`
-      `+form1+`1`+form2+`5`+c+`\t`+form1+`2`+form2+`5`+c+`\t`+form1+`3`+form2+`5`+c+`\t`+form1+`4`+form2+`5`+c+`\t`+form1+`5`+form2+`5`+c+`\t`+form1+`6`+form2+`5`+c+`\t`+form1+`7`+form2+`5`+c+`
-      `+form1+`1`+form2+`6`+c+`\t`+form1+`2`+form2+`6`+c+`\t`+form1+`3`+form2+`6`+c+`\t`+form1+`4`+form2+`6`+c+`\t`+form1+`5`+form2+`6`+c+`\t`+form1+`6`+form2+`6`+c+`\t`+form1+`7`+form2+`6`+c+`
-      `+form1+`1`+form2+`7`+c+`\t`+form1+`2`+form2+`7`+c+`\t`+form1+`3`+form2+`7`+c+`\t`+form1+`4`+form2+`7`+c+`\t`+form1+`5`+form2+`7`+c+`\t`+form1+`6`+form2+`7`+c+`\t`+form1+`7`+form2+`7`+c+`
-      `+form1+`1`+form2+`8`+c+`\t`+form1+`2`+form2+`8`+c+`\t`+form1+`3`+form2+`8`+c+`\t`+form1+`4`+form2+`8`+c+`\t`+form1+`5`+form2+`8`+c+`\t`+form1+`6`+form2+`8`+c+`\t`+form1+`7`+form2+`8`+c+`
-      `+form1+`1`+form2+`9`+c+`\t`+form1+`2`+form2+`9`+c+`\t`+form1+`3`+form2+`9`+c+`\t`+form1+`4`+form2+`9`+c+`\t`+form1+`5`+form2+`9`+c+`\t`+form1+`6`+form2+`9`+c+`\t`+form1+`7`+form2+`9`+c+`
-      `+form1+`1`+form2+`10`+c+`\t`+form1+`2`+form2+`10`+c+`\t`+form1+`3`+form2+`10`+c+`\t`+form1+`4`+form2+`10`+c+`\t`+form1+`5`+form2+`10`+c+`\t`+form1+`6`+form2+`10`+c+`\t`+form1+`7`+form2+`10`+c+`
-      `+form1+`1`+form2+`11`+c+`\t`+form1+`2`+form2+`11`+c+`\t`+form1+`3`+form2+`11`+c+`\t`+form1+`4`+form2+`11`+c+`\t`+form1+`5`+form2+`11`+c+`\t`+form1+`6`+form2+`11`+c+`\t`+form1+`7`+form2+`11`+c+`
-      `+form1+`1`+form2+`12`+c+`\t`+form1+`2`+form2+`12`+c+`\t`+form1+`3`+form2+`12`+c+`\t`+form1+`4`+form2+`12`+c+`\t`+form1+`5`+form2+`12`+c+`\t`+form1+`6`+form2+`12`+c+`\t`+form1+`7`+form2+`12`+c+`
-      `+form1+`1`+form2+`13`+c+`\t`+form1+`2`+form2+`13`+c+`\t`+form1+`3`+form2+`13`+c+`\t`+form1+`4`+form2+`13`+c+`\t`+form1+`5`+form2+`13`+c+`\t`+form1+`6`+form2+`13`+c+`\t`+form1+`7`+form2+`13`+c+`
-      `+form1+`1`+form2+`14`+c+`\t`+form1+`2`+form2+`14`+c+`\t`+form1+`3`+form2+`14`+c+`\t`+form1+`4`+form2+`14`+c+`\t`+form1+`5`+form2+`14`+c+`\t`+form1+`6`+form2+`14`+c+`\t`+form1+`7`+form2+`14`+c+`
-      `+form1+`1`+form2+`15`+c+`\t`+form1+`2`+form2+`15`+c+`\t`+form1+`3`+form2+`15`+c+`\t`+form1+`4`+form2+`15`+c+`\t`+form1+`5`+form2+`15`+c+`\t`+form1+`6`+form2+`15`+c+`\t`+form1+`7`+form2+`15`+c+`
-      `+form1+`1`+form2+`16`+c+`\t`+form1+`2`+form2+`16`+c+`\t`+form1+`3`+form2+`16`+c+`\t`+form1+`4`+form2+`16`+c+`\t`+form1+`5`+form2+`16`+c+`\t`+form1+`6`+form2+`16`+c+`\t`+form1+`7`+form2+`16`+c;
+              str = form1+`1`+form2+`1`+c+`\t`+form1+`2`+form2+`1`+c+`\t`+form1+`3`+form2+`1`+c+`\t`+form1+`4`+form2+`1`+c+`\t`+form1+`5`+form2+`1`+c+`\t`+form1+`6`+form2+`1`+c+`\t`+form1+`7`+form2+`1`+c+`\t`+form1+`8`+form3+`1`+c+`\t`+form1+`9`+form3+`1`+c+`
+      `+form1+`1`+form2+`2`+c+`\t`+form1+`2`+form2+`2`+c+`\t`+form1+`3`+form2+`2`+c+`\t`+form1+`4`+form2+`2`+c+`\t`+form1+`5`+form2+`2`+c+`\t`+form1+`6`+form2+`2`+c+`\t`+form1+`7`+form2+`2`+c+`\t`+form1+`8`+form3+`2`+c+`\t`+form1+`9`+form3+`2`+c+`
+      `+form1+`1`+form2+`3`+c+`\t`+form1+`2`+form2+`3`+c+`\t`+form1+`3`+form2+`3`+c+`\t`+form1+`4`+form2+`3`+c+`\t`+form1+`5`+form2+`3`+c+`\t`+form1+`6`+form2+`3`+c+`\t`+form1+`7`+form2+`3`+c+`\t`+form1+`8`+form3+`3`+c+`\t`+form1+`9`+form3+`3`+c+`
+      `+form1+`1`+form2+`4`+c+`\t`+form1+`2`+form2+`4`+c+`\t`+form1+`3`+form2+`4`+c+`\t`+form1+`4`+form2+`4`+c+`\t`+form1+`5`+form2+`4`+c+`\t`+form1+`6`+form2+`4`+c+`\t`+form1+`7`+form2+`4`+c+`\t`+form1+`8`+form3+`4`+c+`\t`+form1+`9`+form3+`4`+c+`
+      `+form1+`1`+form2+`5`+c+`\t`+form1+`2`+form2+`5`+c+`\t`+form1+`3`+form2+`5`+c+`\t`+form1+`4`+form2+`5`+c+`\t`+form1+`5`+form2+`5`+c+`\t`+form1+`6`+form2+`5`+c+`\t`+form1+`7`+form2+`5`+c+`\t`+form1+`8`+form3+`5`+c+`\t`+form1+`9`+form3+`5`+c+`
+      `+form1+`1`+form2+`6`+c+`\t`+form1+`2`+form2+`6`+c+`\t`+form1+`3`+form2+`6`+c+`\t`+form1+`4`+form2+`6`+c+`\t`+form1+`5`+form2+`6`+c+`\t`+form1+`6`+form2+`6`+c+`\t`+form1+`7`+form2+`6`+c+`\t`+form1+`8`+form3+`6`+c+`\t`+form1+`9`+form3+`6`+c+`
+      `+form1+`1`+form2+`7`+c+`\t`+form1+`2`+form2+`7`+c+`\t`+form1+`3`+form2+`7`+c+`\t`+form1+`4`+form2+`7`+c+`\t`+form1+`5`+form2+`7`+c+`\t`+form1+`6`+form2+`7`+c+`\t`+form1+`7`+form2+`7`+c+`\t`+form1+`8`+form3+`7`+c+`\t`+form1+`9`+form3+`7`+c+`
+      `+form1+`1`+form2+`8`+c+`\t`+form1+`2`+form2+`8`+c+`\t`+form1+`3`+form2+`8`+c+`\t`+form1+`4`+form2+`8`+c+`\t`+form1+`5`+form2+`8`+c+`\t`+form1+`6`+form2+`8`+c+`\t`+form1+`7`+form2+`8`+c+`\t`+form1+`8`+form3+`8`+c+`\t`+form1+`9`+form3+`8`+c+`
+      `+form1+`1`+form2+`9`+c+`\t`+form1+`2`+form2+`9`+c+`\t`+form1+`3`+form2+`9`+c+`\t`+form1+`4`+form2+`9`+c+`\t`+form1+`5`+form2+`9`+c+`\t`+form1+`6`+form2+`9`+c+`\t`+form1+`7`+form2+`9`+c+`\t`+form1+`8`+form3+`9`+c+`\t`+form1+`9`+form3+`9`+c+`
+      `+form1+`1`+form2+`10`+c+`\t`+form1+`2`+form2+`10`+c+`\t`+form1+`3`+form2+`10`+c+`\t`+form1+`4`+form2+`10`+c+`\t`+form1+`5`+form2+`10`+c+`\t`+form1+`6`+form2+`10`+c+`\t`+form1+`7`+form2+`10`+c+`\t`+form1+`8`+form3+`10`+c+`\t`+form1+`9`+form3+`10`+c+`
+      `+form1+`1`+form2+`11`+c+`\t`+form1+`2`+form2+`11`+c+`\t`+form1+`3`+form2+`11`+c+`\t`+form1+`4`+form2+`11`+c+`\t`+form1+`5`+form2+`11`+c+`\t`+form1+`6`+form2+`11`+c+`\t`+form1+`7`+form2+`11`+c+`\t`+form1+`8`+form3+`11`+c+`\t`+form1+`9`+form3+`11`+c+`
+      `+form1+`1`+form2+`12`+c+`\t`+form1+`2`+form2+`12`+c+`\t`+form1+`3`+form2+`12`+c+`\t`+form1+`4`+form2+`12`+c+`\t`+form1+`5`+form2+`12`+c+`\t`+form1+`6`+form2+`12`+c+`\t`+form1+`7`+form2+`12`+c+`\t`+form1+`8`+form3+`12`+c+`\t`+form1+`9`+form3+`12`+c+`
+      `+form1+`1`+form2+`13`+c+`\t`+form1+`2`+form2+`13`+c+`\t`+form1+`3`+form2+`13`+c+`\t`+form1+`4`+form2+`13`+c+`\t`+form1+`5`+form2+`13`+c+`\t`+form1+`6`+form2+`13`+c+`\t`+form1+`7`+form2+`13`+c+`\t`+form1+`8`+form3+`13`+c+`\t`+form1+`9`+form3+`13`+c+`
+      `+form1+`1`+form2+`14`+c+`\t`+form1+`2`+form2+`14`+c+`\t`+form1+`3`+form2+`14`+c+`\t`+form1+`4`+form2+`14`+c+`\t`+form1+`5`+form2+`14`+c+`\t`+form1+`6`+form2+`14`+c+`\t`+form1+`7`+form2+`14`+c+`\t`+form1+`8`+form3+`14`+c+`\t`+form1+`9`+form3+`14`+c+`
+      `+form1+`1`+form2+`15`+c+`\t`+form1+`2`+form2+`15`+c+`\t`+form1+`3`+form2+`15`+c+`\t`+form1+`4`+form2+`15`+c+`\t`+form1+`5`+form2+`15`+c+`\t`+form1+`6`+form2+`15`+c+`\t`+form1+`7`+form2+`15`+c+`\t`+form1+`8`+form3+`15`+c+`\t`+form1+`9`+form3+`15`+c+`
+      `+form1+`1`+form2+`16`+c+`\t`+form1+`2`+form2+`16`+c+`\t`+form1+`3`+form2+`16`+c+`\t`+form1+`4`+form2+`16`+c+`\t`+form1+`5`+form2+`16`+c+`\t`+form1+`6`+form2+`16`+c+`\t`+form1+`7`+form2+`16`+c+`\t`+form1+`8`+form3+`1`+c+`\t`+form1+`9`+form3+`1`+c;
               var input = document.getElementById("input");
               input.value = str;
               input.select();
