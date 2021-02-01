@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh">
+   <head>
+      <title>Facebook精确搜索</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta name="keywords" content="dev-coco, Facebook精确搜索, FB精确搜索, Facebook搜索"/>
+      <meta name="robots" content="index,follow"/>
+      <meta name="description" content="精确搜索Facebook相关信息。"/>
+      <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+      <link rel="stylesheet" href="https://dev-coco.github.io/css/site.css">
+      <script src="https://dev-coco.github.io/js/get-facebook-info.js"></script>
+      <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+      <link rel="stylesheet" href="https://dev-coco.github.io/css/get-facebook-info.css">
+      <style>
+         label {
+         font-size:18px;
+         }
+         input, select, button {
+         margin-top:7px;
+         }
+      </style>
+   </head>
+   <body>
+      <div class="container">
+         <h1 style="text-align:left;"><img class="logo" alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+         <div class="menu">
+            <a href="https://dev-coco.github.io/">主页</a>
+            <a href="https://dev-coco.github.io/blog">博客</a>
+            <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+            <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+            <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+            <a target="_blank" href="https://github.com/dev-coco">Github</a>
+         </div>
+         <h1 style="font-size:33px;">Facebook精确搜索</h1>
+         <div style="text-align:center;">
+            <select id="select_type" style="font-size:20px;">
+               <option value ="">请选择</option>
+               <option value ="posts">帖子</option>
+               <option value ="people">用户</option>
+               <option value="photos">照片</option>
+               <option value="places">地点</option>
+               <option value="groups">小组</option>
+            </select>
+            <br>
+            <label>关键词：</label>
+            <input type="text" id="keyword" style="font-size:18px;">
+            <br>
+            <label>地区ID：</label>
+            <input type="text" id="area_id" style="font-size:18px;">
+            <br>
+            <button onclick="confirm()" class="button blue" style="font-size:18px;width:75px;">确定</button>
+         </div>
+         <script>
+            function confirm() {
+                var value = document.getElementById("select_type").value;
+                var keyword = document.getElementById("keyword").value;
+                var keyword_str = encodeURIComponent(keyword);
+                var area_id = document.getElementById("area_id").value;
+                if (value == "posts" || value == "photos") {
+                    var area_id_str = btoa(`{"rp_location:0":"{\\"name\\":\\"location\\",\\"args\\":\\"` + area_id + `\\"}"}`);
+                } else if (value == "people") {
+                    var area_id_str = btoa(`{"city:0":"{\\"name\\":\\"users_location\\",\\"args\\":\\"` + area_id + `\\"}"}`);
+                } else if (value == "places") {
+                    var area_id_str = btoa(`{"enable_place_location_ids:0":"{\\"name\\":\\"place_location\\",\\"args\\":\\"` + area_id + `\\"}"}`);
+                } else if (value == "groups") {
+                    var area_id_str = btoa(`{"filter_groups_location:0":"{\\"name\\":\\"filter_groups_location\\",\\"args\\":\\"` + area_id + `\\"}"}`);
+                }
+                window.open('https://www.facebook.com/search/' + value + '?q=' + keyword_str + '&filters=' + area_id_str, '_blank');
+            }
+         </script>
+      </div>
+   </body>
+</html>
