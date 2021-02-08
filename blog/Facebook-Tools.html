@@ -32,7 +32,10 @@
          max-width: 100%; }
          img
          {
-         border-radius: 10px;display: block;margin-left: auto;margin-right: auto;
+         border-radius: 10px;
+         display: block;
+         margin-left: auto;
+         margin-right: auto;
          }
          #scrollup {
          width: 3rem;
@@ -124,7 +127,7 @@
              </tr>
              <tr>
                  <td>● <a href="#Excel超链接文本合并">Excel超链接文本合并</a></td>
-                 <td></td>
+                 <td>● <a href="#清理不活跃用户">清理不活跃用户</a></td>
              </tr>
          </table>
          <h2 id="取消发送的好友请求">取消发送的好友请求</h2>
@@ -200,12 +203,12 @@
          <img src="https://dev-coco.github.io/images/Facebook-Tools/3.png" />
          <h2 id="点赞列印">点赞列印</h2>
          <p>点击帖子下方的点赞数，在弹出的窗口选择👍或者❤️或者其他的，任选其一，向下滚动，点击插件。</p>
-         <img src="https://dev-coco.github.io/images/Facebook-Tools/4.png" />
+         <img width="500px;" src="https://dev-coco.github.io/images/Facebook-Tools/4.png" />
          <p>输入点赞类型，然后点击确定即可列印。</p>
-         <img src="https://dev-coco.github.io/images/Facebook-Tools/5.png" />
+         <img width="500px;" src="https://dev-coco.github.io/images/Facebook-Tools/5.png" />
          <h2 id="小组信息列印">小组信息列印</h2>
          <p>在小组简介界面，点击插件。不用在弹窗输入任何内容，点击确定可以列印出小组的地区、自动识别类型宗派还是外邦小组（目前只限英文）、名称，链接、周发帖量、增长人数、是否公开。</p>
-         <img src="https://dev-coco.github.io/images/Facebook-Tools/15.png">
+         <img width="500px;" src="https://dev-coco.github.io/images/Facebook-Tools/15.png">
          <p>如果点插件后没有效果，在小组简介界面刷新后再点击插件。</p>
          <h2 id="所有小组列印">所有小组列印</h2>
          <p>点击下方的链接，向下滚动，点击插件即可列印所有的小组名称和链接。</p>
@@ -216,13 +219,30 @@
          <img src="https://dev-coco.github.io/images/Facebook-Tools/13.png" />
          <h2 id="小组智能搜索">小组智能搜索</h2>
          <p>在搜索界面，下面的小组设置一个城市，然后点击插件。</p>
-         <img src="https://dev-coco.github.io/images/Facebook-Tools/6.png" />
+         <img width="500px;" src="https://dev-coco.github.io/images/Facebook-Tools/6.png" />
          <p>输入任意关键词搜索，城市位置不会变。因为在Facebook中重新搜索关键词后，城市的位置就需要重新设置了。如果要更换城市位置，可以重新设置位置后，再点击插件搜索关键词。</p>
-         <img src="https://dev-coco.github.io/images/Facebook-Tools/7.png" />
+         <img width="500px;" src="https://dev-coco.github.io/images/Facebook-Tools/7.png" />
+         
          <h2 id="批量拉黑用户">批量拉黑用户</h2>
+         <p style="text-align:center;"><b>方法一</b></p>
          <p>首先，需要把链接换成下面的这种格式，{user_id}替换成用户的数字ID。</p>
          <p>https://m.facebook.com/privacy/touch/block/confirm/?back_uri&bid={user_id}&source=privacy_settings_page</p>
          <p>然后打开链接，插件会自动拉黑此用户。可以在表格内设置好链接，批量打开链接，即可实现批量拉黑用户。</p>
+         <p style="text-align:center;"><b>方法二</b></p>
+         <p>在链接的末尾输入<code>?block</code>，如果是数字ID的链接在末尾输入<code>&amp;?block</code>，如果变成了<code>&amp;%3Fblock</code>是正常现象。</p>
+         <p>例子：</p>
+         <p>添加前：https://www.facebook.com/abcdefg
+         <br>
+         添加后：https://www.facebook.com/abcdefg<span style="color:red;">?block</span></p>
+         <p>添加前：https://www.facebook.com/profile.php?id=12345678
+         <br>
+         添加后：https://www.facebook.com/profile.php?id=12345678<span style="color:red;">&amp;?block</span></p>
+         <p>点击插件后，会出现一个窗口。在窗口内放入需要拉黑的链接，一行一个，点击确定就会批量打开拉黑用户的页面。
+         <br>⚠️注意：不要一次性放入太多的链接，否则批量打开过多的页面会导致电脑卡顿。
+         </p>
+         <img width="350px;" src="https://dev-coco.github.io/images/Facebook-Tools/17.png" />
+         <p>如果无法批量打开链接，需要在浏览器链接处设置一下。选择一律允许，点击完成。</p>
+         <img width="350px;" src="https://dev-coco.github.io/images/Facebook-Tools/18.png" />
          <h2 id="链接转换">链接转换</h2>
          <p style="text-align:center;"><b>ID转换真实链接</b></p>
          <p>在链接的末尾输入<code>?crealid</code>，如果是数字ID的链接在末尾输入<code>&amp;?crealid</code>，如果变成了<code>&amp;%3Fcrealid</code>是正常现象。</p>
@@ -234,7 +254,7 @@
          <br>
          添加后：https://www.facebook.com/profile.php?id=12345678<span style="color:red;">&amp;?crealid</span></p>
          <p>点击插件后，会出现一个弹窗。在弹窗内放入ID或者ID链接，点击确定后将会自动转换链接。</p>
-         <img src="https://dev-coco.github.io/images/Facebook-Tools/16.png" />
+         <img width="500px;" src="https://dev-coco.github.io/images/Facebook-Tools/16.png" />
          <p>例子：</p>
          <p>转换前：https://www.facebook.com/123456
          <br>
@@ -252,11 +272,11 @@
          <br>
          添加后：https://www.facebook.com/profile.php?id=12345678<span style="color:red;">&amp;?cnumid</span></p>
          <p>点击插件后，会出现一个弹窗。在弹窗内放入ID或者ID链接，点击确定后将会自动转换链接。</p>
-         <img src="https://dev-coco.github.io/images/Facebook-Tools/16.png" />
+         <img width="500px;" src="https://dev-coco.github.io/images/Facebook-Tools/16.png" />
          <p>例子：</p>
-         <p>转换前：123456
+         <p>转换前：https://www.facebook.com/abcdefg
          <br>
-         转换后：https://www.facebook.com/123456</p>
+         转换后：123456</p>
          <p>转换前：https://www.facebook.com/profile.php?id=654321
          <br>
          转换后：654321</p>
@@ -267,11 +287,21 @@
          <br>
          添加后：https://www.facebook.com<span style="color:red;">?online</span></p>
          <p>设置完链接后按回车键（return），等待右下角自动刷新出最新的在线好友数据后，点击插件即可列印。不过列印出来的是@好友的格式。</p>
+         <h2 id="列印不活跃用户">列印不活跃用户</h2>
+         <p>在好友列表的链接末尾输入<code>?inactive</code>，如果是数字ID的链接在末尾输入<code>&amp;?inactive</code>，如果变成了<code>&amp;%3Finactive</code>是正常现象。</p>
+         <p>例子：</p>
+         <p>添加前：https://www.facebook.com/abcdefg/friends
+         <br>
+         添加后：https://www.facebook.com/abcdefg/friends<span style="color:red;">?inactive</span></p>
+         <p>添加前：https://www.facebook.com/profile.php?id=12345678&amp;sk=friends
+         <br>
+         添加后：https://www.facebook.com/profile.php?id=12345678&amp;sk=friends<span style="color:red;">&amp;?inactive</span></p>
+         <p>设置完链接后按回车键（return），将好友页面滚动到底部，点击插件即可列印出不活跃账户的名字，如果没有列印出信息，说明当前页面没有不活跃的账户。列印出来后可以根据列印出来的名字搜索找到后解除好友关系。</p>
          <h2 id="Excel超链接文本合并">Excel超链接文本合并</h2>
          <p>将文本和超链接在Excel表格内并排放，如下图所示。然后全部选中，复制。</p>
-         <img src="https://dev-coco.github.io/images/Facebook-Tools/8.png" />
+         <img width="500px;" src="https://dev-coco.github.io/images/Facebook-Tools/8.png" />
          <p>点击插件，将刚才复制的内容粘贴到输入框，点击确定。</p>
-         <img src="https://dev-coco.github.io/images/Facebook-Tools/9.png" />
+         <img width="500px;" src="https://dev-coco.github.io/images/Facebook-Tools/9.png" />
          <p>带文本的超链接生成完成，全选复制，然后刷新页面回到表格。</p>
          <img src="https://dev-coco.github.io/images/Facebook-Tools/10.png" />
          <p>在表格粘贴即可，效果如下。</p>
