@@ -6,7 +6,7 @@ function get_printf_info() {
     for (var k = 0; k < facebookID.length; k++) {
         (function(k) {
             setTimeout(async function() {
-                let response1 = await fetch(`https://graph.facebook.com/` + facebookID[k] + `?fields=location,hometown,name,languages,religion,education&access_token=` + token + `&pretty=0`)
+                let response1 = await fetch(`https://graph.facebook.com/` + facebookID[k] + `?fields=location,hometown,name,languages,religion,education,birthday,gender,updated_time&access_token=` + token + `&pretty=0`)
                 if (response1.status == "400") {
                     new_page.document.write('<table><tbody><tr><td></td><td>' + [k + 1] + '</td><td><a href="https://www.facebook.com/' + facebookID[k] + '" target="_blank">' + facebookID[k] + '</a></td><td>请求受限</td></tr></tbody></table>');
                 } else {
@@ -47,8 +47,31 @@ function get_printf_info() {
                             var college = "未知";
                         }
                         var college_str = eval(`"` + college + `"`);
+                        try {
+                            var birthday = text1.match(/(?<=birthday":").*?(?=")/g)[0].replace(/\\/g, "");
+                        } catch {
+                            var birthday = "未知";
+                        }
+
+                        try {
+                            var update_time = text1.match(/(?<=updated_time":").*?(?=T)/g)[0];
+                        } catch {
+                            var update_time = "未知";
+                        }
+                        try {
+                            var gender = text1.match(/(?<=gender":").*?(?=")/g)[0];
+                            if (gender == "female") {
+                                var gender_str = "女";
+                            } else if (gender == "male") {
+                                var gender_str = "男";
+                            } else {
+                                var gender_str = "未知";
+                            }
+                        } catch {
+                            var gender_str = "未知";
+                        }
                     } catch {}
-                    new_page.document.write('<table><tbody><tr><td><img src="https://graph.facebook.com/' + facebookID[k] + '/picture?width=999&access_token=' + token + '" style="width:200;"></td><td>' + [k + 1] + '</td><td><a href="https://www.facebook.com/' + facebookID[k] + '" target="_blank">' + facebookID[k] + '</a></td><td>所在地：' + city_str + '</td><td>家乡：' + hometown_str + '</td><td>信仰：' + religion_str + '</td><td>语言：' + language_str + '</td><td>大学：' + college_str + '</td></tr></tbody></table>');
+                    new_page.document.write('<table><tbody><tr><td><img src="https://graph.facebook.com/' + facebookID[k] + '/picture?width=999&access_token=' + token + '" style="width:200;"></td><td>' + [k + 1] + '</td><td><a href="https://www.facebook.com/' + facebookID[k] + '" target="_blank">' + facebookID[k] + '</a></td><td>所在地：' + city_str + '</td><td>家乡：' + hometown_str + '</td><td>信仰：' + religion_str + '</td><td>语言：' + language_str + '</td><td>大学：' + college_str + '</td><td>性别：' + gender_str + '</td><td>生日：' + birthday + '</td><td>活跃时间：' + update_time + '</td></tr></tbody></table>');
                 }
             }, 1500 * k);
         })(k);
@@ -63,7 +86,7 @@ function get_printf_info_fast() {
     for (var k = 0; k < facebookID.length; k++) {
         (function(k) {
             setTimeout(async function() {
-                let response1 = await fetch(`https://graph.facebook.com/` + facebookID[k] + `?fields=location,hometown,name,languages,religion,education&access_token=` + token + `&pretty=0`)
+                let response1 = await fetch(`https://graph.facebook.com/` + facebookID[k] + `?fields=location,hometown,name,languages,religion,education,birthday,gender,updated_time&access_token=` + token + `&pretty=0`)
                 if (response1.status == "400") {
                     new_page.document.write('<table><tbody><tr><td></td><td>' + [k + 1] + '</td><td><a href="https://www.facebook.com/' + facebookID[k] + '" target="_blank">' + facebookID[k] + '</a></td><td>请求受限</td></tr></tbody></table>');
                 } else {
@@ -104,10 +127,33 @@ function get_printf_info_fast() {
                             var college = "未知";
                         }
                         var college_str = eval(`"` + college + `"`);
+                        try {
+                            var birthday = text1.match(/(?<=birthday":").*?(?=")/g)[0].replace(/\\/g, "");
+                        } catch {
+                            var birthday = "未知";
+                        }
+
+                        try {
+                            var update_time = text1.match(/(?<=updated_time":").*?(?=T)/g)[0];
+                        } catch {
+                            var update_time = "未知";
+                        }
+                        try {
+                            var gender = text1.match(/(?<=gender":").*?(?=")/g)[0];
+                            if (gender == "female") {
+                                var gender_str = "女";
+                            } else if (gender == "male") {
+                                var gender_str = "男";
+                            } else {
+                                var gender_str = "未知";
+                            }
+                        } catch {
+                            var gender_str = "未知";
+                        }
                     } catch {}
-                    new_page.document.write('<table><tbody><tr><td><img src="https://graph.facebook.com/' + facebookID[k] + '/picture?width=999&access_token=' + token + '" style="width:200;"></td><td>' + [k + 1] + '</td><td><a href="https://www.facebook.com/' + facebookID[k] + '" target="_blank">' + facebookID[k] + '</a></td><td>所在地：' + city_str + '</td><td>家乡：' + hometown_str + '</td><td>信仰：' + religion_str + '</td><td>语言：' + language_str + '</td><td>大学：' + college_str + '</td></tr></tbody></table>');
+                    new_page.document.write('<table><tbody><tr><td><img src="https://graph.facebook.com/' + facebookID[k] + '/picture?width=999&access_token=' + token + '" style="width:200;"></td><td>' + [k + 1] + '</td><td><a href="https://www.facebook.com/' + facebookID[k] + '" target="_blank">' + facebookID[k] + '</a></td><td>所在地：' + city_str + '</td><td>家乡：' + hometown_str + '</td><td>信仰：' + religion_str + '</td><td>语言：' + language_str + '</td><td>大学：' + college_str + '</td><td>性别：' + gender_str + '</td><td>生日：' + birthday + '</td><td>活跃时间：' + update_time + '</td></tr></tbody></table>');
                 }
-            }, 75 * k);
+            }, 150 * k);
         })(k);
     }
 }
@@ -147,7 +193,7 @@ function get_avatar_fast(e) {
                     let text = await response.url
                     new_page.document.write('<table><tbody><tr><td>' + [k + 1] + '</td><td>=IMAGE("' + response.url + '")</td></tr></tbody></table>');
                 }
-            }, 50 * k);
+            }, 150 * k);
         })(k);
     }
 }
