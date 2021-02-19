@@ -230,10 +230,10 @@
 	try {
 	google.script.run.cleaner();
 	} catch {}
-        $(".post_link").val('');
+        document.getElementsByClassName("post_link")[0].value="";
         try { 
-        $('#show_track_link').val("");
-        $('#show_track_link').html("");
+        document.getElementsByClassName("track_link")[0].innerHTML="";
+        document.getElementById("show_hyperlink").innerHTML="";
         } catch {}
     }
 
