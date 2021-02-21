@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh">
+   <head>
+      <title>屏蔽OTA更新</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta name="keywords" content="dev-coco, OTA Update, Disable Update, iOS Update"/>
+      <meta name="robots" content="index,follow"/>
+      <meta name="description" content="屏蔽OTA更新，让iPhone/iPad不会自动更新到最新系统。"/>
+      <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+      <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+      <link rel="stylesheet" href="https://dev-coco.github.io/css/site.css">
+      <style>
+          .img {
+              width: 40%;
+          }
+
+          video::-webkit-media-controls {
+              display: none !important;
+          }
+
+          video::-webkit-media-controls-enclosure {
+              display: none !important;
+          }
+
+          .notice {
+              position: fixed;
+              left: 50%;
+              top: 50%;
+              -webkit-transform: translate(-50%, -50%);
+              z-index: 9999;
+              text-align: center;
+              background-color: white;
+              padding: 12px;
+              border-radius: 10px;
+          }
+
+          @media (prefers-color-scheme:dark) {
+              .notice {
+                  background-color: #2e3033;
+              }
+          }
+      </style>
+      <script>
+         function mobile_device() {
+             if (navigator.userAgent.match(/iPhone|iPod|iPad/i)) {
+                 window.open("https://dev-coco.github.io/bota.mobileconfig", "_blank");
+             } else {
+                 document.getElementsByClassName("notice")[0].setAttribute("style", "display:block");
+             }
+         }
+
+         function close_notice() {
+             document.getElementsByClassName("notice")[0].setAttribute("style", "display:none");
+         }
+      </script>
+   </head>
+   <body>
+      <div class="container">
+         <h1 style="text-align:left;"><img class="logo" alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+         <div class="menu">
+            <a href="https://dev-coco.github.io/">主页</a>
+            <a href="https://dev-coco.github.io/blog">博客</a>
+            <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+            <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+            <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+            <a target="_blank" href="https://github.com/dev-coco">Github</a>
+         </div>
+         <h1>屏蔽OTA更新</h1>
+         <p>当苹果发布了新版本的iOS系统时，设备只要联网就会在后台静默下载更新文件。一方面会占用设备的内存，另一方面容易误触而不小心了更新了系统。下面就介绍一个方法可以屏蔽OTA更新。</p>
+         <h2>使用方法</h2>
+         <p style="text-align:center;"><a onclick="mobile_device()">屏蔽OTA更新</a></p>
+         <p>点击链接后会跳转到Safari下载一个描述文件，点击允许。</p>
+         <img alt="iOS Update, OTA, Disable Update" class="img" src="https://dev-coco.github.io/images/Block-OTA-Update/1.png">
+         <p>下载完成后点击关闭按钮。</p>
+         <img alt="iOS Update, OTA, Disable Update" class="img" src="https://dev-coco.github.io/images/Block-OTA-Update/2.png">
+         <p>点开设置，找到已下载描述文件。</p>
+         <img alt="iOS Update, OTA, Disable Update" class="img" src="https://dev-coco.github.io/images/Block-OTA-Update/3.png">
+         <p>点击安装。</p>
+         <img alt="iOS Update, OTA, Disable Update" class="img" src="https://dev-coco.github.io/images/Block-OTA-Update/4.png">
+         <p>然后会提示需要输入锁屏密码。</p>
+         <img alt="iOS Update, OTA, Disable Update" class="img" src="https://dev-coco.github.io/images/Block-OTA-Update/5.png">
+         <p>输入完成后再次点安装。</p>
+         <img alt="iOS Update, OTA, Disable Update" class="img" src="https://dev-coco.github.io/images/Block-OTA-Update/6.png">
+         <p>如果安装后提示需要重启设备，那么就点重新启动，如果没有提示就忽略此步骤。</p>
+         <img alt="iOS Update, OTA, Disable Update" class="img" src="https://dev-coco.github.io/images/Block-OTA-Update/7.png">
+         <p>安装完成后在软件更新里面就会显示当前的系统为最新系统，不会收到新系统的推送了。</p>
+         <img alt="iOS Update, OTA, Disable Update" class="img" src="https://dev-coco.github.io/images/Block-OTA-Update/8.png">
+         <p>安装完配置文件后设备上会出现一个Feedback软件，这个是系统隐藏的软件，属于正常情况。</p>
+         <img alt="iOS Update, OTA, Disable Update" style="width:10%;" class="img" src="https://dev-coco.github.io/images/Block-OTA-Update/9.png">
+         <p>详细操作请看下面的动态图。</p>
+         <video class="img" controls muted autoplay="autoplay" loop="loop">
+            <source src="https://dev-coco.github.io/images/Block-OTA-Update/10.mp4" type="video/mp4">
+         </video>
+         <div class="notice" style="display:none;" onclick="close_notice()">
+            <p>使用相机扫描二维码打开链接</p>
+            <img alt="iOS Update, OTA, Disable Update" style="width:200px;" src="https://dev-coco.github.io/images/Block-OTA-Update/QRCode.png";>
+         </div>
+      </div>
+   </body>
+</html>
