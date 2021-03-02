@@ -80,7 +80,7 @@ function get_printf_info() {
 }
 
 function get_avatar() {
-    var token = document.getElementById("avatar_token").value;
+    // var token = document.getElementById("avatar_token").value;
     var get_id = document.getElementById("avatar_url").value;
     var get_delay_time = document.getElementById("avatar_delay_time").value;
     var facebookID = get_id.match(/.+/g);
@@ -88,7 +88,7 @@ function get_avatar() {
     for (var k = 0; k < facebookID.length; k++) {
         (function(k) {
             setTimeout(async function() {
-                let response = await fetch(`https://graph.facebook.com/` + facebookID[k] + `/picture?width=999&access_token=` + token)
+                let response = await fetch(`https://graph.facebook.com/` + facebookID[k] + `/picture?width=9999&access_token=2712477385668128|b429aeb53369951d411e1cae8e810640`)
                 if (response.status == "400") {
                     new_page.document.write('<table><tbody><tr><td>' + [k + 1] + '</td><td>请求受限</td></tr></tbody></table>');
                 } else {
