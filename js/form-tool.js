@@ -233,7 +233,9 @@
         document.getElementsByClassName("post_link")[0].value="";
         try { 
         document.getElementsByClassName("track_link")[0].innerHTML="";
+	document.getElementsByClassName("track_link")[0].value="";
         document.getElementById("show_hyperlink").innerHTML="";
+	document.getElementById("show_hyperlink").value="";
         } catch {}
     }
 
