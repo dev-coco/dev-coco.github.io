@@ -10,5 +10,5 @@ para.setAttribute("src", "https://hits.seeyoufarm.com/api/count/incr/badge.svg?u
 para.setAttribute("style", "float:right;width:180px;");
 } catch {
   var httpRequest=new XMLHttpRequest;httpRequest.open("GET","https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&amp;count_bg=%2310C1F9&amp;title_bg=%23555555&amp;icon=html5.svg&amp;icon_color=%23E7E7E7&amp;title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&amp;edge_flat=false",!0),httpRequest.send();
+  setTimeout(function() { console.clear() }, 1000);
 }
-console.clear()
