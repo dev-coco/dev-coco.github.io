@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh">
+   <head>
+      <title>Facebook站点搜索</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta name="keywords" content="dev-coco, Facebook, Facebook搜索" />
+      <meta name="robots" content="index,follow" />
+      <meta name="description" content="Facebook站点搜索" />
+      <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+      <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+      <link rel="stylesheet" href="https://dev-coco.github.io/css/site.css">
+      <style>.col-lg-3{position:fixed;width:300px}.col-lg-9{margin-left:250px}@media screen and (max-width:800px){.col-lg-3{display:none}.col-lg-9{margin-left:0}}p:hover,span:hover{border:1px solid #96c2f1}.button{display:table-cell}</style>
+      <script src="https://dev-coco.github.io/js/facebook-search.js" async="async"></script>
+      <script src="facebook-search.js" async="async"></script>
+   </head>
+   <body>
+      <div class="container">
+         <h1 style="text-align:left;"><img class="logo" alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+         <div class="menu">
+            <a href="https://dev-coco.github.io/">主页</a>
+            <a href="https://dev-coco.github.io/blog">博客</a>
+            <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+            <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+            <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+            <a target="_blank" href="https://github.com/dev-coco">Github</a>
+         </div>
+         <div class="row">
+            <div class="col-lg-3" style="position: fixed; width:265px;text-align:center;">
+               <h1 class="my-4">选择方式</h1>
+               <div class="list-group" style="text-align:center;overflow-y:scroll;height:600px;">
+                  <a class="list-group-item">🇮🇳&nbsp;印度<br>
+                  <button class="button blue" onclick="India_Facebook()">N</button>
+                  <button class="button blue" onclick="India_Facebook_Group()">G</button>
+                  <button class="button blue" onclick="India_Facebook_about()">A</button>
+                  <button class="button blue" onclick="India_Facebook_pages()">P</button>
+                  <button class="button blue" onclick="India_Facebook_community()">C</button>
+                  <button class="button blue" onclick="India_Facebook_places()">PL</button>
+                  </a>
+               </div>
+            </div>
+            <div class="col-lg-9">
+               <iframe id="devices" frameborder="no" src="" style="height: 100vh;width:100%;scrolling:no;"></iframe>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>
