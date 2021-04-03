@@ -119,7 +119,7 @@
         // 引导语
         var fb_guide = document.getElementsByClassName("guide")[0].value;
         // 中文引导语
-        var fb_cn_guide = document.getElementsByClassName("cn_guide")[0].value;
+        var fb_cn_guide = document.getElementsByClassName("cn_guide")[0].value.replace(/^"*|["]*$/g,"");
         // 图片来源
         var fn_image_origin = getSheetName("posting_status");
         //网站原链接
@@ -230,7 +230,12 @@
 	try {
 	google.script.run.cleaner();
 	} catch {}
-        document.getElementsByClassName("post_link")[0].value="";
+    try {
+    if (track_link.match(/holyspiritspeaks/g) == "holyspiritspeaks") {
+    google.script.run.userClicked4(date,filter_name,fb_name,fb_article_place,fb_post_type,fb_place_name,fb_image_name,fn_image_origin,fb_cn_guide,fn_web_link,fb_pose_link,track_link,none);
+    } else {}
+    } catch {}
+    document.getElementsByClassName("post_link")[0].value="";
         try { 
         document.getElementsByClassName("track_link")[0].innerHTML="";
 	document.getElementsByClassName("track_link")[0].value="";
