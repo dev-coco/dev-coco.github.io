@@ -29,6 +29,7 @@
          <div class="col-lg-3" style="position: fixed; width:250px;text-align:center;">
             <h1 class="my-4">导航</h1>
             <div class="list-group" style="overflow-y:scroll;height:600px;">
+               <a href="#进度" class="list-group-item">进度</a>
                <a href="#分割线" class="list-group-item">分割线</a>
                <a href="#组合" class="list-group-item">组合</a>
                <a href="#💝" class="list-group-item">💝</a>
@@ -54,6 +55,13 @@
             </div>
          </div>
          <div class="col-lg-9">
+             <h2 id="进度">进度</h2>
+             <div style="text-align:center;">
+               <div id="Today"></div>
+               <div id="This_Week"></div>
+               <div id="This_Month"></div>
+               <div id="This_Year"></div>
+             </div>
              <h2 id="分割线">分割线</h2>
              <p class="emoji" data-clipboard-text="🌷🌻🌷🌻🌷🌻🌷🌻🌷🌻🌷🌻🌷🌻🌷🌻🌷🌻🌷🌻🌷🌻🌷🌻🌷🌻">🌷🌻🌷🌻🌷🌻🌷🌻🌷🌻🌷🌻🌷🌻🌷🌻🌷🌻🌷🌻🌷🌻🌷🌻🌷🌻</p>
              <p class="emoji" data-clipboard-text="✼•┈┈┈┈•🌲🌲•┈┈┈┈•💗💗•┈┈┈┈•🌲🌲•┈┈┈┈•💗💗✼">✼•┈┈┈┈•🌲🌲•┈┈┈┈•💗💗•┈┈┈┈•🌲🌲•┈┈┈┈•✼</p>
@@ -1160,6 +1168,46 @@
          </div>
          <script>
             var clipboard = new ClipboardJS('.emoji');
+            var secondsInADay = 24 * 60 * 60;
+            var now = new Date();
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            var seconds = now.getSeconds();
+            var week = now.getDay();
+            var year = new Date().getFullYear();
+            var today_in_year = Math.ceil((now - new Date(now.getFullYear().toString())) / (24 * 60 * 60 * 1000)) - 1;
+            var year_total_days = 0;
+            for (var i = 1; i < 13; i++) {
+               d = new Date(year, i, 0);
+               year_total_days += d.getDate();
+            };
+            var today = now.getDate();
+            var get_month = now.setMonth(now.getMonth() + 1);
+            var set_month = now.setDate(0);
+            var month = now.getDate();
+            var totalSeconds = (hours * 60 * 60) + (minutes * 60) + seconds;
+            var day_percent = 100 * totalSeconds / secondsInADay;
+            var day_use_percent = (day_percent / 10).toFixed();
+            var day_unused_percent = 10 - day_use_percent;
+            var week_percent = 100 * (secondsInADay * (week - 1) + totalSeconds) / (secondsInADay * 7);
+            var week_use_percent = (week_percent / 10).toFixed();
+            var week_unused_percent = 10 - week_use_percent;
+            var month_percent = 100 * (secondsInADay * (today - 1) + totalSeconds) / (secondsInADay * month);
+            var month_use_percent = (month_percent / 10).toFixed();
+            var month_unused_percent = 10 - month_use_percent;
+            var year_percent = 100 * (secondsInADay * (today_in_year - 1) + totalSeconds) / (secondsInADay * year_total_days);
+            var year_use_percent = (year_percent / 10).toFixed();
+            var year_unused_percent = 10 - year_use_percent;
+            function use(num) {
+             return ('■').repeat(num);
+            }
+            function unused(num) {
+               return ('□').repeat(num);
+            }
+            document.getElementById("Today").innerHTML = '<p class="emoji" data-clipboard-text="Today ' + use(day_use_percent) + unused(day_unused_percent) + ' ' + day_percent.toFixed(1) + '%">Today ' + use(day_use_percent) + unused(day_unused_percent) + ' ' + day_percent.toFixed(1) + '%</p>';
+            document.getElementById("This_Week").innerHTML = '<p class="emoji" data-clipboard-text="Week ' + use(week_use_percent) + unused(week_unused_percent) + ' ' + week_percent.toFixed(1) + '%">Week ' + use(week_use_percent) + unused(week_unused_percent) + ' ' + week_percent.toFixed(1) + '%</p>';
+            document.getElementById("This_Month").innerHTML = '<p class="emoji" data-clipboard-text="Month ' + use(month_use_percent) + unused(month_unused_percent) + ' ' + month_percent.toFixed(1) + '%">Month ' + use(month_use_percent) + unused(month_unused_percent) + ' ' + month_percent.toFixed(1) + '%</p>';
+            document.getElementById("This_Year").innerHTML = '<p class="emoji" data-clipboard-text="Year ' + use(year_use_percent) + unused(year_unused_percent) + ' ' + year_percent.toFixed(1) + '%">Year ' + use(year_use_percent) + unused(year_unused_percent) + ' ' + year_percent.toFixed(1) + '%</p>';
          </script>
       </div>
    </body>
