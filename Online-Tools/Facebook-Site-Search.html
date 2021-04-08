@@ -11,8 +11,26 @@
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
       <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
       <link rel="stylesheet" href="https://dev-coco.github.io/css/site.css">
-      <style>.col-lg-3{position:fixed;width:300px}.col-lg-9{margin-left:250px}@media screen and (max-width:800px){.col-lg-3{display:none}.col-lg-9{margin-left:0}}p:hover,span:hover{border:1px solid #96c2f1}.button{display:table-cell}</style>
+      <style>.col-lg-3{position:fixed;width:300px}.col-lg-9{margin-left:250px}@media screen and (max-width:800px){.col-lg-3{display:none}.col-lg-9{margin-left:0}}p:hover,span:hover{border:1px solid #96c2f1}.button{display:table-cell}table,td{border: 1px solid #ddd;}</style>
       <script src="https://dev-coco.github.io/js/facebook-search.js" async="async"></script>
+      <style>
+         .notice {
+              position: fixed;
+              left: 50%;
+              top: 50%;
+              -webkit-transform: translate(-50%, -50%);
+              z-index: 9999;
+              text-align: center;
+              background-color: white;
+              padding: 12px;
+              border-radius: 10px;
+          }
+          @media (prefers-color-scheme:dark) {
+              .notice {
+                  background-color: #2e3033;
+              }
+          }
+      </style>
    </head>
    <body>
       <div class="container">
@@ -29,6 +47,9 @@
             <div class="col-lg-3" style="position: fixed; width:265px;text-align:center;">
                <h1 class="my-4">选择方式</h1>
                <div class="list-group" style="text-align:center;overflow-y:scroll;height:600px;">
+                  <a class="list-group-item">
+                     <button class="button blue" onclick="show_notice()">说明</button>
+                  </a>
                   <a class="list-group-item">🌍&nbsp;全球<br>
                      <button class="button blue" onclick="Global_Facebook()">N</button>
                      <button class="button blue" onclick="Global_Facebook_Group()">G</button>
@@ -48,8 +69,52 @@
                </div>
             </div>
             <div class="col-lg-9">
+               <div class="notice" style="display:none;" onclick="close_notice()">
+                  <table style="margin-left:auto; margin-right:auto; text-align:center;width:200px;">
+                     <tbody>
+                        <tr>
+                           <td>N</td>
+                           <td>Normal</td>
+                           <td>正常</td>
+                        </tr>
+                        <tr>
+                           <td>G</td>
+                           <td>Group</td>
+                           <td>小组</td>
+                        </tr>
+                        <tr>
+                           <td>A</td>
+                           <td>About</td>
+                           <td>关于</td>
+                        </tr>
+                        <tr>
+                           <td>P</td>
+                           <td>Pages</td>
+                           <td>专页</td>
+                        </tr>
+                        <tr>
+                           <td>C</td>
+                           <td>community</td>
+                           <td>社群</td>
+                        </tr>
+                        <tr>
+                           <td>PL</td>
+                           <td>Places</td>
+                           <td>地标</td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
                <iframe id="devices" frameborder="no" src="" style="height: 100vh;width:100%;scrolling:no;"></iframe>
             </div>
+            <script>
+               function show_notice() {
+                  document.getElementsByClassName("notice")[0].setAttribute("style", "display:block");
+               }
+               function close_notice() {
+                  document.getElementsByClassName("notice")[0].setAttribute("style", "display:none");
+               }
+            </script>
          </div>
       </div>
    </body>
