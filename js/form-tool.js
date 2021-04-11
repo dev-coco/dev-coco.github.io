@@ -75,7 +75,9 @@
         var reg = RegExp(/holyspiritspeaks|kingdomsalvation|answerforchristians|bible-..|alkitabonline|bibbia-..|bibliadeestudo|biblia-..|godfootsteps|jesucristo|evangelio|easternlightning|vangelodioggi/);
         if (fn_web_link.match(reg)) {
             var aa = '<a href="' + res + '" target = "_blank">' + res + '</a>';
-        } else {
+        } else if (fn_web_link.match(/whatsapp/)) {
+	    var aa = '<a href="' + res.replace(/&/g,"") + '" target = "_blank">' + res.replace(/&/g,"") + '</a>';
+	} else {
             return;
         }
         document.getElementById("show_track_link").innerHTML = aa;
