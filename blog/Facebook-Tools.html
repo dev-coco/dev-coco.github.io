@@ -87,7 +87,27 @@
              background-color: #f9f2f4;
              border-radius: 4px;
          }
+      
+      .hide {
+          display:none;
+      }
       </style>
+      <script>
+          function show() {
+              var get_data = document.getElementsByClassName("hide");
+              for (var i = 0; i < get_data.length; i++) {
+                  
+                  (function(i) {
+                      setTimeout(function() {
+          
+                                 var a = document.getElementsByClassName("hide")[0].setAttribute("style","")
+                                 var b = document.getElementsByClassName("hide")[0].setAttribute("class","");
+                                 
+                      }, 1 * i);
+                  })(i);
+              }
+          }
+          </script>
    </head>
 </html>
 <body>
@@ -111,7 +131,7 @@
                  <td>● <a href="#好友列印">好友列印</a></td>
              </tr>
              <tr>
-                 <td>● <a href="#批量拉黑用户">批量拉黑用户</a></td>
+                 <td>● <a href="#智能隐藏标记用户">智能隐藏标记用户</a></td>
                  <td>● <a href="#点赞列印">点赞列印</a></td>
              </tr>
              <tr>
@@ -128,22 +148,22 @@
              </tr>
              <tr>
                  <td>● <a href="#寻找标记用户">寻找标记用户</a></td>
-                 <td>● <a href="#开包厢辅助">开包厢辅助</a></td>
-             </tr>
-             <tr>
                  <td>● <a href="#隐藏标记用户">隐藏标记用户</a></td>
-                 <td>● <a href="#链接转换">链接转换</a></td>
-             </tr>
-             <tr>
-                 <td>● <a href="#智能隐藏标记用户">智能隐藏标记用户</a></td>
-                 <td>● <a href="#自动戳一戳">自动戳一戳</a></td>
              </tr>
              <tr>
                  <td>● <a href="#Excel超链接文本合并">Excel超链接文本合并</a></td>
                  <td>● <a href="#列印停用账户">列印停用账户</a></td>
              </tr>
-             <tr>
+             <tr class="hide">
                  <td>● <a href="#首页自动点赞">首页自动点赞</a></td>
+                 <td>● <a href="#批量拉黑用户">批量拉黑用户</a></td>
+             </tr>
+             <tr class="hide">
+                 <td>● <a href="#自动戳一戳">自动戳一戳</a></td>
+                 <td>● <a href="#链接转换">链接转换</a></td>
+             </tr>
+             <tr class="hide">
+                 <td>● <a href="#开包厢辅助">开包厢辅助</a></td>
                  <td></td>
              </tr>
          </table>
@@ -157,9 +177,11 @@
          <a href="https://m.facebook.com/friends/center/suggestions" target="_blank">https://m.facebook.com/friends/center/suggestions</a>
          <img src="https://dev-coco.github.io/images/Facebook-Tools/2.png" />
          <p>输入框内默认预设10个，每次点击加号按钮会叠加10个。设置好数值后点击开始就会在当前页面按顺序移除推荐好友。例如当前页面有20个推荐好友，设置8个，点击开始后就会在这20个里面取消8个推荐好友，每次清理完后需要在原来的数值上叠加才可以继续使用。</p>
+         <div class="hide">
          <h2 id="自动戳一戳">自动戳一戳</h2>
          <p>点击下方的链接，然后点击插件就会自动“戳”一下好友。3-10秒随机延时，当前页面“戳”完后会自动往下滚动继续执行操作。</p>
          <a href="https://www.facebook.com/pokes" target="_blank">https://www.facebook.com/pokes</a>
+         </div>
          <h2 id="寻找标记用户">寻找标记用户</h2>
          <p>目前仅支持在时间线好友列表、小组成员、小组贴文点赞和搜索用户这四个界面使用。在链接的末尾输入<code>?findmark</code>，如果是数字ID的链接或者是搜索用户页面，需要在末尾输入<code>&amp;?findmark</code>，如果变成了<code>&amp;%3Ffindmark</code>是正常现象。</p>
          <p>例子：</p>
@@ -234,6 +256,7 @@
          <h2 id="所有小组列印">所有小组列印</h2>
          <p>点击下方的链接，向下滚动，点击插件即可列印所有的小组名称和链接。</p>
          <a href="https://m.facebook.com/groups_browse/your_groups/" target="_blank">https://m.facebook.com/groups_browse/your_groups/</a>
+         <div class="hide">
          <h2 id="开包厢辅助">开包厢辅助</h2>
          <img style="float:left;width:300px;margin-right:15px;" src="https://dev-coco.github.io/images/Facebook-Tools/8.png" />
          <p>鼠标放在粉色箭头圈圈上，即可显示功能按钮。</p>
@@ -245,12 +268,13 @@
          <p>点击性能优化，视频会变成黑屏（自己看不到但是别人可以看到），再次点击按钮即可恢复正常。视频在黑屏的状态下会减少CPU的使用率，从而缓解开包厢时电脑运行缓慢。效果如下图：</p>
          <img src="https://dev-coco.github.io/images/Facebook-Tools/9.png" />
          <img src="https://dev-coco.github.io/images/Facebook-Tools/10.png" />
+         </div>
          <h2 id="智能搜索">智能搜索</h2>
          <p>在搜索界面，使用任意筛选条件，设置一个城市，然后点击插件。</p>
          <img width="500px;" src="https://dev-coco.github.io/images/Facebook-Tools/11.png" />
          <p>输入任意关键词搜索，城市位置不会变。因为在Facebook中重新搜索关键词后，城市的位置就需要重新设置了。如果要更换城市位置，可以重新设置位置后，再点击插件搜索关键词。</p>
          <img width="500px;" src="https://dev-coco.github.io/images/Facebook-Tools/12.png" />
-         
+         <div class="hide">
          <h2 id="批量拉黑用户">批量拉黑用户</h2>
          <p style="text-align:center;"><b>方法一</b></p>
          <p>首先，需要把链接换成下面的这种格式，{user_id}替换成用户的数字ID。</p>
@@ -273,6 +297,8 @@
          <img width="350px;" src="https://dev-coco.github.io/images/Facebook-Tools/13.png" />
          <p>如果无法批量打开链接，需要在浏览器链接处设置一下。选择一律允许，点击完成。</p>
          <img width="350px;" src="https://dev-coco.github.io/images/Facebook-Tools/14.png" />
+         </div>
+         <div class="hide">
          <h2 id="链接转换">链接转换</h2>
          <p>在链接的末尾输入<code>?ctool</code>，如果是数字ID的链接在末尾输入<code>&amp;?ctool</code>，如果变成了<code>&amp;%3Fctool</code>是正常现象。</p>
          <p>例子：</p>
@@ -299,6 +325,7 @@
          <p>转换前：https://www.facebook.com/profile.php?id=654321
          <br>
          转换后：654321</p>
+         </div>
          <h2 id="在线好友列印">在线好友列印</h2>
          <p>在Facebook首页（不是时间线）的链接的末尾输入<code>?online</code></p>
          <p>例子：</p>
@@ -325,6 +352,7 @@
          <img src="https://dev-coco.github.io/images/Facebook-Tools/18.png" />
          <p>在表格粘贴即可，效果如下。</p>
          <img src="https://dev-coco.github.io/images/Facebook-Tools/19.png" />
+         <div class="hide">
          <h2 id="首页自动点赞">首页自动点赞</h2>
          <p>在Facebook首页（不是时间线）的链接的末尾输入<code>?autolike</code>，并且把www改成m</p>
          <p>例子：</p>
@@ -334,9 +362,7 @@
          <p>设置完链接后按回车键（return），点击插件就会开始自动点赞首页的帖子。</p>
          <img src="https://dev-coco.github.io/images/Facebook-Tools/20.png" />
          <p>在正中间的上方会出现一个黄色的悬浮框，显示点赞的信息，分别是：点赞数/已赞过数/总数。3-10秒随机延时，当前页面全部点赞完后会自动往下滚动继续执行操作。有30%的几率会自动跳过一个帖子不点赞，更加随机化。</p>
-         <h2>相关推荐：</h2>
-         <p><a href="https://dev-coco.github.io/Online-Tools/Facebook-Precise-Search.html" target="_blank">Facebook精确搜索</a>
-         <p><a href="https://dev-coco.github.io/Online-Tools/Get-Facebook-Info.html" target="_blank">获取Facebook信息</a>
+         </div>
          <a onclick="scrollup()" id="scrollup"><svg viewBox="0 0 16 16" class="bi bi-arrow-up-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
            <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>
          </svg></a>
