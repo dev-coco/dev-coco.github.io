@@ -46,7 +46,6 @@
         var none = "";
         // 检测
         var detect = document.getElementsByClassName("btn waves-effect waves-teal check");
-	var detect1 = document.getElementsByClassName("btn waves-effect waves-teal check1");
         if (detect.length == 1) {
             if (fn_web_url.length == 0) {
                 alert("请输入原链接!");
@@ -60,28 +59,7 @@
    		alert("请选择名字!");
  		return;
 	    }
-        } else if (detect1.length == 1) {
-		if (selectName == null, selectName == undefined) {
-			alert("请选择名字!");
-			return;
-		}
-		if (fb_article_place.length == 0) {
-			alert("请输入发帖位置!");
-			return;
-		}
-		if (fb_guide.length == 0) {
-			alert("请输入外文引导语!");
-			return;
-		}
-		if (fb_cn_guide.length == 0) {
-			alert("请输入中文引导语!");
-			return;
-		}
-		if (fn_web_url.length == 0) {
-			alert("请输入原链接!");
-			return;
-		}
-	} else {}
+        } else {}
         var num = Math.floor(Math.random() * 10000000);
         if (fn_web_link.match(/\/$/g) == "/") {
         if (user_id || "undefined" == typeof user_id || 0 == user_id) lastLink = fn_web_link.replace(/\/$/g, "") + "&?source=" + fb_article_place + user_id + "&num=" + num;
@@ -315,22 +293,3 @@
         var box = document.getElementById("show_notice");
         box.style.display = "none";
     }
-
-function translate_to_cn() {
-	var other_guide = document.getElementsByClassName("guide")[0].value;
-	var clean = document.getElementsByClassName("cn_guide")[0].value = "";
-	var other_guide_arr = encodeURIComponent(other_guide).replace(/\.|,|!/g, "").match(/.{7932}/g);
-	if (other_guide_arr == null) {
-		var other_guide_arr = encodeURIComponent(other_guide).replace(/\.|,|!/g, "").match(/.+/g);
-	}
-	for (var i = 0; i < other_guide_arr.length; i++) {
-		(async function(i) {
-			let response = await fetch("https://cors-anywhere.herokuapp.com/https://translate.google.com/translate_a/single?client=gtx&dt=t&dj=1&ie=UTF-8&sl=auto&tl=zh_CN&q=" + other_guide_arr[0].replace(/%$/g, ""))
-			let text = await response.text();
-			var get_data = text.match(/(?<=trans\":\").*?(?=\",\"orig)/g);
-			for (var i = 0; i < get_data.length; i++) {
-				var cn_guide = document.getElementsByClassName("cn_guide")[0].value += get_data[i];
-			}
-		})(i);
-	}
-}
