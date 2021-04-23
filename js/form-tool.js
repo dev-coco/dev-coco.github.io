@@ -46,7 +46,7 @@ function getValue1() {
 	var none = "";
 	// 检测
 	var detect = document.getElementsByClassName("btn waves-effect waves-teal check");
-	var detect = document.getElementsByClassName("btn waves-effect waves-teal check1");
+	var detect1 = document.getElementsByClassName("btn waves-effect waves-teal check1");
 	if (detect.length == 1) {
 		if (fn_web_url.length == 0) {
 			alert("请输入原链接!");
@@ -60,7 +60,7 @@ function getValue1() {
 			alert("请选择名字!");
 			return;
 		}
-	} else if (detect.length == 1) {
+	} else if (detect1.length == 1) {
 		if (selectName == null, selectName == undefined) {
 			alert("请选择名字!");
 			return;
