@@ -46,6 +46,7 @@
         var none = "";
         // 检测
         var detect = document.getElementsByClassName("btn waves-effect waves-teal check");
+        var detect1 = document.getElementsByClassName("btn waves-effect waves-teal check1");
         if (detect.length == 1) {
             if (fn_web_url.length == 0) {
                 alert("请输入原链接!");
@@ -59,7 +60,28 @@
    		alert("请选择名字!");
  		return;
 	    }
-        } else {}
+        } else if (detect1.length == 1) {
+		if (selectName == null, selectName == undefined) {
+			alert("请选择名字!");
+			return;
+		}
+		if (fb_article_place.length == 0) {
+			alert("请输入发帖位置!");
+			return;
+		}
+		if (fb_guide.length == 0) {
+			alert("请输入外文引导语!");
+			return;
+		}
+		if (fb_cn_guide.length == 0) {
+			alert("请输入中文引导语!");
+			return;
+		}
+		if (fn_web_url.length == 0) {
+			alert("请输入原链接!");
+			return;
+		}
+	} else {}
         var num = Math.floor(Math.random() * 10000000);
         if (fn_web_link.match(/\/$/g) == "/") {
         if (user_id || "undefined" == typeof user_id || 0 == user_id) lastLink = fn_web_link.replace(/\/$/g, "") + "&?source=" + fb_article_place + user_id + "&num=" + num;
