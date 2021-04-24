@@ -255,8 +255,8 @@
 	google.script.run.cleaner();
 	} catch {}
     try {
-    if (track_link.match(/holyspiritspeaks/g) == "holyspiritspeaks") {
-    google.script.run.userClicked4(date,filter_name,fb_name,fb_article_place,fb_post_type,fb_place_name,fb_image_name,fn_image_origin,fb_cn_guide,fn_web_link,fb_pose_link,track_link,none);
+    if (track_link.match(/holyspiritspeaks/g) == "holyspiritspeaks" || track_link.match(/godfootsteps/g) == "godfootsteps") {
+    google.script.run.userClicked4(date, filter_name, fb_name, fb_post_type, fb_guide, fb_cn_guide, fn_web_link, track_link, fb_pose_link, fb_image_name, none);
     } else {}
     } catch {}
     document.getElementsByClassName("post_link")[0].value="";
