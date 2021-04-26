@@ -36,6 +36,7 @@ var check_other_close_alert = document.getElementById("other_close_alert").check
 var check_other_auto_complete = document.getElementById("other_auto_complete").checked;
 var check_other_update = document.getElementById("other_update").checked;
 var check_group_form = document.getElementById("group_form").checked;
+var check_trans_cn = document.getElementById("other_trans_cn").checked;
 
 if (check_other_close_alert == true || check_other_auto_complete == true || check_other_update == true) {
     var other_code = `&lt;?!= include(&quot;main-js&quot;); ?&gt;`;
@@ -261,7 +262,12 @@ var show_group_form = ``;
 else {
 var show_group_form = `style=&quot;display:none;&quot;`;
 }
-
+if (check_trans_cn == true) {
+var show_trans_cn= `&amp;nbsp; &amp;nbsp;&lt;button onclick=&quot;translate_to_cn()&quot; class=&quot;btn waves-effect waves-teal&quot;&gt;翻译&lt;/button&gt;`;
+}
+else {
+var show_trans_cn = ``;
+}
 
 document.getElementById("generate_form_code").innerHTML = `<pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -376,7 +382,7 @@ document.getElementById("generate_form_code").innerHTML = `<pre><code>&lt;!DOCTY
             &lt;!-- 引导语 --&gt;
             &lt;div class=&quot;`+hide_class_guide+`&quot; `+hide_guide+`&gt;
                &lt;input placeholder=&quot;请输入引导语&quot; type=&quot;text&quot; class=&quot;guide&quot;&gt;
-               &lt;label style=&quot;font-size:18px;&quot;&gt;`+show_required_guide+`引导语&lt;/label&gt;
+               &lt;label style=&quot;font-size:18px;&quot;&gt;`+show_required_guide+`引导语`+show_trans_cn+`&lt;/label&gt;
             &lt;/div&gt;
             &lt;!-- 中文引导语 --&gt;
             &lt;div class=&quot;`+hide_class_cn_guide+`&quot; `+hide_cn_guide+`&gt;
@@ -658,6 +664,7 @@ function generate_other_code() {
     var check_other_close_alert = document.getElementById("other_close_alert").checked;
     var check_other_auto_complete = document.getElementById("other_auto_complete").checked;
     var check_other_update = document.getElementById("other_update").checked;
+    var check_other_trans_cn = document.getElementById("other_trans_cn").checked;
     
     // 检测其他项目
     if (check_other_close_alert == true) {
@@ -692,13 +699,43 @@ setInterval(function () {
     else {
     var fill_other_update = ``;
     }
+    if (check_other_trans_cn == true) {
+        var fill_other_trans_cn = `// 翻译
+function translate_to_cn() {
+    var other_guide = document.getElementsByClassName(&quot;guide&quot;)[0].value;
+    var clean = document.getElementsByClassName(&quot;cn_guide&quot;)[0].value = &quot;&quot;;
+    var other_guide_arr = encodeURIComponent(other_guide).replace(/\\.|,|!/g, &quot;&quot;).match(/.{7932}/g);
+    if (other_guide_arr == null) {
+        var other_guide_arr = encodeURIComponent(other_guide).replace(/\\.|,|!/g, &quot;&quot;).match(/.+/g);
+    }
+    for (var i = 0; i &lt; other_guide_arr.length; i++) {
+        (async function(i) {
+            let response = await fetch(&quot;https://translate.google.com/translate_a/single?client=gtx&amp;dt=t&amp;dj=1&amp;ie=UTF-8&amp;sl=auto&amp;tl=zh_CN&amp;q=&quot; + other_guide_arr[0].replace(/%$/g, &quot;&quot;))
+            let text = await response.text();
+            var get_data = text.match(/(?&lt;=trans\\&quot;:\\&quot;).*?(?=\\&quot;,\\&quot;orig)/g);
+            for (var i = 0; i &lt; get_data.length; i++) {
+                var cn_guide = document.getElementsByClassName(&quot;cn_guide&quot;)[0].value += get_data[i];
+            }
+        })(i);
+    }
+}
+// 需要安装 https://github.com/dev-coco/Remove-CORS-restrictions
+         `;
+        }
+        else {
+        var fill_other_trans_cn = ``;
+        }
+    
     document.getElementById("generate_form_code").innerHTML = `<pre><code>&lt;script&gt;
 `+fill_other_close_alert+`
 `+fill_other_auto_complete+`
 `+fill_other_update+`
+`+fill_other_trans_cn+`
 &lt;/script&gt;
     </code></pre>
     `;
+    
+    
 }
 function hide_banners() {
     document.getElementById("generate_form_code").innerHTML = `<pre><code>script.google.com###warning</code></pre>`;
