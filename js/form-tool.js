@@ -244,6 +244,8 @@ function f_n(n) {
     var hour = date1.getUTCHours();
     var minute = date1.getUTCMinutes();
     var second = date1.getUTCSeconds();
+    var ny_date = year + '-' + month + '-' + day;
+	var ny_time = f_n(hour) + ':' + f_n(minute) + ':' + f_n(second);
     } catch{}
     
     document.getElementById("demo2").innerHTML = '发帖成功  ' + now_time;
