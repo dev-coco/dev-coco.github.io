@@ -244,7 +244,7 @@
         var now_time = d.toLocaleTimeString();
 	// UTC-4
 	var date1 = new Date();
-	var timezone = date1.setUTCHours(date.getUTCHours() - 4);
+	var timezone = date1.setUTCHours(date1.getUTCHours() - 4);
 	var year = date1.getUTCFullYear();
 	var month = date1.getUTCMonth() + 1;
 	var day = date1.getUTCDate();
