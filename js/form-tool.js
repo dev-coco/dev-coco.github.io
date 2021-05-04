@@ -1,4 +1,5 @@
-    document.addEventListener('DOMContentLoaded', function () {
+alert("正在维护中，请稍后查看...");
+document.addEventListener('DOMContentLoaded', function () {
         var elems = document.querySelectorAll('select');
         var instances = M.FormSelect.init(elems);
     });
