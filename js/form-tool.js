@@ -243,14 +243,14 @@
         var date = a + "-" + a2 + "-" + a3;
         var now_time = d.toLocaleTimeString();
 	// UTC-4
-	var date = new Date();
-	var timezone = date.setUTCHours(date.getUTCHours() - 4);
-	var year = date.getUTCFullYear();
-	var month = date.getUTCMonth() + 1;
-	var day = date.getUTCDate();
-	var hour = date.getUTCHours();
-	var minute = date.getUTCMinutes();
-	var second = date.getUTCSeconds();
+	var date1 = new Date();
+	var timezone = date1.setUTCHours(date.getUTCHours() - 4);
+	var year = date1.getUTCFullYear();
+	var month = date1.getUTCMonth() + 1;
+	var day = date1.getUTCDate();
+	var hour = date1.getUTCHours();
+	var minute = date1.getUTCMinutes();
+	var second = date1.getUTCSeconds();
 	var ny_date = year + '-' + month + '-' + day;
 	var ny_time = f_n(hour) + ':' + f_n(minute) + ':' + f_n(second);
 	    
