@@ -458,7 +458,6 @@ function generate_form_code() {
     var check_fill_track_link = document.getElementById("fill_track_link").checked;
     var check_fill_fb_hyperlink = document.getElementById("fill_fb_hyperlink").checked;
     var check_fill_split_sheet = document.getElementById("fill_split_sheet").checked;
-    var check_fill_detect_link_type = document.getElementById("fill_detect_link_type").checked;
 
     // 检测填表项目
     if (check_fill_new_Date == true) {
