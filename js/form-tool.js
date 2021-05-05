@@ -259,9 +259,9 @@ try {
 var e = document.getElementById("demo3").innerText, t = document.getElementById("input");
     t.value = e, t.select(), document.execCommand("copy");
 } catch {}
-    google.script.run.userClicked2(ny_date, ny_time, date, selectName, filter_name, user_id, fb_name, fb_article_place, fb_post_type, fb_place_name, fb_group_status, fb_title, fb_image_name, fb_guide, fb_cn_guide, fn_image_origin, fn_web_link, fn_posting_status, fb_pose_link, track_link, fb_hyperlink, none);
+    google.script.run.userClicked2(ny_time, ny_date, date, selectName, filter_name, user_id, fb_name, fb_article_place, fb_post_type, fb_place_name, fb_group_status, fb_title, fb_image_name, fb_guide, fb_cn_guide, fn_image_origin, fn_web_link, fn_posting_status, fb_pose_link, track_link, fb_hyperlink, none);
     try {
-google.script.run.userClicked3(ny_date, ny_time, date, selectName, filter_name, user_id, fb_name, fb_article_place, fb_post_type, fb_place_name, fb_group_status, fb_title, fb_image_name, fb_guide, fb_cn_guide, fn_image_origin, fn_web_link, fn_posting_status, fb_pose_link, track_link, fb_hyperlink, none);
+google.script.run.userClicked3(ny_time, ny_date, date, selectName, filter_name, user_id, fb_name, fb_article_place, fb_post_type, fb_place_name, fb_group_status, fb_title, fb_image_name, fb_guide, fb_cn_guide, fn_image_origin, fn_web_link, fn_posting_status, fb_pose_link, track_link, fb_hyperlink, none);
 } catch {}
 try {
 google.script.run.cleaner();
