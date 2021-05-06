@@ -56,35 +56,35 @@ function getValue1() {
             alert("请输入发帖位置!");
             return;
         }
-    if (selectName == null, selectName == undefined) {
-    alert("请选择名字!");
-    return;
-    }
+        if (selectName == null, selectName == undefined) {
+            alert("请选择名字!");
+            return;
+        }
     } else if (detect1.length == 1) {
-    if (selectName == null, selectName == undefined) {
-        alert("请选择名字!");
-        return;
-    }
-    if (fb_article_place.length == 0) {
-        alert("请输入发帖位置!");
-        return;
-    }
-    if (fb_guide.length == 0) {
-        alert("请输入外文引导语!");
-        return;
-    }
-    if (fb_cn_guide.length == 0) {
-        alert("请输入中文引导语!");
-        return;
-    }
-    if (fn_web_url.length == 0) {
-        alert("请输入原链接!");
-        return;
-    }
-} else {}
+        if (selectName == null, selectName == undefined) {
+            alert("请选择名字!");
+            return;
+        }
+        if (fb_article_place.length == 0) {
+            alert("请输入发帖位置!");
+            return;
+        }
+        if (fb_guide.length == 0) {
+            alert("请输入外文引导语!");
+            return;
+        }
+        if (fb_cn_guide.length == 0) {
+            alert("请输入中文引导语!");
+            return;
+        }
+        if (fn_web_url.length == 0) {
+            alert("请输入原链接!");
+            return;
+        }
+    } else {}
     var num = Math.floor(Math.random() * 10000000);
     if (fn_web_link.match(/\/$/g) == "/") {
-    if (user_id || "undefined" == typeof user_id || 0 == user_id) lastLink = fn_web_link.replace(/\/$/g, "") + "&?source=" + fb_article_place + user_id + "&num=" + num;
+        if (user_id || "undefined" == typeof user_id || 0 == user_id) lastLink = fn_web_link.replace(/\/$/g, "") + "&?source=" + fb_article_place + user_id + "&num=" + num;
         else var lastLink = fn_web_link + "&?source=" + fb_article_place + "&num=" + num;
     } else {
         if (user_id || "undefined" == typeof user_id || 0 == user_id) lastLink = fn_web_link + "?source=" + fb_article_place + user_id + "&num=" + num;
@@ -97,9 +97,7 @@ function getValue1() {
     var reg = RegExp(/holyspiritspeaks|kingdomsalvation|answerforchristians|bible-..|alkitabonline|bibbia-..|biblia|godfootsteps|jesucristo|evangelio|easternlightning|vangelodioggi|luciolededieu|lesalut/);
     if (fn_web_link.match(reg)) {
         var aa = '<a href="' + res + '" target = "_blank">' + res + '</a>';
-    } else if (fn_web_link.match(/whatsapp/)) {
-    var aa = '<a href="' + res.replace(/&/g,"") + '" target = "_blank">' + res.replace(/&/g,"") + '</a>';
-} else {
+    } else {
         return;
     }
     document.getElementById("show_track_link").innerHTML = aa;
@@ -111,12 +109,11 @@ function getValue1() {
     var a2 = d.getMonth() + 1
     var a3 = d.getDate();
     var date = a + "-" + a2 + "-" + a3;
-    var e = document.getElementById("show_track_link").innerText,
-        t = document.getElementById("input");
+    var e = document.getElementById("show_track_link").innerText, t = document.getElementById("input");
     t.value = e, t.select(), document.execCommand("copy");
     try {
-google.script.run.userClicked(date, selectName, user_id, fb_name, fb_article_place, fb_post_type, fb_place_name, fb_group_status, fb_title, fb_image_name, fb_guide, fb_cn_guide, fn_image_origin, fn_web_link, fn_posting_status, fb_pose_link, track_link, fb_hyperlink, none, res);
-} catch {}
+        google.script.run.userClicked(date, selectName, user_id, fb_name, fb_article_place, fb_post_type, fb_place_name, fb_group_status, fb_title, fb_image_name, fb_guide, fb_cn_guide, fn_image_origin, fn_web_link, fn_posting_status, fb_pose_link, track_link, fb_hyperlink, none, res);
+    } catch {}
 }
 //获取值
 function getValue2() {
@@ -164,11 +161,12 @@ function getValue2() {
     var detect = document.getElementsByClassName("btn waves-effect waves-teal one");
     var detect1 = document.getElementsByClassName("btn waves-effect waves-teal two");
     var detect2 = document.getElementsByClassName("btn waves-effect waves-teal vk");
+    var detect3 = document.getElementsByClassName("btn waves-effect waves-teal wa");
     // 识别链接类型
     var detect_pose_str = `,"https:\\\/\\\/www\\.facebook\\.com\\\/.+?\\\/|https:\\\/\\\/.+?\\\/|无"))="https:\/\/`;
     var fb_post_url = fb_pose_link.match(/facebook\.com/g);
-        if (detect.length == 1) {
-            if (selectName == null, selectName == undefined) {
+    if (detect.length == 1) {
+        if (selectName == null, selectName == undefined) {
             alert("请选择名字!");
             return;
         }
@@ -188,7 +186,7 @@ function getValue2() {
             return;
         }
     }
-else if (detect1.length == 1) {
+    else if (detect1.length == 1) {
         if (selectName == null, selectName == undefined) {
             alert("请选择名字!");
             return;
@@ -197,9 +195,9 @@ else if (detect1.length == 1) {
             alert("请输入链接!");
             return;
         }
-}
-else if (detect2.length == 1) {
-    if (selectName == null, selectName == undefined) {
+    }
+    else if (detect2.length == 1) {
+        if (selectName == null, selectName == undefined) {
             alert("请选择名字!");
             return;
         }
@@ -207,8 +205,18 @@ else if (detect2.length == 1) {
             alert("请输入贴文链接!");
             return;
         }
-}
-else {
+    }
+    else if (detect3.length == 1) {
+        if (selectName == null, selectName == undefined) {
+            alert("请选择名字!");
+            return;
+        }
+        if (fb_post_type.length == 0) {
+            alert("请输入发帖类型!");
+            return;
+        }
+    }
+    else {
         if (selectName == null, selectName == undefined) {
             alert("请选择名字!");
             return;
