@@ -25,9 +25,9 @@ function getValue1() {
     // 图片名称
     var fb_image_name = document.getElementsByClassName("image_name")[0].value;
     // 引导语
-    var fb_guide = document.getElementsByClassName("guide")[0].value;
+    var fb_guide = document.getElementsByClassName("guide")[0].value.replace(/^"|"$/g,"");
     // 中文引导语
-    var fb_cn_guide = document.getElementsByClassName("cn_guide")[0].value;
+    var fb_cn_guide = document.getElementsByClassName("cn_guide")[0].value.replace(/^"|"$/g,"");
     // 图片来源
     var fn_image_origin = getSheetName("posting_status");
     // 网站原链接
@@ -77,6 +77,10 @@ function getValue1() {
             alert("请输入中文引导语!");
             return;
         }
+        if (/.*[\u4e00-\u9fa5]+.*/.test(fb_cn_guide) != true) {
+            alert("中文引导语非中文!");
+            return;
+        }  
         if (fn_web_url.length == 0) {
             alert("请输入原链接!");
             return;
@@ -222,7 +226,7 @@ function getValue2() {
         if (fb_cn_guide.length == 0) {
             alert("请输入中文引导语!");
             return;
-        }
+        } 
     }
     else {
         if (selectName == null, selectName == undefined) {
