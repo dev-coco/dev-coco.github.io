@@ -288,7 +288,7 @@ function getValue2() {
     } catch {}
     try {
         if (track_link.match(/holyspiritspeaks/g) == "holyspiritspeaks" || track_link.match(/godfootsteps/g) == "godfootsteps") {
-            google.script.run.userClicked4(ny_time, ny_date, date, selectName, filter_name, user_id, fb_name, fb_article_place, fb_post_type, fb_place_name, fb_group_status, fb_title, fb_image_name, fb_guide, fb_cn_guide, fn_image_origin, fn_web_link, fn_posting_status, fb_pose_link, track_link, fb_hyperlink, none);
+            google.script.run.userClicked4(ny_time, ny_date, date, filter_name, fb_name, fb_post_type, fb_guide, fb_cn_guide, fn_web_link, track_link, fb_pose_link, fb_image_name, none);
         } else {}
     } catch {}
     document.getElementsByClassName("post_link")[0].value="";
