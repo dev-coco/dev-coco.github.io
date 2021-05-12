@@ -226,7 +226,11 @@ function getValue2() {
         if (fb_cn_guide.length == 0) {
             alert("请输入中文引导语!");
             return;
-        } 
+        }
+        if (fb_pose_link.length == 0) {
+            alert("请输入小组名称!");
+            return;
+        }
     }
     else {
         if (selectName == null, selectName == undefined) {
@@ -292,10 +296,6 @@ function getValue2() {
         } else {}
     } catch {}
     document.getElementsByClassName("post_link")[0].value="";
-    if (detect3.length == 1) {
-        document.getElementsByClassName("cn_guide")[0].innerHTML="";
-        document.getElementsByClassName("cn_guide")[0].value="";
-    }
     try {
         document.getElementsByClassName("track_link")[0].innerHTML="";
         document.getElementsByClassName("track_link")[0].value="";
