@@ -9,8 +9,147 @@
     <meta name="description" content="Duplicate Word Finder. 重复单词查找工具。在内容中查找经常重复的关键词。"/>
     <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
     <link rel="stylesheet" href="https://dev-coco.github.io/css/site.css">
+    <style>
+      .main {
+         font-family: Roboto, Helvetica, Arial, sans-serif;
+         font-size: 62.5%;
+         font-weight: normal;
+         margin: 0;
+      }
+      main {
+         display: flex;
+         flex-flow: row wrap;
+         padding: 0 1.2rem;
+      }
+      button {
+         margin: 0 12px;
+         font-size: 16px;
+      }
+      #actions {
+         flex: 3 0 0;
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         box-sizing: border-box;
+         padding: 1.2rem;
+      }
+      #actions > label {
+         margin-right: 0.6rem;
+      }
+      #options {
+         flex: 1 0 0;
+         padding: 1.2rem;
+         min-width: 20rem;
+      }
+      #options > label {
+         width: 100%;
+      }
+      hr {
+         margin: 0;
+         border: none;
+         width: 100%;
+         height: 0;
+      }
+      mark {
+         margin: -0.2rem;
+         border: 0.2rem solid transparent;
+         border-radius: 0.4rem;
+         color: transparent;
+         background: transparent;
+         padding:0px;
+      }
+      #text {
+         position: relative;
+         flex: 3 0 0;
+         padding: 0 1.2rem;
+         transition: height 0.3s;
+      }
+      textarea,
+      #highlights {
+         position: absolute;
+         top: 0;
+         bottom: 0;
+         margin: 0;
+         border: solid 0.1rem rgba(0, 0, 0, 0.54);
+         border-radius: 0.4rem;
+         padding: 1.3rem;
+         font-family: Roboto, Helvetica, Arial, sans-serif;
+         font-size: 1.6rem;
+         font-weight: normal;
+         line-height: 2rem;
+         outline: none;
+         transition: height 0.3s;
+      }
+      textarea {
+         box-sizing: border-box;
+         width: calc(100% - 2.4rem);
+         height: 100%;
+         background: transparent;
+         resize: none;
+      }
+      textarea:focus {
+         border: solid 0.2rem #2196f3;
+         padding: 1.2rem;
+      }
+      #highlights {
+         z-index: -1;
+         box-sizing: border-box;
+         width: calc(100% - 2.4rem);
+         white-space: pre-wrap;
+         word-wrap: break-word;
+         color: transparent;
+         overflow-x: hidden;
+         overflow-y: auto;
+      }
+      ol {
+         margin: 0;
+         padding: 0;
+         list-style: none;
+      }
+      #list {
+         position: relative;
+         flex: 1 0 0;
+         padding: 0 1.2rem;
+         min-width: 20rem;
+         min-height: calc(100vh - 24rem);
+         transition: height 0.3s;
+      }
+      .item {
+         position: absolute;
+         transition: top 0.3s, opacity 0.3s;
+         animation: add 0.3s;
+      }
+      .item > label {
+         cursor: pointer;
+      }
+      .hidden {
+         display: none;
+      }
+      .count,
+      .word {
+         display: inline-block;
+         border: solid 0.2rem;
+         box-shadow: inset 20rem 2rem transparent;
+         transition: border 0.3s, background 0.3s, box-shadow 0.3s;
+      }
+      .hidden:checked ~ .count,
+      .hidden:checked ~ .word {
+         box-shadow: inset 20rem 2rem white;
+      }
+      .count {
+         border-radius: 50%;
+         min-width: 1.8rem;
+         text-align: center;
+         font-size: 1.4rem;
+         line-height: 1.8rem;
+      }
+      .word {
+         padding: 0 0.2rem;
+         border-radius: 0.4rem;
+         font-size: 1.6rem;
+      }
+      </style>
 </head>
 <body>
     <div class="container">
@@ -24,19 +163,235 @@
   <a href="https://dev-coco.github.io/Terms-and-Privacy.html">隐私与条款</a>
   <a target="_blank" href="https://github.com/dev-coco">Github</a>
 </div>
-    <div style="text-align:center;">
-        <h1>Duplicate Word Finder</h1>
-        <p>在内容中查找经常重复的关键词。</p>
-        <br>
-        <textarea style="width:100%;height:20em" id="codeText"></textarea>
-        <br>
-        <button type="text" onclick="frequency()" style="width:150px;" class="button blue">查找</button>
-        <br>
-        <p id="repeatword"></p>
-    </div>
+      <div class="main">
+         <main>
+            <div id="actions">
+               <div>
+                  <button id="copy" class="button blue">复制</button>
+                  <button id="clear" class="button blue">清除</button>
+               </div>
+               <label class="pure-material-switch">
+                  <input style="zoom:160%;" id="spellcheck" type="checkbox" checked>
+                  <span style="margin:0 0 0 12px;float:right;font-size:16px;line-height:35px;">拼写检查</span>
+               </label>
+            </div>
+            <div id="options">
+               <label class="pure-material-slider">
+                  <input id="length" type="range" min="1" max="10" value="4">
+                  <span style="font-size:16px;">最短单词长度: <output style="display:inline;">4</output></span>
+               </label>
+            </div>
+            <hr>
+            <div id="text">
+               <textarea placeholder="请输入内容"></textarea>
+               <div id="highlights"></div>
+            </div>
+            <ol id="list"></ol>
+         </main>
+         <template>
+            <li class="item">
+               <label>
+                  <input class="hidden" type="checkbox">
+                  <span class="count"></span>
+                  <span class="word"></span>
+               </label>
+            </li>
+         </template>
+      </div>
+      <script>
+         const isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+         const isSafari = /Safari/.test(navigator.userAgent) && /Apple Computer/.test(navigator.vendor);
+         const copy = document.querySelector("#copy");
+         const clear = document.querySelector("#clear");
+         const spellcheck = document.querySelector("#spellcheck");
+         const textarea = document.querySelector("textarea");
+         const highlights = document.querySelector("#highlights");
+         const length = document.querySelector("#length");
+         const output = document.querySelector("output");
+         const list = document.querySelector("#list");
+         const template = document.querySelector("template");
+         let hiddens = [];
+         let duplicates = {};
+         const count = (text, minLength) => {
+            const wordRegex = isChrome || isSafari
+            ? new RegExp(`([\\p{Alphabetic}\\p{Mark}\\p{Decimal_Number}\\p{Connector_Punctuation}\\p{Join_Control}]+){${minLength},}`, 'gu')
+            : new RegExp(`(\\w+){${minLength},}`, 'g');
+            let result;
+            const words = {};
+            while ((result = wordRegex.exec(text)) !== null) {
+               const word = result[0].toLowerCase();
+               if (!words[word]) {
+                  words[word] = [];
+               }
+               words[word].push(result.index);
+               words[word].push(result.index + word.length);
+            }
+            return words;
+         };
+         const duplicatePass = ([key, value]) => 2 < value.length;
+         const occurrenceComparator = ([keyA, valueA], [keyB, valueB]) =>
+         valueB.length - valueA.length;
+         const numberComparator = (numberA, numberB) => numberA - numberB;
+         const differ = (object, [key, value], index) => {
+            object[key] = {
+               action: object[key] ? "KEEP" : "ADD",
+               word: key,
+               occurrences: value,
+               index
+            };
+            return object;
+         };
+         const cleaner = (object, [word, details]) => {
+            if (details.action) {
+               delete details.action;
+               object[word] = details;
+            }
+            return object;
+         };
+         const flattener = (array, details) => [...array, ...details.occurrences];
+         const update = (item, details) => {
+            item.style.zIndex = details.occurrences.length / 2;
+            item.style.top = `${0.6 + details.index * 3}rem`;
+            item.querySelector(".count").textContent = details.occurrences.length / 2;
+         };
+         const add = (word, details) => {
+            const node = document.importNode(template.content, true);
+            list.appendChild(node);
+            const item = list.lastElementChild;
+            item.id = `word-${word}`;
+            const hidden = item.querySelector(".hidden");
+            hidden.name = word;
+            hidden.checked = hiddens.includes(word);
+            hidden.addEventListener("change", handleToggle);
+            item.querySelector(".word").textContent = word;
+            update(item, details);
+         };
+         const keep = (word, details) => {
+            const item = document.querySelector(`#word-${word}`);
+            update(item, details);
+         };
+         const markObsolete = word => {
+            document.querySelector(`#word-${word}`).classList.add("obsolete");
+         };
+         const remove = item => item.remove();
+         const removeObsolete = () => {
+            document.querySelectorAll(".obsolete").forEach(remove);
+         };
+         const render = ([word, details]) => {
+            if (details.action === "ADD") {
+               add(word, details);
+            } else if (details.action === "KEEP") {
+               keep(word, details);
+            } else {
+               markObsolete(word);
+            }
+         };
+         const getHue = word => {
+            return (
+               360 -
+               360 / Object.keys(duplicates).length * duplicates[word.toLowerCase()].index
+            );
+         };
+         const getHSL = word => {
+            const hue = getHue(word);
+            return `hsl(${hue + 20}, 100%, ${180 < hue && hue < 360 ? 80 : 50}%)`;
+         };
+         const colorize = word => {
+            const color = getHSL(word);
+            const count = document.querySelector(`#word-${word} .count`);
+            const wordElement = document.querySelector(`#word-${word} .word`);
+            count.style.borderColor = color;
+            count.style.backgroundColor = color;
+            wordElement.style.borderColor = color;
+            wordElement.style.backgroundColor = color;
+         };
+         const highlight = (occurrence, index, occurrences) => {
+            let node;
+            if (index < occurrences.length - 1) {
+               if (index % 2) {
+                  const word = textarea.value.substring(occurrence, occurrences[index + 1]);
+                  node = document.createElement("mark");
+                  node.textContent = word;
+                  if (!hiddens.includes(word.toLowerCase())) {
+                     const color = getHSL(word);
+                     node.style.background = color;
+                  }
+               } else {
+                  const text = textarea.value.substring(occurrence, occurrences[index + 1]);
+                  node = document.createTextNode(text);
+               }
+            } else {
+               const text = textarea.value.substring(occurrence);
+               node = document.createTextNode(text + "\r\n\r\n");
+            }
+            highlights.appendChild(node);
+         };
+         const handleChange = () => {
+            const words = count(textarea.value, length.value);
+            const diff = Object.entries(words)
+            .filter(duplicatePass)
+            .sort(occurrenceComparator)
+            .reduce(differ, duplicates);
+            Object.entries(diff).forEach(render);
+            duplicates = Object.entries(diff).reduce(cleaner, {});
+            list.style.height = `${1.2 + Object.keys(duplicates).length * 3}rem`;
+            Object.keys(duplicates).forEach(colorize);
+            const occurrences = Object.values(duplicates)
+            .reduce(flattener, [0])
+            .sort(numberComparator);
+            while (highlights.firstChild) {
+               highlights.removeChild(highlights.firstChild);
+            }
+            occurrences.forEach(highlight);
+            window.setTimeout(removeObsolete, 400);
+         };
+         const handleToggle = event => {
+            const word = event.target.name;
+            if (event.target.checked) {
+               if (!hiddens.includes(word)) {
+                  hiddens.push(word);
+               }
+            } else {
+               const index = hiddens.indexOf(word);
+               if (0 <= index) {
+                  hiddens.splice(index, 1);
+               }
+            }
+            handleChange();
+         };
+         copy.addEventListener("click", () => {
+            textarea.select();
+            document.execCommand("copy");
+         });
+         clear.addEventListener("click", () => {
+            textarea.value = "";
+            textarea.focus();
+            handleChange();
+         });
+         spellcheck.addEventListener("change", event => {
+            textarea.setAttribute("spellcheck", event.target.checked.toString());
+            const { value } = textarea;
+            textarea.value = value + " ";
+            textarea.value = value;
+         });
+         textarea.addEventListener("scroll", event => {
+            highlights.scrollTop = event.target.scrollTop;
+         });
+         textarea.addEventListener(
+            "focus",
+            () => {
+               textarea.value = "";
+               handleChange();
+            },
+            {
+               once: true
+            }
+         );
+         textarea.addEventListener("input", handleChange);
+         length.addEventListener("input", handleChange);
+         length.addEventListener("input", () => (output.textContent = length.value));
+         handleChange();
+      </script>
 </div>
 </body>
-<script>
-    function frequency(){var paragraph = codeText.value;paragraph= paragraph.replace(/(\r\n|\n|\r)/gm,"");paragraph = paragraph.replace(/,/g," ");var array_of_paragraph = paragraph.split(" ");var count=0;var all_repeated_elements=[];var count_of_elements=[];var m = [];for(var x=0;x<array_of_paragraph.length;x++){count=0;if(array_of_paragraph[x].length>3 ){if( array_of_paragraph[x] != array_of_paragraph[m]){for(var y=x+1;y<array_of_paragraph.length;y++){if(array_of_paragraph[x]==array_of_paragraph[y]){count+=1;}}find=0;for (var k = 0;k < all_repeated_elements.length;k++){if (array_of_paragraph[x]==all_repeated_elements[k]){find+=1;}}if (count>=1 && find==0 ){all_repeated_elements.push(array_of_paragraph[x]);count_of_elements.push(count)}}}}var max_repeated_elements=[];for (var z = 0;z < count_of_elements.length;z++){if(count_of_elements[z]>=10){max_repeated_elements.push (all_repeated_elements[z])}}document.getElementById("repeatword").innerHTML=max_repeated_elements;}
-</script>
 </html>
