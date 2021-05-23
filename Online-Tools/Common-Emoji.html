@@ -1175,6 +1175,9 @@
             var minutes = now.getMinutes();
             var seconds = now.getSeconds();
             var week = now.getDay();
+            if (week==0){
+               var week = week+7;
+            }
             var year = new Date().getFullYear();
             var today_in_year = Math.ceil((now - new Date(now.getFullYear().toString())) / (24 * 60 * 60 * 1000)) - 1;
             var year_total_days = 0;
