@@ -41,13 +41,13 @@ var blackList = [
     {url:'p.cpx.to'},
     {url:'sslwidget.criteo.com'},
     {url:'nyt2.dc-storm.com'},
-    {url:'dpm.demdex.net'},
+    {url:'demdex.net'},
     {url:'servedby.flashtalking.com'},
     {url:'gateway.foresee.com'},
     {url:'static.getclicky.com'},
     {url:'analytics.google.com'},
     {url:'stats.hanmaker.com'},
-    {url:'track.hubspot.co'},
+    {url:'track.hubspot.com'},
     {url:'fm.ipinyou.com'},
     {url:'pt.ispot.tv'},
     {url:'cdn.krxd.net'},
@@ -61,7 +61,7 @@ var blackList = [
     {url:'vt.myvisualiq.net'},
     {url:'doubleclick.net'},
     {url:'omtrdc.net'},
-    {url:'bam-cell.nr-data.net'},
+    {url:'nr-data.net'},
     {url:'pi.pardot.com'},
     {url:'report.passport.360.cn'},
     {url:'ct.pinterest.com'},
@@ -107,7 +107,15 @@ var blackList = [
     {url:'aqyzmedia.yunaq.com'},
     {url:'ush.zhanzhang.baidu.com'},
     {url:'push.zhanzhang.baidu.com'},
-    {url:'ws.zoominfo.com'}
+    {url:'ws.zoominfo.com'},
+    {url:'cdn.izooto.com'},
+    {url:'freychang.fun'},
+    {url:'sc-static.net'},
+    {url:'adservice.google.com'},
+    {url:'pos.baidu.com'},
+    {url:'addthis.com'},
+    {url:'mc.yandex.ru'},
+    {url:'vlitag.com'}
 ];
 
 function FindProxyForURL(url, host){
