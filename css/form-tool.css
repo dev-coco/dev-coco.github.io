@@ -76,3 +76,8 @@ textarea {
 #time {
 	color: red;
 }
+.hide {
+	font-size:0px;
+	height:0px;
+	width:0px;
+}
