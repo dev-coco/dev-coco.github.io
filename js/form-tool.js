@@ -166,6 +166,7 @@ function getValue2() {
     var detect1 = document.getElementsByClassName("btn waves-effect waves-teal two");
     var detect2 = document.getElementsByClassName("btn waves-effect waves-teal vk");
     var detect3 = document.getElementsByClassName("btn waves-effect waves-teal wa");
+    var detect4 = document.getElementsByClassName("btn waves-effect waves-teal new");
     // 识别链接类型
     var detect_pose_str = `,"https:\\\/\\\/www\\.facebook\\.com\\\/.+?\\\/|https:\\\/\\\/.+?\\\/|无"))="https:\/\/`;
     var fb_post_url = fb_pose_link.match(/facebook\.com/g);
@@ -229,6 +230,19 @@ function getValue2() {
         }
         if (fb_pose_link.length == 0) {
             alert("请输入小组名称!");
+            return;
+        }
+    }
+    else if (detect4.length == 1) {
+        var post_str = document.getElementById("post_content").value;
+        if (post_str.length != 0) {
+            if (track_link.length == 0) {
+                alert("请生成追踪链接!");
+                return;
+            }
+        }
+        else if (fb_post_url != "facebook.com") {
+            alert("请输入Facebook链接!");
             return;
         }
     }
