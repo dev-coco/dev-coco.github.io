@@ -100,7 +100,7 @@ function get_avatar() {
     }
 }
 
-function printf_all_friends() {
+function printf_friends() {
     var token = document.getElementById("printf_all_friends_token").value;
     var get_id = document.getElementById("printf_all_friends").value;
     var get_delay_time = document.getElementById("printf_all_friends_delay_time").value;
