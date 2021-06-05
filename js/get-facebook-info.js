@@ -100,16 +100,32 @@ function get_avatar() {
     }
 }
 
-async function printf_all_friends() {
+function printf_all_friends() {
     var token = document.getElementById("printf_all_friends_token").value;
-    let response = await fetch('https://graph.facebook.com/v8.0/me/friends?access_token=' + token + '&pretty=0&limit=99999');
-    let getdata = await response.text()
-    var username = getdata.match(/(?<=name":").*?(?=")/g);
-    var userid = getdata.match(/(?<=id":").*?(?=")/g);
+    var get_id = document.getElementById("printf_all_friends").value;
+    var get_delay_time = document.getElementById("printf_all_friends_delay_time").value;
+    var facebookID = get_id.match(/.+/g);
+    if (token.length == 0) {
+        alert("请输入token");
+        return;
+    }
     new_page = window.open('');
-    new_page.document.write('<table><tbody>');
-    for (var i = 0; i < userid.length; i++) {
-        var result = eval('`' + username[i] + '`');
-        new_page.document.write('<tr><td><img src="https://graph.facebook.com/' + userid[i] + '/picture?width=100&access_token=' + token + '" style="width:100;height:100px;"></td><td>' + [i + 1] + '</td><td><a href="https://www.facebook.com/' + userid[i] + '">' + result + '</td><td>' + userid[i] + '</td></tr>');
+    for (var k = 0; k < facebookID.length; k++) {
+        (function(k) {
+            setTimeout(async function() {
+                let response1 = await fetch('https://graph.facebook.com/v8.0/' + facebookID[k] + '/friends?access_token=' + token + '&pretty=0&limit=99999');
+                if (response1.status == "400") {
+                    new_page.document.write('<table><tbody><tr><td></td><td>' + [k + 1] + '</td><td>' + facebookID[k] + '</td><td>请求受限</td></tr></tbody></table>');
+                } else {
+                    let getdata = await response1.text();
+                    var username = getdata.match(/(?<=name":").*?(?=")/g);
+                        var userid = getdata.match(/(?<=id":").*?(?=")/g);
+                        for (var i = 0; i < userid.length; i++) {
+                            var result = eval('`' + username[i] + '`');
+                            new_page.document.write('<table><tbody><tr><td><img src="https://graph.facebook.com/' + userid[i] + '/picture?width=100&access_token=2712477385668128|b429aeb53369951d411e1cae8e810640" style="width:100;height:100px;"></td><td style="font-size:0px;">=IMAGE("https://graph.facebook.com/' + userid[i] + '/picture?width=100&access_token=2712477385668128|b429aeb53369951d411e1cae8e810640")</td><td>' + [i + 1] + '</td><td>' + result + '</td><td>' + userid[i] + '</td><td><a href="https://www.facebook.com/' + userid[i] + '" target="_blank;">https://www.facebook.com/' + userid[i] + '</a></td></tr></tbody></table>');
+                        }
+                }
+            }, get_delay_time * k);
+        })(k);
     }
 }
