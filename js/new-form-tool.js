@@ -119,6 +119,7 @@ function create() {
         post_str = post_str + tag1 + tag2 + tag3;
         // 复制
         copy(post_str);
+        console.log(post_str);
         document.getElementById("copy_status").innerHTML = "复制成功";
         // 3秒后清除复制状态
         setTimeout(function() {
