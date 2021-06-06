@@ -169,6 +169,7 @@ function fill_form() {
     // 检测
     var detect = document.getElementsByClassName("btn waves-effect waves-teal check");
     var detect1 = document.getElementsByClassName("btn waves-effect waves-teal check1");
+    var detect_image_name = RegExp(/\u7f29\u7565|\u000d\u000a|\u7f8e\u5de5|\u000d\u000a|\u81ea\u5e26|\u000d\u000a|\u7f51\u7edc|\u000d\u000a|\u7f29\u7387|\u000d\u000a|\u62fc\u56fe|\u000d\u000a|\u8f6c\u53d1|\u000d\u000a|\u4e13\u4e1a|\u000d\u000a|\u4e13\u9875|\u000d\u000a|\u8f6c\u53d1|\u000d\u000a|\u56fe\u5e93|\u000d\u000a|\u000d\u000a|\u7e2e\u7565|\u000d\u000a|\u7f8e\u5de5|\u000d\u000a|\u81ea\u5e36|\u000d\u000a|\u7db2\u7d61|\u000d\u000a|\u7e2e\u7387|\u000d\u000a|\u62fc\u5716|\u000d\u000a|\u8f49\u767c|\u000d\u000a|\u5c08\u696d|\u000d\u000a|\u5c08\u9801|\u000d\u000a|\u8f49\u767c|\u000d\u000a|\u5716\u5eab/);
     var url_reg = RegExp(/facebook\.com|vk\.com|ok\.ru/);
     if (detect.length == 1) {
         if (select_name == "") {
@@ -197,6 +198,12 @@ function fill_form() {
             alert("请输入正确帖文链接!");
             return;
         }
+        if (fb_image_name) {
+            if (fb_image_name.match(detect_image_name)) {
+                alert("请输入正确的图片名称!");
+                return;
+            } else {}
+        }
     }
     else if (detect1.length == 1) {
         if (select_name == "") {
@@ -218,6 +225,12 @@ function fill_form() {
             alert("请输入小组名字!");
             return;
         }
+        if (fb_image_name) {
+            if (fb_image_name.match(detect_image_name)) {
+                alert("请输入正确的图片名称!");
+                return;
+            } else {}
+        }  
     }
     // 日期 (yyyy-m-d)
     var date = a + "-" + a2 + "-" + a3;
