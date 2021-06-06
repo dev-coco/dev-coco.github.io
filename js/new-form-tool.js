@@ -168,6 +168,7 @@ function fill_form() {
     var none = "";
     // 检测
     var detect = document.getElementsByClassName("btn waves-effect waves-teal check");
+    var detect1 = document.getElementsByClassName("btn waves-effect waves-teal check1");
     var url_reg = RegExp(/facebook\.com|vk\.com|ok\.ru/);
     if (detect.length == 1) {
         if (select_name == "") {
@@ -195,6 +196,27 @@ function fill_form() {
         } else if (fb_pose_link.match(url_reg)) {} else {
             alert("请输入正确帖文链接!");
             return;
+        }
+        else if (detect1.length == 1) {
+            if (select_name == "") {
+                alert("请选择名字!");
+                return;
+            }
+            if (fb_post_type.length == 0) {
+                alert("请输入发帖类型!");
+                return;
+            }
+            var post_str = document.getElementById("post_content").value;
+            if (post_str.length != 0) {
+                if (!track_link) {
+                    alert("请生成追踪链接!");
+                    return;
+                }
+            }
+            if (fb_pose_link.length == 0) {
+                alert("请输入小组名字!");
+                return;
+            }
         }
     }
     // 日期 (yyyy-m-d)
