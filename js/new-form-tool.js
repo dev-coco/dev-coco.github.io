@@ -239,7 +239,7 @@ function fill_form() {
     try {
         // 自定义时区
         var timezone = document.getElementsByClassName("timezone")[0].value;
-        var timezone = d.setUTCHours(date1.getUTCHours() + Number(timezone));
+        var timezone = d.setUTCHours(d.getUTCHours() + Number(timezone));
         var year = d.getUTCFullYear();
         var month = d.getUTCMonth() + 1;
         var day = d.getUTCDate();
