@@ -85,9 +85,9 @@ function create() {
         // 链接加代码
         post_str = post_str.replace(/@@@/g, "?source=" + fb_post_place + user_id + "&num=" + num);
         // 替换Messenger链接
-        post_str = post_str.replace(/#[Mm]essenger#/g, messenger_url + fb_post_place + user_id + "-" + now_date);
+        post_str = post_str.replace(/#Messenger#/i, messenger_url + fb_post_place + user_id + "-" + now_date);
         // 替换WhatsApp链接
-        post_str = post_str.replace(/#[Ww]hatsApp#/g, whatsapp_url);
+        post_str = post_str.replace(/#WhatsApp#/i, whatsapp_url);
         // 中文引导语
         var fb_cn_guide = post_str.match(/(?<=###).*?(?=###)/g)[0];
         // 内容去掉中文引导语
