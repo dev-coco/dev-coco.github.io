@@ -8,6 +8,27 @@ function f_n(n) {
     return (n < 10 ? '0' : '') + n;
 }
 
+// 切换类型
+function switch_type() {
+    var switch_type = document.getElementById("switch_control");
+    var post_content = document.getElementById("post_content");
+    var create_track_link = document.getElementById("create_track_link");
+    var translate = document.getElementById("translate");
+    var status = switch_type.className;
+    if (status != "show") {
+        translate.setAttribute("style", "float:right;");
+        switch_type.setAttribute("class", "show");
+        post_content.setAttribute("class", "hide");
+        create_track_link.setAttribute("onclick", "create_link();");
+        create_track_link.setAttribute("onclick", "create_link();");       
+    } else {
+        switch_type.setAttribute("class", "hide");
+        post_content.setAttribute("class", "show");
+        create_track_link.setAttribute("onclick", "create();");
+        translate.setAttribute("style", "display:none;");
+    }
+}
+
 // 设置时间
 var d = new Date();
 var a = d.getFullYear();
@@ -50,6 +71,76 @@ function copy_mes_url() {
     setTimeout(function() {
         document.getElementById("copy_status").innerHTML = "";
     }, 3000);
+}
+
+// 生成链接
+function create_link() {
+    // 名字
+    var select_name = getSheetName("select_name").replace(/[0-9].+/g, "");
+    // 发帖位置
+    var fb_post_place = getSheetName("post_place");
+    // 个人代码
+    var user_id = getSheetName("select_name").match(/[0-9]{3}/g);
+    // 原链接
+    var original_link = document.getElementsByClassName("original_link")[0].value.replace(/\s/g, "").replace(/\?source.+/g, "");
+    // 随机数，给链接用
+    var num = getRandom(0, 10000000);
+    // 判断所需内容是否填全
+    if (select_name == "") {
+        alert("请选择名字!");
+        return;
+    }
+    if (fb_post_place.length == 0) {
+        alert("请输入发帖位置!");
+        return;
+    }
+    if (original_link.length == 0) {
+        alert("请输入原链接!");
+        return;
+    }
+    var reg = RegExp(/holyspiritspeaks|kingdomsalvation|answerforchristians|bible-..|alkitabonline|bibbia-..|biblia|godfootsteps|jesucristo|evangelio|easternlightning|vangelodioggi|luciolededieu|lesalut/);
+    if (original_link.match(reg)) {
+        // 生成后的链接
+        var new_link = original_link + "?source=" + fb_post_place + user_id + "&num=" + num;
+        // 复制新链接
+        copy(new_link);
+        document.getElementById("copy_status").innerHTML = "复制成功";
+        // 3秒后清除复制状态
+        setTimeout(function() {
+            document.getElementById("copy_status").innerHTML = "";
+        }, 3000);
+        // 追踪链接输出
+        document.getElementsByClassName("track_link")[0].value = new_link;
+        document.getElementsByClassName("track_link")[0].innerHTML = new_link;
+    } else {
+        alert("原链接错误，无法生成！");
+        return;
+    }   
+}
+
+// 翻译
+function translate_to_cn() {
+var guide = document.getElementsByClassName("guide")[0].value;
+if (guide.length == 0) {
+        alert("请输入外文引导语!");
+        return;
+    }
+	var other_guide = guide.replace(/(ht)tp(s?)\:\/\/[0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*(:(0-9)*)*(\/?)([a-zA-Z0-9\-\.\?\,\'\/\\\+&amp;%\$#_]*)?/g,"");
+	var clean = document.getElementsByClassName("cn_guide")[0].value = "";
+	var other_guide_arr = encodeURIComponent(other_guide).replace(/\.|,|!/g, "").match(/.{7932}/g);
+	if (other_guide_arr == null) {
+		var other_guide_arr = encodeURIComponent(other_guide).replace(/\.|,|!/g, "").match(/.+/g);
+	}
+	for (var i = 0; i < other_guide_arr.length; i++) {
+		(async function(i) {
+			let response = await fetch("https://translate.google.com/translate_a/single?client=gtx&dt=t&dj=1&ie=UTF-8&sl=auto&tl=zh_CN&q=" + other_guide_arr[0].replace(/%$/g, ""))
+			let text = await response.text();
+			var get_data = text.match(/(?<=trans\":\").*?(?=\",\"orig)/g);
+			for (var i = 0; i < get_data.length; i++) {
+				var cn_guide = document.getElementsByClassName("cn_guide")[0].value += get_data[i];
+			}
+		})(i);
+	}
 }
 
 // 生成内容
