@@ -8,6 +8,29 @@ function f_n(n) {
     return (n < 10 ? '0' : '') + n;
 }
 
+// 识邮箱识别名字
+function run() {
+    var select_name = document.getElementById('select_name');
+    var select_name_str = document.getElementById('select_name_str');
+    var select_id = document.getElementsByClassName('select-wrapper')[0];
+    try {
+        var my_email = document.getElementById('my_email').outerText;
+        var email_list = document.getElementById('email').outerText.split(',');
+        var arrary = email_list.indexOf(my_email) + 1;
+        var account_list = document.getElementById("account_list").outerText;
+        var get_account_name = account_list.match(/.+/g)[arrary - 1];
+        var set_aacount_name = get_account_name.split(',').map(function(r) {
+            return '<option value="' + r + '">' + r + '</option>';
+        }).join("");
+        document.getElementById('account_name').innerHTML = '<option value="" >=请选择你的账号=</option>' + set_aacount_name;
+        var my_name = document.getElementById('select_name').options[arrary].value;
+        document.getElementById('select_name').innerHTML = '<option value="' + my_name + '"></option>'
+        select_name_str.innerHTML = my_name;
+        select_id.setAttribute("class", "hide");
+        select_name_str.setAttribute("class", "show");
+    } catch {}
+}
+
 // 切换类型
 function switch_type() {
     var switch_type = document.getElementById("switch_control");
@@ -362,9 +385,6 @@ function fill_form() {
     // 清空内容
     document.getElementsByClassName("post_link")[0].value = "";
     document.getElementsByClassName("track_link")[0].value = "";
-    document.getElementsByClassName("original_link")[0].value = "";
-    document.getElementsByClassName("cn_guide")[0].value = "";
-    document.getElementsByClassName("guide")[0].value = "";
 }
 
 // 复制
