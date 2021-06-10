@@ -42,8 +42,7 @@ function switch_type() {
         translate.setAttribute("style", "float:right;");
         switch_type.setAttribute("class", "show");
         post_content.setAttribute("class", "hide");
-        create_track_link.setAttribute("onclick", "create_link();");
-        create_track_link.setAttribute("onclick", "create_link();");       
+        create_track_link.setAttribute("onclick", "create_link();");   
     } else {
         switch_type.setAttribute("class", "hide");
         post_content.setAttribute("class", "show");
