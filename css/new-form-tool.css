@@ -58,6 +58,9 @@ body {
     width: 0px;
     opacity: 0;
 }
+.right {
+    float:right;
+}
 textarea {
     resize: none;
     overflow: hidden;
