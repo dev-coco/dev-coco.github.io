@@ -345,6 +345,18 @@ function fill_form() {
             } else {}
         }  
     }
+	// 设置时间
+var d = new Date();
+var a = d.getFullYear();
+var a2 = d.getMonth() + 1
+var a3 = d.getDate();
+var a4 = d.getHours();
+var a5 = d.getMinutes();
+var a6 = d.getSeconds();
+
+// 日期 (mm-dd)
+var now_date = f_n(a2) + f_n(a3);
+
     // 日期 (yyyy-m-d)
     var date = a + "-" + a2 + "-" + a3;
     // 时间 (hh:mm:ss)
