@@ -274,7 +274,7 @@ function fill_form() {
     // 网站原链接
     var fn_web_url = document.getElementsByClassName("original_link")[0].value;
     // 贴文链接
-    var fb_pose_link = document.getElementsByClassName("post_link")[0].value;
+    var fb_pose_link = document.getElementsByClassName("post_link")[0].value.replace(/\?__.+/g,"");
     // 追踪链接
     var track_link = document.getElementsByClassName("track_link")[0].value;
     // 空值
