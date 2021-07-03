@@ -272,7 +272,7 @@ function fill_form() {
     // 图片来源
     var fn_image_origin = document.getElementById('posting_status').value;
     // 网站原链接
-    var fn_web_url = document.getElementsByClassName("original_link")[0].value;
+    var fn_web_url = document.getElementsByClassName("original_link")[0].value.replace(/\s/g, "").replace(/\?source.+/g, "");
     // 贴文链接
     var fb_pose_link = document.getElementsByClassName("post_link")[0].value.replace(/\?__.+/g,"");
     // 追踪链接
