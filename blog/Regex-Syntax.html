@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="zh">
    <head>
@@ -9,7 +10,7 @@
       <meta name="description" content="正则表达式零基础语法教程。"/>
       <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-      <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+      <script src="https://d1ev-coco.github.io/js/love.js" async="async"></script>
       <link rel="stylesheet" href="https://dev-coco.github.io/css/site.css">
       <style>
          code {
@@ -61,7 +62,7 @@
          <p><code>\w</code>匹配字母数字或者下划线</p>
          <p>例子</p>
          <p>表达式：<code>\w</code></p>
-         <p>文本：价格：$<l>1</l>.<l>5</l>, 名字：<l>Aaron_C</l></p>
+         <p>文本：价格：$<l>1</l>.<l>5</l>, 名字：<l>A</l><l>a</l><l>r</l><l>o</l><l>n</l><l>_</l><l>C</l></p>
          <p>匹配结果：15Aaron_C</p>
          <br>
          <p><code>\d</code>匹配任意数字，同等于<code>[0-9]</code></p>
@@ -79,32 +80,32 @@
          <p><code>\b</code>匹配单词的开始或结束</p>
          <p>例子</p>
          <p>表达式：<code>\bcup\b</code></p>
-         <p>文本：I have three cups and he has one<l>cup</l>.</p>
+         <p>文本：I have three cups and he has one <l>cup</l>.</p>
          <p>匹配结果：cup</p>
          <br>
          <h3>反义</h3>
          <p><code>\D</code>匹配不是数字的字符</p>
          <p>例子</p>
          <p>表达式：<code>\D</code></p>
-         <p>文本：1<l>个西瓜</l>15<l>斤</l></p>
+         <p>文本：1<l>个</l><l>西</l><l>瓜</l>15<l>斤</l></p>
          <p>匹配结果：个西瓜斤</p>
          <br>
          <p><code>\W</code>匹配不是字母、数字、下划线的字符</p>
          <p>例子</p>
          <p>表达式：<code>\W</code></p>
          <p>文本：This<l> </l>music<l> </l>style<l> </l>R<l>&amp;</l>B<l>.</l></p>
-         <p>匹配结果： &nbsp; &amp;.(四个空格&amp;.)</p>
+         <p>匹配结果： &nbsp; &amp;.(三个空格&amp;.)</p>
          <br>
          <p><code>\S</code>匹配任意可见字符</p>
          <p>例子</p>
          <p>表达式：<code>\S</code></p>
-         <p>文本：<l>M</l><l>a</l><l>c</l><l>b</l><l>o</l><l>o</l><l>k</l><l>i</l><l>s</l><l>t</l><l>o</l><l>o</l><l>e</l><l>x</l><l>p</l><l>e</l><l>n</l><l>s</l><l>i</l><l>v</l><l>e</l><l>.</l></p>
+         <p>文本：<l>M</l><l>a</l><l>c</l><l>b</l><l>o</l><l>o</l><l>k</l> <l>i</l><l>s</l> <l>t</l><l>o</l><l>o</l> <l>e</l><l>x</l><l>p</l><l>e</l><l>n</l><l>s</l><l>i</l><l>v</l><l>e</l><l>.</l></p>
          <p>匹配结果：Macbookistooexpensive.</p>
          <br>
          <p><code>\B</code>匹配不是单词开头或结束的位置</p>
          <p>例子</p>
          <p>表达式：<code>can\B</code></p>
-         <p>文本：<l>can</l>I have a candy?</p>
+         <p>文本：can I have a <l>can</l>dy?</p>
          <p>匹配结果：can</p>
          <br>
          <h3>限定符</h3>
@@ -144,7 +145,7 @@
          <p><code>[xyz]</code>匹配字符范围。</p>
          <p>例子</p>
          <p>表达式：<code>[a-z]</code></p>
-         <p>文本：B<l>l</l><l>u</l><l>e</l><l>p</l><l>e</l><l>n</l><l>i</l><l>n</l><l>m</l><l>y</l><l>h</l><l>a</l><l>n</l><l>d</l>.</p>
+         <p>文本：B<l>l</l><l>u</l><l>e</l> <l>p</l><l>e</l><l>n</l> <l>i</l><l>n</l> <l>m</l><l>y</l> <l>h</l><l>a</l><l>n</l><l>d</l>.</p>
          <p>匹配结果：luepeninmyhand</p>
          <br>
          <p><code>[^xyz]</code>不匹配字符范围</p>
@@ -175,8 +176,8 @@
          <p><code>\</code>表示转义序列，或去掉元字符的转义。</p>
          <p>例子</p>
          <p>表达式：<code>\\|\^</code></p>
-         <p>文本：KL\bwo^K0c</p>
-         <p>匹配结果：KL<l>\</l>bwo<l>^</l>K0c</p>
+         <p>文本：KL<l>\</l>bwo<l>^</l>K0c</p>
+         <p>匹配结果：\^</p>
          <br>
          <h3>贪婪与非贪婪模式</h3>
          <p>通常情况下，在整个表达式能匹配到文本的前提下，尽可能匹配更多的字符。</p>
