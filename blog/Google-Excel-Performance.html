@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh">
+   <head>
+      <title>Google Excel性能优化</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta name="keywords" content="dev-coco, Google Excel性能优化, Google Excel, Google Excel Performance"/>
+      <meta name="robots" content="index,follow"/>
+      <meta name="description" content="教你13招快速提高Google Excel运行速度。"/>
+      <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+      <script src="https://d1ev-coco.github.io/js/love.js" async="async"></script>
+      <link rel="stylesheet" href="https://dev-coco.github.io/css/site.css">
+   </head>
+   <body>
+      <div class="container">
+         <h1 style="text-align:left;"><img class="logo" alt="dev-coco" src="https://dev-coco.github.io/images/WebIcon.png"> Dev-Coco</h1>
+         <div class="menu">
+            <a href="https://dev-coco.github.io/">主页</a>
+            <a href="https://dev-coco.github.io/blog">博客</a>
+            <a href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+            <a href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+            <a href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+            <a href="https://dev-coco.github.io/Terms-and-Privacy.html">隐私与条款</a>
+            <a target="_blank" href="https://github.com/dev-coco">Github</a>
+         </div>
+         <h1>Google Excel性能优化</h1>
+         <p>此教程不适合0基础用户或者新手学习。</p>
+         <h3>减少单元格</h3>
+         <p>在Google Excel新建一个空白表格的时候，默认会建立一个26*1000单元格的表格，过多的单元格会降低Google Excel的运行速度，有的时候并没有完全使用到这么多的单元格，所以可以删除一些用不到的行或者列。</p>
+         <h3>将公式结果替换成文本</h3>
+         <p>在Google Excel表格中使用函数计算一些结果，或者获取一些数据后，可能就不再需要了。例如使用<code>GOOGLETRANSLATE</code>函数翻译一个字符串，翻译后就不再需要它了，就可以把函数返回的结果仅粘贴值，替换成文本，这样每次打开表格就不会重新再计算或者获取数据了。</p>
+         <img alt="Google Excel性能优化, Google Excel Performance, Google Excel" class="img" src="https://dev-coco.github.io/images/Google-Excel-Performance/1.png">
+         <h3>减少条件格式的使用</h3>
+         <p>使用条件格式会增加表格函数的计算，降低一点运行速度。</p>
+         <img alt="Google Excel性能优化, Google Excel Performance, Google Excel" class="img" src="https://dev-coco.github.io/images/Google-Excel-Performance/2.png">
+         <h3>引用指定范围</h3>
+         <p>在引用单元格的时候，可能会直接使用A:A，假设行数有1000的话，也就是引用从A1到A1000这个范围。如果实际用到的单元格没有那么多，也许只用到了300行，那么剩下700行空白单元格都被引用，这样会无意义的降低运行速度。所以可以缩小引用的范围，而不是一整列。</p>
+         <p>有趣的是在一列相同长度的情况下，A1:A1000的运行速度要比A1:A快，但是A1:A的运行速度要比A:A快。</p>
+         <p>测试结果：引用A1:A70000耗时133ms，引用A1:A耗时139ms，引用A:A耗时263ms。</p>
+         <img alt="Google Excel性能优化, Google Excel Performance, Google Excel" class="img" src="https://dev-coco.github.io/images/Google-Excel-Performance/3.png">
+         <h3>减少跨表引用</h3>
+         <p>跨表引用的速度要比在同一个表格里面引用速度要慢一些。</p>
+         <p><code>=&#39;工作表1&#39;!A1</code></p>
+         <p><code>=A1</code></p>
+         <p>测试结果：跨表引用耗时456ms，引用当前表格耗时442ms。</p>
+         <img alt="Google Excel性能优化, Google Excel Performance, Google Excel" class="img" src="https://dev-coco.github.io/images/Google-Excel-Performance/4.png">
+         <h3>尽可能地减少使用易失函数</h3>
+         <p><code>NOW()</code>、<code>TODAY()</code>、<code>RAND()</code>和<code>RANDBETWEEN()</code>，这些函数被称为易失函数。使用这些函数后，在表格内修改任意一个单元格后，会引起所有相关公式重新计算。</p>
+         <p>如果需要使用多个这些易失函数，建议设置一个值后，其他单元格来引用它。例如在A1的设置<code>=NOW()</code>，那么其他位置的单元格就可以使用$A$1来引用。</p>
+         <p>测试结果：一整列使用NOW耗时671ms，第一行使用NOW，其他单元格引用NOW的值，耗时668ms。</p>
+         <img alt="Google Excel性能优化, Google Excel Performance, Google Excel" class="img" src="https://dev-coco.github.io/images/Google-Excel-Performance/5.png">
+         <h3>使用数组公式</h3>
+         <p>如果一列里面有很多相同的公式，可以使用单个数组公式<code>ARRAYFORMULA</code>来代替，这样运行的速度要快很多。</p>
+         <p>测试结果：使用ARRAYFORMULA耗时128ms，不使用ARRAYFORMULA耗时308ms。</p>
+         <img alt="Google Excel性能优化, Google Excel Performance, Google Excel" class="img" src="https://dev-coco.github.io/images/Google-Excel-Performance/6.png">
+         <h3>减少使用需要网络请求的函数</h3>
+         <p>使用网络请求的函数：<code>IMPORTDATA</code>、<code>IMPORTFEED</code>、<code>IMPORTHTML</code>、<code>IMPORTRANGE</code>、<code>IMPORTXML</code>、<code>GOOGLEFINANCE</code>、<code>GOOGLETRANSLATE</code>和<code>DETECTLANGUAGE</code></p>
+         <p>使用IMPORTRANGE从另外一个工作表索引数据的时候，如果内容特别庞大，就会出现#ERROR!错误。可以使用多个IMPORTRANGE来索引数据。</p>
+         <p>使用<code>{xxx;xxx}</code>数组把多个函数合并起来。比如第一个IMPORTRANGE从A1到A3000，那么第二个IMPORTRANGE就可以从A3001到A6000</p>
+         <p><code>={IMPORTRANGE(&quot;xxxx&quot;,&quot;工作表1!A1:A3000&quot;);<br>IMPORTRANGE(&quot;xxxx&quot;,&quot;工作表1!A3001:A6000&quot;)}</code></p>
+         <h3>使用IF函数管理函数执行</h3>
+         <p><code>=IF(A1=&quot;&quot;,&quot;&quot;,被执行的函数)</code></p>
+         <p>这样可以跳过一些空值而不执行函数，避免了没必要的性能浪费，特别是使用一些网络请求或者<code>VLOOKUP</code>等比较影响性能的函数，效果会比较明显。</p>
+         <p>测试结果：使用IF VLOOKUP耗时326ms，使用VLOOKUP耗时438ms。</p>
+         <img alt="Google Excel性能优化, Google Excel Performance, Google Excel" class="img" src="https://dev-coco.github.io/images/Google-Excel-Performance/7.png">
+         <p>也可以使用这种思路做一个开关，用来控制函数的运行。可以用在一些不是太经常用到，但是又偶尔用到的函数，这样只有在打开开关的时候才会执行，可以大幅减少性能的影响。</p>
+         <img alt="Google Excel性能优化, Google Excel Performance, Google Excel" class="img" style="width:30%" src="https://dev-coco.github.io/images/Google-Excel-Performance/7.gif">
+         <h3>创建一个更小的辅助表格</h3>
+         <p>如果需要使用IMPORTRANGE获取一个范围的数据，但是数据里面有些空白单元格或者重复的内容，这样就会造成没必要的性能浪费。</p>
+         <p>可以使用<code>ARRAY_CONSTRAIN</code>函数创建一个静态的辅助表。</p>
+         <p><code>=ARRAY_CONSTRAIN(A1:F13,2,4)</code></p>
+         <p>或者使用<code>FILTER</code>创建一个动态的辅助表。匹配指定内容，排除空白单元格。</p>
+         <p><code>=FILTER(A:C, LEN(C:C))</code></p>
+         <p>也可以使用<code>UNIQUE</code>函数去除重复内容。</p>
+         <p><code>=UNIQUE(A:A)</code></p>
+         <p>还可以使用<code>COUNTA</code>函数计算单元格的范围，然后使用<code>IMPORTRANGE</code>来引用一个动态的范围。</p>
+         <p><code>=IMPORTRANGE(&quot;xxxx&quot;,&quot;工作表1!A1:A&quot;&amp;COUNTA(工作表1!A:A))</code></p>
+         <h3>慎用Apps Script</h3>
+         <p>在进行大批量的数据处理时，特别是需要重复循环执行的数据，Apps Script要比使用函数处理数据要快得多。</p>
+         <p>尽可能避免使用Apps Script自定义函数，因为的处理速度要远比原生的函数要缓慢很多。</p>
+         <h3>使用数组引用或者数组输出</h3>
+         <p>例如使用<code>VLOOKUP</code>函数从C到F列进行匹配，但是只需要索引第4列的值，那么引用中间的D和E就造成了没有必要的性能浪费。</p>
+         <p><code>=VLOOKUP(J1,C:F,4,0)</code></p>
+         <p>可以使用数组进行引用，只引用C和F两列，索引第二列的值。</p>
+         <p><code>=VLOOKUP(J1,{C:C,F:F},2,0)</code></p>
+         <p>测试结果：VLOOKUP引用C:F耗时824ms，VLOOKUP引用{C:C,F:F}耗时701ms。</p>
+         <img alt="Google Excel性能优化, Google Excel Performance, Google Excel" class="img" src="https://dev-coco.github.io/images/Google-Excel-Performance/8.png">
+         <p>如果要索引多个值，可以使用数组输出</p>
+         <p><code>=ARRAYFORMULA(VLOOKUP(J1,C:F,{2,3,4},0))</code></p>
+         <h3>使用性能更佳的函数实现功能</h3>
+         <p>在实现某些功能的时候，可能有多种函数或者方法都可以达到，可以选择性能最佳的函数来实现功能。</p>
+         <p><code>INDEX MATCH</code>代替<code>VLOOKUP</code></p>
+         <p><code>=INDEX(D:D,MATCH(F1,C:C,0))</code></p>
+         <p><code>=VLOOKUP(F1,C:D,2,0)</code></p>
+         <p>因为<code>INDEX MATCH</code>执行的速度要比<code>VLOOKUP</code>快一些。</p>
+         <p>测试结果：INDEX MATCH耗时563ms，VLOOKUP耗时765ms</p>
+         <img alt="Google Excel性能优化, Google Excel Performance, Google Excel" class="img" src="https://dev-coco.github.io/images/Google-Excel-Performance/9.png">
+         <p>如果需要多个条件匹配，使用<code>SUMPRODUCT</code>函数速度要比<code>SUMIFS</code>、<code>COUNTIFS</code>快一些。反之，如果没有多个条件匹配，那么<code>SUMPRODUCT</code>函数的性能没有<code>SUMIFS</code>或者<code>COUNTIFS</code>执行速度快。</p>
+      </div>
+   </body>
+</html>
