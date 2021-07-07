@@ -25,9 +25,15 @@
             <a target="_blank" href="https://github.com/dev-coco">Github</a>
          </div>
          <h1>Google Excel性能优化</h1>
-         <p>此教程不适合0基础用户或者新手学习。</p>
+         <p>此教程不适合零基础用户或者新手学习。</p>
          <h3>减少单元格</h3>
          <p>在Google Excel新建一个空白表格的时候，默认会建立一个26*1000单元格的表格，过多的单元格会降低Google Excel的运行速度，有的时候并没有完全使用到这么多的单元格，所以可以删除一些用不到的行或者列。</p>
+         <h3>建立一个单元格表</h3>
+         <p>在打开表格的时候，如果当前的工作表有很多内容，需要一些时间来计算函数，这样就会延迟表格的加载时间。可以建立一个单元格的表格，也就是一个表格里面什么东西都没有，只有一个空白单元格。</p>
+         <img src="https://dev-coco.github.io/images/Google-Excel-Performance/10.png" alt="Google Excel性能优化, Google Excel Performance, Google Excel" class="img">
+         <p>因为优先打开空白单元格的表，里面没有内容加载的速度就会快一些，其他需要大量计算函数的表格就会延迟加载。</p>
+         <p>测试结果：常规的打开表格速度在46.32s - 55.86s，优先打开空白表格速度在34.78s - 43.74s。</p>
+         <img alt="Google Excel性能优化, Google Excel Performance, Google Excel" class="img" src="https://dev-coco.github.io/images/Google-Excel-Performance/11.png">
          <h3>将公式结果替换成文本</h3>
          <p>在Google Excel表格中使用函数计算一些结果，或者获取一些数据后，可能就不再需要了。例如使用<code>GOOGLETRANSLATE</code>函数翻译一个字符串，翻译后就不再需要它了，就可以把函数返回的结果仅粘贴值，替换成文本，这样每次打开表格就不会重新再计算或者获取数据了。</p>
          <img alt="Google Excel性能优化, Google Excel Performance, Google Excel" class="img" src="https://dev-coco.github.io/images/Google-Excel-Performance/1.png">
