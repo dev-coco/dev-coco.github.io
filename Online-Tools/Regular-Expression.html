@@ -9,7 +9,7 @@
     <meta name="description" content="正则表达式在线工具，同时支持字符转换。"/>
     <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+    <script src="https://dev-coco.git1hub.io/js/love.js" async="async"></script>
     <link rel="stylesheet" href="https://dev-coco.github.io/css/site.css">
     <style>
         .c_data{width:300px;height:100px;}input{margin-top:10px;}.re{width:300px;margin:0 auto;}.reg{width:200px;}select{width:300px;}#copy_sel{width:230px;}#copy_tool{width:300px;}
@@ -33,12 +33,14 @@
         <br>
         <select id="sel1" onchange="chan()">
         <option value=""></option>
-        <option value="[A-z].+">[A-z].+</option>
+        <option value="(&amp;amp;|&amp;)__.+|\?(__|ref|comm|mul|view).+">FB最短链接 [替换]</option>
+        <option value="(?&lt;=user\/).*?(?=\/)|(?&lt;=\.id=).*?(?=&amp;)|(?&lt;=\.id=|e_id=).+">FB数字ID [匹配]</option>
         </select>
         <br> <span>正则表达式</span>
         <input type="text" id="regular1" class="reg">
         <button class="button blue" type="button" id="btn1">确认</button>
         <input type="checkbox" id="ck"> 按列显示
+        <input type="checkbox" id="replace"> 替换模式
         <p>第一次输出结果</p>
         <textarea type="text" class="c_data" id="data2"></textarea>
         <br>
@@ -63,6 +65,6 @@
 </div>
 </body>
     <script>
-        var btn1 = document.getElementById('btn1');var btn2 = document.getElementById('btn2');var sel1 = document.getElementById('sel1');var sel2 = document.getElementById('sel2');var ans = '';var war = '';btn1.onclick = function (){var regular1 = lookup('regular1');if (document.getElementById('ck').checked){var ov = document.getElementById('data1').value.match(regular1);var ev = '';for (var i = 0;i < ov.length;i++){if(ov!=''){ev += ov[i] + '\n';}};document.getElementById('data2').value = ev;ans = String(ov);war = ev;}else{war = ans = document.getElementById('data2').value = String(document.getElementById("data1").value.match(regular1)).replace(/,/g,'');};};btn2.onclick = function (){if(true){ans = document.getElementById('data2').value;}var regular2 = lookup('regular2');if (document.getElementById('ck1').checked && !document.getElementById('u_char').checked){document.getElementById('data3').value = shu(ans);}else if (document.getElementById('ck1').checked && document.getElementById('u_char').checked){document.getElementById('data3').value = shu(to_char(ans));}else if (!document.getElementById('ck1').checked && document.getElementById('u_char').checked){document.getElementById('data3').value = to_char(String(ans.match(regular2)).replace(/,/g,''));}else if (document.getElementById('ck2').checked) {document.getElementById('data3').value = to_char(String(ans.match(regular2)).replace(/,/g, ' '));}else{document.getElementById('data3').value = String(ans.match(regular2)).replace(/,/g,'');};};function lookup(data){return new RegExp(document.getElementById(data).value,"gi");};function chan(){document.getElementById('regular1').value = sel1.value;};function chan1(){document.getElementById('regular2').value = sel2.value;};chan();chan1();function copyTool(){document.getElementById('copy_tool').value = document.getElementById('copy_sel').value;}function shu(data){var regular2 = lookup('regular2');var zv = data.match(regular2);var xv = '';for (var i = 0;i < zv.length;i++){if(zv[i]!=''){xv += zv[i] + '\n';}};console.log(xv,1,zv,1,regular2,1,data);return xv;}function to_char(str){str = str.replace(/(&#)(\d{1,6});/gi,function ($0){return String.fromCharCode(parseInt(escape($0).replace(/(%26%23)(\d{1,6})(%3B)/g,"$2")));});return str;}function copyText(){document.getElementById('copy_tool').select();document.execCommand("copy");};document.getElementById('copy_tool').value = document.getElementById('copy_sel').value;
+        var btn1=document.getElementById("btn1"),btn2=document.getElementById("btn2"),sel1=document.getElementById("sel1"),sel2=document.getElementById("sel2"),ans="",war="";function lookup(e){return new RegExp(document.getElementById(e).value,"gi")}function chan(){document.getElementById("regular1").value=sel1.value}function chan1(){document.getElementById("regular2").value=sel2.value}function copyTool(){document.getElementById("copy_tool").value=document.getElementById("copy_sel").value}function shu(e){for(var t=lookup("regular2"),n=e.match(t),c="",a=0;a<n.length;a++)""!=n[a]&&(c+=n[a]+"\n");return console.log(c,1,n,1,t,1,e),c}function to_char(e){return e=e.replace(/(&#)(\d{1,6});/gi,function(e){return String.fromCharCode(parseInt(escape(e).replace(/(%26%23)(\d{1,6})(%3B)/g,"$2")))})}function copyText(){document.getElementById("copy_tool").select(),document.execCommand("copy")}btn1.onclick=function(){var e=lookup("regular1");if(document.getElementById("ck").checked){if(document.getElementById("replace").checked)var t=document.getElementById("data1").value.replace(e,"");else for(var n=document.getElementById("data1").value.match(e),c=(t="",0);c<n.length;c++)""!=n&&(t+=n[c]+"\n");document.getElementById("data2").value=t,ans=String(n),war=t}else war=ans=document.getElementById("replace").checked?document.getElementById("data2").value=String(document.getElementById("data1").value.replace(e,"")).replace(/,/g,""):document.getElementById("data2").value=String(document.getElementById("data1").value.match(e)).replace(/,/g,"")},btn2.onclick=function(){ans=document.getElementById("data2").value;var e=lookup("regular2");document.getElementById("ck1").checked&&!document.getElementById("u_char").checked?document.getElementById("data3").value=shu(ans):document.getElementById("ck1").checked&&document.getElementById("u_char").checked?document.getElementById("data3").value=shu(to_char(ans)):!document.getElementById("ck1").checked&&document.getElementById("u_char").checked?document.getElementById("data3").value=to_char(String(ans.match(e)).replace(/,/g,"")):document.getElementById("ck2").checked?document.getElementById("data3").value=to_char(String(ans.match(e)).replace(/,/g," ")):document.getElementById("data3").value=String(ans.match(e)).replace(/,/g,"")},chan(),chan1(),document.getElementById("copy_tool").value=document.getElementById("copy_sel").value;
     </script>
 </html>
