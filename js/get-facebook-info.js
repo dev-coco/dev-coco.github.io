@@ -129,3 +129,10 @@ function printf_friends() {
         })(k);
     }
 }
+
+function printf_friends_semi() {
+    var token = document.getElementById("printf_all_friends_token").value;
+    var get_id = document.getElementById("printf_all_friends").value;
+    var facebookID = get_id.match(/.+/g);
+    window.open('https://graph.facebook.com/v8.0/' + facebookID[0] + '/friends?access_token=' + token + '&pretty=0&limit=99999')
+}
