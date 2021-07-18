@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh">
+   <head>
+      <title>瀑布流画廊演示</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta name="keywords" content="dev-coco, 在线工具, 开源工具"/>
+      <meta name="robots" content="index,follow"/>
+      <meta name="description" content="Waterfall Flow Gallery Demo. 瀑布流画廊演示界面。"/>
+      <link rel="icon" href="https://dev-coco.github.io/images/WebIcon.png">
+      <script src="https://giventofly.github.io/yall/yall.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js"></script>
+      <script src="https://dev-coco.github.io/js/love.js" async="async"></script>
+      <script>
+         var lazyload = new yall();
+         window.addEventListener('DOMContentLoaded', (e) => {
+             lazyload.run();
+         });
+         function scrollup() {
+             scroll(0, 0);
+         }
+      </script>
+      <style>
+          body {
+              background-color: #c0d2e0;
+              margin: 0;
+          }
+          #sidebar-menu {
+              border-right: 1px solid #dee2e6 !important;
+          }
+          #sidebar-menu {
+              min-height: 100vh;
+              margin-left: -16.6rem;
+              transition: margin 0.25s ease-out;
+              background-color: #D0E1F9;
+              position: fixed;
+          }
+          .menu-title {
+              background-color: #4D648D !important;
+              color: white;
+              padding: 0.875rem 1.25rem;
+              font-size: 1.2rem;
+              text-align: center;
+          }
+          .menu-list {
+              display: flex;
+              flex-direction: column;
+              padding-left: 0;
+              margin-bottom: 0;
+              border-radius: 0.25rem;
+              width: 16.5rem;
+          }
+          body #wrapper:hover #sidebar-menu:hover {
+              margin-left: 0;
+          }
+          .menu-item {
+              position: relative;
+              display: block;
+              padding: 0.5rem 1rem;
+              color: #212529;
+              text-decoration: none;
+              background: #e0ebf9;
+              border: 1px solid rgba(0, 0, 0, 0.125);
+          }
+          .menu-item:hover {
+              background: rgba(77, 100, 141, 0.125);
+          }
+          .menu {
+              margin-left: 16.5rem;
+              position: absolute;
+              width: auto;
+              display: block;
+              background: #4D648D;
+              padding: .3rem .75rem;
+              border-radius: 5px;
+              color: white;
+              border: 1px solid #07575B;
+          }
+
+          .grid-container {
+              columns: 5 200px;
+              column-gap: 1.5rem;
+              width: 90%;
+              margin: 0 auto;
+          }
+          .grid-container div {
+              width: 150px;
+              margin: 0 1.5rem 1.5rem 0;
+              display: inline-block;
+              width: 100%;
+              border: solid 2px #40759b;
+              padding: 5px;
+              box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+              border-radius: 5px;
+          }
+          .grid-container div img {
+              width: 100%;
+              border-radius: 5px;
+              transition: all 0.25s ease-in-out;
+          }
+          .grid-container div p {
+              margin: 0px 0;
+              padding: 0;
+              text-align: center;
+          }
+
+          button {
+              text-align: center;
+              border: 1px solid #07575B;
+              padding: .375rem .75rem;
+              width: 100%;
+              margin-bottom: 5px;
+              margin-top: 5px;
+              border-radius: 5px;
+              font-size: 16px;
+              color: white;
+              background: #2caeb2;
+          }
+          button:hover {
+              background-color: #07575B;
+          }
+
+          .block {
+              background: #d8e2eb;
+          }
+          .medium-zoom-image--opened {
+              border-radius: 5px;
+          }
+          #scrollup {
+              width: 3rem;
+              height: 3rem;
+              position: fixed;
+              bottom: 2rem;
+              right: 0.5rem;
+              z-index: 9999;
+              color: #283655;
+          }
+      </style>
+   </head>
+   <body>
+      <div style="display: flex" id="wrapper">
+         <div id="sidebar-menu">
+            <div class="menu">菜单</div>
+            <div class="menu-title">Waterfall Flow Gallery</div>
+            <div class="menu-list">
+               <a class="menu-item" href="https://dev-coco.github.io/">主页</a>
+               <a class="menu-item" href="https://dev-coco.github.io/blog">博客</a>
+               <a class="menu-item" href="https://dev-coco.github.io/Featured-Software.html">软件</a>
+               <a class="menu-item" href="https://dev-coco.github.io/Online-Tools/">在线工具</a>
+               <a class="menu-item" href="https://dev-coco.github.io/Linux-Command/">Linux命令</a>
+               <a class="menu-item" href="https://dev-coco.github.io/Terms-and-Privacy.html">隐私与条款</a>
+               <a class="menu-item" href="https://github.com/dev-coco">Github</a>
+            </div>
+         </div>
+      </div>
+      <a onclick="scrollup()" id="scrollup">
+         <svg viewBox="0 0 16 16" class="bi bi-arrow-up-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>
+         </svg>
+      </a>
+      </div>
+      </div>
+      <div class="grid-container" id="jjxj" style="">
+         <div class="block" >
+            <img class="yall_lazy" src="https://images.unsplash.com/photo-1474174444668-bfc40156c277">
+            <button onclick="window.open('https://images.unsplash.com/photo-1474174444668-bfc40156c277?dl=jordan-stewart-uawRUmJw3_0-unsplash.jpg')">下载</button>
+            <p class="text" data-clipboard-text="Sunlight">阳光</p>
+         </div>
+         <div class="block" >
+            <img class="yall_lazy" data-src="https://images.unsplash.com/photo-1574047932575-7b354a4e0682">
+            <button onclick="window.open('https://images.unsplash.com/photo-1574047932575-7b354a4e0682?dl=timothy-eberly-Anh5yAyepIM-unsplash.jpg')">下载</button>
+            <p class="text" data-clipboard-text="Dusk">黄昏</p>
+         </div>
+         <div class="block" >
+            <img class="yall_lazy" data-src="https://images.unsplash.com/photo-1501504905252-473c47e087f8">
+            <button onclick="window.open('https://images.unsplash.com/photo-1501504905252-473c47e087f8?dl=nick-morrison-FHnnjk1Yj7Y-unsplash.jpg')">下载</button>
+            <p class="text" data-clipboard-text="Laptop">笔记本电脑</p>
+         </div>
+         <div class="block" >
+            <img class="yall_lazy" data-src="https://images.unsplash.com/photo-1488998427799-e3362cec87c3">
+            <button onclick="window.open('https://images.unsplash.com/photo-1488998427799-e3362cec87c3?dl=jeshoots-com-pUAM5hPaCRI-unsplash.jpg')">下载</button>
+            <p class="text" data-clipboard-text="Notebook">记事本</p>
+         </div>
+         <div class="block" >
+            <img class="yall_lazy" data-src="https://images.unsplash.com/photo-1511407401960-0ee203836665">
+            <button onclick="window.open('https://images.unsplash.com/photo-1511407401960-0ee203836665?dl=dan-gold-xBRQfR2bqNI-unsplash.jpg')">下载</button>
+            <p class="text" data-clipboard-text="Car">汽车</p>
+         </div>
+         <div class="block" >
+            <img class="yall_lazy" data-src="https://images.unsplash.com/photo-1518691340140-512e66ce957b">
+            <button onclick="window.open('https://images.unsplash.com/photo-1518691340140-512e66ce957b?dl=joanna-kosinska-vouDD7K0FoA-unsplash.jpg')">下载</button>
+            <p class="text" data-clipboard-text="Candy">糖果</p>
+         </div>
+         <div class="block" >
+            <img class="yall_lazy" data-src="https://images.unsplash.com/photo-1541447237128-f4cac6138fbe">
+            <button onclick="window.open('https://images.unsplash.com/photo-1541447237128-f4cac6138fbe?dl=willian-justen-de-vasconcellos-QTIugFX1Gug-unsplash.jpg')">下载</button>
+            <p class="text" data-clipboard-text="Ocean">海洋</p>
+         </div>
+         <div class="block" >
+            <img class="yall_lazy" data-src="https://images.unsplash.com/photo-1575014677467-0498b006ee2c">
+            <button onclick="window.open('https://images.unsplash.com/photo-1575014677467-0498b006ee2c?dl=tim-mossholder-ExgjQ-dXsv4-unsplash.jpg')">下载</button>
+            <p class="text" data-clipboard-text="Ripple">涟漪</p>
+         </div>
+         <div class="block" >
+            <img class="yall_lazy" data-src="https://images.unsplash.com/photo-1483683804023-6ccdb62f86ef">
+            <button onclick="window.open('https://images.unsplash.com/photo-1483683804023-6ccdb62f86ef?dl=denys-nevozhai-guNIjIuUcgY-unsplash.jpg')">下载</button>
+            <p class="text" data-clipboard-text="Ocean">海洋</p>
+         </div>
+         <div class="block" >
+            <img class="yall_lazy" data-src="https://images.unsplash.com/photo-1600676574032-7a319a226a66">
+            <button onclick="window.open('https://images.unsplash.com/photo-1600676574032-7a319a226a66?dl=annie-spratt-o0NP63XmQk0-unsplash.jpg')">下载</button>
+            <p class="text" data-clipboard-text="Forest">森林</p>
+         </div>
+         <div class="block" >
+            <img class="yall_lazy" data-src="https://images.unsplash.com/photo-1579728886904-9830ccc42f7c">
+            <button onclick="window.open('https://images.unsplash.com/photo-1579728886904-9830ccc42f7c?dl=annie-spratt-GHfMSs7CIlY-unsplash.jpg')">下载</button>
+            <p class="text" data-clipboard-text="Forest">森林</p>
+         </div>
+         <div class="block" >
+            <img class="yall_lazy" data-src="https://images.unsplash.com/photo-1527061011665-3652c757a4d4">
+            <button onclick="window.open('https://images.unsplash.com/photo-1527061011665-3652c757a4d4?dl=olia-gozha-9A_peGrSbZc-unsplash.jpg')">下载</button>
+            <p class="text" data-clipboard-text="Flower">花朵</p>
+         </div>
+         <div class="block" >
+            <img class="yall_lazy" data-src="https://images.unsplash.com/photo-1470509037663-253afd7f0f51">
+            <button onclick="window.open('https://images.unsplash.com/photo-1470509037663-253afd7f0f51?dl=paul-green-5lRxNLHfZOY-unsplash.jpg')">下载</button>
+            <p class="text" data-clipboard-text="Sunflower">向日葵</p>
+         </div>
+         <div class="block" >
+            <img class="yall_lazy" data-src="https://images.unsplash.com/photo-1464982326199-86f32f81b211">
+            <button onclick="window.open('https://images.unsplash.com/photo-1464982326199-86f32f81b211?dl=alex-blajan-vNGL14-V5TY-unsplash.jpg')">下载</button>
+            <p class="text" data-clipboard-text="Flower">花朵</p>
+         </div>
+         <div class="block" >
+            <img class="yall_lazy" data-src="https://images.unsplash.com/photo-1459411552884-841db9b3cc2a">
+            <button onclick="window.open('https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?dl=annie-spratt-fbAnIjhrOL4-unsplash.jpg')">下载</button>
+            <p class="text" data-clipboard-text="Cactus">仙人球</p>
+         </div>
+         <div class="block" >
+            <img class="yall_lazy" data-src="https://images.unsplash.com/photo-1470687372616-d48d122e3b06">
+            <button onclick="window.open('https://images.unsplash.com/photo-1470687372616-d48d122e3b06?dl=stephen-radford-xpeAiAmT-uA-unsplash.jpg')">下载</button>
+            <p class="text" data-clipboard-text="Wheat">麦子</p>
+         </div>
+         <div class="block" >
+            <img class="yall_lazy" data-src="https://images.unsplash.com/photo-1459411621453-7b03977f4bfc">
+            <button onclick="window.open('https://images.unsplash.com/photo-1459411621453-7b03977f4bfc?dl=annie-spratt-m1t-RJ1iCIU-unsplash.jpg')">下载</button>
+            <p class="text" data-clipboard-text="Broccoli">西兰花</p>
+         </div>
+         <div class="block" >
+            <img class="yall_lazy" data-src="https://images.unsplash.com/photo-1625061661414-6cce2a6cc5fc">
+            <button onclick="window.open('https://images.unsplash.com/photo-1625061661414-6cce2a6cc5fc?dl=annie-spratt-wGXq3GSxBJM-unsplash.jpg')">下载</button>
+            <p class="text" data-clipboard-text="Camera">相机</p>
+         </div>
+         <script>
+            var clipboard = new ClipboardJS('.text');
+            mediumZoom('img', {
+                margin: 50,
+                background: 'rgba(23, 29, 54, .8)',
+                scrollOffset: 0,
+                metaClick: false
+            })
+         </script>
+      </div>
+   </body>
+</html>
