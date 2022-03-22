@@ -26,9 +26,8 @@ jobs:
         echo "sitemap-path = ${{ steps.sitemap.outputs.sitemap-path }}"
         echo "url-count = ${{ steps.sitemap.outputs.url-count }}"
         echo "excluded-count = ${{ steps.sitemap.outputs.excluded-count }}"
-        
-    - name: Push sitemap to repository
-      run: |
-        git add sitemap.xml
-        git commit -m "add sitemap.xml"
-        git push
+
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v3
+      with:
+        title: "Automated sitemap update"
