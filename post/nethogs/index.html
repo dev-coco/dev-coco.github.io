@@ -1,0 +1,252 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>nethogs | Dev-Coco</title>
+  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1647958467779">
+  <link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
+  <script src="https://dev-coco.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
+<script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+  <div class="main">
+    <div class="header">
+      <div class="nav">
+        <div class="logo">
+          <a href="https://dev-coco.github.io">
+            <img class="avatar" src="https://dev-coco.github.io/images/avatar.png?v=1647958467779" alt="">
+          </a>
+          <div class="site-title">
+            <h1>Dev-Coco</h1>
+          </div>
+        </div>
+        <span class="menu-btn fa fa-align-justify"></span>
+        <div class="menu-container">
+          <ul>
+            <li>
+              <a href="/" class="menu">首页</a>
+            </li>
+            <li>
+              <a href="/Featured-Software.html" class="menu">软件</a>
+            </li>
+            <li>
+              <a href="/Online-Tools" class="menu">在线工具</a>
+            </li>
+            <li>
+              <a href="/post/Linux-Command" class="menu">Linux命令</a>
+            </li>
+            <li>
+              <a href="/Excel" class="menu">Excel教程</a>
+            </li>
+            <li>
+              <a href="/post/Terms-and-Privacy" class="menu">隐私与条款</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script>
+      $(document).ready(function() {
+        $(".menu-btn").click(function() {
+          $(".menu-container").slideToggle();
+        });
+        $(window).resize(function() {
+          if (window.matchMedia('(min-width: 960px)').matches) {
+            $(".menu-container").css('display', 'block')
+          } else {
+            $(".menu-container").css('display', 'none')
+          }
+        });
+      });
+    </script>
+    <div id="main-content" class="post-detail main-container">
+      <!-- left -->
+      <div id="content" class="main-container-left">
+        <article class="post i-card">
+        <h2 class="post-title">nethogs</h2>
+        <div class="post-info">
+          <time class="post-time">2022-02-04 / 4 min read</time>
+            <a href="https://dev-coco.github.io/tag/linux-command/" class="post-tag i-tag i-tag-other_2">#Linux命令</a>
+        </div>
+          <div class="post-content">
+            <p>终端下的网络流量监控工具。</p>
+<!-- more -->
+<h2 id="补充说明">补充说明</h2>
+<p>有很多适用于 Linux 系统的开源网络监视工具。比如说，你可以用命令 iftop 来检查带宽使用情况。netstat 用来查看接口统计报告，还有 top 监控系统当前运行进程。但是如果你想要找一个能够按进程实时统计网络带宽利用率的工具，那么 NetHogs 值得一看。</p>
+<p>NetHogs 是一个开源的命令行工具（类似于 Linux 的 top 命令），用来按进程或程序实时统计网络带宽使用率。</p>
+<p>来自 NetHogs 项目网站:</p>
+<blockquote>
+NetHogs 是一个小型的 net top 工具，不像大多数工具那样拖慢每个协议或者是每个子网的速度而是按照进程进行带宽分组。NetHogs 不需要依赖载入某个特殊的内核模块。如果发生了网络阻塞你可以启动 NetHogs 立即看到哪个 PID 造成的这种状况。这样就很容易找出哪个程序跑飞了然后突然占用你的带宽。
+</blockquote>
+本文为你介绍如何在 Unix/Linux 操作系统下如何安装和使用 NetHogs 按进程监控网络带宽使用率。
+<h2 id="语法">语法</h2>
+<pre><code class="language-Shell">nethogs（选项）（参数）
+</code></pre>
+<h2 id="选项">选项</h2>
+<pre><code class="language-Shell">usage: nethogs [-V] [-h] [-b] [-d seconds] [-v mode] [-c count] [-t] [-p] [-s] [device [device [device ...]]]
+  -V : 打印版本。
+  -h : 打印此帮助。
+  -b : bughunt 模式 - 暗示 tracemode。
+  -d : 延迟更新刷新率（以秒为单位）。 默认值为 1。
+  -v : 视图模式（0 = KB / s，1 =总 KB，2 =总 B，3 =总 MB）。 默认值为 0。
+  -c : 更新次数。 默认为 0（无限制）。
+  -t : tracemode.
+  -p : 煽动混乱模式（不推荐）。
+  -s : 按发送列排序输出。
+  -a : 监控所有设备，甚至环回/停止。
+  device : 要监控的设备。 默认是所有接口启动和运行，不包括环回
+
+当 nethogs 运行时，按：
+  q：退出
+  s：按 SENT 流量排序
+  r：按 RECEIVE 流量排序
+  m：在总（KB，B，MB）和 KB / s 模式之间切换
+</code></pre>
+<p>其他参数和用法</p>
+<pre><code class="language-Shell">-d : 刷新间隔
+-h : 帮助
+-p : promiscious 模式
+-t : trace 模式
+-V : 版本
+</code></pre>
+<h3 id="交互命令">交互命令</h3>
+<p>以下是 NetHogs 的一些交互命令（键盘快捷键）</p>
+<ul>
+<li>m : 修改单位</li>
+<li>r : 按流量排序</li>
+<li>s : 按发送流量排序</li>
+<li>q : 退出命令提示符</li>
+</ul>
+<h3 id="安装">安装</h3>
+<p>在 RHEL、CentOS 和 Fedora 下安装 NetHogs</p>
+<p>要安装 NetHogs，你必须要启用你所用 Linux 下的 EPEL 源。然后运行下面的 yum 命令下载安装 NetHogs 包。</p>
+<pre><code class="language-Shell">yum install nethogs
+</code></pre>
+<p>在 Ubuntu、Linux mint 和 Debian 下安装 NetHogs</p>
+<p>键入 apt-get 命令安装 NetHogs 包：</p>
+<pre><code class="language-Shell">$ sudo apt-get install nethogs
+</code></pre>
+<h3 id="nethogs-用法">NetHogs 用法</h3>
+<p>在基于 RedHat 系统下键入如下命令启动 NetHogs 工具。</p>
+<pre><code class="language-Shell">nethogs
+</code></pre>
+<p>在 Debian/Ubuntu/Linux Mint 下要执行 NetHogs 你必须拥有 root 权限：</p>
+<pre><code class="language-Shell">$ sudo nethogs
+</code></pre>
+<p>!nethogs</p>
+<p>Ubuntu 12.10 下的 NetHogs 预览</p>
+<p>正如上图所示，send 列和 received 列显示的是按照每个进程的流量统计。总的收发数据带宽在最下方，而且可以用交互命令控制排序，下面将要讨论这些交互命令。</p>
+<h3 id="nethogs-命令行参数">NetHogs 命令行参数</h3>
+<p>以下就是 NetHogs 命令行的参数，用-d 来添加刷新频率参数，device name 用来检测给定的某个或者某些设备的带宽（默认是 eth0）。例如：设置 5 秒钟的刷新频率，键入如下命令即可：</p>
+<pre><code class="language-Shell">nethogs -d 5
+</code></pre>
+<pre><code class="language-Shell">$ sudo nethogs -d 5
+</code></pre>
+<p>如果只用来监视设备（eth0）的网络带宽可以使用如下命令：</p>
+<pre><code class="language-Shell">nethogs eth0
+</code></pre>
+<pre><code class="language-Shell">$ sudo nethogs eth0
+</code></pre>
+<p>如果要同时监视 eth0 和 eth1 接口，使用以下命令即可：</p>
+<pre><code class="language-Shell">nethogs eth0 eth1
+</code></pre>
+<pre><code class="language-Shell">$ sudo nethogs eth0 eth1
+
+</code></pre>
+<p>关于 NetHogs 命令行工具的完整参数列表，可以参考 NetHogs 的手册，使用方法是在终端里输入<code>man nethogs</code>或者<code>sudo man nethogs</code>，更多信息请参考 NetHogs 项目主页。</p>
+
+          </div>
+        </article>
+        <div class="next-post">
+          <div class="next">下一篇</div>
+          <a href="https://dev-coco.github.io/post/vmstat/">
+            <h3 class="post-title">vmstat</h3>
+          </a>
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="gitalk-container"></div>
+      </div>
+      <!-- middle -->
+      <div class="main-container-middle"></div>
+      <!-- right -->
+      <div id="sidebar" class="main-container-right">
+      <!-- toc -->
+      <div class="toc-card i-card ">
+        <div class="toc-title i-card-title">目录</div>
+          <div class="toc-content">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E8%A1%A5%E5%85%85%E8%AF%B4%E6%98%8E">补充说明</a></li>
+<li><a href="#%E8%AF%AD%E6%B3%95">语法</a></li>
+<li><a href="#%E9%80%89%E9%A1%B9">选项</a>
+<ul>
+<li><a href="#%E4%BA%A4%E4%BA%92%E5%91%BD%E4%BB%A4">交互命令</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85">安装</a></li>
+<li><a href="#nethogs-%E7%94%A8%E6%B3%95">NetHogs 用法</a></li>
+<li><a href="#nethogs-%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8F%82%E6%95%B0">NetHogs 命令行参数</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+          <script>
+            function locateCatelogList() {
+              /*获取文章目录集合,可通过:header过滤器*/
+              var alis = $('.post-content :header');
+              /*获取侧边栏目录列表集合**/
+              var sidebar_alis = $('.markdownIt-TOC a');
+              /*获取滚动条到顶部的距离*/
+              var scroll_height = $(window).scrollTop();
+              for (var i = 0; i < alis.length; i++) {
+                /*获取锚点集合中的元素分别到顶点的距离*/
+                var a_height = $(alis[i]).offset().top;
+                if (a_height < scroll_height) {
+                  /*高亮显示*/
+                  sidebar_alis.removeClass('on');
+                  $(sidebar_alis[i]).addClass('on');
+                }
+              }
+            }
+            $(function() {
+              /*绑定滚动事件 */
+              $(window).bind('scroll', locateCatelogList);
+              });
+          </script>
+        </div>
+      <div class="notice-card i-card ">
+        <div class="notice-title i-card-title">公告</div>
+        <div class="notice-content">界面全新改版</div>
+      </div>
+      <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
+        <div class="notice-content">
+          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/excel/">Excel</a>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="site-footer">
+    <img style="vertical-align:middle;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&count_bg=%2310C1F9&title_bg=%23555555&icon=html5.svg&icon_color=%23E7E7E7&title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&edge_flat=false"> | <span>Copyright © 2020-2022 Dev-Coco - All Rights Reserved.</span> | <a class="rss" href="https://dev-coco.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+  <script>
+    $('#sidebar').stickySidebar({
+    topSpacing: 80,
+    // bottomSpacing: 60
+    });
+  </script>
+  
+</body>
+</html>

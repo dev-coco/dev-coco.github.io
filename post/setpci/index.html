@@ -1,0 +1,212 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>setpci | Dev-Coco</title>
+  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1647958467779">
+  <link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
+  <script src="https://dev-coco.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
+<script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+  <div class="main">
+    <div class="header">
+      <div class="nav">
+        <div class="logo">
+          <a href="https://dev-coco.github.io">
+            <img class="avatar" src="https://dev-coco.github.io/images/avatar.png?v=1647958467779" alt="">
+          </a>
+          <div class="site-title">
+            <h1>Dev-Coco</h1>
+          </div>
+        </div>
+        <span class="menu-btn fa fa-align-justify"></span>
+        <div class="menu-container">
+          <ul>
+            <li>
+              <a href="/" class="menu">首页</a>
+            </li>
+            <li>
+              <a href="/Featured-Software.html" class="menu">软件</a>
+            </li>
+            <li>
+              <a href="/Online-Tools" class="menu">在线工具</a>
+            </li>
+            <li>
+              <a href="/post/Linux-Command" class="menu">Linux命令</a>
+            </li>
+            <li>
+              <a href="/Excel" class="menu">Excel教程</a>
+            </li>
+            <li>
+              <a href="/post/Terms-and-Privacy" class="menu">隐私与条款</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script>
+      $(document).ready(function() {
+        $(".menu-btn").click(function() {
+          $(".menu-container").slideToggle();
+        });
+        $(window).resize(function() {
+          if (window.matchMedia('(min-width: 960px)').matches) {
+            $(".menu-container").css('display', 'block')
+          } else {
+            $(".menu-container").css('display', 'none')
+          }
+        });
+      });
+    </script>
+    <div id="main-content" class="post-detail main-container">
+      <!-- left -->
+      <div id="content" class="main-container-left">
+        <article class="post i-card">
+        <h2 class="post-title">setpci</h2>
+        <div class="post-info">
+          <time class="post-time">2022-02-03 / 3 min read</time>
+            <a href="https://dev-coco.github.io/tag/linux-command/" class="post-tag i-tag i-tag-other_3">#Linux命令</a>
+        </div>
+          <div class="post-content">
+            <p>查询和配置 PCI 设备的使用工具。</p>
+<!-- more -->
+<h2 id="补充说明">补充说明</h2>
+<p>setpci 命令是一个查询和配置 PCI 设备的使用工具。</p>
+<h2 id="语法">语法</h2>
+<pre><code class="language-Shell">setpci (选项) (参数)
+</code></pre>
+<h2 id="选项">选项</h2>
+<pre><code class="language-Shell">-v：显示指令执行的细节信息；
+-f：当没有任何操作需要完成时，不显示任何信息；
+-D：测试模式，并不真正将配置信息写入寄存器；
+-d：仅显示给定厂商和设备的信息；
+-s：仅显示指定总线、插槽上的设备或设备上的功能块信息。
+</code></pre>
+<h2 id="参数">参数</h2>
+<ul>
+<li>
+<p>PCI 设备：指定要配置的 PCI 设备；</p>
+</li>
+<li>
+<p>操作：指定要完成的配置操作。</p>
+</li>
+</ul>
+<h2 id="实例">实例</h2>
+<p>Linux 下调节笔记本屏幕亮度方法：<br>
+首先进入终端输入 lspci 命令，列出各种设备的地址：</p>
+<pre><code class="language-Shell">lspci
+00:00.0 host bridge: Intel Corporation Mobile 945GM/PM/GMS, 943/940GML and 945GT Express Memory Controller Hub (rev 03)
+00:02.0 VGA compatible controller: Intel Corporation Mobile 945GM/GMS, 943/940GML Express Integrated Graphics Controller (rev 03)
+00:02.1 Display controller: Intel Corporation Mobile 945GM/GMS/GME, 943/940GML Express Integrated Graphics Controller (rev 03)
+00:1b.0 Audio device: Intel Corporation N10/ICH 7 Family High Definition Audio Controller (rev 02)
+00:1c.0 PCI bridge: Intel Corporation N10/ICH 7 Family PCI Express Port 1 (rev 02)
+00:1c.1 PCI bridge: Intel Corporation N10/ICH 7 Family PCI Express Port 2 (rev 02)
+......
+</code></pre>
+<p>发现 00:02.0 是 VGA 设备，于是我们修改它的属性：</p>
+<pre><code class="language-Shell">sudo setpci -s 00:02.0 F4.B=FF
+</code></pre>
+<p>解释一下：</p>
+<ul>
+<li>setpci  是修改设备属性的命令。</li>
+<li>-s  表示接下来输入的是设备的地址。</li>
+<li>00:02.0  VGA 设备地址（&lt;总线&gt;:&lt;接口&gt;.&lt;功能&gt;）。</li>
+<li>F4  要修改的属性的地址，这里应该表示“亮度”。</li>
+<li>.B  修改的长度（B 应该是字节（Byte），还有 w（应该是 Word，两个字节）、L（应该是 Long，4 个字节））。</li>
+<li>=FF  要修改的值（可以改）。</li>
+</ul>
+<p>我这里 00 是最暗，FF 是最亮，不同的电脑可能不一样。比如说我嫌 FF 太闪眼了，我就可以：</p>
+<pre><code class="language-Shell">sudo setpci -s 00:02.0 F4.B=CC
+</code></pre>
+
+          </div>
+        </article>
+        <div class="next-post">
+          <div class="next">下一篇</div>
+          <a href="https://dev-coco.github.io/post/lastlog/">
+            <h3 class="post-title">lastlog</h3>
+          </a>
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="gitalk-container"></div>
+      </div>
+      <!-- middle -->
+      <div class="main-container-middle"></div>
+      <!-- right -->
+      <div id="sidebar" class="main-container-right">
+      <!-- toc -->
+      <div class="toc-card i-card ">
+        <div class="toc-title i-card-title">目录</div>
+          <div class="toc-content">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E8%A1%A5%E5%85%85%E8%AF%B4%E6%98%8E">补充说明</a></li>
+<li><a href="#%E8%AF%AD%E6%B3%95">语法</a></li>
+<li><a href="#%E9%80%89%E9%A1%B9">选项</a></li>
+<li><a href="#%E5%8F%82%E6%95%B0">参数</a></li>
+<li><a href="#%E5%AE%9E%E4%BE%8B">实例</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+          <script>
+            function locateCatelogList() {
+              /*获取文章目录集合,可通过:header过滤器*/
+              var alis = $('.post-content :header');
+              /*获取侧边栏目录列表集合**/
+              var sidebar_alis = $('.markdownIt-TOC a');
+              /*获取滚动条到顶部的距离*/
+              var scroll_height = $(window).scrollTop();
+              for (var i = 0; i < alis.length; i++) {
+                /*获取锚点集合中的元素分别到顶点的距离*/
+                var a_height = $(alis[i]).offset().top;
+                if (a_height < scroll_height) {
+                  /*高亮显示*/
+                  sidebar_alis.removeClass('on');
+                  $(sidebar_alis[i]).addClass('on');
+                }
+              }
+            }
+            $(function() {
+              /*绑定滚动事件 */
+              $(window).bind('scroll', locateCatelogList);
+              });
+          </script>
+        </div>
+      <div class="notice-card i-card ">
+        <div class="notice-title i-card-title">公告</div>
+        <div class="notice-content">界面全新改版</div>
+      </div>
+      <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
+        <div class="notice-content">
+          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/excel/">Excel</a>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="site-footer">
+    <img style="vertical-align:middle;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&count_bg=%2310C1F9&title_bg=%23555555&icon=html5.svg&icon_color=%23E7E7E7&title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&edge_flat=false"> | <span>Copyright © 2020-2022 Dev-Coco - All Rights Reserved.</span> | <a class="rss" href="https://dev-coco.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+  <script>
+    $('#sidebar').stickySidebar({
+    topSpacing: 80,
+    // bottomSpacing: 60
+    });
+  </script>
+  
+</body>
+</html>

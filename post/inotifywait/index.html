@@ -1,0 +1,318 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>inotifywait | Dev-Coco</title>
+  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1647958467779">
+  <link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
+  <script src="https://dev-coco.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
+<script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+  <div class="main">
+    <div class="header">
+      <div class="nav">
+        <div class="logo">
+          <a href="https://dev-coco.github.io">
+            <img class="avatar" src="https://dev-coco.github.io/images/avatar.png?v=1647958467779" alt="">
+          </a>
+          <div class="site-title">
+            <h1>Dev-Coco</h1>
+          </div>
+        </div>
+        <span class="menu-btn fa fa-align-justify"></span>
+        <div class="menu-container">
+          <ul>
+            <li>
+              <a href="/" class="menu">首页</a>
+            </li>
+            <li>
+              <a href="/Featured-Software.html" class="menu">软件</a>
+            </li>
+            <li>
+              <a href="/Online-Tools" class="menu">在线工具</a>
+            </li>
+            <li>
+              <a href="/post/Linux-Command" class="menu">Linux命令</a>
+            </li>
+            <li>
+              <a href="/Excel" class="menu">Excel教程</a>
+            </li>
+            <li>
+              <a href="/post/Terms-and-Privacy" class="menu">隐私与条款</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script>
+      $(document).ready(function() {
+        $(".menu-btn").click(function() {
+          $(".menu-container").slideToggle();
+        });
+        $(window).resize(function() {
+          if (window.matchMedia('(min-width: 960px)').matches) {
+            $(".menu-container").css('display', 'block')
+          } else {
+            $(".menu-container").css('display', 'none')
+          }
+        });
+      });
+    </script>
+    <div id="main-content" class="post-detail main-container">
+      <!-- left -->
+      <div id="content" class="main-container-left">
+        <article class="post i-card">
+        <h2 class="post-title">inotifywait</h2>
+        <div class="post-info">
+          <time class="post-time">2022-02-03 / 5 min read</time>
+            <a href="https://dev-coco.github.io/tag/linux-command/" class="post-tag i-tag i-tag-other_4">#Linux命令</a>
+        </div>
+          <div class="post-content">
+            <p>异步文件系统监控机制。</p>
+<!-- more -->
+<h2 id="补充说明">补充说明</h2>
+<p>Inotify 一种强大的、细粒度的、异步文件系统监控机制，它满足各种各样的文件监控需要，可以监控文件系统的访问属性、读写属性、权限属性、删除创建、移动等操作，也就是可以监控文件发生的一切变化。。</p>
+<p>inotify-tools 是一个 C 库和一组命令行的工作提供 Linux 下 inotify 的简单接口。inotify-tools 安装后会得到<code>inotifywait</code>和<code>inotifywatch</code>这两条命令：</p>
+<ul>
+<li>
+<p>inotifywait 命令可以用来收集有关文件访问信息，Linux 发行版一般没有包括这个命令，需要安装 inotify-tools，这个命令还需要将 inotify 支持编译入 Linux 内核，好在大多数 Linux 发行版都在内核中启用了 inotify。</p>
+</li>
+<li>
+<p>inotifywatch 命令 用于收集关于被监视的文件系统的统计数据，包括每个 inotify 事件发生多少次。</p>
+</li>
+</ul>
+<p>开始之前需要检测系统内核是否支持 inotify：</p>
+<p>使用<code>uname -r</code>命令检查 Linux 内核，如果低于 2.6.13，就需要重新编译内核加入 inotify 的支持。</p>
+<p>使用<code>ll /proc/sys/fs/inotify</code>命令，是否有以下三条信息输出，如果没有表示不支持。</p>
+<pre><code class="language-Shell">ll /proc/sys/fs/inotify
+total 0
+-rw-r--r-- 1 root root 0 Jan  4 15:41 max_queued_events
+-rw-r--r-- 1 root root 0 Jan  4 15:41 max_user_instances
+-rw-r--r-- 1 root root 0 Jan  4 15:41 max_user_watches
+</code></pre>
+<h3 id="安装-inotify-tools">安装 inotify-tools</h3>
+<ul>
+<li>
+<p>inotify-tools 项目地址：<a href="https://github.com/rvoicilas/inotify-tools" target="_blank">https://github.com/rvoicilas/inotify-tools</a></p>
+</li>
+<li>
+<p>inotify-tools 下载地址：<a href="http://github.com/downloads/rvoicilas/inotify-tools/inotify-tools-3.14.tar.gz" target="_blank">http://github.com/downloads/rvoicilas/inotify-tools/inotify-tools-3.14.tar.gz</a></p>
+</li>
+</ul>
+<pre><code class="language-Shell">#CentOS release 5.8/64 位：
+tar zxvf inotify-tools-3.14.tar.gz
+cd inotify-tools-3.14
+./configure
+make
+make install
+</code></pre>
+<p>其他 Linux 发行版安装方法可以参见：<a href="https://github.com/rvoicilas/inotify-tools/wiki#wiki-getting" target="_blank">https://github.com/rvoicilas/inotify-tools/wiki#wiki-getting</a></p>
+<h3 id="inotify-相关参数">inotify 相关参数</h3>
+<p>inotify 定义了下列的接口参数，可以用来限制 inotify 消耗 kernel memory 的大小。由于这些参数都是内存参数，因此，可以根据应用需求，实时的调节其大小：</p>
+<ul>
+<li>
+<p><code>/proc/sys/fs/inotify/max_queued_evnets</code>表示调用 inotify_init 时分配给 inotify instance 中可排队的 event 的数目的最大值，超出这个值的事件被丢弃，但会触发 IN_Q_OVERFLOW 事件。</p>
+</li>
+<li>
+<p><code>/proc/sys/fs/inotify/max_user_instances</code>表示每一个 real user id 可创建的 inotify instatnces 的数量上限。</p>
+</li>
+<li>
+<p><code>/proc/sys/fs/inotify/max_user_watches</code>表示每个 inotify instatnces 可监控的最大目录数量。如果监控的文件数目巨大，需要根据情况，适当增加此值的大小。</p>
+</li>
+</ul>
+<p>根据以上在 32 位或者 64 位系统都可以执行：</p>
+<pre><code class="language-Shell">echo 104857600 &gt; /proc/sys/fs/inotify/max_user_watches
+echo 'echo 104857600 &gt; /proc/sys/fs/inotify/max_user_watches' &gt;&gt; /etc/rc.local
+</code></pre>
+<p>如果遇到以下错误：</p>
+<pre><code class="language-Shell">inotifywait: error while loading shared libraries: libinotifytools.so.0: cannot open shared object file: No such file or directory 
+</code></pre>
+<pre><code class="language-Shell"> **解决方法：**
+32 位系统：ln -s /usr/local/lib/libinotifytools.so.0 /usr/lib/libinotifytools.so.0
+64 位系统：ln -s /usr/local/lib/libinotifytools.so.0 /usr/lib64/libinotifytools.so.0
+</code></pre>
+<h3 id="inotifywait-命令使用">inotifywait 命令使用</h3>
+<pre><code class="language-Shell">#!/bin/bash
+#filename watchdir.sh
+path=$1
+/usr/local/bin/inotifywait -mrq --timefmt '%d/%m/%y/%H:%M' --format '%T %w %f' -e modify,delete,create,attrib $path
+
+执行输出：
+./watchdir.sh /data/wsdata/tools/
+04/01/13/16:34 /data/wsdata/tools/ .j.jsp.swp
+04/01/13/16:34 /data/wsdata/tools/ .j.jsp.swx
+04/01/13/16:34 /data/wsdata/tools/ .j.jsp.swx
+04/01/13/16:34 /data/wsdata/tools/ .j.jsp.swp
+04/01/13/16:34 /data/wsdata/tools/ .j.jsp.swp
+04/01/13/16:34 /data/wsdata/tools/ .j.jsp.swp
+04/01/13/16:34 /data/wsdata/tools/ .j.jsp.swp
+04/01/13/16:34 /data/wsdata/tools/ .j.jsp.swp
+04/01/13/16:35 /data/wsdata/tools/ 4913
+04/01/13/16:35 /data/wsdata/tools/ 4913
+04/01/13/16:35 /data/wsdata/tools/ 4913
+04/01/13/16:35 /data/wsdata/tools/ j.jsp
+04/01/13/16:35 /data/wsdata/tools/ j.jsp
+04/01/13/16:35 /data/wsdata/tools/ j.jsp
+04/01/13/16:35 /data/wsdata/tools/ j.jsp~
+04/01/13/16:35 /data/wsdata/tools/ .j.jsp.swp
+</code></pre>
+<h3 id="inotifywait-命令参数">inotifywait 命令参数</h3>
+<ul>
+<li>
+<p><code>-m</code>是要持续监视变化。</p>
+</li>
+<li>
+<p><code>-r</code>使用递归形式监视目录。</p>
+</li>
+<li>
+<p><code>-q</code>减少冗余信息，只打印出需要的信息。</p>
+</li>
+<li>
+<p><code>-e</code>指定要监视的事件列表。</p>
+</li>
+<li>
+<p><code>--timefmt</code>是指定时间的输出格式。</p>
+</li>
+<li>
+<p><code>--format</code>指定文件变化的详细信息。</p>
+</li>
+</ul>
+<h3 id="可监听的事件">可监听的事件</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">事件</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">access</td>
+<td style="text-align:center">访问 ，读取文件。</td>
+</tr>
+<tr>
+<td style="text-align:center">modify</td>
+<td style="text-align:center">修改 ，文件内容被修改。</td>
+</tr>
+<tr>
+<td style="text-align:center">attrib</td>
+<td style="text-align:center">属性 ，文件元数据被修改。</td>
+</tr>
+<tr>
+<td style="text-align:center">move</td>
+<td style="text-align:center">移动 ，对文件进行移动操作。</td>
+</tr>
+<tr>
+<td style="text-align:center">create</td>
+<td style="text-align:center">创建 ，生成新文件</td>
+</tr>
+<tr>
+<td style="text-align:center">open</td>
+<td style="text-align:center">打开 ，对文件进行打开操作。</td>
+</tr>
+<tr>
+<td style="text-align:center">close</td>
+<td style="text-align:center">关闭 ，对文件进行关闭操作。</td>
+</tr>
+<tr>
+<td style="text-align:center">delete</td>
+<td style="text-align:center">删除 ，文件被删除。</td>
+</tr>
+</tbody>
+</table>
+
+          </div>
+        </article>
+        <div class="next-post">
+          <div class="next">下一篇</div>
+          <a href="https://dev-coco.github.io/post/tcpreplay/">
+            <h3 class="post-title">tcpreplay</h3>
+          </a>
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="gitalk-container"></div>
+      </div>
+      <!-- middle -->
+      <div class="main-container-middle"></div>
+      <!-- right -->
+      <div id="sidebar" class="main-container-right">
+      <!-- toc -->
+      <div class="toc-card i-card ">
+        <div class="toc-title i-card-title">目录</div>
+          <div class="toc-content">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E8%A1%A5%E5%85%85%E8%AF%B4%E6%98%8E">补充说明</a>
+<ul>
+<li><a href="#%E5%AE%89%E8%A3%85-inotify-tools">安装 inotify-tools</a></li>
+<li><a href="#inotify-%E7%9B%B8%E5%85%B3%E5%8F%82%E6%95%B0">inotify 相关参数</a></li>
+<li><a href="#inotifywait-%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8">inotifywait 命令使用</a></li>
+<li><a href="#inotifywait-%E5%91%BD%E4%BB%A4%E5%8F%82%E6%95%B0">inotifywait 命令参数</a></li>
+<li><a href="#%E5%8F%AF%E7%9B%91%E5%90%AC%E7%9A%84%E4%BA%8B%E4%BB%B6">可监听的事件</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+          <script>
+            function locateCatelogList() {
+              /*获取文章目录集合,可通过:header过滤器*/
+              var alis = $('.post-content :header');
+              /*获取侧边栏目录列表集合**/
+              var sidebar_alis = $('.markdownIt-TOC a');
+              /*获取滚动条到顶部的距离*/
+              var scroll_height = $(window).scrollTop();
+              for (var i = 0; i < alis.length; i++) {
+                /*获取锚点集合中的元素分别到顶点的距离*/
+                var a_height = $(alis[i]).offset().top;
+                if (a_height < scroll_height) {
+                  /*高亮显示*/
+                  sidebar_alis.removeClass('on');
+                  $(sidebar_alis[i]).addClass('on');
+                }
+              }
+            }
+            $(function() {
+              /*绑定滚动事件 */
+              $(window).bind('scroll', locateCatelogList);
+              });
+          </script>
+        </div>
+      <div class="notice-card i-card ">
+        <div class="notice-title i-card-title">公告</div>
+        <div class="notice-content">界面全新改版</div>
+      </div>
+      <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
+        <div class="notice-content">
+          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/excel/">Excel</a>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="site-footer">
+    <img style="vertical-align:middle;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&count_bg=%2310C1F9&title_bg=%23555555&icon=html5.svg&icon_color=%23E7E7E7&title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&edge_flat=false"> | <span>Copyright © 2020-2022 Dev-Coco - All Rights Reserved.</span> | <a class="rss" href="https://dev-coco.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+  <script>
+    $('#sidebar').stickySidebar({
+    topSpacing: 80,
+    // bottomSpacing: 60
+    });
+  </script>
+  
+</body>
+</html>

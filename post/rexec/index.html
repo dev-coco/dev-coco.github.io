@@ -1,0 +1,195 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>rexec | Dev-Coco</title>
+  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1647958467779">
+  <link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
+  <script src="https://dev-coco.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
+<script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+  <div class="main">
+    <div class="header">
+      <div class="nav">
+        <div class="logo">
+          <a href="https://dev-coco.github.io">
+            <img class="avatar" src="https://dev-coco.github.io/images/avatar.png?v=1647958467779" alt="">
+          </a>
+          <div class="site-title">
+            <h1>Dev-Coco</h1>
+          </div>
+        </div>
+        <span class="menu-btn fa fa-align-justify"></span>
+        <div class="menu-container">
+          <ul>
+            <li>
+              <a href="/" class="menu">首页</a>
+            </li>
+            <li>
+              <a href="/Featured-Software.html" class="menu">软件</a>
+            </li>
+            <li>
+              <a href="/Online-Tools" class="menu">在线工具</a>
+            </li>
+            <li>
+              <a href="/post/Linux-Command" class="menu">Linux命令</a>
+            </li>
+            <li>
+              <a href="/Excel" class="menu">Excel教程</a>
+            </li>
+            <li>
+              <a href="/post/Terms-and-Privacy" class="menu">隐私与条款</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script>
+      $(document).ready(function() {
+        $(".menu-btn").click(function() {
+          $(".menu-container").slideToggle();
+        });
+        $(window).resize(function() {
+          if (window.matchMedia('(min-width: 960px)').matches) {
+            $(".menu-container").css('display', 'block')
+          } else {
+            $(".menu-container").css('display', 'none')
+          }
+        });
+      });
+    </script>
+    <div id="main-content" class="post-detail main-container">
+      <!-- left -->
+      <div id="content" class="main-container-left">
+        <article class="post i-card">
+        <h2 class="post-title">rexec</h2>
+        <div class="post-info">
+          <time class="post-time">2022-02-03 / 3 min read</time>
+            <a href="https://dev-coco.github.io/tag/linux-command/" class="post-tag i-tag i-tag-success">#Linux命令</a>
+        </div>
+          <div class="post-content">
+            <p>运程执行 Linux 系统下命令。</p>
+<!-- more -->
+<h2 id="补充说明">补充说明</h2>
+<p>rexec 命令 用于在指定的远程 Linux 系统主机上执行命令，向远程 rexec 服务器发出执行命令的请求。<br>
+rexec 命令通过检查<code>$HOME/.netrc</code>文件（包含远程主机上使用的用户名和密码）来提供自动登录的功能。如果没有发现此类项或系统在安全方式下操作（参阅 securetcpip 命令），rexec 命令提示输入一个远程主机的有效用户名和密码。这两种情况下，rexec 均导致远程系统上的 rexecd 使用缺省的 compat 用户登录认证方法。rexecd 不会为了备用的认证方法去查找<code>/etc/security/user</code>文件。也可以指定<code>-n</code>标志到 rexec 命令行上来重设自动登录功能。</p>
+<h2 id="语法">语法</h2>
+<pre><code class="language-Shell">rexec (选项) (参数)
+</code></pre>
+<h2 id="选项">选项</h2>
+<pre><code class="language-Shell">-a：表示远程命令的标准错误与标准输出相同，不支持发送任意信号到远程进程；
+-l&lt;用户名&gt;：指定连接远程 rexec 服务器的用户名；
+-p&lt;密码&gt;：指定连接远程 rexec 服务器的密码；
+-n：明确地提示输入用户名和密码。
+</code></pre>
+<h2 id="参数">参数</h2>
+<ul>
+<li>远程主机：指定远程主机（ip 地址或主机名）；</li>
+<li>命令：指定需要在远程主机上执行的命令。</li>
+</ul>
+<h2 id="实例">实例</h2>
+<p>要在一个远程主机上执行 date 命令，输入：</p>
+<pre><code class="language-Shell">rexec host1 date
+</code></pre>
+<p>date 命令的输出现在显示在本地系统上。本示例中，在本地主机上的<code>$HOME/.netrc</code>文件包含远程主机上有效的用户名和密码。如果没有远程主机的<code>$HOME/.netrc</code>文件中的有效项，将提示输入登录标识和密码。输入所要求的登录信息后，date 命令的输出显示在本地系统上。<br>
+要重设自动登录功能并执行远程主机上的 date 命令，输入：</p>
+<pre><code class="language-Shell">rexec -nhost1 date
+</code></pre>
+<p>出现提示时输入用户名和密码，date 命令的输出现在显示在本地系统上。<br>
+列出远程主机上另一个用户的目录，输入：</p>
+<pre><code class="language-Shell">rexec host1 ls -l /home/karen
+</code></pre>
+<p>在远程主机 host1 上的 karen 用户的目录列表显示在本地系统上。<br>
+如果没有远程主机的<code>$HOME/.netrc</code>文件中的有效项，将提示您输入登录标识和密码。输入要求的登录信息后，在远程主机 host1 上的 karen 用户的目录列表显示在本地系统上。</p>
+
+          </div>
+        </article>
+        <div class="next-post">
+          <div class="next">下一篇</div>
+          <a href="https://dev-coco.github.io/post/mkinitrd/">
+            <h3 class="post-title">mkinitrd</h3>
+          </a>
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="gitalk-container"></div>
+      </div>
+      <!-- middle -->
+      <div class="main-container-middle"></div>
+      <!-- right -->
+      <div id="sidebar" class="main-container-right">
+      <!-- toc -->
+      <div class="toc-card i-card ">
+        <div class="toc-title i-card-title">目录</div>
+          <div class="toc-content">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E8%A1%A5%E5%85%85%E8%AF%B4%E6%98%8E">补充说明</a></li>
+<li><a href="#%E8%AF%AD%E6%B3%95">语法</a></li>
+<li><a href="#%E9%80%89%E9%A1%B9">选项</a></li>
+<li><a href="#%E5%8F%82%E6%95%B0">参数</a></li>
+<li><a href="#%E5%AE%9E%E4%BE%8B">实例</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+          <script>
+            function locateCatelogList() {
+              /*获取文章目录集合,可通过:header过滤器*/
+              var alis = $('.post-content :header');
+              /*获取侧边栏目录列表集合**/
+              var sidebar_alis = $('.markdownIt-TOC a');
+              /*获取滚动条到顶部的距离*/
+              var scroll_height = $(window).scrollTop();
+              for (var i = 0; i < alis.length; i++) {
+                /*获取锚点集合中的元素分别到顶点的距离*/
+                var a_height = $(alis[i]).offset().top;
+                if (a_height < scroll_height) {
+                  /*高亮显示*/
+                  sidebar_alis.removeClass('on');
+                  $(sidebar_alis[i]).addClass('on');
+                }
+              }
+            }
+            $(function() {
+              /*绑定滚动事件 */
+              $(window).bind('scroll', locateCatelogList);
+              });
+          </script>
+        </div>
+      <div class="notice-card i-card ">
+        <div class="notice-title i-card-title">公告</div>
+        <div class="notice-content">界面全新改版</div>
+      </div>
+      <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
+        <div class="notice-content">
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/excel/">Excel</a>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="site-footer">
+    <img style="vertical-align:middle;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&count_bg=%2310C1F9&title_bg=%23555555&icon=html5.svg&icon_color=%23E7E7E7&title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&edge_flat=false"> | <span>Copyright © 2020-2022 Dev-Coco - All Rights Reserved.</span> | <a class="rss" href="https://dev-coco.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+  <script>
+    $('#sidebar').stickySidebar({
+    topSpacing: 80,
+    // bottomSpacing: 60
+    });
+  </script>
+  
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <title>编码转换工具</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="keywords" content="dev-coco, 编码转换, encode, decode">
+  <meta name="robots" content="index,follow">
+  <meta name="description" content="多种编码转换和还原工具。">
+  <link rel="icon" href="/images/avatar.png">
+  <link rel="stylesheet" href="/css/site.css">
+  <script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <style>.middle{margin:0 auto;width:100%}textarea{width:97%;height:360px;font-size:16px}.button,select{font-size:18px;width:100%;margin-bottom:1.5rem}</style>
+</head>
+<body>
+  <div class="container">
+    <h1 style="text-align:left;"><img class="logo" alt="dev-coco" src="/images/avatar.png">
+      <span> Dev-Coco</span>
+      <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&count_bg=%2310C1F9&title_bg=%23555555&icon=html5.svg&icon_color=%23E7E7E7&title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&edge_flat=false" style="float:right;width:180px;">
+    </h1>
+    <div class="menu">
+      <a href="/">首页</a>
+      <a href="/Featured-Software.html">软件</a>
+      <a href="/Online-Tools">在线工具</a>
+      <a href="/post/Linux-Command">Linux命令</a>
+      <a href="/Excel/">Excel教程</a>
+      <a href="/post/Terms-and-Privacy">隐私与条款</a>
+      <a target="_blank" href="https://github.com/dev-coco">Github</a>
+    </div>
+    <h1>编码转换工具</h1>
+    <table cellpadding="1" cellspacing="1" class="middle">
+      <tbody>
+        <tr>
+          <td><textarea type="text" style="float:left;" id="orig_str" placeholder="请输入需要转换的文本" autofocus></textarea></td>
+          <td style="width:10%;text-align:center;">
+            <select>
+              <option></option>
+              <option>HTML转义</option>
+              <option>URL编码</option>
+              <option>Unicode转换</option>
+              <option>HTML实体转换</option>
+              <option>Base64加解密</option>
+              <option>16进制转换</option>
+            </select>
+            <button onclick="convert()" class="button green">转换 ⟶</button><br>
+            <button onclick="restore()" class="button red">⟵ 还原</button>
+          </td>
+          <td><textarea type="text" style="float:right;" id="conv_str" placeholder="请输入需要还原的文本"></textarea></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <script>
+    // 转换
+    function convert() {
+      var get_select = document.querySelector("select");
+      var index = get_select.selectedIndex;
+      var orig_str = document.getElementById('orig_str').value;
+      if (index == 1) {
+        document.getElementById('conv_str').value = html_escape(orig_str);
+      } else if (index == 2) {
+        document.getElementById('conv_str').value = url_encode(orig_str);
+      } else if (index == 3) {
+        document.getElementById('conv_str').value = unicode_conv(orig_str);
+      } else if (index == 4) {
+        document.getElementById('conv_str').value = html_entities_encode(orig_str);
+      } else if (index == 5) {
+        document.getElementById('conv_str').value = base64_encode(orig_str);
+      } else if (index == 6) {
+        document.getElementById('conv_str').value = hex_conv(orig_str);
+      }
+    }
+
+    // 还原
+    function restore() {
+      var get_select = document.querySelector("select");
+      var index = get_select.selectedIndex;
+      var conv_str = document.getElementById('conv_str').value;
+      if (index == 1) {
+        document.getElementById('orig_str').value = html_unescape(conv_str);
+      } else if (index == 2) {
+        document.getElementById('orig_str').value = url_decode(conv_str);
+      } else if (index == 3) {
+        document.getElementById('orig_str').value = unicode_restore(conv_str);
+      } else if (index == 4) {
+        document.getElementById('orig_str').value = html_entities_decode(conv_str);
+      } else if (index == 5) {
+        document.getElementById('orig_str').value = base64_decode(conv_str);
+      } else if (index == 6) {
+        document.getElementById('orig_str').value = hex_restore(conv_str);
+      }
+    }
+
+    // HTML转义
+    function html_escape(str) {
+      str = str.replace(/&/g, "&amp;");
+      str = str.replace(/"/g, "&quot;");
+      str = str.replace(/</g, "&lt;");
+      str = str.replace(/>/g, "&gt;");
+      str = str.replace(/\n/g, "&#10;");
+      return str;
+    }
+
+    // HTML转义还原
+    function html_unescape(str) {
+      str = str.replace(/&#123;/g, "{");
+      str = str.replace(/&#125;/g, "}");
+      str = str.replace(/&quot;/g, "\"");
+      str = str.replace(/&amp;/g, "&");
+      str = str.replace(/&lt;/g, "<");
+      str = str.replace(/&gt;/g, ">");
+      str = str.replace(/&#10;/g, "\n");
+      return str;
+    }
+
+    // URL编码
+    function url_encode(str) {
+      return encodeURIComponent(str);
+    }
+
+    // URL编码还原
+    function url_decode(str) {
+      return decodeURIComponent(str);
+    }
+
+    // Unicode转换
+    function unicode_conv(str) {
+      return escape(str).replace(/%/g, "\\");
+    }
+
+    // Unicode转换还原
+    function unicode_restore(str) {
+      str = str.replace(/&#x/g, "\\u").replace(/;/g, "");
+      return eval("'" + str + "'");
+    }
+
+    // HTML实体转换
+    function html_entities_encode(str) {
+      var buf = [];
+      for (var i = str.length - 1; i >= 0; i--) {
+        buf.unshift(['&#', str[i].charCodeAt(), ';'].join(''));
+      }
+      return buf.join('');
+    }
+
+    // HTML实体还原
+    function html_entities_decode(str) {
+      return str.replace(/&#(\d+);/g, function(match, dec) {
+        return String.fromCharCode(dec);
+      });
+    }
+
+    // Base64加密
+    function base64_encode(str) {
+      return btoa(str);
+    }
+
+    // Base64解密
+    function base64_decode(str) {
+      return atob(str);
+    }
+
+    // 十六进制转换
+    function hex_conv(str) {
+      var hex = "";
+      for (var i = 0; i < str.length; i++) {
+        hex += "\\x" + str[i].charCodeAt(0).toString(16);
+      }
+      return hex;
+    }
+
+    // 十六进制还原
+    function hex_restore(str) {
+      return eval("'" + str + "'");
+    }
+  </script>
+</body>
+</html>

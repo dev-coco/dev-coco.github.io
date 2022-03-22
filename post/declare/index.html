@@ -1,0 +1,305 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>declare | Dev-Coco</title>
+  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1647958467779">
+  <link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
+  <script src="https://dev-coco.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
+<script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+  <div class="main">
+    <div class="header">
+      <div class="nav">
+        <div class="logo">
+          <a href="https://dev-coco.github.io">
+            <img class="avatar" src="https://dev-coco.github.io/images/avatar.png?v=1647958467779" alt="">
+          </a>
+          <div class="site-title">
+            <h1>Dev-Coco</h1>
+          </div>
+        </div>
+        <span class="menu-btn fa fa-align-justify"></span>
+        <div class="menu-container">
+          <ul>
+            <li>
+              <a href="/" class="menu">首页</a>
+            </li>
+            <li>
+              <a href="/Featured-Software.html" class="menu">软件</a>
+            </li>
+            <li>
+              <a href="/Online-Tools" class="menu">在线工具</a>
+            </li>
+            <li>
+              <a href="/post/Linux-Command" class="menu">Linux命令</a>
+            </li>
+            <li>
+              <a href="/Excel" class="menu">Excel教程</a>
+            </li>
+            <li>
+              <a href="/post/Terms-and-Privacy" class="menu">隐私与条款</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script>
+      $(document).ready(function() {
+        $(".menu-btn").click(function() {
+          $(".menu-container").slideToggle();
+        });
+        $(window).resize(function() {
+          if (window.matchMedia('(min-width: 960px)').matches) {
+            $(".menu-container").css('display', 'block')
+          } else {
+            $(".menu-container").css('display', 'none')
+          }
+        });
+      });
+    </script>
+    <div id="main-content" class="post-detail main-container">
+      <!-- left -->
+      <div id="content" class="main-container-left">
+        <article class="post i-card">
+        <h2 class="post-title">declare</h2>
+        <div class="post-info">
+          <time class="post-time">2022-02-01 / 5 min read</time>
+            <a href="https://dev-coco.github.io/tag/linux-command/" class="post-tag i-tag i-tag-info">#Linux命令</a>
+        </div>
+          <div class="post-content">
+            <p>声明变量，设置或显示变量的值和属性。</p>
+<!-- more -->
+<h2 id="语法">语法</h2>
+<pre><code class="language-Shell">declare [-aAfFgilnrtux] [-p] [name[=value] ...]
+</code></pre>
+<h2 id="主要用途">主要用途</h2>
+<ul>
+<li>显示包含指定属性的全部变量和值</li>
+<li>显示包含指定属性的一到多个变量和值</li>
+<li>显示一到多个变量的属性和值</li>
+<li>显示所有变量的属性和值并显示函数的定义</li>
+<li>显示所有变量的属性和值</li>
+<li>显示所有全局变量的属性和值</li>
+<li>显示全部函数名和函数定义</li>
+<li>只显示全部函数名</li>
+<li>显示一到多个函数名和函数定义</li>
+<li>只显示一到多个函数名</li>
+<li>声明全局变量（可选：赋值）</li>
+<li>声明变量（可选：赋值、属性）</li>
+<li>增加、删除变量的属性（可选：赋值）</li>
+</ul>
+<h2 id="选项">选项</h2>
+<pre><code class="language-Shell">-f 将操作或显示限制为函数名及函数定义。
+-F 只显示函数名（调试时附加行号和源文件）。
+-g 在shell函数中使用时创建全局变量；其他情况下忽略。
+-p 显示每个名称的属性和值。
+
+*设置属性的选项:
+-a 创建数组（如果支持）。
+-A 创建关联数组（如果支持）。
+-i 增加整型属性。
++i 删除整型属性。
+-l 增加小写属性，变量的值将转换为小写。
++l 删除小写属性。
+-n 增加引用属性（如果该选项存在）。
++n 删除引用属性（如果该选项存在）。
+-r 增加只读属性。
+-t 增加追踪属性。
++t 删除追踪属性。
+-u 增加大写属性，变量的值将转换为大写。
++u 删除大写属性。
+-x 增加导出属性。
++x 删除导出属性。
+</code></pre>
+<h2 id="参数">参数</h2>
+<pre><code class="language-Shell">name（可选）：变量名或函数名。
+value（可选）：变量的值。
+</code></pre>
+<h2 id="返回值">返回值</h2>
+<p>declare 返回 true 除非你提供了非法选项或赋值错误。</p>
+<h2 id="例子">例子</h2>
+<pre><code class="language-Shell"># 声明变量，当然也欢迎您在这个网站（感谢本项目发起人 @jaywcjlove）查询linux命令。
+declare reference_website='https://wangchujiang.com/linux-command/'
+
+# 显示所有包含整型属性的变量和值。
+declare -i
+# 定义变量b并赋值为3，具有整型属性。
+declare -i b=5
+# 显示属性，返回 declare -i b=&quot;5&quot;。
+declare -p b
+# 删除整型属性。
+declare +i b
+# 显示属性，返回 declare -- b=&quot;5&quot;。
+declare -p b
+# 根据变量属性强制转换值的英文大小写。
+declare -u uc_var='abc'
+declare -l lc_var='ABC'
+# 显示'ABC abc';
+echo &quot;${uc_var} ${lc_var}&quot;
+</code></pre>
+<pre><code class="language-Shell"># 定义函数内的全局变量
+function test(){
+  declare -g a=3
+  # 或者
+  local -g b=3
+  # 或者
+  c=3
+  # 让我们查看它们的属性。
+  declare -p a b c
+}
+# 执行函数。
+test
+# 返回结果。
+# declare -- a=&quot;3&quot;
+# declare -- b=&quot;3&quot;
+# declare -- c=&quot;3&quot;
+
+# 定义函数外的全局变量
+declare a=3
+b=3
+declare –p a b
+# 返回结果如下。
+# declare -- a=&quot;3&quot;
+# declare -- b=&quot;3&quot;
+
+# 定义局部变量
+function test2(){
+  local -i a=3
+  declare -i b=3
+}
+test2
+# 没有该变量（已经被销毁了）
+echo &quot;${a} ${b}&quot;
+# 因此，我们日常脚本中最常见的类似于'a=3'实际上是声明并赋值了一个全局变量。
+# 在接下来的 **讨论** 环节会延伸讨论全局和局部变量问题。
+</code></pre>
+<pre><code class="language-Shell"># 注意，不能使用 `+a` 或 `+A` 取消数组，也不能使用 `+r` 取消只读属性。
+
+# 定义只读数组，设置属性的同时定义赋值。
+declare -ar season=('Spring' 'Summer' 'Autumn' 'Winter')
+# 或者这样。
+season=('Spring' 'Summer' 'Autumn' 'Winter')
+declare -ar season
+# 显示所有数组。
+declare -a
+# 定义关联数组。
+
+declare -A fruits=(['apple']='red' ['banana']='yellow')
+# 显示所有关联数组。
+declare -A
+</code></pre>
+<pre><code class="language-Shell"># 显示所有变量的属性和值并显示函数的定义，输出很长。
+declare
+# 显示所有变量的属性和值。
+declare -p
+# 显示所有全局变量的属性和值。
+declare -g
+</code></pre>
+<pre><code class="language-Shell"># 显示全部函数名和函数定义。
+declare -f
+# 只显示全部函数名。
+declare -F
+
+# 定义两个函数。
+function func_a(){ echo $(date +&quot;%F %T&quot;); }
+function func_b(){ cd /; ls -lh --sort=time; }
+# 显示一到多个函数名和函数定义。
+declare -f func_a func_b
+# 只显示一到多个函数名，验证某个名称是否已经定义为函数时有用。
+declare -F func_a func_b
+# 最好不要让函数名和变量名相同。
+</code></pre>
+
+          </div>
+        </article>
+        <div class="next-post">
+          <div class="next">下一篇</div>
+          <a href="https://dev-coco.github.io/post/date/">
+            <h3 class="post-title">date</h3>
+          </a>
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="gitalk-container"></div>
+      </div>
+      <!-- middle -->
+      <div class="main-container-middle"></div>
+      <!-- right -->
+      <div id="sidebar" class="main-container-right">
+      <!-- toc -->
+      <div class="toc-card i-card ">
+        <div class="toc-title i-card-title">目录</div>
+          <div class="toc-content">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E8%AF%AD%E6%B3%95">语法</a></li>
+<li><a href="#%E4%B8%BB%E8%A6%81%E7%94%A8%E9%80%94">主要用途</a></li>
+<li><a href="#%E9%80%89%E9%A1%B9">选项</a></li>
+<li><a href="#%E5%8F%82%E6%95%B0">参数</a></li>
+<li><a href="#%E8%BF%94%E5%9B%9E%E5%80%BC">返回值</a></li>
+<li><a href="#%E4%BE%8B%E5%AD%90">例子</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+          <script>
+            function locateCatelogList() {
+              /*获取文章目录集合,可通过:header过滤器*/
+              var alis = $('.post-content :header');
+              /*获取侧边栏目录列表集合**/
+              var sidebar_alis = $('.markdownIt-TOC a');
+              /*获取滚动条到顶部的距离*/
+              var scroll_height = $(window).scrollTop();
+              for (var i = 0; i < alis.length; i++) {
+                /*获取锚点集合中的元素分别到顶点的距离*/
+                var a_height = $(alis[i]).offset().top;
+                if (a_height < scroll_height) {
+                  /*高亮显示*/
+                  sidebar_alis.removeClass('on');
+                  $(sidebar_alis[i]).addClass('on');
+                }
+              }
+            }
+            $(function() {
+              /*绑定滚动事件 */
+              $(window).bind('scroll', locateCatelogList);
+              });
+          </script>
+        </div>
+      <div class="notice-card i-card ">
+        <div class="notice-title i-card-title">公告</div>
+        <div class="notice-content">界面全新改版</div>
+      </div>
+      <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
+        <div class="notice-content">
+          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/excel/">Excel</a>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="site-footer">
+    <img style="vertical-align:middle;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&count_bg=%2310C1F9&title_bg=%23555555&icon=html5.svg&icon_color=%23E7E7E7&title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&edge_flat=false"> | <span>Copyright © 2020-2022 Dev-Coco - All Rights Reserved.</span> | <a class="rss" href="https://dev-coco.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+  <script>
+    $('#sidebar').stickySidebar({
+    topSpacing: 80,
+    // bottomSpacing: 60
+    });
+  </script>
+  
+</body>
+</html>

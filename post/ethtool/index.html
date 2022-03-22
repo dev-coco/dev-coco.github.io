@@ -1,0 +1,300 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ethtool | Dev-Coco</title>
+  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1647958467779">
+  <link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
+  <script src="https://dev-coco.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
+<script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+  <div class="main">
+    <div class="header">
+      <div class="nav">
+        <div class="logo">
+          <a href="https://dev-coco.github.io">
+            <img class="avatar" src="https://dev-coco.github.io/images/avatar.png?v=1647958467779" alt="">
+          </a>
+          <div class="site-title">
+            <h1>Dev-Coco</h1>
+          </div>
+        </div>
+        <span class="menu-btn fa fa-align-justify"></span>
+        <div class="menu-container">
+          <ul>
+            <li>
+              <a href="/" class="menu">首页</a>
+            </li>
+            <li>
+              <a href="/Featured-Software.html" class="menu">软件</a>
+            </li>
+            <li>
+              <a href="/Online-Tools" class="menu">在线工具</a>
+            </li>
+            <li>
+              <a href="/post/Linux-Command" class="menu">Linux命令</a>
+            </li>
+            <li>
+              <a href="/Excel" class="menu">Excel教程</a>
+            </li>
+            <li>
+              <a href="/post/Terms-and-Privacy" class="menu">隐私与条款</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script>
+      $(document).ready(function() {
+        $(".menu-btn").click(function() {
+          $(".menu-container").slideToggle();
+        });
+        $(window).resize(function() {
+          if (window.matchMedia('(min-width: 960px)').matches) {
+            $(".menu-container").css('display', 'block')
+          } else {
+            $(".menu-container").css('display', 'none')
+          }
+        });
+      });
+    </script>
+    <div id="main-content" class="post-detail main-container">
+      <!-- left -->
+      <div id="content" class="main-container-left">
+        <article class="post i-card">
+        <h2 class="post-title">ethtool</h2>
+        <div class="post-info">
+          <time class="post-time">2022-02-03 / 7 min read</time>
+            <a href="https://dev-coco.github.io/tag/linux-command/" class="post-tag i-tag i-tag-banana">#Linux命令</a>
+        </div>
+          <div class="post-content">
+            <p>显示或修改以太网卡的配置信息。</p>
+<!-- more -->
+<h2 id="补充说明">补充说明</h2>
+<p>ethtool 命令用于获取以太网卡的配置信息，或者修改这些配置。这个命令比较复杂，功能特别多。</p>
+<h2 id="语法">语法</h2>
+<pre><code class="language-Shell">ethtool [ -a | -c | -g | -i | -d | -k | -r | -S |] ethX
+ethtool [-A] ethX [autoneg on|off] [rx on|off] [tx on|off]
+ethtool [-C] ethX [adaptive-rx on|off] [adaptive-tx on|off] [rx-usecs N] [rx-frames N] [rx-usecs-irq N] [rx-frames-irq N] [tx-usecs N] [tx-frames N] [tx-usecs-irq N] [tx-frames-irq N] [stats-block-usecs N][pkt-rate-low N][rx-usecs-low N] [rx-frames-low N] [tx-usecs-low N] [tx-frames-lowN] [pkt-rate-high N] [rx-usecs-high N] [rx-frames-high N] [tx-usecs-high N] [tx-frames-high N] [sample-interval N]
+ethtool [-G] ethX [rx N] [rx-mini N] [rx-jumbo N] [tx N]
+ethtool [-e] ethX [raw on|off] [offset N] [length N]
+ethtool [-E] ethX [magic N] [offset N] [value N]
+ethtool [-K] ethX [rx on|off] [tx on|off] [sg on|off] [tso on|off]
+ethtool [-p] ethX [N]
+ethtool [-t] ethX [offline|online]
+ethtool [-s] ethX [speed 10|100|1000] [duplex half|full] [autoneg on|off] [port tp|aui|bnc|mii] [phyad N] [xcvr internal|external]
+[wol p|u|m|b|a|g|s|d...] [sopass xx:yy:zz:aa:bb:cc] [msglvl N]
+</code></pre>
+<h2 id="选项">选项</h2>
+<pre><code class="language-Shell">-a 查看网卡中 接收模块RX、发送模块TX和Autonegotiate模块的状态：启动on 或 停用off。
+-A 修改网卡中 接收模块RX、发送模块TX和Autonegotiate模块的状态：启动on 或 停用off。
+-c display the Coalesce information of the specified ethernet card。
+-C Change the Coalesce setting of the specified ethernet card。
+-g Display the rx/tx ring parameter information of the specified ethernet card。
+-G change the rx/tx ring setting of the specified ethernet card。
+-i 显示网卡驱动的信息，如驱动的名称、版本等。
+-d 显示register dump信息, 部分网卡驱动不支持该选项。
+-e 显示EEPROM dump信息，部分网卡驱动不支持该选项。
+-E 修改网卡EEPROM byte。
+-k 显示网卡Offload参数的状态：on 或 off，包括rx-checksumming、tx-checksumming等。
+-K 修改网卡Offload参数的状态。
+-p 用于区别不同ethX对应网卡的物理位置，常用的方法是使网卡port上的led不断的闪；N指示了网卡闪的持续时间，以秒为单位。
+-r 如果auto-negotiation模块的状态为on，则restarts auto-negotiation。
+-S 显示NIC- and driver-specific 的统计参数，如网卡接收/发送的字节数、接收/发送的广播包个数等。
+-t 让网卡执行自我检测，有两种模式：offline or online。
+-s 修改网卡的部分配置，包括网卡速度、单工/全双工模式、mac地址等。
+</code></pre>
+<h3 id="数据来源">数据来源</h3>
+<p>Ethtool 命令显示的信息来源于网卡驱动层，即 TCP/ip 协议的链路层。该命令在 Linux 内核中实现的逻辑层次为：<br>
+最重要的结构体<code>struct ethtool_ops</code>，该结构体成员为用于显示或修改以太网卡配置的一系列函数指针，见下表中的第二列。<br>
+网卡驱动负责实现（部分）这些函数，并将其封装入<code>ethtool_ops</code>结构体，为网络核心层提供统一的调用接口。因此，不同的网卡驱动会给应用层返回不同的信息。<code>Ethtool 命令选项</code>、<code>struct ethtool_ops 成员函数</code>、<code>Ethtool 命令显示参数的来源</code>，三者间的对应关系如下表所示：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">命令选项</th>
+<th style="text-align:center">struct ethtool_ops成员函数</th>
+<th style="text-align:center">Ethtool命令显示参数的来源（以网卡驱动BNX2为例）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">无 -s</td>
+<td style="text-align:center">get_settingsget_wol get_msglevel get_link set_settings set_wol set_msglevel</td>
+<td style="text-align:center">从网卡寄存器中获得网卡速度等信息，可配置。</td>
+</tr>
+<tr>
+<td style="text-align:center">-a -A</td>
+<td style="text-align:center">get_pauseparam set_pauseparam</td>
+<td style="text-align:center">从网卡寄存器中获得Autonegotiate/RX/TX模块的状态：on oroff，可配置。</td>
+</tr>
+<tr>
+<td style="text-align:center">-c -C</td>
+<td style="text-align:center">get_coalesceset_coalesce</td>
+<td style="text-align:center">从网卡寄存器中获得coalescing参数：TX/RX一个数据包后，推迟发生TX/RX中断的时间(us)/数据包个数。—减小该值可以提高网卡的响应时间。 当rx-usecs&amp;rx-frames同时被设为0时，RX中断停止。 当tx-usecs&amp;tx-frames同时被设为0时，TX中断停止。</td>
+</tr>
+<tr>
+<td style="text-align:center">-g -G</td>
+<td style="text-align:center">get_ringparam set_ringparam</td>
+<td style="text-align:center">除当前TX/RX ring的值（从网卡寄存器中读取得到，可配置）外，其它为网卡bnx2自己固定的信息。</td>
+</tr>
+<tr>
+<td style="text-align:center">-k -K</td>
+<td style="text-align:center">get_rx_csumget_tx_csum get_sg get_tso set_rx_csum set_tx_csum set_sg set_tso</td>
+<td style="text-align:center">显示信息从保存该状态的变量中读取得到，没有对应的寄存器。因此，TX/RX校验等模块一直处于on状态，实际上是无法修改的。</td>
+</tr>
+<tr>
+<td style="text-align:center">-i</td>
+<td style="text-align:center">get_drvinfo[self_test_count, get_stats_coun,t get_regs_len, get_eeprom_len]</td>
+<td style="text-align:center">网卡bnx2自己固定的信息，如： ——————————————————– driver: bnx2 version: 1.4.30 firmware-version: 1.8.0.5 bus-info: 0000:09:00.0 ——————————————————–</td>
+</tr>
+<tr>
+<td style="text-align:center">-d</td>
+<td style="text-align:center">get_drvinfoget_regs</td>
+<td style="text-align:center">不支持，即bnx2中没有实现函数get_regs。</td>
+</tr>
+<tr>
+<td style="text-align:center">-e -E</td>
+<td style="text-align:center">get_eepromset_eeprom</td>
+<td style="text-align:center">不支持，即bnx2中没有实现函数get_eeprom。</td>
+</tr>
+<tr>
+<td style="text-align:center">-r</td>
+<td style="text-align:center">nway_reset</td>
+<td style="text-align:center">配置网卡MII_BMCR寄存器，重启Auto negotiation模块。</td>
+</tr>
+<tr>
+<td style="text-align:center">-p</td>
+<td style="text-align:center">phys_id</td>
+<td style="text-align:center">配置网卡BNX2_EMAC_LED寄存器，实现LED闪功能。</td>
+</tr>
+<tr>
+<td style="text-align:center">-t</td>
+<td style="text-align:center">self_test</td>
+<td style="text-align:center">通过配置网卡寄存器，逐一测试网卡的硬件模块：registers，memory，loopback，Link stat，interrupt。</td>
+</tr>
+<tr>
+<td style="text-align:center">-S</td>
+<td style="text-align:center">get_ethtool_stats</td>
+<td style="text-align:center">显示信息来源于网卡驱动中的结构体变量stats_blk。（网卡通过DMA方式，将寄存器BNX2_HC_STATISTICS _ADDR_L和BNX2_HC_STATISTICS_ADDR_H中的数据实时地读取到结构体变量struct statistics_block *stats_blk中。） —显示的数据都是从网卡寄存器中统计得到的，各项的含义需查询网卡（芯片）手册。</td>
+</tr>
+</tbody>
+</table>
+<p>由上可见，ethtool 命令用于显示/配置网卡硬件（寄存器）。</p>
+<h2 id="实例">实例</h2>
+<p>查看机器上网卡的速度：百兆还是千兆，请输入：</p>
+<pre><code class="language-Shell">ethool eth0
+</code></pre>
+<p>操作完毕后，输出信息中<code>Speed:</code>这一项就指示了网卡的速度。停止网卡的发送模块 TX，请输入：</p>
+<pre><code class="language-Shell">ethtool -A tx off eth0
+</code></pre>
+<p>操作完毕后，可输入<code>ethtool -a eth0</code>，查看 tx 模块是否已被停止。查看网卡 eth0 采用了何种驱动，请输入：</p>
+<pre><code class="language-Shell">ethtool -i eth0
+</code></pre>
+<p>操作完毕后，显示 driver: bnx2；<br>
+version: 1.4.30 等信息。关闭网卡对收到的数据包的校验功能，请输入：</p>
+<pre><code class="language-Shell">ethtool -K eth0 rx off
+</code></pre>
+<p>操作完毕后，可输入<code>ethtool –k eth0</code>，查看校验功能是否已被停止。如果机器上安装了两块网卡，那么 eth0 对应着哪块网卡呢？输入：</p>
+<pre><code class="language-Shell">ethtool -p eth0 10
+</code></pre>
+<p>操作完毕后，看哪块网卡的 led 灯在闪，eth0 就对应着哪块网卡。查看网卡，在接收/发送数据时，有没有出错？请输入：</p>
+<pre><code class="language-Shell">ethtool –S eth0
+</code></pre>
+<p>将千兆网卡的速度降为百兆，请输入：</p>
+<pre><code class="language-Shell">ethtool -s eth0 speed 100
+</code></pre>
+
+          </div>
+        </article>
+        <div class="next-post">
+          <div class="next">下一篇</div>
+          <a href="https://dev-coco.github.io/post/ip6tables/">
+            <h3 class="post-title">ip6tables</h3>
+          </a>
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="gitalk-container"></div>
+      </div>
+      <!-- middle -->
+      <div class="main-container-middle"></div>
+      <!-- right -->
+      <div id="sidebar" class="main-container-right">
+      <!-- toc -->
+      <div class="toc-card i-card ">
+        <div class="toc-title i-card-title">目录</div>
+          <div class="toc-content">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E8%A1%A5%E5%85%85%E8%AF%B4%E6%98%8E">补充说明</a></li>
+<li><a href="#%E8%AF%AD%E6%B3%95">语法</a></li>
+<li><a href="#%E9%80%89%E9%A1%B9">选项</a>
+<ul>
+<li><a href="#%E6%95%B0%E6%8D%AE%E6%9D%A5%E6%BA%90">数据来源</a></li>
+</ul>
+</li>
+<li><a href="#%E5%AE%9E%E4%BE%8B">实例</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+          <script>
+            function locateCatelogList() {
+              /*获取文章目录集合,可通过:header过滤器*/
+              var alis = $('.post-content :header');
+              /*获取侧边栏目录列表集合**/
+              var sidebar_alis = $('.markdownIt-TOC a');
+              /*获取滚动条到顶部的距离*/
+              var scroll_height = $(window).scrollTop();
+              for (var i = 0; i < alis.length; i++) {
+                /*获取锚点集合中的元素分别到顶点的距离*/
+                var a_height = $(alis[i]).offset().top;
+                if (a_height < scroll_height) {
+                  /*高亮显示*/
+                  sidebar_alis.removeClass('on');
+                  $(sidebar_alis[i]).addClass('on');
+                }
+              }
+            }
+            $(function() {
+              /*绑定滚动事件 */
+              $(window).bind('scroll', locateCatelogList);
+              });
+          </script>
+        </div>
+      <div class="notice-card i-card ">
+        <div class="notice-title i-card-title">公告</div>
+        <div class="notice-content">界面全新改版</div>
+      </div>
+      <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
+        <div class="notice-content">
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
+          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/excel/">Excel</a>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="site-footer">
+    <img style="vertical-align:middle;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&count_bg=%2310C1F9&title_bg=%23555555&icon=html5.svg&icon_color=%23E7E7E7&title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&edge_flat=false"> | <span>Copyright © 2020-2022 Dev-Coco - All Rights Reserved.</span> | <a class="rss" href="https://dev-coco.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+  <script>
+    $('#sidebar').stickySidebar({
+    topSpacing: 80,
+    // bottomSpacing: 60
+    });
+  </script>
+  
+</body>
+</html>

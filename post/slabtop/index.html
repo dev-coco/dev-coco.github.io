@@ -1,0 +1,259 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>slabtop | Dev-Coco</title>
+  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1647958467779">
+  <link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
+  <script src="https://dev-coco.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
+<script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+  <div class="main">
+    <div class="header">
+      <div class="nav">
+        <div class="logo">
+          <a href="https://dev-coco.github.io">
+            <img class="avatar" src="https://dev-coco.github.io/images/avatar.png?v=1647958467779" alt="">
+          </a>
+          <div class="site-title">
+            <h1>Dev-Coco</h1>
+          </div>
+        </div>
+        <span class="menu-btn fa fa-align-justify"></span>
+        <div class="menu-container">
+          <ul>
+            <li>
+              <a href="/" class="menu">首页</a>
+            </li>
+            <li>
+              <a href="/Featured-Software.html" class="menu">软件</a>
+            </li>
+            <li>
+              <a href="/Online-Tools" class="menu">在线工具</a>
+            </li>
+            <li>
+              <a href="/post/Linux-Command" class="menu">Linux命令</a>
+            </li>
+            <li>
+              <a href="/Excel" class="menu">Excel教程</a>
+            </li>
+            <li>
+              <a href="/post/Terms-and-Privacy" class="menu">隐私与条款</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script>
+      $(document).ready(function() {
+        $(".menu-btn").click(function() {
+          $(".menu-container").slideToggle();
+        });
+        $(window).resize(function() {
+          if (window.matchMedia('(min-width: 960px)').matches) {
+            $(".menu-container").css('display', 'block')
+          } else {
+            $(".menu-container").css('display', 'none')
+          }
+        });
+      });
+    </script>
+    <div id="main-content" class="post-detail main-container">
+      <!-- left -->
+      <div id="content" class="main-container-left">
+        <article class="post i-card">
+        <h2 class="post-title">slabtop</h2>
+        <div class="post-info">
+          <time class="post-time">2022-02-03 / 5 min read</time>
+            <a href="https://dev-coco.github.io/tag/linux-command/" class="post-tag i-tag i-tag-warning">#Linux命令</a>
+        </div>
+          <div class="post-content">
+            <p>实时显示内核 slab 内存缓存信息。</p>
+<!-- more -->
+<h2 id="补充说明">补充说明</h2>
+<p>slabtop 命令以实时的方式显示内核“slab”缓冲区的细节信息。</p>
+<h2 id="语法">语法</h2>
+<pre><code class="language-Shell">slabtop (选项)
+</code></pre>
+<h2 id="选项">选项</h2>
+<pre><code class="language-Shell">--delay=n, -d n：每 n 秒更新一次显示的信息，默认是每 3 秒；
+--sort=S, -s S：指定排序标准进行排序（排序标准，参照下面或者 man 手册）；
+--once, -o：显示一次后退出；
+--version, -V：显示版本；
+--help：显示帮助信息。
+</code></pre>
+<p>排序标准：</p>
+<ul>
+<li>
+<p>a: sort by number of active objects</p>
+</li>
+<li>
+<p>b: sort by objects per slab</p>
+</li>
+<li>
+<p>c: sort by cache size</p>
+</li>
+<li>
+<p>l: sort by number of slabs</p>
+</li>
+<li>
+<p>v：sort by number of active slabs</p>
+</li>
+<li>
+<p>n: sort by name</p>
+</li>
+<li>
+<p>o: sort by number of objects</p>
+</li>
+<li>
+<p>p: sort by pages per slab</p>
+</li>
+<li>
+<p>s: sort by object size</p>
+</li>
+<li>
+<p>u: sort by cache utilization</p>
+</li>
+</ul>
+<h3 id="知识扩展">知识扩展</h3>
+<p>内核的模块在分配资源的时候，为了提高效率和资源的利用率，都是透过 slab 来分配的。通过 slab 的信息，再配合源码能粗粗了解系统的运行情况，比如说什么资源有没有不正常的多，或者什么资源有没有泄漏。linux 系统透过/proc/slabinfo 来向用户暴露 slab 的使用情况。</p>
+<p>Linux 所使用的 slab 分配器的基础是 Jeff Bonwick 为 SunOS 操作系统首次引入的一种算法。Jeff 的分配器是围绕对象缓存进行的。在内核中，会为有限的对象集（例如文件描述符和其他常见结构）分配大量内存。Jeff 发现对内核中普通对象进行初始化所需的时间超过了对其进行分配和释放所需的时间。因此他的结论是不应该将内存释放回一个全局的内存池，而是将内存保持为针对特定目而初始化的状态。Linux slab 分配器使用了这种思想和其他一些思想来构建一个在空间和时间上都具有高效性的内存分配器。</p>
+<p>保存着监视系统中所有活动的 slab 缓存的信息的文件为/proc/slabinfo。</p>
+<h2 id="实例">实例</h2>
+<pre><code class="language-Shell">slabtop
+
+ Active / Total Objects (% used)    : 897519 / 1245930 (72.0%)
+ Active / Total Slabs (% used)      : 38605 / 38605 (100.0%)
+ Active / Total Caches (% used)     : 94 / 145 (64.8%)
+ Active / Total Size (% used)       : 129558.22K / 153432.58K (84.4%)
+ Minimum / Average / Maximum Object : 0.01K / 0.12K / 128.00K
+
+  OBJS ACTIVE  USE OBJ SIZE  SLABS OBJ/SLAB CACHE SIZE NAME
+440136 171471  38%    0.05K   6113       72     24452K buffer_head
+190086 148576  78%    0.05K   2437       78      9748K selinux_inode_security
+151840 146366  96%    0.48K  18980        8     75920K ext3_inode_cache
+144333 144143  99%    0.02K    711      203      2844K avtab_node
+130529 128488  98%    0.13K   4501       29     18004K dentry_cache
+ 99214  99071  99%    0.03K    878      113      3512K size-32
+ 43834  28475  64%    0.27K   3131       14     12524K radix_tree_node
+ 17818   9450  53%    0.06K    302       59      1208K size-64
+  4602   4562  99%    0.05K     59       78       236K sysfs_dir_cache
+  3220   2855  88%    0.08K     70       46       280K vm_area_struct
+  2460   2114  85%    0.12K     82       30       328K size-128
+  1564   1461  93%    0.04K     17       92        68K Acpi-Operand
+  1540   1540 100%    0.33K    140       11       560K inode_cache
+  1524    466  30%    0.01K      6      254        24K anon_vma
+  1440    515  35%    0.05K     20       72        80K avc_node
+  1440   1154  80%    0.19K     72       20       288K filp
+  1170   1023  87%    0.05K     15       78        60K ext3_xattr
+   845    724  85%    0.02K      5      169        20K Acpi-Namespace
+   638    315  49%    0.35K     58       11       232K proc_inode_cache
+   450    434  96%    0.25K     30       15       120K size-256
+   424    386  91%    0.50K     53        8       212K size-512
+   312    107  34%    0.05K      4       78        16K delayacct_cache
+   306    284  92%    0.43K     34        9       136K shmem_inode_cache
+   303    108  35%    0.04K      3      101        12K pid
+   300    261  87%    0.19K     15       20        60K skbuff_head_cache
+   300    300 100%    0.12K     10       30        40K bio
+   260    260 100%   32.00K    260        1      8320K size-32768
+   254      6   2%    0.01K      1      254         4K revoke_table
+   236     55  23%    0.06K      4       59        16K fs_cache
+   216    203  93%    1.00K     54        4       216K size-1024
+   214    214 100%    2.00K    107        2       428K size-2048
+   203     83  40%    0.02K      1      203         4K biovec-1
+</code></pre>
+
+          </div>
+        </article>
+        <div class="next-post">
+          <div class="next">下一篇</div>
+          <a href="https://dev-coco.github.io/post/free/">
+            <h3 class="post-title">free</h3>
+          </a>
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="gitalk-container"></div>
+      </div>
+      <!-- middle -->
+      <div class="main-container-middle"></div>
+      <!-- right -->
+      <div id="sidebar" class="main-container-right">
+      <!-- toc -->
+      <div class="toc-card i-card ">
+        <div class="toc-title i-card-title">目录</div>
+          <div class="toc-content">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E8%A1%A5%E5%85%85%E8%AF%B4%E6%98%8E">补充说明</a></li>
+<li><a href="#%E8%AF%AD%E6%B3%95">语法</a></li>
+<li><a href="#%E9%80%89%E9%A1%B9">选项</a>
+<ul>
+<li><a href="#%E7%9F%A5%E8%AF%86%E6%89%A9%E5%B1%95">知识扩展</a></li>
+</ul>
+</li>
+<li><a href="#%E5%AE%9E%E4%BE%8B">实例</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+          <script>
+            function locateCatelogList() {
+              /*获取文章目录集合,可通过:header过滤器*/
+              var alis = $('.post-content :header');
+              /*获取侧边栏目录列表集合**/
+              var sidebar_alis = $('.markdownIt-TOC a');
+              /*获取滚动条到顶部的距离*/
+              var scroll_height = $(window).scrollTop();
+              for (var i = 0; i < alis.length; i++) {
+                /*获取锚点集合中的元素分别到顶点的距离*/
+                var a_height = $(alis[i]).offset().top;
+                if (a_height < scroll_height) {
+                  /*高亮显示*/
+                  sidebar_alis.removeClass('on');
+                  $(sidebar_alis[i]).addClass('on');
+                }
+              }
+            }
+            $(function() {
+              /*绑定滚动事件 */
+              $(window).bind('scroll', locateCatelogList);
+              });
+          </script>
+        </div>
+      <div class="notice-card i-card ">
+        <div class="notice-title i-card-title">公告</div>
+        <div class="notice-content">界面全新改版</div>
+      </div>
+      <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
+        <div class="notice-content">
+          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/excel/">Excel</a>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="site-footer">
+    <img style="vertical-align:middle;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&count_bg=%2310C1F9&title_bg=%23555555&icon=html5.svg&icon_color=%23E7E7E7&title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&edge_flat=false"> | <span>Copyright © 2020-2022 Dev-Coco - All Rights Reserved.</span> | <a class="rss" href="https://dev-coco.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+  <script>
+    $('#sidebar').stickySidebar({
+    topSpacing: 80,
+    // bottomSpacing: 60
+    });
+  </script>
+  
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Gallery</title>
+	<link rel="stylesheet" href="https://dev-coco.github.io/css/gallery.css">
+  <script src="https://giventofly.github.io/yall/yall.min.js"></script>
+  <script src="https://dev-coco.github.io/js/medium-zoom.min.js"></script>
+  <script>
+    var lazyload = new yall()
+    window.addEventListener('DOMContentLoaded', (e) => {
+      lazyload.run()
+    })
+    function images_zoom () {
+      mediumZoom('img', {
+        margin: 50,
+        background: 'rgba(23, 29, 54, .8)',
+        scrollOffset: 0,
+        metaClick: false
+      })
+    }
+  </script>  
+</head>
+<body>
+  <div class="wrapper">
+    <div class="list">
+      <div class="item">
+        <div class="cards">
+          <img class="yall_lazy" src="https://dev-coco.github.io/images/loading.jpg" data-src="https://drive.google.com/thumbnail?id=1rZFRU8I_EfSSgWFnL3BVj-1Nzti8U9DK">
+        </div>
+        <p class="title"><a href="https://drive.google.com/uc?id=1rZFRU8I_EfSSgWFnL3BVj-1Nzti8U9DK&export=download">郁金香1</a></p>
+      </div>
+      <div class="item">
+        <div class="cards">
+          <img class="yall_lazy" src="https://dev-coco.github.io/images/loading.jpg" data-src="https://drive.google.com/thumbnail?id=1_9M78MnoFXrc-NaErF0B-2484jPchCGp">
+        </div>
+        <p class="title"><a href="https://drive.google.com/uc?id=1_9M78MnoFXrc-NaErF0B-2484jPchCGp&export=download">郁金香2</a></p>
+      </div>
+      <div class="item">
+        <div class="cards">
+          <img class="yall_lazy" src="https://dev-coco.github.io/images/loading.jpg" data-src="https://drive.google.com/thumbnail?id=1SlX6JDZ82fvFTRlVaL4Vo6l2HqPMe3sA">
+        </div>
+        <p class="title"><a href="https://drive.google.com/uc?id=1SlX6JDZ82fvFTRlVaL4Vo6l2HqPMe3sA&export=download">郁金香3</a></p>
+      </div>
+      <div class="item">
+        <div class="cards">
+          <img class="yall_lazy" src="https://dev-coco.github.io/images/loading.jpg" data-src="https://drive.google.com/thumbnail?id=1JEZomPM9VIsyLg1QEw_wciHel31AzMmV">
+        </div>
+        <p class="title"><a href="https://drive.google.com/uc?id=1JEZomPM9VIsyLg1QEw_wciHel31AzMmV&export=download">郁金香4</a></p>
+      </div>
+      <div class="item">
+        <div class="cards">
+          <img class="yall_lazy" src="https://dev-coco.github.io/images/loading.jpg" data-src="https://drive.google.com/thumbnail?id=1X3JKPWyy3s991mgOdt3gxjPI9gAIJDOj">
+        </div>
+        <p class="title"><a href="https://drive.google.com/uc?id=1X3JKPWyy3s991mgOdt3gxjPI9gAIJDOj&export=download">郁金香5</a></p>
+      </div>
+    </div>
+  </div>
+  <script>images_zoom()</script>
+</body>
+</html>

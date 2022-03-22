@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="keywords" content="Google Excel, Excel表格, MAX">
+  <meta name="description" content="MAX - 返回范围内的最大值。">
+  <meta name="robots" content="index, follow">
+  <meta property="og:image" content="/images/Excel-Tutorial.jpg">
+  <title>MAX</title>
+  <link rel="icon" href="/images/avatar.png">
+  <link href="/css/Excel/typo.css" rel="stylesheet">
+</head>
+<body class="typo">
+  <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&count_bg=%2310C1F9&title_bg=%23555555&icon=html5.svg&icon_color=%23E7E7E7&title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&edge_flat=false" style="display:none">
+  <h1 id="title">MAX</h1>
+  <p>作用：返回范围内的最大值。</p>
+  <p>语法：</p>
+  <ol>
+    <li><span class="f">MAX(<span class="q">范围</span>)</span></li>
+    <li><span class="f">MAX(<span class="q">范围1</span>, <span class="q">范围2</span>)</span></li>
+  </ol>
+  <p>例子：</p>
+  <iframe style="max-width:468px;height:153px;" src="https://docs.google.com/spreadsheets/d/1PDS24vBwpFtHTz0S4qF_DtQtqGJfNpvezjx3Ofq6_HY/pubhtml/sheet?headers=true&gid=1603479562"></iframe>
+  <p>运用：使用 MAX 函数生存连号序号，有空行的地方跳过。</p>
+  <p>使用 MAX 函数计算从 <span class="f q">C$1</span> 到 <span class="f q">C1</span> 的最大值，并且加 1。 那么第一行是表头，没有数值，默认会返回 0，但是后面又加了 1，最终输出的结果就是 1，也就是借用一个空白的内容进行初始化。当公式往下复制的时候，因为起始的位置是绝对引用的，所以不会变，但是结束的位置就加 1 了，那么从 <span class="f q">C$1</span> 到 <span class="f q">C2</span> 的时候，MAX 函数就会计算到 <span class="f q">C2</span> 的数值是最大值，但是后面又加了 1，这样就第二行就返回 2，以此类推。如果遇到空行的情况，就不需要用 MAX 函数计算了，这里就需要用到 <a href="/Excel/Resource/Function/Logical-Judgments/IF.html" target="_blank">IF 函数</a> 做一个逻辑判断，如果 A 列对应的单元格为空的话就返回一个空值，不进行计算，这样就实现了用 MAX 函数连号排序，即使有空行也不影响序号的结果。</p>
+  <iframe style="max-width:456px;height:186px;" src="https://docs.google.com/spreadsheets/d/1PDS24vBwpFtHTz0S4qF_DtQtqGJfNpvezjx3Ofq6_HY/pubhtml/sheet?headers=true&gid=105183054"></iframe>
+  <p class="home">
+    <a href="/Excel" target="_blank">
+      <img alt="Excel表格, Google Excel" src="/images/Excel.png">
+      <span>Excel 一点通</span>
+    </a>
+  </p>
+  <script src="/js/voice-playback.js"></script>
+</body>
+</html>

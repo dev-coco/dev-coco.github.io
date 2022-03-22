@@ -1,0 +1,269 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ab | Dev-Coco</title>
+  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1647958467779">
+  <link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
+  <script src="https://dev-coco.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
+<script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+  <div class="main">
+    <div class="header">
+      <div class="nav">
+        <div class="logo">
+          <a href="https://dev-coco.github.io">
+            <img class="avatar" src="https://dev-coco.github.io/images/avatar.png?v=1647958467779" alt="">
+          </a>
+          <div class="site-title">
+            <h1>Dev-Coco</h1>
+          </div>
+        </div>
+        <span class="menu-btn fa fa-align-justify"></span>
+        <div class="menu-container">
+          <ul>
+            <li>
+              <a href="/" class="menu">首页</a>
+            </li>
+            <li>
+              <a href="/Featured-Software.html" class="menu">软件</a>
+            </li>
+            <li>
+              <a href="/Online-Tools" class="menu">在线工具</a>
+            </li>
+            <li>
+              <a href="/post/Linux-Command" class="menu">Linux命令</a>
+            </li>
+            <li>
+              <a href="/Excel" class="menu">Excel教程</a>
+            </li>
+            <li>
+              <a href="/post/Terms-and-Privacy" class="menu">隐私与条款</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script>
+      $(document).ready(function() {
+        $(".menu-btn").click(function() {
+          $(".menu-container").slideToggle();
+        });
+        $(window).resize(function() {
+          if (window.matchMedia('(min-width: 960px)').matches) {
+            $(".menu-container").css('display', 'block')
+          } else {
+            $(".menu-container").css('display', 'none')
+          }
+        });
+      });
+    </script>
+    <div id="main-content" class="post-detail main-container">
+      <!-- left -->
+      <div id="content" class="main-container-left">
+        <article class="post i-card">
+        <h2 class="post-title">ab</h2>
+        <div class="post-info">
+          <time class="post-time">2022-01-29 / 5 min read</time>
+            <a href="https://dev-coco.github.io/tag/linux-command/" class="post-tag i-tag i-tag-warning">#Linux命令</a>
+        </div>
+          <div class="post-content">
+            <p>Apache 服务器的性能测试工具</p>
+<!-- more -->
+<h2 id="补充说明">补充说明</h2>
+<p>ab 命令 是一个测试 Apache http 服务器的工具，你可以通过这个工具，指定一个单位时间内向 Apache 发出的请求数量来看看你的 Apache 和机器配合的性能如何。</p>
+<h3 id="语法">语法</h3>
+<pre><code class="language-Shell">ab [ -A auth-username:password ] [ -c concurrency ] [ -C cookie-name=value
+] [ -d ] [ -e csv-file ] [ -g gnuplot-file ] [ -h ] [ -H custom-header ] [
+-i  ]  [  -k  ]  [  -n  requests  ] [ -p POST-file ] [ -P proxy-auth-user‐
+name:password ] [ -q ] [ -s ] [ -S ] [ -t timelimit ] [ -T content-type  ]
+[  -v verbosity] [ -V ] [ -w ] [ -x &lt;table&gt;-attributes ] [ -X proxy[:port]
+]  [  -y  &lt;tr&gt;-attributes  ]  [  -z   &lt;td&gt;-attributes   ]   [http://]host‐
+name[:port]/path
+</code></pre>
+<h3 id="选项">选项</h3>
+<pre><code>-A auth-username:password
+      #  支持基本的验证证书,用户名和密码之间使用&quot;冒号&quot;:
+      # 分隔开,ab将以明文方式传送过去.不管服务器是不是需要
+      # ,也就是说你的服务器需要支持401认证.
+
+-c concurrency
+      # 同时向服务器端发送的请求数目，默认状态下是一次 只执行一个http请求.
+
+-C cookie-name=value
+      # Add a Cookie: line to the request. The argument is typically in the
+      # form of a name=value pair. This field is repeatable.
+
+-d    #  Do not display  the  &quot;percentage  served  within  XX  [ms]  table&quot;.
+      # (legacy support).
+
+-e csv-file
+      # Write  a  Comma  separated value (CSV) file which contains for each
+      # percentage (from 1% to 100%) the time (in milli seconds) it took to
+      # serve  that percentage of the requests. This is usually more useful
+      # than the 'gnuplot' file; as the results are already 'binned'.
+
+-g gnuplot-file
+      # Write all measured values out as a 'gnuplot' or TSV  (Tab  separate
+      # values)  file.  This file can easily be imported into packages like
+      # Gnuplot, IDL, Mathematica, Igor or even Excell. The labels  are  on
+      # the first line of the file.
+-h    # 显示使用说明
+-H custom-header
+      # 向请求包追加附加的标题字串.此参数应该是有效的标题         行(header
+      # line)形式,通常使用冒号&quot;:&quot;来分隔有效配对 (valid  pair)例如  'Accept-
+      # Encoding: zip/zop;8 bit';
+
+-i    # 使用一个 http 头(HEAD) 来替换 GET方法.不可以掺入POST 方法
+
+-k    #  允许http      KeepAlive      ；也就是说执行多个请求在一个      http
+      # 会话当中，默认是不允许的也就是no KeepAlive啦;)
+
+-n requests
+      # 执行一次测试会话的时候所发出的请求数目,默认是执行一个单一的请求
+      # 当然了这样的测试结果也就没什么意义了
+
+-p POST-file
+      # 测试程序也就是ab,将向Apache server发送带有HTTP POST 的请求.
+
+-P proxy-auth-username:password
+      # 当需要通过代理测试一台 HTTP 服务器的时候而你的代理
+      # 又需要用户名密码验证,这时你可以使用这个选项,同样
+      # 用户名与密码之间使用冒号&quot;:&quot;分隔开,ab将之以明文的方式
+      # 发送出去,当然,前提是你的代理是处于407认证状态的
+
+-q    #  When processing more than 150 requests, ab outputs a progress count
+      # on  stderr  every  10% or 100 requests or so. The -q flag will sup‐
+      # press these messages.
+
+-s    #  When compiled in (ab -h will show you) use the SSL protected  https
+      # rather  than  the  http  protocol. This feature is experimental and
+      # very rudimentary. You probably do not want to use it.
+
+-S    #  Do not display the median and standard deviation values,  nor  dis‐
+      # play  the  warning/error  messages  when the average and median are
+      # more than one or two times the standard deviation  apart.  And  de‐
+      # fault to the min/avg/max values. (legacy support).
+
+-t timelimit
+      #  设置测试的时间的长短，使用这个选项ab将自动设置
+      # 测试请求会话数目为50000，然后以你设置的时间为
+      # 固定周期.默认状态下是没有时限的，也就是直到完成
+      # 你所设置的请求数目为止.
+
+-T content-type
+      # 内容类型标头,使用在POST数据的时候.
+
+-v verbosity
+      # 设置冗余级别,4级打印出每个请求标头的详细信息,
+      # 3级打印出回应代码(例如,404,200),2级打印出警告 信息和指示消息
+
+-V    # 显示版本号并且退出
+-w    # 打印输出结果到HTML表中. 默认的表是两列n行白底黑框
+
+-x &lt;table&gt;-attributes
+      # 使用字串来描述表的属性,该属性字串应该插入到&lt;table 这里 &gt;
+
+-X proxy[:port]
+      # Use a proxy server for the requests.
+
+-y &lt;tr&gt;-attributes
+      # 用于生成html表格每行的属性名 (&lt;tr&gt;)
+
+-z &lt;td&gt;-attributes
+      # 用于生成html表格每列的属性名 (&lt;td&gt;)
+
+</code></pre>
+
+          </div>
+        </article>
+        <div class="next-post">
+          <div class="next">下一篇</div>
+          <a href="https://dev-coco.github.io/post/accept/">
+            <h3 class="post-title">accept</h3>
+          </a>
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="gitalk-container"></div>
+      </div>
+      <!-- middle -->
+      <div class="main-container-middle"></div>
+      <!-- right -->
+      <div id="sidebar" class="main-container-right">
+      <!-- toc -->
+      <div class="toc-card i-card ">
+        <div class="toc-title i-card-title">目录</div>
+          <div class="toc-content">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E8%A1%A5%E5%85%85%E8%AF%B4%E6%98%8E">补充说明</a>
+<ul>
+<li><a href="#%E8%AF%AD%E6%B3%95">语法</a></li>
+<li><a href="#%E9%80%89%E9%A1%B9">选项</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+          <script>
+            function locateCatelogList() {
+              /*获取文章目录集合,可通过:header过滤器*/
+              var alis = $('.post-content :header');
+              /*获取侧边栏目录列表集合**/
+              var sidebar_alis = $('.markdownIt-TOC a');
+              /*获取滚动条到顶部的距离*/
+              var scroll_height = $(window).scrollTop();
+              for (var i = 0; i < alis.length; i++) {
+                /*获取锚点集合中的元素分别到顶点的距离*/
+                var a_height = $(alis[i]).offset().top;
+                if (a_height < scroll_height) {
+                  /*高亮显示*/
+                  sidebar_alis.removeClass('on');
+                  $(sidebar_alis[i]).addClass('on');
+                }
+              }
+            }
+            $(function() {
+              /*绑定滚动事件 */
+              $(window).bind('scroll', locateCatelogList);
+              });
+          </script>
+        </div>
+      <div class="notice-card i-card ">
+        <div class="notice-title i-card-title">公告</div>
+        <div class="notice-content">界面全新改版</div>
+      </div>
+      <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
+        <div class="notice-content">
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/excel/">Excel</a>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="site-footer">
+    <img style="vertical-align:middle;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&count_bg=%2310C1F9&title_bg=%23555555&icon=html5.svg&icon_color=%23E7E7E7&title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&edge_flat=false"> | <span>Copyright © 2020-2022 Dev-Coco - All Rights Reserved.</span> | <a class="rss" href="https://dev-coco.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+  <script>
+    $('#sidebar').stickySidebar({
+    topSpacing: 80,
+    // bottomSpacing: 60
+    });
+  </script>
+  
+</body>
+</html>

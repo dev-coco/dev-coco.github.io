@@ -1,0 +1,298 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>fishshell | Dev-Coco</title>
+  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1647958467779">
+  <link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
+  <script src="https://dev-coco.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
+<script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+  <div class="main">
+    <div class="header">
+      <div class="nav">
+        <div class="logo">
+          <a href="https://dev-coco.github.io">
+            <img class="avatar" src="https://dev-coco.github.io/images/avatar.png?v=1647958467779" alt="">
+          </a>
+          <div class="site-title">
+            <h1>Dev-Coco</h1>
+          </div>
+        </div>
+        <span class="menu-btn fa fa-align-justify"></span>
+        <div class="menu-container">
+          <ul>
+            <li>
+              <a href="/" class="menu">首页</a>
+            </li>
+            <li>
+              <a href="/Featured-Software.html" class="menu">软件</a>
+            </li>
+            <li>
+              <a href="/Online-Tools" class="menu">在线工具</a>
+            </li>
+            <li>
+              <a href="/post/Linux-Command" class="menu">Linux命令</a>
+            </li>
+            <li>
+              <a href="/Excel" class="menu">Excel教程</a>
+            </li>
+            <li>
+              <a href="/post/Terms-and-Privacy" class="menu">隐私与条款</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script>
+      $(document).ready(function() {
+        $(".menu-btn").click(function() {
+          $(".menu-container").slideToggle();
+        });
+        $(window).resize(function() {
+          if (window.matchMedia('(min-width: 960px)').matches) {
+            $(".menu-container").css('display', 'block')
+          } else {
+            $(".menu-container").css('display', 'none')
+          }
+        });
+      });
+    </script>
+    <div id="main-content" class="post-detail main-container">
+      <!-- left -->
+      <div id="content" class="main-container-left">
+        <article class="post i-card">
+        <h2 class="post-title">fishshell</h2>
+        <div class="post-info">
+          <time class="post-time">2022-02-03 / 5 min read</time>
+            <a href="https://dev-coco.github.io/tag/linux-command/" class="post-tag i-tag i-tag-info">#Linux命令</a>
+        </div>
+          <div class="post-content">
+            <p>比 bash 更好用的 shell。</p>
+<!-- more -->
+<h2 id="安装">安装</h2>
+<pre><code class="language-Shell"># Ubuntu 和 Debian 的安装方法。
+sudo apt-get install fish
+# Mac 的安装方法。
+brew install fish
+</code></pre>
+<h2 id="启动与帮助">启动与帮助</h2>
+<p>由于 <code>Fish</code> 的语法与 <code>Bash</code> 有很大差异，<code>Bash</code> 脚本一般不兼容。因此，建议不要将 <code>Fish</code> 设为默认 <code>Shell</code>，而是每次手动启动它。</p>
+<pre><code class="language-Shell"># 安装完成后，就可以启动 Fish。
+$ fish
+# 使用过程中，如果需要帮助，可以输入 help 命令
+$ help
+</code></pre>
+<h2 id="彩色显示">彩色显示</h2>
+<pre><code class="language-Shell"># 无效命令为红色
+$ mkd
+# 有效命令为蓝色
+$ mkdir
+# 有效路径会有下划线。如果没有下划线，你就知道这个路径不存在。
+$ cat ~/somefi 
+</code></pre>
+<h2 id="自动建议">自动建议</h2>
+<p>Fish 会自动在光标后面给出建议，表示可能的选项，颜色为灰色。如果采纳建议，可以按下 <code>→</code> 或 <code>Control + F</code> 。如果只采纳一部分，可以按下 <code>Alt + →</code>。</p>
+<pre><code class="language-Shell">$ /bin/hostname # 命令建议
+$ grep --ignore-case  参数建议
+$ ls node_modules # 路径建议
+</code></pre>
+<h2 id="自动补全">自动补全</h2>
+<p>输入命令时，<code>Fish</code> 会自动显示匹配的上一条历史记录。如果没有匹配的历史记录，<code>Fish</code> 会猜测可能的结果，自动补全各种输入。比如，输入 <code>pyt</code> 再按下 <code>Tab</code> ，就会自动补全为 <code>python</code> 命令。</p>
+<p><code>Fish</code> 还可以自动补全 <code>Git</code> 分支。</p>
+<h2 id="脚本语法">脚本语法</h2>
+<h3 id="if-语句">if 语句</h3>
+<pre><code class="language-Shell">if grep fish /etc/shells
+    echo Found fish
+else if grep bash /etc/shells
+    echo Found bash
+else
+    echo Got nothing
+end
+</code></pre>
+<h3 id="switch-语句">switch 语句</h3>
+<pre><code class="language-Shell">switch (uname)
+case Linux
+    echo Hi Tux!
+case Darwin
+    echo Hi Hexley!
+case FreeBSD NetBSD DragonFly
+    echo Hi Beastie!
+case '*'
+    echo Hi, stranger!
+end
+</code></pre>
+<h3 id="while-循环">while 循环</h3>
+<pre><code class="language-Shell">while true
+    echo &quot;Loop forever&quot;
+end
+</code></pre>
+<h3 id="for-循环">for 循环</h3>
+<pre><code class="language-Shell">for file in *.txt
+    cp $file $file.bak
+end
+</code></pre>
+<h3 id="函数">函数</h3>
+<p><code>Fish</code> 的函数用来封装命令，或者为现有的命令起别名。</p>
+<pre><code class="language-Shell">function ll
+    ls -lhG $argv
+end
+</code></pre>
+<p>上面代码定义了一个 <code>ll</code> 函数。命令行执行这个函数以后，就可以用 <code>ll</code> 命令替代 <code>ls -lhG</code>。其中，变量 <code>$argv</code> 表示函数的参数。</p>
+<pre><code class="language-Shell">function ls
+    command ls -hG $argv
+end
+</code></pre>
+<p>上面的代码重新定义 <code>ls</code> 命令。注意，函数体内的 <code>ls</code> 之前，要加上 <code>command</code>，否则会因为无限循环而报错。</p>
+<h3 id="提示符">提示符</h3>
+<p><code>fish_prompt</code> 函数用于定义命令行提示符（prompt）。</p>
+<pre><code class="language-Shell">function fish_prompt
+  set_color purple
+  date &quot;+%m/%d/%y&quot;
+  set_color FF0
+  echo (pwd) '&gt;'
+  set_color normal
+end
+</code></pre>
+<p>执行上面的函数以后，你的命令行提示符就会变成下面这样。</p>
+<pre><code class="language-Shell">02/06/13
+/home/tutorial &gt; 
+</code></pre>
+<h2 id="配置">配置</h2>
+<p>Fish 的配置文件是 <code>~/.config/fish/config.fish</code>，每次 <code>Fish</code> 启动，就会自动加载这个文件。Fish 还提供 Web 界面配置该文件。</p>
+<pre><code class="language-Shell">$ fish_config # 浏览器打开 Web 界面配置
+</code></pre>
+<p>Running Commands: 兼容 bash 等 shell 的命令执行方式<br>
+Getting Help: <code>help/man cmd -&gt; browser/terminal</code><br>
+Syntax Highlighting: 实时检查命令是否正确<br>
+Wildcards: 支持缩写  <code>*</code> 递归 匹配<br>
+Pipes and Redirections: 使用 <code>^</code> 代表 stderr<br>
+Autosuggestions: 自动建议, 可以使用 <code>Ctrl-f / -&gt;</code> 来补全<br>
+Tab Completions: 更强大的 tab 补全<br>
+Variables: 使用 set 设置<br>
+Exit Status: 使用 <code>echo $status</code> 替代 <code>$?</code><br>
+Exports (Shell Variables)<br>
+Lists: all variables in fish are really lists<br>
+Command Substitutions: 使用 <code>(cmd)</code> 来执行命令, 而不是 反引号、<code>$()</code><br>
+Combiners (And, Or, Not): 不支持使用符合来表示逻辑运算<br>
+Functions：使用 <code>$argv</code> 替代 <code>$1</code><br>
+Conditionals (If, Else, Switch) / Functions / Loops: 更人性化的写法 (参考 py)<br>
+Prompt: <code>function fish_prompt</code> 实现<br>
+Startup (Where's .bashrc?): <code>~/.config/fish/config.fish</code>，更好的方式是 autoloading-function、universal-variables<br>
+Autoloading Functions: <code>~/.config/fish/functions/.</code><br>
+Universal Variables：a variable whose value is shared across all instances of fish</p>
+<pre><code class="language-Shell">set name 'czl' # 设置变量，替代 name=czl
+echo $name
+echo $status # exit status，替代 $?
+env # 环境变量
+set -x MyVariable SomeValue # 替代 export
+set -e MyVariable
+set PATH $PATH /usr/local/bin # 使用 lists 记录 PATH
+set -U fish_user_paths /usr/local/bin $fish_user_paths # 永久生效
+touch &quot;testing_&quot;(date +%s)&quot;.txt&quot; # command subtitution，替代 `date +%s`
+cp file.txt file.txt.bak; and echo 'back success'; or echo 'back fail' # combiner
+functions # 列出 fish 下定义的函数
+</code></pre>
+
+          </div>
+        </article>
+        <div class="next-post">
+          <div class="next">下一篇</div>
+          <a href="https://dev-coco.github.io/post/vi/">
+            <h3 class="post-title">vi</h3>
+          </a>
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="gitalk-container"></div>
+      </div>
+      <!-- middle -->
+      <div class="main-container-middle"></div>
+      <!-- right -->
+      <div id="sidebar" class="main-container-right">
+      <!-- toc -->
+      <div class="toc-card i-card ">
+        <div class="toc-title i-card-title">目录</div>
+          <div class="toc-content">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E5%AE%89%E8%A3%85">安装</a></li>
+<li><a href="#%E5%90%AF%E5%8A%A8%E4%B8%8E%E5%B8%AE%E5%8A%A9">启动与帮助</a></li>
+<li><a href="#%E5%BD%A9%E8%89%B2%E6%98%BE%E7%A4%BA">彩色显示</a></li>
+<li><a href="#%E8%87%AA%E5%8A%A8%E5%BB%BA%E8%AE%AE">自动建议</a></li>
+<li><a href="#%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8">自动补全</a></li>
+<li><a href="#%E8%84%9A%E6%9C%AC%E8%AF%AD%E6%B3%95">脚本语法</a>
+<ul>
+<li><a href="#if-%E8%AF%AD%E5%8F%A5">if 语句</a></li>
+<li><a href="#switch-%E8%AF%AD%E5%8F%A5">switch 语句</a></li>
+<li><a href="#while-%E5%BE%AA%E7%8E%AF">while 循环</a></li>
+<li><a href="#for-%E5%BE%AA%E7%8E%AF">for 循环</a></li>
+<li><a href="#%E5%87%BD%E6%95%B0">函数</a></li>
+<li><a href="#%E6%8F%90%E7%A4%BA%E7%AC%A6">提示符</a></li>
+</ul>
+</li>
+<li><a href="#%E9%85%8D%E7%BD%AE">配置</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+          <script>
+            function locateCatelogList() {
+              /*获取文章目录集合,可通过:header过滤器*/
+              var alis = $('.post-content :header');
+              /*获取侧边栏目录列表集合**/
+              var sidebar_alis = $('.markdownIt-TOC a');
+              /*获取滚动条到顶部的距离*/
+              var scroll_height = $(window).scrollTop();
+              for (var i = 0; i < alis.length; i++) {
+                /*获取锚点集合中的元素分别到顶点的距离*/
+                var a_height = $(alis[i]).offset().top;
+                if (a_height < scroll_height) {
+                  /*高亮显示*/
+                  sidebar_alis.removeClass('on');
+                  $(sidebar_alis[i]).addClass('on');
+                }
+              }
+            }
+            $(function() {
+              /*绑定滚动事件 */
+              $(window).bind('scroll', locateCatelogList);
+              });
+          </script>
+        </div>
+      <div class="notice-card i-card ">
+        <div class="notice-title i-card-title">公告</div>
+        <div class="notice-content">界面全新改版</div>
+      </div>
+      <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
+        <div class="notice-content">
+          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/excel/">Excel</a>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="site-footer">
+    <img style="vertical-align:middle;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&count_bg=%2310C1F9&title_bg=%23555555&icon=html5.svg&icon_color=%23E7E7E7&title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&edge_flat=false"> | <span>Copyright © 2020-2022 Dev-Coco - All Rights Reserved.</span> | <a class="rss" href="https://dev-coco.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+  <script>
+    $('#sidebar').stickySidebar({
+    topSpacing: 80,
+    // bottomSpacing: 60
+    });
+  </script>
+  
+</body>
+</html>

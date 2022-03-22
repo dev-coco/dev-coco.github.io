@@ -1,0 +1,233 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ack | Dev-Coco</title>
+  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1647958467779">
+  <link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
+  <script src="https://dev-coco.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
+<script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+  <div class="main">
+    <div class="header">
+      <div class="nav">
+        <div class="logo">
+          <a href="https://dev-coco.github.io">
+            <img class="avatar" src="https://dev-coco.github.io/images/avatar.png?v=1647958467779" alt="">
+          </a>
+          <div class="site-title">
+            <h1>Dev-Coco</h1>
+          </div>
+        </div>
+        <span class="menu-btn fa fa-align-justify"></span>
+        <div class="menu-container">
+          <ul>
+            <li>
+              <a href="/" class="menu">首页</a>
+            </li>
+            <li>
+              <a href="/Featured-Software.html" class="menu">软件</a>
+            </li>
+            <li>
+              <a href="/Online-Tools" class="menu">在线工具</a>
+            </li>
+            <li>
+              <a href="/post/Linux-Command" class="menu">Linux命令</a>
+            </li>
+            <li>
+              <a href="/Excel" class="menu">Excel教程</a>
+            </li>
+            <li>
+              <a href="/post/Terms-and-Privacy" class="menu">隐私与条款</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script>
+      $(document).ready(function() {
+        $(".menu-btn").click(function() {
+          $(".menu-container").slideToggle();
+        });
+        $(window).resize(function() {
+          if (window.matchMedia('(min-width: 960px)').matches) {
+            $(".menu-container").css('display', 'block')
+          } else {
+            $(".menu-container").css('display', 'none')
+          }
+        });
+      });
+    </script>
+    <div id="main-content" class="post-detail main-container">
+      <!-- left -->
+      <div id="content" class="main-container-left">
+        <article class="post i-card">
+        <h2 class="post-title">ack</h2>
+        <div class="post-info">
+          <time class="post-time">2022-01-29 / 3 min read</time>
+            <a href="https://dev-coco.github.io/tag/linux-command/" class="post-tag i-tag i-tag-primary">#Linux命令</a>
+        </div>
+          <div class="post-content">
+            <p>比 grep 好用的文本搜索工具</p>
+<!-- more -->
+<h2 id="安装">安装</h2>
+<pre><code class="language-Shell"># ubuntu下要安装 ack-grep，因为在 debian 系中，ack 这个名字被其他的软件占用了。
+sudo apt-get install ack-grep
+# alpine Linux-apk 软件包管理器 安装 ack
+apk install ack
+</code></pre>
+<h2 id="参数">参数</h2>
+<p>这些参数在 linux 上的适用频率是相当高的，尤其是你用 vim 做为 IDE 的话</p>
+<pre><code class="language-Shell">-c (统计)/ -i (忽略大小)/ -h (不显示名称)/
+-l (只显文件名)/ -n (加行号)/ -v (显示不匹配)
+</code></pre>
+<h2 id="特点">特点</h2>
+<p>ack 官网列出了这工具的 5 大特点：</p>
+<ol>
+<li>速度非常快,因为它只搜索有意义的东西。</li>
+<li>更友好的搜索，忽略那些不是你源码的东西。</li>
+<li>为源代码搜索而设计，用更少的击键完成任务。</li>
+<li>非常轻便，移植性好。</li>
+<li>免费且开源</li>
+</ol>
+<h2 id="实例">实例</h2>
+<p>在记忆的时候大体上可以分为这几个部分：</p>
+<ul>
+<li>Searching 代码搜索</li>
+<li>Search output 搜索结果处理</li>
+<li>File presentation 文件展示</li>
+<li>File finding 文件查找</li>
+<li>File inclusion/exclusion 文件过滤</li>
+</ul>
+<p>grep 常用操作</p>
+<pre><code class="language-Shell">grep -r 'hello_world' # 简单用法
+grep '^hello_world' . # 简单正则
+ls -l | grep .py # 管道用法
+</code></pre>
+<h2 id="searching">Searching</h2>
+<p>简单的文本搜索，默认是递归的。</p>
+<pre><code class="language-Shell">ack-grep hello
+ack-grep -i hello
+ack-grep -v hello
+ack-grep -w hello
+ack-grep -Q 'hello*'
+</code></pre>
+<h2 id="search-file">Search File</h2>
+<p>对搜索结果进行处理，比如只显示一个文件的一个匹配项，或者 xxx</p>
+<pre><code class="language-Shell">ack-grep --line=1       # 输出所有文件第二行
+ack-grep -l 'hello'     # 包含的文件名
+ack-grep -L 'print'     # 非包含文件名
+</code></pre>
+<h2 id="file-presentation">File presentation</h2>
+<p>输出的结果是以什么方式展示呢，这个部分有几个参数可以练习下</p>
+<pre><code class="language-Shell">ack-grep hello --pager='less -R'    # 以less形式展示
+ack-grep hello --noheading      # 不在头上显示文件
+ack-grep hello --nocolor        # 不对匹配字符着色
+</code></pre>
+<h2 id="file-finding">File finding</h2>
+<p>没错，它可以查找文件，以省去你要不断的结合 find 和 grep 的麻烦，虽然在 linux 的思想是一个工具做好一件事。</p>
+<pre><code class="language-Shell">ack-grep -f hello.py     # 查找全匹配文件
+ack-grep -g hello.py$    # 查找正则匹配文件
+ack-grep -g hello  --sort-files     # 查找然后排序
+</code></pre>
+<h2 id="file-inclusionexclusion">File Inclusion/Exclusion</h2>
+<p>文件过滤，个人觉得这是一个很不错的功能。如果你曾经在搜索项目源码是不小心命中日志中的某个关键字的话，你会觉得这个有用。</p>
+<pre><code class="language-Shell">ack-grep --python hello       # 查找所有python文件
+ack-grep -G hello.py$ hello   # 查找匹配正则的文件
+</code></pre>
+
+          </div>
+        </article>
+        <div class="next-post">
+          <div class="next">下一篇</div>
+          <a href="https://dev-coco.github.io/post/ab/">
+            <h3 class="post-title">ab</h3>
+          </a>
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="gitalk-container"></div>
+      </div>
+      <!-- middle -->
+      <div class="main-container-middle"></div>
+      <!-- right -->
+      <div id="sidebar" class="main-container-right">
+      <!-- toc -->
+      <div class="toc-card i-card ">
+        <div class="toc-title i-card-title">目录</div>
+          <div class="toc-content">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E5%AE%89%E8%A3%85">安装</a></li>
+<li><a href="#%E5%8F%82%E6%95%B0">参数</a></li>
+<li><a href="#%E7%89%B9%E7%82%B9">特点</a></li>
+<li><a href="#%E5%AE%9E%E4%BE%8B">实例</a></li>
+<li><a href="#searching">Searching</a></li>
+<li><a href="#search-file">Search File</a></li>
+<li><a href="#file-presentation">File presentation</a></li>
+<li><a href="#file-finding">File finding</a></li>
+<li><a href="#file-inclusionexclusion">File Inclusion/Exclusion</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+          <script>
+            function locateCatelogList() {
+              /*获取文章目录集合,可通过:header过滤器*/
+              var alis = $('.post-content :header');
+              /*获取侧边栏目录列表集合**/
+              var sidebar_alis = $('.markdownIt-TOC a');
+              /*获取滚动条到顶部的距离*/
+              var scroll_height = $(window).scrollTop();
+              for (var i = 0; i < alis.length; i++) {
+                /*获取锚点集合中的元素分别到顶点的距离*/
+                var a_height = $(alis[i]).offset().top;
+                if (a_height < scroll_height) {
+                  /*高亮显示*/
+                  sidebar_alis.removeClass('on');
+                  $(sidebar_alis[i]).addClass('on');
+                }
+              }
+            }
+            $(function() {
+              /*绑定滚动事件 */
+              $(window).bind('scroll', locateCatelogList);
+              });
+          </script>
+        </div>
+      <div class="notice-card i-card ">
+        <div class="notice-title i-card-title">公告</div>
+        <div class="notice-content">界面全新改版</div>
+      </div>
+      <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
+        <div class="notice-content">
+          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/excel/">Excel</a>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="site-footer">
+    <img style="vertical-align:middle;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&count_bg=%2310C1F9&title_bg=%23555555&icon=html5.svg&icon_color=%23E7E7E7&title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&edge_flat=false"> | <span>Copyright © 2020-2022 Dev-Coco - All Rights Reserved.</span> | <a class="rss" href="https://dev-coco.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+  <script>
+    $('#sidebar').stickySidebar({
+    topSpacing: 80,
+    // bottomSpacing: 60
+    });
+  </script>
+  
+</body>
+</html>

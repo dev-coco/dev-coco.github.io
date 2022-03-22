@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <title>Facebook站点搜索</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="keywords" content="dev-coco, Facebook, Facebook搜索">
+  <meta name="robots" content="index,follow">
+  <meta name="description" content="Facebook站点搜索">
+  <link rel="icon" href="/images/avatar.png">
+  <link rel="stylesheet" href="/css/site.css">
+  <script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <style>.col-lg-3{position:fixed;width:300px;min-height:1px;padding-right:15px}#devices{margin-left:300px;position:relative}@media screen and (max-width:800px){.col-lg-3{display:none}}p:hover,span:hover{border:1px solid #96c2f1}.button{display:table-cell}table,td{border:1px solid #ddd}</style>
+  <script src="/js/facebook-search.js" async="async"></script>
+  <style>.notice{position:fixed;left:50%;top:50%;-webkit-transform:translate(-50%,-50%);z-index:9999;text-align:center;background-color:#fff;padding:12px;border-radius:10px}@media (prefers-color-scheme:dark){.notice{background-color:#2e3033}}.tooltip{position:relative}.tooltip::before{background-color:#fff;border:1px solid #888;border-radius:2px;color:#444;content:attr(data-title);display:none;font-family:sans-serif;font-size:14px;padding:2px 5px;position:absolute;top:30px;left:2px;z-index:1}.tooltip:hover::before{display:block}</style>
+</head>
+<body>
+  <div class="container">
+    <h1 style="text-align:left;"><img class="logo" alt="dev-coco" src="/images/avatar.png">
+      <span> Dev-Coco</span>
+      <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&count_bg=%2310C1F9&title_bg=%23555555&icon=html5.svg&icon_color=%23E7E7E7&title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&edge_flat=false" style="float:right;width:180px;">
+    </h1>
+    <div class="menu">
+      <a href="/">首页</a>
+      <a href="/Featured-Software.html">软件</a>
+      <a href="/Online-Tools">在线工具</a>
+      <a href="/post/Linux-Command">Linux命令</a>
+      <a href="/Excel/">Excel教程</a>
+      <a href="/post/Terms-and-Privacy">隐私与条款</a>
+      <a target="_blank" href="https://github.com/dev-coco">Github</a>
+    </div>
+    <div class="row">
+      <div class="col-lg-3" style="position: fixed; width:300px;text-align:center;">
+        <div class="list-group" style="text-align:center;overflow-y:scroll;height:600px;">
+		  <a class="list-group-item">
+		    <button class="button green" onclick="copy_link()">复制链接</button>
+		  </a>
+          <a class="list-group-item">🌍&nbsp;FB&nbsp;全球<br>
+            <button class="button blue tooltip" data-title="正常" onclick="Global_Facebook()">N</button>
+            <button class="button blue tooltip" data-title="小组" onclick="Global_Facebook_Group()">G</button>
+            <button class="button blue tooltip" data-title="关于" onclick="Global_Facebook_about()">A</button>
+            <button class="button blue tooltip" data-title="首页" onclick="Global_Facebook_pages()">P</button>
+            <button class="button blue tooltip" data-title="社群" onclick="Global_Facebook_community()">C</button>
+            <button class="button blue tooltip" data-title="地标" onclick="Global_Facebook_places()">PL</button>
+          </a>
+          <a class="list-group-item">🇮🇳&nbsp;FB&nbsp;印度<br>
+            <button class="button blue tooltip" data-title="正常" onclick="India_Facebook()">N</button>
+            <button class="button blue tooltip" data-title="小组" onclick="India_Facebook_Group()">G</button>
+            <button class="button blue tooltip" data-title="关于" onclick="India_Facebook_about()">A</button>
+            <button class="button blue tooltip" data-title="首页" onclick="India_Facebook_pages()">P</button>
+            <button class="button blue tooltip" data-title="社群" onclick="India_Facebook_community()">C</button>
+            <button class="button blue tooltip" data-title="地标" onclick="India_Facebook_places()">PL</button>
+          </a>
+          <a class="list-group-item">🌍&nbsp;Telegram&nbsp;全球<br>
+            <button class="button blue tooltip" data-title="正常" onclick="Global_Telegram()">N</button>
+            <button class="button blue tooltip" data-title="小组" onclick="Global_Telegram_Group()">G</button>
+          </a>
+          <a class="list-group-item">🌍&nbsp;WhatsApp&nbsp;全球<br>
+            <button class="button blue tooltip" data-title="正常" onclick="Global_WhatsApp()">N</button>
+            <button class="button blue tooltip" data-title="Facebook" onclick="Global_WhatsApp_Facebook()">F</button>
+            <button class="button blue tooltip" data-title="Twitter" onclick="Global_WhatsApp_Twitter()">T</button>
+          </a>
+        </div>
+      </div>
+      <iframe id="devices" frameborder="no" src="" style="height: 100vh;width:100%;scrolling:no;"></iframe>
+    </div>
+  </div>
+  <script>
+	  function copy_link() {
+  	  var iframe = document.getElementById("devices").contentWindow
+  	  var get_data = iframe.document.querySelectorAll('div.gs-title a')
+  	  var str = []
+  	  for (const x of get_data) {
+  	    str += x+"\n"
+  	  }
+  	  if (str.indexOf("t.me") > -1) {
+  	    copy(str.replace(/\n\)\.\*\?\(\?=|\?.+|\/[0-9].*/g,'').replace(/\/s\//g,"/"))
+  	  } else {
+  	    copy(str)
+  	  }
+  	}
+  	function unique(text){
+  	  var get_data = text.match(/.+/g)
+  	  var str = []
+  	  for (const x of Array.from(new Set(get_data))) {
+  	    str += x+'\n'
+  	  }
+  	  return str
+  	}
+  	function copy(str) {
+  	  const el = document.createElement('textarea')
+  	  el.value = unique(str)
+  	  document.body.appendChild(el)
+  	  el.select()
+  	  document.execCommand('copy')
+  	  document.body.removeChild(el)
+  	}
+  </script>
+</body>
+</html>

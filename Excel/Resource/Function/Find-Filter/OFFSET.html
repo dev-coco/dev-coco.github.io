@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="keywords" content="Google Excel, Excel表格, OFFSET">
+  <meta name="description" content="OFFSET - 指定单元格开始计算偏移的行或者列数，返回范围的引用内容。">
+  <meta name="robots" content="index, follow">
+  <meta property="og:image" content="/images/Excel-Tutorial.jpg">
+  <title>OFFSET</title>
+  <link rel="icon" href="/images/avatar.png">
+  <link href="/css/Excel/typo.css" rel="stylesheet">
+</head>
+<body class="typo">
+  <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&count_bg=%2310C1F9&title_bg=%23555555&icon=html5.svg&icon_color=%23E7E7E7&title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&edge_flat=false" style="display:none">
+  <h1 id="title">OFFSET</h1>
+  <p>作用：指定单元格开始计算偏移的行或者列数，返回范围的引用内容。</p>
+  <p>语法：<span class="f">OFFSET(<span class="q">起始位置</span>, <span class="n">偏移列数</span>, <span class="n">偏移行数</span>, <span class="n">返回高度</span>, <span class="n">返回宽度</span>)</span></p>
+  <ul>
+    <li>起始位置<sup class="m">*</sup>：设置一个位置，从这个位置开始计算偏移。</li>
+    <li>偏移列数<sup class="m">*</sup>：从起始位置开始列算偏移的列。</li>
+    <li>偏移行数<sup class="m">*</sup>：从起始位置开始列算偏移的行。</li>
+    <li>返回高度：从偏移的位置开始计算高度。</li>
+    <li>返回宽度：从偏移的位置开始计算宽度。</li>
+  </ul>
+  <p>例子：</p>
+  <iframe style="max-width:502px;height:153px;" src="https://docs.google.com/spreadsheets/d/1n7daxL6JmthfkpsfttZVt_OXHaMnu5c049-Ji5dGTmE/pubhtml/sheet?headers=true&gid=1721300784"></iframe>
+  <p>运用：从当前位置获取往左一个单元格再往上一个单元格的内容。</p>
+  <p>首先，需要计算当前单元格的位置，使用 <a href="/Excel/Resource/Function/Others/ROW.html" target="_blank">ROW</a> 函数和 <a href="/Excel/Resource/Function/Others/COLUMN.html" target="_blank">COLUMN</a> 函数得出当前位置的行和列，然后用 ADDRESS 通过当前行和列的值输出文本范围。用 INDIRECT 函数引用 <a href="/Excel/Resource/Function/Find-Filter/INDIRECT.html" target="_blank">ADDRESS</a> 输出的文本范围，这样就引用了当前的行和列。最后用 OFFSET 函数从当前的行和列作为起始的位置开始计算，行和列都 -1，这样就得出来当前往左并往上一个单元格的内容了。</p>
+  <iframe style="max-width:512px;height:72px;" src="https://docs.google.com/spreadsheets/d/1n7daxL6JmthfkpsfttZVt_OXHaMnu5c049-Ji5dGTmE/pubhtml/sheet?headers=true&gid=418923886"></iframe>
+  <p class="home">
+    <a href="/Excel" target="_blank">
+      <img alt="Excel表格, Google Excel" src="/images/Excel.png">
+      <span>Excel 一点通</span>
+    </a>
+  </p>
+  <script src="/js/voice-playback.js"></script>
+</body>
+</html>

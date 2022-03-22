@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <title>获取Facebook信息</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="keywords" content="dev-coco, get facebook info, 获取Facebook信息, 获取FB信息">
+  <meta name="robots" content="index,follow">
+  <meta name="description" content="获取Facebook公开的信息。">
+  <link rel="icon" href="/images/avatar.png">
+  <link rel="stylesheet" href="/css/site.css">
+  <script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script src="/js/get-facebook-info.js"></script>
+  <link rel="stylesheet" href="/css/get-facebook-info.css">
+  <style>button{font-size:16px}</style>
+</head>
+<body>
+  <div class="container">
+    <h1 style="text-align:left;"><img class="logo" alt="dev-coco" src="/images/avatar.png">
+      <span> Dev-Coco</span>
+      <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&count_bg=%2310C1F9&title_bg=%23555555&icon=html5.svg&icon_color=%23E7E7E7&title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&edge_flat=false" style="float:right;width:180px;">
+    </h1>
+    <div class="menu">
+      <a href="/">首页</a>
+      <a href="/Featured-Software.html">软件</a>
+      <a href="/Online-Tools">在线工具</a>
+      <a href="/post/Linux-Command">Linux命令</a>
+      <a href="/Excel/">Excel教程</a>
+      <a href="/post/Terms-and-Privacy">隐私与条款</a>
+      <a target="_blank" href="https://github.com/dev-coco">Github</a>
+    </div>
+    <form class="smart-green">
+      <h1>获取Facebook信息</h1>
+      <div style="display:none">
+        <label>
+          <span>列印信息</span>
+          <input id="printf_info_token" placeholder="请输入token">
+          <textarea id="printf_info_url" placeholder="请输入ID"></textarea>
+        </label>
+        <button class="button" type="button" onclick="get_printf_info()">获取信息</button>
+        <input id="printf_info_delay_time" style="width:15%;" placeholder="延时" value="1500">
+        <hr class="hr_style">
+      </div>
+      <label>
+        <span>获取高清头像</span>
+        <!-- <input id="avatar_token" placeholder="请输入token"> -->
+        <textarea id="avatar_url" placeholder="请输入ID"></textarea>
+      </label>
+      <button class="button" type="button" type="button" onclick="get_avatar()">获取高清头像</button>
+      <input id="avatar_delay_time" style="width:15%;" placeholder="延时" value="1500">
+      <hr class="hr_style">
+      <label>
+        <span>导出所有好友</span>
+        <textarea id="printf_all_friends" placeholder="请输入ID">me</textarea>
+        <input style="margin-bottom: 5px;" id="printf_all_friends_token" placeholder="请输入token">
+      </label>
+      <button class="button" type="button" type="button" onclick="printf_friends()">导出</button>
+      <input id="printf_all_friends_delay_time" style="width:15%;" placeholder="延时" value="1500">
+      <button class="button" type="button" type="button" onclick="printf_friends_semi()">导出方式2</button>
+    </form>
+    <p style="text-align:center;">相关推荐：<a href="/Online-Tools/Facebook-Precise-Search.html" target="_blank">Facebook精确搜索</a></p>
+  </div>
+</body>
+</html>

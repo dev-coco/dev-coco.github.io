@@ -1,0 +1,275 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>openssl | Dev-Coco</title>
+  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1647958467779">
+  <link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
+  <script src="https://dev-coco.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
+<script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+  <div class="main">
+    <div class="header">
+      <div class="nav">
+        <div class="logo">
+          <a href="https://dev-coco.github.io">
+            <img class="avatar" src="https://dev-coco.github.io/images/avatar.png?v=1647958467779" alt="">
+          </a>
+          <div class="site-title">
+            <h1>Dev-Coco</h1>
+          </div>
+        </div>
+        <span class="menu-btn fa fa-align-justify"></span>
+        <div class="menu-container">
+          <ul>
+            <li>
+              <a href="/" class="menu">首页</a>
+            </li>
+            <li>
+              <a href="/Featured-Software.html" class="menu">软件</a>
+            </li>
+            <li>
+              <a href="/Online-Tools" class="menu">在线工具</a>
+            </li>
+            <li>
+              <a href="/post/Linux-Command" class="menu">Linux命令</a>
+            </li>
+            <li>
+              <a href="/Excel" class="menu">Excel教程</a>
+            </li>
+            <li>
+              <a href="/post/Terms-and-Privacy" class="menu">隐私与条款</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script>
+      $(document).ready(function() {
+        $(".menu-btn").click(function() {
+          $(".menu-container").slideToggle();
+        });
+        $(window).resize(function() {
+          if (window.matchMedia('(min-width: 960px)').matches) {
+            $(".menu-container").css('display', 'block')
+          } else {
+            $(".menu-container").css('display', 'none')
+          }
+        });
+      });
+    </script>
+    <div id="main-content" class="post-detail main-container">
+      <!-- left -->
+      <div id="content" class="main-container-left">
+        <article class="post i-card">
+        <h2 class="post-title">openssl</h2>
+        <div class="post-info">
+          <time class="post-time">2022-02-03 / 9 min read</time>
+            <a href="https://dev-coco.github.io/tag/linux-command/" class="post-tag i-tag i-tag-info">#Linux命令</a>
+        </div>
+          <div class="post-content">
+            <p>强大的安全套接字层密码库。</p>
+<!-- more -->
+<h2 id="补充说明">补充说明</h2>
+<p>OpenSSL 是一个强大的安全套接字层密码库，囊括主要的密码算法、常用的密钥和证书封装管理功能及 SSL 协议，并提供丰富的应用程序供测试或其它目的使用。在 OpenSSL 被曝出现严重安全漏洞后，发现多数通过 SSL 协议加密的网站使用名为 OpenSSL 的开源软件包。由于这是互联网应用最广泛的安全传输方法，被网银、在线支付、电商网站、门户网站、电子邮件等重要网站广泛使用，所以该漏洞影响范围广大。<br>
+OpenSSL 有两种运行模式：交互模式和批处理模式。<br>
+直接输入 openssl 回车进入交互模式，输入带命令选项的 openssl 进入批处理模式。<br>
+OpenSSL 整个软件包大概可以分成三个主要的功能部分：密码算法库、SSL 协议库以及应用程序。OpenSSL 的目录结构自然也是围绕这三个功能部分进行规划的。<br>
+对称加密算法<br>
+OpenSSL 一共提供了 8 种对称加密算法，其中 7 种是分组加密算法，仅有的一种流加密算法是 RC4。这 7 种分组加密算法分别是 AES、DES、Blowfish、CAST、IDEA、RC2、RC5，都支持电子密码本模式（ECB）、加密分组链接模式（CBC）、加密反馈模式（CFB）和输出反馈模式（OFB）四种常用的分组密码加密模式。其中，AES 使用的加密反馈模式（CFB）和输出反馈模式（OFB）分组长度是 128 位，其它算法使用的则是 64 位。事实上，DES 算法里面不仅仅是常用的 DES 算法，还支持三个密钥和两个密钥 3DES 算法。<br>
+非对称加密算法<br>
+OpenSSL 一共实现了 4 种非对称加密算法，包括 DH 算法、RSA 算法、DSA 算法和椭圆曲线算法（EC）。DH 算法一般用户密钥交换。RSA 算法既可以用于密钥交换，也可以用于数字签名，当然，如果你能够忍受其缓慢的速度，那么也可以用于数据加密。DSA 算法则一般只用于数字签名。<br>
+信息摘要算法<br>
+OpenSSL 实现了 5 种信息摘要算法，分别是 MD2、MD5、MDC2、SHA（SHA1）和 RIPEMD。SHA 算法事实上包括了 SHA 和 SHA1 两种信息摘要算法，此外，OpenSSL 还实现了 DSS 标准中规定的两种信息摘要算法 DSS 和 DSS1。<br>
+密钥和证书管理<br>
+密钥和证书管理是 PKI 的一个重要组成部分，OpenSSL 为之提供了丰富的功能，支持多种标准。<br>
+首先，OpenSSL 实现了 ASN.1 的证书和密钥相关标准，提供了对证书、公钥、私钥、证书请求以及 CRL 等数据对象的 DER、PEM 和 BASE64 的编解码功能。OpenSSL 提供了产生各种公开密钥对和对称密钥的方法、函数和应用程序，同时提供了对公钥和私钥的 DER 编解码功能。并实现了私钥的 PKCS#12 和 PKCS#8 的编解码功能。OpenSSL 在标准中提供了对私钥的加密保护功能，使得密钥可以安全地进行存储和分发。<br>
+在此基础上，OpenSSL 实现了对证书的 X.509 标准编解码、PKCS#12 格式的编解码以及 PKCS#7 的编解码功能。并提供了一种文本数据库，支持证书的管理功能，包括证书密钥产生、请求产生、证书签发、吊销和验证等功能。<br>
+事实上，OpenSSL 提供的 CA 应用程序就是一个小型的证书管理中心（CA），实现了证书签发的整个流程和证书管理的大部分机制。</p>
+<h2 id="实例">实例</h2>
+<p>1、使用 openssl 生成密码<br>
+几乎所有 Linux 发行版都包含 openssl。我们可以利用它的随机功能来生成可以用作密码的随机字母字符串。</p>
+<pre><code class="language-Shell">openssl rand -base64 10# nU9LlHO5nsuUvw==
+</code></pre>
+<p>nU9LlHO5nsuUvw==<br>
+2、消息摘要算法应用例子<br>
+用 SHA1 算法计算文件 file.txt 的哈西值，输出到 stdout：</p>
+<pre><code class="language-Shell"># openssl dgst -sha1 file.txt
+</code></pre>
+<p>用 SHA1 算法计算文件 file.txt 的哈西值，输出到文件 digest.txt：</p>
+<pre><code class="language-Shell"># openssl sha1 -out digest.txt file.txt
+</code></pre>
+<p>用 DSS1(SHA1) 算法为文件 file.txt 签名，输出到文件 dsasign.bin。签名的 private key 必须为 DSA 算法产生的，保存在文件 dsakey.pem 中。</p>
+<pre><code class="language-Shell"># openssl dgst -dss1 -sign dsakey.pem -out dsasign.bin file.txt
+</code></pre>
+<p>用 dss1 算法验证 file.txt 的数字签名 dsasign.bin，验证的 private key 为 DSA 算法产生的文件 dsakey.pem。</p>
+<pre><code class="language-Shell"># openssl dgst -dss1 -prverify dsakey.pem -signature dsasign.bin file.txt
+</code></pre>
+<p>用 sha1 算法为文件 file.txt 签名,输出到文件 rsasign.bin，签名的 private key 为 RSA 算法产生的文件 rsaprivate.pem。</p>
+<pre><code class="language-Shell"># openssl sha1 -sign rsaprivate.pem -out rsasign.bin file.txt
+</code></pre>
+<p>用 sha1 算法验证 file.txt 的数字签名 rsasign.bin，验证的 public key 为 RSA 算法生成的 rsapublic.pem。</p>
+<pre><code class="language-Shell"># openssl sha1 -verify rsapublic.pem -signature rsasign.bin file.txt
+</code></pre>
+<p>3、对称加密应用例子<br>
+对称加密应用例子，用 DES3 算法的 CBC 模式加密文件 plaintext.doc，加密结果输出到文件 ciphertext.bin。</p>
+<pre><code class="language-Shell"># openssl enc -des3 -salt -in plaintext.doc -out ciphertext.bin
+</code></pre>
+<p>用 DES3 算法的 OFB 模式解密文件 ciphertext.bin，提供的口令为 trousers，输出到文件 plaintext.doc。注意：因为模式不同，该命令不能对以上的文件进行解密。</p>
+<pre><code class="language-Shell"># openssl enc -des-ede3-ofb -d -in ciphertext.bin -out plaintext.doc -pass pass:trousers
+</code></pre>
+<p>用 Blowfish 的 CFB 模式加密 plaintext.doc，口令从环境变量 PASSWORD 中取，输出到文件 ciphertext.bin。</p>
+<pre><code class="language-Shell"># openssl bf-cfb -salt -in plaintext.doc -out ciphertext.bin -pass env:PASSWORD
+</code></pre>
+<p>给文件 ciphertext.bin 用 base64 编码，输出到文件 base64.txt。</p>
+<pre><code class="language-Shell"># openssl base64 -in ciphertext.bin -out base64.txt
+</code></pre>
+<p>用 RC5 算法的 CBC 模式加密文件 plaintext.doc，输出到文件 ciphertext.bin，salt、key 和初始化向量 (iv) 在命令行指定。</p>
+<pre><code class="language-Shell"># openssl rc5 -in plaintext.doc -out ciphertext.bin -S C62CB1D49F158ADC -iv E9EDACA1BD7090C6 -K 89D4B1678D604FAA3DBFFD030A314B29
+</code></pre>
+<p>4、Diffie-Hellman 应用例子<br>
+使用生成因子 2 和随机的 1024-bit 的素数产生 D0ffie-Hellman 参数，输出保存到文件 dhparam.pem</p>
+<pre><code class="language-Shell"># openssl dhparam -out dhparam.pem -2 1024
+</code></pre>
+<p>从 dhparam.pem 中读取 Diffie-Hell 参数，以 C 代码的形式，输出到 stdout。</p>
+<pre><code class="language-Shell"># openssl dhparam -in dhparam.pem -noout -C
+</code></pre>
+<p>5、DSA 应用例子应用例子<br>
+生成 1024 位 DSA 参数集，并输出到文件 dsaparam.pem。</p>
+<pre><code class="language-Shell"># openssl dsaparam -out dsaparam.pem 1024
+</code></pre>
+<p>使用参数文件 dsaparam.pem 生成 DSA 私钥匙，采用 3DES 加密后输出到文件 dsaprivatekey.pem</p>
+<pre><code class="language-Shell"># openssl gendsa -out dsaprivatekey.pem -des3 dsaparam.pem
+</code></pre>
+<p>使用私钥匙 dsaprivatekey.pem 生成公钥匙，输出到 dsapublickey.pem</p>
+<pre><code class="language-Shell"># openssl dsa -in dsaprivatekey.pem -pubout -out dsapublickey.pem
+</code></pre>
+<p>从 dsaprivatekey.pem 中读取私钥匙，解密并输入新口令进行加密，然后写回文件 dsaprivatekey.pem</p>
+<pre><code class="language-Shell"># openssl dsa -in dsaprivatekey.pem -out dsaprivatekey.pem -des3 -passin
+</code></pre>
+<p>6、RSA 应用例子<br>
+产生 1024 位 RSA 私匙，用 3DES 加密它，口令为 trousers，输出到文件 rsaprivatekey.pem</p>
+<pre><code class="language-Shell"># openssl genrsa -out rsaprivatekey.pem -passout pass:trousers -des3 1024
+</code></pre>
+<p>从文件 rsaprivatekey.pem 读取私匙，用口令 trousers 解密，生成的公钥匙输出到文件 rsapublickey.pem</p>
+<pre><code class="language-Shell"># openssl rsa -in rsaprivatekey.pem -passin pass:trousers -pubout -out rsapubckey.pem
+</code></pre>
+<p>用公钥匙 rsapublickey.pem 加密文件 plain.txt，输出到文件 cipher.txt</p>
+<pre><code class="language-Shell"># openssl rsautl -encrypt -pubin -inkey rsapublickey.pem -in plain.txt -out cipher.txt
+</code></pre>
+<p>使用私钥匙 rsaprivatekey.pem 解密密文 cipher.txt，输出到文件 plain.txt</p>
+<pre><code class="language-Shell"># openssl rsautl -decrypt -inkey rsaprivatekey.pem -in cipher.txt -out plain.txt
+</code></pre>
+<p>用私钥匙 rsaprivatekey.pem 给文件 plain.txt 签名，输出到文件 signature.bin</p>
+<pre><code class="language-Shell"># openssl rsautl -sign -inkey rsaprivatekey.pem -in plain.txt -out signature.bin
+</code></pre>
+<p>用公钥匙 rsapublickey.pem 验证签名 signature.bin，输出到文件 plain.txt</p>
+<pre><code class="language-Shell"># openssl rsautl -verify -pubin -inkey rsapublickey.pem -in signature.bin -out plain
+</code></pre>
+<p>从 X.509 证书文件 cert.pem 中获取公钥匙，用 3DES 加密 mail.txt，输出到文件 mail.enc</p>
+<pre><code class="language-Shell"># openssl smime -encrypt -in mail.txt -des3 -out mail.enc cert.pem
+</code></pre>
+<p>从 X.509 证书文件 cert.pem 中获取接收人的公钥匙，用私钥匙 key.pem 解密 S/MIME 消息 mail.enc，结果输出到文件 mail.txt</p>
+<pre><code class="language-Shell"># openssl smime -decrypt -in mail.enc -recip cert.pem -inkey key.pem -out mail.txt
+</code></pre>
+<p>cert.pem 为 X.509 证书文件，用私匙 key,pem 为 mail.txt 签名，证书被包含在 S/MIME 消息中，输出到文件 mail.sgn</p>
+<pre><code class="language-Shell"># openssl smime -sign -in mail.txt -signer cert.pem -inkey key.pem -out mail.sgn
+</code></pre>
+<p>验证 S/MIME 消息 mail.sgn，输出到文件 mail.txt，签名者的证书应该作为 S/MIME 消息的一部分包含在 mail.sgn 中</p>
+<pre><code class="language-Shell"># openssl smime -verify -in mail.sgn -out mail.txt
+</code></pre>
+<p>更多实例:</p>
+<pre><code class="language-Shell">openssl version -a
+openssl help
+openssl genrsa -aes128 -out fd.key 2048 # pem format
+openssl rsa -text -in fd.key
+</code></pre>
+
+          </div>
+        </article>
+        <div class="next-post">
+          <div class="next">下一篇</div>
+          <a href="https://dev-coco.github.io/post/dstat/">
+            <h3 class="post-title">dstat</h3>
+          </a>
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="gitalk-container"></div>
+      </div>
+      <!-- middle -->
+      <div class="main-container-middle"></div>
+      <!-- right -->
+      <div id="sidebar" class="main-container-right">
+      <!-- toc -->
+      <div class="toc-card i-card ">
+        <div class="toc-title i-card-title">目录</div>
+          <div class="toc-content">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E8%A1%A5%E5%85%85%E8%AF%B4%E6%98%8E">补充说明</a></li>
+<li><a href="#%E5%AE%9E%E4%BE%8B">实例</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+          <script>
+            function locateCatelogList() {
+              /*获取文章目录集合,可通过:header过滤器*/
+              var alis = $('.post-content :header');
+              /*获取侧边栏目录列表集合**/
+              var sidebar_alis = $('.markdownIt-TOC a');
+              /*获取滚动条到顶部的距离*/
+              var scroll_height = $(window).scrollTop();
+              for (var i = 0; i < alis.length; i++) {
+                /*获取锚点集合中的元素分别到顶点的距离*/
+                var a_height = $(alis[i]).offset().top;
+                if (a_height < scroll_height) {
+                  /*高亮显示*/
+                  sidebar_alis.removeClass('on');
+                  $(sidebar_alis[i]).addClass('on');
+                }
+              }
+            }
+            $(function() {
+              /*绑定滚动事件 */
+              $(window).bind('scroll', locateCatelogList);
+              });
+          </script>
+        </div>
+      <div class="notice-card i-card ">
+        <div class="notice-title i-card-title">公告</div>
+        <div class="notice-content">界面全新改版</div>
+      </div>
+      <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
+        <div class="notice-content">
+          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/excel/">Excel</a>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="site-footer">
+    <img style="vertical-align:middle;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&count_bg=%2310C1F9&title_bg=%23555555&icon=html5.svg&icon_color=%23E7E7E7&title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&edge_flat=false"> | <span>Copyright © 2020-2022 Dev-Coco - All Rights Reserved.</span> | <a class="rss" href="https://dev-coco.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+  <script>
+    $('#sidebar').stickySidebar({
+    topSpacing: 80,
+    // bottomSpacing: 60
+    });
+  </script>
+  
+</body>
+</html>

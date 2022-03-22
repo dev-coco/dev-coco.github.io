@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <title>在线富文本编辑器</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="keywords" content="dev-coco, 富文本编辑器, 文本编辑器, 在线编辑器"
+  <meta name="robots" content="index,follow"
+  <meta name="description" content="在线富文本编辑器，支持图片、超链接、音频、视频、文本和自定义HTML代码功能。"
+  <link rel="icon" href="/images/avatar.png">
+  <script src="https://cdn.ckeditor.com/4.14.0/full-all/ckeditor.js"></script>
+  <link rel="stylesheet" href="/css/site.css">
+  <script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <style>.middle{margin:0 auto;width:100%}textarea{width:97%;height:130px}.item{position:relative;text-align:center}.span{position:absolute;right:10;top:10;opacity:.5}#results{position:relative;margin:50px}#dropper{margin-left:auto;margin-right:auto;border-style:solid;width:100%;height:150px;text-align:center;line-height:150px}#dropper.hover{opacity:.5;background:#add8e6;z-index:100}</style>
+</head>
+<body>
+  <div class="container">
+    <h1 style="text-align:left;"><img class="logo" alt="dev-coco" src="/images/avatar.png">
+      <span> Dev-Coco</span>
+      <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&count_bg=%2310C1F9&title_bg=%23555555&icon=html5.svg&icon_color=%23E7E7E7&title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&edge_flat=false" style="float:right;width:180px;">
+    </h1>
+    <div class="menu">
+      <a href="/">首页</a>
+      <a href="/Featured-Software.html">软件</a>
+      <a href="/Online-Tools">在线工具</a>
+      <a href="/post/Linux-Command">Linux命令</a>
+      <a href="/Excel/">Excel教程</a>
+      <a href="/post/Terms-and-Privacy">隐私与条款</a>
+      <a target="_blank" href="https://github.com/dev-coco">Github</a>
+    </div>
+    <p style="text-align: center;">Powered by <a target="_blank" href="https://ckeditor.com/ckeditor-4/">CKEditor 4</a>, please follow <a target="_blank" href="https://github.com/ckeditor/ckeditor4/blob/major/LICENSE.md">LICENSE</a>.</p>
+    <div style="display: flex;justify-content: center;">
+      <textarea name="editor1"></textarea>
+    </div>
+    <script>
+      CKEDITOR.replace('editor1', {
+        customConfig: '/js/config.js'
+      });
+    </script>
+    <br>
+    <table cellpadding="1" cellspacing="1" class="middle">
+      <tbody>
+        <tr>
+          <td><textarea type="text" style="float:left;" id="data1" autofocus></textarea></td>
+          <td><textarea type="text" style="float:right;" id="data2"></textarea></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="middle">
+      <span>关键词</span>
+      <input type="text" id="regular1" style="width: 78%;">
+      <button type="button" id="btn1">确定</button>
+      <input style="margin-top: 10px;" type="checkbox" id="ck"> 按列显示
+      <button onclick='document.getElementById("regular1").value=`(?<=href=").*?(?=")`;' style="opacity:0;">url</button>
+    </div>
+    <div class="middle">
+      <span>关键词</span>
+      <input type="text" id="regular2" style="width: 78%;">
+      <button type="button" id="btn2">确定</button>
+      <input style="margin-top: 10px;" type="checkbox" id="ck"> 按列显示
+      <button onclick='document.getElementById("regular2").value=`(?<=posts\\/).*?(?=#|\\/|\\?)`;' style="opacity:0;">post</button>
+    </div>
+    <br>
+    <div id="dropper">拖入图片到此处</div>
+    <div id="results"></div>
+  </div>
+  <script>var dropper=document.getElementById("dropper"),results=document.getElementById("results");function fileLoaded(e,t){var a=document.createElement("div");a.className="item";var r=document.createElement("button");r.className="remove",r.innerHTML="x",r.onclick=function(){localStorage&&localStorage.removeItem("b64-"+e),results.removeChild(a)},a.appendChild(r);var n=document.createElement("span");if(n.innerHTML=e,a.appendChild(n),/^data:image/.test(t)){document.createElement("div");var o=document.createElement("img");o.style["max-width"]="100px",o.style["height-width"]="100px"}var l=document.createElement("textarea");l.onclick=function(){l.select()},l.value=t,a.appendChild(l),results.appendChild(a)}dropper.ondragenter=function(e){dropper.className="hover",e.preventDefault()},dropper.ondragover=function(e){e.preventDefault()},dropper.ondragleave=function(e){dropper.className="",e.preventDefault()},dropper.ondrop=function(e){[].slice.call(e.dataTransfer.files).forEach(function(e){var t=new FileReader;t.onload=function(t){fileLoaded(e.name,t.target.result)},t.readAsDataURL(e)}),dropper.className="",e.preventDefault()};</script>
+  <script>var btn1=document.getElementById("btn1"),ans="",war="";function lookup(e){return new RegExp(document.getElementById(e).value,"gi")}function to_char(e){return e.replace(/(&#)(\d{1,6});/gi,function(e){return String.fromCharCode(parseInt(escape(e).replace(/(%26%23)(\d{1,6})(%3B)/g,"$2")))})}btn1.onclick=function(){var e=lookup("regular1");if(document.getElementById("ck").checked){for(var t=document.getElementById("data1").value.match(e),n="",a=0;a<t.length;a++)""!=t&&(n+=t[a]+"\n");document.getElementById("data2").value=n,ans=String(t),war=n}else war=ans=document.getElementById("data2").value=String(document.getElementById("data1").value.match(e)).replace(/,/g,"")};</script>
+  <script>function unique(e){return Array.from(new Set(e))}var btn2=document.getElementById("btn2"),ans="",war="";btn2.onclick=function(){var e=lookup("regular2");if(document.getElementById("ck").checked){for(var n=document.getElementById("data1").value.match(e),t="",a=0;a<n.length;a++)""!=n&&(t+=n[a]+"\n");document.getElementById("data2").value=String(unique(n)).replace(/,/g,"\n"),ans=String(unique(n)),war=t,console.log(String(unique(n)).replace(/,/g,"\n"))}else war=ans=document.getElementById("data2").value=String(document.getElementById("data1").value.match(e)).replace(/,/g,"")};</script>
+</body>
+</html>

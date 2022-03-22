@@ -1,0 +1,281 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>free | Dev-Coco</title>
+  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1647958467779">
+  <link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
+  <script src="https://dev-coco.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
+<script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+  <div class="main">
+    <div class="header">
+      <div class="nav">
+        <div class="logo">
+          <a href="https://dev-coco.github.io">
+            <img class="avatar" src="https://dev-coco.github.io/images/avatar.png?v=1647958467779" alt="">
+          </a>
+          <div class="site-title">
+            <h1>Dev-Coco</h1>
+          </div>
+        </div>
+        <span class="menu-btn fa fa-align-justify"></span>
+        <div class="menu-container">
+          <ul>
+            <li>
+              <a href="/" class="menu">首页</a>
+            </li>
+            <li>
+              <a href="/Featured-Software.html" class="menu">软件</a>
+            </li>
+            <li>
+              <a href="/Online-Tools" class="menu">在线工具</a>
+            </li>
+            <li>
+              <a href="/post/Linux-Command" class="menu">Linux命令</a>
+            </li>
+            <li>
+              <a href="/Excel" class="menu">Excel教程</a>
+            </li>
+            <li>
+              <a href="/post/Terms-and-Privacy" class="menu">隐私与条款</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script>
+      $(document).ready(function() {
+        $(".menu-btn").click(function() {
+          $(".menu-container").slideToggle();
+        });
+        $(window).resize(function() {
+          if (window.matchMedia('(min-width: 960px)').matches) {
+            $(".menu-container").css('display', 'block')
+          } else {
+            $(".menu-container").css('display', 'none')
+          }
+        });
+      });
+    </script>
+    <div id="main-content" class="post-detail main-container">
+      <!-- left -->
+      <div id="content" class="main-container-left">
+        <article class="post i-card">
+        <h2 class="post-title">free</h2>
+        <div class="post-info">
+          <time class="post-time">2022-02-03 / 6 min read</time>
+            <a href="https://dev-coco.github.io/tag/linux-command/" class="post-tag i-tag i-tag-success">#Linux命令</a>
+        </div>
+          <div class="post-content">
+            <p>显示内存的使用情况。</p>
+<!-- more -->
+<h2 id="补充说明">补充说明</h2>
+<p>free 命令可以显示当前系统未使用的和已使用的内存数目，还可以显示被内核使用的内存缓冲区。</p>
+<h2 id="语法">语法</h2>
+<pre><code class="language-Shell">free (选项)
+</code></pre>
+<h2 id="选项">选项</h2>
+<pre><code class="language-Shell">-b # 以 Byte 为单位显示内存使用情况；
+-k # 以 KB 为单位显示内存使用情况；
+-m # 以 MB 为单位显示内存使用情况；
+-g # 以 GB 为单位显示内存使用情况。 
+-o # 不显示缓冲区调节列；
+-s&lt;间隔秒数&gt; # 持续观察内存使用状况；
+-t # 显示内存总和列；
+-V # 显示版本信息。
+</code></pre>
+<h2 id="实例">实例</h2>
+<pre><code class="language-Shell">free -t    # 以总和的形式显示内存的使用信息
+free -s 10 # 周期性的查询内存使用信息，每 10s 执行一次命令
+</code></pre>
+<p>显示内存使用情况</p>
+<pre><code class="language-Shell">free -m
+             total       used       free     shared    buffers     cached
+Mem:          2016       1973         42          0        163       1497
+-/+ buffers/cache:        312       1703
+Swap:         4094          0       4094
+</code></pre>
+<p>第一部分 Mem 行解释：</p>
+<pre><code class="language-Shell">total：内存总数；
+used：已经使用的内存数；
+free：空闲的内存数；
+shared：当前已经废弃不用；
+buffers Buffer：缓存内存数；
+cached Page：缓存内存数。
+</code></pre>
+<p>关系：total = used + free</p>
+<p>第二部分 (-/+ buffers/cache) 解释:</p>
+<pre><code class="language-Shell">(-buffers/cache) used 内存数：第一部分 Mem 行中的 used – buffers – cached
+(+buffers/cache) free 内存数: 第一部分 Mem 行中的 free + buffers + cached
+</code></pre>
+<p>可见-buffers/cache 反映的是被程序实实在在吃掉的内存，而+buffers/cache 反映的是可以挪用的内存总数。</p>
+<p>第三部分是指交换分区。</p>
+<p>输出结果的第四行是交换分区 SWAP 的，也就是我们通常所说的虚拟内存。<br>
+区别：第二行 (mem) 的 used/free 与第三行 (-/+ buffers/cache) used/free 的区别。 这两个的区别在于使用的角度来看，第一行是从 OS 的角度来看，因为对于 OS，buffers/cached 都是属于被使用，所以他的可用内存是 2098428KB,已用内存是 30841684KB,其中包括，内核（OS）使用+Application(X, oracle,etc) 使用的+buffers+cached.</p>
+<p>第三行所指的是从应用程序角度来看，对于应用程序来说，buffers/cached 是等于可用的，因为 buffer/cached 是为了提高文件读取的性能，当应用程序需在用到内存的时候，buffer/cached 会很快地被回收。</p>
+<p>所以从应用程序的角度来说，可用内存=系统 free memory+buffers+cached。<br>
+如本机情况的可用内存为：</p>
+<p>18007156=2098428KB+4545340KB+11363424KB</p>
+<p>接下来解释什么时候内存会被交换，以及按什么方交换。</p>
+<p>当可用内存少于额定值的时候，就会开会进行交换。如何看额定值：</p>
+<pre><code class="language-Shell">cat /proc/meminfo
+
+MemTotal:       16140816 kB
+MemFree:          816004 kB
+MemAvailable:    2913824 kB
+Buffers:           17912 kB
+Cached:          2239076 kB
+SwapCached:            0 kB
+Active:         12774804 kB
+Inactive:        1594328 kB
+Active(anon):   12085544 kB
+Inactive(anon):    94572 kB
+Active(file):     689260 kB
+Inactive(file):  1499756 kB
+Unevictable:      116888 kB
+Mlocked:          116888 kB
+SwapTotal:       8191996 kB
+SwapFree:        8191996 kB
+Dirty:                56 kB
+Writeback:             0 kB
+AnonPages:      12229228 kB
+Mapped:           117136 kB
+Shmem:             58736 kB
+Slab:             395568 kB
+SReclaimable:     246700 kB
+SUnreclaim:       148868 kB
+KernelStack:       30496 kB
+PageTables:       165104 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:    16262404 kB
+Committed_AS:   27698600 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:      311072 kB
+VmallocChunk:   34350899200 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:   3104768 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:      225536 kB
+DirectMap2M:    13279232 kB
+DirectMap1G:     5242880 kB
+</code></pre>
+<p>交换将通过三个途径来减少系统中使用的物理页面的个数：</p>
+<ul>
+<li>
+<p>减少缓冲与页面 cache 的大小，</p>
+</li>
+<li>
+<p>将系统 V 类型的内存页面交换出去，</p>
+</li>
+<li>
+<p>换出或者丢弃页面。(Application 占用的内存页，也就是物理内存不足）。</p>
+</li>
+</ul>
+<p>事实上，少量地使用 swap 是不是影响到系统性能的。</p>
+<p>那 buffers 和 cached 都是缓存，两者有什么区别呢？</p>
+<p>为了提高磁盘存取效率, Linux 做了一些精心的设计, 除了对 dentry 进行缓存 (用于 VFS,加速文件路径名到 inode 的转换), 还采取了两种主要 Cache 方式：</p>
+<p>Buffer Cache 和 Page Cache。前者针对磁盘块的读写，后者针对文件 inode 的读写。这些 Cache 有效缩短了 I/O 系统调用 (比如 read,write,getdents) 的时间。<br>
+磁盘的操作有逻辑级（文件系统）和物理级（磁盘块），这两种 Cache 就是分别缓存逻辑和物理级数据的。</p>
+<p>Page cache 实际上是针对文件系统的，是文件的缓存，在文件层面上的数据会缓存到 page cache。文件的逻辑层需要映射到实际的物理磁盘，这种映射关系由文件系统来完成。当 page cache 的数据需要刷新时，page cache 中的数据交给 buffer cache，因为 Buffer Cache 就是缓存磁盘块的。但是这种处理在 2.6 版本的内核之后就变的很简单了，没有真正意义上的 cache 操作。</p>
+<p>Buffer cache 是针对磁盘块的缓存，也就是在没有文件系统的情况下，直接对磁盘进行操作的数据会缓存到 buffer cache 中，例如，文件系统的元数据都会缓存到 buffer cache 中。</p>
+<p>简单说来，page cache 用来缓存文件数据，buffer cache 用来缓存磁盘数据。在有文件系统的情况下，对文件操作，那么数据会缓存到 page cache，如果直接采用 dd 等工具对磁盘进行读写，那么数据会缓存到 buffer cache。</p>
+<p>所以我们看 linux,只要不用 swap 的交换空间,就不用担心自己的内存太少.如果常常 swap 用很多,可能你就要考虑加物理内存了.这也是 linux 看内存是否够用的标准.</p>
+<p>如果是应用服务器的话，一般只看第二行，+buffers/cache,即对应用程序来说 free 的内存太少了，也是该考虑优化程序或加内存了。</p>
+
+          </div>
+        </article>
+        <div class="next-post">
+          <div class="next">下一篇</div>
+          <a href="https://dev-coco.github.io/post/parted/">
+            <h3 class="post-title">parted</h3>
+          </a>
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="gitalk-container"></div>
+      </div>
+      <!-- middle -->
+      <div class="main-container-middle"></div>
+      <!-- right -->
+      <div id="sidebar" class="main-container-right">
+      <!-- toc -->
+      <div class="toc-card i-card ">
+        <div class="toc-title i-card-title">目录</div>
+          <div class="toc-content">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E8%A1%A5%E5%85%85%E8%AF%B4%E6%98%8E">补充说明</a></li>
+<li><a href="#%E8%AF%AD%E6%B3%95">语法</a></li>
+<li><a href="#%E9%80%89%E9%A1%B9">选项</a></li>
+<li><a href="#%E5%AE%9E%E4%BE%8B">实例</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+          <script>
+            function locateCatelogList() {
+              /*获取文章目录集合,可通过:header过滤器*/
+              var alis = $('.post-content :header');
+              /*获取侧边栏目录列表集合**/
+              var sidebar_alis = $('.markdownIt-TOC a');
+              /*获取滚动条到顶部的距离*/
+              var scroll_height = $(window).scrollTop();
+              for (var i = 0; i < alis.length; i++) {
+                /*获取锚点集合中的元素分别到顶点的距离*/
+                var a_height = $(alis[i]).offset().top;
+                if (a_height < scroll_height) {
+                  /*高亮显示*/
+                  sidebar_alis.removeClass('on');
+                  $(sidebar_alis[i]).addClass('on');
+                }
+              }
+            }
+            $(function() {
+              /*绑定滚动事件 */
+              $(window).bind('scroll', locateCatelogList);
+              });
+          </script>
+        </div>
+      <div class="notice-card i-card ">
+        <div class="notice-title i-card-title">公告</div>
+        <div class="notice-content">界面全新改版</div>
+      </div>
+      <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
+        <div class="notice-content">
+          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/excel/">Excel</a>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="site-footer">
+    <img style="vertical-align:middle;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&count_bg=%2310C1F9&title_bg=%23555555&icon=html5.svg&icon_color=%23E7E7E7&title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&edge_flat=false"> | <span>Copyright © 2020-2022 Dev-Coco - All Rights Reserved.</span> | <a class="rss" href="https://dev-coco.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+  <script>
+    $('#sidebar').stickySidebar({
+    topSpacing: 80,
+    // bottomSpacing: 60
+    });
+  </script>
+  
+</body>
+</html>

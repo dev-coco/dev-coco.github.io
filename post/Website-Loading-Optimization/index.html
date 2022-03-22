@@ -1,0 +1,241 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>优化加载网页速度 | Dev-Coco</title>
+  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1647958467779">
+  <link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
+  <script src="https://dev-coco.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
+<script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+  <div class="main">
+    <div class="header">
+      <div class="nav">
+        <div class="logo">
+          <a href="https://dev-coco.github.io">
+            <img class="avatar" src="https://dev-coco.github.io/images/avatar.png?v=1647958467779" alt="">
+          </a>
+          <div class="site-title">
+            <h1>Dev-Coco</h1>
+          </div>
+        </div>
+        <span class="menu-btn fa fa-align-justify"></span>
+        <div class="menu-container">
+          <ul>
+            <li>
+              <a href="/" class="menu">首页</a>
+            </li>
+            <li>
+              <a href="/Featured-Software.html" class="menu">软件</a>
+            </li>
+            <li>
+              <a href="/Online-Tools" class="menu">在线工具</a>
+            </li>
+            <li>
+              <a href="/post/Linux-Command" class="menu">Linux命令</a>
+            </li>
+            <li>
+              <a href="/Excel" class="menu">Excel教程</a>
+            </li>
+            <li>
+              <a href="/post/Terms-and-Privacy" class="menu">隐私与条款</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script>
+      $(document).ready(function() {
+        $(".menu-btn").click(function() {
+          $(".menu-container").slideToggle();
+        });
+        $(window).resize(function() {
+          if (window.matchMedia('(min-width: 960px)').matches) {
+            $(".menu-container").css('display', 'block')
+          } else {
+            $(".menu-container").css('display', 'none')
+          }
+        });
+      });
+    </script>
+    <div id="main-content" class="post-detail main-container">
+      <!-- left -->
+      <div id="content" class="main-container-left">
+        <article class="post i-card">
+        <h2 class="post-title">优化加载网页速度</h2>
+        <div class="post-info">
+          <time class="post-time">2022-02-04 / 4 min read</time>
+            <a href="https://dev-coco.github.io/tag/other/" class="post-tag i-tag i-tag-">#其它</a>
+        </div>
+          <div class="post-content">
+            <p>加快用户加载网页的速度一些优化方案。</p>
+<!-- more -->
+<h2 id="gzip-压缩">Gzip 压缩</h2>
+<p>Gzip 压缩是基于服务端的一种网页压缩的功能，Gzip 压缩可以对网页里的 (HTML, CSS, JS 等) 进行压缩，减少网页文件的大小，这样可以加快网页打开的速度。让我们先来看看浏览器是如何加载网页的。</p>
+<h3 id="如何开启-gzip-压缩">如何开启 Gzip 压缩</h3>
+<ol>
+<li>通过.htaccess 文件开启压缩</li>
+</ol>
+<pre><code class="language-Shell">&lt;ifModule mod_gzip.c&gt;
+mod_gzip_on Yes
+mod_gzip_dechunk Yes
+mod_gzip_item_include file .(html?|txt|css|js|php|pl)$
+mod_gzip_item_include handler ^cgi-script$
+mod_gzip_item_include mime ^text/.*
+mod_gzip_item_include mime ^application/x-javascript.*
+mod_gzip_item_exclude mime ^image/.*
+mod_gzip_item_exclude rspheader ^Content-Encoding:.*gzip.*
+&lt;/ifModule&gt;
+</code></pre>
+<ol start="2">
+<li>在 Apache 服务器通过 htaccess 开启 Gzip 压缩</li>
+</ol>
+<pre><code class="language-Shell">&lt;IfModule mod_deflate.c&gt;
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE application/rss+xml
+  AddOutputFilterByType DEFLATE application/vnd.ms-fontobject
+  AddOutputFilterByType DEFLATE application/x-font
+  AddOutputFilterByType DEFLATE application/x-font-opentype
+  AddOutputFilterByType DEFLATE application/x-font-otf
+  AddOutputFilterByType DEFLATE application/x-font-truetype
+  AddOutputFilterByType DEFLATE application/x-font-ttf
+  AddOutputFilterByType DEFLATE application/x-javascript
+  AddOutputFilterByType DEFLATE application/xhtml+xml
+  AddOutputFilterByType DEFLATE application/xml
+  AddOutputFilterByType DEFLATE font/opentype
+  AddOutputFilterByType DEFLATE font/otf
+  AddOutputFilterByType DEFLATE font/ttf
+  AddOutputFilterByType DEFLATE image/svg+xml
+  AddOutputFilterByType DEFLATE image/x-icon
+  AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE text/javascript
+  AddOutputFilterByType DEFLATE text/plain
+  AddOutputFilterByType DEFLATE text/xml
+  BrowserMatch ^Mozilla/4 gzip-only-text/html
+  BrowserMatch ^Mozilla/4\.0[678] no-gzip
+  BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+  Header append Vary User-Agent
+&lt;/IfModule&gt;
+</code></pre>
+<ol start="3">
+<li>在 Nginx 服务器开启 Gzip 压缩</li>
+</ol>
+<pre><code class="language-Shell">gzip on;
+gzip_comp_level 2;
+gzip_http_version 1.0;
+gzip_proxied any;
+gzip_min_length 1100;
+gzip_buffers 16 8k;
+gzip_types text/plain text/html text/css application/x-javascript text/xml application/xml application/xml+rss text/javascript;
+gzip_disable &quot;MSIE [1-6].(?!.*SV1)&quot;;
+gzip_vary on;
+</code></pre>
+<p>设置成功后可以使用 <a href="https://varvy.com/tools/gzip/" target="_blank">测试工具</a> 来测试是否成功开启了 Gzip。</p>
+<h2 id="优化代码">优化代码</h2>
+<ol>
+<li>压缩 CSS，JS，HTML<br>
+在 HTML, CSS, JS 这些文件里面都会有一些空格，注释，换行等等，可以将这些代码给压缩成一行。这样可以大大的减小文件的体积，加快加载的速度。</li>
+<li>代码顺序<br>
+因为加载网页的时候，正常是从上到下加载的。把 CSS 代码放在最前，加载出网页的页面，把 JS 的代码放在 body 的下面，放到最后加载。</li>
+</ol>
+<h2 id="图片格式和大小">图片格式和大小</h2>
+<p>常用的图片有这几种 webp, jpeg, png 格式，其中 webp 格式的图片体积最小，但是兼容性不是太好，有的浏览器不支持 webp 格式的图片。jpeg 的图片是目前比较主流的图片格式之一，图片体积要比 png 小，但是不支持图片的透明背景。png 格式的图片支持背景透明，防锯齿。<br>
+在一个网页里面可能会包含多张图片，可以将图片的尺寸修改到刚好合适的尺寸即可，这样就不需要用一个大尺寸的图片再使用 CSS 进行适配。还可以将图片进行压缩，图片的在保证用户体验的同时尽可能的压缩图片，图片体积越小，加载速度越快。如果是非常小的图片，建议使用 base64 压缩，避免网络请求，加载速度更快。</p>
+<h2 id="cdn">CDN</h2>
+<p>CDN 是内容分发网络，可以将网页的内容更快的传输给用户。就好比一个日本的服务器，在美国的用户打开速度就比较慢，没有日本当地打开的快。那么使用 CDN 的话，只要在美国地区有节点就会大大提高访问的速度。CDN 原理是将服务器的网页存在各个国家各个地区的节点，当用户请求网页的时候，就会访问距离用户最近的节点，这样就可以提高网页的加载速度。可以考虑选用 Cloudflare。</p>
+
+          </div>
+        </article>
+        <div class="next-post">
+          <div class="next">下一篇</div>
+          <a href="https://dev-coco.github.io/post/dmesg/">
+            <h3 class="post-title">dmesg</h3>
+          </a>
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="gitalk-container"></div>
+      </div>
+      <!-- middle -->
+      <div class="main-container-middle"></div>
+      <!-- right -->
+      <div id="sidebar" class="main-container-right">
+      <!-- toc -->
+      <div class="toc-card i-card ">
+        <div class="toc-title i-card-title">目录</div>
+          <div class="toc-content">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#gzip-%E5%8E%8B%E7%BC%A9">Gzip 压缩</a>
+<ul>
+<li><a href="#%E5%A6%82%E4%BD%95%E5%BC%80%E5%90%AF-gzip-%E5%8E%8B%E7%BC%A9">如何开启 Gzip 压缩</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BC%98%E5%8C%96%E4%BB%A3%E7%A0%81">优化代码</a></li>
+<li><a href="#%E5%9B%BE%E7%89%87%E6%A0%BC%E5%BC%8F%E5%92%8C%E5%A4%A7%E5%B0%8F">图片格式和大小</a></li>
+<li><a href="#cdn">CDN</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+          <script>
+            function locateCatelogList() {
+              /*获取文章目录集合,可通过:header过滤器*/
+              var alis = $('.post-content :header');
+              /*获取侧边栏目录列表集合**/
+              var sidebar_alis = $('.markdownIt-TOC a');
+              /*获取滚动条到顶部的距离*/
+              var scroll_height = $(window).scrollTop();
+              for (var i = 0; i < alis.length; i++) {
+                /*获取锚点集合中的元素分别到顶点的距离*/
+                var a_height = $(alis[i]).offset().top;
+                if (a_height < scroll_height) {
+                  /*高亮显示*/
+                  sidebar_alis.removeClass('on');
+                  $(sidebar_alis[i]).addClass('on');
+                }
+              }
+            }
+            $(function() {
+              /*绑定滚动事件 */
+              $(window).bind('scroll', locateCatelogList);
+              });
+          </script>
+        </div>
+      <div class="notice-card i-card ">
+        <div class="notice-title i-card-title">公告</div>
+        <div class="notice-content">界面全新改版</div>
+      </div>
+      <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
+        <div class="notice-content">
+          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/excel/">Excel</a>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="site-footer">
+    <img style="vertical-align:middle;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&count_bg=%2310C1F9&title_bg=%23555555&icon=html5.svg&icon_color=%23E7E7E7&title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&edge_flat=false"> | <span>Copyright © 2020-2022 Dev-Coco - All Rights Reserved.</span> | <a class="rss" href="https://dev-coco.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+  <script>
+    $('#sidebar').stickySidebar({
+    topSpacing: 80,
+    // bottomSpacing: 60
+    });
+  </script>
+  
+</body>
+</html>

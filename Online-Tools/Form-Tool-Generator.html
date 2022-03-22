@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <title>填表工具生成器</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="keywords" content="dev-coco, 填表工具生成器, 填表工具, Google Script">
+  <meta name="robots" content="index,follow">
+  <meta name="description" content="Mac software automatic update.">
+  <link rel="icon" href="/images/avatar.png">
+  <script src="/js/Form-Tool-Generator.js"></script>
+  <link rel="stylesheet" href="/css/site.css">
+  <script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <style>td{font-size:14px;padding-right:15px}#btn{border:1px solid;padding:.375rem .75rem;margin-bottom:1.5rem;font-size:13pt;line-height:1.5;border-radius:.75rem;color:#fff;background-color:#007bff;border-color:#007bff;margin-right:10px}#btn:hover{background-color:#0069d9}#input{position:absolute;top:0;left:0;opacity:0;z-index:-10}</style>
+</head>
+<body>
+  <div class="container">
+    <h1 style="text-align:left;"><img class="logo" alt="dev-coco" src="/images/avatar.png">
+      <span> Dev-Coco</span>
+      <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&count_bg=%2310C1F9&title_bg=%23555555&icon=html5.svg&icon_color=%23E7E7E7&title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&edge_flat=false" style="float:right;width:180px;">
+    </h1>
+    <div class="menu">
+      <a href="/">首页</a>
+      <a href="/Featured-Software.html">软件</a>
+      <a href="/Online-Tools">在线工具</a>
+      <a href="/post/Linux-Command">Linux命令</a>
+      <a href="/Excel/">Excel教程</a>
+      <a href="/post/Terms-and-Privacy">隐私与条款</a>
+      <a target="_blank" href="https://github.com/dev-coco">Github</a>
+    </div>
+    <h1 style="text-align:center">填表工具生成器</h1>
+    <p style="text-align:center;color:red;">此项目不再更新</p>
+    <table style="margin-left: auto;margin-right: auto;">
+      <tbody>
+        <tr>
+          <td>
+            <table style="text-align:right;">
+              <h3>功能项目</h3>
+              <tbody>
+                <tr>
+                  <td>
+                    <label>选择名字</label>
+                    <input id="selectName" type="checkbox">
+                  </td>
+                  <td>
+                    <label>必填</label>
+                    <input id="required_selectName" type="checkbox">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label>账号名称</label>
+                    <input id="account_name" type="checkbox">
+                  </td>
+                  <td>
+                    <label>必填</label>
+                    <input id="required_account_name" type="checkbox">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label>发帖位置</label>
+                    <input id="article_place" type="checkbox">
+                  </td>
+                  <td>
+                    <label>必填</label>
+                    <input id="required_article_place" type="checkbox">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label>发帖类型</label>
+                    <input id="post_type" type="checkbox">
+                  </td>
+                  <td>
+                    <label>必填</label>
+                    <input id="required_post_type" type="checkbox">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label>小组名称</label>
+                    <input id="group_name" type="checkbox">
+                  </td>
+                  <td>
+                    <label>必填</label>
+                    <input id="required_group_name" type="checkbox">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label>小组状态</label>
+                    <input id="group_status" type="checkbox">
+                  </td>
+                  <td>
+                    <label>必填</label>
+                    <input id="required_group_status" type="checkbox">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label>标题</label>
+                    <input id="cn_title" type="checkbox">
+                  </td>
+                  <td>
+                    <label>必填</label>
+                    <input id="required_cn_title" type="checkbox">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label>图片名称</label>
+                    <input id="image_name" type="checkbox">
+                  </td>
+                  <td>
+                    <label>必填</label>
+                    <input id="required_image_name" type="checkbox">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label>图片来源</label>
+                    <input id="posting_status" type="checkbox">
+                  </td>
+                  <td>
+                    <label>必填</label>
+                    <input id="required_posting_status" type="checkbox">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label>引导语</label>
+                    <input id="guide" type="checkbox">
+                  </td>
+                  <td>
+                    <label>必填</label>
+                    <input id="required_guide" type="checkbox">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label>中文引导语</label>
+                    <input id="cn_guide" type="checkbox">
+                  </td>
+                  <td>
+                    <label>必填</label>
+                    <input id="required_cn_guide" type="checkbox">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label>网站原链接</label>
+                    <input id="original_link" type="checkbox">
+                  </td>
+                  <td>
+                    <label>必填</label>
+                    <input id="required_original_link" type="checkbox">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label>发帖状态</label>
+                    <input id="is_review" type="checkbox">
+                  </td>
+                  <td>
+                    <label>必填</label>
+                    <input id="required_is_review" type="checkbox">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label>超文本链接</label>
+                    <input id="materialize_textarea" type="checkbox">
+                  </td>
+                  <td>
+                    <label>必填</label>
+                    <input id="required_materialize_textarea" type="checkbox">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label>贴文链接</label>
+                    <input id="post_link" type="checkbox">
+                  </td>
+                  <td>
+                    <label>必填</label>
+                    <input id="required_post_link" type="checkbox">
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td>
+            <table style="text-align:right;">
+              <h3>填表内容</h3>
+              <tbody>
+                <tr>
+                  <td>
+                    <label>详细日期</label>
+                    <input id="fill_new_Date" type="checkbox">
+                  </td>
+                  <td>
+                    <label>日期</label>
+                    <input id="fill_date" type="checkbox">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label>名字</label>
+                    <input id="fill_filter_name" type="checkbox">
+                  </td>
+                  <td>
+                    <label>账号名称</label>
+                    <input id="fill_fb_name" type="checkbox">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label>发帖位置</label>
+                    <input id="fill_fb_article_place" type="checkbox">
+                  </td>
+                  <td>
+                    <label>发帖类型</label>
+                    <input id="fill_fb_post_type" type="checkbox">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label>小组名称</label>
+                    <input id="fill_fb_place_name" type="checkbox">
+                  </td>
+                  <td>
+                    <label>小组状态</label>
+                    <input id="fill_fb_group_status" type="checkbox">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label>图片名称</label>
+                    <input id="fill_fb_image_name" type="checkbox">
+                  </td>
+                  <td>
+                    <label>图片来源</label>
+                    <input id="fill_fn_image_origin" type="checkbox">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label>引导语</label>
+                    <input id="fill_fb_guide" type="checkbox">
+                  </td>
+                  <td>
+                    <label>中文引导语</label>
+                    <input id="fill_fb_cn_guide" type="checkbox">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label>发帖状态</label>
+                    <input id="fill_fn_posting_status" type="checkbox">
+                  </td>
+                  <td>
+                    <label>中文标题</label>
+                    <input id="fill_fb_title" type="checkbox">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label>贴文链接</label>
+                    <input id="fill_fb_pose_link" type="checkbox">
+                  </td>
+                  <td>
+                    <label>追踪链接</label>
+                    <input id="fill_track_link" type="checkbox">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label>网站原链接</label>
+                    <input id="fill_fn_web_link" type="checkbox">
+                  </td>
+                  <td>
+                    <label>超文本链接</label>
+                    <input id="fill_fb_hyperlink" type="checkbox">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label>分表</label>
+                    <input id="fill_split_sheet" type="checkbox">
+                  </td>
+                  <td style="visibility: hidden;">
+                    <label></label>
+                    <input id="" type="checkbox">
+                  </td>
+                </tr>
+                <tr style="visibility: hidden;">
+                  <td>
+                    <label></label>
+                    <input id="" type="checkbox">
+                  </td>
+                  <td>
+                    <label></label>
+                    <input id="" type="checkbox">
+                  </td>
+                </tr>
+                <tr style="visibility: hidden;">
+                  <td>
+                    <label></label>
+                    <input id="" type="checkbox">
+                  </td>
+                </tr>
+                <tr style="visibility: hidden;">
+                  <td>
+                    <label></label>
+                    <input id="" type="checkbox">
+                  </td>
+                  <td>
+                    <label></label>
+                    <input id="" type="checkbox">
+                  </td>
+                </tr>
+                <tr style="visibility: hidden;">
+                  <td>
+                    <label></label>
+                    <input id="" type="checkbox">
+                  </td>
+                  <td>
+                    <label></label>
+                    <input id="" type="checkbox">
+                  </td>
+                </tr>
+                <tr style="visibility: hidden;">
+                  <td>
+                    <label></label>
+                    <input id="" type="checkbox">
+                  </td>
+                  <td>
+                    <label></label>
+                    <input id="" type="checkbox">
+                  </td>
+                </tr>
+                <tr style="visibility: hidden;">
+                  <td>
+                    <label></label>
+                    <input id="" type="checkbox">
+                  </td>
+                  <td>
+                    <label></label>
+                    <input id="" type="checkbox">
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td>
+            <table style="text-align:right;">
+              <h3>其他功能</h3>
+              <tbody>
+                <tr>
+                  <td>
+                    <label>关闭提示</label>
+                    <input id="other_close_alert" type="checkbox">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label>自动填充</label>
+                    <input id="other_auto_complete" type="checkbox">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label>升级维护</label>
+                    <input id="other_update" type="checkbox">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label>小组提交</label>
+                    <input id="group_form" type="checkbox">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label>翻译</label>
+                    <input id="other_trans_cn" type="checkbox">
+                  </td>
+                </tr>
+                <tr style="visibility: hidden;">
+                  <td>
+                    <label></label>
+                    <input id="" type="checkbox">
+                  </td>
+                </tr>
+                <tr style="visibility: hidden;">
+                  <td>
+                    <label></label>
+                    <input id="" type="checkbox">
+                  </td>
+                </tr>
+                <tr style="visibility: hidden;">
+                  <td>
+                    <label></label>
+                    <input id="" type="checkbox">
+                  </td>
+                </tr>
+                <tr style="visibility: hidden;">
+                  <td>
+                    <label></label>
+                    <input id="" type="checkbox">
+                  </td>
+                </tr>
+                <tr style="visibility: hidden;">
+                  <td>
+                    <label></label>
+                    <input id="" type="checkbox">
+                  </td>
+                </tr>
+                <tr style="visibility: hidden;">
+                  <td>
+                    <label></label>
+                    <input id="" type="checkbox">
+                  </td>
+                </tr>
+                <tr style="visibility: hidden;">
+                  <td>
+                    <label></label>
+                    <input id="" type="checkbox">
+                  </td>
+                </tr>
+                <tr style="visibility: hidden;">
+                  <td>
+                    <label></label>
+                    <input id="" type="checkbox">
+                  </td>
+                </tr>
+                <tr style="visibility: hidden;">
+                  <td>
+                    <label></label>
+                    <input id="" type="checkbox">
+                  </td>
+                </tr>
+                <tr style="visibility: hidden;">
+                  <td>
+                    <label></label>
+                    <input id="" type="checkbox">
+                  </td>
+                </tr>
+                <tr style="visibility: hidden;">
+                  <td>
+                    <label></label>
+                    <input id="" type="checkbox">
+                  </td>
+                </tr>
+                <tr style="visibility: hidden;">
+                  <td>
+                    <label></label>
+                    <input id="" type="checkbox">
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <button id="btn" onclick="generate_code()">生成代码</button>
+    <button id="btn" onclick="generate_form_code()">填表代码</button>
+    <button id="btn" onclick="generate_other_code()">其他功能</button>
+    <button id="btn" onclick="hide_banners()">隐藏横幅</button>
+    <button id="btn" onclick="copy_code()">复制代码</button>
+    <br>
+    <p id="generate_form_code"></p>
+    <textarea id="input"></textarea>
+  </div>
+</body>
+</html>

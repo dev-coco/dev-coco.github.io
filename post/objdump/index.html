@@ -1,0 +1,550 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>objdump | Dev-Coco</title>
+  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1647958467779">
+  <link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
+  <script src="https://dev-coco.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
+<script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+  <div class="main">
+    <div class="header">
+      <div class="nav">
+        <div class="logo">
+          <a href="https://dev-coco.github.io">
+            <img class="avatar" src="https://dev-coco.github.io/images/avatar.png?v=1647958467779" alt="">
+          </a>
+          <div class="site-title">
+            <h1>Dev-Coco</h1>
+          </div>
+        </div>
+        <span class="menu-btn fa fa-align-justify"></span>
+        <div class="menu-container">
+          <ul>
+            <li>
+              <a href="/" class="menu">首页</a>
+            </li>
+            <li>
+              <a href="/Featured-Software.html" class="menu">软件</a>
+            </li>
+            <li>
+              <a href="/Online-Tools" class="menu">在线工具</a>
+            </li>
+            <li>
+              <a href="/post/Linux-Command" class="menu">Linux命令</a>
+            </li>
+            <li>
+              <a href="/Excel" class="menu">Excel教程</a>
+            </li>
+            <li>
+              <a href="/post/Terms-and-Privacy" class="menu">隐私与条款</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script>
+      $(document).ready(function() {
+        $(".menu-btn").click(function() {
+          $(".menu-container").slideToggle();
+        });
+        $(window).resize(function() {
+          if (window.matchMedia('(min-width: 960px)').matches) {
+            $(".menu-container").css('display', 'block')
+          } else {
+            $(".menu-container").css('display', 'none')
+          }
+        });
+      });
+    </script>
+    <div id="main-content" class="post-detail main-container">
+      <!-- left -->
+      <div id="content" class="main-container-left">
+        <article class="post i-card">
+        <h2 class="post-title">objdump</h2>
+        <div class="post-info">
+          <time class="post-time">2022-02-03 / 15 min read</time>
+            <a href="https://dev-coco.github.io/tag/linux-command/" class="post-tag i-tag i-tag-other_3">#Linux命令</a>
+        </div>
+          <div class="post-content">
+            <p>显示二进制文件信息。</p>
+<!-- more -->
+<h2 id="补充说明">补充说明</h2>
+<p>objdump 命令是用查看目标文件或者可执行的目标文件的构成的 gcc 工具。</p>
+<h2 id="选项">选项</h2>
+<pre><code class="language-Shell">-a --archive-headers
+# 显示档案库的成员信息,类似ls -l将lib*.a的信息列出。 
+
+-b bfdname --target=bfdname
+# 指定目标码格式。这不是必须的，objdump能自动识别许多格式，比如： 
+
+objdump -b oasys -m vax -h fu.o
+# 显示fu.o的头部摘要信息，明确指出该文件是Vax系统下用Oasys编译器生成的目标文件。objdump -i将给出这里可以指定的目标码格式列表。 
+
+-C --demangle
+# 将底层的符号名解码成用户级名字，除了去掉所开头的下划线之外，还使得C++函数名以可理解的方式显示出来。 
+--debugging
+-g
+# 显示调试信息。企图解析保存在文件中的调试信息并以C语言的语法显示出来。仅仅支持某些类型的调试信息。有些其他的格式被readelf -w支持。 
+
+-e --debugging-tags
+# 类似-g选项，但是生成的信息是和ctags工具相兼容的格式。 
+--disassemble
+-d
+# 从objfile中反汇编那些特定指令机器码的section。 
+
+-D --disassemble-all
+# 与 -d 类似，但反汇编所有section. 
+
+--prefix-addresses
+# 反汇编的时候，显示每一行的完整地址。这是一种比较老的反汇编格式。 
+
+-EB
+-EL
+--endian={big|little}
+# 指定目标文件的小端。这个项将影响反汇编出来的指令。在反汇编的文件没描述小端信息的时候用。例如S-records. 
+
+-f
+--file-headers
+显示objfile中每个文件的整体头部摘要信息。
+
+-h
+--section-headers
+--headers
+显示目标文件各个section的头部摘要信息。
+
+-H
+--help
+简短的帮助信息。
+
+-i
+--info
+显示对于 -b 或者 -m 选项可用的架构和目标格式列表。
+
+-j name
+--section=name
+仅仅显示指定名称为name的section的信息
+
+-l
+--line-numbers
+用文件名和行号标注相应的目标代码，仅仅和-d、-D或者-r一起使用使用-ld和使用-d的区别不是很大，在源码级调试的时候有用，要求编译时使用了-g之类的调试编译选项。
+
+-m machine
+--architecture=machine
+指定反汇编目标文件时使用的架构，当待反汇编文件本身没描述架构信息的时候(比如S-records)，这个选项很有用。可以用-i选项列出这里能够指定的架构.
+
+--reloc
+-r
+显示文件的重定位入口。如果和-d或者-D一起使用，重定位部分以反汇编后的格式显示出来。
+
+--dynamic-reloc
+-R
+显示文件的动态重定位入口，仅仅对于动态目标文件意义，比如某些共享库。
+
+-s
+--full-contents
+显示指定section的完整内容。默认所有的非空section都会被显示。
+
+-S
+--source
+尽可能反汇编出源代码，尤其当编译的时候指定了-g这种调试参数时，效果比较明显。隐含了-d参数。
+
+--show-raw-insn
+反汇编的时候，显示每条汇编指令对应的机器码，如不指定--prefix-addresses，这将是缺省选项。
+
+--no-show-raw-insn
+反汇编时，不显示汇编指令的机器码，如不指定--prefix-addresses，这将是缺省选项。
+
+--start-address=address
+从指定地址开始显示数据，该选项影响-d、-r和-s选项的输出。
+
+--stop-address=address
+显示数据直到指定地址为止，该项影响-d、-r和-s选项的输出。
+
+-t
+--syms
+显示文件的符号表入口。类似于nm -s提供的信息
+
+-T
+--dynamic-syms
+显示文件的动态符号表入口，仅仅对动态目标文件意义，比如某些共享库。它显示的信息类似于 nm -D|--dynamic 显示的信息。
+
+-V
+--version
+版本信息
+
+--all-headers
+-x
+显示所可用的头信息，包括符号表、重定位入口。-x 等价于-a -f -h -r -t 同时指定。
+
+-z
+--disassemble-zeroes
+一般反汇编输出将省略大块的零，该选项使得这些零块也被反汇编。
+
+@file 可以将选项集中到一个文件中，然后使用这个@file选项载入。
+</code></pre>
+<h2 id="实例">实例</h2>
+<p>首先，在给出后面大部分测试所基于的源代码以及编译指令。 源代码如下：</p>
+<pre><code class="language-Shell">root@localhost [test]# nl mytest.cpp 
+</code></pre>
+<pre><code class="language-Shell">void printTest() {
+    char a;
+    a = 'a';
+}
+
+void printTest2() {
+int a = 2;
+a+=2;
+}
+</code></pre>
+<p>对以上源代码进行编译，如下：</p>
+<pre><code class="language-Shell">[root@localhost test]# g++ -c -g mytest.cpp 
+</code></pre>
+<p>这里，生成的文件是 mytest.o，为了方便测试包含了调试的信息，对可执行文件的测试，显示的结果类似。<br>
+查看当前使用的 objdump 的版本号：</p>
+<pre><code class="language-Shell">[root@localhost test]# objdump -V 
+GNU objdump 2.17.50.0.6-14.el5 20061020
+Copyright 2005 free Software Foundation, Inc.
+This program is free software; you may redistribute it under the terms of
+the GNU General Public License.  This program has absolutely no warranty. 
+</code></pre>
+<p>查看档案库文件中的信息：</p>
+<pre><code class="language-Shell">[root@localhost test]# objdump -a libmy2.a 
+In archive libmy2.a:
+myfile.o:     file format elf32-i386
+rwxrwxrwx 0/0   2724 Nov 16 16:06 2009 myfile.o
+mytest.o:     file format elf32-i386
+rw-r--r-- 0/0    727 Jul 13 15:32 2011 mytest.o 
+</code></pre>
+<p>这里，libmy2.a 是一个使用 ar 命令将多个 </em>.o 目标文件打包而生成的静态库。命令的输出类似<code>ar -tv</code>，相比较<code>ar -tv</code>输出如下：</p>
+<pre><code class="language-Shell">[root@localhost test]# ar -tv libmy2.a 
+rwxrwxrwx 0/0   2724 Nov 16 16:06 2009 myfile.o
+rw-r--r-- 0/0    727 Jul 13 15:32 2011 mytest.o 
+</code></pre>
+<p>显示可用的架构和目标结构列表：</p>
+<pre><code class="language-Shell">[root@localhost test]# objdump -i 
+BFD header file version 2.17.50.0.6-14.el5 20061020
+elf32-i386
+(header little endian, data little endian)
+  i386
+a.out-i386-linux
+(header little endian, data little endian)
+  i386
+efi-app-ia32
+(header little endian, data little endian)
+  i386
+elf64-x86-64
+(header little endian, data little endian)
+  i386
+elf64-little
+(header little endian, data little endian)
+  i386
+elf64-big
+(header big endian, data big endian)
+  i386
+elf32-little
+(header little endian, data little endian)
+  i386
+elf32-big
+(header big endian, data big endian)
+  i386
+srec
+(header endianness unknown, data endianness unknown)
+  i386
+symbolsrec
+(header endianness unknown, data endianness unknown)
+  i386
+tekhex
+(header endianness unknown, data endianness unknown)
+  i386
+binary
+(header endianness unknown, data endianness unknown)
+  i386
+ihex
+(header endianness unknown, data endianness unknown)
+  i386
+trad-core
+(header endianness unknown, data endianness unknown)
+
+              elf32-i386 a.out-i386-linux efi-app-ia32 elf64-x86-64
+          i386 elf32-i386 a.out-i386-linux efi-app-ia32 elf64-x86-64
+
+              elf64-little elf64-big elf32-little elf32-big srec symbolsrec
+          i386 elf64-little elf64-big elf32-little elf32-big srec symbolsrec
+
+              tekhex binary ihex trad-core
+          i386 tekhex binary ihex --------- 
+</code></pre>
+<p>这里，显示的信息是相对于 -b 或者 -m 选项可用的架构和目标格式列表。<br>
+显示 mytest.o 文件中的 text 段的内容：</p>
+<pre><code class="language-Shell">[root@localhost test]# objdump --section=.text -s mytest.o 
+mytest.o:     file format elf32-i386
+Contents of section .text:
+0000 5589e583 ec10c645 ff61c9c3 5589e583  U......E.a..U...
+0010 ec10c745 fc020000 008345fc 02c9c3    ...E......E.... 
+</code></pre>
+<p>这里注意，不能单独使用-j 或者--section，例如<code>objdump --section=.text mytest.o</code>是不会运行成功的。<br>
+反汇编 mytest.o 中的 text 段内容，并尽可能用源代码形式表示：</p>
+<pre><code class="language-Shell">[root@localhost test]# objdump -j .text -S mytest.o 
+mytest.o:     file format elf32-i386
+Disassembly of section .text:
+00000000 &lt;_Z9printTestv&gt;:
+void printTest()
+   0:   55                      push   %ebp
+   1:   89 e5                   mov    %esp,%ebp
+   3:   83 ec 10                sub    $0x10,%esp
+{
+        char a;
+        a = 'a';
+   6:   c6 45 ff 61             movb   $0x61,0xffffffff(%ebp)
+}
+   a:   c9                      leave
+   b:   c3                      ret
+
+000000c &lt;_Z10printTest2v&gt;:
+void printTest2()
+   c:   55                      push   %ebp
+   d:   89 e5                   mov    %esp,%ebp
+   f:   83 ec 10                sub    $0x10,%esp
+{
+        int a = 2;
+  12:   c7 45 fc 02 00 00 00    movl   $0x2,0xfffffffc(%ebp)
+        a+=2;
+  19:   83 45 fc 02             addl   $0x2,0xfffffffc(%ebp)
+}
+  1d:   c9                      leave
+  1e:   c3                      ret    
+</code></pre>
+<p>这里注意，不能单独使用-j 或者--section，例如<code>objdump -j .text mytest.o 是不会运行成功的</code>。另外-S 命令对于包含调试信息的目标文件，显示的效果比较好，如果编译时没有指定 g++的-g 选项，那么目标文件就不包含调试信息，那么显示效果就差多了。<br>
+反汇编出 mytest.o 的源代码：</p>
+<pre><code class="language-Shell">[root@localhost test]# objdump -S mytest.o mytest.o:     file format elf32-i386Disassembly of section .text:00000000 &lt;_Z9printTestv&gt;:void printTest()   0:   55                      push   %ebp   1:   89 e5                   mov    %esp,%ebp   3:   83 ec 10                sub    $0x10,%esp{        char a;        a = 'a';   6:   c6 45 ff 61             movb   $0x61,0xffffffff(%ebp)}   a:   c9                      leave   b:   c3                      ret0000000c &lt;_Z10printTest2v&gt;:void printTest2()   c:   55                      push   %ebp   d:   89 e5                   mov    %esp,%ebp   f:   83 ec 10                sub    $0x10,%esp{       int a = 2;  12:   c7 45 fc 02 00 00 00    movl   $0x2,0xfffffffc(%ebp)        a+=2;  19:   83 45 fc 02             addl   $0x2,0xfffffffc(%ebp)}  1d:   c9                      leave  1e:   c3                      ret    
+</code></pre>
+<p>这里，尤其当编译的时候指定了-g 这种调试参数时，反汇编的效果比较明显。隐含了-d 参数。<br>
+显示文件的符号表入口：</p>
+<pre><code class="language-Shell">[root@localhost test]# objdump -t mytest.o 
+mytest.o:     file format elf32-i386
+
+SYMBOL TABLE:
+00000000 l    df *ABS*  00000000 mytest.cpp
+00000000 l    d  .text  00000000 .text
+00000000 l    d  .data  00000000 .data
+00000000 l    d  .bss   00000000 .bss
+00000000 l    d  .debug_abbrev  00000000 .debug_abbrev
+00000000 l    d  .debug_info    00000000 .debug_info
+00000000 l    d  .debug_line    00000000 .debug_line
+00000000 l    d  .debug_frame   00000000 .debug_frame
+00000000 l    d  .debug_loc     00000000 .debug_loc
+00000000 l    d  .debug_pubnames        00000000 .debug_pubnames
+00000000 l    d  .debug_aranges 00000000 .debug_aranges
+00000000 l    d  .note.GNU-stack        00000000 .note.GNU-stack
+00000000 l    d  .comment       00000000 .comment
+00000000 g     F .text  0000000c _Z9printTestv
+00000000         *UND*  00000000 __gxx_personality_v0
+0000000c g     F .text  00000013 _Z10printTest2v 
+</code></pre>
+<p>这里，输出的信息类似<code>nm -s</code>命令的输出，相比较之下，nm 命令的输出如下：</p>
+<pre><code class="language-Shell">[root@localhost test]# nm -s mytest.o 
+0000000c T _Z10printTest2v
+00000000 T _Z9printTestv
+         U __gxx_personality_v0 
+</code></pre>
+<p>显示文件的符号表入口，将底层符号解码并表示成用户级别：</p>
+<pre><code class="language-Shell">[root@localhost test]# objdump -t -C mytest.o 
+mytest.o:     file format elf32-i386
+SYMBOL TABLE:
+00000000 l    df *ABS*  00000000 mytest.cpp
+00000000 l    d  .text  00000000 .text
+00000000 l    d  .data  00000000 .data
+00000000 l    d  .bss   00000000 .bss
+00000000 l    d  .debug_abbrev  00000000 .debug_abbrev
+00000000 l    d  .debug_info    00000000 .debug_info
+00000000 l    d  .debug_line    00000000 .debug_line
+00000000 l    d  .debug_frame   00000000 .debug_frame
+00000000 l    d  .debug_loc     00000000 .debug_loc
+00000000 l    d  .debug_pubnames        00000000 .debug_pubnames
+00000000 l    d  .debug_aranges 00000000 .debug_aranges
+00000000 l    d  .note.GNU-stack        00000000 .note.GNU-stack
+00000000 l    d  .comment       00000000 .comment
+00000000 g     F .text  0000000c printTest()
+00000000         *UND*  00000000 __gxx_personality_v0
+0000000c g     F .text  00000013 printTest2() 
+</code></pre>
+<p>这里，和没-C 相比，printTest2 函数可读性增加了。<br>
+反汇编目标文件的特定机器码段：</p>
+<pre><code class="language-Shell">[root@localhost test]# objdump -d mytest.o 
+mytest.o:     file format elf32-i386
+Disassembly of section .text:
+
+00000000 &lt;_Z9printTestv&gt;:
+   0:   55                      push   %ebp
+   1:   89 e5                   mov    %esp,%ebp
+   3:   83 ec 10                sub    $0x10,%esp
+   6:   c6 45 ff 61             movb   $0x61,0xffffffff(%ebp)
+   a:   c9                      leave
+  b:   c3                      ret
+
+0000000c &lt;_Z10printTest2v&gt;:
+   c:   55                      push   %ebp
+   d:   89 e5                   mov    %esp,%ebp
+   f:   83 ec 10                sub    $0x10,%esp
+  12:   c7 45 fc 02 00 00 00    movl   $0x2,0xfffffffc(%ebp)
+  19:   83 45 fc 02             addl   $0x2,0xfffffffc(%ebp)
+  1d:   c9                      leave
+  1e:   c3                      ret    
+</code></pre>
+<p>这里，对 text 段的内容进行了反汇编。<br>
+反汇编特定段，并将汇编代码对应的文件名称和行号对应上：</p>
+<pre><code class="language-Shell">[root@localhost test]# objdump -d -l mytest.o
+mytest.o:     file format elf32-i386
+Disassembly of section .text:
+
+00000000 &lt;_Z9printTestv&gt;:
+_Z9printTestv():
+/root/test/04_libraryTest/mytest.cpp:1
+   0:   55                      push   %ebp
+   1:   89 e5                   mov    %esp,%ebp
+   3:   83 ec 10                sub    $0x10,%esp
+/root/test/04_libraryTest/mytest.cpp:4
+   6:   c6 45 ff 61             movb   $0x61,0xffffffff(%ebp)
+/root/test/04_libraryTest/mytest.cpp:5
+   a:   c9                      leave
+   b:   c3                      ret
+
+0000000c &lt;_Z10printTest2v&gt;:
+_Z10printTest2v():
+/root/test/04_libraryTest/mytest.cpp:6
+   c:   55                      push   %ebp
+   d:   89 e5                   mov    %esp,%ebp
+   f:   83 ec 10                sub    $0x10,%esp
+/root/test/04_libraryTest/mytest.cpp:8
+  12:   c7 45 fc 02 00 00 00    movl   $0x2,0xfffffffc(%ebp)
+/root/test/04_libraryTest/mytest.cpp:9
+  19:   83 45 fc 02             addl   $0x2,0xfffffffc(%ebp)
+/root/test/04_libraryTest/mytest.cpp:10
+  1d:   c9                      leave
+  1e:   c3                      ret  
+</code></pre>
+<p>这里，项&quot;-d&quot;从 objfile 中反汇编那些特定指令机器码的 section，而使用&quot;-l&quot;指定用文件名和行号标注相应的目标代码，仅仅和-d、-D 或者-r 一起使用，使用-ld 和使用-d 的区别不是很大，在源码级调试的时候有用，要求编译时使用了-g 之类的调试编译选项。<br>
+显示目标文件各个段的头部摘要信息：</p>
+<pre><code class="language-Shell">[root@localhost test]# objdump -h mytest.o 
+mytest.o:     file format elf32-i386
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         0000001f  00000000  00000000  00000034  2**2
+                  CONTENTS, ALLOC, LOAD, readonly, CODE
+  1 .data         00000000  00000000  00000000  00000054  2**2
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000000  00000000  00000000  00000054  2**2
+                  ALLOC
+  3 .debug_abbrev 00000046  00000000  00000000  00000054  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_info   000000ed  00000000  00000000  0000009a  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+  5 .debug_line   0000003e  00000000  00000000  00000187  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+  6 .debug_frame  00000044  00000000  00000000  000001c8  2**2
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+  7 .debug_loc    00000058  00000000  00000000  0000020c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_pubnames 0000002f  00000000  00000000  00000264  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+  9 .debug_aranges 00000020  00000000  00000000  00000293  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+10 .comment      0000002e  00000000  00000000  000002b3  2**0
+                  CONTENTS, READONLY
+11 .note.GNU-stack 00000000  00000000  00000000  000002e1  2**0
+                  CONTENTS, READONLY 
+</code></pre>
+<p>这里，更多的内容参见<code>man objdump</code>中的这个选项。</p>
+
+          </div>
+        </article>
+        <div class="next-post">
+          <div class="next">下一篇</div>
+          <a href="https://dev-coco.github.io/post/md5sum/">
+            <h3 class="post-title">md5sum</h3>
+          </a>
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="gitalk-container"></div>
+      </div>
+      <!-- middle -->
+      <div class="main-container-middle"></div>
+      <!-- right -->
+      <div id="sidebar" class="main-container-right">
+      <!-- toc -->
+      <div class="toc-card i-card ">
+        <div class="toc-title i-card-title">目录</div>
+          <div class="toc-content">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E8%A1%A5%E5%85%85%E8%AF%B4%E6%98%8E">补充说明</a></li>
+<li><a href="#%E9%80%89%E9%A1%B9">选项</a></li>
+<li><a href="#%E5%AE%9E%E4%BE%8B">实例</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+          <script>
+            function locateCatelogList() {
+              /*获取文章目录集合,可通过:header过滤器*/
+              var alis = $('.post-content :header');
+              /*获取侧边栏目录列表集合**/
+              var sidebar_alis = $('.markdownIt-TOC a');
+              /*获取滚动条到顶部的距离*/
+              var scroll_height = $(window).scrollTop();
+              for (var i = 0; i < alis.length; i++) {
+                /*获取锚点集合中的元素分别到顶点的距离*/
+                var a_height = $(alis[i]).offset().top;
+                if (a_height < scroll_height) {
+                  /*高亮显示*/
+                  sidebar_alis.removeClass('on');
+                  $(sidebar_alis[i]).addClass('on');
+                }
+              }
+            }
+            $(function() {
+              /*绑定滚动事件 */
+              $(window).bind('scroll', locateCatelogList);
+              });
+          </script>
+        </div>
+      <div class="notice-card i-card ">
+        <div class="notice-title i-card-title">公告</div>
+        <div class="notice-content">界面全新改版</div>
+      </div>
+      <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
+        <div class="notice-content">
+          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/excel/">Excel</a>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="site-footer">
+    <img style="vertical-align:middle;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&count_bg=%2310C1F9&title_bg=%23555555&icon=html5.svg&icon_color=%23E7E7E7&title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&edge_flat=false"> | <span>Copyright © 2020-2022 Dev-Coco - All Rights Reserved.</span> | <a class="rss" href="https://dev-coco.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+  <script>
+    $('#sidebar').stickySidebar({
+    topSpacing: 80,
+    // bottomSpacing: 60
+    });
+  </script>
+  
+</body>
+</html>

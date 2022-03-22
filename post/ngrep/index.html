@@ -1,0 +1,215 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ngrep | Dev-Coco</title>
+  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1647958467779">
+  <link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
+  <script src="https://dev-coco.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
+<script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+  <div class="main">
+    <div class="header">
+      <div class="nav">
+        <div class="logo">
+          <a href="https://dev-coco.github.io">
+            <img class="avatar" src="https://dev-coco.github.io/images/avatar.png?v=1647958467779" alt="">
+          </a>
+          <div class="site-title">
+            <h1>Dev-Coco</h1>
+          </div>
+        </div>
+        <span class="menu-btn fa fa-align-justify"></span>
+        <div class="menu-container">
+          <ul>
+            <li>
+              <a href="/" class="menu">首页</a>
+            </li>
+            <li>
+              <a href="/Featured-Software.html" class="menu">软件</a>
+            </li>
+            <li>
+              <a href="/Online-Tools" class="menu">在线工具</a>
+            </li>
+            <li>
+              <a href="/post/Linux-Command" class="menu">Linux命令</a>
+            </li>
+            <li>
+              <a href="/Excel" class="menu">Excel教程</a>
+            </li>
+            <li>
+              <a href="/post/Terms-and-Privacy" class="menu">隐私与条款</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script>
+      $(document).ready(function() {
+        $(".menu-btn").click(function() {
+          $(".menu-container").slideToggle();
+        });
+        $(window).resize(function() {
+          if (window.matchMedia('(min-width: 960px)').matches) {
+            $(".menu-container").css('display', 'block')
+          } else {
+            $(".menu-container").css('display', 'none')
+          }
+        });
+      });
+    </script>
+    <div id="main-content" class="post-detail main-container">
+      <!-- left -->
+      <div id="content" class="main-container-left">
+        <article class="post i-card">
+        <h2 class="post-title">ngrep</h2>
+        <div class="post-info">
+          <time class="post-time">2022-02-03 / 3 min read</time>
+            <a href="https://dev-coco.github.io/tag/linux-command/" class="post-tag i-tag i-tag-other_1">#Linux命令</a>
+        </div>
+          <div class="post-content">
+            <p>方便的数据包匹配和显示工具。</p>
+<!-- more -->
+<h2 id="补充说明">补充说明</h2>
+<p>ngrep 命令是 grep 命令的网络版，他力求更多的 grep 特征，用于搜寻指定的数据包。正由于安装 ngrep 需用到 libpcap 库， 所以支持大量的操作系统和网络协议。能识别 TCP、UDP 和 ICMP 包，理解 bpf 的过滤机制。</p>
+<h3 id="安装">安装</h3>
+<p>ngrep 命令的下载地址：<a href="http://ngrep.sourceforge.net/" target="_blank">http://ngrep.sourceforge.net/</a>，libpcap 下载地址：<a href="http://www.tcpdump.org/" target="_blank">http://www.tcpdump.org/</a>。先用<code>yum install libpcap</code>完全安装 libpcap，注意有时候用 libpcap 安装包安装的不完整会影响 ngrep 的使用。<br>
+如果 yum 无法安装就用以下步骤安装 libpcap：</p>
+<pre><code class="language-Shell">wget http://www.tcpdump.org/release/libpcap-1.3.0.tar.gz
+tar -zxf libpcap-1.3.0.tar.gz
+cd libpcap-1.3.0
+./configure
+make &amp;&amp; make install
+</code></pre>
+<p>ngrep 的安装就是 configure/make/make install 三部曲。<br>
+注：configure 时是遇到 please wipe out all unused pcap installations，添加以下选项：</p>
+<pre><code class="language-Shell">./configure --with-pcap-includes=/usr/local/include/pcap
+</code></pre>
+<p>在安装后输入 ngrep 来验证下安装是否成功。</p>
+<h2 id="语法">语法</h2>
+<pre><code class="language-Shell">ngrep &lt;-LhNXViwqpevxlDtTRM&gt; &lt;-IO pcap_dump&gt; &lt;-n num&gt; &lt;-d dev&gt; &lt;-A num&gt;
+&lt;-s snaplen&gt; &lt;-S limitlen&gt; &lt;-w normal|byline|single|none&gt; &lt;-c cols&gt;
+&lt;-P char&gt; &lt;-F file&gt; &lt;match expression&gt; &lt;bpf filter&gt;
+</code></pre>
+<h2 id="选项">选项</h2>
+<pre><code class="language-Shell">-e # 显示空数据包
+-i # 忽略大小写
+-v # 反转匹配
+-R # don't do privilege revocation logic
+-x # 以16进制格式显示
+-X # 以16进制格式匹配
+-w # 整字匹配
+-p # 不使用混杂模式
+-l # make stdout line buffered
+-D # replay pcap_dumps with their recorded time intervals
+-t # 在每个匹配的包之前显示时间戳
+-T # 显示上一个匹配的数据包之间的时间间隔
+-M # 仅进行单行匹配
+-I # 从文件中读取数据进行匹配
+-O # 将匹配的数据保存到文件
+-n # 仅捕获指定数目的数据包进行查看
+-A # 匹配到数据包后dump随后的指定数目的数据包
+-s # set the bpf caplen
+-S # set the limitlen on matched packets
+-W # 设置显示格式byline将解析包中的换行符
+-c # 强制显示列的宽度
+-P # set the non-printable display char to what is specified
+-F # 使用文件中定义的bpf(Berkeley Packet Filter)
+-N # 显示由IANA定义的子协议号
+-d # 使用哪个网卡，可以用-L选项查询
+-L # 查询网卡接口
+</code></pre>
+
+          </div>
+        </article>
+        <div class="next-post">
+          <div class="next">下一篇</div>
+          <a href="https://dev-coco.github.io/post/unset/">
+            <h3 class="post-title">unset</h3>
+          </a>
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="gitalk-container"></div>
+      </div>
+      <!-- middle -->
+      <div class="main-container-middle"></div>
+      <!-- right -->
+      <div id="sidebar" class="main-container-right">
+      <!-- toc -->
+      <div class="toc-card i-card ">
+        <div class="toc-title i-card-title">目录</div>
+          <div class="toc-content">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E8%A1%A5%E5%85%85%E8%AF%B4%E6%98%8E">补充说明</a>
+<ul>
+<li><a href="#%E5%AE%89%E8%A3%85">安装</a></li>
+</ul>
+</li>
+<li><a href="#%E8%AF%AD%E6%B3%95">语法</a></li>
+<li><a href="#%E9%80%89%E9%A1%B9">选项</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+          <script>
+            function locateCatelogList() {
+              /*获取文章目录集合,可通过:header过滤器*/
+              var alis = $('.post-content :header');
+              /*获取侧边栏目录列表集合**/
+              var sidebar_alis = $('.markdownIt-TOC a');
+              /*获取滚动条到顶部的距离*/
+              var scroll_height = $(window).scrollTop();
+              for (var i = 0; i < alis.length; i++) {
+                /*获取锚点集合中的元素分别到顶点的距离*/
+                var a_height = $(alis[i]).offset().top;
+                if (a_height < scroll_height) {
+                  /*高亮显示*/
+                  sidebar_alis.removeClass('on');
+                  $(sidebar_alis[i]).addClass('on');
+                }
+              }
+            }
+            $(function() {
+              /*绑定滚动事件 */
+              $(window).bind('scroll', locateCatelogList);
+              });
+          </script>
+        </div>
+      <div class="notice-card i-card ">
+        <div class="notice-title i-card-title">公告</div>
+        <div class="notice-content">界面全新改版</div>
+      </div>
+      <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
+        <div class="notice-content">
+          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/excel/">Excel</a>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="site-footer">
+    <img style="vertical-align:middle;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&count_bg=%2310C1F9&title_bg=%23555555&icon=html5.svg&icon_color=%23E7E7E7&title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&edge_flat=false"> | <span>Copyright © 2020-2022 Dev-Coco - All Rights Reserved.</span> | <a class="rss" href="https://dev-coco.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+  <script>
+    $('#sidebar').stickySidebar({
+    topSpacing: 80,
+    // bottomSpacing: 60
+    });
+  </script>
+  
+</body>
+</html>

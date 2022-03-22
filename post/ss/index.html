@@ -1,0 +1,324 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ss | Dev-Coco</title>
+  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1647958467779">
+  <link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
+  <script src="https://dev-coco.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
+<script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+  <div class="main">
+    <div class="header">
+      <div class="nav">
+        <div class="logo">
+          <a href="https://dev-coco.github.io">
+            <img class="avatar" src="https://dev-coco.github.io/images/avatar.png?v=1647958467779" alt="">
+          </a>
+          <div class="site-title">
+            <h1>Dev-Coco</h1>
+          </div>
+        </div>
+        <span class="menu-btn fa fa-align-justify"></span>
+        <div class="menu-container">
+          <ul>
+            <li>
+              <a href="/" class="menu">首页</a>
+            </li>
+            <li>
+              <a href="/Featured-Software.html" class="menu">软件</a>
+            </li>
+            <li>
+              <a href="/Online-Tools" class="menu">在线工具</a>
+            </li>
+            <li>
+              <a href="/post/Linux-Command" class="menu">Linux命令</a>
+            </li>
+            <li>
+              <a href="/Excel" class="menu">Excel教程</a>
+            </li>
+            <li>
+              <a href="/post/Terms-and-Privacy" class="menu">隐私与条款</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script>
+      $(document).ready(function() {
+        $(".menu-btn").click(function() {
+          $(".menu-container").slideToggle();
+        });
+        $(window).resize(function() {
+          if (window.matchMedia('(min-width: 960px)').matches) {
+            $(".menu-container").css('display', 'block')
+          } else {
+            $(".menu-container").css('display', 'none')
+          }
+        });
+      });
+    </script>
+    <div id="main-content" class="post-detail main-container">
+      <!-- left -->
+      <div id="content" class="main-container-left">
+        <article class="post i-card">
+        <h2 class="post-title">ss</h2>
+        <div class="post-info">
+          <time class="post-time">2022-02-03 / 8 min read</time>
+            <a href="https://dev-coco.github.io/tag/linux-command/" class="post-tag i-tag i-tag-primary">#Linux命令</a>
+        </div>
+          <div class="post-content">
+            <p>比 netstat 好用的 socket 统计信息，iproute2 包附带的另一个工具，允许你查询 socket 的有关统计信息。</p>
+<!-- more -->
+<h2 id="补充说明">补充说明</h2>
+<p>ss 命令用来显示处于活动状态的套接字信息。ss 命令可以用来获取 socket 统计信息，它可以显示和 netstat 类似的内容。但 ss 的优势在于它能够显示更多更详细的有关 TCP 和连接状态的信息，而且比 netstat 更快速更高效。</p>
+<p>当服务器的 socket 连接数量变得非常大时，无论是使用 netstat 命令还是直接<code>cat /proc/net/tcp</code>，执行速度都会很慢。可能你不会有切身的感受，但请相信我，当服务器维持的连接达到上万个的时候，使用 netstat 等于浪费 生命，而用 ss 才是节省时间。</p>
+<p>天下武功唯快不破。ss 快的秘诀在于，它利用到了 TCP 协议栈中 tcp_diag。tcp_diag 是一个用于分析统计的模块，可以获得 Linux 内核中第一手的信息，这就确保了 ss 的快捷高效。当然，如果你的系统中没有 tcp_diag，ss 也可以正常运行，只是效率会变得稍慢。</p>
+<h2 id="语法">语法</h2>
+<pre><code class="language-Shell">ss [参数 ]
+ss [参数 ] [过滤 ]
+</code></pre>
+<h2 id="选项">选项</h2>
+<pre><code class="language-Shell">-h, --help      帮助信息
+-V, --version   程序版本信息
+-n, --numeric   不解析服务名称
+-r, --resolve   解析主机名
+-a, --all       显示所有套接字（sockets）
+-l, --listening 显示监听状态的套接字（sockets）
+-o, --options   显示计时器信息
+-e, --extended  显示详细的套接字（sockets）信息
+-m, --memory    显示套接字（socket）的内存使用情况
+-p, --processes 显示使用套接字（socket）的进程
+-i, --info      显示 TCP 内部信息
+-s, --summary   显示套接字（socket）使用概况
+-4, --ipv4      仅显示 IPv4 的套接字（sockets）
+-6, --ipv6      仅显示 IPv6 的套接字（sockets）
+-0, --packet    显示 PACKET 套接字（socket）
+-t, --tcp       仅显示 TCP 套接字（sockets）
+-u, --udp       仅显示 UCP 套接字（sockets）
+-d, --dccp      仅显示 DCCP 套接字（sockets）
+-w, --raw       仅显示 RAW 套接字（sockets）
+-x, --unix      仅显示 Unix 套接字（sockets）
+-f, --family=FAMILY  显示 FAMILY 类型的套接字（sockets），FAMILY 可选，支持  unix, inet, inet6, link, netlink
+-A, --query=QUERY, --socket=QUERY
+      QUERY := {all|inet|tcp|udp|raw|unix|packet|netlink}[,QUERY]
+-D, --diag=FILE     将原始 TCP 套接字（sockets）信息转储到文件
+ -F, --filter=FILE  从文件中都去过滤器信息
+       FILTER := [ state TCP-STATE ] [ EXPRESSION ]
+</code></pre>
+<h2 id="实例">实例</h2>
+<pre><code class="language-Shell">ss -t -a    # 显示 TCP 连接
+ss -s       # 显示 Sockets 摘要
+ss -l       # 列出所有打开的网络连接端口
+ss -pl      # 查看进程使用的 socket
+ss -lp | grep 3306  # 找出打开套接字/端口应用程序
+ss -u -a    显示所有 UDP Sockets
+ss -o state established '( dport = :smtp or sport = :smtp )' # 显示所有状态为 established 的 SMTP 连接
+ss -o state established '( dport = :http or sport = :http )' # 显示所有状态为 Established 的 HTTP 连接
+ss -o state fin-wait-1 '( sport = :http or sport = :https )' dst 193.233.7/24  # 列举出处于 FIN-WAIT-1 状态的源端口为 80 或者 443，目标网络为 193.233.7/24 所有 tcp 套接字
+
+# ss 和 netstat 效率对比
+time netstat -at
+time ss
+
+# 匹配远程地址和端口号
+# ss dst ADDRESS_PATTERN
+ss dst 192.168.1.5
+ss dst 192.168.119.113:http
+ss dst 192.168.119.113:smtp
+ss dst 192.168.119.113:443
+
+# 匹配本地地址和端口号
+# ss src ADDRESS_PATTERN
+ss src 192.168.119.103
+ss src 192.168.119.103:http
+ss src 192.168.119.103:80
+ss src 192.168.119.103:smtp
+ss src 192.168.119.103:25
+</code></pre>
+<p>将本地或者远程端口和一个数比较</p>
+<pre><code class="language-Shell"># ss dport OP PORT 远程端口和一个数比较；
+
+# ss sport OP PORT 本地端口和一个数比较
+# OP 可以代表以下任意一个:
+# &lt;= or le : 小于或等于端口号
+# &gt;= or ge : 大于或等于端口号
+# == or eq : 等于端口号
+# != or ne : 不等于端口号
+# &lt; or gt : 小于端口号
+# &gt; or lt : 大于端口号
+ss  sport = :http
+ss  dport = :http
+ss  dport \&gt; :1024
+ss  sport \&gt; :1024
+ss sport \&lt; :32000
+ss  sport eq :22
+ss  dport != :22
+ss  state connected sport = :http
+ss \( sport = :http or sport = :https \)
+ss -o state fin-wait-1 \( sport = :http or sport = :https \) dst 192.168.1/24
+</code></pre>
+<p>用 TCP 状态过滤 Sockets</p>
+<pre><code class="language-Shell">ss -4 state closing
+# ss -4 state FILTER-NAME-HERE
+# ss -6 state FILTER-NAME-HERE
+# FILTER-NAME-HERE 可以代表以下任何一个：
+# established、 syn-sent、 syn-recv、 fin-wait-1、 fin-wait-2、 time-wait、 closed、 close-wait、 last-ack、 listen、 closing、
+# all : 所有以上状态
+# connected : 除了 listen and closed 的所有状态
+# synchronized :所有已连接的状态除了 syn-sent
+# bucket : 显示状态为 maintained as minisockets,如：time-wait 和 syn-recv.
+# big : 和 bucket 相反.
+</code></pre>
+<p>显示 ICP 连接</p>
+<pre><code class="language-Shell">[root@localhost ~]# ss -t -a
+State       Recv-Q Send-Q                            Local Address:Port                                Peer Address:Port
+LISTEN      0      0                                             *:3306                                           *:*
+LISTEN      0      0                                             *:http                                           *:*
+LISTEN      0      0                                             *:ssh                                            *:*
+LISTEN      0      0                                     127.0.0.1:smtp                                           *:*
+ESTAB       0      0                                112.124.15.130:42071                              42.156.166.25:http
+ESTAB       0      0                                112.124.15.130:ssh                              121.229.196.235:33398
+</code></pre>
+<p>显示 Sockets 摘要</p>
+<pre><code class="language-Shell">[root@localhost ~]# ss -s
+Total: 172 (kernel 189)
+TCP:   10 (estab 2, closed 4, orphaned 0, synrecv 0, timewait 0/0), ports 5
+
+Transport Total     ip        IPv6
+*         189       -         -
+RAW       0         0         0
+UDP       5         5         0
+TCP       6         6         0
+INET      11        11        0
+FRAG      0         0         0
+</code></pre>
+<p>列出当前的 established, closed, orphaned and waiting TCP sockets</p>
+<p>列出所有打开的网络连接端口</p>
+<pre><code class="language-Shell">[root@localhost ~]# ss -l
+Recv-Q Send-Q                                 Local Address:Port                                     Peer Address:Port
+0      0                                                  *:3306                                                *:*
+0      0                                                  *:http                                                *:*
+0      0                                                  *:ssh                                                 *:*
+0      0                                          127.0.0.1:smtp                                                *:*
+</code></pre>
+<p>查看进程使用的 socket</p>
+<pre><code class="language-Shell">[root@localhost ~]# ss -pl
+Recv-Q Send-Q                                          Local Address:Port                                              Peer Address:Port
+0      0                                                           *:3306                                                         *:*        users:((&quot;mysqld&quot;,1718,10))
+0      0                                                           *:http                                                         *:*        users:((&quot;nginx&quot;,13312,5),(&quot;nginx&quot;,13333,5))
+0      0                                                           *:ssh                                                          *:*        users:((&quot;sshd&quot;,1379,3))
+0      0                                                   127.0.0.1:smtp                                                         *:*        us
+</code></pre>
+<p>找出打开套接字/端口应用程序</p>
+<pre><code class="language-Shell">[root@localhost ~]# ss -pl | grep 3306
+0      0                            *:3306                          *:*        users:((&quot;mysqld&quot;,1718,10))
+</code></pre>
+<p>显示所有 UDP Sockets</p>
+<pre><code class="language-Shell">[root@localhost ~]# ss -u -a
+State       Recv-Q Send-Q                                     Local Address:Port                                         Peer Address:Port
+UNCONN      0      0                                                      *:syslog                                                  *:*
+UNCONN      0      0                                         112.124.15.130:ntp                                                     *:*
+UNCONN      0      0                                            10.160.7.81:ntp                                                     *:*
+UNCONN      0      0                                              127.0.0.1:ntp                                                     *:*
+UNCONN      0      0                                                      *:ntp                                                     *:*
+</code></pre>
+<p>出所有端口为 22（ssh）的连接</p>
+<pre><code class="language-Shell">ss state all sport = :ssh
+
+Netid State      Recv-Q Send-Q     Local Address:Port                      Peer Address:Port
+tcp   LISTEN     0      128                    *:ssh                                  *:*
+tcp   ESTAB      0      0          192.168.0.136:ssh                      192.168.0.102:46540
+tcp   LISTEN     0      128                   :::ssh                                 :::*
+</code></pre>
+
+          </div>
+        </article>
+        <div class="next-post">
+          <div class="next">下一篇</div>
+          <a href="https://dev-coco.github.io/post/sed/">
+            <h3 class="post-title">sed</h3>
+          </a>
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="gitalk-container"></div>
+      </div>
+      <!-- middle -->
+      <div class="main-container-middle"></div>
+      <!-- right -->
+      <div id="sidebar" class="main-container-right">
+      <!-- toc -->
+      <div class="toc-card i-card ">
+        <div class="toc-title i-card-title">目录</div>
+          <div class="toc-content">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E8%A1%A5%E5%85%85%E8%AF%B4%E6%98%8E">补充说明</a></li>
+<li><a href="#%E8%AF%AD%E6%B3%95">语法</a></li>
+<li><a href="#%E9%80%89%E9%A1%B9">选项</a></li>
+<li><a href="#%E5%AE%9E%E4%BE%8B">实例</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+          <script>
+            function locateCatelogList() {
+              /*获取文章目录集合,可通过:header过滤器*/
+              var alis = $('.post-content :header');
+              /*获取侧边栏目录列表集合**/
+              var sidebar_alis = $('.markdownIt-TOC a');
+              /*获取滚动条到顶部的距离*/
+              var scroll_height = $(window).scrollTop();
+              for (var i = 0; i < alis.length; i++) {
+                /*获取锚点集合中的元素分别到顶点的距离*/
+                var a_height = $(alis[i]).offset().top;
+                if (a_height < scroll_height) {
+                  /*高亮显示*/
+                  sidebar_alis.removeClass('on');
+                  $(sidebar_alis[i]).addClass('on');
+                }
+              }
+            }
+            $(function() {
+              /*绑定滚动事件 */
+              $(window).bind('scroll', locateCatelogList);
+              });
+          </script>
+        </div>
+      <div class="notice-card i-card ">
+        <div class="notice-title i-card-title">公告</div>
+        <div class="notice-content">界面全新改版</div>
+      </div>
+      <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
+        <div class="notice-content">
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/excel/">Excel</a>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="site-footer">
+    <img style="vertical-align:middle;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&count_bg=%2310C1F9&title_bg=%23555555&icon=html5.svg&icon_color=%23E7E7E7&title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&edge_flat=false"> | <span>Copyright © 2020-2022 Dev-Coco - All Rights Reserved.</span> | <a class="rss" href="https://dev-coco.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+  <script>
+    $('#sidebar').stickySidebar({
+    topSpacing: 80,
+    // bottomSpacing: 60
+    });
+  </script>
+  
+</body>
+</html>

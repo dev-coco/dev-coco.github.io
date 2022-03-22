@@ -1,0 +1,235 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>blkid | Dev-Coco</title>
+  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1647958467779">
+  <link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
+  <script src="https://dev-coco.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
+<script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+  <div class="main">
+    <div class="header">
+      <div class="nav">
+        <div class="logo">
+          <a href="https://dev-coco.github.io">
+            <img class="avatar" src="https://dev-coco.github.io/images/avatar.png?v=1647958467779" alt="">
+          </a>
+          <div class="site-title">
+            <h1>Dev-Coco</h1>
+          </div>
+        </div>
+        <span class="menu-btn fa fa-align-justify"></span>
+        <div class="menu-container">
+          <ul>
+            <li>
+              <a href="/" class="menu">首页</a>
+            </li>
+            <li>
+              <a href="/Featured-Software.html" class="menu">软件</a>
+            </li>
+            <li>
+              <a href="/Online-Tools" class="menu">在线工具</a>
+            </li>
+            <li>
+              <a href="/post/Linux-Command" class="menu">Linux命令</a>
+            </li>
+            <li>
+              <a href="/Excel" class="menu">Excel教程</a>
+            </li>
+            <li>
+              <a href="/post/Terms-and-Privacy" class="menu">隐私与条款</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script>
+      $(document).ready(function() {
+        $(".menu-btn").click(function() {
+          $(".menu-container").slideToggle();
+        });
+        $(window).resize(function() {
+          if (window.matchMedia('(min-width: 960px)').matches) {
+            $(".menu-container").css('display', 'block')
+          } else {
+            $(".menu-container").css('display', 'none')
+          }
+        });
+      });
+    </script>
+    <div id="main-content" class="post-detail main-container">
+      <!-- left -->
+      <div id="content" class="main-container-left">
+        <article class="post i-card">
+        <h2 class="post-title">blkid</h2>
+        <div class="post-info">
+          <time class="post-time">2022-01-31 / 3 min read</time>
+            <a href="https://dev-coco.github.io/tag/linux-command/" class="post-tag i-tag i-tag-other_2">#Linux命令</a>
+        </div>
+          <div class="post-content">
+            <p>查看块设备的文件系统类型、LABEL、UUID 等信息。</p>
+<!-- more -->
+<h2 id="补充说明">补充说明</h2>
+<p>在 Linux 下可以使用 blkid 命令 对查询设备上所采用文件系统类型进行查询。blkid 主要用来对系统的块设备（包括交换分区）所使用的文件系统类型、LABEL、UUID 等信息进行查询。要使用这个命令必须安装 e2fsprogs 软件包。</p>
+<h2 id="语法">语法</h2>
+<pre><code class="language-Shell">blkid -L | -U
+blkid [-c ] [-ghlLv] [-o] [-s ][-t ] -[w ] [ ...]
+blkid -p [-s ] [-O ] [-S ][-o] ...
+blkid -i [-s ] [-o] ...
+</code></pre>
+<h2 id="选项">选项</h2>
+<pre><code class="language-Shell">-c &lt;file&gt;   # 指定cache文件(default: /etc/blkid.tab, /dev/null = none)
+-d          # don't encode non-printing characters
+-h          # 显示帮助信息
+-g          # garbage collect the blkid cache
+-o &lt;format&gt; # 指定输出格式
+-k          # list all known filesystems/RAIDs and exit
+-s &lt;tag&gt;    # 显示指定信息，默认显示所有信息
+-t &lt;token&gt;  # find device with a specific token (NAME=value pair)
+-l          # look up only first device with token specified by -t
+-L &lt;label&gt;  # convert LABEL to device name
+-U &lt;uuid&gt;   # convert UUID to device name
+-v          # 显示版本信息
+-w &lt;file&gt;   # write cache to different file (/dev/null = no write)
+&lt;dev&gt;       # specify device(s) to probe (default: all devices)
+Low-level probing options:
+-p          # low-level superblocks probing (bypass cache)
+-i          # gather information about I/O limits
+-S &lt;size&gt;   # overwrite device size
+-O &lt;offset&gt; # probe at the given offset
+-u &lt;list&gt;   # filter by &quot;usage&quot; (e.g. -u filesystem,raid)
+-n &lt;list&gt;   # filter by filesystem type (e.g. -n vfat,ext3)
+</code></pre>
+<h2 id="实例">实例</h2>
+<ol>
+<li>列出当前系统中所有已挂载文件系统的类型：</li>
+</ol>
+<pre><code class="language-Shell">sudo blkid
+</code></pre>
+<ol start="2">
+<li>显示指定设备 UUID：</li>
+</ol>
+<pre><code class="language-Shell">sudo blkid -s UUID /dev/sda5
+</code></pre>
+<ol start="3">
+<li>显示所有设备 UUID：</li>
+</ol>
+<pre><code class="language-Shell">sudo blkid -s UUID
+</code></pre>
+<ol start="4">
+<li>显示指定设备 LABEL：</li>
+</ol>
+<pre><code class="language-Shell">sudo blkid -s LABEL /dev/sda5
+</code></pre>
+<ol start="5">
+<li>显示所有设备 LABEL：</li>
+</ol>
+<pre><code class="language-Shell">sudo blkid -s LABEL
+</code></pre>
+<ol start="6">
+<li>显示所有设备文件系统：</li>
+</ol>
+<pre><code class="language-Shell">sudo blkid -s TYPE
+</code></pre>
+<ol start="7">
+<li>显示所有设备：</li>
+</ol>
+<pre><code class="language-Shell">sudo blkid -o device
+</code></pre>
+<ol start="8">
+<li>以列表方式查看详细信息：</li>
+</ol>
+<pre><code class="language-Shell">sudo blkid -o list
+</code></pre>
+
+          </div>
+        </article>
+        <div class="next-post">
+          <div class="next">下一篇</div>
+          <a href="https://dev-coco.github.io/post/bind/">
+            <h3 class="post-title">bind</h3>
+          </a>
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="gitalk-container"></div>
+      </div>
+      <!-- middle -->
+      <div class="main-container-middle"></div>
+      <!-- right -->
+      <div id="sidebar" class="main-container-right">
+      <!-- toc -->
+      <div class="toc-card i-card ">
+        <div class="toc-title i-card-title">目录</div>
+          <div class="toc-content">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E8%A1%A5%E5%85%85%E8%AF%B4%E6%98%8E">补充说明</a></li>
+<li><a href="#%E8%AF%AD%E6%B3%95">语法</a></li>
+<li><a href="#%E9%80%89%E9%A1%B9">选项</a></li>
+<li><a href="#%E5%AE%9E%E4%BE%8B">实例</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+          <script>
+            function locateCatelogList() {
+              /*获取文章目录集合,可通过:header过滤器*/
+              var alis = $('.post-content :header');
+              /*获取侧边栏目录列表集合**/
+              var sidebar_alis = $('.markdownIt-TOC a');
+              /*获取滚动条到顶部的距离*/
+              var scroll_height = $(window).scrollTop();
+              for (var i = 0; i < alis.length; i++) {
+                /*获取锚点集合中的元素分别到顶点的距离*/
+                var a_height = $(alis[i]).offset().top;
+                if (a_height < scroll_height) {
+                  /*高亮显示*/
+                  sidebar_alis.removeClass('on');
+                  $(sidebar_alis[i]).addClass('on');
+                }
+              }
+            }
+            $(function() {
+              /*绑定滚动事件 */
+              $(window).bind('scroll', locateCatelogList);
+              });
+          </script>
+        </div>
+      <div class="notice-card i-card ">
+        <div class="notice-title i-card-title">公告</div>
+        <div class="notice-content">界面全新改版</div>
+      </div>
+      <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
+        <div class="notice-content">
+          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/excel/">Excel</a>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="site-footer">
+    <img style="vertical-align:middle;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&count_bg=%2310C1F9&title_bg=%23555555&icon=html5.svg&icon_color=%23E7E7E7&title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&edge_flat=false"> | <span>Copyright © 2020-2022 Dev-Coco - All Rights Reserved.</span> | <a class="rss" href="https://dev-coco.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+  <script>
+    $('#sidebar').stickySidebar({
+    topSpacing: 80,
+    // bottomSpacing: 60
+    });
+  </script>
+  
+</body>
+</html>

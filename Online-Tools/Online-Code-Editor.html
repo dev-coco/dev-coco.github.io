@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="dev-coco, HTML在线编辑器, Markdown在线编辑器, 在线编辑器">
+    <meta name="robots" content="index,follow">
+    <meta name="description" content="HTML在线编辑器，Markdown在线编辑器，实时预览。">
+    <title>HTML/Markdown在线编辑器</title>
+    <link rel="icon" href="/images/avatar.png">
+    <link rel="stylesheet" type="text/css" href="/css/jquery.splitter.css">
+    <link rel="stylesheet" type="text/css" href="/css/codemirror.min.css">
+    <script src="/js/jquery-2.1.1.min.js"></script>
+    <script src="/js/jquery.splitter.min.js"></script>
+    <script src="/js/codemirror.min.js"></script>
+    <script src="/js/xml.min.js"></script>
+    <script src="/js/javascript.min.js"></script>
+    <script src="/js/markdown.min.js"></script>
+    <script src="/js/htmlmixed.min.js"></script>
+    <script src="/js/css.min.js"></script>
+    <script src="/js/emmet.min.js"></script>
+    <script src="/js/marked.min.js"></script>
+    <style>*{padding:0;margin:0}body{font-size:14px;background:#f7f7f7}header{line-height:39px;background:#ededed;border-bottom:#bfbfbf solid 1px;text-align:center;height:39px;position:relative}header .tab{display:inline-block;border:1px solid #ccc;border-radius:28px;line-height:28px;margin-top:5px;background:#fff;height:28px;overflow:hidden}header span{display:inline-block;font-size:14px;text-align:center;width:100px;line-height:28px;cursor:pointer}header span.on{background-color:#eaf3ff}header .contorl a{border:1px solid rgba(27,31,35,.2);border-radius:.25em;cursor:pointer;display:inline-block;font-size:12px;line-height:14px;padding:4px 8px;position:relative;white-space:nowrap;background-color:#eff3f6;color:#24292e;text-decoration:none}header .contorl a:hover{background-color:#e6ebf1;border-color:rgba(27,31,35,.35)}.preview{border:none;height:100%;background:#fff;overflow-y:auto;box-sizing:border-box;padding:10px;width:100%}#preview{padding:0}.editbox{height:100%； box-sizing: border-box;overflow-y:auto}.CodeMirror{height:auto;background:#f7f7f7}.splitter_panel .vsplitter{width:1px;background:0 0;border-left:1px solid #ccc;z-index:8}.splitter_panel .vsplitter:hover{border-left:1px dashed gray}</style>
+    <script>
+     window.onbeforeunload = function (n) {
+      (n = window.event || n).returnValue = ""
+     };
+    </script>
+   </head>
+   <body>
+    <header>
+      <div style="float:left;">
+        <img class="logo" alt="dev-coco" style="width:35px;" src="/images/avatar.png"><h1 style="float:right;display: flex;line-height:36px" class="">&nbsp;Dev-Coco</h1>
+      </div>
+      <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&amp;count_bg=%2310C1F9&amp;title_bg=%23555555&amp;icon=html5.svg&amp;icon_color=%23E7E7E7&amp;title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&amp;edge_flat=false" style="float:right;width:180px;">
+      <div style="display: block; margin-left: auto; margin-right: auto; width: 50%; text-align: center;">
+        <div class="tab">
+          <span class="on">HTML</span><span class="">Markdown</span>
+        </div>
+      </div>
+    </header>
+    <div class="container" id="content">
+     <div class="edit-view">
+      <div class="editbox">
+         <textarea id="htmlEdit">
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta name="robots" content="index,follow">
+  <title>Title</title>
+</head>
+<body>
+  
+</body>
+</html>
+    </textarea>
+      </div>
+      <div class="editbox" style="display: none;">
+         <textarea id="MarkdownEdit"># Markdown Example</textarea>
+      </div>
+     </div>
+     <div class="result-view">
+      <iframe id="preview" class="preview"></iframe>
+      <div id="mkview" class="preview markdown-body" style="display: none;"></div>
+     </div>
+    </div>
+    <script>
+      var cHeight = document.documentElement.clientHeight - 40;
+      var splitter = $('#content').height(cHeight).split({
+        orientation: 'vertical',
+        limit: 10,
+        position: '50%'
+      });
+      var dom = document.getElementById('preview');
+      var editor = CodeMirror.fromTextArea(document.getElementById("htmlEdit"), {
+        lineNumbers: true,
+        mode: "htmlmixed",
+        indentUnit: 2,
+        lineWrapping: true,
+        styleActiveLine: true
+      });
+      emmetCodeMirror(editor);
+      editor.on("keyup", function() {
+        runPreview()
+      });
+      var editorMark = CodeMirror.fromTextArea(document.getElementById("MarkdownEdit"), {
+        lineNumbers: true,
+        mode: "markdown",
+        indentUnit: 2,
+        lineWrapping: true,
+        styleActiveLine: true
+      });
+      editorMark.on("keyup", function() {
+        runMkview()
+      });
+      runPreview();
+      runMkview();
+      tab();
+      marked.setOptions({
+        highlight: function(code, lang) {
+          return hljs.highlightAuto(code).value;
+        }
+      });
+
+      function runPreview() {
+        dom.contentWindow.document.open();
+        dom.contentWindow.document.write(editor.getValue());
+        dom.contentWindow.document.close();
+      }
+
+      function runMkview() {
+        document.getElementById('mkview').innerHTML = marked(editorMark.getValue());
+      }
+
+      function tab() {
+        var head = document.getElementsByTagName('header');
+        var btns = head[0].getElementsByTagName('span');
+        var boxs = document.getElementsByClassName('editbox');
+        var views = document.getElementsByClassName('preview');
+        for (var i = 0; i < btns.length; i++) {
+          var btn = btns[i];
+          btn.index = i;
+          btn.onclick = function() {
+            for (var j = 0; j < btns.length; j++) {
+              btns[j].className = '';
+            }
+            this.className = 'on';
+            for (var k = 0; k < boxs.length; k++) {
+              boxs[k].style.display = 'none';
+            }
+            boxs[this.index].style.display = 'block';
+            for (var h = 0; h < views.length; h++) {
+              views[h].style.display = 'none';
+            }
+            views[this.index].style.display = 'block';
+            editor.refresh();
+            editorMark.refresh();
+          }
+        }
+      }
+    </script>
+   </body>
+</html>

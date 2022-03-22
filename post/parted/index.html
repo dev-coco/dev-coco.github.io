@@ -1,0 +1,280 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>parted | Dev-Coco</title>
+  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1647958467779">
+  <link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
+  <script src="https://dev-coco.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
+<script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+  <div class="main">
+    <div class="header">
+      <div class="nav">
+        <div class="logo">
+          <a href="https://dev-coco.github.io">
+            <img class="avatar" src="https://dev-coco.github.io/images/avatar.png?v=1647958467779" alt="">
+          </a>
+          <div class="site-title">
+            <h1>Dev-Coco</h1>
+          </div>
+        </div>
+        <span class="menu-btn fa fa-align-justify"></span>
+        <div class="menu-container">
+          <ul>
+            <li>
+              <a href="/" class="menu">首页</a>
+            </li>
+            <li>
+              <a href="/Featured-Software.html" class="menu">软件</a>
+            </li>
+            <li>
+              <a href="/Online-Tools" class="menu">在线工具</a>
+            </li>
+            <li>
+              <a href="/post/Linux-Command" class="menu">Linux命令</a>
+            </li>
+            <li>
+              <a href="/Excel" class="menu">Excel教程</a>
+            </li>
+            <li>
+              <a href="/post/Terms-and-Privacy" class="menu">隐私与条款</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script>
+      $(document).ready(function() {
+        $(".menu-btn").click(function() {
+          $(".menu-container").slideToggle();
+        });
+        $(window).resize(function() {
+          if (window.matchMedia('(min-width: 960px)').matches) {
+            $(".menu-container").css('display', 'block')
+          } else {
+            $(".menu-container").css('display', 'none')
+          }
+        });
+      });
+    </script>
+    <div id="main-content" class="post-detail main-container">
+      <!-- left -->
+      <div id="content" class="main-container-left">
+        <article class="post i-card">
+        <h2 class="post-title">parted</h2>
+        <div class="post-info">
+          <time class="post-time">2022-02-03 / 5 min read</time>
+            <a href="https://dev-coco.github.io/tag/linux-command/" class="post-tag i-tag i-tag-">#Linux命令</a>
+        </div>
+          <div class="post-content">
+            <p>磁盘分区和分区大小调整工具。</p>
+<!-- more -->
+<h2 id="补充说明">补充说明</h2>
+<p>parted 命令是由 GNU 组织开发的一款功能强大的磁盘分区和分区大小调整工具，与 fdisk 不同，它支持调整分区的大小。作为一种设计用于 Linux 的工具，它没有构建成处理与 fdisk 关联的多种分区类型，但是，它可以处理最常见的分区格式，包括：ext2、ext3、fat16、fat32、NTFS、ReiserFS、JFS、XFS、UFS、HFS 以及 Linux 交换分区。</p>
+<h2 id="语法">语法</h2>
+<pre><code class="language-Shell">parted (选项) (参数)
+</code></pre>
+<h2 id="选项">选项</h2>
+<pre><code class="language-Shell">-h：显示帮助信息；
+-i：交互式模式；
+-s：脚本模式，不提示用户；
+-v：显示版本号。
+</code></pre>
+<h2 id="参数">参数</h2>
+<ul>
+<li>
+<p>设备：指定要分区的硬盘所对应的设备文件；</p>
+</li>
+<li>
+<p>命令：要执行的 parted 命令。</p>
+</li>
+</ul>
+<h2 id="实例">实例</h2>
+<p>从串行技术出现以来，越来越多用户选择使用大容量的 SATA 硬盘创建磁盘阵列；特别是 MD1000/MD3000，很轻易就突破 2T 的 LUN，故在此给大家一些指引。</p>
+<p>红帽企业 Linux 4 Update 4 供对大于 2 terabytes（TB）的磁盘设备的支持。</p>
+<p>请参考以下操作步骤：</p>
+<p>注：</p>
+<ul>
+<li>
+<p>绿色代表你需要使用的命令。</p>
+</li>
+<li>
+<p>红色代表你需要注意到的输出信息，在后续需要使用。</p>
+</li>
+</ul>
+<pre><code class="language-Shell">[root@localhost ~]# fdisk -l
+Disk /dev/sda: 35.8 GB, 35862976512 bytes
+255 heads, 63 sectors/track, 4360 cylinders
+Units = cylinders of 16065 * 512 = 8225280 bytes
+   Device Boot      Start         End      Blocks   id  System
+/dev/sda1   *           1          13      104391   83  Linux
+/dev/sda2              14         144     1052257+  82  Linux swap
+/dev/sda3             145        4360    33865020   83  Linux
+Disk /dev/sdb: 2147 MB, 2147483648 bytes
+255 heads, 63 sectors/track, 261 cylinders
+Units = cylinders of 16065 * 512 = 8225280 bytes
+Disk /dev/sdb doesn't contain a valid partition table
+</code></pre>
+<pre><code class="language-Shell">[root@localhost ~]# parted /dev/sdb
+GNU Parted Copyright (C) 1998 - 2004 free Software Foundation, Inc.
+This program is free software, covered by the GNU General Public License.
+This program is distributed in the hope that it will be useful, but WITHOUT ANY
+WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+使用/dev/sdb
+(parted)mklabel gpt
+(parted)print
+/dev/sdb 的磁盘几何结构：0.000-2048.000 兆字节
+磁盘标签类型：gpt
+Minor   起始点       终止点 文件系统   名称                 标志
+(parted)mkpart primary 0 2048  &lt;-----上面 print 显示的数字
+(parted)print
+/dev/sdb 的磁盘几何结构：0.000-2048.000 兆字节
+磁盘标签类型：gpt
+Minor   起始点       终止点 文件系统   名称                 标志
+1          0.017   2047.983
+(parted)quit
+</code></pre>
+<p>如果必要，不要忘记更新<code>/etc/fstab</code>。</p>
+<pre><code class="language-Shell">[root@localhost ~]# fdisk -l
+Disk /dev/sda: 35.8 GB, 35862976512 bytes
+255 heads, 63 sectors/track, 4360 cylinders
+Units = cylinders of 16065 * 512 = 8225280 bytes
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sda1   *           1          13      104391   83  Linux
+/dev/sda2              14         144     1052257+  82  Linux swap
+/dev/sda3             145        4360    33865020   83  Linux
+WARNING: GPT (GUID Partition Table) detected on '/dev/sdb'! The util fdisk doesn't support GPT. Use GNU Parted.
+
+Disk /dev/sdb: 2147 MB, 2147483648 bytes
+255 heads, 63 sectors/track, 261 cylinders
+Units = cylinders of 16065 * 512 = 8225280 bytes
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sdb1               1         262     2097151+  ee  EFI GPT
+Partition 1 has different physical/logical beginnings (non-Linux?):
+     phys=(0, 0, 1) logical=(0,0, 2)
+Partition 1 has different physical/logical endings:
+     phys=(1023, 254, 63) logical=(261, 21, 16)
+</code></pre>
+<pre><code class="language-Shell">[root@localhost ~]# mkfs.ext3 /dev/sdb1
+mke2fs 1.35 (28-Feb-2004)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+262144 inodes, 524279 blocks
+26213 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=536870912
+16 block groups
+32768 blocks per group, 32768 fragments per group
+16384 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912
+Writing inode tables: done
+Creating journal (8192 blocks): done
+Writing superblocks and filesystem accounting information: done
+This filesystem will be automatically checked every 28 mounts or
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+</code></pre>
+<pre><code class="language-Shell">[root@localhost ~]# mount /dev/sdb1 /mnt
+[root@localhost ~]# df -h
+Filesystem            容量  已用 可用 已用% 挂载点
+/dev/sda3              &lt;?xml:namespace prefix = st1 /&gt;32G  2.6G   28G   9% /
+/dev/sda1              99M   12M   82M  13% /boot
+none                  252M     0  252M   0% /dev/shm
+/dev/sdb1             2.0G   36M  1.9G   2% /mnt
+</code></pre>
+
+          </div>
+        </article>
+        <div class="next-post">
+          <div class="next">下一篇</div>
+          <a href="https://dev-coco.github.io/post/ftp/">
+            <h3 class="post-title">ftp</h3>
+          </a>
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="gitalk-container"></div>
+      </div>
+      <!-- middle -->
+      <div class="main-container-middle"></div>
+      <!-- right -->
+      <div id="sidebar" class="main-container-right">
+      <!-- toc -->
+      <div class="toc-card i-card ">
+        <div class="toc-title i-card-title">目录</div>
+          <div class="toc-content">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E8%A1%A5%E5%85%85%E8%AF%B4%E6%98%8E">补充说明</a></li>
+<li><a href="#%E8%AF%AD%E6%B3%95">语法</a></li>
+<li><a href="#%E9%80%89%E9%A1%B9">选项</a></li>
+<li><a href="#%E5%8F%82%E6%95%B0">参数</a></li>
+<li><a href="#%E5%AE%9E%E4%BE%8B">实例</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+          <script>
+            function locateCatelogList() {
+              /*获取文章目录集合,可通过:header过滤器*/
+              var alis = $('.post-content :header');
+              /*获取侧边栏目录列表集合**/
+              var sidebar_alis = $('.markdownIt-TOC a');
+              /*获取滚动条到顶部的距离*/
+              var scroll_height = $(window).scrollTop();
+              for (var i = 0; i < alis.length; i++) {
+                /*获取锚点集合中的元素分别到顶点的距离*/
+                var a_height = $(alis[i]).offset().top;
+                if (a_height < scroll_height) {
+                  /*高亮显示*/
+                  sidebar_alis.removeClass('on');
+                  $(sidebar_alis[i]).addClass('on');
+                }
+              }
+            }
+            $(function() {
+              /*绑定滚动事件 */
+              $(window).bind('scroll', locateCatelogList);
+              });
+          </script>
+        </div>
+      <div class="notice-card i-card ">
+        <div class="notice-title i-card-title">公告</div>
+        <div class="notice-content">界面全新改版</div>
+      </div>
+      <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
+        <div class="notice-content">
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/excel/">Excel</a>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="site-footer">
+    <img style="vertical-align:middle;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&count_bg=%2310C1F9&title_bg=%23555555&icon=html5.svg&icon_color=%23E7E7E7&title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&edge_flat=false"> | <span>Copyright © 2020-2022 Dev-Coco - All Rights Reserved.</span> | <a class="rss" href="https://dev-coco.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+  <script>
+    $('#sidebar').stickySidebar({
+    topSpacing: 80,
+    // bottomSpacing: 60
+    });
+  </script>
+  
+</body>
+</html>

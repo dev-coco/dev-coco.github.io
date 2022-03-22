@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="keywords" content="Google Excel, Excel表格, 数据透视表">
+  <meta name="description" content="数据透视表 - 把一个范围的数据根据字段重新排版统计数据。">
+  <meta name="robots" content="index, follow">
+  <meta property="og:image" content="/images/Excel-Tutorial.jpg">
+  <title>数据透视表</title>
+  <link rel="icon" href="/images/avatar.png">
+  <link href="/css/Excel/typo.css" rel="stylesheet">
+</head>
+<body class="typo">
+  <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&count_bg=%2310C1F9&title_bg=%23555555&icon=html5.svg&icon_color=%23E7E7E7&title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&edge_flat=false" style="display:none">
+  <h1>数据透视表</h1>
+  <p>把一个范围的数据根据字段重新排版统计数据。</p>
+  <p>选中一个范围的数据，在表格的菜单栏选择数据透视表。</p>
+  <img src="/images/Excel/Pivot-Table-1.png" style="min-width:420px;width:50%;" class="img">
+  <p>插入位置可以选择新工作表或者现有工作表。新工作表会在当前的表格创建一个新的工作表，默认放在左上角的位置。</p>
+  <img src="/images/Excel/Pivot-Table-2.png" style="min-width:320px;width:30%;" class="img">
+  <p>现有工作表可以在当前表格已经创建的工作表内，指定单元格位置创建一个数据透视表。</p>
+  <img src="/images/Excel/Pivot-Table-3.png" style="min-width:320px;width:30%;" class="img">
+  <p>在数据透视表编辑器，可以在行或者列放入想要统计数据的字段。</p>
+  <img src="/images/Excel/Pivot-Table-4.png" style="min-width:380px;width:40%;" class="img">
+  <p>需求：将每个人员按照销售分队进行分类，统计出每个人的销售额。</p>
+  <p>将分队字段放在行，这样数据就会按行输出内容。</p>
+  <img src="/images/Excel/Pivot-Table-5.png" style="min-width:420px;width:60%;" class="img">
+  <p>然后需要根据销售分队来计数，把销售字段放在值，汇总方式选择 <a href="/Excel/Resource/Function/Operations/SUM.html" target="_blank">SUM</a>。</p>
+  <img src="/images/Excel/Pivot-Table-6.png" style="min-width:420px;width:60%;" class="img">
+  <p>汇总方式有很多种，根据需求来选择，具体功能参考对应函数的作用。</p>
+  <img src="/images/Excel/Pivot-Table-7.png" style="min-width:200px;width:25%;" class="img">
+  <p>再把名字字段放在行，并且添加到分队字段的下面，在有多个内容的时候，字段的顺序会影响到呈现的结果。</p>
+  <img src="/images/Excel/Pivot-Table-8.png" style="min-width:420px;width:60%;" class="img">
+  <p>这样就显示出每个分队人员的销售额了。</p>
+  <iframe style="max-width:349px;height:412px;" src="https://docs.google.com/spreadsheets/d/1UtC7kqKgcGc76w-2xv6qRARnFpg35CdO4zu6MkuN65k/pubhtml/sheet?headers=true&gid=760627485"></iframe>
+  <p>需求2：除了小军、小刚、小明以外的人员统计销售额，按列显示销售分队的销售额，销售额倒序排序。</p>
+  <p>将名字字段放在行，分队字段放在列，销售字段放在值，使用 SUM 函数计数。</p>
+  <img src="/images/Excel/Pivot-Table-9.png" style="min-width:420px;width:60%;" class="img">
+  <p>分队字段的顺序选择降序排列。</p>
+  <img src="/images/Excel/Pivot-Table-10.png" style="min-width:320px;width:30%;" class="img">
+  <p>将名字子段添加到过滤器，按值筛选，把小军、小刚、小明这些人员给去掉。</p>
+  <img src="/images/Excel/Pivot-Table-11.png" style="min-width:320px;width:30%;" class="img">
+  <p>最后数据表的呈现结果如下：</p>
+  <iframe style="max-width:450px;height:292px;" src="https://docs.google.com/spreadsheets/d/1UtC7kqKgcGc76w-2xv6qRARnFpg35CdO4zu6MkuN65k/pubhtml/sheet?headers=true&gid=689453596"></iframe>
+  <p class="home">
+    <a href="/Excel" target="_blank">
+      <img alt="Excel表格, Google Excel" src="/images/Excel.png">
+      <span>Excel 一点通</span>
+    </a>
+  </p>
+</body>
+</html>

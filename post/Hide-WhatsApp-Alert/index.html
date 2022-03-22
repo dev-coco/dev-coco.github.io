@@ -1,0 +1,151 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>屏蔽 WhatsApp 提示弹窗 | Dev-Coco</title>
+  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1647958467779">
+  <link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
+  <script src="https://dev-coco.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
+<script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+  <div class="main">
+    <div class="header">
+      <div class="nav">
+        <div class="logo">
+          <a href="https://dev-coco.github.io">
+            <img class="avatar" src="https://dev-coco.github.io/images/avatar.png?v=1647958467779" alt="">
+          </a>
+          <div class="site-title">
+            <h1>Dev-Coco</h1>
+          </div>
+        </div>
+        <span class="menu-btn fa fa-align-justify"></span>
+        <div class="menu-container">
+          <ul>
+            <li>
+              <a href="/" class="menu">首页</a>
+            </li>
+            <li>
+              <a href="/Featured-Software.html" class="menu">软件</a>
+            </li>
+            <li>
+              <a href="/Online-Tools" class="menu">在线工具</a>
+            </li>
+            <li>
+              <a href="/post/Linux-Command" class="menu">Linux命令</a>
+            </li>
+            <li>
+              <a href="/Excel" class="menu">Excel教程</a>
+            </li>
+            <li>
+              <a href="/post/Terms-and-Privacy" class="menu">隐私与条款</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script>
+      $(document).ready(function() {
+        $(".menu-btn").click(function() {
+          $(".menu-container").slideToggle();
+        });
+        $(window).resize(function() {
+          if (window.matchMedia('(min-width: 960px)').matches) {
+            $(".menu-container").css('display', 'block')
+          } else {
+            $(".menu-container").css('display', 'none')
+          }
+        });
+      });
+    </script>
+    <div id="main-content" class="post-detail main-container">
+      <!-- left -->
+      <div id="content" class="main-container-left">
+        <article class="post i-card">
+        <h2 class="post-title">屏蔽 WhatsApp 提示弹窗</h2>
+        <div class="post-info">
+          <time class="post-time">2022-02-23 / 1 min read</time>
+            <a href="https://dev-coco.github.io/tag/whatsapp/" class="post-tag i-tag i-tag-success">#WhatsApp</a>
+        </div>
+          <div class="post-content">
+            <p>屏蔽 “您的电脑没有足够的空间来运行 WhatsApp。” 提示弹窗。</p>
+<!-- more -->
+<p>不知为何 WhatsApp 总是弹出 “您的电脑没有足够的空间来运行 WhatsApp。请从您的电脑中删除久未使用文件来腾出更多的存储空间，然后再次登陆。” 这样的弹窗，即使有很多空闲的内存依然会提示。<br>
+<img src="https://dev-coco.github.io/post-images/1645847332342.png" alt="" loading="lazy"><br>
+于是查看了一下弹窗的源码。<br>
+<img src="https://dev-coco.github.io/post-images/1645851608824.png" alt="" loading="lazy"><br>
+那么就可以在 _209uk 这个 class 增加一个 css 样式隐藏弹窗。<br>
+<img src="https://dev-coco.github.io/post-images/1645851614438.png" alt="" loading="lazy"><br>
+不过需要使用 Chrome 插件加载网页时就注入 css。<br>
+<img src="https://dev-coco.github.io/post-images/1645851622629.png" alt="" loading="lazy"></p>
+<p>补充：<br>
+后来发现以上的方法会引起一些问题，有的功能也会使用 _209uk 这个 class，这样会导致其它的功能无法正常使用。需要根据指定目录定位到弹窗的 class，然后进行屏蔽。<br>
+<img src="https://dev-coco.github.io/post-images/1646670698233.png" alt="" loading="lazy"><br>
+不过后来发现有时候会出现 LayoutApp 这个类，有时候不会出现，所以需要写两种 css。<br>
+<img src="https://dev-coco.github.io/post-images/1646671214614.png" alt="" loading="lazy"></p>
+
+          </div>
+        </article>
+        <div class="next-post">
+          <div class="next">下一篇</div>
+          <a href="https://dev-coco.github.io/post/Create-Telegram-Bot/">
+            <h3 class="post-title">创建 Telegram 机器人</h3>
+          </a>
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="gitalk-container"></div>
+      </div>
+      <!-- middle -->
+      <div class="main-container-middle"></div>
+      <!-- right -->
+      <div id="sidebar" class="main-container-right">
+      <!-- id-card -->
+      <div class="id_card i-card">
+          <div class="id_card-avatar" style="background-image: url(https://dev-coco.github.io/images/avatar.png?v=1647958467779)"></div>
+          <h1 class="id_card-title">Dev-Coco</h1>
+          <h2 class="id_card-description"></h2>
+          <!--  -->
+          <div class="id_card-sns">
+            <!-- github -->
+            <a href="https://github.com/dev-coco" target="_blank" rel="noopener noreferrer"><i class="fa fa-github"></i></a>
+            <!-- twitter -->
+            <!-- weibo -->
+            <!-- facebook -->
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><i class="fa fa-facebook"></i></a>
+          </div>
+        </div>
+      <div class="notice-card i-card ">
+        <div class="notice-title i-card-title">公告</div>
+        <div class="notice-content">界面全新改版</div>
+      </div>
+      <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
+        <div class="notice-content">
+          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/excel/">Excel</a>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="site-footer">
+    <img style="vertical-align:middle;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&count_bg=%2310C1F9&title_bg=%23555555&icon=html5.svg&icon_color=%23E7E7E7&title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&edge_flat=false"> | <span>Copyright © 2020-2022 Dev-Coco - All Rights Reserved.</span> | <a class="rss" href="https://dev-coco.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+  <script>
+    $('#sidebar').stickySidebar({
+    topSpacing: 80,
+    // bottomSpacing: 60
+    });
+  </script>
+  
+</body>
+</html>

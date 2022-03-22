@@ -1,0 +1,218 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>info | Dev-Coco</title>
+  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1647958467779">
+  <link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
+  <script src="https://dev-coco.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
+<script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+  <div class="main">
+    <div class="header">
+      <div class="nav">
+        <div class="logo">
+          <a href="https://dev-coco.github.io">
+            <img class="avatar" src="https://dev-coco.github.io/images/avatar.png?v=1647958467779" alt="">
+          </a>
+          <div class="site-title">
+            <h1>Dev-Coco</h1>
+          </div>
+        </div>
+        <span class="menu-btn fa fa-align-justify"></span>
+        <div class="menu-container">
+          <ul>
+            <li>
+              <a href="/" class="menu">首页</a>
+            </li>
+            <li>
+              <a href="/Featured-Software.html" class="menu">软件</a>
+            </li>
+            <li>
+              <a href="/Online-Tools" class="menu">在线工具</a>
+            </li>
+            <li>
+              <a href="/post/Linux-Command" class="menu">Linux命令</a>
+            </li>
+            <li>
+              <a href="/Excel" class="menu">Excel教程</a>
+            </li>
+            <li>
+              <a href="/post/Terms-and-Privacy" class="menu">隐私与条款</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script>
+      $(document).ready(function() {
+        $(".menu-btn").click(function() {
+          $(".menu-container").slideToggle();
+        });
+        $(window).resize(function() {
+          if (window.matchMedia('(min-width: 960px)').matches) {
+            $(".menu-container").css('display', 'block')
+          } else {
+            $(".menu-container").css('display', 'none')
+          }
+        });
+      });
+    </script>
+    <div id="main-content" class="post-detail main-container">
+      <!-- left -->
+      <div id="content" class="main-container-left">
+        <article class="post i-card">
+        <h2 class="post-title">info</h2>
+        <div class="post-info">
+          <time class="post-time">2022-02-03 / 3 min read</time>
+            <a href="https://dev-coco.github.io/tag/linux-command/" class="post-tag i-tag i-tag-">#Linux命令</a>
+        </div>
+          <div class="post-content">
+            <p>Linux 下 info 格式的帮助指令。</p>
+<!-- more -->
+<h2 id="补充说明">补充说明</h2>
+<p>info 命令是 Linux 下 info 格式的帮助指令。<br>
+就内容来说，info 页面比 man page 编写得要更好、更容易理解，也更友好，但 man page 使用起来确实要更容易得多。一个 man page 只有一页，而 info 页面几乎总是将它们的内容组织成多个区段（称为节点），每个区段也可能包含子区段（称为子节点）。理解这个命令的窍门就是不仅要学习如何在单独的 Info 页面中浏览导航，还要学习如何在节点和子节点之间切换。可能刚开始会一时很难在 info 页面的节点之间移动和找到你要的东西，真是具有讽刺意味：原本以为对于新手来说，某个东西比 man 命令会更好些，但实际上学习和使用起来更困难。</p>
+<h2 id="语法">语法</h2>
+<pre><code class="language-Shell">info (选项) (参数)
+</code></pre>
+<h2 id="选项">选项</h2>
+<pre><code class="language-Shell">-d：添加包含 info 格式帮助文档的目录；
+-f：指定要读取的 info 格式的帮助文档；
+-n：指定首先访问的 info 帮助文件的节点；
+-o：输出被选择的节点内容到指定文件。
+</code></pre>
+<h2 id="参数">参数</h2>
+<p>帮助主题：指定需要获得帮助的主题，可以是指令、函数以及配置文件。</p>
+<h2 id="实例">实例</h2>
+<p>在 info 后面输入命令的名称就可以查看该命令的 info 帮助文档了：</p>
+<pre><code class="language-Shell">info info
+</code></pre>
+<p>面介绍一下它的几个常用快捷键。</p>
+<pre><code class="language-Shell"> **?键：** 它就会显示info的常用快捷键。
+ **N键：** 显示（相对于本节点的）下一节点的文档内容。
+ **P键：** 显示（相对于本节点的）前一节点的文档内容。
+ **U键：** 进入当前命令所在的主题。
+ **M键：** 敲M键后输入命令的名称就可以查看该命令的帮助文档了。
+ **G键：** 敲G键后输入主题名称，进入该主题。
+ **L键：** 回到上一个访问的页面。
+ **SPACE键：** 向前滚动一页。
+ **BACKUP或DEL键：** 向后滚动一页。
+ **Q：** 退出info。
+</code></pre>
+<p>命令</p>
+<pre><code class="language-Shell"> **？**      显示帮助窗口
+
+在帮助窗口中：
+ **Ctrl-x 0**           关闭帮助窗口
+ **Ctrl-x Ctrl-c**     关闭整个 Info
+
+ **q**       退出 info
+ **n**       打开与本 Node 关联的下一个 Node
+ **p**       打开与本 Node 关联的前一个 Node
+ **u**       打开与本 Node 关联的上一个 Node
+ **l**       回到上一次访问的 Node
+ **m或g**    选择一个菜单项（Node 的名字）
+       输入指定菜单的名字后按回车，打开指定菜单项关联的 Node
+ **空格键**  下一页（PageDown 也可以，下一页从当前页的最后两行开始算起）
+       下一个 Node （若当前页在 Node 文档的末尾）
+ **Del 键**  上一页（PageUp 也可以，上一页从当前页的开始两行开始算起）
+       上一个 Node （若当前页 Node 文档的开始）
+
+ **b 或 t 或 Home**    文档的开始（b 是 begining 的意思）
+ **e 或 End**          文档的末尾（b 是 ending 的意思）
+ **Ctrl-l**     刷新当前页，若当前文档显示情况有问题时
+ **Ctrl-g**     取消所键入的指令
+</code></pre>
+
+          </div>
+        </article>
+        <div class="next-post">
+          <div class="next">下一篇</div>
+          <a href="https://dev-coco.github.io/post/history/">
+            <h3 class="post-title">history</h3>
+          </a>
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="gitalk-container"></div>
+      </div>
+      <!-- middle -->
+      <div class="main-container-middle"></div>
+      <!-- right -->
+      <div id="sidebar" class="main-container-right">
+      <!-- toc -->
+      <div class="toc-card i-card ">
+        <div class="toc-title i-card-title">目录</div>
+          <div class="toc-content">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E8%A1%A5%E5%85%85%E8%AF%B4%E6%98%8E">补充说明</a></li>
+<li><a href="#%E8%AF%AD%E6%B3%95">语法</a></li>
+<li><a href="#%E9%80%89%E9%A1%B9">选项</a></li>
+<li><a href="#%E5%8F%82%E6%95%B0">参数</a></li>
+<li><a href="#%E5%AE%9E%E4%BE%8B">实例</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+          <script>
+            function locateCatelogList() {
+              /*获取文章目录集合,可通过:header过滤器*/
+              var alis = $('.post-content :header');
+              /*获取侧边栏目录列表集合**/
+              var sidebar_alis = $('.markdownIt-TOC a');
+              /*获取滚动条到顶部的距离*/
+              var scroll_height = $(window).scrollTop();
+              for (var i = 0; i < alis.length; i++) {
+                /*获取锚点集合中的元素分别到顶点的距离*/
+                var a_height = $(alis[i]).offset().top;
+                if (a_height < scroll_height) {
+                  /*高亮显示*/
+                  sidebar_alis.removeClass('on');
+                  $(sidebar_alis[i]).addClass('on');
+                }
+              }
+            }
+            $(function() {
+              /*绑定滚动事件 */
+              $(window).bind('scroll', locateCatelogList);
+              });
+          </script>
+        </div>
+      <div class="notice-card i-card ">
+        <div class="notice-title i-card-title">公告</div>
+        <div class="notice-content">界面全新改版</div>
+      </div>
+      <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
+        <div class="notice-content">
+          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/excel/">Excel</a>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="site-footer">
+    <img style="vertical-align:middle;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&count_bg=%2310C1F9&title_bg=%23555555&icon=html5.svg&icon_color=%23E7E7E7&title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&edge_flat=false"> | <span>Copyright © 2020-2022 Dev-Coco - All Rights Reserved.</span> | <a class="rss" href="https://dev-coco.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+  <script>
+    $('#sidebar').stickySidebar({
+    topSpacing: 80,
+    // bottomSpacing: 60
+    });
+  </script>
+  
+</body>
+</html>

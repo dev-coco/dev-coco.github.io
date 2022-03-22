@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <title>筛选头像</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="keywords" content="dev-coco, Avatar Filter, 筛选头像">
+  <meta name="robots" content="index,follow">
+  <meta name="description" content="快速筛选头像。">
+  <link rel="icon" href="/images/avatar.png">
+  <link rel="stylesheet" href="/css/site.css">
+  <script src="/js/yall.min.js"></script>
+  <script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script>
+    var lazyload = new yall();
+    
+    function copy_id() {
+      var get_data = document.getElementsByClassName('select')
+      var str = [],
+        i = [];
+      for (const x of get_data) {
+        i++;
+        if (x.checked == true) {
+          str += document.getElementsByClassName('user_id')[i - 1].outerText + "\n";
+        }
+      }
+      copy(str);
+      alert("复制成功");
+    }
+    
+    function copy_uncheck_id() {
+      var get_data = document.getElementsByClassName('select')
+      var str = [],
+        i = [];
+      for (const x of get_data) {
+        i++;
+        if (x.checked == false) {
+          str += document.getElementsByClassName('user_id')[i - 1].outerText + "\n";
+        }
+      }
+      copy(str);
+      alert("复制成功");
+    }
+
+    function clean() {
+      document.getElementById('content').innerHTML = '';
+    }
+
+    function create() {
+      var input_id = prompt("请输入ID", "");
+      var get_id = input_id.match(/.+/g);
+      var img_size = document.getElementById('img_size').value;
+      var get_content = document.getElementById('content');
+      clean();
+      var str = [];
+      for (var i = 0; i < get_id.length; i++) {
+        str += '<table><tr><td><label style=display:block>' + [i + 1] + '<img style="width:' + img_size + 'px;" class="yall_lazy" data-src="https://graph.facebook.com/' + get_id[i] + '/picture?width=1080&height=1080&access_token=2712477385668128|b429aeb53369951d411e1cae8e810640"> <input class="select form-check-input" type=checkbox><span class=user_id>' + get_id[i] + '</span></label></table>';
+      }
+      get_content.innerHTML = str;
+      lazyload.run();
+    }
+
+    function copy(str) {
+      var input = document.createElement('textarea');
+      document.body.appendChild(input);
+      input.value = str;
+      input.select();
+      document.execCommand('Copy');
+      input.remove();
+    }
+  </script>
+  <style>img,span{vertical-align:middle;margin-left:1rem;margin-right:1rem}#header{text-align:center;margin-top:1rem}#img_size,button{margin-right:1rem;font-size:18px}table,td,th{border:0}</style>
+</head>
+<body>
+  <div class="container">
+    <h1 style="text-align:left;"><img class="logo" alt="dev-coco" src="/images/avatar.png">
+      <span> Dev-Coco</span>
+      <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&count_bg=%2310C1F9&title_bg=%23555555&icon=html5.svg&icon_color=%23E7E7E7&title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&edge_flat=false" style="float:right;width:180px;">
+    </h1>
+    <div class="menu">
+      <a href="/">首页</a>
+      <a href="/Featured-Software.html">软件</a>
+      <a href="/Online-Tools">在线工具</a>
+      <a href="/post/Linux-Command">Linux命令</a>
+      <a href="/Excel/">Excel教程</a>
+      <a href="/post/Terms-and-Privacy">隐私与条款</a>
+      <a target="_blank" href="https://github.com/dev-coco">Github</a>
+    </div>
+    <div class="img">
+      <div id="header">
+        <input type="text" style="width:50px;" id="img_size" value="180">
+        <button class="button green" onclick="create()">生成</button>
+        <button class="button red" onclick="clean()">清空</button>
+        <button class="button blue" onclick="copy_id()">复制</button>
+        <button class="button blue" onclick="copy_uncheck_id()">复制未选</button>
+      </div>
+    </div>
+    <div id="content"></div>
+  </div>
+</body>
+</html>
