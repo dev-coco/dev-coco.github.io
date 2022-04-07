@@ -2,13 +2,35 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Dev-Coco</title>
-    <updated>2022-04-06T17:34:48.754Z</updated>
+    <updated>2022-04-07T01:02:47.123Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, Dev-Coco</rights>
+    <entry>
+        <title type="html"><![CDATA[自助问答客服]]></title>
+        <id>https://dev-coco.github.io/post/Customer-Service/</id>
+        <link href="https://dev-coco.github.io/post/Customer-Service/">
+        </link>
+        <updated>2022-04-06T00:19:11.000Z</updated>
+        <summary type="html"><![CDATA[<p>自助问答客服是一个根据关键词快速回复自定义内容的网页。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>自助问答客服是一个根据关键词快速回复自定义内容的网页。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[申请 Google API 密钥]]></title>
+        <id>https://dev-coco.github.io/post/Create-Google-API-Key/</id>
+        <link href="https://dev-coco.github.io/post/Create-Google-API-Key/">
+        </link>
+        <updated>2022-04-05T23:08:47.000Z</updated>
+        <summary type="html"><![CDATA[<p>申请 Google API 密钥的方法。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>申请 Google API 密钥的方法。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[命令行批量创建 KeePassXC 数据库]]></title>
         <id>https://dev-coco.github.io/post/Batch-Create-KeePassXC-Database/</id>
@@ -95,28 +117,6 @@
         <summary type="html"><![CDATA[<p>全新 macOS 清理垃圾工具，超彻底深度清理。支持清理缓存，清理卸载残留，系统优化功能。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>全新 macOS 清理垃圾工具，超彻底深度清理。支持清理缓存，清理卸载残留，系统优化功能。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[浏览器提高性能设置]]></title>
-        <id>https://dev-coco.github.io/post/Chrome-Performance-Settings/</id>
-        <link href="https://dev-coco.github.io/post/Chrome-Performance-Settings/">
-        </link>
-        <updated>2022-02-05T09:49:02.000Z</updated>
-        <summary type="html"><![CDATA[<p>关于提高浏览器性能的选项设置。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>关于提高浏览器性能的选项设置。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[批量下载头像]]></title>
-        <id>https://dev-coco.github.io/post/Batch-Download-Avatar/</id>
-        <link href="https://dev-coco.github.io/post/Batch-Download-Avatar/">
-        </link>
-        <updated>2022-02-05T08:42:23.000Z</updated>
-        <summary type="html"><![CDATA[<p>批量下载无版权无肖像权的头像。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>批量下载无版权无肖像权的头像。</p>
 ]]></content>
     </entry>
 </feed>
