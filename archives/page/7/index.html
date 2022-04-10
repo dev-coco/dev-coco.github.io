@@ -1,728 +1,543 @@
 <html>
+
 <head>
-    <meta charset="utf-8" />
-<meta name="description" content="" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-
-<title>归档 | Dev-Coco</title>
-
-<link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1649561576908">
-
-<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
-<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css"> -->
-
-<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
-<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.12.0/languages/dockerfile.min.js"></script>
-<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.12.0/languages//dart.min.js"></script>
-
-<!-- <script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script> -->
-<!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script> -->
-<!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script> -->
-<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script> -->
-<!-- DEMO JS -->
-<!--<script src="media/scripts/index.js"></script>-->
-
-
-
+      <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dev-Coco</title>
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.ico?v=1649620613752">
+  <link rel="stylesheet" href="http://localhost:4000/styles/main.css">
+  <script src="http://localhost:4000/media/js/jquery.sticky-sidebar.min.js"></script>
+<script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
+
 <body>
-<div class="main gt-bg-theme-color-first">
-    <div class="main-content">
-        <nav class="navbar navbar-expand-lg">
-    <a class="navbar-brand" href="/">
-        <img class="user-avatar" src="/images/avatar.png" alt="头像">
-        <div class="site-name gt-c-content-color-first">
-            Dev-Coco
+    <div class="main">
+            <div class="header">
+      <div class="nav">
+        <div class="logo">
+          <a href="http://localhost:4000">
+            <img class="avatar" src="http://localhost:4000/images/avatar.png?v=1649620613752" alt="">
+          </a>
+          <div class="site-title">
+            <h1>Dev-Coco</h1>
+          </div>
         </div>
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" id="changeNavbar">
-        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <div class="navbar-nav mr-auto" style="text-align: center">
-            
-            <div class="nav-item">
-                
-                <a href="/" class="menu gt-a-link">
-                    首页
-                </a>
-                
-            </div>
-            
-            <div class="nav-item">
-                
-                <a href="/Featured-Software.html" class="menu gt-a-link">
-                    软件
-                </a>
-                
-            </div>
-            
-            <div class="nav-item">
-                
-                <a href="/Online-Tools" class="menu gt-a-link">
-                    在线工具
-                </a>
-                
-            </div>
-            
-            <div class="nav-item">
-                
-                <a href="/post/Linux-Command" class="menu gt-a-link">
-                    Linux命令
-                </a>
-                
-            </div>
-            
-            <div class="nav-item">
-                
-                <a href="/Excel" class="menu gt-a-link">
-                    Excel教程
-                </a>
-                
-            </div>
-            
-            <div class="nav-item">
-                
-                <a href="/post/Terms-and-Privacy" class="menu gt-a-link">
-                    隐私与条款
-                </a>
-                
-            </div>
-            
+        <span class="menu-btn fa fa-align-justify"></span>
+        <div class="menu-container">
+          <ul>
+            <li>
+              <a href="/" class="menu">首页</a>
+            </li>
+            <li>
+              <a href="/Featured-Software.html" class="menu">软件</a>
+            </li>
+            <li>
+              <a href="/Online-Tools" class="menu">在线工具</a>
+            </li>
+            <li>
+              <a href="/post/Linux-Command" class="menu">Linux命令</a>
+            </li>
+            <li>
+              <a href="/Excel" class="menu">Excel教程</a>
+            </li>
+            <li>
+              <a href="/post/Terms-and-Privacy" class="menu">隐私与条款</a>
+            </li>
+          </ul>
         </div>
-        <div style="text-align: center">
-            <form id="gridea-search-form" style="position: relative" data-update="1649561576908"
-                action="/search/">
-                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
-                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
-            </form>
+        <form id="gridea-search-form" action="http://localhost:4000/search/" class="search">
+          <input type="search" name="q" class="search-box">
+          <span class="search-button">
+            <span class="search-icon"></span>
+          </span>
+        </form>
+      </div>
+    </div>
+    <script>
+      document.getElementsByClassName('search-button')[0].addEventListener('click', function () {
+        document.getElementById('gridea-search-form').classList.toggle('open');
+      })
+    </script>
+
+
+            
+
+    <div class="archives-container main-container">
+        <ul class="timeline">
+            
+                <li>
+                    <h3 class="year">
+                        2022
+                    </h3>
+                    <ul class="year-wrapper">
+                        
+                            
+                                <li>
+                                    <span class="date">2022-02-02</span>
+                                    <a class="title" href="http://localhost:4000/post/xauth/">
+                                        <span>xauth</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-02</span>
+                                    <a class="title" href="http://localhost:4000/post/dpkg-reconfigure/">
+                                        <span>dpkg-reconfigure</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-02</span>
+                                    <a class="title" href="http://localhost:4000/post/make/">
+                                        <span>make</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-02</span>
+                                    <a class="title" href="http://localhost:4000/post/setsid/">
+                                        <span>setsid</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-02</span>
+                                    <a class="title" href="http://localhost:4000/post/rmmod/">
+                                        <span>rmmod</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-02</span>
+                                    <a class="title" href="http://localhost:4000/post/grpconv/">
+                                        <span>grpconv</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-02</span>
+                                    <a class="title" href="http://localhost:4000/post/suspend/">
+                                        <span>suspend</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-02</span>
+                                    <a class="title" href="http://localhost:4000/post/iptables-save/">
+                                        <span>iptables-save</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-02</span>
+                                    <a class="title" href="http://localhost:4000/post/mkbootdisk/">
+                                        <span>mkbootdisk</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-02</span>
+                                    <a class="title" href="http://localhost:4000/post/ed/">
+                                        <span>ed</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-02</span>
+                                    <a class="title" href="http://localhost:4000/post/lvreduce/">
+                                        <span>lvreduce</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-02</span>
+                                    <a class="title" href="http://localhost:4000/post/mkfs/">
+                                        <span>mkfs</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-02</span>
+                                    <a class="title" href="http://localhost:4000/post/shutdown/">
+                                        <span>shutdown</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-02</span>
+                                    <a class="title" href="http://localhost:4000/post/killall/">
+                                        <span>killall</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-02</span>
+                                    <a class="title" href="http://localhost:4000/post/tempfile/">
+                                        <span>tempfile</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-02</span>
+                                    <a class="title" href="http://localhost:4000/post/getsebool/">
+                                        <span>getsebool</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-02</span>
+                                    <a class="title" href="http://localhost:4000/post/lvcreate/">
+                                        <span>lvcreate</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-02</span>
+                                    <a class="title" href="http://localhost:4000/post/groups/">
+                                        <span>groups</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-02</span>
+                                    <a class="title" href="http://localhost:4000/post/sesearch/">
+                                        <span>sesearch</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-02</span>
+                                    <a class="title" href="http://localhost:4000/post/hostname/">
+                                        <span>hostname</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-02</span>
+                                    <a class="title" href="http://localhost:4000/post/whoami/">
+                                        <span>whoami</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-02</span>
+                                    <a class="title" href="http://localhost:4000/post/sar/">
+                                        <span>sar</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-02</span>
+                                    <a class="title" href="http://localhost:4000/post/ssh/">
+                                        <span>ssh</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-02</span>
+                                    <a class="title" href="http://localhost:4000/post/less/">
+                                        <span>less</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-02</span>
+                                    <a class="title" href="http://localhost:4000/post/renice/">
+                                        <span>renice</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-02</span>
+                                    <a class="title" href="http://localhost:4000/post/pvdisplay/">
+                                        <span>pvdisplay</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-02</span>
+                                    <a class="title" href="http://localhost:4000/post/lsattr/">
+                                        <span>lsattr</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-02</span>
+                                    <a class="title" href="http://localhost:4000/post/dig/">
+                                        <span>dig</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-02</span>
+                                    <a class="title" href="http://localhost:4000/post/swapon/">
+                                        <span>swapon</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-02</span>
+                                    <a class="title" href="http://localhost:4000/post/ssh-add/">
+                                        <span>ssh-add</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-02</span>
+                                    <a class="title" href="http://localhost:4000/post/ftpshut/">
+                                        <span>ftpshut</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-02</span>
+                                    <a class="title" href="http://localhost:4000/post/vgcreate/">
+                                        <span>vgcreate</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-02</span>
+                                    <a class="title" href="http://localhost:4000/post/logname/">
+                                        <span>logname</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-02</span>
+                                    <a class="title" href="http://localhost:4000/post/shift/">
+                                        <span>shift</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-02</span>
+                                    <a class="title" href="http://localhost:4000/post/write/">
+                                        <span>write</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-02</span>
+                                    <a class="title" href="http://localhost:4000/post/return/">
+                                        <span>return</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-02</span>
+                                    <a class="title" href="http://localhost:4000/post/ipcs/">
+                                        <span>ipcs</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-02</span>
+                                    <a class="title" href="http://localhost:4000/post/local/">
+                                        <span>local</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-02</span>
+                                    <a class="title" href="http://localhost:4000/post/dpkg-split/">
+                                        <span>dpkg-split</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-02</span>
+                                    <a class="title" href="http://localhost:4000/post/vgreduce/">
+                                        <span>vgreduce</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-02</span>
+                                    <a class="title" href="http://localhost:4000/post/vgdisplay/">
+                                        <span>vgdisplay</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-02</span>
+                                    <a class="title" href="http://localhost:4000/post/dpkg-statoverride/">
+                                        <span>dpkg-statoverride</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-02</span>
+                                    <a class="title" href="http://localhost:4000/post/nslookup/">
+                                        <span>nslookup</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-02</span>
+                                    <a class="title" href="http://localhost:4000/post/pwconv/">
+                                        <span>pwconv</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-02</span>
+                                    <a class="title" href="http://localhost:4000/post/Terms-and-Privacy/">
+                                        <span>隐私政策以及使用条款</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-02</span>
+                                    <a class="title" href="http://localhost:4000/post/uupick/">
+                                        <span>uupick</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-02</span>
+                                    <a class="title" href="http://localhost:4000/post/seinfo/">
+                                        <span>seinfo</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-02</span>
+                                    <a class="title" href="http://localhost:4000/post/users/">
+                                        <span>users</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-02</span>
+                                    <a class="title" href="http://localhost:4000/post/updatedb/">
+                                        <span>updatedb</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-02</span>
+                                    <a class="title" href="http://localhost:4000/post/lvextend/">
+                                        <span>lvextend</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                    </ul>
+
+                </li>
+                
+        </ul>
+    </div>
+
+                        <div class="pagination-container">
+          <a href="http://localhost:4000/archives/page/6/" class="page-btn btn">上一页</a>
+          <a href="http://localhost:4000/archives/page/8/" class="page-btn btn">下一页</a>
         </div>
+
+                    <div class="site-footer">
+    <img style="vertical-align:middle;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&count_bg=%2310C1F9&title_bg=%23555555&icon=html5.svg&icon_color=%23E7E7E7&title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&edge_flat=false"> | <span>Copyright © 2020-2022 Dev-Coco - All Rights Reserved.</span> | <a class="rss" href="http://localhost:4000/atom.xml" target="_blank">RSS</a>
     </div>
-</nav>
-<script>
-    /* 移动端导航栏展开/收起切换 */
-    document.getElementById('changeNavbar').onclick = () => {
-        var element = document.getElementById('navbarSupportedContent');
-        if (element.style.display === 'none' || element.style.display === '') {
-            element.style.display = 'block';
-        } else {
-            element.style.display = 'none';
-        }
-    }
-</script>
-
-        <div class="post-container">
-            <div class="post-detail gt-bg-theme-color-first">
-                <article class="gt-post-content">
-                    <h2 class="post-title">归档</h2>
-        
-
-<div class="archives-container">
-    
-        <h2 class="year gt-c-cotent-color-first">2022</h2>
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/xauth/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-02&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            xauth
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/dpkg-reconfigure/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-02&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            dpkg-reconfigure
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/make/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-02&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            make
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/setsid/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-02&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            setsid
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/rmmod/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-02&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            rmmod
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/grpconv/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-02&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            grpconv
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/suspend/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-02&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            suspend
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/iptables-save/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-02&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            iptables-save
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/mkbootdisk/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-02&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            mkbootdisk
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/ed/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-02&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            ed
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/lvreduce/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-02&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            lvreduce
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/mkfs/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-02&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            mkfs
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/shutdown/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-02&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            shutdown
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/killall/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-02&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            killall
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/tempfile/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-02&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            tempfile
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/getsebool/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-02&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            getsebool
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/lvcreate/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-02&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            lvcreate
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/groups/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-02&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            groups
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/sesearch/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-02&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            sesearch
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/hostname/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-02&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            hostname
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/whoami/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-02&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            whoami
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/sar/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-02&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            sar
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/ssh/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-02&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            ssh
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/less/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-02&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            less
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/renice/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-02&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            renice
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/pvdisplay/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-02&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            pvdisplay
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/lsattr/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-02&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            lsattr
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/dig/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-02&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            dig
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/swapon/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-02&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            swapon
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/ssh-add/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-02&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            ssh-add
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/ftpshut/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-02&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            ftpshut
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/vgcreate/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-02&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            vgcreate
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/logname/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-02&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            logname
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/shift/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-02&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            shift
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/write/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-02&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            write
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/return/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-02&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            return
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/ipcs/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-02&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            ipcs
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/local/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-02&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            local
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/dpkg-split/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-02&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            dpkg-split
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/vgreduce/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-02&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            vgreduce
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/vgdisplay/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-02&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            vgdisplay
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/dpkg-statoverride/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-02&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            dpkg-statoverride
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/nslookup/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-02&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            nslookup
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/pwconv/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-02&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            pwconv
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/Terms-and-Privacy/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-02&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            隐私政策以及使用条款
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/uupick/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-02&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            uupick
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/seinfo/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-02&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            seinfo
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/users/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-02&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            users
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/updatedb/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-02&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            updatedb
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/lvextend/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-02&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            lvextend
-                        </div>
-                    </a>
-                </article>
-            
-        
-    
-</div>
-
-        <div class="pagination-container">
-    
-        <a href="https://dev-coco.github.io/archives/page/6/" class="prev-page gt-a-link">上一页</a>
-    
-    
-        <a href="https://dev-coco.github.io/archives/page/8/" class="prev-page gt-a-link">下一页</a>
-    
-</div>
-
-    </article>
-</div>
-</div>
-        <div class="site-footer gt-c-content-color-first">
-    <div class="slogan gt-c-content-color-first">ttest</div>
-    <div class="social-container">
-        
-            
-                <a href="https://github.com/dev-coco" target="_blank">
-                    <i class="fab fa-github gt-c-content-color-first"></i>
-                </a>
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
     </div>
-    <div class="footer-info">
-        <span>Copyright © 2020-2022 Dev-Coco - All Rights Reserved.</span>
-    </div>
-    <div>
-        Theme <a href="https://github.com/imhanjie/gridea-theme-pure" target="_blank">Pure</a>, Powered by <a
-                href="https://gridea.dev" target="_blank">Gridea</a> | <a href="https://dev-coco.github.io/atom.xml" target="_blank">RSS</a>
-    </div>
-</div>
-
-<script>
-  hljs.highlightAll()
-</script>
-
-    </div>
-</div>
 </body>
+
 </html>

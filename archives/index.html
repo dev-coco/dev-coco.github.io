@@ -1,726 +1,542 @@
 <html>
+
 <head>
-    <meta charset="utf-8" />
-<meta name="description" content="" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-
-<title>归档 | Dev-Coco</title>
-
-<link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1649561576908">
-
-<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
-<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css"> -->
-
-<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
-<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.12.0/languages/dockerfile.min.js"></script>
-<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.12.0/languages//dart.min.js"></script>
-
-<!-- <script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script> -->
-<!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script> -->
-<!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script> -->
-<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script> -->
-<!-- DEMO JS -->
-<!--<script src="media/scripts/index.js"></script>-->
-
-
-
+      <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dev-Coco</title>
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.ico?v=1649620613752">
+  <link rel="stylesheet" href="http://localhost:4000/styles/main.css">
+  <script src="http://localhost:4000/media/js/jquery.sticky-sidebar.min.js"></script>
+<script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
+
 <body>
-<div class="main gt-bg-theme-color-first">
-    <div class="main-content">
-        <nav class="navbar navbar-expand-lg">
-    <a class="navbar-brand" href="/">
-        <img class="user-avatar" src="/images/avatar.png" alt="头像">
-        <div class="site-name gt-c-content-color-first">
-            Dev-Coco
+    <div class="main">
+            <div class="header">
+      <div class="nav">
+        <div class="logo">
+          <a href="http://localhost:4000">
+            <img class="avatar" src="http://localhost:4000/images/avatar.png?v=1649620613752" alt="">
+          </a>
+          <div class="site-title">
+            <h1>Dev-Coco</h1>
+          </div>
         </div>
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" id="changeNavbar">
-        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <div class="navbar-nav mr-auto" style="text-align: center">
-            
-            <div class="nav-item">
-                
-                <a href="/" class="menu gt-a-link">
-                    首页
-                </a>
-                
-            </div>
-            
-            <div class="nav-item">
-                
-                <a href="/Featured-Software.html" class="menu gt-a-link">
-                    软件
-                </a>
-                
-            </div>
-            
-            <div class="nav-item">
-                
-                <a href="/Online-Tools" class="menu gt-a-link">
-                    在线工具
-                </a>
-                
-            </div>
-            
-            <div class="nav-item">
-                
-                <a href="/post/Linux-Command" class="menu gt-a-link">
-                    Linux命令
-                </a>
-                
-            </div>
-            
-            <div class="nav-item">
-                
-                <a href="/Excel" class="menu gt-a-link">
-                    Excel教程
-                </a>
-                
-            </div>
-            
-            <div class="nav-item">
-                
-                <a href="/post/Terms-and-Privacy" class="menu gt-a-link">
-                    隐私与条款
-                </a>
-                
-            </div>
-            
+        <span class="menu-btn fa fa-align-justify"></span>
+        <div class="menu-container">
+          <ul>
+            <li>
+              <a href="/" class="menu">首页</a>
+            </li>
+            <li>
+              <a href="/Featured-Software.html" class="menu">软件</a>
+            </li>
+            <li>
+              <a href="/Online-Tools" class="menu">在线工具</a>
+            </li>
+            <li>
+              <a href="/post/Linux-Command" class="menu">Linux命令</a>
+            </li>
+            <li>
+              <a href="/Excel" class="menu">Excel教程</a>
+            </li>
+            <li>
+              <a href="/post/Terms-and-Privacy" class="menu">隐私与条款</a>
+            </li>
+          </ul>
         </div>
-        <div style="text-align: center">
-            <form id="gridea-search-form" style="position: relative" data-update="1649561576908"
-                action="/search/">
-                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
-                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
-            </form>
+        <form id="gridea-search-form" action="http://localhost:4000/search/" class="search">
+          <input type="search" name="q" class="search-box">
+          <span class="search-button">
+            <span class="search-icon"></span>
+          </span>
+        </form>
+      </div>
+    </div>
+    <script>
+      document.getElementsByClassName('search-button')[0].addEventListener('click', function () {
+        document.getElementById('gridea-search-form').classList.toggle('open');
+      })
+    </script>
+
+
+            
+
+    <div class="archives-container main-container">
+        <ul class="timeline">
+            
+                <li>
+                    <h3 class="year">
+                        2022
+                    </h3>
+                    <ul class="year-wrapper">
+                        
+                            
+                                <li>
+                                    <span class="date">2022-04-06</span>
+                                    <a class="title" href="http://localhost:4000/post/Customer-Service/">
+                                        <span>自助问答客服</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-04-05</span>
+                                    <a class="title" href="http://localhost:4000/post/Create-Google-API-Key/">
+                                        <span>申请 Google API 密钥</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-03-16</span>
+                                    <a class="title" href="http://localhost:4000/post/Batch-Create-KeePassXC-Database/">
+                                        <span>命令行批量创建 KeePassXC 数据库</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-03-05</span>
+                                    <a class="title" href="http://localhost:4000/post/facebook-badge/">
+                                        <span>Facebook 小组徽章</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-23</span>
+                                    <a class="title" href="http://localhost:4000/post/Hide-WhatsApp-Alert/">
+                                        <span>屏蔽 WhatsApp 提示弹窗</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-21</span>
+                                    <a class="title" href="http://localhost:4000/post/image-gallery/">
+                                        <span>Image-Gallery 图片网站主题</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-08</span>
+                                    <a class="title" href="http://localhost:4000/post/Create-Telegram-Bot/">
+                                        <span>创建 Telegram 机器人</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-07</span>
+                                    <a class="title" href="http://localhost:4000/post/Linux-Command/">
+                                        <span>Linux 命令手册</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-06</span>
+                                    <a class="title" href="http://localhost:4000/post/Mac-System-Boost/">
+                                        <span>macOS 系统优化</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-06</span>
+                                    <a class="title" href="http://localhost:4000/post/Mac-Cleaner/">
+                                        <span>macOS 清理垃圾</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-05</span>
+                                    <a class="title" href="http://localhost:4000/post/Chrome-Performance-Settings/">
+                                        <span>浏览器提高性能设置</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-05</span>
+                                    <a class="title" href="http://localhost:4000/post/Batch-Download-Avatar/">
+                                        <span>批量下载头像</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-05</span>
+                                    <a class="title" href="http://localhost:4000/post/Disable-Squirrel-Update/">
+                                        <span>禁用 Squirrel 框架自动更新</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-05</span>
+                                    <a class="title" href="http://localhost:4000/post/Disable-Skype-Update/">
+                                        <span>禁用 Skype 自动更新</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-05</span>
+                                    <a class="title" href="http://localhost:4000/post/Language-Code/">
+                                        <span>语言代码表</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-05</span>
+                                    <a class="title" href="http://localhost:4000/post/Image-Compression/">
+                                        <span>macOS 压缩图片</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-05</span>
+                                    <a class="title" href="http://localhost:4000/post/File-Recovery/">
+                                        <span>恢复删除的文件</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-04</span>
+                                    <a class="title" href="http://localhost:4000/post/Regex-Syntax/">
+                                        <span>正则表达式语法</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-04</span>
+                                    <a class="title" href="http://localhost:4000/post/Block-OTA-Update/">
+                                        <span>屏蔽 OTA 更新</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-04</span>
+                                    <a class="title" href="http://localhost:4000/post/Google-Excel-Hyperlink/">
+                                        <span>Google Excel 超链接</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-04</span>
+                                    <a class="title" href="http://localhost:4000/post/Markdown-Syntax/">
+                                        <span>Markdown 语法</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-04</span>
+                                    <a class="title" href="http://localhost:4000/post/Automatic-Software-Update/">
+                                        <span>macOS 软件自动更新</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-04</span>
+                                    <a class="title" href="http://localhost:4000/post/Todo-List/">
+                                        <span>待办清单</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-04</span>
+                                    <a class="title" href="http://localhost:4000/post/Fake-Noise-Cancellation/">
+                                        <span>伪降噪</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-04</span>
+                                    <a class="title" href="http://localhost:4000/post/Website-Loading-Optimization/">
+                                        <span>优化加载网页速度</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-04</span>
+                                    <a class="title" href="http://localhost:4000/post/dmesg/">
+                                        <span>dmesg</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-04</span>
+                                    <a class="title" href="http://localhost:4000/post/semanage/">
+                                        <span>semanage</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-04</span>
+                                    <a class="title" href="http://localhost:4000/post/xz/">
+                                        <span>xz</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-04</span>
+                                    <a class="title" href="http://localhost:4000/post/readonly/">
+                                        <span>readonly</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-04</span>
+                                    <a class="title" href="http://localhost:4000/post/tr/">
+                                        <span>tr</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-04</span>
+                                    <a class="title" href="http://localhost:4000/post/iotop/">
+                                        <span>iotop</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-04</span>
+                                    <a class="title" href="http://localhost:4000/post/restorecon/">
+                                        <span>restorecon</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-04</span>
+                                    <a class="title" href="http://localhost:4000/post/mv/">
+                                        <span>mv</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-04</span>
+                                    <a class="title" href="http://localhost:4000/post/indent/">
+                                        <span>indent</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-04</span>
+                                    <a class="title" href="http://localhost:4000/post/enable/">
+                                        <span>enable</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-04</span>
+                                    <a class="title" href="http://localhost:4000/post/id/">
+                                        <span>id</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-04</span>
+                                    <a class="title" href="http://localhost:4000/post/env/">
+                                        <span>env</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-04</span>
+                                    <a class="title" href="http://localhost:4000/post/hdparm/">
+                                        <span>hdparm</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-04</span>
+                                    <a class="title" href="http://localhost:4000/post/locate/">
+                                        <span>locate</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-04</span>
+                                    <a class="title" href="http://localhost:4000/post/mail/">
+                                        <span>mail</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-04</span>
+                                    <a class="title" href="http://localhost:4000/post/fgrep/">
+                                        <span>fgrep</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-04</span>
+                                    <a class="title" href="http://localhost:4000/post/nl/">
+                                        <span>nl</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-04</span>
+                                    <a class="title" href="http://localhost:4000/post/lsblk/">
+                                        <span>lsblk</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-04</span>
+                                    <a class="title" href="http://localhost:4000/post/passwd/">
+                                        <span>passwd</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-04</span>
+                                    <a class="title" href="http://localhost:4000/post/logrotate/">
+                                        <span>logrotate</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-04</span>
+                                    <a class="title" href="http://localhost:4000/post/patch/">
+                                        <span>patch</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-04</span>
+                                    <a class="title" href="http://localhost:4000/post/htop/">
+                                        <span>htop</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-04</span>
+                                    <a class="title" href="http://localhost:4000/post/pssh/">
+                                        <span>pssh</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-04</span>
+                                    <a class="title" href="http://localhost:4000/post/nethogs/">
+                                        <span>nethogs</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                            
+                                <li>
+                                    <span class="date">2022-02-04</span>
+                                    <a class="title" href="http://localhost:4000/post/vmstat/">
+                                        <span>vmstat</span>
+                                    </a>
+                                </li>
+                                
+                                    
+                    </ul>
+
+                </li>
+                
+        </ul>
+    </div>
+
+                        <div class="pagination-container">
+          <a href="http://localhost:4000/archives/page/2" class="page-btn btn">下一页</a>
         </div>
+
+                    <div class="site-footer">
+    <img style="vertical-align:middle;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&count_bg=%2310C1F9&title_bg=%23555555&icon=html5.svg&icon_color=%23E7E7E7&title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&edge_flat=false"> | <span>Copyright © 2020-2022 Dev-Coco - All Rights Reserved.</span> | <a class="rss" href="http://localhost:4000/atom.xml" target="_blank">RSS</a>
     </div>
-</nav>
-<script>
-    /* 移动端导航栏展开/收起切换 */
-    document.getElementById('changeNavbar').onclick = () => {
-        var element = document.getElementById('navbarSupportedContent');
-        if (element.style.display === 'none' || element.style.display === '') {
-            element.style.display = 'block';
-        } else {
-            element.style.display = 'none';
-        }
-    }
-</script>
-
-        <div class="post-container">
-            <div class="post-detail gt-bg-theme-color-first">
-                <article class="gt-post-content">
-                    <h2 class="post-title">归档</h2>
-        
-
-<div class="archives-container">
-    
-        <h2 class="year gt-c-cotent-color-first">2022</h2>
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/Customer-Service/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-04-06&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            自助问答客服
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/Create-Google-API-Key/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-04-05&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            申请 Google API 密钥
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/Batch-Create-KeePassXC-Database/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-03-16&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            命令行批量创建 KeePassXC 数据库
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/facebook-badge/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-03-05&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            Facebook 小组徽章
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/Hide-WhatsApp-Alert/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-23&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            屏蔽 WhatsApp 提示弹窗
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/image-gallery/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-21&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            Image-Gallery 图片网站主题
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/Create-Telegram-Bot/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-08&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            创建 Telegram 机器人
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/Linux-Command/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-07&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            Linux 命令手册
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/Mac-System-Boost/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-06&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            macOS 系统优化
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/Mac-Cleaner/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-06&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            macOS 清理垃圾
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/Chrome-Performance-Settings/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-05&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            浏览器提高性能设置
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/Batch-Download-Avatar/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-05&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            批量下载头像
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/Disable-Squirrel-Update/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-05&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            禁用 Squirrel 框架自动更新
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/Disable-Skype-Update/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-05&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            禁用 Skype 自动更新
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/Language-Code/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-05&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            语言代码表
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/Image-Compression/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-05&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            macOS 压缩图片
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/File-Recovery/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-05&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            恢复删除的文件
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/Regex-Syntax/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-04&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            正则表达式语法
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/Block-OTA-Update/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-04&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            屏蔽 OTA 更新
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/Google-Excel-Hyperlink/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-04&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            Google Excel 超链接
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/Markdown-Syntax/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-04&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            Markdown 语法
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/Automatic-Software-Update/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-04&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            macOS 软件自动更新
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/Todo-List/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-04&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            待办清单
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/Fake-Noise-Cancellation/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-04&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            伪降噪
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/Website-Loading-Optimization/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-04&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            优化加载网页速度
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/dmesg/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-04&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            dmesg
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/semanage/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-04&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            semanage
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/xz/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-04&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            xz
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/readonly/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-04&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            readonly
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/tr/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-04&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            tr
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/iotop/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-04&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            iotop
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/restorecon/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-04&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            restorecon
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/mv/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-04&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            mv
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/indent/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-04&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            indent
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/enable/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-04&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            enable
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/id/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-04&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            id
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/env/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-04&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            env
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/hdparm/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-04&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            hdparm
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/locate/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-04&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            locate
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/mail/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-04&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            mail
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/fgrep/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-04&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            fgrep
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/nl/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-04&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            nl
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/lsblk/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-04&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            lsblk
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/passwd/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-04&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            passwd
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/logrotate/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-04&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            logrotate
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/patch/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-04&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            patch
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/htop/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-04&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            htop
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/pssh/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-04&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            pssh
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/nethogs/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-04&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            nethogs
-                        </div>
-                    </a>
-                </article>
-            
-        
-            
-                <article class="post">
-                    <a href="https://dev-coco.github.io/post/vmstat/">
-                        <div class="post-title gt-c-content-color-first">
-                            <small><b>2022-02-04&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
-                            vmstat
-                        </div>
-                    </a>
-                </article>
-            
-        
-    
-</div>
-
-        <div class="pagination-container">
-    
-    
-        <a href="https://dev-coco.github.io/archives/page/2" class="prev-page gt-a-link">下一页</a>
-    
-</div>
-
-    </article>
-</div>
-</div>
-        <div class="site-footer gt-c-content-color-first">
-    <div class="slogan gt-c-content-color-first">ttest</div>
-    <div class="social-container">
-        
-            
-                <a href="https://github.com/dev-coco" target="_blank">
-                    <i class="fab fa-github gt-c-content-color-first"></i>
-                </a>
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
     </div>
-    <div class="footer-info">
-        <span>Copyright © 2020-2022 Dev-Coco - All Rights Reserved.</span>
-    </div>
-    <div>
-        Theme <a href="https://github.com/imhanjie/gridea-theme-pure" target="_blank">Pure</a>, Powered by <a
-                href="https://gridea.dev" target="_blank">Gridea</a> | <a href="https://dev-coco.github.io/atom.xml" target="_blank">RSS</a>
-    </div>
-</div>
-
-<script>
-  hljs.highlightAll()
-</script>
-
-    </div>
-</div>
 </body>
+
 </html>

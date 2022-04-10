@@ -1,210 +1,174 @@
 <html>
 <head>
-    <meta charset="utf-8" />
-<meta name="description" content="" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-
-<title>禁用 Skype 自动更新 | Dev-Coco</title>
-
-<link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1649561576908">
-
-<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
-<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css"> -->
-
-<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
-<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.12.0/languages/dockerfile.min.js"></script>
-<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.12.0/languages//dart.min.js"></script>
-
-<!-- <script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script> -->
-<!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script> -->
-<!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script> -->
-<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script> -->
-<!-- DEMO JS -->
-<!--<script src="media/scripts/index.js"></script>-->
-
-
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>禁用 Skype 自动更新 | Dev-Coco</title>
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.ico?v=1649620613752">
+  <link rel="stylesheet" href="http://localhost:4000/styles/main.css">
+  <script src="http://localhost:4000/media/js/jquery.sticky-sidebar.min.js"></script>
+<script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 <body>
-<div class="main gt-bg-theme-color-first">
-    <nav class="navbar navbar-expand-lg">
-    <a class="navbar-brand" href="/">
-        <img class="user-avatar" src="/images/avatar.png" alt="头像">
-        <div class="site-name gt-c-content-color-first">
-            Dev-Coco
+  <div class="main">
+    <div class="header">
+      <div class="nav">
+        <div class="logo">
+          <a href="http://localhost:4000">
+            <img class="avatar" src="http://localhost:4000/images/avatar.png?v=1649620613752" alt="">
+          </a>
+          <div class="site-title">
+            <h1>Dev-Coco</h1>
+          </div>
         </div>
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" id="changeNavbar">
-        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <div class="navbar-nav mr-auto" style="text-align: center">
-            
-            <div class="nav-item">
-                
-                <a href="/" class="menu gt-a-link">
-                    首页
-                </a>
-                
-            </div>
-            
-            <div class="nav-item">
-                
-                <a href="/Featured-Software.html" class="menu gt-a-link">
-                    软件
-                </a>
-                
-            </div>
-            
-            <div class="nav-item">
-                
-                <a href="/Online-Tools" class="menu gt-a-link">
-                    在线工具
-                </a>
-                
-            </div>
-            
-            <div class="nav-item">
-                
-                <a href="/post/Linux-Command" class="menu gt-a-link">
-                    Linux命令
-                </a>
-                
-            </div>
-            
-            <div class="nav-item">
-                
-                <a href="/Excel" class="menu gt-a-link">
-                    Excel教程
-                </a>
-                
-            </div>
-            
-            <div class="nav-item">
-                
-                <a href="/post/Terms-and-Privacy" class="menu gt-a-link">
-                    隐私与条款
-                </a>
-                
-            </div>
-            
+        <span class="menu-btn fa fa-align-justify"></span>
+        <div class="menu-container">
+          <ul>
+            <li>
+              <a href="/" class="menu">首页</a>
+            </li>
+            <li>
+              <a href="/Featured-Software.html" class="menu">软件</a>
+            </li>
+            <li>
+              <a href="/Online-Tools" class="menu">在线工具</a>
+            </li>
+            <li>
+              <a href="/post/Linux-Command" class="menu">Linux命令</a>
+            </li>
+            <li>
+              <a href="/Excel" class="menu">Excel教程</a>
+            </li>
+            <li>
+              <a href="/post/Terms-and-Privacy" class="menu">隐私与条款</a>
+            </li>
+          </ul>
         </div>
-        <div style="text-align: center">
-            <form id="gridea-search-form" style="position: relative" data-update="1649561576908"
-                action="/search/">
-                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
-                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
-            </form>
-        </div>
+        <form id="gridea-search-form" action="http://localhost:4000/search/" class="search">
+          <input type="search" name="q" class="search-box">
+          <span class="search-button">
+            <span class="search-icon"></span>
+          </span>
+        </form>
+      </div>
     </div>
-</nav>
-<script>
-    /* 移动端导航栏展开/收起切换 */
-    document.getElementById('changeNavbar').onclick = () => {
-        var element = document.getElementById('navbarSupportedContent');
-        if (element.style.display === 'none' || element.style.display === '') {
-            element.style.display = 'block';
-        } else {
-            element.style.display = 'none';
-        }
-    }
-</script>
+    <script>
+      document.getElementsByClassName('search-button')[0].addEventListener('click', function () {
+        document.getElementById('gridea-search-form').classList.toggle('open');
+      })
+    </script>
 
-    <div class="post-container">
-        <div class="post-detail gt-bg-theme-color-second">
-            <article class="gt-post-content">
-                <h2 class="post-title">
-                    禁用 Skype 自动更新
-                </h2>
-                <div class="post-info">
-                    <time class="post-time gt-c-content-color-first">
-                        · 2022-02-05 ·
-                    </time>
-                    
-                        <a href="https://dev-coco.github.io/tag/windows/" class="post-tags">
-                            # Windows
-                        </a>
-                    
-                        <a href="https://dev-coco.github.io/tag/software/" class="post-tags">
-                            # 软件
-                        </a>
-                    
-                </div>
-                <div class="post-content">
-                    <p>Windows 禁用 Skype 自动更新。</p>
+    <div id="main-content" class="post-detail main-container">
+      <!-- left -->
+      <div id="content" class="main-container-left">
+        <article class="post i-card">
+        <h2 class="post-title">禁用 Skype 自动更新</h2>
+        <div class="post-info">
+          <time class="post-time">2022-02-05 / 2 min read</time>
+            <a href="http://localhost:4000/tag/windows/" class="post-tag i-tag i-tag-info">#Windows</a>
+            <a href="http://localhost:4000/tag/software/" class="post-tag i-tag i-tag-banana">#软件</a>
+        </div>
+          <div class="post-content">
+            <p>Windows 禁用 Skype 自动更新。</p>
 <!-- more -->
 <p>这个工具适用于 Windows 操作系统的 Skype 应用程序。如果你是 Mac OS 操作系统的用户请点击 --&gt;&gt; <a href="/post/Disable-Squirrel-Update/">禁用 Squirrel 框架自动更新</a>。</p>
 <h2 id="使用方法">使用方法</h2>
 <ol>
 <li>从 <a href="/Featured-Software.html">软件列表</a> 下载 Disable Skype Update。<br>
-<img src="https://dev-coco.github.io/post-images/1644092316174.png" alt="" loading="lazy"></li>
+<img src="http://localhost:4000/post-images/1644092316174.png" alt="" loading="lazy"></li>
 <li>关闭 Skype 后台，安装旧版本 Skype（如果需要的话），安装后请勿启动 Skype！</li>
 <li>双击运行 “Disable-Skype-Update.bat” 文件。这时可能你会看到一个黑框闪过（也可能不会），不会有任何提示。运行后就可以启动 Skype 应用程序了。</li>
 <li>启动 Skype，检查一下是否提示更新失败（也有可能会提示正在检查更新，然后过一会就变成更新失败），如下图所示。<br>
-<img src="https://dev-coco.github.io/post-images/1644092578350.png" alt="" loading="lazy"></li>
+<img src="http://localhost:4000/post-images/1644092578350.png" alt="" loading="lazy"></li>
 </ol>
 <p>如果需要恢复自动更新，点击👉<a href="https://github.com/dev-coco/Disable-Skype-Update/releases/download/1.0/Disable-Skype-Update-Uninstall.bat">下载</a>，使用管理员权限运行“Disable-Skype-Update-Uninstall.bat”文件，运行后不会有任何提示，使用 Skype 检查版本就会自动更新。</p>
 <h2 id="skype-旧版本下载">Skype 旧版本下载</h2>
 <p>修改对应的版本号即可下载，以下是个例子。<br>
 https://download.skype.com/s4l/download/win/Skype-8.40.0.70.exe</p>
 
-                </div>
-            </article>
+          </div>
+        </article>
+        <div class="next-post">
+          <div class="next">下一篇</div>
+          <a href="http://localhost:4000/post/Language-Code/">
+            <h3 class="post-title">语言代码表</h3>
+          </a>
         </div>
+        <div id="disqus_thread"></div>
+        <div id="gitalk-container"></div>
+      </div>
+      <!-- middle -->
+      <div class="main-container-middle"></div>
+      <!-- right -->
+      <div id="sidebar" class="main-container-right">
+      <!-- toc -->
+      <div class="toc-card i-card ">
+        <div class="toc-title i-card-title">目录</div>
+          <div class="toc-content">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95">使用方法</a></li>
+<li><a href="#skype-%E6%97%A7%E7%89%88%E6%9C%AC%E4%B8%8B%E8%BD%BD">Skype 旧版本下载</a></li>
+</ul>
+</li>
+</ul>
 
-        
-            <div class="next-post">
-                <div class="next gt-c-content-color-first">下一篇</div>
-                <a href="https://dev-coco.github.io/post/Language-Code/" class="post-title gt-a-link">
-                    语言代码表
-                </a>
-            </div>
-        
-
-        
-
-        
-
-        
-
-        <div class="site-footer gt-c-content-color-first">
-    <div class="slogan gt-c-content-color-first">ttest</div>
-    <div class="social-container">
-        
-            
-                <a href="https://github.com/dev-coco" target="_blank">
-                    <i class="fab fa-github gt-c-content-color-first"></i>
-                </a>
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
+          </div>
+          <script>
+            function locateCatelogList() {
+              /*获取文章目录集合,可通过:header过滤器*/
+              var alis = $('.post-content :header');
+              /*获取侧边栏目录列表集合**/
+              var sidebar_alis = $('.markdownIt-TOC a');
+              /*获取滚动条到顶部的距离*/
+              var scroll_height = $(window).scrollTop();
+              for (var i = 0; i < alis.length; i++) {
+                /*获取锚点集合中的元素分别到顶点的距离*/
+                var a_height = $(alis[i]).offset().top;
+                if (a_height < scroll_height) {
+                  /*高亮显示*/
+                  sidebar_alis.removeClass('on');
+                  $(sidebar_alis[i]).addClass('on');
+                }
+              }
+            }
+            $(function() {
+              /*绑定滚动事件 */
+              $(window).bind('scroll', locateCatelogList);
+              });
+          </script>
+        </div>
+      <div class="notice-card i-card ">
+        <div class="notice-title i-card-title">公告</div>
+        <div class="notice-content">test</div>
+      </div>
+      <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
+        <div class="notice-content">
+          <a class="tags-tag i-tag i-tag-other_1" href="http://localhost:4000/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="http://localhost:4000/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="http://localhost:4000/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-banana" href="http://localhost:4000/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="http://localhost:4000/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-" href="http://localhost:4000/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-warning" href="http://localhost:4000/tag/linux-command/">Linux命令</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="http://localhost:4000/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-banana" href="http://localhost:4000/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="http://localhost:4000/tag/excel/">Excel</a>
+        </div>
+      </div>
+      </div>
     </div>
-    <div class="footer-info">
-        <span>Copyright © 2020-2022 Dev-Coco - All Rights Reserved.</span>
+    <div class="site-footer">
+    <img style="vertical-align:middle;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&count_bg=%2310C1F9&title_bg=%23555555&icon=html5.svg&icon_color=%23E7E7E7&title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&edge_flat=false"> | <span>Copyright © 2020-2022 Dev-Coco - All Rights Reserved.</span> | <a class="rss" href="http://localhost:4000/atom.xml" target="_blank">RSS</a>
     </div>
-    <div>
-        Theme <a href="https://github.com/imhanjie/gridea-theme-pure" target="_blank">Pure</a>, Powered by <a
-                href="https://gridea.dev" target="_blank">Gridea</a> | <a href="https://dev-coco.github.io/atom.xml" target="_blank">RSS</a>
-    </div>
-</div>
-
-<script>
-  hljs.highlightAll()
-</script>
-
-    </div>
-</div>
+  </div>
+  <script>
+    $('#sidebar').stickySidebar({
+    topSpacing: 80,
+    // bottomSpacing: 60
+    });
+  </script>
+  
 </body>
 </html>

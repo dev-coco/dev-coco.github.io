@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://dev-coco.github.io</id>
+    <id>http://localhost:4000</id>
     <title>Dev-Coco</title>
-    <updated>2022-04-10T03:32:59.785Z</updated>
+    <updated>2022-04-10T21:13:08.729Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://dev-coco.github.io"/>
-    <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
+    <link rel="alternate" href="http://localhost:4000"/>
+    <link rel="self" href="http://localhost:4000/atom.xml"/>
     <subtitle>ttest</subtitle>
-    <logo>https://dev-coco.github.io/images/avatar.png</logo>
-    <icon>https://dev-coco.github.io/favicon.ico</icon>
+    <logo>http://localhost:4000/images/avatar.png</logo>
+    <icon>http://localhost:4000/favicon.ico</icon>
     <rights>All rights reserved 2022, Dev-Coco</rights>
     <entry>
         <title type="html"><![CDATA[自助问答客服]]></title>
-        <id>https://dev-coco.github.io/post/Customer-Service/</id>
-        <link href="https://dev-coco.github.io/post/Customer-Service/">
+        <id>http://localhost:4000/post/Customer-Service/</id>
+        <link href="http://localhost:4000/post/Customer-Service/">
         </link>
         <updated>2022-04-06T13:08:24.000Z</updated>
         <summary type="html"><![CDATA[<p>自助问答客服是一个根据关键词快速回复自定义内容的网页。</p>
@@ -23,8 +23,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[申请 Google API 密钥]]></title>
-        <id>https://dev-coco.github.io/post/Create-Google-API-Key/</id>
-        <link href="https://dev-coco.github.io/post/Create-Google-API-Key/">
+        <id>http://localhost:4000/post/Create-Google-API-Key/</id>
+        <link href="http://localhost:4000/post/Create-Google-API-Key/">
         </link>
         <updated>2022-04-05T23:08:47.000Z</updated>
         <summary type="html"><![CDATA[<p>申请 Google API 密钥的方法。</p>
@@ -34,8 +34,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[命令行批量创建 KeePassXC 数据库]]></title>
-        <id>https://dev-coco.github.io/post/Batch-Create-KeePassXC-Database/</id>
-        <link href="https://dev-coco.github.io/post/Batch-Create-KeePassXC-Database/">
+        <id>http://localhost:4000/post/Batch-Create-KeePassXC-Database/</id>
+        <link href="http://localhost:4000/post/Batch-Create-KeePassXC-Database/">
         </link>
         <updated>2022-03-17T02:25:36.000Z</updated>
         <summary type="html"><![CDATA[<p>使用命令行批量创建 KeePass 数据库。</p>
@@ -45,8 +45,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Facebook 小组徽章]]></title>
-        <id>https://dev-coco.github.io/post/facebook-badge/</id>
-        <link href="https://dev-coco.github.io/post/facebook-badge/">
+        <id>http://localhost:4000/post/facebook-badge/</id>
+        <link href="http://localhost:4000/post/facebook-badge/">
         </link>
         <updated>2022-03-06T04:23:04.000Z</updated>
         <summary type="html"><![CDATA[<p>Facebook 小组徽章 ID 和类型。</p>
@@ -56,8 +56,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[屏蔽 WhatsApp 提示弹窗]]></title>
-        <id>https://dev-coco.github.io/post/Hide-WhatsApp-Alert/</id>
-        <link href="https://dev-coco.github.io/post/Hide-WhatsApp-Alert/">
+        <id>http://localhost:4000/post/Hide-WhatsApp-Alert/</id>
+        <link href="http://localhost:4000/post/Hide-WhatsApp-Alert/">
         </link>
         <updated>2022-02-23T15:45:50.000Z</updated>
         <summary type="html"><![CDATA[<p>屏蔽 “您的电脑没有足够的空间来运行 WhatsApp。” 提示弹窗。</p>
@@ -67,8 +67,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Image-Gallery 图片网站主题]]></title>
-        <id>https://dev-coco.github.io/post/image-gallery/</id>
-        <link href="https://dev-coco.github.io/post/image-gallery/">
+        <id>http://localhost:4000/post/image-gallery/</id>
+        <link href="http://localhost:4000/post/image-gallery/">
         </link>
         <updated>2022-02-21T12:07:31.000Z</updated>
         <summary type="html"><![CDATA[<p>Image-Gallery 是一个专门为预览图片打造的静态网页。</p>
@@ -78,8 +78,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[创建 Telegram 机器人]]></title>
-        <id>https://dev-coco.github.io/post/Create-Telegram-Bot/</id>
-        <link href="https://dev-coco.github.io/post/Create-Telegram-Bot/">
+        <id>http://localhost:4000/post/Create-Telegram-Bot/</id>
+        <link href="http://localhost:4000/post/Create-Telegram-Bot/">
         </link>
         <updated>2022-02-08T07:44:04.000Z</updated>
         <summary type="html"><![CDATA[<p>创建 Telegram 机器人，获取 token。</p>
@@ -89,8 +89,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Linux 命令手册]]></title>
-        <id>https://dev-coco.github.io/post/Linux-Command/</id>
-        <link href="https://dev-coco.github.io/post/Linux-Command/">
+        <id>http://localhost:4000/post/Linux-Command/</id>
+        <link href="http://localhost:4000/post/Linux-Command/">
         </link>
         <updated>2022-02-07T05:37:42.000Z</updated>
         <summary type="html"><![CDATA[<p>查询 Linux 命令功能。</p>
@@ -100,8 +100,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[macOS 系统优化]]></title>
-        <id>https://dev-coco.github.io/post/Mac-System-Boost/</id>
-        <link href="https://dev-coco.github.io/post/Mac-System-Boost/">
+        <id>http://localhost:4000/post/Mac-System-Boost/</id>
+        <link href="http://localhost:4000/post/Mac-System-Boost/">
         </link>
         <updated>2022-02-06T06:50:30.000Z</updated>
         <summary type="html"><![CDATA[<p>你的电脑是否经常遇到卡顿，运行缓慢的问题呢？</p>
@@ -111,8 +111,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[macOS 清理垃圾]]></title>
-        <id>https://dev-coco.github.io/post/Mac-Cleaner/</id>
-        <link href="https://dev-coco.github.io/post/Mac-Cleaner/">
+        <id>http://localhost:4000/post/Mac-Cleaner/</id>
+        <link href="http://localhost:4000/post/Mac-Cleaner/">
         </link>
         <updated>2022-02-06T06:32:42.000Z</updated>
         <summary type="html"><![CDATA[<p>全新 macOS 清理垃圾工具，超彻底深度清理。支持清理缓存，清理卸载残留，系统优化功能。</p>

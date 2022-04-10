@@ -1,432 +1,302 @@
 <html>
+
 <head>
-    <meta charset="utf-8" />
-<meta name="description" content="" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-
-<title>Linux命令 | Dev-Coco</title>
-
-<link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1649561576908">
-
-<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
-<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css"> -->
-
-<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
-<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.12.0/languages/dockerfile.min.js"></script>
-<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.12.0/languages//dart.min.js"></script>
-
-<!-- <script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script> -->
-<!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script> -->
-<!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script> -->
-<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script> -->
-<!-- DEMO JS -->
-<!--<script src="media/scripts/index.js"></script>-->
-
-
-
+      <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Linux命令 | Dev-Coco</title>
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.ico?v=1649620613752">
+  <link rel="stylesheet" href="http://localhost:4000/styles/main.css">
+  <script src="http://localhost:4000/media/js/jquery.sticky-sidebar.min.js"></script>
+<script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
+
 <body>
-<div class="main gt-bg-theme-color-first">
-    <div class="main-content">
-        <nav class="navbar navbar-expand-lg">
-    <a class="navbar-brand" href="/">
-        <img class="user-avatar" src="/images/avatar.png" alt="头像">
-        <div class="site-name gt-c-content-color-first">
-            Dev-Coco
+    <div class="main">
+            <div class="header">
+      <div class="nav">
+        <div class="logo">
+          <a href="http://localhost:4000">
+            <img class="avatar" src="http://localhost:4000/images/avatar.png?v=1649620613752" alt="">
+          </a>
+          <div class="site-title">
+            <h1>Dev-Coco</h1>
+          </div>
         </div>
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" id="changeNavbar">
-        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <div class="navbar-nav mr-auto" style="text-align: center">
-            
-            <div class="nav-item">
-                
-                <a href="/" class="menu gt-a-link">
-                    首页
-                </a>
-                
-            </div>
-            
-            <div class="nav-item">
-                
-                <a href="/Featured-Software.html" class="menu gt-a-link">
-                    软件
-                </a>
-                
-            </div>
-            
-            <div class="nav-item">
-                
-                <a href="/Online-Tools" class="menu gt-a-link">
-                    在线工具
-                </a>
-                
-            </div>
-            
-            <div class="nav-item">
-                
-                <a href="/post/Linux-Command" class="menu gt-a-link">
-                    Linux命令
-                </a>
-                
-            </div>
-            
-            <div class="nav-item">
-                
-                <a href="/Excel" class="menu gt-a-link">
-                    Excel教程
-                </a>
-                
-            </div>
-            
-            <div class="nav-item">
-                
-                <a href="/post/Terms-and-Privacy" class="menu gt-a-link">
-                    隐私与条款
-                </a>
-                
-            </div>
-            
+        <span class="menu-btn fa fa-align-justify"></span>
+        <div class="menu-container">
+          <ul>
+            <li>
+              <a href="/" class="menu">首页</a>
+            </li>
+            <li>
+              <a href="/Featured-Software.html" class="menu">软件</a>
+            </li>
+            <li>
+              <a href="/Online-Tools" class="menu">在线工具</a>
+            </li>
+            <li>
+              <a href="/post/Linux-Command" class="menu">Linux命令</a>
+            </li>
+            <li>
+              <a href="/Excel" class="menu">Excel教程</a>
+            </li>
+            <li>
+              <a href="/post/Terms-and-Privacy" class="menu">隐私与条款</a>
+            </li>
+          </ul>
         </div>
-        <div style="text-align: center">
-            <form id="gridea-search-form" style="position: relative" data-update="1649561576908"
-                action="/search/">
-                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
-                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
-            </form>
-        </div>
+        <form id="gridea-search-form" action="http://localhost:4000/search/" class="search">
+          <input type="search" name="q" class="search-box">
+          <span class="search-button">
+            <span class="search-icon"></span>
+          </span>
+        </form>
+      </div>
     </div>
-</nav>
-<script>
-    /* 移动端导航栏展开/收起切换 */
-    document.getElementById('changeNavbar').onclick = () => {
-        var element = document.getElementById('navbarSupportedContent');
-        if (element.style.display === 'none' || element.style.display === '') {
-            element.style.display = 'block';
-        } else {
-            element.style.display = 'none';
-        }
-    }
-</script>
+    <script>
+      document.getElementsByClassName('search-button')[0].addEventListener('click', function () {
+        document.getElementById('gridea-search-form').classList.toggle('open');
+      })
+    </script>
 
-        <div class="current-tag-container">
-            <h2 class="title gt-c-content-color-first">
-                #Linux命令
-            </h2>
-        </div>
-        <div class="post-list-container">
-    <div class="post-inner">
-        
-            <div class="post gt-bg-theme-color-second">
-                <div class="post-left">
-                    <div>
-                        
-                        <a href="https://dev-coco.github.io/post/fdisk/">
-                            <span class="post-title gt-c-content-color-first">fdisk</span>
-                        </a>
-                    </div>
-                    <div class="gt-post-content post-abstract gt-c-content-color-second">
-                        查看磁盘使用情况和磁盘分区。
 
-                    </div>
-                    <div class="post-info">
-                        <time class="post-time gt-c-content-color-first">
-                            发布于 · 2022-02-03 ·
-                        </time>
-                        
-                            <a href="https://dev-coco.github.io/tag/linux-command/" class="post-tag">
-                                # Linux命令
-                            </a>
-                        
-                    </div>
-                </div>
-                
-            </div>
-        
-            <div class="post gt-bg-theme-color-second">
-                <div class="post-left">
-                    <div>
-                        
-                        <a href="https://dev-coco.github.io/post/setfacl/">
-                            <span class="post-title gt-c-content-color-first">setfacl</span>
-                        </a>
-                    </div>
-                    <div class="gt-post-content post-abstract gt-c-content-color-second">
-                        设置文件访问控制列表。
-
-                    </div>
-                    <div class="post-info">
-                        <time class="post-time gt-c-content-color-first">
-                            发布于 · 2022-02-03 ·
-                        </time>
-                        
-                            <a href="https://dev-coco.github.io/tag/linux-command/" class="post-tag">
-                                # Linux命令
-                            </a>
-                        
-                    </div>
-                </div>
-                
-            </div>
-        
-            <div class="post gt-bg-theme-color-second">
-                <div class="post-left">
-                    <div>
-                        
-                        <a href="https://dev-coco.github.io/post/find/">
-                            <span class="post-title gt-c-content-color-first">find</span>
-                        </a>
-                    </div>
-                    <div class="gt-post-content post-abstract gt-c-content-color-second">
-                        在指定目录下查找文件。
-
-                    </div>
-                    <div class="post-info">
-                        <time class="post-time gt-c-content-color-first">
-                            发布于 · 2022-02-03 ·
-                        </time>
-                        
-                            <a href="https://dev-coco.github.io/tag/linux-command/" class="post-tag">
-                                # Linux命令
-                            </a>
-                        
-                    </div>
-                </div>
-                
-            </div>
-        
-            <div class="post gt-bg-theme-color-second">
-                <div class="post-left">
-                    <div>
-                        
-                        <a href="https://dev-coco.github.io/post/gdb/">
-                            <span class="post-title gt-c-content-color-first">gdb</span>
-                        </a>
-                    </div>
-                    <div class="gt-post-content post-abstract gt-c-content-color-second">
-                        功能强大的程序调试器。
-
-                    </div>
-                    <div class="post-info">
-                        <time class="post-time gt-c-content-color-first">
-                            发布于 · 2022-02-03 ·
-                        </time>
-                        
-                            <a href="https://dev-coco.github.io/tag/linux-command/" class="post-tag">
-                                # Linux命令
-                            </a>
-                        
-                    </div>
-                </div>
-                
-            </div>
-        
-            <div class="post gt-bg-theme-color-second">
-                <div class="post-left">
-                    <div>
-                        
-                        <a href="https://dev-coco.github.io/post/firewall-cmd/">
-                            <span class="post-title gt-c-content-color-first">firewall-cmd</span>
-                        </a>
-                    </div>
-                    <div class="gt-post-content post-abstract gt-c-content-color-second">
-                        Linux 上新用的防火墙软件，跟 iptables 差不多的工具。
-
-                    </div>
-                    <div class="post-info">
-                        <time class="post-time gt-c-content-color-first">
-                            发布于 · 2022-02-03 ·
-                        </time>
-                        
-                            <a href="https://dev-coco.github.io/tag/linux-command/" class="post-tag">
-                                # Linux命令
-                            </a>
-                        
-                    </div>
-                </div>
-                
-            </div>
-        
-            <div class="post gt-bg-theme-color-second">
-                <div class="post-left">
-                    <div>
-                        
-                        <a href="https://dev-coco.github.io/post/iptables/">
-                            <span class="post-title gt-c-content-color-first">iptables</span>
-                        </a>
-                    </div>
-                    <div class="gt-post-content post-abstract gt-c-content-color-second">
-                        Linux 上常用的防火墙软件。
-
-                    </div>
-                    <div class="post-info">
-                        <time class="post-time gt-c-content-color-first">
-                            发布于 · 2022-02-03 ·
-                        </time>
-                        
-                            <a href="https://dev-coco.github.io/tag/linux-command/" class="post-tag">
-                                # Linux命令
-                            </a>
-                        
-                    </div>
-                </div>
-                
-            </div>
-        
-            <div class="post gt-bg-theme-color-second">
-                <div class="post-left">
-                    <div>
-                        
-                        <a href="https://dev-coco.github.io/post/objdump/">
-                            <span class="post-title gt-c-content-color-first">objdump</span>
-                        </a>
-                    </div>
-                    <div class="gt-post-content post-abstract gt-c-content-color-second">
-                        显示二进制文件信息。
-
-                    </div>
-                    <div class="post-info">
-                        <time class="post-time gt-c-content-color-first">
-                            发布于 · 2022-02-03 ·
-                        </time>
-                        
-                            <a href="https://dev-coco.github.io/tag/linux-command/" class="post-tag">
-                                # Linux命令
-                            </a>
-                        
-                    </div>
-                </div>
-                
-            </div>
-        
-            <div class="post gt-bg-theme-color-second">
-                <div class="post-left">
-                    <div>
-                        
-                        <a href="https://dev-coco.github.io/post/md5sum/">
-                            <span class="post-title gt-c-content-color-first">md5sum</span>
-                        </a>
-                    </div>
-                    <div class="gt-post-content post-abstract gt-c-content-color-second">
-                        计算和校验文件报文摘要的工具程序。
-
-                    </div>
-                    <div class="post-info">
-                        <time class="post-time gt-c-content-color-first">
-                            发布于 · 2022-02-03 ·
-                        </time>
-                        
-                            <a href="https://dev-coco.github.io/tag/linux-command/" class="post-tag">
-                                # Linux命令
-                            </a>
-                        
-                    </div>
-                </div>
-                
-            </div>
-        
-            <div class="post gt-bg-theme-color-second">
-                <div class="post-left">
-                    <div>
-                        
-                        <a href="https://dev-coco.github.io/post/nc/">
-                            <span class="post-title gt-c-content-color-first">nc</span>
-                        </a>
-                    </div>
-                    <div class="gt-post-content post-abstract gt-c-content-color-second">
-                        用于设置路由器，是网络工具中的瑞士军刀。
-
-                    </div>
-                    <div class="post-info">
-                        <time class="post-time gt-c-content-color-first">
-                            发布于 · 2022-02-03 ·
-                        </time>
-                        
-                            <a href="https://dev-coco.github.io/tag/linux-command/" class="post-tag">
-                                # Linux命令
-                            </a>
-                        
-                    </div>
-                </div>
-                
-            </div>
-        
-            <div class="post gt-bg-theme-color-second">
-                <div class="post-left">
-                    <div>
-                        
-                        <a href="https://dev-coco.github.io/post/umask/">
-                            <span class="post-title gt-c-content-color-first">umask</span>
-                        </a>
-                    </div>
-                    <div class="gt-post-content post-abstract gt-c-content-color-second">
-                        显示或设置创建文件的权限掩码。。
-
-                    </div>
-                    <div class="post-info">
-                        <time class="post-time gt-c-content-color-first">
-                            发布于 · 2022-02-03 ·
-                        </time>
-                        
-                            <a href="https://dev-coco.github.io/tag/linux-command/" class="post-tag">
-                                # Linux命令
-                            </a>
-                        
-                    </div>
-                </div>
-                
-            </div>
-        
-    </div>
+            <div id="main-content" class="post-container main-container">
+                <div id="content" class="main-container-left">
+                    
+  <div class="i-card">
+    <b>标签：#
+    Linux命令</b>
 </div>
+        <article class="post i-card">
+          <h2 class="post-title">
+            <a href="http://localhost:4000/post/fdisk/">fdisk</a>
+          </h2>
+          <div class="post-info">
+            <time class="post-time">2022-02-03 / 9 min read</time>
+            <a href="http://localhost:4000/tag/linux-command/" class="post-tag i-tag i-tag-other_3">#Linux命令</a>
+          </div>
+          <div class="post-article">
+            <div class="post-content">
+              <div class="post-content-abstract">
+                <p>查看磁盘使用情况和磁盘分区。</p>
+              </div>
+              <a class="btn btn-text" href="http://localhost:4000/post/fdisk/">Read More ~</a>
+            </div>
+          </div>
+        </article>
+        <article class="post i-card">
+          <h2 class="post-title">
+            <a href="http://localhost:4000/post/setfacl/">setfacl</a>
+          </h2>
+          <div class="post-info">
+            <time class="post-time">2022-02-03 / 13 min read</time>
+            <a href="http://localhost:4000/tag/linux-command/" class="post-tag i-tag i-tag-other_3">#Linux命令</a>
+          </div>
+          <div class="post-article">
+            <div class="post-content">
+              <div class="post-content-abstract">
+                <p>设置文件访问控制列表。</p>
+              </div>
+              <a class="btn btn-text" href="http://localhost:4000/post/setfacl/">Read More ~</a>
+            </div>
+          </div>
+        </article>
+        <article class="post i-card">
+          <h2 class="post-title">
+            <a href="http://localhost:4000/post/find/">find</a>
+          </h2>
+          <div class="post-info">
+            <time class="post-time">2022-02-03 / 13 min read</time>
+            <a href="http://localhost:4000/tag/linux-command/" class="post-tag i-tag i-tag-other_2">#Linux命令</a>
+          </div>
+          <div class="post-article">
+            <div class="post-content">
+              <div class="post-content-abstract">
+                <p>在指定目录下查找文件。</p>
+              </div>
+              <a class="btn btn-text" href="http://localhost:4000/post/find/">Read More ~</a>
+            </div>
+          </div>
+        </article>
+        <article class="post i-card">
+          <h2 class="post-title">
+            <a href="http://localhost:4000/post/gdb/">gdb</a>
+          </h2>
+          <div class="post-info">
+            <time class="post-time">2022-02-03 / 13 min read</time>
+            <a href="http://localhost:4000/tag/linux-command/" class="post-tag i-tag i-tag-error">#Linux命令</a>
+          </div>
+          <div class="post-article">
+            <div class="post-content">
+              <div class="post-content-abstract">
+                <p>功能强大的程序调试器。</p>
+              </div>
+              <a class="btn btn-text" href="http://localhost:4000/post/gdb/">Read More ~</a>
+            </div>
+          </div>
+        </article>
+        <article class="post i-card">
+          <h2 class="post-title">
+            <a href="http://localhost:4000/post/firewall-cmd/">firewall-cmd</a>
+          </h2>
+          <div class="post-info">
+            <time class="post-time">2022-02-03 / 12 min read</time>
+            <a href="http://localhost:4000/tag/linux-command/" class="post-tag i-tag i-tag-info">#Linux命令</a>
+          </div>
+          <div class="post-article">
+            <div class="post-content">
+              <div class="post-content-abstract">
+                <p>Linux 上新用的防火墙软件，跟 iptables 差不多的工具。</p>
+              </div>
+              <a class="btn btn-text" href="http://localhost:4000/post/firewall-cmd/">Read More ~</a>
+            </div>
+          </div>
+        </article>
+        <article class="post i-card">
+          <h2 class="post-title">
+            <a href="http://localhost:4000/post/iptables/">iptables</a>
+          </h2>
+          <div class="post-info">
+            <time class="post-time">2022-02-03 / 14 min read</time>
+            <a href="http://localhost:4000/tag/linux-command/" class="post-tag i-tag i-tag-primary">#Linux命令</a>
+          </div>
+          <div class="post-article">
+            <div class="post-content">
+              <div class="post-content-abstract">
+                <p>Linux 上常用的防火墙软件。</p>
+              </div>
+              <a class="btn btn-text" href="http://localhost:4000/post/iptables/">Read More ~</a>
+            </div>
+          </div>
+        </article>
+        <article class="post i-card">
+          <h2 class="post-title">
+            <a href="http://localhost:4000/post/objdump/">objdump</a>
+          </h2>
+          <div class="post-info">
+            <time class="post-time">2022-02-03 / 15 min read</time>
+            <a href="http://localhost:4000/tag/linux-command/" class="post-tag i-tag i-tag-other_1">#Linux命令</a>
+          </div>
+          <div class="post-article">
+            <div class="post-content">
+              <div class="post-content-abstract">
+                <p>显示二进制文件信息。</p>
+              </div>
+              <a class="btn btn-text" href="http://localhost:4000/post/objdump/">Read More ~</a>
+            </div>
+          </div>
+        </article>
+        <article class="post i-card">
+          <h2 class="post-title">
+            <a href="http://localhost:4000/post/md5sum/">md5sum</a>
+          </h2>
+          <div class="post-info">
+            <time class="post-time">2022-02-03 / 3 min read</time>
+            <a href="http://localhost:4000/tag/linux-command/" class="post-tag i-tag i-tag-warning">#Linux命令</a>
+          </div>
+          <div class="post-article">
+            <div class="post-content">
+              <div class="post-content-abstract">
+                <p>计算和校验文件报文摘要的工具程序。</p>
+              </div>
+              <a class="btn btn-text" href="http://localhost:4000/post/md5sum/">Read More ~</a>
+            </div>
+          </div>
+        </article>
+        <article class="post i-card">
+          <h2 class="post-title">
+            <a href="http://localhost:4000/post/nc/">nc</a>
+          </h2>
+          <div class="post-info">
+            <time class="post-time">2022-02-03 / 3 min read</time>
+            <a href="http://localhost:4000/tag/linux-command/" class="post-tag i-tag i-tag-warning">#Linux命令</a>
+          </div>
+          <div class="post-article">
+            <div class="post-content">
+              <div class="post-content-abstract">
+                <p>用于设置路由器，是网络工具中的瑞士军刀。</p>
+              </div>
+              <a class="btn btn-text" href="http://localhost:4000/post/nc/">Read More ~</a>
+            </div>
+          </div>
+        </article>
+        <article class="post i-card">
+          <h2 class="post-title">
+            <a href="http://localhost:4000/post/umask/">umask</a>
+          </h2>
+          <div class="post-info">
+            <time class="post-time">2022-02-03 / 3 min read</time>
+            <a href="http://localhost:4000/tag/linux-command/" class="post-tag i-tag i-tag-other_2">#Linux命令</a>
+          </div>
+          <div class="post-article">
+            <div class="post-content">
+              <div class="post-content-abstract">
+                <p>显示或设置创建文件的权限掩码。。</p>
+              </div>
+              <a class="btn btn-text" href="http://localhost:4000/post/umask/">Read More ~</a>
+            </div>
+          </div>
+        </article>
         <div class="pagination-container">
-    
-        <a href="https://dev-coco.github.io/tag/linux-command/page/9/" class="prev-page gt-a-link">上一页</a>
-    
-    
-        <a href="https://dev-coco.github.io/tag/linux-command/page/11/" class="prev-page gt-a-link">下一页</a>
-    
-</div>
+          <a href="http://localhost:4000/tag/linux-command/page/9/" class="page-btn btn">上一页</a>
+          <a href="http://localhost:4000/tag/linux-command/page/11/" class="page-btn btn">下一页</a>
+        </div>
+                </div>
+                <!--  -->
+                <div class="main-container-middle"></div>
+                <!--  -->
+                <div id="sidebar" class="main-container-right">
 
-        <div class="site-footer gt-c-content-color-first">
-    <div class="slogan gt-c-content-color-first">ttest</div>
-    <div class="social-container">
-        
+                    <!-- 个人信息 -->
+                    <div class="id_card i-card">
+          <div class="id_card-avatar" style="background-image: url(http://localhost:4000/images/avatar.png?v=1649620613752)"></div>
+          <h1 class="id_card-title">Dev-Coco</h1>
+          <h2 class="id_card-description">ttest</h2>
+          <!--  -->
+          <div class="id_card-sns">
+            <!-- github -->
             
-                <a href="https://github.com/dev-coco" target="_blank">
-                    <i class="fab fa-github gt-c-content-color-first"></i>
-                </a>
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-    </div>
-    <div class="footer-info">
-        <span>Copyright © 2020-2022 Dev-Coco - All Rights Reserved.</span>
-    </div>
-    <div>
-        Theme <a href="https://github.com/imhanjie/gridea-theme-pure" target="_blank">Pure</a>, Powered by <a
-                href="https://gridea.dev" target="_blank">Gridea</a> | <a href="https://dev-coco.github.io/atom.xml" target="_blank">RSS</a>
-    </div>
-</div>
+            <!-- twitter -->
+            <!-- weibo -->
+            <!-- facebook -->
+          </div>
+        </div>
 
-<script>
-  hljs.highlightAll()
-</script>
+                        <!-- 公告栏 -->
+                        <div class="notice-card i-card ">
+        <div class="notice-title i-card-title">公告</div>
+        <div class="notice-content">test</div>
+      </div>
+                        <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
+        <div class="notice-content">
+          <a class="tags-tag i-tag i-tag-banana" href="http://localhost:4000/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="http://localhost:4000/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-warning" href="http://localhost:4000/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-info" href="http://localhost:4000/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-info" href="http://localhost:4000/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="http://localhost:4000/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="http://localhost:4000/tag/linux-command/">Linux命令</a>
+          <a class="tags-tag i-tag i-tag-warning" href="http://localhost:4000/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-" href="http://localhost:4000/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-error" href="http://localhost:4000/tag/excel/">Excel</a>
+        </div>
+      </div>
+                </div>
+            </div>
 
+
+
+            <div class="site-footer">
+    <img style="vertical-align:middle;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&count_bg=%2310C1F9&title_bg=%23555555&icon=html5.svg&icon_color=%23E7E7E7&title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&edge_flat=false"> | <span>Copyright © 2020-2022 Dev-Coco - All Rights Reserved.</span> | <a class="rss" href="http://localhost:4000/atom.xml" target="_blank">RSS</a>
     </div>
-</div>
+    </div>
+    <script>
+        $('#sidebar').stickySidebar({
+            topSpacing: 80,
+            // bottomSpacing: 60
+        });
+    </script>
 </body>
+
 </html>
