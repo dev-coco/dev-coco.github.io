@@ -1,305 +1,432 @@
 <html>
-
 <head>
-      <meta charset="utf-8">
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Linux命令 | Dev-Coco</title>
-  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1649293707697">
-  <link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
-  <script src="https://dev-coco.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
-<script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>Linux命令 | Dev-Coco</title>
+
+<link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1649561576908">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css"> -->
+
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.12.0/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/9.12.0/languages//dart.min.js"></script>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script> -->
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+
 </head>
-
 <body>
-    <div class="main">
-            <div class="header">
-      <div class="nav">
-        <div class="logo">
-          <a href="https://dev-coco.github.io">
-            <img class="avatar" src="https://dev-coco.github.io/images/avatar.png?v=1649293707697" alt="">
-          </a>
-          <div class="site-title">
-            <h1>Dev-Coco</h1>
-          </div>
+<div class="main gt-bg-theme-color-first">
+    <div class="main-content">
+        <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="/">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            Dev-Coco
         </div>
-        <span class="menu-btn fa fa-align-justify"></span>
-        <div class="menu-container">
-          <ul>
-            <li>
-              <a href="/" class="menu">首页</a>
-            </li>
-            <li>
-              <a href="/Featured-Software.html" class="menu">软件</a>
-            </li>
-            <li>
-              <a href="/Online-Tools" class="menu">在线工具</a>
-            </li>
-            <li>
-              <a href="/post/Linux-Command" class="menu">Linux命令</a>
-            </li>
-            <li>
-              <a href="/Excel" class="menu">Excel教程</a>
-            </li>
-            <li>
-              <a href="/post/Terms-and-Privacy" class="menu">隐私与条款</a>
-            </li>
-          </ul>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" id="changeNavbar">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+            <div class="nav-item">
+                
+                <a href="/" class="menu gt-a-link">
+                    首页
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/Featured-Software.html" class="menu gt-a-link">
+                    软件
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/Online-Tools" class="menu gt-a-link">
+                    在线工具
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/post/Linux-Command" class="menu gt-a-link">
+                    Linux命令
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/Excel" class="menu gt-a-link">
+                    Excel教程
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/post/Terms-and-Privacy" class="menu gt-a-link">
+                    隐私与条款
+                </a>
+                
+            </div>
+            
         </div>
-      </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1649561576908"
+                action="/search/">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
     </div>
-    <script>
-      $(document).ready(function() {
-        $(".menu-btn").click(function() {
-          $(".menu-container").slideToggle();
-        });
-        $(window).resize(function() {
-          if (window.matchMedia('(min-width: 960px)').matches) {
-            $(".menu-container").css('display', 'block')
-          } else {
-            $(".menu-container").css('display', 'none')
-          }
-        });
-      });
-    </script>
+</nav>
+<script>
+    /* 移动端导航栏展开/收起切换 */
+    document.getElementById('changeNavbar').onclick = () => {
+        var element = document.getElementById('navbarSupportedContent');
+        if (element.style.display === 'none' || element.style.display === '') {
+            element.style.display = 'block';
+        } else {
+            element.style.display = 'none';
+        }
+    }
+</script>
 
-            <div id="main-content" class="post-container main-container">
-                <div id="content" class="main-container-left">
-                    
-  <div class="i-card">
-    <b>标签：#
-    Linux命令</b>
+        <div class="current-tag-container">
+            <h2 class="title gt-c-content-color-first">
+                #Linux命令
+            </h2>
+        </div>
+        <div class="post-list-container">
+    <div class="post-inner">
+        
+            <div class="post gt-bg-theme-color-second">
+                <div class="post-left">
+                    <div>
+                        
+                        <a href="https://dev-coco.github.io/post/ed/">
+                            <span class="post-title gt-c-content-color-first">ed</span>
+                        </a>
+                    </div>
+                    <div class="gt-post-content post-abstract gt-c-content-color-second">
+                        单行纯文本编辑器。
+
+                    </div>
+                    <div class="post-info">
+                        <time class="post-time gt-c-content-color-first">
+                            发布于 · 2022-02-02 ·
+                        </time>
+                        
+                            <a href="https://dev-coco.github.io/tag/linux-command/" class="post-tag">
+                                # Linux命令
+                            </a>
+                        
+                    </div>
+                </div>
+                
+            </div>
+        
+            <div class="post gt-bg-theme-color-second">
+                <div class="post-left">
+                    <div>
+                        
+                        <a href="https://dev-coco.github.io/post/lvreduce/">
+                            <span class="post-title gt-c-content-color-first">lvreduce</span>
+                        </a>
+                    </div>
+                    <div class="gt-post-content post-abstract gt-c-content-color-second">
+                        收缩逻辑卷空间。
+
+                    </div>
+                    <div class="post-info">
+                        <time class="post-time gt-c-content-color-first">
+                            发布于 · 2022-02-02 ·
+                        </time>
+                        
+                            <a href="https://dev-coco.github.io/tag/linux-command/" class="post-tag">
+                                # Linux命令
+                            </a>
+                        
+                    </div>
+                </div>
+                
+            </div>
+        
+            <div class="post gt-bg-theme-color-second">
+                <div class="post-left">
+                    <div>
+                        
+                        <a href="https://dev-coco.github.io/post/mkfs/">
+                            <span class="post-title gt-c-content-color-first">mkfs</span>
+                        </a>
+                    </div>
+                    <div class="gt-post-content post-abstract gt-c-content-color-second">
+                        用于在设备上创建 Linux 文件系统。
+
+                    </div>
+                    <div class="post-info">
+                        <time class="post-time gt-c-content-color-first">
+                            发布于 · 2022-02-02 ·
+                        </time>
+                        
+                            <a href="https://dev-coco.github.io/tag/linux-command/" class="post-tag">
+                                # Linux命令
+                            </a>
+                        
+                    </div>
+                </div>
+                
+            </div>
+        
+            <div class="post gt-bg-theme-color-second">
+                <div class="post-left">
+                    <div>
+                        
+                        <a href="https://dev-coco.github.io/post/shutdown/">
+                            <span class="post-title gt-c-content-color-first">shutdown</span>
+                        </a>
+                    </div>
+                    <div class="gt-post-content post-abstract gt-c-content-color-second">
+                        用来执行系统关机的命令。
+
+                    </div>
+                    <div class="post-info">
+                        <time class="post-time gt-c-content-color-first">
+                            发布于 · 2022-02-02 ·
+                        </time>
+                        
+                            <a href="https://dev-coco.github.io/tag/linux-command/" class="post-tag">
+                                # Linux命令
+                            </a>
+                        
+                    </div>
+                </div>
+                
+            </div>
+        
+            <div class="post gt-bg-theme-color-second">
+                <div class="post-left">
+                    <div>
+                        
+                        <a href="https://dev-coco.github.io/post/killall/">
+                            <span class="post-title gt-c-content-color-first">killall</span>
+                        </a>
+                    </div>
+                    <div class="gt-post-content post-abstract gt-c-content-color-second">
+                        使用进程的名称来杀死一组进程。
+
+                    </div>
+                    <div class="post-info">
+                        <time class="post-time gt-c-content-color-first">
+                            发布于 · 2022-02-02 ·
+                        </time>
+                        
+                            <a href="https://dev-coco.github.io/tag/linux-command/" class="post-tag">
+                                # Linux命令
+                            </a>
+                        
+                    </div>
+                </div>
+                
+            </div>
+        
+            <div class="post gt-bg-theme-color-second">
+                <div class="post-left">
+                    <div>
+                        
+                        <a href="https://dev-coco.github.io/post/tempfile/">
+                            <span class="post-title gt-c-content-color-first">tempfile</span>
+                        </a>
+                    </div>
+                    <div class="gt-post-content post-abstract gt-c-content-color-second">
+                        shell 中给临时文件命名。
+
+                    </div>
+                    <div class="post-info">
+                        <time class="post-time gt-c-content-color-first">
+                            发布于 · 2022-02-02 ·
+                        </time>
+                        
+                            <a href="https://dev-coco.github.io/tag/linux-command/" class="post-tag">
+                                # Linux命令
+                            </a>
+                        
+                    </div>
+                </div>
+                
+            </div>
+        
+            <div class="post gt-bg-theme-color-second">
+                <div class="post-left">
+                    <div>
+                        
+                        <a href="https://dev-coco.github.io/post/getsebool/">
+                            <span class="post-title gt-c-content-color-first">getsebool</span>
+                        </a>
+                    </div>
+                    <div class="gt-post-content post-abstract gt-c-content-color-second">
+                        查询 SElinux 策略内各项规则的布尔值。
+
+                    </div>
+                    <div class="post-info">
+                        <time class="post-time gt-c-content-color-first">
+                            发布于 · 2022-02-02 ·
+                        </time>
+                        
+                            <a href="https://dev-coco.github.io/tag/linux-command/" class="post-tag">
+                                # Linux命令
+                            </a>
+                        
+                    </div>
+                </div>
+                
+            </div>
+        
+            <div class="post gt-bg-theme-color-second">
+                <div class="post-left">
+                    <div>
+                        
+                        <a href="https://dev-coco.github.io/post/lvcreate/">
+                            <span class="post-title gt-c-content-color-first">lvcreate</span>
+                        </a>
+                    </div>
+                    <div class="gt-post-content post-abstract gt-c-content-color-second">
+                        用于创建 LVM 的逻辑卷。
+
+                    </div>
+                    <div class="post-info">
+                        <time class="post-time gt-c-content-color-first">
+                            发布于 · 2022-02-02 ·
+                        </time>
+                        
+                            <a href="https://dev-coco.github.io/tag/linux-command/" class="post-tag">
+                                # Linux命令
+                            </a>
+                        
+                    </div>
+                </div>
+                
+            </div>
+        
+            <div class="post gt-bg-theme-color-second">
+                <div class="post-left">
+                    <div>
+                        
+                        <a href="https://dev-coco.github.io/post/sesearch/">
+                            <span class="post-title gt-c-content-color-first">sesearch</span>
+                        </a>
+                    </div>
+                    <div class="gt-post-content post-abstract gt-c-content-color-second">
+                        查询 SELinux 策略的规则详情。
+
+                    </div>
+                    <div class="post-info">
+                        <time class="post-time gt-c-content-color-first">
+                            发布于 · 2022-02-02 ·
+                        </time>
+                        
+                            <a href="https://dev-coco.github.io/tag/linux-command/" class="post-tag">
+                                # Linux命令
+                            </a>
+                        
+                    </div>
+                </div>
+                
+            </div>
+        
+            <div class="post gt-bg-theme-color-second">
+                <div class="post-left">
+                    <div>
+                        
+                        <a href="https://dev-coco.github.io/post/hostname/">
+                            <span class="post-title gt-c-content-color-first">hostname</span>
+                        </a>
+                    </div>
+                    <div class="gt-post-content post-abstract gt-c-content-color-second">
+                        显示和设置系统的主机名。
+
+                    </div>
+                    <div class="post-info">
+                        <time class="post-time gt-c-content-color-first">
+                            发布于 · 2022-02-02 ·
+                        </time>
+                        
+                            <a href="https://dev-coco.github.io/tag/linux-command/" class="post-tag">
+                                # Linux命令
+                            </a>
+                        
+                    </div>
+                </div>
+                
+            </div>
+        
+    </div>
 </div>
-        <article class="post i-card">
-          <h2 class="post-title">
-            <a href="https://dev-coco.github.io/post/ed/">ed</a>
-          </h2>
-          <div class="post-info">
-            <time class="post-time">2022-02-02 / 1 min read</time>
-            <a href="https://dev-coco.github.io/tag/linux-command/" class="post-tag i-tag i-tag-other_3">#Linux命令</a>
-          </div>
-          <div class="post-article">
-            <div class="post-content">
-              <div class="post-content-abstract">
-                <p>单行纯文本编辑器。</p>
-              </div>
-              <a class="btn btn-text" href="https://dev-coco.github.io/post/ed/">Read More ~</a>
-            </div>
-          </div>
-        </article>
-        <article class="post i-card">
-          <h2 class="post-title">
-            <a href="https://dev-coco.github.io/post/lvreduce/">lvreduce</a>
-          </h2>
-          <div class="post-info">
-            <time class="post-time">2022-02-02 / 1 min read</time>
-            <a href="https://dev-coco.github.io/tag/linux-command/" class="post-tag i-tag i-tag-primary">#Linux命令</a>
-          </div>
-          <div class="post-article">
-            <div class="post-content">
-              <div class="post-content-abstract">
-                <p>收缩逻辑卷空间。</p>
-              </div>
-              <a class="btn btn-text" href="https://dev-coco.github.io/post/lvreduce/">Read More ~</a>
-            </div>
-          </div>
-        </article>
-        <article class="post i-card">
-          <h2 class="post-title">
-            <a href="https://dev-coco.github.io/post/mkfs/">mkfs</a>
-          </h2>
-          <div class="post-info">
-            <time class="post-time">2022-02-02 / 1 min read</time>
-            <a href="https://dev-coco.github.io/tag/linux-command/" class="post-tag i-tag i-tag-other_4">#Linux命令</a>
-          </div>
-          <div class="post-article">
-            <div class="post-content">
-              <div class="post-content-abstract">
-                <p>用于在设备上创建 Linux 文件系统。</p>
-              </div>
-              <a class="btn btn-text" href="https://dev-coco.github.io/post/mkfs/">Read More ~</a>
-            </div>
-          </div>
-        </article>
-        <article class="post i-card">
-          <h2 class="post-title">
-            <a href="https://dev-coco.github.io/post/shutdown/">shutdown</a>
-          </h2>
-          <div class="post-info">
-            <time class="post-time">2022-02-02 / 1 min read</time>
-            <a href="https://dev-coco.github.io/tag/linux-command/" class="post-tag i-tag i-tag-info">#Linux命令</a>
-          </div>
-          <div class="post-article">
-            <div class="post-content">
-              <div class="post-content-abstract">
-                <p>用来执行系统关机的命令。</p>
-              </div>
-              <a class="btn btn-text" href="https://dev-coco.github.io/post/shutdown/">Read More ~</a>
-            </div>
-          </div>
-        </article>
-        <article class="post i-card">
-          <h2 class="post-title">
-            <a href="https://dev-coco.github.io/post/killall/">killall</a>
-          </h2>
-          <div class="post-info">
-            <time class="post-time">2022-02-02 / 2 min read</time>
-            <a href="https://dev-coco.github.io/tag/linux-command/" class="post-tag i-tag i-tag-error">#Linux命令</a>
-          </div>
-          <div class="post-article">
-            <div class="post-content">
-              <div class="post-content-abstract">
-                <p>使用进程的名称来杀死一组进程。</p>
-              </div>
-              <a class="btn btn-text" href="https://dev-coco.github.io/post/killall/">Read More ~</a>
-            </div>
-          </div>
-        </article>
-        <article class="post i-card">
-          <h2 class="post-title">
-            <a href="https://dev-coco.github.io/post/tempfile/">tempfile</a>
-          </h2>
-          <div class="post-info">
-            <time class="post-time">2022-02-02 / 1 min read</time>
-            <a href="https://dev-coco.github.io/tag/linux-command/" class="post-tag i-tag i-tag-warning">#Linux命令</a>
-          </div>
-          <div class="post-article">
-            <div class="post-content">
-              <div class="post-content-abstract">
-                <p>shell 中给临时文件命名。</p>
-              </div>
-              <a class="btn btn-text" href="https://dev-coco.github.io/post/tempfile/">Read More ~</a>
-            </div>
-          </div>
-        </article>
-        <article class="post i-card">
-          <h2 class="post-title">
-            <a href="https://dev-coco.github.io/post/getsebool/">getsebool</a>
-          </h2>
-          <div class="post-info">
-            <time class="post-time">2022-02-02 / 1 min read</time>
-            <a href="https://dev-coco.github.io/tag/linux-command/" class="post-tag i-tag i-tag-success">#Linux命令</a>
-          </div>
-          <div class="post-article">
-            <div class="post-content">
-              <div class="post-content-abstract">
-                <p>查询 SElinux 策略内各项规则的布尔值。</p>
-              </div>
-              <a class="btn btn-text" href="https://dev-coco.github.io/post/getsebool/">Read More ~</a>
-            </div>
-          </div>
-        </article>
-        <article class="post i-card">
-          <h2 class="post-title">
-            <a href="https://dev-coco.github.io/post/lvcreate/">lvcreate</a>
-          </h2>
-          <div class="post-info">
-            <time class="post-time">2022-02-02 / 1 min read</time>
-            <a href="https://dev-coco.github.io/tag/linux-command/" class="post-tag i-tag i-tag-other_4">#Linux命令</a>
-          </div>
-          <div class="post-article">
-            <div class="post-content">
-              <div class="post-content-abstract">
-                <p>用于创建 LVM 的逻辑卷。</p>
-              </div>
-              <a class="btn btn-text" href="https://dev-coco.github.io/post/lvcreate/">Read More ~</a>
-            </div>
-          </div>
-        </article>
-        <article class="post i-card">
-          <h2 class="post-title">
-            <a href="https://dev-coco.github.io/post/sesearch/">sesearch</a>
-          </h2>
-          <div class="post-info">
-            <time class="post-time">2022-02-02 / 1 min read</time>
-            <a href="https://dev-coco.github.io/tag/linux-command/" class="post-tag i-tag i-tag-">#Linux命令</a>
-          </div>
-          <div class="post-article">
-            <div class="post-content">
-              <div class="post-content-abstract">
-                <p>查询 SELinux 策略的规则详情。</p>
-              </div>
-              <a class="btn btn-text" href="https://dev-coco.github.io/post/sesearch/">Read More ~</a>
-            </div>
-          </div>
-        </article>
-        <article class="post i-card">
-          <h2 class="post-title">
-            <a href="https://dev-coco.github.io/post/hostname/">hostname</a>
-          </h2>
-          <div class="post-info">
-            <time class="post-time">2022-02-02 / 1 min read</time>
-            <a href="https://dev-coco.github.io/tag/linux-command/" class="post-tag i-tag i-tag-other_3">#Linux命令</a>
-          </div>
-          <div class="post-article">
-            <div class="post-content">
-              <div class="post-content-abstract">
-                <p>显示和设置系统的主机名。</p>
-              </div>
-              <a class="btn btn-text" href="https://dev-coco.github.io/post/hostname/">Read More ~</a>
-            </div>
-          </div>
-        </article>
         <div class="pagination-container">
-          <a href="https://dev-coco.github.io/tag/linux-command/page/28/" class="page-btn btn">上一页</a>
-          <a href="https://dev-coco.github.io/tag/linux-command/page/30/" class="page-btn btn">下一页</a>
-        </div>
-                </div>
-                <!--  -->
-                <div class="main-container-middle"></div>
-                <!--  -->
-                <div id="sidebar" class="main-container-right">
+    
+        <a href="https://dev-coco.github.io/tag/linux-command/page/28/" class="prev-page gt-a-link">上一页</a>
+    
+    
+        <a href="https://dev-coco.github.io/tag/linux-command/page/30/" class="prev-page gt-a-link">下一页</a>
+    
+</div>
 
-                    <!-- 个人信息 -->
-                    <div class="id_card i-card">
-          <div class="id_card-avatar" style="background-image: url(https://dev-coco.github.io/images/avatar.png?v=1649293707697)"></div>
-          <h1 class="id_card-title">Dev-Coco</h1>
-          <h2 class="id_card-description"></h2>
-          <!--  -->
-          <div class="id_card-sns">
-            <!-- github -->
-            <a href="https://github.com/dev-coco" target="_blank" rel="noopener noreferrer"><i class="fa fa-github"></i></a>
-            <!-- twitter -->
-            <!-- weibo -->
-            <!-- facebook -->
-            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><i class="fa fa-facebook"></i></a>
-          </div>
-        </div>
-
-                        <!-- 公告栏 -->
-                        <div class="notice-card i-card ">
-        <div class="notice-title i-card-title">公告</div>
-        <div class="notice-content">界面全新改版</div>
-      </div>
-                        <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
-        <div class="notice-content">
-          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/other/">其它</a>
-          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/shell/">Shell</a>
-          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/software/">软件</a>
-          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/macos/">macOS</a>
-          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
-          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
-          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
-          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/windows/">Windows</a>
-          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/ios/">iOS</a>
-          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/excel/">Excel</a>
-        </div>
-      </div>
-                </div>
-            </div>
-
-
-
-            <div class="site-footer">
-    <img style="vertical-align:middle;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&count_bg=%2310C1F9&title_bg=%23555555&icon=html5.svg&icon_color=%23E7E7E7&title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&edge_flat=false"> | <span>Copyright © 2020-2022 Dev-Coco - All Rights Reserved.</span> | <a class="rss" href="https://dev-coco.github.io/atom.xml" target="_blank">RSS</a>
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">ttest</div>
+    <div class="social-container">
+        
+            
+                <a href="https://github.com/dev-coco" target="_blank">
+                    <i class="fab fa-github gt-c-content-color-first"></i>
+                </a>
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
     </div>
+    <div class="footer-info">
+        <span>Copyright © 2020-2022 Dev-Coco - All Rights Reserved.</span>
     </div>
-    <script>
-        $('#sidebar').stickySidebar({
-            topSpacing: 80,
-            // bottomSpacing: 60
-        });
-    </script>
+    <div>
+        Theme <a href="https://github.com/imhanjie/gridea-theme-pure" target="_blank">Pure</a>, Powered by <a
+                href="https://gridea.dev" target="_blank">Gridea</a> | <a href="https://dev-coco.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+</div>
+
+<script>
+  hljs.highlightAll()
+</script>
+
+    </div>
+</div>
 </body>
-
 </html>
