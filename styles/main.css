@@ -491,7 +491,7 @@ body {
   background: transparent;
   color: #298fe6;
   padding: 20px 30px 20px 15px;
-  font-size: 30px;
+  font-size: 20px;
 }
 .search-box:focus {
   outline: none;
@@ -614,6 +614,9 @@ body {
   }
 }
 @media (max-width: 960px) {
+  #gridea-search-form {
+    display: none;
+  }
   .main .main-container {
     flex-direction: column;
     justify-content: flex-start;
