@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Dev-Coco</title>
-    <updated>2022-04-15T05:09:38.466Z</updated>
+    <updated>2022-04-23T21:36:16.044Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, Dev-Coco</rights>
+    <entry>
+        <title type="html"><![CDATA[MacOS M1 芯片安装虚拟机]]></title>
+        <id>https://dev-coco.github.io/post/M1-Chip-Install-VM/</id>
+        <link href="https://dev-coco.github.io/post/M1-Chip-Install-VM/">
+        </link>
+        <updated>2022-04-23T08:09:12.000Z</updated>
+        <summary type="html"><![CDATA[<p>目前在市面上为数不多既支持 M1 芯片 而且又免费的虚拟机软件。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>目前在市面上为数不多既支持 M1 芯片 而且又免费的虚拟机软件。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[iPhone 免越狱虚拟定位]]></title>
         <id>https://dev-coco.github.io/post/iPhone-Fake-Location/</id>
@@ -106,17 +117,6 @@
         <summary type="html"><![CDATA[<p>创建 Telegram 机器人，获取 token。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>创建 Telegram 机器人，获取 token。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Linux 命令手册]]></title>
-        <id>https://dev-coco.github.io/post/Linux-Command/</id>
-        <link href="https://dev-coco.github.io/post/Linux-Command/">
-        </link>
-        <updated>2022-02-07T05:37:42.000Z</updated>
-        <summary type="html"><![CDATA[<p>查询 Linux 命令功能。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>查询 Linux 命令功能。</p>
 ]]></content>
     </entry>
 </feed>
