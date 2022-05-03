@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Dev-Coco</title>
-    <updated>2022-05-03T17:01:12.535Z</updated>
+    <updated>2022-05-03T17:09:07.409Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
@@ -14,7 +14,7 @@
         <id>https://dev-coco.github.io/post/M1-Chip-Install-VM/</id>
         <link href="https://dev-coco.github.io/post/M1-Chip-Install-VM/">
         </link>
-        <updated>2022-04-22T20:09:12.000Z</updated>
+        <updated>2022-04-22T08:09:12.000Z</updated>
         <summary type="html"><![CDATA[<p>目前在市面上为数不多既支持 M1 芯片而且又免费的虚拟机软件。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>目前在市面上为数不多既支持 M1 芯片而且又免费的虚拟机软件。</p>
