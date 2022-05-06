@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Dev-Coco</title>
-    <updated>2022-05-04T17:54:06.485Z</updated>
+    <updated>2022-05-06T05:30:42.815Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, Dev-Coco</rights>
+    <entry>
+        <title type="html"><![CDATA[Bitdefender 免费试用活动]]></title>
+        <id>https://dev-coco.github.io/post/Bitdefender-Free-Trial/</id>
+        <link href="https://dev-coco.github.io/post/Bitdefender-Free-Trial/">
+        </link>
+        <updated>2022-05-05T11:17:41.000Z</updated>
+        <summary type="html"><![CDATA[<p>Bitdefender 是一款由罗马尼亚的 Softwin 软件公司开发的杀毒软件。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Bitdefender 是一款由罗马尼亚的 Softwin 软件公司开发的杀毒软件。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[MacOS M1 芯片安装虚拟机]]></title>
         <id>https://dev-coco.github.io/post/M1-Chip-Install-VM/</id>
@@ -106,17 +117,6 @@
         <summary type="html"><![CDATA[<p>Image-Gallery 是一个专门为预览图片打造的静态网页。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>Image-Gallery 是一个专门为预览图片打造的静态网页。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[创建 Telegram 机器人]]></title>
-        <id>https://dev-coco.github.io/post/Create-Telegram-Bot/</id>
-        <link href="https://dev-coco.github.io/post/Create-Telegram-Bot/">
-        </link>
-        <updated>2022-02-08T07:44:04.000Z</updated>
-        <summary type="html"><![CDATA[<p>创建 Telegram 机器人，获取 token。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>创建 Telegram 机器人，获取 token。</p>
 ]]></content>
     </entry>
 </feed>
