@@ -1,10 +1,16 @@
 // 切换目录
-const sideMenu = document.querySelectorAll('.item')
-sideMenu.forEach((menu) => {
-  menu.onclick = (e) => {
-    document.getElementsByTagName('iframe')[0].src = `/Excel/Resource/${menu.id}.html`
+window.addEventListener('hashchange',function(event){
+  if (event.newURL.indexOf('#') > -1) {
+    document.getElementsByTagName('iframe')[0].src = `/Excel/Resource/${event.newURL.replace(/.+#/g, '')}.html`
   }
 })
+
+// 判断链接切换页面
+window.onload = function () {
+  if (location.href.indexOf('#') > -1) {
+    document.getElementsByTagName('iframe')[0].src = `/Excel/Resource/${location.href.replace(/.+#/g, '')}.html`
+  }
+}
 
 // 初始化搜索内容
 new autoComplete({
