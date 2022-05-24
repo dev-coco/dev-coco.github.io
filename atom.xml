@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Dev-Coco</title>
-    <updated>2022-05-23T20:20:32.541Z</updated>
+    <updated>2022-05-24T11:23:38.227Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, Dev-Coco</rights>
+    <entry>
+        <title type="html"><![CDATA[Google Excel 批量操作]]></title>
+        <id>https://dev-coco.github.io/post/Google-Excel-Batch-Action/</id>
+        <link href="https://dev-coco.github.io/post/Google-Excel-Batch-Action/">
+        </link>
+        <updated>2022-05-23T23:15:25.000Z</updated>
+        <summary type="html"><![CDATA[<p>快速批量删除，复制，重命名表格。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>快速批量删除，复制，重命名表格。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Facebook 爱好列表]]></title>
         <id>https://dev-coco.github.io/post/Facebook-Hobbies/</id>
@@ -106,17 +117,6 @@
         <summary type="html"><![CDATA[<p>申请 Google API 密钥的方法。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>申请 Google API 密钥的方法。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[命令行批量创建 KeePassXC 数据库]]></title>
-        <id>https://dev-coco.github.io/post/Batch-Create-KeePassXC-Database/</id>
-        <link href="https://dev-coco.github.io/post/Batch-Create-KeePassXC-Database/">
-        </link>
-        <updated>2022-03-17T02:25:36.000Z</updated>
-        <summary type="html"><![CDATA[<p>使用命令行批量创建 KeePass 数据库。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>使用命令行批量创建 KeePass 数据库。</p>
 ]]></content>
     </entry>
 </feed>
