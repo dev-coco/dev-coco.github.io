@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
-    <title>Dev-Coco</title>
-    <updated>2022-05-24T12:11:39.445Z</updated>
+    <title>Raz1ner</title>
+    <updated>2022-05-25T02:59:22.327Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2022, Dev-Coco</rights>
+    <rights>All rights reserved 2022, Raz1ner</rights>
     <entry>
         <title type="html"><![CDATA[Google Excel 批量操作]]></title>
         <id>https://dev-coco.github.io/post/Google-Excel-Batch-Action/</id>
