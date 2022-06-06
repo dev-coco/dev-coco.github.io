@@ -24,7 +24,7 @@
   <p>测试结果：常规的表格打开速度都在 10s 以上，空白表格打开速度不超过 4s。</p>
   <p><img class="img" style="min-width:420px;width:60%;" src="/images/Excel/Performance-1.png"></p>
   <h3>将公式结果替换成文本</h3>
-  <p>在表格中使用函数计算一些结果，或者获取一些数据后，可能就不再需要了。例如使用 <a href="/Excel/Resource/Function/Others/GOOGLETRANSLATE.html" target="_blank">GOOGLETRANSLATE</a> 函数翻译一个文本，翻译后就不再需要它了，就可以把函数返回的结果仅粘贴值，替换成文本，这样每次打开表格就不会重新再计算或者获取数据了。</p>
+  <p>在表格中使用函数计算一些结果，或者获取一些数据后，可能就不再需要了。例如使用 <a href="/Excel/#Function/Others/GOOGLETRANSLATE" target="_blank">GOOGLETRANSLATE</a> 函数翻译一个文本，翻译后就不再需要它了，就可以把函数返回的结果仅粘贴值，替换成文本，这样每次打开表格就不会重新再计算或者获取数据了。</p>
   <p><img class="img" style="min-width:420px;width:50%;" src="/images/Excel/Performance-3.png"></p>
   <h3>减少条件格式的使用</h3>
   <p>使用条件格式会额外增加表格的计算，同时也会降低一点运行速度。</p>
@@ -43,23 +43,23 @@
   <p>测试结果：分表引用耗时 456ms，引用当前表格耗时 442ms。</p>
   <p><img class="img" style="min-width:420px;width:40%;" src="/images/Excel/Performance-6.png"></p>
   <h3>尽可能地减少使用易失函数</h3>
-  <p>NOW、<a href="/Excel/Resource/Function/Date/TODAY.html" target="_blank">TODAY</a>、RAND 和 RANDBETWEEN，这些函数被称为易失函数。使用这些函数后，在表格内修改任意一个单元格后，会引起所有相关公式重新计算。</p>
+  <p>NOW、<a href="/Excel/#Function/Date/TODAY" target="_blank">TODAY</a>、RAND 和 RANDBETWEEN，这些函数被称为易失函数。使用这些函数后，在表格内修改任意一个单元格后，会引起所有相关公式重新计算。</p>
   <p>如果需要使用多个这些易失函数，建议设置一个值后，其他单元格来引用它。例如在 <span class="f q">A1</span> 单元格使用 <span class="f">NOW()</span>，那么其他位置的单元格就可以使用 <span class="f q">$A$1</span> 来引用。</p>
-  <p>测试结果：一整列使用 NOW 函数耗时 671ms，第一行使用 <a href="/Excel/Resource/Function/Date/NOW.html" target="_blank">NOW</a> 函数，其他单元格引用 NOW 函数的值，耗时 668ms。</p>
+  <p>测试结果：一整列使用 NOW 函数耗时 671ms，第一行使用 <a href="/Excel/#Function/Date/NOW" target="_blank">NOW</a> 函数，其他单元格引用 NOW 函数的值，耗时 668ms。</p>
   <p><img class="img" style="min-width:420px;width:40%;" src="/images/Excel/Performance-7.png"></p>
   <h3>使用数组公式</h3>
-  <p>如果一列里面有很多相同的公式，可以使用 <a href="/Excel/Resource/Function/Others/ARRAYFORMULA.html" target="_blank">ARRAYFORMULA</a> 函数代替，这样运行的速度要快很多。</p>
+  <p>如果一列里面有很多相同的公式，可以使用 <a href="/Excel/#Function/Others/ARRAYFORMULA" target="_blank">ARRAYFORMULA</a> 函数代替，这样运行的速度要快很多。</p>
   <p>测试结果：使用 ARRAYFORMULA 函数耗时 128ms，不使用 ARRAYFORMULA 函数的结果耗时 308ms。</p>
   <p><img class="img" style="min-width:420px;width:40%;" src="/images/Excel/Performance-8.png"></p>
   <h3>减少使用需要网络请求的函数</h3>
-  <p>使用网络请求的函数：IMPORTDATA、IMPORTFEED、IMPORTHTML、IMPORTRANGE、<a href="/Excel/Resource/Function/Others/IMPORTXML.html" target="_blank">IMPORTXML</a>、GOOGLEFINANCE、GOOGLETRANSLATE 和 DETECTLANGUAGE。</p>
-  <p>使用 <a href="/Excel/Resource/Function/Others/IMPORTRANGE.html" target="_blank">IMPORTRANGE</a> 函数从另外一个工作表索引数据的时候，如果内容特别庞大，就会出现 #ERROR! 错误。可以使用多个 IMPORTRANGE 来索引数据。</p>
+  <p>使用网络请求的函数：IMPORTDATA、IMPORTFEED、IMPORTHTML、IMPORTRANGE、<a href="/Excel/#Function/Others/IMPORTXML" target="_blank">IMPORTXML</a>、GOOGLEFINANCE、GOOGLETRANSLATE 和 DETECTLANGUAGE。</p>
+  <p>使用 <a href="/Excel/#Function/Others/IMPORTRANGE" target="_blank">IMPORTRANGE</a> 函数从另外一个工作表索引数据的时候，如果内容特别庞大，就会出现 #ERROR! 错误。可以使用多个 IMPORTRANGE 来索引数据。</p>
   <p>使用 <span class="f">{xxx; xxx}</span> 建立数组把多个函数合并起来。比如第一个 IMPORTRANGE 函数设置 <span class="f q">A1:A3000</span> 范围，那么第二个 IMPORTRANGE 函数就可以设置 <span class="f q">A3001:A6000</span> 范围。</p>
   <p><span class="f">={IMPORTRANGE(<span class="t">"xxxx"</span>, <span class="t">"工作表1!A1:A3000"</span>);<br>
 IMPORTRANGE(<span class="t">"xxxx"</span>, <span class="t">"工作表1!A3001:A6000"</span>)}</span></p>
   <h3>使用 IF 函数管理函数执行</h3>
   <p><span class="f">IF(<span class="f q">A1</span> = <span class="t">""</span>, <span class="t">""</span>, 被执行的函数)</span></p>
-  <p>这样可以跳过一些空值而不执行函数，避免了没必要的性能浪费，特别是使用一些网络请求或者 <a href="/Excel/Resource/Function/Find-Filter/VLOOKUP.html" target="_blank">VLOOKUP</a> 等比较影响性能的函数，效果会比较明显。</p>
+  <p>这样可以跳过一些空值而不执行函数，避免了没必要的性能浪费，特别是使用一些网络请求或者 <a href="/Excel/#Function/Find-Filter/VLOOKUP" target="_blank">VLOOKUP</a> 等比较影响性能的函数，效果会比较明显。</p>
   <p>测试结果：使用 IF VLOOKUP 耗时 326ms，使 用VLOOKUP 耗时 438ms。</p>
   <p><img class="img" style="min-width:420px;width:40%;" src="/images/Excel/Performance-9.png"></p>
   <p>使用这种思路做一个开关，用来控制函数的运行。用在一些不是太经常用到，但是又偶尔用到的函数，这样只有在打开开关的时候才会执行，可以大幅减少性能的影响。</p>
@@ -68,9 +68,9 @@ IMPORTRANGE(<span class="t">"xxxx"</span>, <span class="t">"工作表1!A3001:A60
   <p>如果需要使用 IMPORTRANGE 函数获取一个范围的数据，但是数据里面有些空白单元格或者重复的内容，这样就会造成没必要的性能浪费。</p>
   <p>使用 ARRAY_CONSTRAIN 函数创建一个静态的辅助表。</p>
   <p>例子：<span class="f">ARRAY_CONSTRAIN(<span class="q">A1:F13</span>, <span class="n">2</span>, <span class="n">4</span>)</span></p>
-  <p>或者使用 <a href="/Excel/Resource/Function/Find-Filter/FILTER.html" target="_blank">FILTER</a> 函数创建一个动态的辅助表。匹配指定内容，排除空白单元格。</p>
+  <p>或者使用 <a href="/Excel/#Function/Find-Filter/FILTER" target="_blank">FILTER</a> 函数创建一个动态的辅助表。匹配指定内容，排除空白单元格。</p>
   <p>例子：<span class="f">FILTER(<span class="q">A:C</span>, LEN(<span class="q">C:C</span>))</span></p>
-  <p>也可以使用 <a href="/Excel/Resource/Function/Others/UNIQUE.html" target="_blank">UNIQUE</a> 函数去除重复内容。</p>
+  <p>也可以使用 <a href="/Excel/#Function/Others/UNIQUE" target="_blank">UNIQUE</a> 函数去除重复内容。</p>
   <p>例子：<span class="f">UNIQUE(<span class="q">A:A</span>)</span></p>
   <p>还可以使用 COUNTA 函数计算单元格的范围，然后使用 IMPORTRANGE 函数引用一个动态的范围。</p>
   <p>例子：<span class="f">IMPORTRANGE(<span class="t">"xxxx"</span>, <span class="t">"工作表1!A1:A"</span>&COUNTA(<span class="q">工作表1!A:A</span>))</span></p>
@@ -88,13 +88,13 @@ IMPORTRANGE(<span class="t">"xxxx"</span>, <span class="t">"工作表1!A3001:A60
   <p>例子：<span class="f">ARRAYFORMULA(VLOOKUP(<span class="q">J1</span>, <span class="q">C:F</span>, {<span class="n">2</span>, <span class="n">3</span>, <span class="n">4</span>}, <span class="n">0</span>))</span></p>
   <h3>使用性能更佳的函数实现功能</h3>
   <p>在实现某些功能的时候，可能有多种函数或者方法都可以达到，可以选择性能最佳的函数来实现功能。</p>
-  <p><a href="/Excel/Resource/Function/Find-Filter/INDEX.html" target="_blank">INDEX</a> 函数和 MATCH 函数代替 VLOOKUP 函数</p>
+  <p><a href="/Excel/#Function/Find-Filter/INDEX" target="_blank">INDEX</a> 函数和 MATCH 函数代替 VLOOKUP 函数</p>
   <p>例子：<span class="f">INDEX(<span class="q">D:D</span>, MATCH(<span class="q">F1</span>, <span class="q">C:C</span>, <span class="n">0</span>))</span></p>
   <p>例子：<span class="f">VLOOKUP(<span class="q">F1</span>, <span class="q">C:D</span>, <span class="n">2</span>, <span class="n">0</span>)</span></p>
-  <p>因为 INDEX 和 <a href="/Excel/Resource/Function/Find-Filter/MATCH.html" target="_blank">MATCH</a> 函数执行的速度要比 VLOOKUP 函数快一些。</p>
+  <p>因为 INDEX 和 <a href="/Excel/#Function/Find-Filter/MATCH" target="_blank">MATCH</a> 函数执行的速度要比 VLOOKUP 函数快一些。</p>
   <p>测试结果：INDEX 和 MATCH 函数耗时 563ms，VLOOKUP 耗时 765ms</p>
   <p><img class="img" style="min-width:420px;width:40%;" src="/images/Excel/Performance-11.png"></p>
-  <p>如果需要多个条件匹配，使用 <a href="/Excel/Resource/Function/Operations/SUMPRODUCT.html" target="_blank">SUMPRODUCT</a> 函数速度要比 SUMIFS 和 <a href="/Excel/Resource/Function/Operations/COUNTIFS.html" target="_blank">COUNTIFS</a> 函数快一些。反之，如果没有多个条件匹配，那么 SUMPRODUCT 函数的性能不如 <a href="/Excel/Resource/Function/Operations/SUMIFS.html" target="_blank">SUMIFS</a> 或者 COUNTIFS 函数执行速度快。</p>
+  <p>如果需要多个条件匹配，使用 <a href="/Excel/#Function/Operations/SUMPRODUCT" target="_blank">SUMPRODUCT</a> 函数速度要比 SUMIFS 和 <a href="/Excel/#Function/Operations/COUNTIFS" target="_blank">COUNTIFS</a> 函数快一些。反之，如果没有多个条件匹配，那么 SUMPRODUCT 函数的性能不如 <a href="/Excel/#Function/Operations/SUMIFS" target="_blank">SUMIFS</a> 或者 COUNTIFS 函数执行速度快。</p>
   <p class="home">
     <a href="/Excel" target="_blank">
       <img alt="Excel表格, Google Excel" src="/images/Excel.png">

@@ -16,10 +16,10 @@
   <h1>多函数嵌套与理解</h1>
   <h2>函数合并</h2>
   <p>需求：将 A 列的内容排除数字 3 后进行升序排序。</p>
-  <p>使用 <a href="/Excel/Resource/Function/Find-Filter/FILTER.html" target="_blank">FILTER</a> 函数筛选内容，设置条件不等于 <span class="f n">3</span>，然后再使用 SORT 函数对 C 列的内容进行升序排序。</p>
+  <p>使用 <a href="/Excel/#Function/Find-Filter/FILTER" target="_blank">FILTER</a> 函数筛选内容，设置条件不等于 <span class="f n">3</span>，然后再使用 SORT 函数对 C 列的内容进行升序排序。</p>
   <iframe style="max-width:664px;height:237px;" src="https://docs.google.com/spreadsheets/d/1yBaozSD0JBQyIaN__adBmPq2gwRK84r5d2B5pwwRVb4/pubhtml/sheet?headers=true&gid=0"></iframe>
   <p>这种写法虽然可以实现需求，但是会占用多个单元格。</p>
-  <p>在 <a href="/Excel/Resource/Function/Find-Filter/SORT.html" target="_blank">SORT</a> 函数中的范围引用的是 C 列 FILTER 函数计算完的结果，也就是说 <span class="f q">C2:C</span> 的结果等于 FILTER 函数计算的结果。如果要将两个函数合并，只需要把 SORT 函数中的范围替换成 FILTER 函数。</p>
+  <p>在 <a href="/Excel/#Function/Find-Filter/SORT" target="_blank">SORT</a> 函数中的范围引用的是 C 列 FILTER 函数计算完的结果，也就是说 <span class="f q">C2:C</span> 的结果等于 FILTER 函数计算的结果。如果要将两个函数合并，只需要把 SORT 函数中的范围替换成 FILTER 函数。</p>
   <img class="img" style="min-width:420px;width:60%;" src="/images/Excel/Function-Nesting-1.png">
   <p>函数合并后并不会影响输出的结果，反而让表格看起来更加简洁。</p>
   <iframe style="max-width:517px;height:237px;" src="https://docs.google.com/spreadsheets/d/1yBaozSD0JBQyIaN__adBmPq2gwRK84r5d2B5pwwRVb4/pubhtml/sheet?headers=true&gid=879718527"></iframe>
@@ -36,10 +36,10 @@
     <li>ADDRESS</li>
     <li>ROW 和 COLUMN</li>
   </ol>
-  <p>因为 <a href="/Excel/Resource/Function/Others/ROW.html" target="_blank">ROW</a> 和 COLUMN 函数属于同级函数，默认按照从左到右的顺序计算，所以在这个公式中最优先计算的是 ROW 函数，获取当前行，返回值是 <span class="f n">2</span>，然后是 COLUMN 函数，获取当前列，返回值是 <span class="f n">2</span>。</p>
-  <p>外面一层的函数是 ADDRESS，将刚才的 ROW 函数和 <a href="/Excel/Resource/Function/Others/COLUMN.html" target="_blank">COLUMN</a> 函数的结果进行计算，也就是 <span class="f">ADDRESS(<span class="n">2</span>, <span class="n">2</span>)</span>，返回的结果是 <span class="f q">$B$2</span>。</p>
-  <p>再外面一层的函数是 INDIRECT，以字符串的结果引用单元格，也就是引用刚才 <a href="/Excel/Resource/Function/Others/ADDRESS.html" target="_blank">ADDRESS</a> 计算出来的结果 <span class="f q">$B$2</span>，等于 <span class="f">INDIRECT(<span class="t">"$B$2"</span>)</span>，返回引用 <span class="f q">$B$2</span> 单元格。</p>
-  <p>最外面一层的函数是 <a href="/Excel/Resource/Function/Find-Filter/OFFSET.html" target="_blank">OFFSET</a>，将 INDIRECT 函数的结果进行向左一个单元格再向上一个单元格进行偏移，等于 <span class="f">OFFSET(<span class="q">$B$2</span>, <span class="n">-1</span>, <span class="n">-1</span>)</span></p>
+  <p>因为 <a href="/Excel/#Function/Others/ROW" target="_blank">ROW</a> 和 COLUMN 函数属于同级函数，默认按照从左到右的顺序计算，所以在这个公式中最优先计算的是 ROW 函数，获取当前行，返回值是 <span class="f n">2</span>，然后是 COLUMN 函数，获取当前列，返回值是 <span class="f n">2</span>。</p>
+  <p>外面一层的函数是 ADDRESS，将刚才的 ROW 函数和 <a href="/Excel/#Function/Others/COLUMN" target="_blank">COLUMN</a> 函数的结果进行计算，也就是 <span class="f">ADDRESS(<span class="n">2</span>, <span class="n">2</span>)</span>，返回的结果是 <span class="f q">$B$2</span>。</p>
+  <p>再外面一层的函数是 INDIRECT，以字符串的结果引用单元格，也就是引用刚才 <a href="/Excel/#Function/Others/ADDRESS" target="_blank">ADDRESS</a> 计算出来的结果 <span class="f q">$B$2</span>，等于 <span class="f">INDIRECT(<span class="t">"$B$2"</span>)</span>，返回引用 <span class="f q">$B$2</span> 单元格。</p>
+  <p>最外面一层的函数是 <a href="/Excel/#Function/Find-Filter/OFFSET" target="_blank">OFFSET</a>，将 INDIRECT 函数的结果进行向左一个单元格再向上一个单元格进行偏移，等于 <span class="f">OFFSET(<span class="q">$B$2</span>, <span class="n">-1</span>, <span class="n">-1</span>)</span></p>
   <p>计算思路顺序如下图：</p>
   <img src="/images/Excel/Function-Nesting-3.png" class="img" style="min-width:420px;width:60%;">
   <h3>小技巧</h3>

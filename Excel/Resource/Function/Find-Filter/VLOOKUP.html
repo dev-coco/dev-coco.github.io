@@ -28,10 +28,10 @@
   <iframe style="max-width:557px;height:195px;" src="https://docs.google.com/spreadsheets/d/1eHEAUdDOQZT9DmoFeTE0MPK5nQjVBnmtTHCceNU0s00/pubhtml/sheet?headers=true&gid=73352994"></iframe>
   <p>运用1：VLOOKUP 函数逆向查找数字 8 对应的内容。</p>
   <p>VLOOKUP 只能正向查找，但是可以用一些方式来实现逆向查找的效果，但并不是真正意义上的逆向查找。</p>
-  <p>设定查找的内容数字 8 ，因为是数字格式，不是文本，所以这里不需要用到双引号。在 VLOOKUP 的范围需要重新一个范围，用 {1, 0} 新建一个数组， 1 代表搜索的列，0 代表搜索的结果列。然后 <a href="/Excel/Resource/Function/Logical-Judgments/IF.html" target="_blank">IF</a> 函数判断结果也需要设置一个数组，把需要搜索的 B 列放在前面，查找结果的 A 列放在后面，这样 IF 函数判断 B 列如果搜索到内容就会返回 A 列的内容，就相当于把这两列的内容，重新生成一个表，顺序倒过来了，这样就可以让 VLOOKUP 正向查找了，因为顺序倒过来了，查找的结果就在第二列，索引的列就需要设置成 2。</p>
+  <p>设定查找的内容数字 8 ，因为是数字格式，不是文本，所以这里不需要用到双引号。在 VLOOKUP 的范围需要重新一个范围，用 {1, 0} 新建一个数组， 1 代表搜索的列，0 代表搜索的结果列。然后 <a href="/Excel/#Function/Logical-Judgments/IF" target="_blank">IF</a> 函数判断结果也需要设置一个数组，把需要搜索的 B 列放在前面，查找结果的 A 列放在后面，这样 IF 函数判断 B 列如果搜索到内容就会返回 A 列的内容，就相当于把这两列的内容，重新生成一个表，顺序倒过来了，这样就可以让 VLOOKUP 正向查找了，因为顺序倒过来了，查找的结果就在第二列，索引的列就需要设置成 2。</p>
   <iframe style="max-width:633px;height:195px;" src="https://docs.google.com/spreadsheets/d/1eHEAUdDOQZT9DmoFeTE0MPK5nQjVBnmtTHCceNU0s00/pubhtml/sheet?headers=true&gid=649974110"></iframe>
   <p>运用：多列内容同时输出。</p>
-  <p>使用 VLOOKUP 匹配的时候，需要输出多个索引列，可以将多个列设置成数组，再搭配 <a href="/Excel/Resource/Function/Others/ARRAYFORMULA.html" target="_blank">ARRAYFORMULA</a> 函数输出，这样就可以一次性输出多列的内容。</p>
+  <p>使用 VLOOKUP 匹配的时候，需要输出多个索引列，可以将多个列设置成数组，再搭配 <a href="/Excel/#Function/Others/ARRAYFORMULA" target="_blank">ARRAYFORMULA</a> 函数输出，这样就可以一次性输出多列的内容。</p>
   <iframe style="max-width:900px;height:195px;" src="https://docs.google.com/spreadsheets/d/1eHEAUdDOQZT9DmoFeTE0MPK5nQjVBnmtTHCceNU0s00/pubhtml/sheet?headers=true&gid=1261999597"></iframe>
   <p class="home">
     <a href="/Excel" target="_blank">
