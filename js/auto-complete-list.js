@@ -1,5 +1,5 @@
 // 切换目录
-window.addEventListener('hashchange',function(event){
+window.addEventListener('hashchange', function (event) {
   if (event.newURL.indexOf('#') > -1) {
     document.getElementsByTagName('iframe')[0].src = `/Excel/Resource/${event.newURL.replace(/.+#/g, '')}.html`
   }
@@ -224,6 +224,6 @@ const searchList = {
 function search () {
   const contenet = document.getElementById('search').value
   if (searchList[contenet]) {
-    document.getElementsByTagName('iframe')[0].src = `/Excel/Resource/${searchList[contenet]}.html`
+    document.getElementById('frameContent').src = `/Excel/Resource/${searchList[contenet]}.html`
   }
 }
