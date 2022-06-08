@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2022-06-07T15:01:19.811Z</updated>
+    <updated>2022-06-08T22:30:10.531Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[Google Excel 列表随机取值]]></title>
+        <id>https://dev-coco.github.io/post/Google-Excel-Random-Value/</id>
+        <link href="https://dev-coco.github.io/post/Google-Excel-Random-Value/">
+        </link>
+        <updated>2022-06-08T10:29:29.000Z</updated>
+        <summary type="html"><![CDATA[<p>从列表中随机获取其中一个值。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>从列表中随机获取其中一个值。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[复制受保护的 Google 文档或表格]]></title>
         <id>https://dev-coco.github.io/post/Copy-Protected-Document-Or-Sheet/</id>
@@ -106,17 +117,6 @@
         <summary type="html"><![CDATA[<p>目前在市面上为数不多既支持 M1 芯片而且又免费的虚拟机软件。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>目前在市面上为数不多既支持 M1 芯片而且又免费的虚拟机软件。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[iPhone 免越狱虚拟定位]]></title>
-        <id>https://dev-coco.github.io/post/iPhone-Fake-Location/</id>
-        <link href="https://dev-coco.github.io/post/iPhone-Fake-Location/">
-        </link>
-        <updated>2022-04-10T13:53:45.000Z</updated>
-        <summary type="html"><![CDATA[<p>设备无需越狱即可自定义修改 GPS 定位。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>设备无需越狱即可自定义修改 GPS 定位。</p>
 ]]></content>
     </entry>
 </feed>
