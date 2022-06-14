@@ -1,14 +1,14 @@
 // 切换目录
 window.addEventListener('hashchange', function (event) {
   if (event.newURL.indexOf('#') > -1) {
-    document.getElementsByTagName('iframe')[0].src = `/Excel/Resource/${event.newURL.replace(/.+#/g, '')}.html`
+    document.getElementById('frameContent').src = `/Excel/Resource/${event.newURL.replace(/.+#/g, '')}.html`
   }
 })
 
 // 判断链接切换页面
 window.onload = function () {
   if (location.href.indexOf('#') > -1) {
-    document.getElementsByTagName('iframe')[0].src = `/Excel/Resource/${location.href.replace(/.+#/g, '')}.html`
+    document.getElementById('frameContent').src = `/Excel/Resource/${location.href.replace(/.+#/g, '')}.html`
   }
 }
 
