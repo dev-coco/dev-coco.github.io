@@ -1,0 +1,1 @@
+var a=document;function copy(e){var c=a.createElement("textarea");c.value=e,a.body.appendChild(c),c.select(),a.execCommand("copy"),a.body.removeChild(c)}a.querySelectorAll(".cp").forEach(e=>{e.addEventListener("click",a=>{copy(e.outerText)})});
