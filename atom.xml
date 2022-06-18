@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2022-06-18T00:23:49.175Z</updated>
+    <updated>2022-06-18T00:30:14.038Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
@@ -14,7 +14,7 @@
         <id>https://dev-coco.github.io/post/WhatAapp-Batch-Recover-Banned/</id>
         <link href="https://dev-coco.github.io/post/WhatAapp-Batch-Recover-Banned/">
         </link>
-        <updated>2022-06-17T00:20:38.000Z</updated>
+        <updated>2022-06-16T12:20:38.000Z</updated>
         <summary type="html"><![CDATA[<p>A submission tool to unbanned WhatsApp accounts in batch and quickly.</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>A submission tool to unbanned WhatsApp accounts in batch and quickly.</p>
@@ -25,7 +25,7 @@
         <id>https://dev-coco.github.io/post/WhatsApp-Batch-Unbanned-Tool/</id>
         <link href="https://dev-coco.github.io/post/WhatsApp-Batch-Unbanned-Tool/">
         </link>
-        <updated>2022-06-17T00:20:25.000Z</updated>
+        <updated>2022-06-16T12:20:25.000Z</updated>
         <summary type="html"><![CDATA[<p>一个批量快速解封 WhatsApp 账号的提交工具。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>一个批量快速解封 WhatsApp 账号的提交工具。</p>
