@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2022-06-18T20:00:11.051Z</updated>
+    <updated>2022-06-21T12:39:21.141Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[Google Excel 动态获取表格名称]]></title>
+        <id>https://dev-coco.github.io/post/Dynamic-Sheet-Name/</id>
+        <link href="https://dev-coco.github.io/post/Dynamic-Sheet-Name/">
+        </link>
+        <updated>2022-06-21T00:38:27.000Z</updated>
+        <summary type="html"><![CDATA[<p>再也不怕被修改表格名称，跨表获取不到数据啦！</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>再也不怕被修改表格名称，跨表获取不到数据啦！</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[WhatsApp batch recover banned]]></title>
         <id>https://dev-coco.github.io/post/WhatAapp-Batch-Recover-Banned/</id>
@@ -58,7 +69,7 @@
         <id>https://dev-coco.github.io/post/Copy-Protected-Document-Or-Sheet/</id>
         <link href="https://dev-coco.github.io/post/Copy-Protected-Document-Or-Sheet/">
         </link>
-        <updated>2022-06-02T04:17:26.000Z</updated>
+        <updated>2022-06-01T16:17:26.000Z</updated>
         <summary type="html"><![CDATA[<p>绕过限制，复制受保护的 Google 文档或者表格。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>绕过限制，复制受保护的 Google 文档或者表格。</p>
@@ -80,7 +91,7 @@
         <id>https://dev-coco.github.io/post/Chrome-Extension-Collection/</id>
         <link href="https://dev-coco.github.io/post/Chrome-Extension-Collection/">
         </link>
-        <updated>2022-05-26T20:40:52.000Z</updated>
+        <updated>2022-05-26T08:40:52.000Z</updated>
         <summary type="html"><![CDATA[<p>Chrome 各类插件离线包合集。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>Chrome 各类插件离线包合集。</p>
@@ -106,17 +117,6 @@
         <summary type="html"><![CDATA[<p>Facebook 爱好名称和 ID 列表。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>Facebook 爱好名称和 ID 列表。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[HandBrake 视频压缩工具]]></title>
-        <id>https://dev-coco.github.io/post/HandBrake-Video-Compress/</id>
-        <link href="https://dev-coco.github.io/post/HandBrake-Video-Compress/">
-        </link>
-        <updated>2022-05-13T05:39:49.000Z</updated>
-        <summary type="html"><![CDATA[<p>这是一款免费、开源、跨平台的视频压缩软件，支持 Windows、macOS、Linux 系统。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>这是一款免费、开源、跨平台的视频压缩软件，支持 Windows、macOS、Linux 系统。</p>
 ]]></content>
     </entry>
 </feed>

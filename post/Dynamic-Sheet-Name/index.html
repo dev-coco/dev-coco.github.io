@@ -1,0 +1,179 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Google Excel 动态获取表格名称 | Raz1ner</title>
+  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1655815121294">
+  <link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
+  <script src="https://dev-coco.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
+<script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+  <div class="main">
+    <div class="header">
+      <div class="nav">
+        <div class="logo">
+          <a href="https://dev-coco.github.io">
+            <img class="avatar" src="https://dev-coco.github.io/images/avatar.png?v=1655815121294" alt="">
+          </a>
+          <div class="site-title">
+            <h1>Raz1ner</h1>
+          </div>
+        </div>
+        <span class="menu-btn fa fa-align-justify"></span>
+        <div class="menu-container">
+          <ul>
+            <li>
+              <a href="/" class="menu">首页</a>
+            </li>
+            <li>
+              <a href="/Featured-Software.html" class="menu">软件</a>
+            </li>
+            <li>
+              <a href="/Online-Tools" class="menu">在线工具</a>
+            </li>
+            <li>
+              <a href="/post/Linux-Command" class="menu">Linux命令</a>
+            </li>
+            <li>
+              <a href="/Excel" class="menu">Excel教程</a>
+            </li>
+            <li>
+              <a href="/post/Terms-and-Privacy" class="menu">隐私与条款</a>
+            </li>
+          </ul>
+        </div>
+        <form id="gridea-search-form" action="https://dev-coco.github.io/search/" class="search">
+          <input type="search" name="q" class="search-box">
+          <span class="search-button">
+            <span class="search-icon"></span>
+          </span>
+        </form>
+      </div>
+    </div>
+    <script>
+      document.getElementsByClassName('search-button')[0].addEventListener('click', function () {
+        document.getElementById('gridea-search-form').classList.toggle('open');
+      })
+    </script>
+
+    <div id="main-content" class="post-detail main-container">
+      <!-- left -->
+      <div id="content" class="main-container-left">
+        <article class="post i-card">
+        <h2 class="post-title">Google Excel 动态获取表格名称</h2>
+        <div class="post-info">
+          <time class="post-time">2022-06-20 / 2 min read</time>
+            <a href="https://dev-coco.github.io/tag/excel/" class="post-tag i-tag i-tag-banana">#Excel</a>
+        </div>
+          <div class="post-content">
+            <p>再也不怕被修改表格名称，跨表获取不到数据啦！</p>
+<!-- more -->
+<p>使用 <a href="https://dev-coco.github.io/Excel/#Function/Others/IMPORTRANGE">IMPORTRANGE</a> 函数跨表引用数据的时候，有时候会遇到表格名称被修改，导致提示 #REF! 错误。因为 IMPORTRANGE 函数的参数是文本类型，所以无法根据表格名称的变化而正确的获取到最新的表格名称。</p>
+<h2 id="解决方法">解决方法</h2>
+<p>建立一个辅助表，然后分表引用一个单元格，例如：<code>='工作表1'!A1</code>。<br>
+使用下面的公式可以从引用的单元格识别出单元格的名称。</p>
+<pre><code>=IF(TODAY() &lt; TRUE, REGEXREPLACE(FORMULATEXT(A1), &quot;...$|[=']&quot;, &quot;&quot;))
+</code></pre>
+<p>先来拆分出来理解一下这个公式运行的过程。<br>
+首先运行的是 FORMULATEXT(A1)，使用 <a href="https://dev-coco.github.io/Excel/#Function/Others/FORMULATEXT">FORMULATEXT</a> 函数以文本的格式输出单元格内的公式。<br>
+<img src="https://dev-coco.github.io/post-images/1653005884509.png" alt="" loading="lazy"><br>
+使用 <a href="https://dev-coco.github.io/Excel/#Function/Text-Processing/REGEXREPLACE">REGEXREPLACE</a> 函数对表格名称以外的字符进行替换，<a href="https://dev-coco.github.io/post/Regex-Syntax/">正则表达式</a> 语法 <code>…$|[=']</code>，获取 = 和 ' 符号，还有末尾三位的 !A1，然后替换成空值。这样就得到了表格名称。<br>
+<img src="https://dev-coco.github.io/post-images/1653005889634.png" alt="" loading="lazy"><br>
+虽然现在已经获取到了表格名称，但是还不完善，现在获取到的数据是静态的，也就是说当修改了分表的名称的时候，公式并不会更新表格的名称，需要再次编辑单元格才会更新。<br>
+<img src="https://dev-coco.github.io/post-images/1653005895145.png" alt="" loading="lazy"><br>
+使用易失函数达到动态更新的效果，因为使用易失函数后，在表格内修改任意一个单元格后，会引起所有相关公式重新计算。<br>
+使用 <a href="https://dev-coco.github.io/Excel/#Function/Date/TODAY">TODAY</a> 函数做一个判断，例如 <code>TODAY() &lt; TRUE</code>，返回值是 TRUE，因为布尔型的值要比其它 <a href="https://dev-coco.github.io/Excel/#Basic-Core/Data-Type/Data-Type">数据类型</a> 都要大。<br>
+用 <a href="https://dev-coco.github.io/Excel/#Function/Logical-Judgments/IF">IF</a> 函数做一个判断，判断结果为 TRUE，返回获取表格名称的公式，这样在修改表格的时候，就会更新表格的名称了。<br>
+<img src="https://dev-coco.github.io/post-images/1653005900883.png" alt="" loading="lazy"><br>
+最后使用 IMPORTRANGE 跨表引用辅助表里面的表格名称，即使在分表修改了名称，也会同步更新。</p>
+<pre><code>=IMPORTRANGE(&quot;SheetID&quot;, IMPORTRANGE(&quot;SheetID&quot;, &quot;辅助表!B1&quot;)&amp;&quot;!A:A&quot;)
+</code></pre>
+
+          </div>
+        </article>
+        <div class="next-post">
+          <div class="next">下一篇</div>
+          <a href="https://dev-coco.github.io/post/WhatAapp-Batch-Recover-Banned/">
+            <h3 class="post-title">WhatsApp batch recover banned</h3>
+          </a>
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="gitalk-container"></div>
+      </div>
+      <!-- middle -->
+      <div class="main-container-middle"></div>
+      <!-- right -->
+      <div id="sidebar" class="main-container-right">
+      <!-- toc -->
+      <div class="toc-card i-card ">
+        <div class="toc-title i-card-title">目录</div>
+          <div class="toc-content">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95">解决方法</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+          <script>
+            function locateCatelogList() {
+              /*获取文章目录集合,可通过:header过滤器*/
+              var alis = $('.post-content :header');
+              /*获取侧边栏目录列表集合**/
+              var sidebar_alis = $('.markdownIt-TOC a');
+              /*获取滚动条到顶部的距离*/
+              var scroll_height = $(window).scrollTop();
+              for (var i = 0; i < alis.length; i++) {
+                /*获取锚点集合中的元素分别到顶点的距离*/
+                var a_height = $(alis[i]).offset().top;
+                if (a_height < scroll_height) {
+                  /*高亮显示*/
+                  sidebar_alis.removeClass('on');
+                  $(sidebar_alis[i]).addClass('on');
+                }
+              }
+            }
+            $(function() {
+              /*绑定滚动事件 */
+              $(window).bind('scroll', locateCatelogList);
+              });
+          </script>
+        </div>
+      <div class="notice-card i-card ">
+        <div class="notice-title i-card-title">公告</div>
+        <div class="notice-content">博客新增搜索文章功能。<br>输入关键词后按回车键即可。</div>
+      </div>
+      <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
+        <div class="notice-content">
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/excel/">Excel</a>
+          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/google-script/">Google 脚本</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="site-footer">
+    <img style="vertical-align:middle;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&count_bg=%2310C1F9&title_bg=%23555555&icon=html5.svg&icon_color=%23E7E7E7&title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&edge_flat=false"> | <span>Copyright © 2020-2022 Raz1ner - All Rights Reserved.</span> | <a class="rss" href="https://dev-coco.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+  <script>
+    $('#sidebar').stickySidebar({
+    topSpacing: 80,
+    // bottomSpacing: 60
+    });
+  </script>
+  
+</body>
+</html>
