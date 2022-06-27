@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2022-06-24T21:55:21.808Z</updated>
+    <updated>2022-06-27T16:14:04.585Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[Google 脚本介绍]]></title>
+        <id>https://dev-coco.github.io/post/Google-Script-Introduce/</id>
+        <link href="https://dev-coco.github.io/post/Google-Script-Introduce/">
+        </link>
+        <updated>2022-06-27T04:13:57.000Z</updated>
+        <summary type="html"><![CDATA[<p>Google 脚本是一种基于 Javascript 的编码语言，全称 Google Apps Script，简称为 GAS。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Google 脚本是一种基于 Javascript 的编码语言，全称 Google Apps Script，简称为 GAS。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[SmoothScroll 免费激活码]]></title>
         <id>https://dev-coco.github.io/post/SmoothScroll-Free-License/</id>
@@ -106,17 +117,6 @@
         <summary type="html"><![CDATA[<p>Chrome 各类插件离线包合集。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>Chrome 各类插件离线包合集。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Google Excel 批量操作]]></title>
-        <id>https://dev-coco.github.io/post/Google-Excel-Batch-Action/</id>
-        <link href="https://dev-coco.github.io/post/Google-Excel-Batch-Action/">
-        </link>
-        <updated>2022-05-23T11:15:25.000Z</updated>
-        <summary type="html"><![CDATA[<p>快速批量删除，复制，重命名表格。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>快速批量删除，复制，重命名表格。</p>
 ]]></content>
     </entry>
 </feed>
