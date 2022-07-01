@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2022-06-27T16:14:04.585Z</updated>
+    <updated>2022-07-01T04:04:32.034Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[macOS 备忘录备份工具]]></title>
+        <id>https://dev-coco.github.io/post/macOS-Backup-Notes/</id>
+        <link href="https://dev-coco.github.io/post/macOS-Backup-Notes/">
+        </link>
+        <updated>2022-06-30T16:04:23.000Z</updated>
+        <summary type="html"><![CDATA[<p>一个本地快速备份和恢复备份备忘录的工具。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>一个本地快速备份和恢复备份备忘录的工具。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Google 脚本介绍]]></title>
         <id>https://dev-coco.github.io/post/Google-Script-Introduce/</id>
@@ -106,17 +117,6 @@
         <summary type="html"><![CDATA[<p>Mac 电脑无需 HDMI 线，无线连接扩展显示器。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>Mac 电脑无需 HDMI 线，无线连接扩展显示器。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Chrome 插件合集]]></title>
-        <id>https://dev-coco.github.io/post/Chrome-Extension-Collection/</id>
-        <link href="https://dev-coco.github.io/post/Chrome-Extension-Collection/">
-        </link>
-        <updated>2022-05-25T20:40:52.000Z</updated>
-        <summary type="html"><![CDATA[<p>Chrome 各类插件离线包合集。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>Chrome 各类插件离线包合集。</p>
 ]]></content>
     </entry>
 </feed>
