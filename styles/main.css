@@ -1135,6 +1135,10 @@ p code {
   margin: 20px 10px 0;
   font-size: 18px;
 }
+.social-icon {
+  width: 28px;
+  margin: 5px;
+}
 .toc-card .toc-content .markdownIt-TOC {
   margin-left: 0;
   list-style: none;
