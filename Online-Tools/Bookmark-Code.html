@@ -30,14 +30,32 @@
 
     .card-text {
       padding: 0.5rem 1rem;
+      height: 100%;
     }
-
+    .card:nth-child(5n+1) {
+      background-color: #fee4cb;
+    }
+    .card:nth-child(5n) {
+      background-color: #e9e7fd;
+    }
+    .card:nth-child(5n+2) {
+      background-color: #dbf6fd;
+    }
+    .card:nth-child(5n+3) {
+      background-color: #ffd3e2;
+    }
+    .card:nth-child(5n+4) {
+      background-color: #c8f7dc;
+    }
+    .card-header:nth-child(5n) {
+      background-color: red;
+    }
     .card-header {
       padding: 0.5rem 1rem;
       border-top-left-radius: 0.5rem;
       border-top-right-radius: 0.5rem;
       margin-bottom: 0;
-      background-color: #4D648D;
+      background-color: #3F72AF;
       text-align: center;
       color: white;
       font-size: 18px;
@@ -73,8 +91,100 @@
       <a href="/post/Terms-and-Privacy">隐私与条款</a>
       <a target="_blank" href="https://github.com/dev-coco">Github</a>
     </div>
-    <h3 style="margin-top:9px;">常用工具 — 书签代码</h3>
+    <h3>常用工具 — 书签代码</h3>
+    <p style="text-align:center">将标题拖到书签后使用。</p>
     <div class="row">
+      <div class="card">
+        <a class="card-header" href="javascript:if(&quot;1&quot;==enbledscroll){var enbledscroll=0;clearInterval(autoscroll)}else{enbledscroll=1;var autoscroll=setInterval(function(){window.scrollTo(0,document.body.scrollHeight)},1000)}">自动滚动</a>
+        <span class="card-text">点击后页面会向下滚动，再次点击后停止滚动。<br>
+        </span>
+      </div>      
+      <div class="card">
+        <a class="card-header" href="javascript:if(window.location.href.indexOf(&quot;dev-coco&quot;)&gt;-1)alert(&quot;请认真阅读说明后使用&quot;);else{function randomString(e,t){if(e=e||32,1==t)var a=&quot;ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz&quot;;else a=&quot;ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz1234567890&quot;;var r=a.length,s=&quot;&quot;;for(i=0;i&lt;e;i++)s+=a.charAt(Math.floor(Math.random()*r));return s}function set_value(e){var t=document.createEvent(&quot;HTMLEvents&quot;);t.initEvent(&quot;input&quot;,!0,!0),t.initEvent(&quot;change&quot;,!0,!0),t.eventType=&quot;message&quot;,e.dispatchEvent(t)}function getRandom(e,t){return Math.floor(Math.random()*(t-e+1)+e)}var MemberName=document.getElementById(&quot;MemberName&quot;),PasswordInput=document.getElementById(&quot;PasswordInput&quot;),LastName=document.getElementById(&quot;LastName&quot;),FirstName=document.getElementById(&quot;FirstName&quot;),BirthYear=document.getElementById(&quot;BirthYear&quot;),BirthMonth=document.getElementById(&quot;BirthMonth&quot;),BirthDay=document.getElementById(&quot;BirthDay&quot;);if(MemberName){var user_str=randomString(16,1);MemberName.value=user_str,set_value(MemberName),document.getElementById(&quot;iSignupAction&quot;).click(),sessionStorage.setItem(&quot;MemberName&quot;,user_str)}else if(PasswordInput){var pass_str=randomString(16,2);PasswordInput.value=pass_str,set_value(PasswordInput),document.getElementById(&quot;iSignupAction&quot;).click(),sessionStorage.setItem(&quot;PasswordInput&quot;,pass_str)}else if(LastName){var lastname=randomString(6,1),firstname=randomString(7,1);LastName.value=lastname,set_value(LastName),FirstName.value=firstname,set_value(FirstName),sessionStorage.setItem(&quot;LastName&quot;,lastname),sessionStorage.setItem(&quot;FirstName&quot;,firstname),document.getElementById(&quot;iSignupAction&quot;).click()}else if(BirthYear){var year_str=getRandom(1970, 2002),month_str=getRandom(1,12),day_str=getRandom(1,28);BirthYear.value=year_str,set_value(BirthYear),BirthMonth.value=month_str,set_value(BirthMonth),BirthDay.value=day_str,set_value(BirthDay),sessionStorage.setItem(&quot;BirthYear&quot;,year_str),sessionStorage.setItem(&quot;BirthMonth&quot;,month_str),sessionStorage.setItem(&quot;BirthDay&quot;,day_str),document.getElementById(&quot;iSignupAction&quot;).click()}}">快速注册Outlook</a>
+        <span class="card-text">快速注册Outlook邮箱，配合<a href="javascript:var K=q;function q(v,l){var K=Q();return q=function(r,i){r=r-0x111;var C=K[r];return C;},q(v,l);}function Q(){var i=['location','href','indexOf','dev-coco','请认真阅读说明后使用','getItem','MemberName','PasswordInput','FirstName','LastName','BirthYear','BirthMonth','BirthDay','getMonth','getDate','getFullYear','注册时间：','\x0a邮箱：','@outlook.com\x0a密码：','\x0a名字：','\x0a生日：','createElement','textarea','body','appendChild','value','focus','select','execCommand','Copy','remove'];Q=function(){return i;};return Q();}if(window[K(0x111)][K(0x112)][K(0x113)](K(0x114))&gt;-0x1)alert(K(0x115));else{var MemberName=sessionStorage[K(0x116)](K(0x117)),PasswordInput=sessionStorage[K(0x116)](K(0x118)),FirstName=sessionStorage[K(0x116)](K(0x119)),LastName=sessionStorage[K(0x116)](K(0x11a)),BirthYear=sessionStorage[K(0x116)](K(0x11b)),BirthMonth=sessionStorage[K(0x116)](K(0x11c)),BirthDay=sessionStorage[K(0x116)](K(0x11d)),date=new Date(),nowMonth=date[K(0x11e)]()+0x1,strDate=date[K(0x11f)](),nowDate=date[K(0x120)]()+'/'+nowMonth+'/'+strDate,str=K(0x121)+nowDate+K(0x122)+MemberName+K(0x123)+PasswordInput+K(0x124)+FirstName+'\x20'+LastName+K(0x125)+BirthYear+'/'+BirthMonth+'/'+BirthDay;function copy(v){var r=K,l=document[r(0x126)](r(0x127));document[r(0x128)][r(0x129)](l),l[r(0x12a)]=v,l[r(0x12b)](),l[r(0x12c)](),document[r(0x12d)](r(0x12e)),l[r(0x12f)]();}copy(str);}">输出内容</a>脚本一起使用。<br>
+          <r>拖到书签后使用</r>。
+        </span>
+      </div>
+      <div class="card">
+        <a class="card-header" href="javascript:if(window.location.href.indexOf(&quot;dev-coco&quot;)&gt;-1)alert(&quot;请认真阅读说明后使用&quot;);else{function randomString(e,t){if(e=e||32,1==t)var a=&quot;ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz&quot;;else a=&quot;ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz1234567890&quot;;var n=a.length,s=&quot;&quot;;for(i=0;i&lt;e;i++)s+=a.charAt(Math.floor(Math.random()*n));return s}function set_value(e){var t=document.createEvent(&quot;HTMLEvents&quot;);t.initEvent(&quot;input&quot;,!0,!0),t.initEvent(&quot;change&quot;,!0,!0),t.eventType=&quot;message&quot;,e.dispatchEvent(t)}function getRandom(e,t){return Math.floor(Math.random()*(t-e+1)+e)}function copy(e){var t=document.createElement(&quot;textarea&quot;);document.body.appendChild(t),t.value=e,t.focus(),t.select(),document.execCommand(&quot;Copy&quot;),t.remove()}var signup_user=document.getElementById(&quot;signup_user&quot;),mail_pass_input=document.getElementById(&quot;mail_pass_input&quot;),mail_confpass_input=document.getElementById(&quot;mail_confpass_input&quot;),sex=document.querySelector(&quot;input[name=sex]&quot;),birthday=document.querySelector(&quot;input[name=birthday]&quot;),birthmonth=document.querySelector(&quot;input[name=birthmonth]&quot;),birthyear=document.querySelector(&quot;input[name=birthyear]&quot;),terms=document.querySelector(&quot;input[name=terms]&quot;),allow=document.querySelector(&quot;input[name=allow]&quot;),pass=document.getElementById(&quot;pass&quot;);if(location.href.indexOf(&quot;signup&quot;)&gt;-1){var email=randomString(16,1);signup_user.value=email+&quot;@mail.bg&quot;,set_value(signup_user);var email_pass=randomString(16,2);mail_pass_input.value=email_pass,set_value(mail_pass_input),mail_confpass_input.value=email_pass,set_value(mail_confpass_input),sessionStorage.setItem(&quot;email_pass&quot;,email_pass);var sex_str=getRandom(1,2);sex.value=sex_str,set_value(sex);var year_str=getRandom(1970,2002),month_str=getRandom(1,12),day_str=getRandom(1,28);birthyear.value=year_str,set_value(birthyear),birthmonth.value=month_str,set_value(birthmonth),birthday.value=day_str,set_value(birthday),terms.value=&quot;1&quot;,allow.value=&quot;1&quot;;var date=new Date,nowMonth=date.getMonth()+1,strDate=date.getDate(),nowDate=`${date.getFullYear()}/${nowMonth}/${strDate}`,str=`注册时间：${nowDate}\n邮箱：${email}@mail.bg\n密码：${email_pass}\n性别：${sex.value.replace(/1/g,&quot;男&quot;).replace(/2/g,&quot;女&quot;)}\n生日：${year_str}/${month_str}/${day_str}`;copy(str)}else if(pass)pass.value=sessionStorage.getItem(&quot;email_pass&quot;),loginFormSubmit();else{for(var checkbox=document.querySelectorAll(&quot;input[type=checkbox]&quot;),i=0;i&lt;3;i++)checkbox[i].checked=!0;document.getElementById(&quot;interests_submit&quot;).click()}}">快速注册mailbg邮箱</a>
+        <span class="card-text">快速注册mail.bg邮箱。<br>
+          <r>拖到书签后使用</r>。
+        </span>
+      </div>
+
+      
+   
+      
+      
+      
+      <div class="card space">
+      </div>
+      <div class="card space">
+      </div>
+      <!-- 
+      <div class="card space">
+      </div>
+       -->
+    </div>
+    <h3>Facebook 相关</h3>
+    <div class="row">
+      <div class="card">
+        <a class="card-header" href="javascript:if(location.href.indexOf(&quot;dev-coco&quot;)&gt;-1)alert(&quot;请认真阅读说明后使用&quot;);else{var get_data=document.getElementsByClassName(&quot;_2a_i&quot;);new_page=window.open(&quot;&quot;);for(var i=0;i&lt;get_data.length;i++){var user_id=get_data[i].innerHTML.match(/(?&lt;=data-sigil=&quot;feed_story_ring).*?(?=&quot;)/g)[0],uesr_link=get_data[i].innerHTML.match(/(?&lt;=href=&quot;).*?(?=&quot;)/g)[0].replace(/\?groupid.+|&amp;amp.+/g,&quot;&quot;),user_comment=get_data[i].innerHTML.match(/(?&lt;=comment-body&quot;&gt;).*?(?=&lt;\/div&gt;)/g)[0].replace(/&lt;.*?&gt;/g,&quot;&quot;),user_name=get_data[i].getElementsByClassName(&quot;_2b05&quot;)[0].innerText;new_page.document.write(`&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;${i+1}&lt;/td&gt;&lt;td&gt;${user_name}&lt;/td&gt;&lt;td&gt;https://www.facebook.com${uesr_link}&lt;/td&gt;&lt;td&gt;${user_id}&lt;/td&gt;&lt;td&gt;${user_comment}&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;`)}}">列印评论用户</a>
+        <span class="card-text">列印帖子下面的评论用户。把帖子链接的www改成m后再使用。<br>
+          <r>拖到书签后使用</r>。
+        </span>
+      </div>
+      <div class="card">
+        <a class="card-header" href="javascript:if(location.href.indexOf(&quot;dev-coco&quot;)&gt;-1)alert(&quot;请认真阅读说明后使用&quot;);else{var get_data=document.querySelectorAll('[class=&quot;buofh1pr cbu4d94t j83agx80&quot;][role=&quot;listbox&quot;]')[0].querySelectorAll('[role=&quot;option&quot;][class=&quot;k4urcfbm&quot;]'),d=[],str=[];for(const e of get_data){d++;var place_id=e.id,place_name=e.outerText;str+=`${d}\t${place_name}\t${place_id}\n`}function copy(e){const t=document.createElement(&quot;textarea&quot;);t.value=e,document.body.appendChild(t),t.select(),document.execCommand(&quot;copy&quot;),document.body.removeChild(t)}copy(str)}">获取地区ID</a>
+        <span class="card-text">获取地区ID，在Facebook简介界面使用。<br>
+          <r>拖到书签后使用</r>。
+        </span>
+      </div>
+      <div class="card">
+        <a class="card-header" href="javascript:if(location.href.indexOf(&quot;dev-coco&quot;)&gt;-1)alert(&quot;请认真阅读说明后使用&quot;);else{async function confirmRequest(){const e=prompt(&quot;请输入延迟时间&quot;,&quot;1.5&quot;);const t=document.getElementsByClassName(&quot;oajrlxb2 gs1a9yip g5ia77u1 mtkw9kbi tlpljxtp qensuy8j ppp5ayq2 goun2846 ccm00jje s44p3ltw mk2mc5f4 rt8b4zig n8ej3o3l agehan2d sk4xxmp2 rq0escxv nhd2j8a9 mg4g778l pfnyh3mw p7hjln8o kvgmc6g5 cxmmr5t8 oygrvhab hcukyx3x tgvbjcpo hpfvmrgz jb3vyjys rz4wbd8a qt6c0cv9 a8nywdso l9j0dhe7 i1ao9s8h esuyzwwr f1sip0of du4w35lb btwxx1t3 abiwlrkh p8dawk7l lzcic4wl ue3kfks5 pw54ja7n uo3d90p7 l82x9zwi a8c37x1j&quot;);for(const c of t){0;try{c.getElementsByClassName(&quot;a8c37x1j ni8dbmo4 stjgntxs l9j0dhe7 ltmttdrg g0qnabr5&quot;)[1].click(),await delay(e)}catch{}}}function delay(e){return new Promise(t=&gt;{setTimeout(t,1e3*Number(e))})}confirmRequest()}&#10; &#10;&#10;">同意好友请求</a>
+        <span class="card-text">设置延迟时间，秒为单位，同意好友请求。使用界面：<a href="https://www.facebook.com/friends/requests" target="_blank">链接</a><br>
+          <r>拖到书签后使用</r>。
+        </span>
+      </div>
+      <div class="card">
+        <a class="card-header" href="javascript:if(location.href.indexOf(&quot;dev-coco&quot;)&gt;-1)alert(&quot;请认真阅读说明后使用&quot;);else{try{var getID=(data=document.getElementsByClassName(&quot;cwj9ozl2 l6v480f0 maa8sdkg s1tcr66n aypy0576 ue3kfks5 pw54ja7n uo3d90p7 l82x9zwi o55z2nyb rq0escxv j83agx80 cbu4d94t buofh1pr rs0gx3tq k4urcfbm&quot;)[0]).querySelectorAll('.k4urcfbm [role=&quot;option&quot;]')}catch{try{getID=(data=document.getElementsByClassName(&quot;rpm2j7zs k7i0oixp gvuykj2m j83agx80 cbu4d94t ni8dbmo4 du4w35lb q5bimw55 ofs802cu pohlnb88 dkue75c7 mb9wzai9 l56l04vs r57mb794 l9j0dhe7 kh7kg01d eg9m0zos c3g1iek1 idiwt2bm t5wl5276 k4urcfbm&quot;)[0]).querySelectorAll('.k4urcfbm [role=&quot;option&quot;]')}catch{var data;getID=(data=document.getElementsByClassName(&quot;cwj9ozl2 l6v480f0 maa8sdkg s1tcr66n aypy0576 ue3kfks5 pw54ja7n uo3d90p7 l82x9zwi o55z2nyb rq0escxv j83agx80 cbu4d94t buofh1pr rs0gx3tq k4urcfbm&quot;)[0]).querySelectorAll('.k4urcfbm [role=&quot;option&quot;]')}}for(var result=&quot;&quot;,i=0;i&lt;getID.length;i++)result+=`${getID[i].id}\t${getID[i].outerText}\n`;function copy(e){const t=document.createElement(&quot;textarea&quot;);t.value=e,document.body.appendChild(t),t.select(),document.execCommand(&quot;copy&quot;),document.body.removeChild(t)}copy(result)}">Facebook获取简介ID</a>
+        <span class="card-text">在Facebook简介使用。<br>
+          <r>拖到书签后使用</r>。
+        </span>
+      </div>
+      <div class="card">
+        <a class="card-header" href="javascript:var a=location.href;void(a.indexOf('messages')> -1?document.querySelector('div.pmk7jnqg.ms05siws.pnx7fd3z.b7h9ocf4.k4urcfbm.datstx6m.j83agx80.pedkr2u6 > div > div:nth-child(3)').style='overflow:scroll':document.getElementsByClassName('datstx6m cbu4d94t buofh1pr')[0].style='overflow:scroll')">修复Messenger无法滚动</a>
+        <span class="card-text">在Messenger使用。<br>
+          <r>拖到书签后使用</r>。
+        </span>
+      </div>
+      <div class="card">
+        <a class="card-header" href="javascript:if(location.href.indexOf(&quot;dev-coco&quot;)&gt; -1)alert(&quot;\u8BF7\u8BA4\u771F\u9605\u8BFB\u8BF4\u660E\u540E\u4F7F\u7528&quot;);else if(location.href.indexOf(&quot;dev-coco&quot;)&gt; -1)alert(&quot;\u8BF7\u8BA4\u771F\u9605\u8BFB\u8BF4\u660E\u540E\u4F7F\u7528&quot;);else{var f,b=document.documentElement.outerHTML.match(/&lt;a class=&quot;_4kk6&quot;.*?&lt;div class=&quot;_6kl0&quot;&gt;/g);for(let a=0;a&lt;b.length;a++){var c=b[a].match(/(?&lt;=img src=&quot;).*?(?=&quot;)/g)[0],d=b[a].match(/(?&lt;=&lt;a class=&quot;_4kk6&quot; href=&quot;).*?(?=&quot;&gt;)/g)[0],e=b[a].match(/(?&lt;=profile picture&quot;&gt;).*?(?=&lt;div class=&quot;_6kl0&quot;&gt;)/g)[0].replace(/&lt;div class.*?&gt;|&lt;\/div&gt;/g,&quot;&quot;);document.write(`&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;${[a+1]}&lt;/td&gt;&lt;td style='font-size:0px;'&gt;=IMAGE(&quot;${c}&quot;)&lt;/td&gt;&lt;td&gt;${e}&lt;/td&gt;&lt;td&gt;https://www.facebook.com${d}&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;`)}}">列印快拍</a>
+        <span class="card-text">选择快拍后，点击左下角的图标后使用。使用界面：<a href="https://m.facebook.com/archive/" target="_blank">链接</a><br>
+          <r>拖到书签后使用</r>。
+        </span>
+      </div>
+      <div class="card">
+        <a class="card-header" href="javascript:if(location.href.indexOf(&quot;dev-coco&quot;)&gt; -1)alert(&quot;\u8BF7\u8BA4\u771F\u9605\u8BFB\u8BF4\u660E\u540E\u4F7F\u7528&quot;);else{var b=document.getElementsByClassName(&quot;bp9cbjyn ue3kfks5 pw54ja7n uo3d90p7 l82x9zwi n1f8r23x rq0escxv j83agx80 bi6gxh9e discj3wi hv4rvrfc ihqw7lf3 dati1w0a gfomwglr&quot;);new_page=window.open(&quot;&quot;);for(let a=0;a&lt;b.length;a++)try{b[a].outerHTML.match(/(?&lt;=gpro0wi8&quot; href=&quot;).*?(?=&quot; role=&quot;link&quot;)/g)[0]}catch{try{var c=b[a].outerHTML.match(/(?&lt;=lrazzd5p oo9gr5id&quot;.*?&gt;).*?(?=&lt;\/span&gt;)/g)[0];new_page.document.write(c+&quot;&lt;br&gt;&quot;)}catch{}}new_page.document.write(&quot;\u505C\u7528\u5E10\u6237\u68C0\u6D4B\u5B8C\u6210&quot;)}">检测无效账号</a>
+        <span class="card-text">加载完好友列表后使用。使用界面：<a href="https://www.fb.com/me/friends/" target="_blank">链接</a><br>
+          <r>拖到书签后使用</r>。
+        </span>
+      </div>
+
+      <div class="card">
+        <a class="card-header" href="javascript:">获取附近地点</a>
+        <span class="card-text">打开地点页面后使用。<br>
+          <r>拖到书签后使用</r>。
+        </span>
+      </div>
+
+      <div class="card space">
+      </div>
+      <div class="card space">
+      </div>
+      <div class="card space">
+      </div>
+      <!--
       <div class="card">
         <a class="card-header" href="javascript:if(location.href.indexOf(&quot;dev-coco&quot;)&gt;-1)alert(&quot;请认真阅读说明后使用&quot;);else if(&quot;1&quot;==enbledscroll){var enbledscroll=0;clearInterval(autoscroll)}else{enbledscroll=1;var autoscroll=setInterval(function(){window.scrollTo(0,document.body.scrollHeight)},100)}">自动向下滚动</a>
         <span class="card-text">点击页面即可向下滚动，再次点击停止滚动。<br>
@@ -94,32 +204,8 @@
         </span>
       </div>
       <div class="card">
-        <a class="card-header" href="/Online-Tools/Avatar-Filter.html" target="_blank">筛选头像</a>
-        <span class="card-text">输入ID快速筛选头像。<br>
-          <r>打开即用</r>。
-        </span>
-      </div>
-      <div class="card">
-        <a class="card-header" href="/Online-Tools/Facebook-Precise-Search.html" target="_blank">Facebook精确搜索</a>
-        <span class="card-text">输入地区ID精准定位搜索的区域。<br>
-          <r>打开即用</r>。
-        </span>
-      </div>
-      <div class="card">
-        <a class="card-header" href="/Online-Tools/Get-Facebook-Info.html" target="_blank">获取Facebook信息</a>
-        <span class="card-text">列印账号上所有的好友备份。<br>
-          <r>打开即用</r>。
-        </span>
-      </div>
-      <div class="card">
         <a class="card-header" href="javascript:if(location.href.indexOf(&quot;dev-coco&quot;)&gt;-1)alert(&quot;请认真阅读说明后使用&quot;);else{var get_data=document.getElementsByClassName(&quot;oajrlxb2 g5ia77u1 qu0x051f esr5mh6w e9989ue4 r7d6kgcz rq0escxv nhd2j8a9 a8c37x1j p7hjln8o kvgmc6g5 cxmmr5t8 oygrvhab hcukyx3x jb3vyjys rz4wbd8a qt6c0cv9 a8nywdso i1ao9s8h esuyzwwr f1sip0of lzcic4wl gmql0nx0 gpro0wi8 i09qtzwb n7fi1qx3 pmk7jnqg j9ispegn kr520xx4&quot;);new_page=window.open(&quot;&quot;);for(var i=0;i&lt;get_data.length;i++)try{var avatar=get_data[i].outerHTML.match(/(?&lt;=src=&quot;).*?(?=&quot;)/g)[0],user_name=get_data[i].outerHTML.match(/(?&lt;=alt=&quot;).*?(?=的头像&quot;|的大頭貼照&quot;)/g)[0],user_id=get_data[i].outerHTML.match(/(?&lt;=href=&quot;.+_id=).*?(?=&quot;)/g)[0].replace(/&amp;amp;/g,&quot;&amp;&quot;);try{var user_mark=get_data[i].outerHTML.match(/(?&lt;=simplemarker-mark.*?&quot;&gt;).*?(?=&lt;\/div&gt;)/g)[0]}catch{user_mark=&quot;&quot;}new_page.document.write(`&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;${i+1}&lt;/td&gt;&lt;td style=&quot;font-size:0px;&quot;&gt;=IMAGE(&quot;${avatar}&quot;)&lt;/td&gt;&lt;td&gt;${user_name}&lt;/td&gt;&lt;td&gt;${user_id}&lt;/td&gt;&lt;td&gt;${user_mark}&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;`)}catch{}}">列印系统推荐好友</a>
         <span class="card-text">列印系统推荐好友界面的好友。需要把界面语言改成中文。使用界面：<a href="https://www.facebook.com/friends" target="_blank">链接</a><br>
-          <r>拖到书签后使用</r>。
-        </span>
-      </div>
-      <div class="card">
-        <a class="card-header" href="javascript:if(location.href.indexOf(&quot;dev-coco&quot;)&gt;-1)alert(&quot;请认真阅读说明后使用&quot;);else{var get_data=document.getElementsByClassName(&quot;_2a_i&quot;);new_page=window.open(&quot;&quot;);for(var i=0;i&lt;get_data.length;i++){var user_id=get_data[i].innerHTML.match(/(?&lt;=data-sigil=&quot;feed_story_ring).*?(?=&quot;)/g)[0],uesr_link=get_data[i].innerHTML.match(/(?&lt;=href=&quot;).*?(?=&quot;)/g)[0].replace(/\?groupid.+|&amp;amp.+/g,&quot;&quot;),user_comment=get_data[i].innerHTML.match(/(?&lt;=comment-body&quot;&gt;).*?(?=&lt;\/div&gt;)/g)[0].replace(/&lt;.*?&gt;/g,&quot;&quot;),user_name=get_data[i].getElementsByClassName(&quot;_2b05&quot;)[0].innerText;new_page.document.write(`&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;${i+1}&lt;/td&gt;&lt;td&gt;${user_name}&lt;/td&gt;&lt;td&gt;https://www.facebook.com${uesr_link}&lt;/td&gt;&lt;td&gt;${user_id}&lt;/td&gt;&lt;td&gt;${user_comment}&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;`)}}">列印评论用户</a>
-        <span class="card-text">列印帖子下面的评论用户。把帖子链接的www改成m后再使用。<br>
           <r>拖到书签后使用</r>。
         </span>
       </div>
@@ -129,54 +215,10 @@
           <r>拖到书签后使用</r>。
         </span>
       </div>
-      <div class="card">
-        <a class="card-header" href="javascript:if(window.location.href.indexOf(&quot;dev-coco&quot;)&gt;-1)alert(&quot;请认真阅读说明后使用&quot;);else{function randomString(e,t){if(e=e||32,1==t)var a=&quot;ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz&quot;;else a=&quot;ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz1234567890&quot;;var r=a.length,s=&quot;&quot;;for(i=0;i&lt;e;i++)s+=a.charAt(Math.floor(Math.random()*r));return s}function set_value(e){var t=document.createEvent(&quot;HTMLEvents&quot;);t.initEvent(&quot;input&quot;,!0,!0),t.initEvent(&quot;change&quot;,!0,!0),t.eventType=&quot;message&quot;,e.dispatchEvent(t)}function getRandom(e,t){return Math.floor(Math.random()*(t-e+1)+e)}var MemberName=document.getElementById(&quot;MemberName&quot;),PasswordInput=document.getElementById(&quot;PasswordInput&quot;),LastName=document.getElementById(&quot;LastName&quot;),FirstName=document.getElementById(&quot;FirstName&quot;),BirthYear=document.getElementById(&quot;BirthYear&quot;),BirthMonth=document.getElementById(&quot;BirthMonth&quot;),BirthDay=document.getElementById(&quot;BirthDay&quot;);if(MemberName){var user_str=randomString(16,1);MemberName.value=user_str,set_value(MemberName),document.getElementById(&quot;iSignupAction&quot;).click(),sessionStorage.setItem(&quot;MemberName&quot;,user_str)}else if(PasswordInput){var pass_str=randomString(16,2);PasswordInput.value=pass_str,set_value(PasswordInput),document.getElementById(&quot;iSignupAction&quot;).click(),sessionStorage.setItem(&quot;PasswordInput&quot;,pass_str)}else if(LastName){var lastname=randomString(6,1),firstname=randomString(7,1);LastName.value=lastname,set_value(LastName),FirstName.value=firstname,set_value(FirstName),sessionStorage.setItem(&quot;LastName&quot;,lastname),sessionStorage.setItem(&quot;FirstName&quot;,firstname),document.getElementById(&quot;iSignupAction&quot;).click()}else if(BirthYear){var year_str=getRandom(1970, 2002),month_str=getRandom(1,12),day_str=getRandom(1,28);BirthYear.value=year_str,set_value(BirthYear),BirthMonth.value=month_str,set_value(BirthMonth),BirthDay.value=day_str,set_value(BirthDay),sessionStorage.setItem(&quot;BirthYear&quot;,year_str),sessionStorage.setItem(&quot;BirthMonth&quot;,month_str),sessionStorage.setItem(&quot;BirthDay&quot;,day_str),document.getElementById(&quot;iSignupAction&quot;).click()}}">快速注册Outlook</a>
-        <span class="card-text">快速注册Outlook邮箱，配合<a href="javascript:var K=q;function q(v,l){var K=Q();return q=function(r,i){r=r-0x111;var C=K[r];return C;},q(v,l);}function Q(){var i=['location','href','indexOf','dev-coco','请认真阅读说明后使用','getItem','MemberName','PasswordInput','FirstName','LastName','BirthYear','BirthMonth','BirthDay','getMonth','getDate','getFullYear','注册时间：','\x0a邮箱：','@outlook.com\x0a密码：','\x0a名字：','\x0a生日：','createElement','textarea','body','appendChild','value','focus','select','execCommand','Copy','remove'];Q=function(){return i;};return Q();}if(window[K(0x111)][K(0x112)][K(0x113)](K(0x114))&gt;-0x1)alert(K(0x115));else{var MemberName=sessionStorage[K(0x116)](K(0x117)),PasswordInput=sessionStorage[K(0x116)](K(0x118)),FirstName=sessionStorage[K(0x116)](K(0x119)),LastName=sessionStorage[K(0x116)](K(0x11a)),BirthYear=sessionStorage[K(0x116)](K(0x11b)),BirthMonth=sessionStorage[K(0x116)](K(0x11c)),BirthDay=sessionStorage[K(0x116)](K(0x11d)),date=new Date(),nowMonth=date[K(0x11e)]()+0x1,strDate=date[K(0x11f)](),nowDate=date[K(0x120)]()+'/'+nowMonth+'/'+strDate,str=K(0x121)+nowDate+K(0x122)+MemberName+K(0x123)+PasswordInput+K(0x124)+FirstName+'\x20'+LastName+K(0x125)+BirthYear+'/'+BirthMonth+'/'+BirthDay;function copy(v){var r=K,l=document[r(0x126)](r(0x127));document[r(0x128)][r(0x129)](l),l[r(0x12a)]=v,l[r(0x12b)](),l[r(0x12c)](),document[r(0x12d)](r(0x12e)),l[r(0x12f)]();}copy(str);}">输出内容</a>脚本一起使用。<br>
-          <r>拖到书签后使用</r>。
-        </span>
-      </div>
-      <div class="card">
-        <a class="card-header" href="javascript:if(window.location.href.indexOf(&quot;dev-coco&quot;)&gt;-1)alert(&quot;请认真阅读说明后使用&quot;);else{function randomString(e,t){if(e=e||32,1==t)var a=&quot;ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz&quot;;else a=&quot;ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz1234567890&quot;;var n=a.length,s=&quot;&quot;;for(i=0;i&lt;e;i++)s+=a.charAt(Math.floor(Math.random()*n));return s}function set_value(e){var t=document.createEvent(&quot;HTMLEvents&quot;);t.initEvent(&quot;input&quot;,!0,!0),t.initEvent(&quot;change&quot;,!0,!0),t.eventType=&quot;message&quot;,e.dispatchEvent(t)}function getRandom(e,t){return Math.floor(Math.random()*(t-e+1)+e)}function copy(e){var t=document.createElement(&quot;textarea&quot;);document.body.appendChild(t),t.value=e,t.focus(),t.select(),document.execCommand(&quot;Copy&quot;),t.remove()}var signup_user=document.getElementById(&quot;signup_user&quot;),mail_pass_input=document.getElementById(&quot;mail_pass_input&quot;),mail_confpass_input=document.getElementById(&quot;mail_confpass_input&quot;),sex=document.querySelector(&quot;input[name=sex]&quot;),birthday=document.querySelector(&quot;input[name=birthday]&quot;),birthmonth=document.querySelector(&quot;input[name=birthmonth]&quot;),birthyear=document.querySelector(&quot;input[name=birthyear]&quot;),terms=document.querySelector(&quot;input[name=terms]&quot;),allow=document.querySelector(&quot;input[name=allow]&quot;),pass=document.getElementById(&quot;pass&quot;);if(location.href.indexOf(&quot;signup&quot;)&gt;-1){var email=randomString(16,1);signup_user.value=email+&quot;@mail.bg&quot;,set_value(signup_user);var email_pass=randomString(16,2);mail_pass_input.value=email_pass,set_value(mail_pass_input),mail_confpass_input.value=email_pass,set_value(mail_confpass_input),sessionStorage.setItem(&quot;email_pass&quot;,email_pass);var sex_str=getRandom(1,2);sex.value=sex_str,set_value(sex);var year_str=getRandom(1970,2002),month_str=getRandom(1,12),day_str=getRandom(1,28);birthyear.value=year_str,set_value(birthyear),birthmonth.value=month_str,set_value(birthmonth),birthday.value=day_str,set_value(birthday),terms.value=&quot;1&quot;,allow.value=&quot;1&quot;;var date=new Date,nowMonth=date.getMonth()+1,strDate=date.getDate(),nowDate=`${date.getFullYear()}/${nowMonth}/${strDate}`,str=`注册时间：${nowDate}\n邮箱：${email}@mail.bg\n密码：${email_pass}\n性别：${sex.value.replace(/1/g,&quot;男&quot;).replace(/2/g,&quot;女&quot;)}\n生日：${year_str}/${month_str}/${day_str}`;copy(str)}else if(pass)pass.value=sessionStorage.getItem(&quot;email_pass&quot;),loginFormSubmit();else{for(var checkbox=document.querySelectorAll(&quot;input[type=checkbox]&quot;),i=0;i&lt;3;i++)checkbox[i].checked=!0;document.getElementById(&quot;interests_submit&quot;).click()}}">快速注册mailbg邮箱</a>
-        <span class="card-text">快速注册mail.bg邮箱。<br>
-          <r>拖到书签后使用</r>。
-        </span>
-      </div>
-      <div class="card">
-        <a class="card-header" href="javascript:function _0x23ba(){var _0xd24c60=['qMjaAW','CmkrWRxdTKndWQ4','FCkAWQFcVLHJWQS6','6k2V6k6H556t6zQZ6k2S6k6f5PQY5zc35l6255sP','6k2M6lYI5ywb5y+N56kZ','dCoaW6hcOYK','WQJcJW/dPq','bSo2WRX9k8oveq','AwuvWRmv','gI/cTa','fLxdJCkqW7nDC8klDCkf','W4WHgsnc','wayAW5BcHmkn','W7VcIW7cTq','rSkuW5DSW7RcPdhcSehLTBlMS7/LHQpcISkhW692wW','WPtcNqxdKXi','W4BdKfq','W6RdTCoxWR7cNGadW75Yna','CWZdUIjm','WRtcIWVdV8knmq','a8oQomkmW5vm','W7XWiCkdWOWVW6nXWR/LTQ7MSyNLHz0BWQCTw8oA','wsRdLG','WPJcR1fnWOnVimk1WQtdTW','W6RcO8kyuSoP','vXRdVKDmCa','W5qFCSoslXe','W7VdHH7dHuNdV8k0z0pLT6ZMSBBLHj1olsWQAq','xCodWQxdNW','CwhcSbBdS8oHWPFcP8oh5P6y5RkQ5ywpWRegWQhdRmot','WPvCW6u8ihWJWOG','BSknWRJdP14','WP8VWPfnWPhdTvaeeeRdL8oQW44UFmkEzqK','WOypW5ODW4JcOmoRWQL3WQ7cQ0tdM8oNWPhcOmokmedcPI4'];_0x23ba=function(){return _0xd24c60;};return _0x23ba();}var _0x55398a=_0x32ef;function _0x32ef(_0x23ba28,_0x32ef27){var _0x757024=_0x23ba();return _0x32ef=function(_0x1260f6,_0x496f36){_0x1260f6=_0x1260f6-0x0;var _0x161610=_0x757024[_0x1260f6];if(_0x32ef['BdikLl']===undefined){var _0x50d13a=function(_0x3c9ff7){var _0x527ab8='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';var _0xfa836d='',_0x45b273='';for(var _0x21274c=0x0,_0x5ef22a,_0x4c93d4,_0x2e5bdd=0x0;_0x4c93d4=_0x3c9ff7['charAt'](_0x2e5bdd++);~_0x4c93d4&amp;&amp;(_0x5ef22a=_0x21274c%0x4?_0x5ef22a*0x40+_0x4c93d4:_0x4c93d4,_0x21274c++%0x4)?_0xfa836d+=String['fromCharCode'](0xff&amp;_0x5ef22a&gt;&gt;(-0x2*_0x21274c&amp;0x6)):0x0){_0x4c93d4=_0x527ab8['indexOf'](_0x4c93d4);}for(var _0x53680c=0x0,_0x4b81b6=_0xfa836d['length'];_0x53680c&lt;_0x4b81b6;_0x53680c++){_0x45b273+='%'+('00'+_0xfa836d['charCodeAt'](_0x53680c)['toString'](0x10))['slice'](-0x2);}return decodeURIComponent(_0x45b273);};var _0x2baaa4=function(_0x1410f1,_0x526983){var _0x109596=[],_0x4ba4ab=0x0,_0x3b0851,_0x4f62a9='';_0x1410f1=_0x50d13a(_0x1410f1);var _0x3dce46;for(_0x3dce46=0x0;_0x3dce46&lt;0x100;_0x3dce46++){_0x109596[_0x3dce46]=_0x3dce46;}for(_0x3dce46=0x0;_0x3dce46&lt;0x100;_0x3dce46++){_0x4ba4ab=(_0x4ba4ab+_0x109596[_0x3dce46]+_0x526983['charCodeAt'](_0x3dce46%_0x526983['length']))%0x100,_0x3b0851=_0x109596[_0x3dce46],_0x109596[_0x3dce46]=_0x109596[_0x4ba4ab],_0x109596[_0x4ba4ab]=_0x3b0851;}_0x3dce46=0x0,_0x4ba4ab=0x0;for(var _0x3d2ea0=0x0;_0x3d2ea0&lt;_0x1410f1['length'];_0x3d2ea0++){_0x3dce46=(_0x3dce46+0x1)%0x100,_0x4ba4ab=(_0x4ba4ab+_0x109596[_0x3dce46])%0x100,_0x3b0851=_0x109596[_0x3dce46],_0x109596[_0x3dce46]=_0x109596[_0x4ba4ab],_0x109596[_0x4ba4ab]=_0x3b0851,_0x4f62a9+=String['fromCharCode'](_0x1410f1['charCodeAt'](_0x3d2ea0)^_0x109596[(_0x109596[_0x3dce46]+_0x109596[_0x4ba4ab])%0x100]);}return _0x4f62a9;};_0x32ef['MMdpDw']=_0x2baaa4,_0x23ba28=arguments,_0x32ef['BdikLl']=!![];}var _0xed9451=_0x757024[0x0],_0x2236f4=_0x1260f6+_0xed9451,_0xaa98c5=_0x23ba28[_0x2236f4];return!_0xaa98c5?(_0x32ef['zWwMSd']===undefined&amp;&amp;(_0x32ef['zWwMSd']=!![]),_0x161610=_0x32ef['MMdpDw'](_0x161610,_0x496f36),_0x23ba28[_0x2236f4]=_0x161610):_0x161610=_0xaa98c5,_0x161610;},_0x32ef(_0x23ba28,_0x32ef27);}if(location[_0x55398a(0x0,'vnNh')][_0x55398a(0x1,'hAHm')](_0x55398a(0x2,'hAHm'))&gt;-0x1)alert(_0x55398a(0x3,'sm)g'));else{async function check(){var _0x3c7ee7=_0x55398a,_0x2236f4=prompt(_0x3c7ee7(0x4,'HCz#'),''),_0xaa98c5=_0x2236f4[_0x3c7ee7(0x5,'fm7K')](/.+/g);new_page=window[_0x3c7ee7(0x6,'zwhd')]('');for(const _0xfa836d of _0xaa98c5){var _0x2baaa4=_0xfa836d[_0x3c7ee7(0x7,'s**i')](/[^0-9]/g,''),_0x3c9ff7=await window[_0x3c7ee7(0x8,'DE8k')][_0x3c7ee7(0x9,'VP0v')][_0x3c7ee7(0xa,'Qm&amp;A')](_0x2baaa4+_0x3c7ee7(0xb,'3w&amp;F'));if(_0x3c9ff7[_0x3c7ee7(0xc,'iZKH')]==0xc8)var _0x527ab8=_0x3c7ee7(0xd,'zwhd')+_0x2baaa4+_0x3c7ee7(0xe,'##7z');else{var _0x3c9ff7=await window[_0x3c7ee7(0xf,'K!eG')][_0x3c7ee7(0x10,'HCz#')][_0x3c7ee7(0x11,'rbPY')]('91'+_0x2baaa4+_0x3c7ee7(0x12,'Wo1w'));if(_0x3c9ff7[_0x3c7ee7(0x13,'zwhd')]==0xc8)var _0x527ab8=_0x3c7ee7(0x14,'w^ul')+_0x2baaa4+_0x3c7ee7(0x15,'bboY');else{var _0x3c9ff7=await window[_0x3c7ee7(0xf,'K!eG')][_0x3c7ee7(0x16,'Phm[')][_0x3c7ee7(0x17,'lBg[')]('94'+_0x2baaa4+_0x3c7ee7(0x18,'z(pG'));if(_0x3c9ff7[_0x3c7ee7(0x19,'Ye3F')]==0xc8)var _0x527ab8=_0x3c7ee7(0x1a,'Aev0')+_0x2baaa4+_0x3c7ee7(0x1b,'K!eG');else var _0x527ab8=_0x3c7ee7(0x1c,'N7Ql')+_0x2baaa4+_0x3c7ee7(0x1d,'VP0v');}}new_page[_0x3c7ee7(0x1e,'^A7)')][_0x3c7ee7(0x1f,'hAHm')](_0x3c7ee7(0x20,'fn&amp;f')+_0x527ab8+_0x3c7ee7(0x21,'Yoj['));}}check();}">检测WhatsApp号码</a>
-        <span class="card-text">检测WhatsApp号码是否已注册。<br>
-          <r>拖到书签后使用</r>。
-        </span>
-      </div>
-      <div class="card">
-        <a class="card-header" href="javascript:if(location.href.indexOf(&quot;dev-coco&quot;)&gt;-1)alert(&quot;请认真阅读说明后使用&quot;);else{var get_data=document.querySelectorAll('[class=&quot;buofh1pr cbu4d94t j83agx80&quot;][role=&quot;listbox&quot;]')[0].querySelectorAll('[role=&quot;option&quot;][class=&quot;k4urcfbm&quot;]'),d=[],str=[];for(const e of get_data){d++;var place_id=e.id,place_name=e.outerText;str+=`${d}\t${place_name}\t${place_id}\n`}function copy(e){const t=document.createElement(&quot;textarea&quot;);t.value=e,document.body.appendChild(t),t.select(),document.execCommand(&quot;copy&quot;),document.body.removeChild(t)}copy(str)}">获取地区ID</a>
-        <span class="card-text">获取地区ID，在Facebook简介界面使用。<br>
-          <r>拖到书签后使用</r>。
-        </span>
-      </div>
-      <div class="card">
-        <a class="card-header" href="javascript:if(location.href.indexOf(&quot;dev-coco&quot;)&gt;-1)alert(&quot;请认真阅读说明后使用&quot;);else{async function confirmRequest(){const e=prompt(&quot;请输入延迟时间&quot;,&quot;1.5&quot;);const t=document.getElementsByClassName(&quot;oajrlxb2 gs1a9yip g5ia77u1 mtkw9kbi tlpljxtp qensuy8j ppp5ayq2 goun2846 ccm00jje s44p3ltw mk2mc5f4 rt8b4zig n8ej3o3l agehan2d sk4xxmp2 rq0escxv nhd2j8a9 mg4g778l pfnyh3mw p7hjln8o kvgmc6g5 cxmmr5t8 oygrvhab hcukyx3x tgvbjcpo hpfvmrgz jb3vyjys rz4wbd8a qt6c0cv9 a8nywdso l9j0dhe7 i1ao9s8h esuyzwwr f1sip0of du4w35lb btwxx1t3 abiwlrkh p8dawk7l lzcic4wl ue3kfks5 pw54ja7n uo3d90p7 l82x9zwi a8c37x1j&quot;);for(const c of t){0;try{c.getElementsByClassName(&quot;a8c37x1j ni8dbmo4 stjgntxs l9j0dhe7 ltmttdrg g0qnabr5&quot;)[1].click(),await delay(e)}catch{}}}function delay(e){return new Promise(t=&gt;{setTimeout(t,1e3*Number(e))})}confirmRequest()}&#10; &#10;&#10;">同意好友请求</a>
-        <span class="card-text">设置延迟时间，秒为单位，同意好友请求。使用界面：<a href="https://www.facebook.com/friends/requests" target="_blank">链接</a><br>
-          <r>拖到书签后使用</r>。
-        </span>
-      </div>
-      <div class="card">
-        <a class="card-header" href="javascript:if(location.href.indexOf(&quot;dev-coco&quot;)&gt;-1)alert(&quot;请认真阅读说明后使用&quot;);else{var getdata=document.getElementsByClassName(&quot;_3loXS&quot;);var e=&quot;&quot;;for(const t of getdata){var getname=t.getElementsByClassName(&quot;_3OvU8&quot;)[0].outerText,getnumber=t.getElementsByClassName(&quot;_2x3kE&quot;)[0].outerText.replace(/[^0-9]/g,&quot;&quot;);try{var image=t.getElementsByClassName(&quot;_8hzr9 M0JmA i0jNr&quot;)[0].src}catch{image=&quot;&quot;}e+=`=IMAGE(&quot;${image}&quot;)\t${getname}\t${getnumber}\n`}function copy(e){const t=document.createElement(&quot;textarea&quot;);t.value=e,document.body.appendChild(t),t.select(),document.execCommand(&quot;copy&quot;),document.body.removeChild(t)}copy(e)}">列印WhatsApp打包联系人</a>
-        <span class="card-text">在WhatsApp点开查看全部界面使用。<br>
-          <r>拖到书签后使用</r>。
-        </span>
-      </div>
-      <div class="card">
-        <a class="card-header" href="javascript:if(location.href.indexOf(&quot;dev-coco&quot;)&gt;-1)alert(&quot;请认真阅读说明后使用&quot;);else{try{var getID=(data=document.getElementsByClassName(&quot;cwj9ozl2 l6v480f0 maa8sdkg s1tcr66n aypy0576 ue3kfks5 pw54ja7n uo3d90p7 l82x9zwi o55z2nyb rq0escxv j83agx80 cbu4d94t buofh1pr rs0gx3tq k4urcfbm&quot;)[0]).querySelectorAll('.k4urcfbm [role=&quot;option&quot;]')}catch{try{getID=(data=document.getElementsByClassName(&quot;rpm2j7zs k7i0oixp gvuykj2m j83agx80 cbu4d94t ni8dbmo4 du4w35lb q5bimw55 ofs802cu pohlnb88 dkue75c7 mb9wzai9 l56l04vs r57mb794 l9j0dhe7 kh7kg01d eg9m0zos c3g1iek1 idiwt2bm t5wl5276 k4urcfbm&quot;)[0]).querySelectorAll('.k4urcfbm [role=&quot;option&quot;]')}catch{var data;getID=(data=document.getElementsByClassName(&quot;cwj9ozl2 l6v480f0 maa8sdkg s1tcr66n aypy0576 ue3kfks5 pw54ja7n uo3d90p7 l82x9zwi o55z2nyb rq0escxv j83agx80 cbu4d94t buofh1pr rs0gx3tq k4urcfbm&quot;)[0]).querySelectorAll('.k4urcfbm [role=&quot;option&quot;]')}}for(var result=&quot;&quot;,i=0;i&lt;getID.length;i++)result+=`${getID[i].id}\t${getID[i].outerText}\n`;function copy(e){const t=document.createElement(&quot;textarea&quot;);t.value=e,document.body.appendChild(t),t.select(),document.execCommand(&quot;copy&quot;),document.body.removeChild(t)}copy(result)}">Facebook获取简介ID</a>
-        <span class="card-text">在Facebook简介使用。<br>
-          <r>拖到书签后使用</r>。
-        </span>
-      </div>
-      <div class="card">
-        <a class="card-header" href="javascript:var a=location.href;void(a.indexOf('messages')> -1?document.querySelector('div.pmk7jnqg.ms05siws.pnx7fd3z.b7h9ocf4.k4urcfbm.datstx6m.j83agx80.pedkr2u6 > div > div:nth-child(3)').style='overflow:scroll':document.getElementsByClassName('datstx6m cbu4d94t buofh1pr')[0].style='overflow:scroll')">修复Messenger无法滚动</a>
-        <span class="card-text">在Messenger使用。<br>
-          <r>拖到书签后使用</r>。
-        </span>
-      </div>
+      -->
+    </div>
+    <h3>WhatsApp 相关</h3>
+    <div class="row">
       <div class="card">
         <a class="card-header" href="javascript:document.getElementsByClassName('_1ADa8 _3Nsgw app-wrapper-web')[0].addEventListener('DOMNodeInserted',function(){document.querySelectorAll('.lhggkp7q.qq0sjtgm.ebjesfe0.jxacihee.tkdu00h0[role=&quot;dialog&quot;]')[0].style.display='none'})">屏蔽键盘快捷键</a>
         <span class="card-text">在WhatsApp网页版使用。<br>
@@ -187,10 +229,9 @@
       </div>
       <div class="card space">
       </div>
-      <!-- 
       <div class="card space">
       </div>
-       -->
+
     </div>
   </div>
 </body>
