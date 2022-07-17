@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2022-07-15T22:05:05.717Z</updated>
+    <updated>2022-07-17T12:28:11.644Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[Google 脚本 操作表格]]></title>
+        <id>https://dev-coco.github.io/post/Google-Script-Operate-Excel/</id>
+        <link href="https://dev-coco.github.io/post/Google-Script-Operate-Excel/">
+        </link>
+        <updated>2022-07-17T05:24:01.000Z</updated>
+        <summary type="html"><![CDATA[<p>通过脚本对表格进行操作。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>通过脚本对表格进行操作。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Google 脚本 工作表相关]]></title>
         <id>https://dev-coco.github.io/post/Google-Script-Sheet-Related/</id>
@@ -36,7 +47,7 @@
         <id>https://dev-coco.github.io/post/Google-Script-Read-Spreadsheet/</id>
         <link href="https://dev-coco.github.io/post/Google-Script-Read-Spreadsheet/">
         </link>
-        <updated>2022-07-12T23:53:03.000Z</updated>
+        <updated>2022-07-12T11:53:03.000Z</updated>
         <summary type="html"><![CDATA[<p>Google 脚本的 SpreadsheetApp 服务可以读取、写入、创建表格。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>Google 脚本的 SpreadsheetApp 服务可以读取、写入、创建表格。</p>
@@ -161,17 +172,6 @@
         <summary type="html"><![CDATA[<p>使用 Google Excel 函数获取 WhatsApp 群组的名称和头像。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>使用 Google Excel 函数获取 WhatsApp 群组的名称和头像。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Google Excel 列表随机取值]]></title>
-        <id>https://dev-coco.github.io/post/Google-Excel-Random-Value/</id>
-        <link href="https://dev-coco.github.io/post/Google-Excel-Random-Value/">
-        </link>
-        <updated>2022-06-08T10:29:29.000Z</updated>
-        <summary type="html"><![CDATA[<p>从列表中随机获取其中一个值。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>从列表中随机获取其中一个值。</p>
 ]]></content>
     </entry>
 </feed>
