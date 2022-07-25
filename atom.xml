@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2022-07-24T02:07:25.274Z</updated>
+    <updated>2022-07-25T19:39:48.793Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[Google 脚本 获取范围]]></title>
+        <id>https://dev-coco.github.io/post/Google-Script-Get-Range/</id>
+        <link href="https://dev-coco.github.io/post/Google-Script-Get-Range/">
+        </link>
+        <updated>2022-07-25T07:33:00.000Z</updated>
+        <summary type="html"><![CDATA[<p>获取指定单元格的范围。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>获取指定单元格的范围。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Google 脚本 Logger 调试]]></title>
         <id>https://dev-coco.github.io/post/Google-Script-Logger-Debug/</id>
@@ -161,17 +172,6 @@
         <summary type="html"><![CDATA[<p>SmoothScroll 是一款为非苹果原装鼠标滚轮提供平滑滚动的工具。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>SmoothScroll 是一款为非苹果原装鼠标滚轮提供平滑滚动的工具。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Google Excel 动态获取表格名称]]></title>
-        <id>https://dev-coco.github.io/post/Dynamic-Sheet-Name/</id>
-        <link href="https://dev-coco.github.io/post/Dynamic-Sheet-Name/">
-        </link>
-        <updated>2022-06-21T00:38:27.000Z</updated>
-        <summary type="html"><![CDATA[<p>再也不怕被修改表格名称，跨表获取不到数据啦！</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>再也不怕被修改表格名称，跨表获取不到数据啦！</p>
 ]]></content>
     </entry>
 </feed>
