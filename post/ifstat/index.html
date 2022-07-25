@@ -1,0 +1,247 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ifstat | Raz1ner</title>
+  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1658778149314">
+  <link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
+  <script src="https://dev-coco.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
+<script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+  <div class="main">
+    <div class="header">
+      <div class="nav">
+        <div class="logo">
+          <a href="https://dev-coco.github.io">
+            <img class="avatar" src="https://dev-coco.github.io/images/avatar.png?v=1658778149314" alt="">
+          </a>
+          <div class="site-title">
+            <h1>Raz1ner</h1>
+          </div>
+        </div>
+        <span class="menu-btn fa fa-align-justify"></span>
+        <div class="menu-container">
+          <ul>
+            <li>
+              <a href="/" class="menu">首页</a>
+            </li>
+            <li>
+              <a href="/Featured-Software.html" class="menu">软件</a>
+            </li>
+            <li>
+              <a href="/Online-Tools" class="menu">在线工具</a>
+            </li>
+            <li>
+              <a href="/post/Linux-Command" class="menu">Linux命令</a>
+            </li>
+            <li>
+              <a href="/Excel" class="menu">Excel教程</a>
+            </li>
+            <li>
+              <a href="/post/Terms-and-Privacy" class="menu">隐私与条款</a>
+            </li>
+          </ul>
+        </div>
+        <form id="gridea-search-form" action="https://dev-coco.github.io/search/" class="search">
+          <input type="search" name="q" class="search-box">
+          <span class="search-button">
+            <span class="search-icon"></span>
+          </span>
+        </form>
+      </div>
+    </div>
+    <script>
+      document.getElementsByClassName('search-button')[0].addEventListener('click', function () {
+        document.getElementById('gridea-search-form').classList.toggle('open');
+      })
+    </script>
+
+    <div id="main-content" class="post-detail main-container">
+      <!-- left -->
+      <div id="content" class="main-container-left">
+        <article class="post i-card">
+        <h2 class="post-title">ifstat</h2>
+        <div class="post-info">
+          <time class="post-time">2022-02-03 / 5 min read</time>
+            <a href="https://dev-coco.github.io/tag/linux-command/" class="post-tag i-tag i-tag-other_2">#Linux命令</a>
+        </div>
+          <div class="post-content">
+            <p>统计网络接口流量状态。</p>
+<!-- more -->
+<h2 id="补充说明">补充说明</h2>
+<p>ifstat 命令就像 iostat/vmstat 描述其它的系统状况一样，是一个统计网络接口活动状态的工具。ifstat 工具系统中并不默认安装，需要自己下载源码包，重新编译安装，使用过程相对比较简单。</p>
+<h3 id="下载">下载</h3>
+<pre><code class="language-Shell">http://gael.roualland.free.fr/ifstat/  （官网）
+wget http://gael.roualland.free.fr/ifstat/ifstat-1.1.tar.gz
+</code></pre>
+<h3 id="编译安装">编译安装</h3>
+<pre><code class="language-Shell">tar -zxvf ifstat-1.1.tar.gz
+cd ifstat-1.1
+./configure
+make
+make install # 默认会安装到/usr/local/bin/目录中
+</code></pre>
+<p>注释：执行<code>which ifstat</code>输出<code>/usr/local/bin/ifstat</code></p>
+<h2 id="选项">选项</h2>
+<pre><code class="language-Shell">-l 监测环路网络接口（lo）。缺省情况下，ifstat 监测活动的所有非环路网络接口。经使用发现，加上-l 参数能监测所有的网络接口的信息，而不是只监测 lo 的接口信息，也就是说，加上-l 参数比不加-l 参数会多一个 lo 接口的状态信息。
+-a 监测能检测到的所有网络接口的状态信息。使用发现，比加上-l 参数还多一个 plip0 的接口信息，搜索一下发现这是并口（网络设备中有一 个叫 PLIP (Parallel Line Internet Protocol). 它提供了并口...）
+-z 隐藏流量是无的接口，例如那些接口虽然启动了但是未用的
+-i 指定要监测的接口,后面跟网络接口名
+-s 等于加-d snmp:[comm@][#]host[/nn]] 参数，通过 SNMP 查询一个远程主机
+-h 显示简短的帮助信息
+-n 关闭显示周期性出现的头部信息（也就是说，不加-n 参数运行 ifstat 时最顶部会出现网络接口的名称，当一屏显示不下时，会再一次出现接口的名称，提示我们显示的流量信息具体是哪个网络接口的。加上-n 参数把周期性的显示接口名称关闭，只显示一次）
+-t 在每一行的开头加一个时间 戳（能告诉我们具体的时间）
+-T 报告所有监测接口的全部带宽（最后一列有个 total，显示所有的接口的 in 流量和所有接口的 out 流量，简单的把所有接口的 in 流量相加,out 流量相 加）
+-w  用指定的列宽，而不是为了适应接口名称的长度而去自动放大列宽
+-W 如果内容比终端窗口的宽度还要宽就自动换行
+-S 在同一行保持状态更新（不滚动不换行）注：如果不喜欢屏幕滚动则此项非常方便，与 bmon 的显示方式类似
+-b 用 kbits/s 显示带宽而不是 kbytes/s
+-q 安静模式，警告信息不出现
+-v 显示版本信息
+-d 指定一个驱动来收集状态信息
+</code></pre>
+<h2 id="实例">实例</h2>
+<p>默认使用</p>
+<pre><code class="language-Shell">[root@localhost ifstat-1.1] #ifstat
+       eth0                eth1
+ KB/s in  KB/s out   KB/s in  KB/s out
+    0.07      0.20      0.00      0.00
+    0.07      0.15      0.58      0.00
+</code></pre>
+<p>默认 ifstat 不监控回环接口，显示的流量单位是 KB。</p>
+<pre><code class="language-Shell">[root@localhost ifstat-1.1]# ifstat -tT
+  time           eth0                eth1                eth2                eth3               Total
+HH:MM:ss   KB/s in  KB/s out   KB/s in  KB/s out   KB/s in  KB/s out   KB/s in  KB/s out   KB/s in  KB/s out
+16:53:04      0.84      0.62   1256.27   1173.05      0.12      0.18      0.00      0.00   1257.22   1173.86
+16:53:05      0.57      0.40      0.57      0.76      0.00      0.00      0.00      0.00      1.14      1.17
+16:53:06      1.58      0.71      0.42      0.78      0.00      0.00      0.00      0.00      2.01      1.48
+16:53:07      0.57      0.40      1.91      2.61      0.00      0.00      0.00      0.00      2.48      3.01
+16:53:08      0.73      0.40    924.02   1248.91      0.00      0.00      0.00      0.00    924.76   1249.31
+</code></pre>
+<p>监控所有网络接口</p>
+<pre><code class="language-Shell">[root@localhost ifstat-1.1] # ifstat -a
+        lo                 eth0                eth1
+ KB/s in  KB/s out   KB/s in  KB/s out   KB/s in  KB/s out
+    0.00      0.00      0.28      0.58      0.06      0.06
+    0.00      0.00      1.41      1.13      0.00      0.00
+    0.61      0.61      0.26      0.23      0.00      0.00
+</code></pre>
+
+          </div>
+        </article>
+        <div class="next-post">
+          <div class="next">下一篇</div>
+          <a href="https://dev-coco.github.io/post/rcp/">
+            <h3 class="post-title">rcp</h3>
+          </a>
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="gitalk-container"></div>
+      </div>
+      <!-- middle -->
+      <div class="main-container-middle"></div>
+      <!-- right -->
+      <div id="sidebar" class="main-container-right">
+        <div class="id_card i-card">
+          <div class="id_card-avatar" style="background-image: url(https://dev-coco.github.io/images/avatar.png?v=1658778149314)"></div>
+          <h1 class="id_card-title">Raz1ner</h1>
+          <img style="margin-top: 15px;margin-bottom: 10px;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&amp;count_bg=%2310C1F9&amp;title_bg=%23555555&amp;icon=html5.svg&amp;icon_color=%23E7E7E7&amp;title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&amp;edge_flat=false">
+          <p style="text-align: center;">
+            <a href="https://github.com/dev-coco" target="_blank"><img class="social-icon" src="/images/social/GitHub.png"></a>
+            <a href="https://t.me/raz1ner" target="_blank"><img class="social-icon" src="/images/social/Telegram.png"></a>
+            <a href="https://www.youtube.com/channel/UCEgNinV_DEntuv5Dm8Z_JvA" target="_blank"><img class="social-icon" src="/images/social/YouTube.png"></a>
+            <a href="/atom.xml" target="_blank"><img class="social-icon" src="/images/social/RSS.png"></a>
+            <a href="mailto:ruijingle@gmail.com" target="_blank"><img class="social-icon" src="/images/social/Gmail.png"></a>
+          </p>
+          <!-- <h2 class="id_card-description"></h2> -->
+          <!--  -->
+          <div class="id_card-sns">
+            <!-- github -->
+            
+            <!-- twitter -->
+            <!-- weibo -->
+            <!-- facebook -->
+          </div>
+        </div>
+      <!-- toc -->
+      <div class="toc-card i-card ">
+        <div class="toc-title i-card-title">目录</div>
+          <div class="toc-content">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E8%A1%A5%E5%85%85%E8%AF%B4%E6%98%8E">补充说明</a>
+<ul>
+<li><a href="#%E4%B8%8B%E8%BD%BD">下载</a></li>
+<li><a href="#%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85">编译安装</a></li>
+</ul>
+</li>
+<li><a href="#%E9%80%89%E9%A1%B9">选项</a></li>
+<li><a href="#%E5%AE%9E%E4%BE%8B">实例</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+          <script>
+            function locateCatelogList() {
+              /*获取文章目录集合,可通过:header过滤器*/
+              var alis = $('.post-content :header');
+              /*获取侧边栏目录列表集合**/
+              var sidebar_alis = $('.markdownIt-TOC a');
+              /*获取滚动条到顶部的距离*/
+              var scroll_height = $(window).scrollTop();
+              for (var i = 0; i < alis.length; i++) {
+                /*获取锚点集合中的元素分别到顶点的距离*/
+                var a_height = $(alis[i]).offset().top;
+                if (a_height < scroll_height) {
+                  /*高亮显示*/
+                  sidebar_alis.removeClass('on');
+                  $(sidebar_alis[i]).addClass('on');
+                }
+              }
+            }
+            $(function() {
+              /*绑定滚动事件 */
+              $(window).bind('scroll', locateCatelogList);
+              });
+          </script>
+        </div>
+      <div class="notice-card i-card ">
+        <div class="notice-title i-card-title">公告</div>
+        <div class="notice-content">博客新增 Telegram 频道：<a href="https://t.me/raz1ner" target="_blank" style="color: blue">瑞景乐的博客</a>，欢迎关注，及时收到最新文章推送。</div>
+      </div>
+      <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
+        <div class="notice-content">
+          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/google-script/">Google 脚本</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/security/">安全</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/excel/">Excel</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/javascript/">Javascript</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="site-footer">
+    <span>Copyright © 2020-2022 Raz1ner - All Rights Reserved.</span> | <a class="rss" href="https://dev-coco.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+  <script>
+    $('#sidebar').stickySidebar({
+    topSpacing: 80,
+    // bottomSpacing: 60
+    });
+  </script>
+  
+</body>
+</html>

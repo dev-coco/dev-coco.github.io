@@ -1,0 +1,372 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>setfacl | Raz1ner</title>
+  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1658778149314">
+  <link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
+  <script src="https://dev-coco.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
+<script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+  <div class="main">
+    <div class="header">
+      <div class="nav">
+        <div class="logo">
+          <a href="https://dev-coco.github.io">
+            <img class="avatar" src="https://dev-coco.github.io/images/avatar.png?v=1658778149314" alt="">
+          </a>
+          <div class="site-title">
+            <h1>Raz1ner</h1>
+          </div>
+        </div>
+        <span class="menu-btn fa fa-align-justify"></span>
+        <div class="menu-container">
+          <ul>
+            <li>
+              <a href="/" class="menu">首页</a>
+            </li>
+            <li>
+              <a href="/Featured-Software.html" class="menu">软件</a>
+            </li>
+            <li>
+              <a href="/Online-Tools" class="menu">在线工具</a>
+            </li>
+            <li>
+              <a href="/post/Linux-Command" class="menu">Linux命令</a>
+            </li>
+            <li>
+              <a href="/Excel" class="menu">Excel教程</a>
+            </li>
+            <li>
+              <a href="/post/Terms-and-Privacy" class="menu">隐私与条款</a>
+            </li>
+          </ul>
+        </div>
+        <form id="gridea-search-form" action="https://dev-coco.github.io/search/" class="search">
+          <input type="search" name="q" class="search-box">
+          <span class="search-button">
+            <span class="search-icon"></span>
+          </span>
+        </form>
+      </div>
+    </div>
+    <script>
+      document.getElementsByClassName('search-button')[0].addEventListener('click', function () {
+        document.getElementById('gridea-search-form').classList.toggle('open');
+      })
+    </script>
+
+    <div id="main-content" class="post-detail main-container">
+      <!-- left -->
+      <div id="content" class="main-container-left">
+        <article class="post i-card">
+        <h2 class="post-title">setfacl</h2>
+        <div class="post-info">
+          <time class="post-time">2022-02-03 / 13 min read</time>
+            <a href="https://dev-coco.github.io/tag/linux-command/" class="post-tag i-tag i-tag-other_3">#Linux命令</a>
+        </div>
+          <div class="post-content">
+            <p>设置文件访问控制列表。</p>
+<!-- more -->
+<h2 id="补充说明">补充说明</h2>
+<p>setfacl 命令是用来在命令行里设置 ACL（访问控制列表）。在命令行里，一系列的命令跟随以一系列的文件名。</p>
+<h2 id="选项">选项</h2>
+<pre><code class="language-Shell">-b,--remove-all：删除所有扩展的acl规则，基本的acl规则(所有者，群组，其他）将被保留。
+-k,--remove-default：删除缺省的acl规则。如果没有缺省规则，将不提示。
+-n，--no-mask：不要重新计算有效权限。setfacl默认会重新计算ACL mask，除非mask被明确的制定。
+--mask：重新计算有效权限，即使ACL mask被明确指定。
+-d，--default：设定默认的acl规则。
+--restore=file：从文件恢复备份的acl规则（这些文件可由getfacl -R产生）。通过这种机制可以恢复整个目录树的acl规则。此参数不能和除--test以外的任何参数一同执行。
+--test：测试模式，不会改变任何文件的acl规则，操作后的acl规格将被列出。
+-R，--recursive：递归的对所有文件及目录进行操作。
+-L，--logical：跟踪符号链接，默认情况下只跟踪符号链接文件，跳过符号链接目录。
+-P，--physical：跳过所有符号链接，包括符号链接文件。
+--version：输出setfacl的版本号并退出。
+--help：输出帮助信息。
+--：标识命令行参数结束，其后的所有参数都将被认为是文件名
+-：如果文件名是-，则setfacl将从标准输入读取文件名。
+</code></pre>
+<ul>
+<li>选项<code>-m</code>和<code>-x</code>后边跟以 acl 规则。多条 acl 规则以逗号 (,) 隔开。选项<code>-M</code>和<code>-X</code>用来从文件或标准输入读取 acl 规则。</li>
+<li>选项<code>--set</code>和<code>--set-file</code>用来设置文件或目录的 acl 规则，先前的设定将被覆盖。</li>
+<li>选项<code>-m(--modify)</code>和<code>-M(--modify-file)</code>选项修改文件或目录的 acl 规则。</li>
+<li>选项<code>-x(--remove)</code>和<code>-X(--remove-file)</code>选项删除 acl 规则。</li>
+</ul>
+<p>当使用-M，-X 选项从文件中读取规则时，setfacl 接受 getfacl 命令输出的格式。每行至少一条规则，以#开始的行将被视为注释。<br>
+当在不支持 ACLs 的文件系统上使用 setfacl 命令时，setfacl 将修改文件权限位。如果 acl 规则并不完全匹配文件权限位，setfacl 将会修改文件权限位使其尽可能的反应 acl 规则，并会向 standard error 发送错误消息，以大于 0 的状态返回。<br>
+权限<br>
+文件的所有者以及有<code>CAP_FOWNER</code>的用户进程可以设置一个文件的 acl。（在目前的 linux 系统上，root 用户是唯一有<code>CAP_FOWNER</code>能力的用户）<br>
+ACL 规则<br>
+setfacl 命令可以识别以下的规则格式：</p>
+<pre><code class="language-Shell">[d[efault]:] [u[ser]:]uid [:perms]  指定用户的权限，文件所有者的权限（如果uid没有指定）
+[d[efault]:] g[roup]:gid [:perms]   指定群组的权限，文件所有群组的权限（如果gid未指定）
+[d[efault]:] m[ask][:] [:perms]     有效权限掩码
+[d[efault]:] o[ther] [:perms]       其他的权限
+</code></pre>
+<p>恰当的 acl 规则被用在修改和设定的操作中，对于 uid 和 gid，可以指定一个数字，也可指定一个名字。perms 域是一个代表各种权限的字母的组合：读<code>-r</code>写<code>-w</code>执行<code>-x</code>，执行只适合目录和一些可执行的文件。pers 域也可设置为八进制格式。<br>
+自动创建的规则<br>
+最初的，文件目录仅包含 3 个基本的 acl 规则。为了使规则能正常执行，需要满足以下规则。</p>
+<ul>
+<li>3 个基本规则不能被删除。</li>
+<li>任何一条包含指定的用户名或群组名的规则必须包含有效的权限组合。</li>
+<li>任何一条包含缺省规则的规则在使用时，缺省规则必须存在。</li>
+</ul>
+<h2 id="acl-的名词定义">ACL 的名词定义</h2>
+<p>先来看看在 ACL 里面每一个名词的定义，这些名词我大多从 man page 上摘下来虽然有些枯燥,但是对于理解下面的内容还是很有帮助的。<br>
+ACL 是由一系列的 Access Entry 所组成的，每一条 Access Entry 定义了特定的类别可以对文件拥有的操作权限。Access Entry 有三个组成部分：Entry tag type, qualifier (optional), permission。<br>
+我们先来看一下最重要的 Entry tag type，它有以下几个类型：</p>
+<pre><code class="language-Shell">ACL_USER_OBJ：相当于Linux里file_owner的permission
+ACL_USER：定义了额外的用户可以对此文件拥有的permission
+ACL_GROUP_OBJ：相当于Linux里group的permission
+ACL_GROUP：定义了额外的组可以对此文件拥有的permission
+ACL_MASK：定义了ACL_USER, ACL_GROUP_OBJ和ACL_GROUP的最大权限 (这个我下面还会专门讨论)
+ACL_OTHER：相当于Linux里other的permission
+</code></pre>
+<p>让我们来据个例子说明一下，下面我们就用 getfacl 命令来查看一个定义好了的 ACL 文件：</p>
+<pre><code class="language-Shell">[root@localhost ~]# getfacl ./test.txt
+# file: test.txt
+# owner: root
+# group: admin
+user::rw-
+user:john:rw-
+group::rw-
+group:dev:r--
+mask::rw- other::r--
+</code></pre>
+<p>前面三个以#开头的定义了文件名，file owner 和 group。这些信息没有太大的作用，接下来我们可以用<code>--omit-header</code>来省略掉。</p>
+<pre><code class="language-Shell">user::rw-       定义了ACL_USER_OBJ, 说明file owner拥有read and write permission
+user:john:rw-   定义了ACL_USER,这样用户john就拥有了对文件的读写权限,实现了我们一开始要达到的目的
+group::rw-      定义了ACL_GROUP_OBJ,说明文件的group拥有read and write permission
+group:dev:r--   定义了ACL_GROUP,使得dev组拥有了对文件的read permission
+mask::rw-       定义了ACL_MASK的权限为read and write
+other::r--      定义了ACL_OTHER的权限为read
+</code></pre>
+<p>从这里我们就可以看出 ACL 提供了我们可以定义特定用户和用户组的功能，那么接下来我们就来看一下如何设置一个文件的 ACL：<br>
+如何设置 ACL 文件<br>
+首先我们还是要讲一下设置 ACL 文件的格式，从上面的例子中我们可以看到每一个 Access Entry 都是由三个被：号分隔开的字段所组成，第一个就是 Entry tag type。</p>
+<pre><code class="language-Shell">user   对应了ACL_USER_OBJ和ACL_USER
+group  对应了ACL_GROUP_OBJ和ACL_GROUP
+mask   对应了ACL_MASK
+other  对应了ACL_OTHER
+</code></pre>
+<p>第二个字段称之为 qualifier，也就是上面例子中的 john 和 dev 组，它定义了特定用户和拥护组对于文件的权限。这里我们也可以发现只有 user 和 group 才有 qualifier，其他的都为空。第三个字段就是我们熟悉的 permission 了。它和 Linux 的 permission 一样定义，这里就不多讲了。<br>
+下面我们就来看一下怎么设置 test.txt 这个文件的 ACL 让它来达到我们上面的要求。<br>
+一开始文件没有 ACL 的额外属性：</p>
+<pre><code class="language-Shell">[root@localhost ~]# ls -l
+-rw-rw-r-- 1 root admin 0 Jul 3 22:06 test.txt
+
+[root@localhost ~]# getfacl --omit-header ./test.txt
+user::rw- group::rw- other::r--
+</code></pre>
+<p>我们先让用户 john 拥有对 test.txt 文件的读写权限：</p>
+<pre><code class="language-Shell">[root@localhost ~]# setfacl -m user:john:rw- ./test.txt
+[root@localhost ~]# getfacl --omit-header ./test.txt
+user::rw-
+user:john:rw-
+group::rw-
+mask::rw-
+other::r--
+</code></pre>
+<p>这时我们就可以看到 john 用户在 ACL 里面已经拥有了对文件的读写权。这个时候如果我们查看一下 linux 的 permission 我们还会发现一个不一样的地方。</p>
+<pre><code class="language-Shell">[root@localhost ~]# ls -l ./test.txt
+-rw-rw-r--+ 1 root admin 0 Jul 3 22:06 ./test.txt
+</code></pre>
+<p>在文件 permission 的最后多了一个+号，当任何一个文件拥有了 ACL_USER 或者 ACL_GROUP 的值以后我们就可以称它为 ACL 文件，这个+号就是用来提示我们的。我们还可以发现当一个文件拥有了<code>ACL_USER</code>或者<code>ACL_GROUP</code>的值时<code>ACL_MASK</code>同时也会被定义。<br>
+接下来我们来设置 dev 组拥有 read permission：</p>
+<pre><code class="language-Shell">[root@localhost ~]# setfacl -m group:dev:r-- ./test.txt
+[root@localhost ~]# getfacl --omit-header ./test.txt
+user::rw-
+user:john:rw-
+group::rw-
+group:dev:r--
+mask::rw-
+other::r--
+</code></pre>
+<p>到这里就完成了我们上面讲到的要求，是不是很简单呢。</p>
+<h2 id="acl_mask-和-effective-permission">ACL_MASK 和 Effective permission</h2>
+<p>这里需要重点讲一下<code>ACL_MASK</code>，因为这是掌握 ACL 的另一个关键，在 Linux file permission 里面大家都知道比如对于<code>rw-rw-r--</code>来说, 当中的那个<code>rw-</code>是指文件组的 permission. 但是在 ACL 里面这种情况只是在<code>ACL_MASK</code>不存在的情况下成立。如果文件有 ACL_MASK 值，那么当中那个<code>rw-</code>代表的就是 mask 值而不再是 group permission 了。<br>
+让我们来看下面这个例子：</p>
+<pre><code class="language-Shell">[root@localhost ~]# ls -l
+-rwxrw-r-- 1 root admin 0 Jul 3 23:10 test.sh
+</code></pre>
+<p>这里说明 test.sh 文件只有 file owner: root 拥有 read, write, execute/search permission。admin 组只有 read and write permission，现在我们想让用户 john 也对 test.sh 具有和 root 一样的 permission。</p>
+<pre><code class="language-Shell">[root@localhost ~]# setfacl -m user:john:rwx ./test.sh
+[root@localhost ~]# getfacl --omit-header ./test.sh
+user::rwx user:john:rwx
+group::rw-
+mask::rwx
+other::r--
+</code></pre>
+<p>这里我们看到 john 已经拥有了 rwx 的 permission，mask 值也被设定为 rwx，那是因为它规定了<code>ACL_USER</code>，<code>ACL_GROUP</code>和<code>ACL_GROUP_OBJ</code>的最大值，现在我们再来看 test.sh 的 Linux permission，它已经变成了：</p>
+<pre><code class="language-Shell">[root@localhost ~]# ls -l
+-rwxrwxr--+ 1 root admin 0 Jul 3 23:10 test.sh
+</code></pre>
+<p>那么如果现在 admin 组的用户想要执行 test.sh 的程序会发生什么情况呢？它会被 permission deny。原因在于实际上 admin 组的用户只有 read and write permission，这里当中显示的 rwx 是<code>ACL_MASK</code>的值而不是 group 的 permission。<br>
+所以从这里我们就可以知道，如果一个文件后面有+标记，我们都需要用 getfacl 来确认它的 permission，以免发生混淆。<br>
+下面我们再来继续看一个例子，假如现在我们设置 test.sh 的 mask 为 read only，那么 admin 组的用户还会有 write permission 吗？</p>
+<pre><code class="language-Shell">[root@localhost ~]# setfacl -m mask::r-- ./test.sh
+[root@localhost ~]# getfacl --omit-header ./test.sh
+user::rwx
+user:john:rwx   #effective:r--
+group::rw-      #effective:r--
+mask::r--
+other::r--
+</code></pre>
+<p>这时候我们可以看到 ACL_USER 和 ACL_GROUP_OBJ 旁边多了个#effective:r--，这是什么意思呢？让我们再来回顾一下<code>ACL_MASK</code>的定义。它规定了<code>ACL_USER</code>，<code>ACL_GROUP_OBJ</code>和<code>ACL_GROUP</code>的最大权限。那么在我们这个例子中他们的最大权限也就是 read only。虽然我们这里给<code>ACL_USER</code>和<code>ACL_GROUP_OBJ</code>设置了其他权限，但是他们真正有效果的只有 read 权限。<br>
+这时我们再来查看 test.sh 的 Linux file permission 时它的 group permission 也会显示其 mask 的值 (i.e. r--)</p>
+<pre><code class="language-Shell">[root@localhost ~]# ls -l
+-rwxr--r--+ 1 root admin 0 Jul 3 23:10 test.sh
+</code></pre>
+<p>Default ACL<br>
+上面我们所有讲的都是 Access ACL，也就是对文件而言。下面我简单讲一下 Default ACL。Default ACL 是指对于一个目录进行 Default ACL 设置，并且在此目录下建立的文件都将继承此目录的 ACL。<br>
+同样我们来做一个试验说明，比如现在 root 用户建立了一个 dir 目录：</p>
+<pre><code class="language-Shell">[root@localhost ~]# mkdir dir
+</code></pre>
+<p>他希望所有在此目录下建立的文件都可以被 john 用户所访问，那么我们就应该对 dir 目录设置 Default ACL。</p>
+<pre><code class="language-Shell">[root@localhost ~]# setfacl -d -m user:john:rw ./dir
+[root@localhost ~]# getfacl --omit-header ./dir
+user::rwx
+group::rwx
+other::r-x
+default:user::rwx
+default:user:john:rwx
+default:group::rwx
+default:mask::rwx
+default: other::r-x
+</code></pre>
+<p>这里我们可以看到 ACL 定义了 default 选项，john 用户拥有了 default 的 read, write, excute/search permission。所有没有定义的 default 都将从 file permission 里 copy 过来，现在 root 用户在 dir 下建立一个 test.txt 文件。</p>
+<pre><code class="language-Shell">[root@localhost ~]# touch ./dir/test.txt
+[root@localhost ~]# ls -l ./dir/test.txt
+-rw-rw-r--+ 1 root root 0 Jul 3 23:46 ./dir/test.txt
+
+[root@localhost ~]# getfacl --omit-header ./dir/test.txt
+user::rw-
+user:john:rw-
+group::rwx #effective:rw-
+mask::rw-
+other::r--
+</code></pre>
+<p>这里我们看到在 dir 下建立的文件 john 用户自动就有了 read and write permission，<br>
+ACL 相关命令<br>
+前面的例子中我们都注意到了 getfacl 命令是用来读取文件的 ACL，setfacl 是用来设定文件的 Acess ACL。这里还有一个 chacl 是用来改变文件和目录的 Access ACL and Default ACL，它的具体参数大家可以去看 man page。我只想提及一下<code>chacl -B</code>。它可以彻底删除文件或者目录的 ACL 属性 (包括 Default ACL)，比如你即使用了<code>setfacl -x</code>删除了所有文件的 ACL 属性，那个+号还是会出现在文件的末尾，所以正确的删除方法应该是用<code>chacl -B</code>用 cp 来复制文件的时候我们现在可以加上<code>-p</code>选项。这样在拷贝文件的时候也将拷贝文件的 ACL 属性，对于不能拷贝的 ACL 属性将给出警告。<br>
+mv 命令将会默认地移动文件的 ACL 属性，同样如果操作不允许的情况下会给出警告。<br>
+需要注意的几点<br>
+如果你的文件系统不支持 ACL 的话，你也许需要重新 mount 你的 file system：</p>
+<pre><code class="language-Shell">mount -o remount, acl [mount point]
+</code></pre>
+<p>如果用 chmod 命令改变 Linux file permission 的时候相应的 ACL 值也会改变，反之改变 ACL 的值，相应的 file permission 也会改变。</p>
+
+          </div>
+        </article>
+        <div class="next-post">
+          <div class="next">下一篇</div>
+          <a href="https://dev-coco.github.io/post/find/">
+            <h3 class="post-title">find</h3>
+          </a>
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="gitalk-container"></div>
+      </div>
+      <!-- middle -->
+      <div class="main-container-middle"></div>
+      <!-- right -->
+      <div id="sidebar" class="main-container-right">
+        <div class="id_card i-card">
+          <div class="id_card-avatar" style="background-image: url(https://dev-coco.github.io/images/avatar.png?v=1658778149314)"></div>
+          <h1 class="id_card-title">Raz1ner</h1>
+          <img style="margin-top: 15px;margin-bottom: 10px;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&amp;count_bg=%2310C1F9&amp;title_bg=%23555555&amp;icon=html5.svg&amp;icon_color=%23E7E7E7&amp;title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&amp;edge_flat=false">
+          <p style="text-align: center;">
+            <a href="https://github.com/dev-coco" target="_blank"><img class="social-icon" src="/images/social/GitHub.png"></a>
+            <a href="https://t.me/raz1ner" target="_blank"><img class="social-icon" src="/images/social/Telegram.png"></a>
+            <a href="https://www.youtube.com/channel/UCEgNinV_DEntuv5Dm8Z_JvA" target="_blank"><img class="social-icon" src="/images/social/YouTube.png"></a>
+            <a href="/atom.xml" target="_blank"><img class="social-icon" src="/images/social/RSS.png"></a>
+            <a href="mailto:ruijingle@gmail.com" target="_blank"><img class="social-icon" src="/images/social/Gmail.png"></a>
+          </p>
+          <!-- <h2 class="id_card-description"></h2> -->
+          <!--  -->
+          <div class="id_card-sns">
+            <!-- github -->
+            
+            <!-- twitter -->
+            <!-- weibo -->
+            <!-- facebook -->
+          </div>
+        </div>
+      <!-- toc -->
+      <div class="toc-card i-card ">
+        <div class="toc-title i-card-title">目录</div>
+          <div class="toc-content">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E8%A1%A5%E5%85%85%E8%AF%B4%E6%98%8E">补充说明</a></li>
+<li><a href="#%E9%80%89%E9%A1%B9">选项</a></li>
+<li><a href="#acl-%E7%9A%84%E5%90%8D%E8%AF%8D%E5%AE%9A%E4%B9%89">ACL 的名词定义</a></li>
+<li><a href="#acl_mask-%E5%92%8C-effective-permission">ACL_MASK 和 Effective permission</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+          <script>
+            function locateCatelogList() {
+              /*获取文章目录集合,可通过:header过滤器*/
+              var alis = $('.post-content :header');
+              /*获取侧边栏目录列表集合**/
+              var sidebar_alis = $('.markdownIt-TOC a');
+              /*获取滚动条到顶部的距离*/
+              var scroll_height = $(window).scrollTop();
+              for (var i = 0; i < alis.length; i++) {
+                /*获取锚点集合中的元素分别到顶点的距离*/
+                var a_height = $(alis[i]).offset().top;
+                if (a_height < scroll_height) {
+                  /*高亮显示*/
+                  sidebar_alis.removeClass('on');
+                  $(sidebar_alis[i]).addClass('on');
+                }
+              }
+            }
+            $(function() {
+              /*绑定滚动事件 */
+              $(window).bind('scroll', locateCatelogList);
+              });
+          </script>
+        </div>
+      <div class="notice-card i-card ">
+        <div class="notice-title i-card-title">公告</div>
+        <div class="notice-content">博客新增 Telegram 频道：<a href="https://t.me/raz1ner" target="_blank" style="color: blue">瑞景乐的博客</a>，欢迎关注，及时收到最新文章推送。</div>
+      </div>
+      <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
+        <div class="notice-content">
+          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/google-script/">Google 脚本</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/security/">安全</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/excel/">Excel</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/javascript/">Javascript</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="site-footer">
+    <span>Copyright © 2020-2022 Raz1ner - All Rights Reserved.</span> | <a class="rss" href="https://dev-coco.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+  <script>
+    $('#sidebar').stickySidebar({
+    topSpacing: 80,
+    // bottomSpacing: 60
+    });
+  </script>
+  
+</body>
+</html>

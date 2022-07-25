@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <title>在线OCR - 图片文字提取</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="keywords" content="dev-coco, OCR, 图片文字提取" />
+  <meta name="robots" content="index,follow" />
+  <meta name="description" content="OCR在线。提取图片中的文字。" />
+  <link rel="icon" href="/images/avatar.png">
+  <script src='https://unpkg.com/tesseract.js@v2.1.0/dist/tesseract.min.js'></script>
+  <link rel="stylesheet" href="/css/site.css">
+  <script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <style>.middle{display:block;margin-left:auto;margin-right:auto;width:60%}#result,input,select{font-size:18px}</style>
+</head>
+<body>
+  <div class="container">
+    <h1 style="text-align:left;"><img class="logo" alt="dev-coco" src="/images/avatar.png">
+      <span> Raz1ner</span>
+      <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&count_bg=%2310C1F9&title_bg=%23555555&icon=html5.svg&icon_color=%23E7E7E7&title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&edge_flat=false" style="float:right;width:180px;">
+    </h1>
+    <div class="menu">
+      <a href="/">首页</a>
+      <a href="/Featured-Software.html">软件</a>
+      <a href="/Online-Tools">在线工具</a>
+      <a href="/post/Linux-Command">Linux命令</a>
+      <a href="/Excel/">Excel教程</a>
+      <a href="/post/Terms-and-Privacy">隐私与条款</a>
+      <a target="_blank" href="https://github.com/dev-coco">Github</a>
+    </div>
+    <section class="middle" id="main">
+      <div style="text-align:center;">
+        <h1>OCR Online</h1>
+        <p>选择图片里面对应的语言，然后选择图片。单独把图片的文字截图出来再上传效果更佳。</p>
+      </div>
+      <div class="middle" id="toolbar">
+        <select id="lang">
+          <option value='afr'>Afrikaans</option>
+          <option value='ara'>Arabic</option>
+          <option value='aze'>Azerbaijani</option>
+          <option value='bel'>Belarusian</option>
+          <option value='ben'>Bengali</option>
+          <option value='bul'>Bulgarian</option>
+          <option value='cat'>Catalan</option>
+          <option value='ces'>Czech</option>
+          <option value='chi_sim'>Chinese</option>
+          <option value='chi_tra'>Traditional Chinese</option>
+          <option value='chr'>Cherokee</option>
+          <option value='dan'>Danish</option>
+          <option value='deu'>German</option>
+          <option value='ell'>Greek</option>
+          <option value='eng' selected>English</option>
+          <option value='enm'>English (Old)</option>
+          <option value='meme'>Internet Meme</option>
+          <option value='epo'>Esperanto</option>
+          <option value='epo_alt'>Esperanto alternative</option>
+          <option value='equ'>Math</option>
+          <option value='est'>Estonian</option>
+          <option value='eus'>Basque</option>
+          <option value='fin'>Finnish</option>
+          <option value='fra'>French</option>
+          <option value='frk'>Frankish</option>
+          <option value='frm'>French (Old)</option>
+          <option value='glg'>Galician</option>
+          <option value='grc'>Ancient Greek</option>
+          <option value='heb'>Hebrew</option>
+          <option value='hin'>Hindi</option>
+          <option value='hrv'>Croatian</option>
+          <option value='hun'>Hungarian</option>
+          <option value='ind'>Indonesian</option>
+          <option value='isl'>Icelandic</option>
+          <option value='ita'>Italian</option>
+          <option value='ita_old'>Italian (Old)</option>
+          <option value='jpn'>Japanese</option>
+          <option value='kan'>Kannada</option>
+          <option value='kor'>Korean</option>
+          <option value='lav'>Latvian</option>
+          <option value='lit'>Lithuanian</option>
+          <option value='mal'>Malayalam</option>
+          <option value='mkd'>Macedonian</option>
+          <option value='mlt'>Maltese</option>
+          <option value='msa'>Malay</option>
+          <option value='nld'>Dutch</option>
+          <option value='nor'>Norwegian</option>
+          <option value='pol'>Polish</option>
+          <option value='por'>Portuguese</option>
+          <option value='ron'>Romanian</option>
+          <option value='rus'>Russian</option>
+          <option value='slk'>Slovakian</option>
+          <option value='slv'>Slovenian</option>
+          <option value='spa'>Spanish</option>
+          <option value='spa_old'>Old Spanish</option>
+          <option value='sqi'>Albanian</option>
+          <option value='srp'>Serbian (Latin)</option>
+          <option value='swa'>Swahili</option>
+          <option value='swe'>Swedish</option>
+          <option value='tam'>Tamil</option>
+          <option value='tel'>Telugu</option>
+          <option value='tgl'>Tagalog</option>
+          <option value='tha'>Thai</option>
+          <option value='tur'>Turkish</option>
+          <option value='ukr'>Ukrainian</option>
+          <option value='vie'>Vietnamese</option>
+        </select>
+        <input type="file" id="import" accept="image/*">
+      </div>
+      <div id="result">
+        <div id="preview"></div>
+        <div id="recognizedText" contenteditable="true"></div>
+      </div>
+    </section>
+  </div>
+  <script>
+    let imgSrc = null;
+    const $ = e => document.querySelector(e),
+      $c = e => document.createElement(e),
+      open = e => {
+        if (e.target.files.length) {
+          const t = window.URL || window.webkitURL;
+          imgSrc = t.createObjectURL(e.target.files[0]), draw()
+        }
+      },
+      draw = e => {
+        $("#preview").style.backgroundImage = `url(${imgSrc})`, $("#preview").style.backgroundRepeat = "no-repeat", $("#preview").style.backgroundSize = "contain", OCR()
+      },
+      OCR = () => {
+        const e = $c("progress");
+        e.value = 0, e.style.display = "block", e.style.margin = "25% auto", $("#recognizedText").innerHTML = "", $("#recognizedText").appendChild(e), Tesseract.recognize(imgSrc, $("#lang").value, {
+          logger: t => {
+            e.value = t.progress
+          }
+        }).then(({
+          data: {
+            text: e
+          }
+        }) => {
+          $("#recognizedText").style.padding = "1em", $("#recognizedText").innerText = e
+        }).catch(e => {
+          $("#recognizedText").innerText = e
+        })
+      };
+    let deferredPrompt;
+    $("#import").addEventListener("change", open), $("#lang").addEventListener("change", e => {
+      imgSrc && OCR()
+    }), window.addEventListener("DOMContentLoaded", () => {
+      const e = new URL(window.location),
+        t = e.searchParams.get("title"),
+        r = e.searchParams.get("text"),
+        n = e.searchParams.get("url");
+      t && alert("Title shared: " + t), r && alert("Text shared: " + r), n && alert("URL shared: " + n)
+    });
+    const addBtn = document.createElement("button");
+    window.addEventListener("beforeinstallprompt", e => {
+      e.preventDefault(), deferredPrompt = e, addBtn.style.display = "block", addBtn.addEventListener("click", e => {
+        addBtn.style.display = "none", deferredPrompt.prompt(), deferredPrompt.userChoice.then(e => {
+          deferredPrompt = null
+        })
+      })
+    });
+  </script>
+</body>
+</html>

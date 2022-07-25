@@ -1,0 +1,297 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>emacs | Raz1ner</title>
+  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1658778149314">
+  <link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
+  <script src="https://dev-coco.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
+<script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+  <div class="main">
+    <div class="header">
+      <div class="nav">
+        <div class="logo">
+          <a href="https://dev-coco.github.io">
+            <img class="avatar" src="https://dev-coco.github.io/images/avatar.png?v=1658778149314" alt="">
+          </a>
+          <div class="site-title">
+            <h1>Raz1ner</h1>
+          </div>
+        </div>
+        <span class="menu-btn fa fa-align-justify"></span>
+        <div class="menu-container">
+          <ul>
+            <li>
+              <a href="/" class="menu">首页</a>
+            </li>
+            <li>
+              <a href="/Featured-Software.html" class="menu">软件</a>
+            </li>
+            <li>
+              <a href="/Online-Tools" class="menu">在线工具</a>
+            </li>
+            <li>
+              <a href="/post/Linux-Command" class="menu">Linux命令</a>
+            </li>
+            <li>
+              <a href="/Excel" class="menu">Excel教程</a>
+            </li>
+            <li>
+              <a href="/post/Terms-and-Privacy" class="menu">隐私与条款</a>
+            </li>
+          </ul>
+        </div>
+        <form id="gridea-search-form" action="https://dev-coco.github.io/search/" class="search">
+          <input type="search" name="q" class="search-box">
+          <span class="search-button">
+            <span class="search-icon"></span>
+          </span>
+        </form>
+      </div>
+    </div>
+    <script>
+      document.getElementsByClassName('search-button')[0].addEventListener('click', function () {
+        document.getElementById('gridea-search-form').classList.toggle('open');
+      })
+    </script>
+
+    <div id="main-content" class="post-detail main-container">
+      <!-- left -->
+      <div id="content" class="main-container-left">
+        <article class="post i-card">
+        <h2 class="post-title">emacs</h2>
+        <div class="post-info">
+          <time class="post-time">2022-02-03 / 5 min read</time>
+            <a href="https://dev-coco.github.io/tag/linux-command/" class="post-tag i-tag i-tag-other_4">#Linux命令</a>
+        </div>
+          <div class="post-content">
+            <p>功能强大的全屏文本编辑器。</p>
+<!-- more -->
+<h2 id="补充说明">补充说明</h2>
+<p>emacs 命令是由 GNU 组织的创始人 Richard Stallman 开发的一个功能强大的全屏文本编辑器，它支持多种编程语言，具有很多优良的特性。有众多的系统管理员和软件开发者使用 emacs。</p>
+<h2 id="语法">语法</h2>
+<pre><code class="language-Shell">emacs (选项) (参数)
+</code></pre>
+<h2 id="选项">选项</h2>
+<pre><code class="language-Shell">+&lt;行号&gt;：启动 emacs 编辑器，并将光标移动到制定行号的行；
+-q：启动 emacs 编辑器，而不加载初始化文件；
+-u&lt;用户&gt;：启动 emacs 编辑器时，加载指定用户的初始化文件；
+-t&lt;文件&gt;：启动 emacs 编辑器时，把指定的文件作为中端，不适用标准输入（stdin）与标准输出（stdout）；
+-f&lt;函数&gt;：执行指定 lisp（广泛应用于人工智能领域的编程语言）函数；
+-l&lt;lisp 代码文件&gt;：加载指定的 lisp 代码文件；
+-batch：以批处理模式运行 emacs 编辑器。
+</code></pre>
+<h2 id="参数">参数</h2>
+<p>文件：指定要编辑的文本文件。</p>
+<h2 id="emacs-命令操作大全">emacs 命令操作大全</h2>
+<p>基本命令</p>
+<pre><code class="language-Shell">C-x C-c : 退出 Emacs
+C-x C-f : 打开一个文件，如果文件不存在，则创建一个文件
+C-g : 取消未完成的命令
+</code></pre>
+<p>编辑</p>
+<pre><code class="language-Shell">C-z (redefined): Undo；原来 C-z 是挂起 Emacs（然后用 fg 命令调出）；C-x u 是默认的命令； 移动一下光标，再 C-z 就可以 redo
+M-d : 删除光标后的词语
+</code></pre>
+<p>移动光标</p>
+<pre><code class="language-Shell">C-v : 向前翻页
+M-v : 向后翻页
+M-r : 将光标移动到屏幕中间那行
+C-a : 移到行首
+M-a : 移到句首，从行首到句首之间可能有空格
+C-e : 移到行尾
+M-e : 移到句尾
+M-{ : 向上移动一段
+M-} : 向下移动一段
+C-right : 向前移动一个单词
+C-left : 向后移动一个单词
+C-up : 向前移动一段
+C-down : 向后移动一段
+M-&lt; : 移到整个文本开头
+M-&gt; : 移到整个文本末尾
+C-u 数字 命令 : 执行多次 (数字表示次数) 该命令；&quot;M-数字 命令&quot; 也可以
+M-x goto-line : 移动到某一行
+C-l : 重绘屏幕，效果就是当前编辑行移动窗口中央
+</code></pre>
+<p>Buffer 相关</p>
+<pre><code class="language-Shell">C-x k : 关闭当前 buffer
+C-x b : 切换到前一个编辑的 buffer
+C-x C-b : 列出当前所有 buffer
+C-x C-s : 保存当前 buffer
+C-x s : 保存所有未保存的 buffer，会提示你是否需要保存
+C-x C-w : 文件另存为
+</code></pre>
+<p>拷贝与粘贴</p>
+<pre><code class="language-Shell">M-space (redefined): 设置 mark; C-@ 是默认命令
+C-w (redefined) : 剪切一块区域；如果没有设置 mark，则是剪切一行
+M-w (redefined) : 拷贝一块区域；如果没有设置 mark, 则是拷贝一行
+C-k : 从当前位置剪切到行尾
+C-y : 粘贴
+M-y : 用 C-y 拉回最近被除去的文本后，换成 M-y 可以拉回以前被除去的文本。键入多次的 M-y 可以拉回更早以前被除去的文本。
+C-x r k : 执行矩形区域的剪切
+C-x r y : 执行矩形区域的粘贴
+</code></pre>
+<pre><code class="language-Shell">窗口操作
+C-x 0 : 关闭当前窗口
+C-x 1 : 将当前窗口最大化
+C-x 2 : 垂直分割窗口
+C-x 3 : 水平分割窗口
+M-o (redefined) : 在窗口之间切换; C-x o 是默认命令
+C-x 5 1/2/3/0 : 对 frame 类似的操作
+C-x &lt; : 窗口内容右卷
+C-x &gt; : 窗口内容左卷（这两个命令在垂直分割窗口后比较有用）
+(C-u) C-x ^ : 加高当前窗口，如果有 C-u，则每次加高 4 行
+(C-u) C-x } : 加宽当前窗口
+(C-u) C-x { : 压窄当前窗口
+ESC C-v : 在其它窗口进行卷屏操作
+</code></pre>
+<p>搜索和替换</p>
+<pre><code class="language-Shell">C-s : 向前搜索（增量式搜索）；连续 C-s，跳到下一个搜索到的目标
+C-s RET : 普通搜索
+C-r : 向前搜索
+C-s RET C-w : 按单词查询
+M-% : 查询替换，也就是替换前会询问一下
+M-x replace-string : 普通替换
+</code></pre>
+<p>Tags</p>
+<pre><code class="language-Shell">M-! etags .c .h : 创建 TAGS 文件
+M-. : 跳到 tag 所在位置
+M-x list-tags : 列出 tags
+</code></pre>
+<p>书签</p>
+<pre><code class="language-Shell">C-x r m : 设置书签 bookmark
+C-x r b : 跳到 bookmark 处
+</code></pre>
+<p>帮助</p>
+<pre><code class="language-Shell">C-h ? : 查看帮助信息
+C-h f : 查看一个函数
+C-h v : 查看一个变量
+C-h k : 查看一个键绑定 (C－h c 也是查看键绑定，但是信息较简略)
+C-h C-f : 查看一个函数的 info，非常有用
+C-h i : 看 Info
+</code></pre>
+<p>其它</p>
+<pre><code class="language-Shell">C-M-\ : 对选中区域，按照某种格式 (比如 C 程序) 进行格式化
+C-x h : 全部选中
+M-! : 执行外部 shell 命令
+M-x shell : 模拟 shell 的 buffer
+M-x term : 模拟 terminal, C-c k 关闭 terminal
+C-x C-q : 修改 buffer 的只读属性
+</code></pre>
+
+          </div>
+        </article>
+        <div class="next-post">
+          <div class="next">下一篇</div>
+          <a href="https://dev-coco.github.io/post/mpstat/">
+            <h3 class="post-title">mpstat</h3>
+          </a>
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="gitalk-container"></div>
+      </div>
+      <!-- middle -->
+      <div class="main-container-middle"></div>
+      <!-- right -->
+      <div id="sidebar" class="main-container-right">
+        <div class="id_card i-card">
+          <div class="id_card-avatar" style="background-image: url(https://dev-coco.github.io/images/avatar.png?v=1658778149314)"></div>
+          <h1 class="id_card-title">Raz1ner</h1>
+          <img style="margin-top: 15px;margin-bottom: 10px;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&amp;count_bg=%2310C1F9&amp;title_bg=%23555555&amp;icon=html5.svg&amp;icon_color=%23E7E7E7&amp;title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&amp;edge_flat=false">
+          <p style="text-align: center;">
+            <a href="https://github.com/dev-coco" target="_blank"><img class="social-icon" src="/images/social/GitHub.png"></a>
+            <a href="https://t.me/raz1ner" target="_blank"><img class="social-icon" src="/images/social/Telegram.png"></a>
+            <a href="https://www.youtube.com/channel/UCEgNinV_DEntuv5Dm8Z_JvA" target="_blank"><img class="social-icon" src="/images/social/YouTube.png"></a>
+            <a href="/atom.xml" target="_blank"><img class="social-icon" src="/images/social/RSS.png"></a>
+            <a href="mailto:ruijingle@gmail.com" target="_blank"><img class="social-icon" src="/images/social/Gmail.png"></a>
+          </p>
+          <!-- <h2 class="id_card-description"></h2> -->
+          <!--  -->
+          <div class="id_card-sns">
+            <!-- github -->
+            
+            <!-- twitter -->
+            <!-- weibo -->
+            <!-- facebook -->
+          </div>
+        </div>
+      <!-- toc -->
+      <div class="toc-card i-card ">
+        <div class="toc-title i-card-title">目录</div>
+          <div class="toc-content">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E8%A1%A5%E5%85%85%E8%AF%B4%E6%98%8E">补充说明</a></li>
+<li><a href="#%E8%AF%AD%E6%B3%95">语法</a></li>
+<li><a href="#%E9%80%89%E9%A1%B9">选项</a></li>
+<li><a href="#%E5%8F%82%E6%95%B0">参数</a></li>
+<li><a href="#emacs-%E5%91%BD%E4%BB%A4%E6%93%8D%E4%BD%9C%E5%A4%A7%E5%85%A8">emacs 命令操作大全</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+          <script>
+            function locateCatelogList() {
+              /*获取文章目录集合,可通过:header过滤器*/
+              var alis = $('.post-content :header');
+              /*获取侧边栏目录列表集合**/
+              var sidebar_alis = $('.markdownIt-TOC a');
+              /*获取滚动条到顶部的距离*/
+              var scroll_height = $(window).scrollTop();
+              for (var i = 0; i < alis.length; i++) {
+                /*获取锚点集合中的元素分别到顶点的距离*/
+                var a_height = $(alis[i]).offset().top;
+                if (a_height < scroll_height) {
+                  /*高亮显示*/
+                  sidebar_alis.removeClass('on');
+                  $(sidebar_alis[i]).addClass('on');
+                }
+              }
+            }
+            $(function() {
+              /*绑定滚动事件 */
+              $(window).bind('scroll', locateCatelogList);
+              });
+          </script>
+        </div>
+      <div class="notice-card i-card ">
+        <div class="notice-title i-card-title">公告</div>
+        <div class="notice-content">博客新增 Telegram 频道：<a href="https://t.me/raz1ner" target="_blank" style="color: blue">瑞景乐的博客</a>，欢迎关注，及时收到最新文章推送。</div>
+      </div>
+      <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
+        <div class="notice-content">
+          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/google-script/">Google 脚本</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/security/">安全</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/excel/">Excel</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/javascript/">Javascript</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="site-footer">
+    <span>Copyright © 2020-2022 Raz1ner - All Rights Reserved.</span> | <a class="rss" href="https://dev-coco.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+  <script>
+    $('#sidebar').stickySidebar({
+    topSpacing: 80,
+    // bottomSpacing: 60
+    });
+  </script>
+  
+</body>
+</html>

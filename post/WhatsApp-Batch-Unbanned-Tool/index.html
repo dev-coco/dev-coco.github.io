@@ -1,0 +1,278 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WhatsApp 批量解封提交工具 | Raz1ner</title>
+  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1658778149314">
+  <link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
+  <script src="https://dev-coco.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
+<script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+  <div class="main">
+    <div class="header">
+      <div class="nav">
+        <div class="logo">
+          <a href="https://dev-coco.github.io">
+            <img class="avatar" src="https://dev-coco.github.io/images/avatar.png?v=1658778149314" alt="">
+          </a>
+          <div class="site-title">
+            <h1>Raz1ner</h1>
+          </div>
+        </div>
+        <span class="menu-btn fa fa-align-justify"></span>
+        <div class="menu-container">
+          <ul>
+            <li>
+              <a href="/" class="menu">首页</a>
+            </li>
+            <li>
+              <a href="/Featured-Software.html" class="menu">软件</a>
+            </li>
+            <li>
+              <a href="/Online-Tools" class="menu">在线工具</a>
+            </li>
+            <li>
+              <a href="/post/Linux-Command" class="menu">Linux命令</a>
+            </li>
+            <li>
+              <a href="/Excel" class="menu">Excel教程</a>
+            </li>
+            <li>
+              <a href="/post/Terms-and-Privacy" class="menu">隐私与条款</a>
+            </li>
+          </ul>
+        </div>
+        <form id="gridea-search-form" action="https://dev-coco.github.io/search/" class="search">
+          <input type="search" name="q" class="search-box">
+          <span class="search-button">
+            <span class="search-icon"></span>
+          </span>
+        </form>
+      </div>
+    </div>
+    <script>
+      document.getElementsByClassName('search-button')[0].addEventListener('click', function () {
+        document.getElementById('gridea-search-form').classList.toggle('open');
+      })
+    </script>
+
+    <div id="main-content" class="post-detail main-container">
+      <!-- left -->
+      <div id="content" class="main-container-left">
+        <article class="post i-card">
+        <h2 class="post-title">WhatsApp 批量解封提交工具</h2>
+        <div class="post-info">
+          <time class="post-time">2022-06-15 / 4 min read</time>
+            <a href="https://dev-coco.github.io/tag/google-script/" class="post-tag i-tag i-tag-warning">#Google 脚本</a>
+            <a href="https://dev-coco.github.io/tag/whatsapp/" class="post-tag i-tag i-tag-info">#WhatsApp</a>
+        </div>
+          <div class="post-content">
+            <p>一个批量快速解封 WhatsApp 账号的提交工具。</p>
+<!-- more -->
+<script src="/js/prism.js"></script>
+<link rel="stylesheet" href="/css/prism.css">
+开源代码：<a href="https://github.com/dev-coco/WhatsApp-Batch-Unbanned-Tool" target="_blank">https://github.com/dev-coco/WhatsApp-Batch-Unbanned-Tool</a>
+<h2 id="配置">配置</h2>
+<h3 id="codegs">code.gs</h3>
+<pre><code class="language-Javascript">/**
+ * 设置存储数据的表格
+ * TODO: 需要放入表格 ID
+ */
+const sheet = SpreadsheetApp.openById('Input Sheet ID')
+// 存放剩余次数，表格默认命名为 Data
+const getSheetData = sheet.getSheetByName('Data').getRange('A1')
+// 存放解封结果，表格默认命名为 Result
+const getResultSheet = sheet.getSheetByName('Result')
+</code></pre>
+<p>需要将替换 “Input Sheet ID” 替换成 Google 表格的 ID。需要用到两个工作表，一个命名为 Data，用来存放剩余次数，另外一个命名为 Result，用来存放成功解封的信息。<br>
+在 unBlockTemplate 函数中的 <code>template</code> 变量放入需要写信解封的内容，并且放入 <code>phone</code> 变量，支持 ES6 写法。例子：</p>
+<pre><code class="language-Javascript">/**
+ * @description 随机生成写信的模板
+ * @param {string} phone - 写信模版
+ * @returns {string} 生成好的模板
+ */
+function unBlockTemplate (phone) {
+  // TODO: 需要设置写信的模版，并且放入 phone 变量
+  const template = [
+    'Hello!\nXXXXXXXX. My number: ' + phone,
+    `XXXXXXXX. My WhatsApp: ${phone}`
+  ]
+  // 生成随机数
+  const index = Math.floor((Math.random() * template.length))
+  return template[index]
+}
+</code></pre>
+<p>在 sendEmail 函数中需要将 “Input Email Title” 替换成需要写信解封的邮件标题。</p>
+<pre><code class="language-Javascript">/**
+ * 发送邮件
+ * TODO: 需要设置发送邮件的标题
+ */
+MailApp.sendEmail('support@support.whatsapp.com', 'Input Email Title', unBlockTemplate(phone))
+</code></pre>
+<h3 id="indexhtml">index.html</h3>
+<p>在 CSS 的 body 样式中，background 设置的图片来源于 rawpixel 高级用户：<a href="https://www.rawpixel.com/image/2042508/pastel-pink-patterned-background" target="_blank">链接</a>，<a href="https://www.rawpixel.com/services/licenses" target="_blank">许可证</a>。如果你不是 rawpixel 高级用户，请自行替换图片，避免出现版权问题。</p>
+<pre><code class="language-CSS">body {
+  /*
+    Image from rawpixel premium
+    Please follow the license: https://www.rawpixel.com/services/licenses
+   */
+  background: url(&quot;https://dev-coco.github.io/images/Project/image-from-rawpixel-id-2042508-jpeg.jpg&quot;);
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+</code></pre>
+<h3 id="google-表格">Google 表格</h3>
+<p>创建一个 Google 表格，在菜单栏点击扩展程序，选择 Apps 脚本。<br>
+<img src="https://dev-coco.github.io/post-images/1648263820462.png" alt="" loading="lazy"><br>
+在 代码.gs 中放入 code.gs 文件内的代码。然后点击 (➕) 加号，新建一个 HTML 文件。<br>
+<img src="https://dev-coco.github.io/post-images/1646241468143.png" alt="" loading="lazy"><br>
+文件名字命名为 index，再放入 index.html 文件内的代码。<br>
+<img src="https://dev-coco.github.io/post-images/1655507480712.png" alt="" loading="lazy"><br>
+点击右上角的部署，再选择新建部署。<br>
+<img src="https://dev-coco.github.io/post-images/1655507513847.png" alt="" loading="lazy"><br>
+点击齿轮 (⚙️)，选择 Web 应用。<br>
+<img src="https://dev-coco.github.io/post-images/1655507660097.png" alt="" loading="lazy"><br>
+部署完成后就可以正常使用了。<br>
+<img src="https://dev-coco.github.io/post-images/1655507698082.png" alt="" loading="lazy"></p>
+<h3 id="定时任务">定时任务</h3>
+<p>在左侧选择触发器。<br>
+<img src="https://dev-coco.github.io/post-images/1649292600202.png" alt="" loading="lazy"><br>
+在右下角点击添加触发器。<br>
+<img src="https://dev-coco.github.io/post-images/1649292608272.png" alt="" loading="lazy"><br>
+选择要运行的功能，这里选择 resetData，选择间隔小时数，建议设置为每小时。<br>
+<img src="https://dev-coco.github.io/post-images/1655514013612.png" alt="" loading="lazy"></p>
+<h2 id="程序原理">程序原理</h2>
+<div class="mxgraph" style="max-width:100%;border:1px solid transparent;margin:0 auto" data-mxgraph="{&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;nav&quot;:true,&quot;resize&quot;:true,&quot;toolbar&quot;:&quot;zoom layers tags lightbox&quot;,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;&lt;mxfile host=\&quot;Electron\&quot; modified=\&quot;2022-06-17T21:53:23.993Z\&quot; agent=\&quot;5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/16.5.1 Chrome/96.0.4664.110 Electron/16.0.7 Safari/537.36\&quot; etag=\&quot;viYombXM-N1cBIamRn-q\&quot; version=\&quot;16.5.1\&quot; type=\&quot;device\&quot;&gt;&lt;diagram id=\&quot;gYcnq_4gPGN09veykYAz\&quot; name=\&quot;第 1 页\&quot;&gt;1VnPl6MoEP5rOHY/FTVy1MTsHqbfm319mJ290UrUWRMcJZ1k//oFxJ/RtOm0nZkcEiiggKqvPigC4HJ7/CPHWfxEQ5ICQwuPAK6AYdg65N9CcFICpARRnoSlSG8Ez8l/RAk1Jd0nISk6HRmlKUuyrjCgux0JWEeG85weut02NO3OmuGInAmeA5yeS78lIYuVVLdR0/AnSaJYTe0Yi7Jhi6vOaidFjEN6aImgD+Ayp5SVpe1xSVJhu8ou5bj1SGu9sJzs2JQBydco0Z+e1qs9tP756zWytePPB90q1bzidK92DHwbOGuANOCbwHOBawLfEhJvAfwFcDXgqLkLdqrMREJuNVWlOYtpRHc49Rupl9P9LiRiLRqvNX2+UJpxoc6FPwhjJwUBvGeUi2K2TVUr32Z++luMf7Sq6nelTlZWx07tpGobumNKqW7yesFy+i9Z0pTmcu3QNJamZdQtlZuFpNyn2Nyo0Stb0H0ekEuWVuDFeUTYhX6whgYPKUK3hO+Fj8tJilny2l0HVuCO6n6N/3lBQeAaOJyjwbBTpqzYcbn9c0+rhodC2tflHXQzOzaNvBTJX98BLscOFFDyJIJEgUssCS5ZVjPxhZeTqaF9qDVAEqg4xAkjzxmWtj9wCuqCRu2H5IwcL7vw3ORqAEQqgE9V7Kv6ocUHVZDHLSqwtZm8ZMzpJR24jqAAHufe8lf1ib7o+qS29Vs+MY1Hay6vOMNU6kgq5SB3AVoPBMI9qVTvEGnDq++l0vUaIQjnplI4kUqNe1IpnC1IEXAM4PryMPaBp/+qQdonTsNaVMH3ZpjOFaTmmVe+xZgVbpbdZq5+ZMxgPuiYdz539AGGO2OvXeiKazevBSkuiiToGqrLXX2zte54RueSp7/BTOSYsPY4Xv3eampGiUo16E70Zd52E2y53xrwfiWbzHJqhq80kbR0rA5Kaxh9lYpym2pUO+3oK1r0FMGeotIOZ4okQutt33AsD9yW+NmLPIB8eT4jcSAPHcJf8AvPZTvoxWkS7QS0udMJB40nIjzh2aKrGrZJGJZnNOFEjl+kPoG1TOxP7tjygLW6hjJUaquUgTqhbGPvQryOEoz2qFmWfRtaqi50synILP7T0SeSzuKqzLIhnUWbdPTrSOdz0s+pdybzrqQDe0ceei/p9BUJsLc+vZXNTUEDaXX5pIJ0eZ0bzQN+fwpCFyno4ffgIDj0SubI27dM7bwVQJZMmpcigeYFJLO7D+apmm6ms81IpvcGsf3YbzM1sz1ITOMk9oGUNfXFbCTN+xzKMvqvQ6h3+55KWdDsKTJ7imYmqWq68YQ1qN3d5KSw5NOhNNUWzx3ifY8HCi/IFQ9cvKblroORU3CTsBsCStQ7t3/xGUK3HTjkZTMYCb1Qae4S172sDMf25fRlk6Rpa5EhJs4m+NgQNCaG4Egm+0khCPvvDO8MQcPpKdI+KgR5tfmjp+ze/FsG/f8B&lt;/diagram&gt;&lt;/mxfile&gt;&quot;}"></div>
+<script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script>
+<p>解封工具提交号码会通过邮箱给 WhatsApp 发送邮件，并且记录剩余的使用次数。当 WhatsApp 审核完成后会发送回执到邮箱，如果成功解封会记录号码到 Google 表格。解封工具查询号码状态的时候，会从表格里面查询是否存在成功解封的号码。</p>
+<h2 id="使用方法">使用方法</h2>
+<p>输入 WhatsApp 号码，一行一个，格式：+区号XXXXXX，点击发送。提交后 WhatsApp 大概会在 24 小时内处理。由于 Google Mail 的限制，一天只允许发送 100 封邮件。</p>
+<p>输入号码，点击查询。如果显示“已解封”代表账号已经恢复正常，可以登录使用了，如果显示未解封代表无法解封。<br>
+<img src="https://dev-coco.github.io/post-images/1655507851965.png" alt="" loading="lazy"></p>
+
+          </div>
+        </article>
+        <div class="next-post">
+          <div class="next">下一篇</div>
+          <a href="https://dev-coco.github.io/post/Google-Excel-About-WhatsApp/">
+            <h3 class="post-title">Google Excel WhatsApp 相关</h3>
+          </a>
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="gitalk-container"></div>
+      </div>
+      <!-- middle -->
+      <div class="main-container-middle"></div>
+      <!-- right -->
+      <div id="sidebar" class="main-container-right">
+        <div class="id_card i-card">
+          <div class="id_card-avatar" style="background-image: url(https://dev-coco.github.io/images/avatar.png?v=1658778149314)"></div>
+          <h1 class="id_card-title">Raz1ner</h1>
+          <img style="margin-top: 15px;margin-bottom: 10px;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&amp;count_bg=%2310C1F9&amp;title_bg=%23555555&amp;icon=html5.svg&amp;icon_color=%23E7E7E7&amp;title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&amp;edge_flat=false">
+          <p style="text-align: center;">
+            <a href="https://github.com/dev-coco" target="_blank"><img class="social-icon" src="/images/social/GitHub.png"></a>
+            <a href="https://t.me/raz1ner" target="_blank"><img class="social-icon" src="/images/social/Telegram.png"></a>
+            <a href="https://www.youtube.com/channel/UCEgNinV_DEntuv5Dm8Z_JvA" target="_blank"><img class="social-icon" src="/images/social/YouTube.png"></a>
+            <a href="/atom.xml" target="_blank"><img class="social-icon" src="/images/social/RSS.png"></a>
+            <a href="mailto:ruijingle@gmail.com" target="_blank"><img class="social-icon" src="/images/social/Gmail.png"></a>
+          </p>
+          <!-- <h2 class="id_card-description"></h2> -->
+          <!--  -->
+          <div class="id_card-sns">
+            <!-- github -->
+            
+            <!-- twitter -->
+            <!-- weibo -->
+            <!-- facebook -->
+          </div>
+        </div>
+      <!-- toc -->
+      <div class="toc-card i-card ">
+        <div class="toc-title i-card-title">目录</div>
+          <div class="toc-content">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E9%85%8D%E7%BD%AE">配置</a>
+<ul>
+<li><a href="#codegs">code.gs</a></li>
+<li><a href="#indexhtml">index.html</a></li>
+<li><a href="#google-%E8%A1%A8%E6%A0%BC">Google 表格</a></li>
+<li><a href="#%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1">定时任务</a></li>
+</ul>
+</li>
+<li><a href="#%E7%A8%8B%E5%BA%8F%E5%8E%9F%E7%90%86">程序原理</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95">使用方法</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+          <script>
+            function locateCatelogList() {
+              /*获取文章目录集合,可通过:header过滤器*/
+              var alis = $('.post-content :header');
+              /*获取侧边栏目录列表集合**/
+              var sidebar_alis = $('.markdownIt-TOC a');
+              /*获取滚动条到顶部的距离*/
+              var scroll_height = $(window).scrollTop();
+              for (var i = 0; i < alis.length; i++) {
+                /*获取锚点集合中的元素分别到顶点的距离*/
+                var a_height = $(alis[i]).offset().top;
+                if (a_height < scroll_height) {
+                  /*高亮显示*/
+                  sidebar_alis.removeClass('on');
+                  $(sidebar_alis[i]).addClass('on');
+                }
+              }
+            }
+            $(function() {
+              /*绑定滚动事件 */
+              $(window).bind('scroll', locateCatelogList);
+              });
+          </script>
+        </div>
+      <div class="notice-card i-card ">
+        <div class="notice-title i-card-title">公告</div>
+        <div class="notice-content">博客新增 Telegram 频道：<a href="https://t.me/raz1ner" target="_blank" style="color: blue">瑞景乐的博客</a>，欢迎关注，及时收到最新文章推送。</div>
+      </div>
+      <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
+        <div class="notice-content">
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/google-script/">Google 脚本</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/security/">安全</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/excel/">Excel</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/javascript/">Javascript</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="site-footer">
+    <span>Copyright © 2020-2022 Raz1ner - All Rights Reserved.</span> | <a class="rss" href="https://dev-coco.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+  <script>
+    $('#sidebar').stickySidebar({
+    topSpacing: 80,
+    // bottomSpacing: 60
+    });
+  </script>
+  
+</body>
+</html>

@@ -1,0 +1,234 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>talk | Raz1ner</title>
+  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1658778149314">
+  <link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
+  <script src="https://dev-coco.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
+<script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+  <div class="main">
+    <div class="header">
+      <div class="nav">
+        <div class="logo">
+          <a href="https://dev-coco.github.io">
+            <img class="avatar" src="https://dev-coco.github.io/images/avatar.png?v=1658778149314" alt="">
+          </a>
+          <div class="site-title">
+            <h1>Raz1ner</h1>
+          </div>
+        </div>
+        <span class="menu-btn fa fa-align-justify"></span>
+        <div class="menu-container">
+          <ul>
+            <li>
+              <a href="/" class="menu">首页</a>
+            </li>
+            <li>
+              <a href="/Featured-Software.html" class="menu">软件</a>
+            </li>
+            <li>
+              <a href="/Online-Tools" class="menu">在线工具</a>
+            </li>
+            <li>
+              <a href="/post/Linux-Command" class="menu">Linux命令</a>
+            </li>
+            <li>
+              <a href="/Excel" class="menu">Excel教程</a>
+            </li>
+            <li>
+              <a href="/post/Terms-and-Privacy" class="menu">隐私与条款</a>
+            </li>
+          </ul>
+        </div>
+        <form id="gridea-search-form" action="https://dev-coco.github.io/search/" class="search">
+          <input type="search" name="q" class="search-box">
+          <span class="search-button">
+            <span class="search-icon"></span>
+          </span>
+        </form>
+      </div>
+    </div>
+    <script>
+      document.getElementsByClassName('search-button')[0].addEventListener('click', function () {
+        document.getElementById('gridea-search-form').classList.toggle('open');
+      })
+    </script>
+
+    <div id="main-content" class="post-detail main-container">
+      <!-- left -->
+      <div id="content" class="main-container-left">
+        <article class="post i-card">
+        <h2 class="post-title">talk</h2>
+        <div class="post-info">
+          <time class="post-time">2022-02-03 / 4 min read</time>
+            <a href="https://dev-coco.github.io/tag/linux-command/" class="post-tag i-tag i-tag-success">#Linux命令</a>
+        </div>
+          <div class="post-content">
+            <p>让用户和其他用户聊天。</p>
+<!-- more -->
+<h2 id="补充说明">补充说明</h2>
+<p>talk 命令是 talk 服务器的客户端工具，通过 talk 命令可以让用户和其他用户聊天。linux 中 talk 命令参数程序的使用很简单，只要知道交谈对象的地址，就可以邀请对方交谈。</p>
+<h2 id="语法">语法</h2>
+<pre><code class="language-Shell">talk (参数)
+</code></pre>
+<h2 id="参数">参数</h2>
+<ul>
+<li>
+<p>用户：指定聊天的用户；</p>
+</li>
+<li>
+<p>终端：指定用户的终端。</p>
+</li>
+</ul>
+<h2 id="实例">实例</h2>
+<p>例如登录在主机 rs6000.cic.test.com 上的用户 xxx 希望和登录在主机 tirc.cs.test.com 上的用户 username 进行交谈，则可以输入下面的命令：</p>
+<pre><code class="language-Shell">talk username@tirc.cs.test.com
+</code></pre>
+<p>Internet 上的相关程序（Talk Daemon）就会传送一条信息邀请 username 来交谈，这时用户 username 的屏幕上就会出现如下信息，并响铃提示：</p>
+<pre><code class="language-Shell">Message from Talk_Daemon@tirc.cs.test.com at 21:44 …
+talk: connection requested by xxx@rs6000.cic.test.com
+talk: respond with:  talk xxx@rs6000.cic.test.com
+</code></pre>
+<p>这时，用户 username 应该做的工作就是按照上面的信息提示，即输入 linux 中 talk 命令：</p>
+<pre><code class="language-Shell">talk xxx@rs6000.cic.test.com
+</code></pre>
+<p>之后，连接建立成功，两个用户就可以进行交谈了。这时，双方的终端屏幕上都将显示信息 [Connection established] 并响铃，同时屏幕被 linux 中 talk 命令程序以一条水平线分割为上下两部分，上半部分用来显示用户自己输入的内容，下半部分用来显示对方输入的内容。两个用户可以同时输入，他们输入的内容将会立即显示在双方的屏幕上。<br>
+在用户进行输入时，可按 BACKSPACE 见来更正前一个字符，也可按 CTRL+w 来删除一个完整的单词，或者用 CTRL+U 来删除一整行，另外，用户还可以通过按 CTRL+L 来刷新屏幕。如果要结束交谈，可由任何一方按下 CTRL+C 来中断连接，但在结束对话前最好道声“再见”，并等待对方回应。linux 中 talk 命令程序结束时，在屏幕上将回显示一条信息：</p>
+<pre><code class="language-Shell">[Connection closing. Exiting]
+</code></pre>
+<p>并非每次要求对方交谈都能成功，有时对方没有登录，则 linux 中 talk 命令程序提示信息：</p>
+<pre><code class="language-Shell">[Your party is not logged on]
+</code></pre>
+<p>并退出；<br>
+如果对方已登录，但因某种原因（如不是正在使用机器）没有响应，那么 linux 中 talk 命令程序将会每隔 10 秒钟给他发一条邀请信息，同时在自己的屏幕上显示：</p>
+<pre><code class="language-Shell">[Ringing your party again]
+</code></pre>
+<p>如果用户不愿等待，则可以按 CTRL+C 终止 linux 中 talk 命令程序。还有的时候系统可能出现下面的信息：</p>
+<pre><code class="language-Shell">[Checking for invitation on caller’s machine]
+</code></pre>
+<p>这说明双方的 linux 中 talk 命令程序不兼容，这时可以试试 ntalk 和 ytalk 命令，如果没有，就只好找系统管理员了。<br>
+如果用户在做某些紧急工作（如编辑邮件）时不希望被 linux 中 talk 命令的邀请打搅，他可以使用命令：</p>
+<pre><code class="language-Shell">mesg n
+</code></pre>
+<p>来暂时拒绝交谈，这时如果有用户邀请他交谈，只能得到提示信息：</p>
+<pre><code class="language-Shell">[Your party is refusing messages]
+</code></pre>
+<p>不过要注意的是，一旦完成紧急工作。最好立即打开信息接收开关（用命令<code>mesg y</code>），否则将会失去很多信息交流的机会。<br>
+以上是 linux 中 talk 命令参数的是使用方法。</p>
+
+          </div>
+        </article>
+        <div class="next-post">
+          <div class="next">下一篇</div>
+          <a href="https://dev-coco.github.io/post/install/">
+            <h3 class="post-title">install</h3>
+          </a>
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="gitalk-container"></div>
+      </div>
+      <!-- middle -->
+      <div class="main-container-middle"></div>
+      <!-- right -->
+      <div id="sidebar" class="main-container-right">
+        <div class="id_card i-card">
+          <div class="id_card-avatar" style="background-image: url(https://dev-coco.github.io/images/avatar.png?v=1658778149314)"></div>
+          <h1 class="id_card-title">Raz1ner</h1>
+          <img style="margin-top: 15px;margin-bottom: 10px;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&amp;count_bg=%2310C1F9&amp;title_bg=%23555555&amp;icon=html5.svg&amp;icon_color=%23E7E7E7&amp;title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&amp;edge_flat=false">
+          <p style="text-align: center;">
+            <a href="https://github.com/dev-coco" target="_blank"><img class="social-icon" src="/images/social/GitHub.png"></a>
+            <a href="https://t.me/raz1ner" target="_blank"><img class="social-icon" src="/images/social/Telegram.png"></a>
+            <a href="https://www.youtube.com/channel/UCEgNinV_DEntuv5Dm8Z_JvA" target="_blank"><img class="social-icon" src="/images/social/YouTube.png"></a>
+            <a href="/atom.xml" target="_blank"><img class="social-icon" src="/images/social/RSS.png"></a>
+            <a href="mailto:ruijingle@gmail.com" target="_blank"><img class="social-icon" src="/images/social/Gmail.png"></a>
+          </p>
+          <!-- <h2 class="id_card-description"></h2> -->
+          <!--  -->
+          <div class="id_card-sns">
+            <!-- github -->
+            
+            <!-- twitter -->
+            <!-- weibo -->
+            <!-- facebook -->
+          </div>
+        </div>
+      <!-- toc -->
+      <div class="toc-card i-card ">
+        <div class="toc-title i-card-title">目录</div>
+          <div class="toc-content">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E8%A1%A5%E5%85%85%E8%AF%B4%E6%98%8E">补充说明</a></li>
+<li><a href="#%E8%AF%AD%E6%B3%95">语法</a></li>
+<li><a href="#%E5%8F%82%E6%95%B0">参数</a></li>
+<li><a href="#%E5%AE%9E%E4%BE%8B">实例</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+          <script>
+            function locateCatelogList() {
+              /*获取文章目录集合,可通过:header过滤器*/
+              var alis = $('.post-content :header');
+              /*获取侧边栏目录列表集合**/
+              var sidebar_alis = $('.markdownIt-TOC a');
+              /*获取滚动条到顶部的距离*/
+              var scroll_height = $(window).scrollTop();
+              for (var i = 0; i < alis.length; i++) {
+                /*获取锚点集合中的元素分别到顶点的距离*/
+                var a_height = $(alis[i]).offset().top;
+                if (a_height < scroll_height) {
+                  /*高亮显示*/
+                  sidebar_alis.removeClass('on');
+                  $(sidebar_alis[i]).addClass('on');
+                }
+              }
+            }
+            $(function() {
+              /*绑定滚动事件 */
+              $(window).bind('scroll', locateCatelogList);
+              });
+          </script>
+        </div>
+      <div class="notice-card i-card ">
+        <div class="notice-title i-card-title">公告</div>
+        <div class="notice-content">博客新增 Telegram 频道：<a href="https://t.me/raz1ner" target="_blank" style="color: blue">瑞景乐的博客</a>，欢迎关注，及时收到最新文章推送。</div>
+      </div>
+      <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
+        <div class="notice-content">
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/google-script/">Google 脚本</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/security/">安全</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/excel/">Excel</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/javascript/">Javascript</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="site-footer">
+    <span>Copyright © 2020-2022 Raz1ner - All Rights Reserved.</span> | <a class="rss" href="https://dev-coco.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+  <script>
+    $('#sidebar').stickySidebar({
+    topSpacing: 80,
+    // bottomSpacing: 60
+    });
+  </script>
+  
+</body>
+</html>

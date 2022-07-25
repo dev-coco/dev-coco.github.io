@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <title>头像加口罩</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="keywords" content="dev-coco, 口罩, 头像加口罩">
+  <meta name="robots" content="index,follow">
+  <meta name="description" content="为你的头像戴上口罩。">
+  <link rel="icon" href="/images/avatar.png">
+  <link rel="stylesheet" href="/css/site.css">
+  <script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <style>.canvas-container{margin:0 auto}#exportBtn,.hide{display:none}.upload{margin:4rem auto 3rem;height:10rem;width:10rem;border:solid 1px #aaa;box-shadow:0 0 5px #aaa;border-radius:1rem;line-height:10rem;position:relative}#export{display:none;margin:0 auto;width:250px;height:250px}button{font-size:18px;color:#fff;padding:0 30px;height:3rem;background:#8fd16f;border:0;border-radius:20px}</style>
+</head>
+<body>
+  <div class="container">
+    <h1 style="text-align:left;"><img class="logo" alt="dev-coco" src="/images/avatar.png">
+      <span> Raz1ner</span>
+      <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&count_bg=%2310C1F9&title_bg=%23555555&icon=html5.svg&icon_color=%23E7E7E7&title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&edge_flat=false" style="float:right;width:180px;">
+    </h1>
+    <div class="menu">
+      <a href="/">首页</a>
+      <a href="/Featured-Software.html">软件</a>
+      <a href="/Online-Tools">在线工具</a>
+      <a href="/post/Linux-Command">Linux命令</a>
+      <a href="/Excel/">Excel教程</a>
+      <a href="/post/Terms-and-Privacy">隐私与条款</a>
+      <a target="_blank" href="https://github.com/dev-coco">Github</a>
+    </div>
+    <div style="text-align:center;">
+      <div>
+        <h2>给头像戴上口罩</h2>
+      </div>
+      <div class="upload" id="uploadContainer">
+        <small id="uploadText">上传头像</small>
+        <input id="upload" type="file" onchange="viewer()" style="height: 10rem; width: 10rem; position: absolute; top: 0; left: 0; opacity: 0">
+      </div>
+      <img id="export" src="">
+      <p>COVID-19期间，请为你的头像戴上口罩吧！</p>
+      <canvas id="cvs"></canvas>
+      <p id="tip" style="opacity: 0">点击口罩调整位置和大小</p>
+      <div style="display: flex;justify-content: space-around;">
+        <button id="change" onClick="changeMask()" style="display: none;">换一个口罩</button>
+        <button id="exportBtn" onClick="exportFunc()">生成头像</button>
+      </div>
+      <br>
+      <div style="display: none">
+        <img id="img" src="">
+        <img class="hide" id="Mask0" src="/images/Mask/Mask0.png">
+        <img class="hide" id="Mask1" src="/images/Mask/Mask1.png">
+        <img class="hide" id="Mask2" src="/images/Mask/Mask2.png">
+        <img class="hide" id="Mask3" src="/images/Mask/Mask3.png">
+        <img class="hide" id="Mask4" src="/images/Mask/Mask4.png">
+        <img class="hide" id="Mask5" src="/images/Mask/Mask5.png">
+        <img class="hide" id="Mask6" src="/images/Mask/Mask6.png">
+        <img class="hide" id="Mask7" src="/images/Mask/Mask7.png">
+        <img class="hide" id="Mask8" src="/images/Mask/Mask8.png">
+        <img class="hide" id="Mask9" src="/images/Mask/Mask9.png">
+      </div>
+      <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fdev-coco.github.io%2FOnline-Tools%2FProfile-Photo-Mask.html&layout=button&size=large&width=68&height=28&appId" width="68" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.0.0/fabric.min.js"></script>
+      <script>
+        var canvasFabric, MaskInstance, cvs = document.getElementById("cvs"),
+          ctx = cvs.getContext("2d"),
+          exportImage = document.getElementById("export"),
+          img = document.getElementById("img"),
+          Mask = "Mask6",
+          screenWidth = window.screen.width < 500 ? window.screen.width : 640;
+
+        function viewer() {
+          var e = document.getElementById("upload").files[0];
+          console.log(e);
+          var t = new FileReader;
+          e ? (t.readAsDataURL(e), t.onload = function(e) {
+            img.src = t.result, img.onload = function() {
+              img2Cvs(img)
+            }
+          }) : img.src = ""
+        }
+
+        function img2Cvs(e) {
+          cvs.width = e.width, cvs.height = e.height, cvs.style.display = "block", canvasFabric = new fabric.Canvas("cvs", {
+            width: screenWidth,
+            height: screenWidth,
+            backgroundImage: new fabric.Image(e, {
+              scaleX: screenWidth / e.width,
+              scaleY: screenWidth / e.height
+            })
+          }), changeMask(), document.getElementById("uploadContainer").style.display = "none", document.getElementById("uploadText").style.display = "none", document.getElementById("upload").style.display = "none", document.getElementById("change").style.display = "block", document.getElementById("exportBtn").style.display = "block", document.getElementById("tip").style.opacity = 1
+        }
+
+        function changeMask() {
+          document.getElementById(Mask).style.display = "none";
+          var e = document.getElementsByClassName("hide");
+          Mask = "Mask" + (+Mask.replace("Mask", "") + 1) % e.length;
+          var t = document.getElementById(Mask);
+          t.style.display = "block", MaskInstance && canvasFabric.remove(MaskInstance), (MaskInstance = new fabric.Image(t, {
+            top: 40,
+            left: screenWidth / 3,
+            scaleX: 100 / t.width,
+            scaleY: 100 / t.height,
+            cornerColor: "#0b3a42",
+            cornerStrokeColor: "#fff",
+            cornerStyle: "circle",
+            transparentCorners: !1,
+            rotatingPointOffset: 30
+          })).setControlVisible("bl", !1), MaskInstance.setControlVisible("tr", !1), MaskInstance.setControlVisible("tl", !1), MaskInstance.setControlVisible("mr", !1), MaskInstance.setControlVisible("mt", !1), canvasFabric.add(MaskInstance)
+        }
+
+        function exportFunc() {
+          document.getElementsByClassName("canvas-container")[0].style.display = "none", document.getElementById("exportBtn").style.display = "none", document.getElementById("tip").innerHTML = "请保存图片", document.getElementById("change").style.display = "none", cvs.style.display = "none", exportImage.style.display = "block", exportImage.src = canvasFabric.toDataURL({
+            width: screenWidth,
+            height: screenWidth
+          })
+        }
+      </script>
+    </div>
+  </div>
+</body>
+</html>

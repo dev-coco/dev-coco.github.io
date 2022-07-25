@@ -1,0 +1,254 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>atop | Raz1ner</title>
+  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1658778149314">
+  <link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
+  <script src="https://dev-coco.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
+<script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+  <div class="main">
+    <div class="header">
+      <div class="nav">
+        <div class="logo">
+          <a href="https://dev-coco.github.io">
+            <img class="avatar" src="https://dev-coco.github.io/images/avatar.png?v=1658778149314" alt="">
+          </a>
+          <div class="site-title">
+            <h1>Raz1ner</h1>
+          </div>
+        </div>
+        <span class="menu-btn fa fa-align-justify"></span>
+        <div class="menu-container">
+          <ul>
+            <li>
+              <a href="/" class="menu">首页</a>
+            </li>
+            <li>
+              <a href="/Featured-Software.html" class="menu">软件</a>
+            </li>
+            <li>
+              <a href="/Online-Tools" class="menu">在线工具</a>
+            </li>
+            <li>
+              <a href="/post/Linux-Command" class="menu">Linux命令</a>
+            </li>
+            <li>
+              <a href="/Excel" class="menu">Excel教程</a>
+            </li>
+            <li>
+              <a href="/post/Terms-and-Privacy" class="menu">隐私与条款</a>
+            </li>
+          </ul>
+        </div>
+        <form id="gridea-search-form" action="https://dev-coco.github.io/search/" class="search">
+          <input type="search" name="q" class="search-box">
+          <span class="search-button">
+            <span class="search-icon"></span>
+          </span>
+        </form>
+      </div>
+    </div>
+    <script>
+      document.getElementsByClassName('search-button')[0].addEventListener('click', function () {
+        document.getElementById('gridea-search-form').classList.toggle('open');
+      })
+    </script>
+
+    <div id="main-content" class="post-detail main-container">
+      <!-- left -->
+      <div id="content" class="main-container-left">
+        <article class="post i-card">
+        <h2 class="post-title">atop</h2>
+        <div class="post-info">
+          <time class="post-time">2022-01-31 / 4 min read</time>
+            <a href="https://dev-coco.github.io/tag/linux-command/" class="post-tag i-tag i-tag-error">#Linux命令</a>
+        </div>
+          <div class="post-content">
+            <p>监控Linux系统资源与进程的工具。</p>
+<!-- more -->
+<h2 id="补充说明">补充说明</h2>
+<p>[非内部程序，需要安装] 它以一定的频率记录系统的运行状态，所采集的数据包含系统资源（CPU、内存、磁盘和网络）使用情况和进程运行情况，并能以日志文件的方式保存在磁盘中，服务器出现问题后，我们可获取相应的atop日志文件进行分析。atop 是一款开源软件，我们可以从这里获得其源码和 rpm 安装包。</p>
+<h2 id="语法">语法</h2>
+<pre><code class="language-Shell">atop (选项) (参数)
+</code></pre>
+<h2 id="说明">说明</h2>
+<p>ATOP 列：该列显示了主机名、信息采样日期和时间点<br>
+PRC 列：该列显示进程整体运行情况</p>
+<ul>
+<li>sys、usr字段分别指示进程在内核态和用户态的运行时间</li>
+<li>#proc字段指示进程总数</li>
+<li>#zombie字段指示僵死进程的数量</li>
+<li>#exit字段指示atop采样周期期间退出的进程数量</li>
+</ul>
+<p>CPU列：该列显示CPU整体(即多核CPU作为一个整体CPU资源)的使用情况，我们知道CPU可被用于执行进程、处理中断，也可处于空闲状态(空闲状态分两种，一种是活动进程等待磁盘IO导致CPU空闲，另一种是完全空闲)</p>
+<ul>
+<li>sys、usr字段指示CPU被用于处理进程时，进程在内核态、用户态所占CPU的时间比例</li>
+<li>irq字段指示CPU被用于处理中断的时间比例</li>
+<li>idle字段指示CPU处在完全空闲状态的时间比例</li>
+<li>wait字段指示CPU处在“进程等待磁盘IO导致CPU空闲”状态的时间比例</li>
+<li>CPU列各个字段指示值相加结果为N00%，其中N为cpu核数。</li>
+</ul>
+<p>CPU 列：该列显示某一核cpu的使用情况，各字段含义可参照CPU列，各字段值相加结果为100%<br>
+CPL 列：该列显示CPU负载情况</p>
+<ul>
+<li>avg1、avg5和avg15字段：过去1分钟、5分钟和15分钟内运行队列中的平均进程数量</li>
+<li>csw字段指示上下文交换次数</li>
+<li>intr字段指示中断发生次数</li>
+</ul>
+<p>MEM列：该列指示内存的使用情况</p>
+<ul>
+<li>tot字段指示物理内存总量</li>
+<li>free字段指示空闲内存的大小</li>
+<li>cache字段指示用于页缓存的内存大小</li>
+<li>buff字段指示用于文件缓存的内存大小</li>
+<li>slab字段指示系统内核占用的内存大小</li>
+</ul>
+<p>SWP列：该列指示交换空间的使用情况</p>
+<ul>
+<li>tot字段指示交换区总量</li>
+<li>free字段指示空闲交换空间大小</li>
+</ul>
+<p>PAG列：该列指示虚拟内存分页情况<br>
+swin、swout字段：换入和换出内存页数<br>
+DSK列：该列指示磁盘使用情况，每一个磁盘设备对应一列，如果有sdb设备，那么增多一列DSK信息</p>
+<ul>
+<li>sda字段：磁盘设备标识</li>
+<li>busy字段：磁盘忙时比例</li>
+<li>read、write字段：读、写请求数量</li>
+</ul>
+<p>NET列：多列NET展示了网络状况，包括传输层(TCP和UDP)、IP层以及各活动的网口信息</p>
+<ul>
+<li>XXXi 字段指示各层或活动网口收包数目</li>
+<li>XXXo 字段指示各层或活动网口发包数目</li>
+</ul>
+<h2 id="atop日志">atop日志</h2>
+<p>每个时间点采样页面组合起来就形成了一个atop日志文件，我们可以使用&quot;atop -r XXX&quot;命令对日志文件进行查看。那以什么形式保存atop日志文件呢？<br>
+对于atop日志文件的保存方式，我们可以这样：</p>
+<ul>
+<li>每天保存一个atop日志文件，该日志文件记录当天信息</li>
+<li>日志文件以&quot;atop_YYYYMMDD&quot;的方式命名</li>
+<li>设定日志失效期限，自动删除一段时间前的日志文件<br>
+其实atop开发者已经提供了以上日志保存方式，相应的atop.daily脚本可以在源码目录下找到。在atop.daily脚本中，我们可以通过修改INTERVAL变量改变atop信息采样周期(默认为10分钟)；通过修改以下命令中的数值改变日志保存天数(默认为28天)：</li>
+</ul>
+<pre><code class="language-Shell">(sleep 3; find $LOGPATH -name 'atop_*' -mtime +28 -exec rm {} \; )&amp; 
+</code></pre>
+<p>最后，我们修改cron文件，每天凌晨执行atop.daily脚本：</p>
+<pre><code class="language-Shell">0 0 * * * root /etc/cron.daily/atop.daily
+</code></pre>
+
+          </div>
+        </article>
+        <div class="next-post">
+          <div class="next">下一篇</div>
+          <a href="https://dev-coco.github.io/post/at/">
+            <h3 class="post-title">at</h3>
+          </a>
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="gitalk-container"></div>
+      </div>
+      <!-- middle -->
+      <div class="main-container-middle"></div>
+      <!-- right -->
+      <div id="sidebar" class="main-container-right">
+        <div class="id_card i-card">
+          <div class="id_card-avatar" style="background-image: url(https://dev-coco.github.io/images/avatar.png?v=1658778149314)"></div>
+          <h1 class="id_card-title">Raz1ner</h1>
+          <img style="margin-top: 15px;margin-bottom: 10px;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&amp;count_bg=%2310C1F9&amp;title_bg=%23555555&amp;icon=html5.svg&amp;icon_color=%23E7E7E7&amp;title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&amp;edge_flat=false">
+          <p style="text-align: center;">
+            <a href="https://github.com/dev-coco" target="_blank"><img class="social-icon" src="/images/social/GitHub.png"></a>
+            <a href="https://t.me/raz1ner" target="_blank"><img class="social-icon" src="/images/social/Telegram.png"></a>
+            <a href="https://www.youtube.com/channel/UCEgNinV_DEntuv5Dm8Z_JvA" target="_blank"><img class="social-icon" src="/images/social/YouTube.png"></a>
+            <a href="/atom.xml" target="_blank"><img class="social-icon" src="/images/social/RSS.png"></a>
+            <a href="mailto:ruijingle@gmail.com" target="_blank"><img class="social-icon" src="/images/social/Gmail.png"></a>
+          </p>
+          <!-- <h2 class="id_card-description"></h2> -->
+          <!--  -->
+          <div class="id_card-sns">
+            <!-- github -->
+            
+            <!-- twitter -->
+            <!-- weibo -->
+            <!-- facebook -->
+          </div>
+        </div>
+      <!-- toc -->
+      <div class="toc-card i-card ">
+        <div class="toc-title i-card-title">目录</div>
+          <div class="toc-content">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E8%A1%A5%E5%85%85%E8%AF%B4%E6%98%8E">补充说明</a></li>
+<li><a href="#%E8%AF%AD%E6%B3%95">语法</a></li>
+<li><a href="#%E8%AF%B4%E6%98%8E">说明</a></li>
+<li><a href="#atop%E6%97%A5%E5%BF%97">atop日志</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+          <script>
+            function locateCatelogList() {
+              /*获取文章目录集合,可通过:header过滤器*/
+              var alis = $('.post-content :header');
+              /*获取侧边栏目录列表集合**/
+              var sidebar_alis = $('.markdownIt-TOC a');
+              /*获取滚动条到顶部的距离*/
+              var scroll_height = $(window).scrollTop();
+              for (var i = 0; i < alis.length; i++) {
+                /*获取锚点集合中的元素分别到顶点的距离*/
+                var a_height = $(alis[i]).offset().top;
+                if (a_height < scroll_height) {
+                  /*高亮显示*/
+                  sidebar_alis.removeClass('on');
+                  $(sidebar_alis[i]).addClass('on');
+                }
+              }
+            }
+            $(function() {
+              /*绑定滚动事件 */
+              $(window).bind('scroll', locateCatelogList);
+              });
+          </script>
+        </div>
+      <div class="notice-card i-card ">
+        <div class="notice-title i-card-title">公告</div>
+        <div class="notice-content">博客新增 Telegram 频道：<a href="https://t.me/raz1ner" target="_blank" style="color: blue">瑞景乐的博客</a>，欢迎关注，及时收到最新文章推送。</div>
+      </div>
+      <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
+        <div class="notice-content">
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/google-script/">Google 脚本</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/security/">安全</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/excel/">Excel</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/javascript/">Javascript</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="site-footer">
+    <span>Copyright © 2020-2022 Raz1ner - All Rights Reserved.</span> | <a class="rss" href="https://dev-coco.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+  <script>
+    $('#sidebar').stickySidebar({
+    topSpacing: 80,
+    // bottomSpacing: 60
+    });
+  </script>
+  
+</body>
+</html>

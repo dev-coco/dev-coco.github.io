@@ -1,0 +1,262 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>logrotate | Raz1ner</title>
+  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1658778149314">
+  <link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
+  <script src="https://dev-coco.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
+<script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+  <div class="main">
+    <div class="header">
+      <div class="nav">
+        <div class="logo">
+          <a href="https://dev-coco.github.io">
+            <img class="avatar" src="https://dev-coco.github.io/images/avatar.png?v=1658778149314" alt="">
+          </a>
+          <div class="site-title">
+            <h1>Raz1ner</h1>
+          </div>
+        </div>
+        <span class="menu-btn fa fa-align-justify"></span>
+        <div class="menu-container">
+          <ul>
+            <li>
+              <a href="/" class="menu">首页</a>
+            </li>
+            <li>
+              <a href="/Featured-Software.html" class="menu">软件</a>
+            </li>
+            <li>
+              <a href="/Online-Tools" class="menu">在线工具</a>
+            </li>
+            <li>
+              <a href="/post/Linux-Command" class="menu">Linux命令</a>
+            </li>
+            <li>
+              <a href="/Excel" class="menu">Excel教程</a>
+            </li>
+            <li>
+              <a href="/post/Terms-and-Privacy" class="menu">隐私与条款</a>
+            </li>
+          </ul>
+        </div>
+        <form id="gridea-search-form" action="https://dev-coco.github.io/search/" class="search">
+          <input type="search" name="q" class="search-box">
+          <span class="search-button">
+            <span class="search-icon"></span>
+          </span>
+        </form>
+      </div>
+    </div>
+    <script>
+      document.getElementsByClassName('search-button')[0].addEventListener('click', function () {
+        document.getElementById('gridea-search-form').classList.toggle('open');
+      })
+    </script>
+
+    <div id="main-content" class="post-detail main-container">
+      <!-- left -->
+      <div id="content" class="main-container-left">
+        <article class="post i-card">
+        <h2 class="post-title">logrotate</h2>
+        <div class="post-info">
+          <time class="post-time">2022-02-04 / 4 min read</time>
+            <a href="https://dev-coco.github.io/tag/linux-command/" class="post-tag i-tag i-tag-other_2">#Linux命令</a>
+        </div>
+          <div class="post-content">
+            <p>系统日志进行轮转、压缩和删除。</p>
+<!-- more -->
+<h2 id="补充说明">补充说明</h2>
+<p>logrotate 命令用于对系统日志进行轮转、压缩和删除，也可以将日志发送到指定邮箱。使用 logrotate 指令，可让你轻松管理系统所产生的记录文件。每个记录文件都可被设置成每日，每周或每月处理，也能在文件太大时立即处理。您必须自行编辑，指定配置文件，预设的配置文件存放在<code>/etc/logrotate.conf</code>文件中。</p>
+<h2 id="语法">语法</h2>
+<pre><code class="language-Shell">logrotate (选项) (参数)
+</code></pre>
+<h2 id="选项">选项</h2>
+<pre><code class="language-Shell">-?或--help：在线帮助；
+-d 或--debug：详细显示指令执行过程，便于排错或了解程序执行的情况；
+-f 或--force ：强行启动记录文件维护操作，纵使 logrotate 指令认为没有需要亦然；
+-s&lt;状态文件&gt;或--state=&lt;状态文件&gt;：使用指定的状态文件；
+-v 或--version：显示指令执行过程；
+-usage：显示指令基本用法。
+</code></pre>
+<h2 id="参数">参数</h2>
+<p>配置文件：指定 lograote 指令的配置文件。</p>
+<h2 id="实例">实例</h2>
+<p>crontab 会定时调用 logrotate 命令 在 <code>/etc/cron.daily/logrotate</code> 文件中配置使用</p>
+<p>logrotate 的配置文件<code>/etc/logrotate.conf</code> 定义引用<code>/etc/logrotate.d</code>目录下的一些自定义的 log 配置</p>
+<p>在<code>/etc/logrotate.d</code>目录下创建任意后缀名的文件,即可使用对日志进行轮转</p>
+<pre><code class="language-Shell">/tmp/log/log.txt
+{
+    copytruncate
+    daily
+    rotate 30
+    missingok
+    ifempty
+    compress
+    noolddir
+}
+</code></pre>
+<p>这个配置文件代表的意思是将<code>/tmp/log/log.txt</code>文件 进行轮转压缩</p>
+<pre><code class="language-Shell">compress                 通过 gzip 压缩转储以后的日志
+nocompress               不做 gzip 压缩处理
+copytruncate             用于还在打开中的日志文件，把当前日志备份并截断；是先拷贝再清空的方式，拷贝和清空之间有一个时间差，可能会丢失部分日志数据。
+nocopytruncate 备份日志文件不过不截断
+create mode owner group  轮转时指定创建新文件的属性，如 create 0777 nobody nobody
+nocreate                 不建立新的日志文件
+delaycompress            和 compress 一起使用时，转储的日志文件到下一次转储时才压缩
+nodelaycompress          覆盖 delaycompress 选项，转储同时压缩
+missingok                如果日志丢失，不报错继续滚动下一个日志
+errors address           专储时的错误信息发送到指定的 Email 地址
+ifempty                  即使日志文件为空文件也做轮转，这个是 logrotate 的缺省选项。
+notifempty               当日志文件为空时，不进行轮转
+mail address             把转储的日志文件发送到指定的 E-mail 地址
+nomail                   转储时不发送日志文件
+olddir directory         转储后的日志文件放入指定的目录，必须和当前日志文件在同一个文件系统
+noolddir                 转储后的日志文件和当前日志文件放在同一个目录下
+sharedscripts            运行 postrotate 脚本，作用是在所有日志都轮转后统一执行一次脚本。如果没有配置这个，那么每个日志轮转后都会执行一次脚本
+prerotate                在 logrotate 转储之前需要执行的指令，例如修改文件的属性等动作；必须独立成行
+postrotate               在 logrotate 转储之后需要执行的指令，例如重新启动 (kill -HUP) 某个服务！必须独立成行
+daily                    指定转储周期为每天
+weekly                   指定转储周期为每周
+monthly                  指定转储周期为每月
+rotate count             指定日志文件删除之前转储的次数，0 指没有备份，5 指保留 5 个备份
+dateext                  使用当期日期作为命名格式
+dateformat .%s           配合 dateext 使用，紧跟在下一行出现，定义文件切割后的文件名，必须配合 dateext 使用，只支持 %Y %m %d %s 这四个参数
+size(或 minsize) log-size 当日志文件到达指定的大小时才转储
+</code></pre>
+<h3 id="注意事项">注意事项</h3>
+<p>在<code>/etc/logrotate.d</code>目录下创建任意后缀名的文件</p>
+<pre><code class="language-Shell">/tmp/log/log*
+{
+    copytruncate
+    daily
+    rotate 30
+    missingok
+    ifempty
+    compress
+    noolddir
+}
+</code></pre>
+<p>这种情况下，会将轮转过的 log 再重新轮转,因为轮转过后的文件名也是已 log 开头的。</p>
+
+          </div>
+        </article>
+        <div class="next-post">
+          <div class="next">下一篇</div>
+          <a href="https://dev-coco.github.io/post/patch/">
+            <h3 class="post-title">patch</h3>
+          </a>
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="gitalk-container"></div>
+      </div>
+      <!-- middle -->
+      <div class="main-container-middle"></div>
+      <!-- right -->
+      <div id="sidebar" class="main-container-right">
+        <div class="id_card i-card">
+          <div class="id_card-avatar" style="background-image: url(https://dev-coco.github.io/images/avatar.png?v=1658778149314)"></div>
+          <h1 class="id_card-title">Raz1ner</h1>
+          <img style="margin-top: 15px;margin-bottom: 10px;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&amp;count_bg=%2310C1F9&amp;title_bg=%23555555&amp;icon=html5.svg&amp;icon_color=%23E7E7E7&amp;title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&amp;edge_flat=false">
+          <p style="text-align: center;">
+            <a href="https://github.com/dev-coco" target="_blank"><img class="social-icon" src="/images/social/GitHub.png"></a>
+            <a href="https://t.me/raz1ner" target="_blank"><img class="social-icon" src="/images/social/Telegram.png"></a>
+            <a href="https://www.youtube.com/channel/UCEgNinV_DEntuv5Dm8Z_JvA" target="_blank"><img class="social-icon" src="/images/social/YouTube.png"></a>
+            <a href="/atom.xml" target="_blank"><img class="social-icon" src="/images/social/RSS.png"></a>
+            <a href="mailto:ruijingle@gmail.com" target="_blank"><img class="social-icon" src="/images/social/Gmail.png"></a>
+          </p>
+          <!-- <h2 class="id_card-description"></h2> -->
+          <!--  -->
+          <div class="id_card-sns">
+            <!-- github -->
+            
+            <!-- twitter -->
+            <!-- weibo -->
+            <!-- facebook -->
+          </div>
+        </div>
+      <!-- toc -->
+      <div class="toc-card i-card ">
+        <div class="toc-title i-card-title">目录</div>
+          <div class="toc-content">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E8%A1%A5%E5%85%85%E8%AF%B4%E6%98%8E">补充说明</a></li>
+<li><a href="#%E8%AF%AD%E6%B3%95">语法</a></li>
+<li><a href="#%E9%80%89%E9%A1%B9">选项</a></li>
+<li><a href="#%E5%8F%82%E6%95%B0">参数</a></li>
+<li><a href="#%E5%AE%9E%E4%BE%8B">实例</a>
+<ul>
+<li><a href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9">注意事项</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+          <script>
+            function locateCatelogList() {
+              /*获取文章目录集合,可通过:header过滤器*/
+              var alis = $('.post-content :header');
+              /*获取侧边栏目录列表集合**/
+              var sidebar_alis = $('.markdownIt-TOC a');
+              /*获取滚动条到顶部的距离*/
+              var scroll_height = $(window).scrollTop();
+              for (var i = 0; i < alis.length; i++) {
+                /*获取锚点集合中的元素分别到顶点的距离*/
+                var a_height = $(alis[i]).offset().top;
+                if (a_height < scroll_height) {
+                  /*高亮显示*/
+                  sidebar_alis.removeClass('on');
+                  $(sidebar_alis[i]).addClass('on');
+                }
+              }
+            }
+            $(function() {
+              /*绑定滚动事件 */
+              $(window).bind('scroll', locateCatelogList);
+              });
+          </script>
+        </div>
+      <div class="notice-card i-card ">
+        <div class="notice-title i-card-title">公告</div>
+        <div class="notice-content">博客新增 Telegram 频道：<a href="https://t.me/raz1ner" target="_blank" style="color: blue">瑞景乐的博客</a>，欢迎关注，及时收到最新文章推送。</div>
+      </div>
+      <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
+        <div class="notice-content">
+          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/google-script/">Google 脚本</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/security/">安全</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/excel/">Excel</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/javascript/">Javascript</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="site-footer">
+    <span>Copyright © 2020-2022 Raz1ner - All Rights Reserved.</span> | <a class="rss" href="https://dev-coco.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+  <script>
+    $('#sidebar').stickySidebar({
+    topSpacing: 80,
+    // bottomSpacing: 60
+    });
+  </script>
+  
+</body>
+</html>

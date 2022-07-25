@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <title>RGB颜色值与十六进制颜色码转换</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="keywords" content="dev-coco, RGB颜色, 十六进制颜色, 颜色转换">
+  <meta name="robots" content="index,follow">
+  <meta name="description" content="把三原色的值转换为十六进制的值。">
+  <link rel="icon" href="/images/avatar.png">
+  <link rel="stylesheet" href="/css/site.css">
+  <script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <style>input{height:23px}button,input{font-size:18px}</style>
+</head>
+<body>
+  <div class="container">
+    <h1 style="text-align:left;"><img class="logo" alt="dev-coco" src="/images/avatar.png">
+      <span> Raz1ner</span>
+      <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&count_bg=%2310C1F9&title_bg=%23555555&icon=html5.svg&icon_color=%23E7E7E7&title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&edge_flat=false" style="float:right;width:180px;">
+    </h1>
+    <div class="menu">
+      <a href="/">首页</a>
+      <a href="/Featured-Software.html">软件</a>
+      <a href="/Online-Tools">在线工具</a>
+      <a href="/post/Linux-Command">Linux命令</a>
+      <a href="/Excel/">Excel教程</a>
+      <a href="/post/Terms-and-Privacy">隐私与条款</a>
+      <a target="_blank" href="https://github.com/dev-coco">Github</a>
+    </div>
+    <div style="text-align:center;">
+      <h2>RGB to HEX</h2>
+      <p>
+        <input id="rgb_r" value="">
+      </p>
+      <p>
+        <input id="rgb_g" value="">
+      </p>
+      <p>
+        <input id="rgb_b">
+      </p> <span style="font-size:18px;" id="hex_output"></span>
+      <p>
+        <button class="button green" onclick="rgb2hex()">转换</button>
+      </p>
+    </div>
+  </div>
+  <script type="text/javascript">
+    var rgb2hex = function() {
+      let e = document.getElementById("rgb_r").value,
+        t = document.getElementById("rgb_g").value,
+        r = document.getElementById("rgb_b").value,
+        n = document.getElementById("hex_output"),
+        g = Number(e).toString(16),
+        u = Number(t).toString(16),
+        b = Number(r).toString(16);
+      n.innerHTML = "HEX:<br> <span>" + g + u + b + '</span><br><div style="background:#' + g + u + b + ';display: block;margin-left: auto;margin-right: auto;width:60px;"><br></div><br>'
+    };
+  </script>
+</body>
+</html>

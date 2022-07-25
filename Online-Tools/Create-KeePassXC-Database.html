@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <title>KeePassXC 批量生成器</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="keywords" content="dev-coco, KeePassXC, KeePassXC批量生成, 批量创建KeePassXC">
+  <meta name="robots" content="index,follow">
+  <meta name="description" content="批量创建 KeePassXC 数据库。">
+  <link rel="icon" href="/images/avatar.png">
+  <link rel="stylesheet" href="/css/site.css">
+  <script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <style>.middle{margin:0 auto;width:100%}textarea{width:97%;height:360px;font-size:16px}.button,select{font-size:18px;width:100%;margin-bottom:1.5rem}</style>
+</head>
+<body>
+  <div class="container">
+    <h1 style="text-align:left;"><img class="logo" alt="dev-coco" src="/images/avatar.png">
+      <span> Raz1ner</span>
+      <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&count_bg=%2310C1F9&title_bg=%23555555&icon=html5.svg&icon_color=%23E7E7E7&title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&edge_flat=false" style="float:right;width:180px;">
+    </h1>
+    <div class="menu">
+      <a href="/">首页</a>
+      <a href="/Featured-Software.html">软件</a>
+      <a href="/Online-Tools">在线工具</a>
+      <a href="/post/Linux-Command">Linux命令</a>
+      <a href="/Excel/">Excel教程</a>
+      <a href="/post/Terms-and-Privacy">隐私与条款</a>
+      <a target="_blank" href="https://github.com/dev-coco">Github</a>
+    </div>
+    <h1>KeePassXC 批量生成器</h1>
+    <table cellpadding="1" cellspacing="1" class="middle">
+      <tbody>
+        <tr>
+          <td><textarea type="text" style="float:left;" id="orig_str" placeholder="请输入内容" autofocus></textarea></td>
+          <td style="width:10%;text-align:center;">
+            <button onclick="generate()" class="button green">生成</button>
+          </td>
+          <td><textarea type="text" style="float:right;" id="conv_str"></textarea></td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="text-align:center;">使用教程：<a href="/post/Batch-Create-KeePassXC-Database/">命令行批量创建 KeePassXC 数据库</a></p>
+  </div>
+  <script>
+    function generate () {
+      const input = document.getElementById('orig_str').value.match(/.+/g)
+      const output = document.getElementById('conv_str')
+      output.value = ''
+      let result = []
+      for (const content of input) {
+        const info = content.split('\t')
+        const [fileName, filePassword, title, username, password, url] = info
+        const createFile = `printf "%s\n%s" "${escape(filePassword)}" "${escape(filePassword)}" | /Applications/KeePassXC.app/Contents/MacOS/keepassxc-cli db-create -p ${fileName}.kdbx\n`
+        const addItem = `printf "%s\n%s" "${escape(filePassword)}" "${escape(password)}" | /Applications/KeePassXC.app/Contents/MacOS/keepassxc-cli add "${fileName}.kdbx" --u "${escape(username)}" --url "${url}" -p "${title}"\n`
+        result += createFile + addItem
+      }
+      output.value = result
+    }
+    const regex = /\$|!|"|\\/g
+    // 替换字典
+    const charDictionary = function (matchStr) {
+      const strArray = {
+        $: '\\$',
+        '!': '\\!',
+        '"': '\\"',
+        '\\': '\\\\'
+      }
+      return strArray[matchStr]
+    }
+    // 字符转义处理
+    function escape (str) {
+      str = str.replace(regex, charDictionary)
+      return str
+    }
+  </script>
+</body>
+</html>

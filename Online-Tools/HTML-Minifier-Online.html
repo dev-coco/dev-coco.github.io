@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <title>HTML在线压缩</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="keywords" content="dev-coco, CSS压缩, Javascript压缩, HTML压缩">
+  <meta name="robots" content="index,follow">
+  <meta name="description" content="HTML在线压缩，删除多余的空格，缩进，换行符等。加快网页加载速度。">
+  <link rel="icon" href="/images/avatar.png">
+  <link rel="stylesheet" href="/css/site.css">
+  <script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <style>textarea{width:100%;height:20em}</style>
+</head>
+<body>
+  <div class="container">
+    <h1 style="text-align:left;"><img class="logo" alt="dev-coco" src="/images/avatar.png">
+      <span> Raz1ner</span>
+      <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&count_bg=%2310C1F9&title_bg=%23555555&icon=html5.svg&icon_color=%23E7E7E7&title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&edge_flat=false" style="float:right;width:180px;">
+    </h1>
+    <div class="menu">
+      <a href="/">首页</a>
+      <a href="/Featured-Software.html">软件</a>
+      <a href="/Online-Tools">在线工具</a>
+      <a href="/post/Linux-Command">Linux命令</a>
+      <a href="/Excel/">Excel教程</a>
+      <a href="/post/Terms-and-Privacy">隐私与条款</a>
+      <a target="_blank" href="https://github.com/dev-coco">Github</a>
+    </div>
+    <div style="text-align:center;">
+      <h1>HTML在线压缩</h1>
+      </p>
+      <textarea id="codeText"></textarea>
+      </br>
+      <button class="button blue" style="width:150px;font-size:18px;" id="minifier">压缩代码</button>
+    </div>
+  </div>
+</body>
+<script>
+  (function() {
+    function CSSFormating(codeText) {
+      this.codeText = codeText;
+      this.codeO = codeText.value;
+      this.bindHandler();
+    }
+    CSSFormating.prototype = {
+      minifier: function(hasNote) {
+        if (this.codeO == '') this.codeO = this.codeText.value;
+        var code = this.codeO;
+        code = code.replace(/(\n|\t|\s)*/ig, '$1');
+        code = code.replace(/\n|\t|\s(\{|\}|\,|\:|\;)/ig, '$1');
+        code = code.replace(/(\{|\}|\,|\:|\;)\s/ig, '$1');
+        if (!hasNote) {
+          code = code.replace(/\/\*(\n|\s|\t|.)*\*\//ig, '');
+        }
+        return code;
+      },
+      bindHandler: function() {
+        var _self = this;
+        _self.codeText.onkeydown = function() {
+          _self.codeO = '';
+        }
+      }
+    };
+    window.CSSFormating = CSSFormating;
+  })();
+
+  function $(id) {
+    return document.getElementById(id);
+  }
+  var codeText = $('codeText');
+  var format = new CSSFormating(codeText);
+  $('minifier').onclick = function() {
+    codeText.value = format.minifier(false);
+  }
+</script>
+</html>

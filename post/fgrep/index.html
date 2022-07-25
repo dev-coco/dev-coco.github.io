@@ -1,0 +1,252 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>fgrep | Raz1ner</title>
+  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1658778149314">
+  <link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
+  <script src="https://dev-coco.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
+<script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+  <div class="main">
+    <div class="header">
+      <div class="nav">
+        <div class="logo">
+          <a href="https://dev-coco.github.io">
+            <img class="avatar" src="https://dev-coco.github.io/images/avatar.png?v=1658778149314" alt="">
+          </a>
+          <div class="site-title">
+            <h1>Raz1ner</h1>
+          </div>
+        </div>
+        <span class="menu-btn fa fa-align-justify"></span>
+        <div class="menu-container">
+          <ul>
+            <li>
+              <a href="/" class="menu">首页</a>
+            </li>
+            <li>
+              <a href="/Featured-Software.html" class="menu">软件</a>
+            </li>
+            <li>
+              <a href="/Online-Tools" class="menu">在线工具</a>
+            </li>
+            <li>
+              <a href="/post/Linux-Command" class="menu">Linux命令</a>
+            </li>
+            <li>
+              <a href="/Excel" class="menu">Excel教程</a>
+            </li>
+            <li>
+              <a href="/post/Terms-and-Privacy" class="menu">隐私与条款</a>
+            </li>
+          </ul>
+        </div>
+        <form id="gridea-search-form" action="https://dev-coco.github.io/search/" class="search">
+          <input type="search" name="q" class="search-box">
+          <span class="search-button">
+            <span class="search-icon"></span>
+          </span>
+        </form>
+      </div>
+    </div>
+    <script>
+      document.getElementsByClassName('search-button')[0].addEventListener('click', function () {
+        document.getElementById('gridea-search-form').classList.toggle('open');
+      })
+    </script>
+
+    <div id="main-content" class="post-detail main-container">
+      <!-- left -->
+      <div id="content" class="main-container-left">
+        <article class="post i-card">
+        <h2 class="post-title">fgrep</h2>
+        <div class="post-info">
+          <time class="post-time">2022-02-04 / 4 min read</time>
+            <a href="https://dev-coco.github.io/tag/linux-command/" class="post-tag i-tag i-tag-primary">#Linux命令</a>
+        </div>
+          <div class="post-content">
+            <p>为文件搜索文字字符串。</p>
+<!-- more -->
+<h2 id="补充说明">补充说明</h2>
+<p>fgrep 命令是用来搜索 file 参数指定的输入文件（缺省为标准输入）中的匹配模式的行。fgrep 命令特别搜索 Pattern 参数，它们是固定的字符串。如果在 File 参数中指定一个以上的文件 fgrep 命令将显示包含匹配行的文件。</p>
+<p>fgrep 命令于 grep 和 egrep 命令不同，因为它搜索字符串而不是搜索匹配表达式的模式。fgrep 命令使用快速的压缩算法。<code>$, *, &amp;#91;, |, (, )</code>和<code>\</code>等字符串被 fgrep 命令按字面意思解释。这些字符并不解释为正则表达式，但它们在 grep 和 egrep 命令中解释为 正则表达式。因为这些字符对于 shell 有特定的含义，完整的字符串应该加上单引号<code>‘ ... ’</code>。如果没有指定文件， fgrep 命令假定标准输入。一般，找到的每行都复制到标准输出中去。如果不止一个输入文件，则在找到的每行前打印文件名。</p>
+<ul>
+<li>
+<p>fgrep 命令和带 -F 标志的 grep 命令是一样的但出错和用法消息不同-s 标志功能也不同。</p>
+</li>
+<li>
+<p>每行限制在 2048 个字节。</p>
+</li>
+<li>
+<p>段落（-p 标志下）目前限制在 5000 个字符的长度。</p>
+</li>
+<li>
+<p>不要在特定的文件中运行 grep 命令，因为会产生不可预料的结果。</p>
+</li>
+<li>
+<p>输入行不能包含空字符。</p>
+</li>
+<li>
+<p>输入文件应该以换行字符结尾。</p>
+</li>
+<li>
+<p>虽然可以同时指定很多标志，但某些标志会覆盖其余的标志。例如，如果同时指定 -l 和 -n ，只有文件名写入到标准输出中去。</p>
+</li>
+</ul>
+<h2 id="语法">语法</h2>
+<pre><code class="language-Shell">fgrep (选项) (参数)
+</code></pre>
+<h2 id="选项">选项</h2>
+<pre><code class="language-Shell">-b：在找到的每行之前添加行所在的块编号。使用此标志有助于按照上下文查找磁盘块号码。-b 标志不能用于标准输入或者管道输入。
+-c：仅显示匹配行的计数。
+-e 模式：指定模式。这个工作模式很简单，但当此模式以 a-(减号) 开头时却是很有用的。
+-f StringFile：指定包含字符串的文件。
+-h：当多个文件被处理时隐藏文件名。
+-i：当进行比较时忽略字母的大小写。
+-l：只列出包含匹配行的文件名（一次）。文件名之间用换行符分隔。
+n：将文件中每行的相对行号置于行前。
+-pSeparator：显示包含匹配行的整个段落。段落之间将按照 Separator 参数指定的段落分隔符加以分隔，这些分隔符是与搜索模式有着相同格式的模式。包含段落分隔符的行将仅用作分隔符；它们不会被包含在输出中。缺省的段落分隔符是空白行。
+-q：禁止所有写入到标准输出的操作，不管是否为匹配行。如果选中输入行，以 0 状态退出。
+-s：仅显示出错消息。这在检查状态时很有用。
+-v：显示除了匹配特定模式的行以外的所有行。
+-w：执行单词搜索。
+-x：显示匹配模式的行，要求无额外的字符。
+-y：当进行比较时忽略字符的大小写。
+</code></pre>
+<p>此命令返回以下出口值：</p>
+<pre><code class="language-Shell">0    找到匹配项。
+1    未找到匹配项。
+&gt;1   发现语法错误，或者文件不可访问（即使找到了匹配项）。
+</code></pre>
+<h2 id="实例">实例</h2>
+<p>搜索几个文件中的一个简单字符串：</p>
+<pre><code class="language-Shell">fgrep strcpy *.c
+</code></pre>
+<p>在当前目录下所有以 .c 字符串结尾的文件中搜索字符串 strcpy。</p>
+<p>计数匹配某模式的行数：</p>
+<pre><code class="language-Shell">fgrep -c 『{』pgm.cfgrep -c 『}』pgm.c
+</code></pre>
+<p>显示在 pgm.c 中包含左括号和右括号的行的数目。</p>
+<p>如果在您的 C 程序中一行中没有包含多于一个 { (左括号) 或者 } (右括号)，并且括号正确匹配，那么这两个数字将是一样的。如果这两个数字不一样，您可以将包含括号的行按照他们在文件中的位置顺序显示出来，使用以下命令：</p>
+<pre><code class="language-Shell">egrep {\|} pgm.c
+</code></pre>
+<p>显示包含某模式的文件名：</p>
+<pre><code class="language-Shell">fgrep -l strcpy *.c
+</code></pre>
+<p>搜索当前目录下以 .c 结尾的文件，然后显示包含 strcpy 字符串的文件名。</p>
+
+          </div>
+        </article>
+        <div class="next-post">
+          <div class="next">下一篇</div>
+          <a href="https://dev-coco.github.io/post/nl/">
+            <h3 class="post-title">nl</h3>
+          </a>
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="gitalk-container"></div>
+      </div>
+      <!-- middle -->
+      <div class="main-container-middle"></div>
+      <!-- right -->
+      <div id="sidebar" class="main-container-right">
+        <div class="id_card i-card">
+          <div class="id_card-avatar" style="background-image: url(https://dev-coco.github.io/images/avatar.png?v=1658778149314)"></div>
+          <h1 class="id_card-title">Raz1ner</h1>
+          <img style="margin-top: 15px;margin-bottom: 10px;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&amp;count_bg=%2310C1F9&amp;title_bg=%23555555&amp;icon=html5.svg&amp;icon_color=%23E7E7E7&amp;title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&amp;edge_flat=false">
+          <p style="text-align: center;">
+            <a href="https://github.com/dev-coco" target="_blank"><img class="social-icon" src="/images/social/GitHub.png"></a>
+            <a href="https://t.me/raz1ner" target="_blank"><img class="social-icon" src="/images/social/Telegram.png"></a>
+            <a href="https://www.youtube.com/channel/UCEgNinV_DEntuv5Dm8Z_JvA" target="_blank"><img class="social-icon" src="/images/social/YouTube.png"></a>
+            <a href="/atom.xml" target="_blank"><img class="social-icon" src="/images/social/RSS.png"></a>
+            <a href="mailto:ruijingle@gmail.com" target="_blank"><img class="social-icon" src="/images/social/Gmail.png"></a>
+          </p>
+          <!-- <h2 class="id_card-description"></h2> -->
+          <!--  -->
+          <div class="id_card-sns">
+            <!-- github -->
+            
+            <!-- twitter -->
+            <!-- weibo -->
+            <!-- facebook -->
+          </div>
+        </div>
+      <!-- toc -->
+      <div class="toc-card i-card ">
+        <div class="toc-title i-card-title">目录</div>
+          <div class="toc-content">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E8%A1%A5%E5%85%85%E8%AF%B4%E6%98%8E">补充说明</a></li>
+<li><a href="#%E8%AF%AD%E6%B3%95">语法</a></li>
+<li><a href="#%E9%80%89%E9%A1%B9">选项</a></li>
+<li><a href="#%E5%AE%9E%E4%BE%8B">实例</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+          <script>
+            function locateCatelogList() {
+              /*获取文章目录集合,可通过:header过滤器*/
+              var alis = $('.post-content :header');
+              /*获取侧边栏目录列表集合**/
+              var sidebar_alis = $('.markdownIt-TOC a');
+              /*获取滚动条到顶部的距离*/
+              var scroll_height = $(window).scrollTop();
+              for (var i = 0; i < alis.length; i++) {
+                /*获取锚点集合中的元素分别到顶点的距离*/
+                var a_height = $(alis[i]).offset().top;
+                if (a_height < scroll_height) {
+                  /*高亮显示*/
+                  sidebar_alis.removeClass('on');
+                  $(sidebar_alis[i]).addClass('on');
+                }
+              }
+            }
+            $(function() {
+              /*绑定滚动事件 */
+              $(window).bind('scroll', locateCatelogList);
+              });
+          </script>
+        </div>
+      <div class="notice-card i-card ">
+        <div class="notice-title i-card-title">公告</div>
+        <div class="notice-content">博客新增 Telegram 频道：<a href="https://t.me/raz1ner" target="_blank" style="color: blue">瑞景乐的博客</a>，欢迎关注，及时收到最新文章推送。</div>
+      </div>
+      <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
+        <div class="notice-content">
+          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/google-script/">Google 脚本</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/security/">安全</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/excel/">Excel</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/javascript/">Javascript</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="site-footer">
+    <span>Copyright © 2020-2022 Raz1ner - All Rights Reserved.</span> | <a class="rss" href="https://dev-coco.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+  <script>
+    $('#sidebar').stickySidebar({
+    topSpacing: 80,
+    // bottomSpacing: 60
+    });
+  </script>
+  
+</body>
+</html>

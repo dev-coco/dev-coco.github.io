@@ -1,0 +1,276 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>tcpdump | Raz1ner</title>
+  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1658778149314">
+  <link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
+  <script src="https://dev-coco.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
+<script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+  <div class="main">
+    <div class="header">
+      <div class="nav">
+        <div class="logo">
+          <a href="https://dev-coco.github.io">
+            <img class="avatar" src="https://dev-coco.github.io/images/avatar.png?v=1658778149314" alt="">
+          </a>
+          <div class="site-title">
+            <h1>Raz1ner</h1>
+          </div>
+        </div>
+        <span class="menu-btn fa fa-align-justify"></span>
+        <div class="menu-container">
+          <ul>
+            <li>
+              <a href="/" class="menu">首页</a>
+            </li>
+            <li>
+              <a href="/Featured-Software.html" class="menu">软件</a>
+            </li>
+            <li>
+              <a href="/Online-Tools" class="menu">在线工具</a>
+            </li>
+            <li>
+              <a href="/post/Linux-Command" class="menu">Linux命令</a>
+            </li>
+            <li>
+              <a href="/Excel" class="menu">Excel教程</a>
+            </li>
+            <li>
+              <a href="/post/Terms-and-Privacy" class="menu">隐私与条款</a>
+            </li>
+          </ul>
+        </div>
+        <form id="gridea-search-form" action="https://dev-coco.github.io/search/" class="search">
+          <input type="search" name="q" class="search-box">
+          <span class="search-button">
+            <span class="search-icon"></span>
+          </span>
+        </form>
+      </div>
+    </div>
+    <script>
+      document.getElementsByClassName('search-button')[0].addEventListener('click', function () {
+        document.getElementById('gridea-search-form').classList.toggle('open');
+      })
+    </script>
+
+    <div id="main-content" class="post-detail main-container">
+      <!-- left -->
+      <div id="content" class="main-container-left">
+        <article class="post i-card">
+        <h2 class="post-title">tcpdump</h2>
+        <div class="post-info">
+          <time class="post-time">2022-02-03 / 5 min read</time>
+            <a href="https://dev-coco.github.io/tag/linux-command/" class="post-tag i-tag i-tag-warning">#Linux命令</a>
+        </div>
+          <div class="post-content">
+            <p>一款 sniffer 工具，是 Linux 上的抓包工具，嗅探器。</p>
+<!-- more -->
+<h2 id="补充说明">补充说明</h2>
+<p>tcpdump 命令是一款抓包，嗅探器工具，它可以打印所有经过网络接口的数据包的头信息，也可以使用<code>-w</code>选项将数据包保存到文件中，方便以后分析。</p>
+<h2 id="语法">语法</h2>
+<pre><code class="language-Shell">tcpdump (选项)
+</code></pre>
+<h2 id="选项">选项</h2>
+<pre><code class="language-Shell">-a：尝试将网络和广播地址转换成名称；
+-c&lt;数据包数目&gt;：收到指定的数据包数目后，就停止进行倾倒操作；
+-d：把编译过的数据包编码转换成可阅读的格式，并倾倒到标准输出；
+-dd：把编译过的数据包编码转换成 C 语言的格式，并倾倒到标准输出；
+-ddd：把编译过的数据包编码转换成十进制数字的格式，并倾倒到标准输出；
+-e：在每列倾倒资料上显示连接层级的文件头；
+-f：用数字显示网际网络地址；
+-F&lt;表达文件&gt;：指定内含表达方式的文件；
+-i&lt;网络界面&gt;：使用指定的网络截面送出数据包；
+-l：使用标准输出列的缓冲区；
+-n：不把主机的网络地址转换成名字；
+-N：不列出域名；
+-O：不将数据包编码最佳化；
+-p：不让网络界面进入混杂模式；
+-q ：快速输出，仅列出少数的传输协议信息；
+-r&lt;数据包文件&gt;：从指定的文件读取数据包数据；
+-s&lt;数据包大小&gt;：设置每个数据包的大小；
+-S：用绝对而非相对数值列出 TCP 关联数；
+-t：在每列倾倒资料上不显示时间戳记；
+-tt： 在每列倾倒资料上显示未经格式化的时间戳记；
+-T&lt;数据包类型&gt;：强制将表达方式所指定的数据包转译成设置的数据包类型；
+-v：详细显示指令执行过程；
+-vv：更详细显示指令执行过程；
+-x：用十六进制字码列出数据包资料；
+-w&lt;数据包文件&gt;：把数据包数据写入指定的文件。
+</code></pre>
+<h2 id="实例">实例</h2>
+<p>直接启动 tcpdump 将监视第一个网络接口上所有流过的数据包</p>
+<pre><code class="language-Shell">tcpdump
+</code></pre>
+<p>监视指定网络接口的数据包</p>
+<pre><code class="language-Shell">tcpdump -i eth1
+</code></pre>
+<p>如果不指定网卡，默认 tcpdump 只会监视第一个网络接口，一般是 eth0，下面的例子都没有指定网络接口。</p>
+<p>监视指定主机的数据包</p>
+<p>打印所有进入或离开 sundown 的数据包。</p>
+<pre><code class="language-Shell">tcpdump host sundown
+</code></pre>
+<p>也可以指定 ip,例如截获所有 210.27.48.1 的主机收到的和发出的所有的数据包</p>
+<pre><code class="language-Shell">tcpdump host 210.27.48.1
+</code></pre>
+<p>打印 helios 与 hot 或者与 ace 之间通信的数据包</p>
+<pre><code class="language-Shell">tcpdump host helios and \( hot or ace \)
+</code></pre>
+<p>截获主机 210.27.48.1 和主机 210.27.48.2 或 210.27.48.3 的通信</p>
+<pre><code class="language-Shell">tcpdump host 210.27.48.1 and \ (210.27.48.2 or 210.27.48.3 \)
+</code></pre>
+<p>打印 ace 与任何其他主机之间通信的 IP 数据包, 但不包括与 helios 之间的数据包.</p>
+<pre><code class="language-Shell">tcpdump ip host ace and not helios
+</code></pre>
+<p>如果想要获取主机 210.27.48.1 除了和主机 210.27.48.2 之外所有主机通信的 ip 包，使用命令：</p>
+<pre><code class="language-Shell">tcpdump ip host 210.27.48.1 and ! 210.27.48.2
+</code></pre>
+<p>抓取 eth0 网卡上的包，使用:</p>
+<pre><code class="language-Shell">sudo tcpdump -i eth0
+</code></pre>
+<p>截获主机 hostname 发送的所有数据</p>
+<pre><code class="language-Shell">tcpdump -i eth0 src host hostname
+</code></pre>
+<p>监视所有送到主机 hostname 的数据包</p>
+<pre><code class="language-Shell">tcpdump -i eth0 dst host hostname
+</code></pre>
+<p>监视指定主机和端口的数据包</p>
+<p>如果想要获取主机 210.27.48.1 接收或发出的 telnet 包，使用如下命令</p>
+<pre><code class="language-Shell">tcpdump tcp port 23 and host 210.27.48.1
+</code></pre>
+<p>对本机的 udp 123 端口进行监视 123 为 ntp 的服务端口</p>
+<pre><code class="language-Shell">tcpdump udp port 123
+</code></pre>
+<p>监视指定网络的数据包</p>
+<p>打印本地主机与 Berkeley 网络上的主机之间的所有通信数据包</p>
+<pre><code class="language-Shell">tcpdump net ucb-ether
+</code></pre>
+<p>ucb-ether 此处可理解为“Berkeley 网络”的网络地址，此表达式最原始的含义可表达为：打印网络地址为 ucb-ether 的所有数据包</p>
+<p>打印所有通过网关 snup 的 ftp 数据包</p>
+<pre><code class="language-Shell">tcpdump 'gateway snup and (port ftp or ftp-data)'
+</code></pre>
+<p>注意：表达式被单引号括起来了，这可以防止 shell 对其中的括号进行错误解析</p>
+<p>打印所有源地址或目标地址是本地主机的 IP 数据包</p>
+<pre><code class="language-Shell">tcpdump ip and not net localnet
+</code></pre>
+<p>如果本地网络通过网关连到了另一网络，则另一网络并不能算作本地网络。</p>
+<p>抓取 80 端口的 HTTP 报文，以文本形式展示：</p>
+<pre><code class="language-Shell">sudo tcpdump -i any port 80 -A
+</code></pre>
+
+          </div>
+        </article>
+        <div class="next-post">
+          <div class="next">下一篇</div>
+          <a href="https://dev-coco.github.io/post/let/">
+            <h3 class="post-title">let</h3>
+          </a>
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="gitalk-container"></div>
+      </div>
+      <!-- middle -->
+      <div class="main-container-middle"></div>
+      <!-- right -->
+      <div id="sidebar" class="main-container-right">
+        <div class="id_card i-card">
+          <div class="id_card-avatar" style="background-image: url(https://dev-coco.github.io/images/avatar.png?v=1658778149314)"></div>
+          <h1 class="id_card-title">Raz1ner</h1>
+          <img style="margin-top: 15px;margin-bottom: 10px;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&amp;count_bg=%2310C1F9&amp;title_bg=%23555555&amp;icon=html5.svg&amp;icon_color=%23E7E7E7&amp;title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&amp;edge_flat=false">
+          <p style="text-align: center;">
+            <a href="https://github.com/dev-coco" target="_blank"><img class="social-icon" src="/images/social/GitHub.png"></a>
+            <a href="https://t.me/raz1ner" target="_blank"><img class="social-icon" src="/images/social/Telegram.png"></a>
+            <a href="https://www.youtube.com/channel/UCEgNinV_DEntuv5Dm8Z_JvA" target="_blank"><img class="social-icon" src="/images/social/YouTube.png"></a>
+            <a href="/atom.xml" target="_blank"><img class="social-icon" src="/images/social/RSS.png"></a>
+            <a href="mailto:ruijingle@gmail.com" target="_blank"><img class="social-icon" src="/images/social/Gmail.png"></a>
+          </p>
+          <!-- <h2 class="id_card-description"></h2> -->
+          <!--  -->
+          <div class="id_card-sns">
+            <!-- github -->
+            
+            <!-- twitter -->
+            <!-- weibo -->
+            <!-- facebook -->
+          </div>
+        </div>
+      <!-- toc -->
+      <div class="toc-card i-card ">
+        <div class="toc-title i-card-title">目录</div>
+          <div class="toc-content">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E8%A1%A5%E5%85%85%E8%AF%B4%E6%98%8E">补充说明</a></li>
+<li><a href="#%E8%AF%AD%E6%B3%95">语法</a></li>
+<li><a href="#%E9%80%89%E9%A1%B9">选项</a></li>
+<li><a href="#%E5%AE%9E%E4%BE%8B">实例</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+          <script>
+            function locateCatelogList() {
+              /*获取文章目录集合,可通过:header过滤器*/
+              var alis = $('.post-content :header');
+              /*获取侧边栏目录列表集合**/
+              var sidebar_alis = $('.markdownIt-TOC a');
+              /*获取滚动条到顶部的距离*/
+              var scroll_height = $(window).scrollTop();
+              for (var i = 0; i < alis.length; i++) {
+                /*获取锚点集合中的元素分别到顶点的距离*/
+                var a_height = $(alis[i]).offset().top;
+                if (a_height < scroll_height) {
+                  /*高亮显示*/
+                  sidebar_alis.removeClass('on');
+                  $(sidebar_alis[i]).addClass('on');
+                }
+              }
+            }
+            $(function() {
+              /*绑定滚动事件 */
+              $(window).bind('scroll', locateCatelogList);
+              });
+          </script>
+        </div>
+      <div class="notice-card i-card ">
+        <div class="notice-title i-card-title">公告</div>
+        <div class="notice-content">博客新增 Telegram 频道：<a href="https://t.me/raz1ner" target="_blank" style="color: blue">瑞景乐的博客</a>，欢迎关注，及时收到最新文章推送。</div>
+      </div>
+      <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
+        <div class="notice-content">
+          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/google-script/">Google 脚本</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/security/">安全</a>
+          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/excel/">Excel</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/javascript/">Javascript</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="site-footer">
+    <span>Copyright © 2020-2022 Raz1ner - All Rights Reserved.</span> | <a class="rss" href="https://dev-coco.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+  <script>
+    $('#sidebar').stickySidebar({
+    topSpacing: 80,
+    // bottomSpacing: 60
+    });
+  </script>
+  
+</body>
+</html>

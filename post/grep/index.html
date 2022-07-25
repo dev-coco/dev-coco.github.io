@@ -1,0 +1,371 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>grep | Raz1ner</title>
+  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1658778149314">
+  <link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
+  <script src="https://dev-coco.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
+<script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+  <div class="main">
+    <div class="header">
+      <div class="nav">
+        <div class="logo">
+          <a href="https://dev-coco.github.io">
+            <img class="avatar" src="https://dev-coco.github.io/images/avatar.png?v=1658778149314" alt="">
+          </a>
+          <div class="site-title">
+            <h1>Raz1ner</h1>
+          </div>
+        </div>
+        <span class="menu-btn fa fa-align-justify"></span>
+        <div class="menu-container">
+          <ul>
+            <li>
+              <a href="/" class="menu">首页</a>
+            </li>
+            <li>
+              <a href="/Featured-Software.html" class="menu">软件</a>
+            </li>
+            <li>
+              <a href="/Online-Tools" class="menu">在线工具</a>
+            </li>
+            <li>
+              <a href="/post/Linux-Command" class="menu">Linux命令</a>
+            </li>
+            <li>
+              <a href="/Excel" class="menu">Excel教程</a>
+            </li>
+            <li>
+              <a href="/post/Terms-and-Privacy" class="menu">隐私与条款</a>
+            </li>
+          </ul>
+        </div>
+        <form id="gridea-search-form" action="https://dev-coco.github.io/search/" class="search">
+          <input type="search" name="q" class="search-box">
+          <span class="search-button">
+            <span class="search-icon"></span>
+          </span>
+        </form>
+      </div>
+    </div>
+    <script>
+      document.getElementsByClassName('search-button')[0].addEventListener('click', function () {
+        document.getElementById('gridea-search-form').classList.toggle('open');
+      })
+    </script>
+
+    <div id="main-content" class="post-detail main-container">
+      <!-- left -->
+      <div id="content" class="main-container-left">
+        <article class="post i-card">
+        <h2 class="post-title">grep</h2>
+        <div class="post-info">
+          <time class="post-time">2022-02-03 / 9 min read</time>
+            <a href="https://dev-coco.github.io/tag/linux-command/" class="post-tag i-tag i-tag-success">#Linux命令</a>
+        </div>
+          <div class="post-content">
+            <p><a href="https://dev-coco.github.io/Excel/">Excel 教程 </a></p>
+<p>强大的文本搜索工具。</p>
+<!-- more -->
+<h2 id="补充说明">补充说明</h2>
+<p>grep （global search regular expression(RE) and print out the line，全面搜索 <a href="https://dev-coco.github.io/blog/Regex-Syntax.html" target="_blank"> 正则表达式 </a> 并把行打印出来）是一种强大的文本搜索工具，它能使用正则表达式搜索文本，并把匹配的行打印出来。用于过滤/搜索的特定字符。可使用正则表达式能配合多种命令使用，使用上十分灵活。</p>
+<h2 id="选项">选项</h2>
+<pre><code class="language-Shell">-a --text  # 不要忽略二进制数据。
+-A &lt;显示行数&gt;   --after-context=&lt;显示行数&gt;   # 除了显示符合范本样式的那一行之外，并显示该行之后的内容。
+-b --byte-offset                           # 在显示符合范本样式的那一行之外，并显示该行之前的内容。
+-B&lt;显示行数&gt;   --before-context=&lt;显示行数&gt;   # 除了显示符合样式的那一行之外，并显示该行之前的内容。
+-c --count    # 计算符合范本样式的列数。
+-C&lt;显示行数&gt; --context=&lt;显示行数&gt;或-&lt;显示行数&gt; # 除了显示符合范本样式的那一列之外，并显示该列之前后的内容。
+-d&lt;进行动作&gt; --directories=&lt;动作&gt;  # 当指定要查找的是目录而非文件时，必须使用这项参数，否则 grep 命令将回报信息并停止动作。
+-e&lt;范本样式&gt; --regexp=&lt;范本样式&gt;   # 指定字符串作为查找文件内容的范本样式。
+-E --extended-regexp             # 将范本样式为延伸的普通表示法来使用，意味着使用能使用扩展正则表达式。
+-f&lt;范本文件&gt; --file=&lt;规则文件&gt;     # 指定范本文件，其内容有一个或多个范本样式，让 grep 查找符合范本条件的文件内容，格式为每一列的范本样式。
+-F --fixed-regexp   # 将范本样式视为固定字符串的列表。
+-G --basic-regexp   # 将范本样式视为普通的表示法来使用。
+-h --no-filename    # 在显示符合范本样式的那一列之前，不标示该列所属的文件名称。
+-H --with-filename  # 在显示符合范本样式的那一列之前，标示该列的文件名称。
+-i --ignore-case    # 忽略字符大小写的差别。
+-l --file-with-matches   # 列出文件内容符合指定的范本样式的文件名称。
+-L --files-without-match # 列出文件内容不符合指定的范本样式的文件名称。
+-n --line-number         # 在显示符合范本样式的那一列之前，标示出该列的编号。
+-P --perl-regexp         # PATTERN 是一个 Perl 正则表达式
+-q --quiet 或--silent     # 不显示任何信息。
+-R/-r  --recursive       # 此参数的效果和指定“-d recurse”参数相同。
+-s --no-messages  # 不显示错误信息。
+-v --revert-match # 反转查找。
+-V --version      # 显示版本信息。   
+-w --word-regexp  # 只显示全字符合的列。
+-x --line-regexp  # 只显示全列符合的列。
+-y # 此参数效果跟“-i”相同。
+-o # 只输出文件中匹配到的部分。
+-m &lt;num&gt; --max-count=&lt;num&gt; # 找到 num 行结果后停止查找，用来限制匹配行数
+</code></pre>
+<h3 id="规则表达式">规则表达式</h3>
+<pre><code class="language-Shell">^    # 锚定行的开始 如：'^grep' 匹配所有以 grep 开头的行。    
+$    # 锚定行的结束 如：'grep$' 匹配所有以 grep 结尾的行。
+.    # 匹配一个非换行符的字符 如：'gr.p' 匹配 gr 后接一个任意字符，然后是 p。    
+*    # 匹配零个或多个先前字符 如：'*grep' 匹配所有一个或多个空格后紧跟 grep 的行。    
+.*   # 一起用代表任意字符。   
+[]   # 匹配一个指定范围内的字符，如 '[Gg]rep' 匹配 Grep 和 grep。    
+[^]  # 匹配一个不在指定范围内的字符，如：'[^A-FH-Z]rep' 匹配不包含 A-R 和 T-Z 的一个字母开头，紧跟 rep 的行。    
+\(..\)  # 标记匹配字符，如 '\(love\)'，love 被标记为 1。    
+\&lt;      # 锚定单词的开始，如:'\&lt;grep' 匹配包含以 grep 开头的单词的行。    
+\&gt;      # 锚定单词的结束，如 'grep\&gt;' 匹配包含以 grep 结尾的单词的行。    
+x\{m\}  # 重复字符 x，m 次，如：'0\{5\}' 匹配包含 5 个 o 的行。    
+x\{m,\}   # 重复字符 x,至少 m 次，如：'o\{5,\}' 匹配至少有 5 个 o 的行。    
+x\{m,n\}  # 重复字符 x，至少 m 次，不多于 n 次，如：'o\{5,10\}' 匹配 5--10 个 o 的行。   
+\w    # 匹配文字和数字字符，也就是[A-Za-z0-9]，如：'G\w*p' 匹配以 G 后跟零个或多个文字或数字字符，然后是 p。   
+\W    # \w 的反置形式，匹配一个或多个非单词字符，如点号句号等。   
+\b    # 单词锁定符，如: '\bgrep\b' 只匹配 grep。  
+</code></pre>
+<h2 id="grep-命令常见用法">grep 命令常见用法</h2>
+<p>在文件中搜索一个单词，命令会返回一个包含 “match_pattern” 的文本行：</p>
+<pre><code class="language-Shell">grep match_pattern file_name
+grep &quot;match_pattern&quot; file_name
+</code></pre>
+<p>在多个文件中查找：</p>
+<pre><code class="language-Shell">grep &quot;match_pattern&quot; file_1 file_2 file_3 ...
+</code></pre>
+<p>输出除之外的所有行  -v  选项：</p>
+<pre><code class="language-Shell">grep -v &quot;match_pattern&quot; file_name
+</code></pre>
+<p>标记匹配颜色  --color=auto  选项：</p>
+<pre><code class="language-Shell">grep &quot;match_pattern&quot; file_name --color=auto
+</code></pre>
+<p>使用正则表达式  -E  选项：</p>
+<pre><code class="language-Shell">grep -E &quot;[1-9]+&quot;
+# 或
+egrep &quot;[1-9]+&quot;
+</code></pre>
+<p>使用正则表达式  -P  选项：</p>
+<pre><code class="language-Shell">grep -P &quot;(\d{3}\-){2}\d{4}&quot; file_name
+</code></pre>
+<p>只输出文件中匹配到的部分  -o  选项：</p>
+<pre><code class="language-Shell">echo this is a test line. | grep -o -E &quot;[a-z]+\.&quot;
+line.
+
+echo this is a test line. | egrep -o &quot;[a-z]+\.&quot;
+line.
+</code></pre>
+<p>统计文件或者文本中包含匹配字符串的行数  -c  选项：</p>
+<pre><code class="language-Shell">grep -c &quot;text&quot; file_name
+</code></pre>
+<p>输出包含匹配字符串的行数  -n  选项：</p>
+<pre><code class="language-Shell">grep &quot;text&quot; -n file_name
+# 或
+cat file_name | grep &quot;text&quot; -n
+
+#多个文件
+grep &quot;text&quot; -n file_1 file_2
+</code></pre>
+<p>打印样式匹配所位于的字符或字节偏移：</p>
+<pre><code class="language-Shell">echo gun is not unix | grep -b -o &quot;not&quot;
+7:not
+#一行中字符串的字符便宜是从该行的第一个字符开始计算，起始值为 0。选项  **-b -o**  一般总是配合使用。
+</code></pre>
+<p>搜索多个文件并查找匹配文本在哪些文件中：</p>
+<pre><code class="language-Shell">grep -l &quot;text&quot; file1 file2 file3...
+</code></pre>
+<h3 id="grep-递归搜索文件">grep 递归搜索文件</h3>
+<p>在多级目录中对文本进行递归搜索：</p>
+<pre><code class="language-Shell">grep &quot;text&quot; . -r -n
+# .表示当前目录。
+</code></pre>
+<p>忽略匹配样式中的字符大小写：</p>
+<pre><code class="language-Shell">echo &quot;hello world&quot; | grep -i &quot;HELLO&quot;
+# hello
+</code></pre>
+<p>选项  -e  制动多个匹配样式：</p>
+<pre><code class="language-Shell">echo this is a text line | grep -e &quot;is&quot; -e &quot;line&quot; -o
+is
+line
+
+#也可以使用 **-f** 选项来匹配多个样式，在样式文件中逐行写出需要匹配的字符。
+cat patfile
+aaa
+bbb
+
+echo aaa bbb ccc ddd eee | grep -f patfile -o
+</code></pre>
+<p>在 grep 搜索结果中包括或者排除指定文件：</p>
+<pre><code class="language-Shell"># 只在目录中所有的.php 和.html 文件中递归搜索字符&quot;main()&quot;
+grep &quot;main()&quot; . -r --include *.{php,html}
+
+# 在搜索结果中排除所有 README 文件
+grep &quot;main()&quot; . -r --exclude &quot;README&quot;
+
+# 在搜索结果中排除 filelist 文件列表里的文件
+grep &quot;main()&quot; . -r --exclude-from filelist
+
+</code></pre>
+<p>使用 0 值字节后缀的 grep 与 xargs：</p>
+<pre><code class="language-Shell"># 测试文件：
+echo &quot;aaa&quot; &gt; file1
+echo &quot;bbb&quot; &gt; file2
+echo &quot;aaa&quot; &gt; file3
+
+grep &quot;aaa&quot; file* -lZ | xargs -0 rm
+
+# 执行后会删除 file1 和 file3，grep 输出用-Z 选项来指定以 0 值字节作为终结符文件名（\0），xargs -0 读取输入并用 0 值字节终结符分隔文件名，然后删除匹配文件，-Z 通常和-l 结合使用。
+</code></pre>
+<p>grep 静默输出：</p>
+<pre><code class="language-Shell">grep -q &quot;test&quot; filename
+# 不会输出任何信息，如果命令运行成功返回 0，失败则返回非 0 值。一般用于条件测试。
+</code></pre>
+<p>打印出匹配文本之前或者之后的行：</p>
+<pre><code class="language-Shell"># 显示匹配某个结果之后的 3 行，使用 -A 选项：
+seq 10 | grep &quot;5&quot; -A 3
+5
+6
+7
+8
+
+# 显示匹配某个结果之前的 3 行，使用 -B 选项：
+seq 10 | grep &quot;5&quot; -B 3
+2
+3
+4
+5
+
+# 显示匹配某个结果的前三行和后三行，使用 -C 选项：
+seq 10 | grep &quot;5&quot; -C 3
+2
+3
+4
+5
+6
+7
+8
+
+# 如果匹配结果有多个，会用“--”作为各匹配结果之间的分隔符：
+echo -e &quot;a&lt;span title=&quot;\n&quot;&gt;\nb&lt;span title=&quot;\n&quot;&gt;\nc&lt;span title=&quot;\n&quot;&gt;\na&lt;span title=&quot;\n&quot;&gt;\nb&lt;span title=&quot;\n&quot;&gt;\nc&quot; | grep a -A 1
+a
+b
+--
+a
+b
+</code></pre>
+
+          </div>
+        </article>
+        <div class="next-post">
+          <div class="next">下一篇</div>
+          <a href="https://dev-coco.github.io/post/ps/">
+            <h3 class="post-title">ps</h3>
+          </a>
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="gitalk-container"></div>
+      </div>
+      <!-- middle -->
+      <div class="main-container-middle"></div>
+      <!-- right -->
+      <div id="sidebar" class="main-container-right">
+        <div class="id_card i-card">
+          <div class="id_card-avatar" style="background-image: url(https://dev-coco.github.io/images/avatar.png?v=1658778149314)"></div>
+          <h1 class="id_card-title">Raz1ner</h1>
+          <img style="margin-top: 15px;margin-bottom: 10px;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&amp;count_bg=%2310C1F9&amp;title_bg=%23555555&amp;icon=html5.svg&amp;icon_color=%23E7E7E7&amp;title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&amp;edge_flat=false">
+          <p style="text-align: center;">
+            <a href="https://github.com/dev-coco" target="_blank"><img class="social-icon" src="/images/social/GitHub.png"></a>
+            <a href="https://t.me/raz1ner" target="_blank"><img class="social-icon" src="/images/social/Telegram.png"></a>
+            <a href="https://www.youtube.com/channel/UCEgNinV_DEntuv5Dm8Z_JvA" target="_blank"><img class="social-icon" src="/images/social/YouTube.png"></a>
+            <a href="/atom.xml" target="_blank"><img class="social-icon" src="/images/social/RSS.png"></a>
+            <a href="mailto:ruijingle@gmail.com" target="_blank"><img class="social-icon" src="/images/social/Gmail.png"></a>
+          </p>
+          <!-- <h2 class="id_card-description"></h2> -->
+          <!--  -->
+          <div class="id_card-sns">
+            <!-- github -->
+            
+            <!-- twitter -->
+            <!-- weibo -->
+            <!-- facebook -->
+          </div>
+        </div>
+      <!-- toc -->
+      <div class="toc-card i-card ">
+        <div class="toc-title i-card-title">目录</div>
+          <div class="toc-content">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E8%A1%A5%E5%85%85%E8%AF%B4%E6%98%8E">补充说明</a></li>
+<li><a href="#%E9%80%89%E9%A1%B9">选项</a>
+<ul>
+<li><a href="#%E8%A7%84%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F">规则表达式</a></li>
+</ul>
+</li>
+<li><a href="#grep-%E5%91%BD%E4%BB%A4%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95">grep 命令常见用法</a>
+<ul>
+<li><a href="#grep-%E9%80%92%E5%BD%92%E6%90%9C%E7%B4%A2%E6%96%87%E4%BB%B6">grep 递归搜索文件</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+          <script>
+            function locateCatelogList() {
+              /*获取文章目录集合,可通过:header过滤器*/
+              var alis = $('.post-content :header');
+              /*获取侧边栏目录列表集合**/
+              var sidebar_alis = $('.markdownIt-TOC a');
+              /*获取滚动条到顶部的距离*/
+              var scroll_height = $(window).scrollTop();
+              for (var i = 0; i < alis.length; i++) {
+                /*获取锚点集合中的元素分别到顶点的距离*/
+                var a_height = $(alis[i]).offset().top;
+                if (a_height < scroll_height) {
+                  /*高亮显示*/
+                  sidebar_alis.removeClass('on');
+                  $(sidebar_alis[i]).addClass('on');
+                }
+              }
+            }
+            $(function() {
+              /*绑定滚动事件 */
+              $(window).bind('scroll', locateCatelogList);
+              });
+          </script>
+        </div>
+      <div class="notice-card i-card ">
+        <div class="notice-title i-card-title">公告</div>
+        <div class="notice-content">博客新增 Telegram 频道：<a href="https://t.me/raz1ner" target="_blank" style="color: blue">瑞景乐的博客</a>，欢迎关注，及时收到最新文章推送。</div>
+      </div>
+      <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
+        <div class="notice-content">
+          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/google-script/">Google 脚本</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/security/">安全</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/excel/">Excel</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/javascript/">Javascript</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="site-footer">
+    <span>Copyright © 2020-2022 Raz1ner - All Rights Reserved.</span> | <a class="rss" href="https://dev-coco.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+  <script>
+    $('#sidebar').stickySidebar({
+    topSpacing: 80,
+    // bottomSpacing: 60
+    });
+  </script>
+  
+</body>
+</html>

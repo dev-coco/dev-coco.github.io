@@ -1,0 +1,290 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>netstat | Raz1ner</title>
+  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1658778149314">
+  <link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
+  <script src="https://dev-coco.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
+<script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+  <div class="main">
+    <div class="header">
+      <div class="nav">
+        <div class="logo">
+          <a href="https://dev-coco.github.io">
+            <img class="avatar" src="https://dev-coco.github.io/images/avatar.png?v=1658778149314" alt="">
+          </a>
+          <div class="site-title">
+            <h1>Raz1ner</h1>
+          </div>
+        </div>
+        <span class="menu-btn fa fa-align-justify"></span>
+        <div class="menu-container">
+          <ul>
+            <li>
+              <a href="/" class="menu">首页</a>
+            </li>
+            <li>
+              <a href="/Featured-Software.html" class="menu">软件</a>
+            </li>
+            <li>
+              <a href="/Online-Tools" class="menu">在线工具</a>
+            </li>
+            <li>
+              <a href="/post/Linux-Command" class="menu">Linux命令</a>
+            </li>
+            <li>
+              <a href="/Excel" class="menu">Excel教程</a>
+            </li>
+            <li>
+              <a href="/post/Terms-and-Privacy" class="menu">隐私与条款</a>
+            </li>
+          </ul>
+        </div>
+        <form id="gridea-search-form" action="https://dev-coco.github.io/search/" class="search">
+          <input type="search" name="q" class="search-box">
+          <span class="search-button">
+            <span class="search-icon"></span>
+          </span>
+        </form>
+      </div>
+    </div>
+    <script>
+      document.getElementsByClassName('search-button')[0].addEventListener('click', function () {
+        document.getElementById('gridea-search-form').classList.toggle('open');
+      })
+    </script>
+
+    <div id="main-content" class="post-detail main-container">
+      <!-- left -->
+      <div id="content" class="main-container-left">
+        <article class="post i-card">
+        <h2 class="post-title">netstat</h2>
+        <div class="post-info">
+          <time class="post-time">2022-02-03 / 5 min read</time>
+            <a href="https://dev-coco.github.io/tag/linux-command/" class="post-tag i-tag i-tag-banana">#Linux命令</a>
+        </div>
+          <div class="post-content">
+            <p>查看 Linux 中网络系统状态信息。</p>
+<!-- more -->
+<h2 id="补充说明">补充说明</h2>
+<p>netstat 命令用来打印 Linux 中网络系统的状态信息，可让你得知整个 Linux 系统的网络情况。</p>
+<h2 id="语法">语法</h2>
+<pre><code class="language-Shell">netstat (选项)
+</code></pre>
+<h2 id="选项">选项</h2>
+<pre><code class="language-Shell">-a 或--all：显示所有连线中的 Socket；
+-A&lt;网络类型&gt;或--&lt;网络类型&gt;：列出该网络类型连线中的相关地址；
+-c 或--continuous：持续列出网络状态；
+-C 或--cache：显示路由器配置的快取信息；
+-e 或--extend：显示网络其他相关信息；
+-F 或--fib：显示 FIB；
+-g 或--groups：显示多重广播功能群组组员名单；
+-h 或--help：在线帮助；
+-i 或--interfaces：显示网络界面信息表单；
+-l 或--listening：显示监控中的服务器的 Socket；
+-M 或--masquerade：显示伪装的网络连线；
+-n 或--numeric：直接使用 ip 地址，而不通过域名服务器；
+-N 或--netlink 或--symbolic：显示网络硬件外围设备的符号连接名称；
+-o 或--timers：显示计时器；
+-p 或--programs：显示正在使用 Socket 的程序识别码和程序名称；
+-r 或--route：显示 Routing Table；
+-s 或--statistice：显示网络工作信息统计表；
+-t 或--tcp：显示 TCP 传输协议的连线状况；
+-u 或--udp：显示 UDP 传输协议的连线状况；
+-v 或--verbose：显示指令执行过程；
+-V 或--version：显示版本信息；
+-w 或--raw：显示 RAW 传输协议的连线状况；
+-x 或--unix：此参数的效果和指定&quot;-A unix&quot;参数相同；
+--ip 或--inet：此参数的效果和指定&quot;-A inet&quot;参数相同。
+</code></pre>
+<h2 id="实例">实例</h2>
+<p>列出所有端口 (包括监听和未监听的)</p>
+<pre><code class="language-Shell">netstat -a     #列出所有端口
+netstat -at    #列出所有 tcp 端口
+netstat -au    #列出所有 udp 端口                             
+</code></pre>
+<p>列出所有处于监听状态的 Sockets</p>
+<pre><code class="language-Shell">netstat -l        #只显示监听端口
+netstat -lt       #只列出所有监听 tcp 端口
+netstat -lu       #只列出所有监听 udp 端口
+netstat -lx       #只列出所有监听 UNIX 端口
+</code></pre>
+<p>显示每个协议的统计信息</p>
+<pre><code class="language-Shell">netstat -s   显示所有端口的统计信息
+netstat -st   显示 TCP 端口的统计信息
+netstat -su   显示 UDP 端口的统计信息
+
+```shell
+
+ **在 netstat 输出中显示 PID 和进程名称**
+
+```shell
+netstat -pt
+</code></pre>
+<p><code>netstat -p</code>可以与其它开关一起使用，就可以添加“PID/进程名称”到 netstat 输出中，这样 debugging 的时候可以很方便的发现特定端口运行的程序。</p>
+<p>在 netstat 输出中不显示主机，端口和用户名 (host, port or user)</p>
+<p>当你不想让主机，端口和用户名显示，使用<code>netstat -n</code>。将会使用数字代替那些名称。同样可以加速输出，因为不用进行比对查询。</p>
+<pre><code class="language-Shell">netstat -an
+</code></pre>
+<p>如果只是不想让这三个名称中的一个被显示，使用以下命令:</p>
+<pre><code class="language-Shell">netsat -a --numeric-ports
+netsat -a --numeric-hosts
+netsat -a --numeric-users
+</code></pre>
+<p>持续输出 netstat 信息</p>
+<pre><code class="language-Shell">netstat -c   #每隔一秒输出网络信息
+</code></pre>
+<p>显示系统不支持的地址族 (Address Families)</p>
+<pre><code class="language-Shell">netstat --verbose
+</code></pre>
+<p>在输出的末尾，会有如下的信息：</p>
+<pre><code class="language-Shell">netstat: no support for `AF IPX' on this system.
+netstat: no support for `AF AX25' on this system.
+netstat: no support for `AF X25' on this system.
+netstat: no support for `AF NETROM' on this system.
+</code></pre>
+<p>显示核心路由信息</p>
+<pre><code class="language-Shell">netstat -r
+</code></pre>
+<p>使用<code>netstat -rn</code>显示数字格式，不查询主机名称。</p>
+<p>找出程序运行的端口</p>
+<p>并不是所有的进程都能找到，没有权限的会不显示，使用 root 权限查看所有的信息。</p>
+<pre><code class="language-Shell">netstat -ap | grep ssh
+</code></pre>
+<p>找出运行在指定端口的进程：</p>
+<pre><code class="language-Shell">netstat -an | grep ':80'
+</code></pre>
+<p>通过端口找进程 ID</p>
+<pre><code class="language-Shell">netstat -anp|grep 8081 | grep LISTEN|awk '{printf $7}'|cut -d/ -f1
+</code></pre>
+<p>显示网络接口列表</p>
+<pre><code class="language-Shell">netstat -i
+</code></pre>
+<p>显示详细信息，像是 ifconfig 使用<code>netstat -ie</code>。</p>
+<p>IP 和 TCP 分析</p>
+<p>查看连接某服务端口最多的的 IP 地址：</p>
+<pre><code class="language-Shell">netstat -ntu | grep :80 | awk '{print $5}' | cut -d: -f1 | awk '{++ip[$1]} END {for(i in ip) print ip[i],&quot;&lt;span title=&quot;\t&quot;&gt;\t&quot;,i}' | sort -nr
+</code></pre>
+<p>TCP 各种状态列表：</p>
+<pre><code class="language-Shell">netstat -nt | grep -e 127.0.0.1 -e 0.0.0.0 -e ::: -v | awk '/^tcp/ {++state[$NF]} END {for(i in state) print i,&quot;&lt;span title=&quot;\t&quot;&gt;\t&quot;,state[i]}'
+</code></pre>
+<p>查看 phpcgi 进程数，如果接近预设值，说明不够用，需要增加：</p>
+<pre><code class="language-Shell">netstat -anpo | grep &quot;php-cgi&quot; | wc -l
+</code></pre>
+
+          </div>
+        </article>
+        <div class="next-post">
+          <div class="next">下一篇</div>
+          <a href="https://dev-coco.github.io/post/ifconfig/">
+            <h3 class="post-title">ifconfig</h3>
+          </a>
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="gitalk-container"></div>
+      </div>
+      <!-- middle -->
+      <div class="main-container-middle"></div>
+      <!-- right -->
+      <div id="sidebar" class="main-container-right">
+        <div class="id_card i-card">
+          <div class="id_card-avatar" style="background-image: url(https://dev-coco.github.io/images/avatar.png?v=1658778149314)"></div>
+          <h1 class="id_card-title">Raz1ner</h1>
+          <img style="margin-top: 15px;margin-bottom: 10px;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&amp;count_bg=%2310C1F9&amp;title_bg=%23555555&amp;icon=html5.svg&amp;icon_color=%23E7E7E7&amp;title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&amp;edge_flat=false">
+          <p style="text-align: center;">
+            <a href="https://github.com/dev-coco" target="_blank"><img class="social-icon" src="/images/social/GitHub.png"></a>
+            <a href="https://t.me/raz1ner" target="_blank"><img class="social-icon" src="/images/social/Telegram.png"></a>
+            <a href="https://www.youtube.com/channel/UCEgNinV_DEntuv5Dm8Z_JvA" target="_blank"><img class="social-icon" src="/images/social/YouTube.png"></a>
+            <a href="/atom.xml" target="_blank"><img class="social-icon" src="/images/social/RSS.png"></a>
+            <a href="mailto:ruijingle@gmail.com" target="_blank"><img class="social-icon" src="/images/social/Gmail.png"></a>
+          </p>
+          <!-- <h2 class="id_card-description"></h2> -->
+          <!--  -->
+          <div class="id_card-sns">
+            <!-- github -->
+            
+            <!-- twitter -->
+            <!-- weibo -->
+            <!-- facebook -->
+          </div>
+        </div>
+      <!-- toc -->
+      <div class="toc-card i-card ">
+        <div class="toc-title i-card-title">目录</div>
+          <div class="toc-content">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E8%A1%A5%E5%85%85%E8%AF%B4%E6%98%8E">补充说明</a></li>
+<li><a href="#%E8%AF%AD%E6%B3%95">语法</a></li>
+<li><a href="#%E9%80%89%E9%A1%B9">选项</a></li>
+<li><a href="#%E5%AE%9E%E4%BE%8B">实例</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+          <script>
+            function locateCatelogList() {
+              /*获取文章目录集合,可通过:header过滤器*/
+              var alis = $('.post-content :header');
+              /*获取侧边栏目录列表集合**/
+              var sidebar_alis = $('.markdownIt-TOC a');
+              /*获取滚动条到顶部的距离*/
+              var scroll_height = $(window).scrollTop();
+              for (var i = 0; i < alis.length; i++) {
+                /*获取锚点集合中的元素分别到顶点的距离*/
+                var a_height = $(alis[i]).offset().top;
+                if (a_height < scroll_height) {
+                  /*高亮显示*/
+                  sidebar_alis.removeClass('on');
+                  $(sidebar_alis[i]).addClass('on');
+                }
+              }
+            }
+            $(function() {
+              /*绑定滚动事件 */
+              $(window).bind('scroll', locateCatelogList);
+              });
+          </script>
+        </div>
+      <div class="notice-card i-card ">
+        <div class="notice-title i-card-title">公告</div>
+        <div class="notice-content">博客新增 Telegram 频道：<a href="https://t.me/raz1ner" target="_blank" style="color: blue">瑞景乐的博客</a>，欢迎关注，及时收到最新文章推送。</div>
+      </div>
+      <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
+        <div class="notice-content">
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/google-script/">Google 脚本</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/security/">安全</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/excel/">Excel</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/javascript/">Javascript</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="site-footer">
+    <span>Copyright © 2020-2022 Raz1ner - All Rights Reserved.</span> | <a class="rss" href="https://dev-coco.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+  <script>
+    $('#sidebar').stickySidebar({
+    topSpacing: 80,
+    // bottomSpacing: 60
+    });
+  </script>
+  
+</body>
+</html>

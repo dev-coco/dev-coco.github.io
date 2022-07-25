@@ -1,0 +1,391 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>kill | Raz1ner</title>
+  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1658778149314">
+  <link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
+  <script src="https://dev-coco.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
+<script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+  <div class="main">
+    <div class="header">
+      <div class="nav">
+        <div class="logo">
+          <a href="https://dev-coco.github.io">
+            <img class="avatar" src="https://dev-coco.github.io/images/avatar.png?v=1658778149314" alt="">
+          </a>
+          <div class="site-title">
+            <h1>Raz1ner</h1>
+          </div>
+        </div>
+        <span class="menu-btn fa fa-align-justify"></span>
+        <div class="menu-container">
+          <ul>
+            <li>
+              <a href="/" class="menu">首页</a>
+            </li>
+            <li>
+              <a href="/Featured-Software.html" class="menu">软件</a>
+            </li>
+            <li>
+              <a href="/Online-Tools" class="menu">在线工具</a>
+            </li>
+            <li>
+              <a href="/post/Linux-Command" class="menu">Linux命令</a>
+            </li>
+            <li>
+              <a href="/Excel" class="menu">Excel教程</a>
+            </li>
+            <li>
+              <a href="/post/Terms-and-Privacy" class="menu">隐私与条款</a>
+            </li>
+          </ul>
+        </div>
+        <form id="gridea-search-form" action="https://dev-coco.github.io/search/" class="search">
+          <input type="search" name="q" class="search-box">
+          <span class="search-button">
+            <span class="search-icon"></span>
+          </span>
+        </form>
+      </div>
+    </div>
+    <script>
+      document.getElementsByClassName('search-button')[0].addEventListener('click', function () {
+        document.getElementById('gridea-search-form').classList.toggle('open');
+      })
+    </script>
+
+    <div id="main-content" class="post-detail main-container">
+      <!-- left -->
+      <div id="content" class="main-container-left">
+        <article class="post i-card">
+        <h2 class="post-title">kill</h2>
+        <div class="post-info">
+          <time class="post-time">2022-02-03 / 6 min read</time>
+            <a href="https://dev-coco.github.io/tag/linux-command/" class="post-tag i-tag i-tag-info">#Linux命令</a>
+        </div>
+          <div class="post-content">
+            <p>发送信号到进程。。</p>
+<!-- more -->
+<h2 id="目录">目录</h2>
+<h2 id="内建命令">内建命令</h2>
+<h3 id="概要">概要</h3>
+<pre><code class="language-Shell">kill [-s sigspec | -n signum | -sigspec] pid | jobspec ...
+kill -l [sigspec]
+</code></pre>
+<h3 id="主要用途">主要用途</h3>
+<ul>
+<li>
+<p>发送信号到作业或进程（可以为多个）。</p>
+</li>
+<li>
+<p>列出信号。</p>
+</li>
+</ul>
+<h3 id="选项">选项</h3>
+<pre><code class="language-Shell">-s sig    信号名称。
+-n sig    信号名称对应的数字。
+-l        列出信号名称。如果在该选项后提供了数字那么假设它是信号名称对应的数字。
+-L        等价于-l 选项。
+</code></pre>
+<h3 id="参数">参数</h3>
+<p>pid：进程 ID</p>
+<p>jobspec：作业标识符</p>
+<h3 id="返回值">返回值</h3>
+<p>返回状态为成功除非给出了非法选项、执行出现错误。</p>
+<h3 id="例子">例子</h3>
+<pre><code class="language-Shell">[user2@pc] kill -l 9
+KILL
+
+# 列出所有信号名称：
+[user2@pc] kill -l
+ 1) SIGHUP       2) SIGINT       3) SIGQUIT      4) SIGILL
+ 2) SIGTRAP      6) SIGABRT      7) SIGBUS       8) SIGFPE
+ 3) SIGKILL     10) SIGUSR1     11) SIGSEGV     12) SIGUSR2
+1)  SIGPIPE     14) SIGALRM     15) SIGTERM     16) SIGSTKFLT
+2)  SIGCHLD     18) SIGCONT     19) SIGSTOP     20) SIGTSTP
+3)  SIGTTIN     22) SIGTTOU     23) SIGURG      24) SIGXCPU
+4)  SIGXFSZ     26) SIGVTALRM   27) SIGPROF     28) SIGWINCH
+5)  SIGIO       30) SIGPWR      31) SIGSYS      34) SIGRTMIN
+6)  SIGRTMIN+1  36) SIGRTMIN+2  37) SIGRTMIN+3  38) SIGRTMIN+4
+7)  SIGRTMIN+5  40) SIGRTMIN+6  41) SIGRTMIN+7  42) SIGRTMIN+8
+8)  SIGRTMIN+9  44) SIGRTMIN+10 45) SIGRTMIN+11 46) SIGRTMIN+12
+9)  SIGRTMIN+13 48) SIGRTMIN+14 49) SIGRTMIN+15 50) SIGRTMAX-14
+10) SIGRTMAX-13 52) SIGRTMAX-12 53) SIGRTMAX-11 54) SIGRTMAX-10
+11) SIGRTMAX-9  56) SIGRTMAX-8  57) SIGRTMAX-7  58) SIGRTMAX-6
+12) SIGRTMAX-5  60) SIGRTMAX-4  61) SIGRTMAX-3  62) SIGRTMAX-2
+13) SIGRTMAX-1  64) SIGRTMAX
+
+# 下面是常用的信号。
+# 只有第 9 种信号 (SIGKILL) 才可以无条件终止进程，其他信号进程都有权利忽略。
+
+HUP     1    终端挂断
+INT     2    中断（同 Ctrl + C）
+QUIT    3    退出（同 Ctrl + \）
+KILL    9    强制终止
+TERM   15    终止
+CONT   18    继续（与 STOP 相反，fg/bg 命令）
+STOP   19    暂停（同 Ctrl + Z）
+</code></pre>
+<pre><code class="language-Shell"># 以下发送 KILL 信号的形式等价。当然还有更多的等价形式，在此不一一列举了。
+[user2@pc] kill -s SIGKILL PID
+[user2@pc] kill -s KILL PID
+[user2@pc] kill -n 9 PID
+[user2@pc] kill -9 PID
+
+[user2@pc] sleep 90 &amp;
+[1] 178420
+
+# 终止作业标识符为 1 的作业。
+[user2@pc] kill -9 %1
+
+[user2@pc] jobs -l
+[1]+ 178420 KILLED                  ssh 192.168.1.4
+
+[user2@pc] sleep 90 &amp;
+[1] 181357
+
+# 发送停止信号。
+[user2@pc] kill -s STOP 181357
+
+[user2@pc] jobs -l
+[1]+ 181537 Stopped (signal)        sleep 90
+
+# 发送继续信号。
+[user2@pc] kill -s CONT 181357
+
+[user2@pc] jobs -l
+[1]+ 181537 Running                 sleep 90 &amp;
+</code></pre>
+<h3 id="注意">注意</h3>
+<ul>
+<li>
+<p><code>bash</code>的作业控制命令包括<code>bg fg kill wait disown suspend</code>。</p>
+</li>
+<li>
+<p>该命令是 bash 内建命令，相关的帮助信息请查看<code>help</code>命令。</p>
+</li>
+</ul>
+<h2 id="外部命令">外部命令</h2>
+<h3 id="概要-2">概要</h3>
+<pre><code class="language-Shell">kill [-signal|-s signal|-p] [-q value] [-a] [--] pid|name...
+kill -l [number] | -L
+</code></pre>
+<h3 id="主要用途-2">主要用途</h3>
+<ul>
+<li>
+<p>发送信号到进程（可以为多个）。</p>
+</li>
+<li>
+<p>列出信号。</p>
+</li>
+</ul>
+<h3 id="选项-2">选项</h3>
+<pre><code class="language-Shell">-s, --signal signal    要发送的信号，可能是信号名称或信号对应的数字。
+-l, --list [number]    打印信号名称或转换给定数字到信号名称。信号名称可参考文件（/usr/include/linux/signal.h）。
+-L, --table            和 '-l' 选项类似，但是输出信号名称以及信号对应的数字。
+-a, --all              不要限制“命令名到 pid”的转换为具有与当前进程相同的 UID 的进程。
+-p, --pid              打印目标进程的 PID 而不发送信号。
+--verbose              打印信号以及接收信号的 PID。
+-q, --queue value      使用 sigqueue(3) 而不是 kill(2)。参数 value 是信号对应的数字。
+                           如果接收进程已为此信号安装了处理程序将 SA_SIGINFO 标记为 sigaction(2)，则可以获取
+                           该数据通过 siginfo_t 结构的 si_sigval 字段。
+--help                 显示帮助信息并退出。
+--version              显示版本信息并退出。
+</code></pre>
+<h3 id="参数-2">参数</h3>
+<p>接收信号的进程列表可以是 PID 以及 name 的混合组成。</p>
+<p>PID：每一个 PID 可以是以下四种情况之一：</p>
+<table>
+<thead>
+<tr>
+<th>状态</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>n</td>
+<td>当n大于0时，PID为n的进程接收信号。</td>
+</tr>
+<tr>
+<td>0</td>
+<td>当前进程组中的所有进程均接收信号。</td>
+</tr>
+<tr>
+<td>-1</td>
+<td>PID大于1的所有进程均接收信号。</td>
+</tr>
+<tr>
+<td>-n</td>
+<td>当n大于1时，进程组n中的所有进程接收信号。当给出了一个参数的形式为“-n”，想要让它表示一个进程组，那么必须首先指定一个信号，或参数前必须有一个“--”选项，否则它将被视为发送的信号。</td>
+</tr>
+</tbody>
+</table>
+<p>name：使用此名称调用的所有进程将接收信号。</p>
+<h3 id="例子-2">例子</h3>
+<pre><code class="language-Shell">&gt; sleep 20 &amp;
+
+# 列出对应的 PID。
+&gt; kill -p sleep
+23021
+</code></pre>
+<h3 id="返回值-2">返回值</h3>
+<ul>
+<li>
+<p>0 成功。</p>
+</li>
+<li>
+<p>1 失败。</p>
+</li>
+<li>
+<p>64 部分成功（当指定了多个进程时）。</p>
+</li>
+</ul>
+<h3 id="注意-2">注意</h3>
+<ul>
+<li>
+<p>该命令是<code>GNU coreutils</code>包中的命令，相关的帮助信息请查看<code>man -s 1 kill</code>或<code>info coreutils 'kill invocation'</code>。</p>
+</li>
+<li>
+<p>启动或关闭内建命令请查看<code>enable</code>命令，关于同名优先级的问题请查看<code>builtin</code>命令的例子部分的相关讨论。</p>
+</li>
+<li>
+<p>与<code>kill</code>命令类似的有<code>xkill</code>，<code>pkill</code>,<code>killall</code>等，用于不同的目的和场景。</p>
+</li>
+</ul>
+
+          </div>
+        </article>
+        <div class="next-post">
+          <div class="next">下一篇</div>
+          <a href="https://dev-coco.github.io/post/edquota/">
+            <h3 class="post-title">edquota</h3>
+          </a>
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="gitalk-container"></div>
+      </div>
+      <!-- middle -->
+      <div class="main-container-middle"></div>
+      <!-- right -->
+      <div id="sidebar" class="main-container-right">
+        <div class="id_card i-card">
+          <div class="id_card-avatar" style="background-image: url(https://dev-coco.github.io/images/avatar.png?v=1658778149314)"></div>
+          <h1 class="id_card-title">Raz1ner</h1>
+          <img style="margin-top: 15px;margin-bottom: 10px;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&amp;count_bg=%2310C1F9&amp;title_bg=%23555555&amp;icon=html5.svg&amp;icon_color=%23E7E7E7&amp;title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&amp;edge_flat=false">
+          <p style="text-align: center;">
+            <a href="https://github.com/dev-coco" target="_blank"><img class="social-icon" src="/images/social/GitHub.png"></a>
+            <a href="https://t.me/raz1ner" target="_blank"><img class="social-icon" src="/images/social/Telegram.png"></a>
+            <a href="https://www.youtube.com/channel/UCEgNinV_DEntuv5Dm8Z_JvA" target="_blank"><img class="social-icon" src="/images/social/YouTube.png"></a>
+            <a href="/atom.xml" target="_blank"><img class="social-icon" src="/images/social/RSS.png"></a>
+            <a href="mailto:ruijingle@gmail.com" target="_blank"><img class="social-icon" src="/images/social/Gmail.png"></a>
+          </p>
+          <!-- <h2 class="id_card-description"></h2> -->
+          <!--  -->
+          <div class="id_card-sns">
+            <!-- github -->
+            
+            <!-- twitter -->
+            <!-- weibo -->
+            <!-- facebook -->
+          </div>
+        </div>
+      <!-- toc -->
+      <div class="toc-card i-card ">
+        <div class="toc-title i-card-title">目录</div>
+          <div class="toc-content">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E7%9B%AE%E5%BD%95">目录</a></li>
+<li><a href="#%E5%86%85%E5%BB%BA%E5%91%BD%E4%BB%A4">内建命令</a>
+<ul>
+<li><a href="#%E6%A6%82%E8%A6%81">概要</a></li>
+<li><a href="#%E4%B8%BB%E8%A6%81%E7%94%A8%E9%80%94">主要用途</a></li>
+<li><a href="#%E9%80%89%E9%A1%B9">选项</a></li>
+<li><a href="#%E5%8F%82%E6%95%B0">参数</a></li>
+<li><a href="#%E8%BF%94%E5%9B%9E%E5%80%BC">返回值</a></li>
+<li><a href="#%E4%BE%8B%E5%AD%90">例子</a></li>
+<li><a href="#%E6%B3%A8%E6%84%8F">注意</a></li>
+</ul>
+</li>
+<li><a href="#%E5%A4%96%E9%83%A8%E5%91%BD%E4%BB%A4">外部命令</a>
+<ul>
+<li><a href="#%E6%A6%82%E8%A6%81-2">概要</a></li>
+<li><a href="#%E4%B8%BB%E8%A6%81%E7%94%A8%E9%80%94-2">主要用途</a></li>
+<li><a href="#%E9%80%89%E9%A1%B9-2">选项</a></li>
+<li><a href="#%E5%8F%82%E6%95%B0-2">参数</a></li>
+<li><a href="#%E4%BE%8B%E5%AD%90-2">例子</a></li>
+<li><a href="#%E8%BF%94%E5%9B%9E%E5%80%BC-2">返回值</a></li>
+<li><a href="#%E6%B3%A8%E6%84%8F-2">注意</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+          <script>
+            function locateCatelogList() {
+              /*获取文章目录集合,可通过:header过滤器*/
+              var alis = $('.post-content :header');
+              /*获取侧边栏目录列表集合**/
+              var sidebar_alis = $('.markdownIt-TOC a');
+              /*获取滚动条到顶部的距离*/
+              var scroll_height = $(window).scrollTop();
+              for (var i = 0; i < alis.length; i++) {
+                /*获取锚点集合中的元素分别到顶点的距离*/
+                var a_height = $(alis[i]).offset().top;
+                if (a_height < scroll_height) {
+                  /*高亮显示*/
+                  sidebar_alis.removeClass('on');
+                  $(sidebar_alis[i]).addClass('on');
+                }
+              }
+            }
+            $(function() {
+              /*绑定滚动事件 */
+              $(window).bind('scroll', locateCatelogList);
+              });
+          </script>
+        </div>
+      <div class="notice-card i-card ">
+        <div class="notice-title i-card-title">公告</div>
+        <div class="notice-content">博客新增 Telegram 频道：<a href="https://t.me/raz1ner" target="_blank" style="color: blue">瑞景乐的博客</a>，欢迎关注，及时收到最新文章推送。</div>
+      </div>
+      <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
+        <div class="notice-content">
+          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/google-script/">Google 脚本</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/security/">安全</a>
+          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/excel/">Excel</a>
+          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/javascript/">Javascript</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="site-footer">
+    <span>Copyright © 2020-2022 Raz1ner - All Rights Reserved.</span> | <a class="rss" href="https://dev-coco.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+  <script>
+    $('#sidebar').stickySidebar({
+    topSpacing: 80,
+    // bottomSpacing: 60
+    });
+  </script>
+  
+</body>
+</html>
