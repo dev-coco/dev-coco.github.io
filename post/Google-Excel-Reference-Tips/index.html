@@ -4,9 +4,9 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Google Excel 单元格引用小技巧 | Raz1ner</title>
-  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1658778149314">
-  <link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
-  <script src="https://dev-coco.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.ico?v=1658836203061">
+  <link rel="stylesheet" href="http://localhost:4000/styles/main.css">
+  <script src="http://localhost:4000/media/js/jquery.sticky-sidebar.min.js"></script>
 <script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 <body>
@@ -14,8 +14,8 @@
     <div class="header">
       <div class="nav">
         <div class="logo">
-          <a href="https://dev-coco.github.io">
-            <img class="avatar" src="https://dev-coco.github.io/images/avatar.png?v=1658778149314" alt="">
+          <a href="http://localhost:4000">
+            <img class="avatar" src="http://localhost:4000/images/avatar.png?v=1658836203061" alt="">
           </a>
           <div class="site-title">
             <h1>Raz1ner</h1>
@@ -44,7 +44,7 @@
             </li>
           </ul>
         </div>
-        <form id="gridea-search-form" action="https://dev-coco.github.io/search/" class="search">
+        <form id="gridea-search-form" action="http://localhost:4000/search/" class="search">
           <input type="search" name="q" class="search-box">
           <span class="search-button">
             <span class="search-icon"></span>
@@ -65,46 +65,46 @@
         <h2 class="post-title">Google Excel 单元格引用小技巧</h2>
         <div class="post-info">
           <time class="post-time">2022-05-10 / 3 min read</time>
-            <a href="https://dev-coco.github.io/tag/excel/" class="post-tag i-tag i-tag-other_2">#Excel</a>
+            <a href="http://localhost:4000/tag/excel/" class="post-tag i-tag i-tag-other_1">#Excel</a>
         </div>
           <div class="post-content">
             <p>两个小技巧，防止加行导致的引用偏移。</p>
 <!-- more -->
 <p>在引用单元格的时候，经常会遇到在引用的位置增加行，导致引用的位置偏移，没有达到预期的效果。</p>
 <p>例如使用 <a href="https://dev-coco.github.io/Excel/#Function/Operations/SUM">SUM</a> 函数计算 A2 到 A 列的合计。<br>
-<img src="https://dev-coco.github.io/post-images/1652421168130.png" alt="" loading="lazy"><br>
+<img src="http://localhost:4000/post-images/1652421168130.png" alt="" loading="lazy"><br>
 但是在第一行的下面新增一行的时候，原先引用 A2:A 的位置就会被移动到 A3:A ，这样就会导致新增加的行是无法被 SUM 函数计算。<br>
-<img src="https://dev-coco.github.io/post-images/1652421174739.png" alt="" loading="lazy"></p>
+<img src="http://localhost:4000/post-images/1652421174739.png" alt="" loading="lazy"></p>
 <h2 id="解决方法一">解决方法一</h2>
 <p>使用 <a href="https://dev-coco.github.io/Excel/#Function/Find-Filter/INDIRECT">INDIRECT</a> 函数，以字符串的形式引用单元格。将原先 A2:A 改为 INDIRECT(&quot;A2:A&quot;)，因为是文本内容，所以无论怎么增加行都不会使引用的位置偏移。<br>
-<img src="https://dev-coco.github.io/post-images/1652421184985.png" alt="" loading="lazy"><br>
+<img src="http://localhost:4000/post-images/1652421184985.png" alt="" loading="lazy"><br>
 但是这个方式也有一个弊端，在横向移动的时候，引用的列也不会改变。<br>
-<img src="https://dev-coco.github.io/post-images/1652421213295.png" alt="" loading="lazy"></p>
+<img src="http://localhost:4000/post-images/1652421213295.png" alt="" loading="lazy"></p>
 <h2 id="解决方法二">解决方法二</h2>
 <p>在使用 INDIRECT 函数的基础上进行改进。</p>
 <pre><code>=SUM(INDIRECT(ADDRESS(ROW() + 1, COLUMN())&amp;&quot;:&quot;&amp;REGEXREPLACE(ADDRESS(ROW(), COLUMN(), 2), &quot;\$.+&quot;, &quot;&quot;)))
 </code></pre>
 <p>先来拆分出来理解一下这个函数运行的过程。<br>
 首先是 ADDRESS(ROW() + 1, COLUMN())，使用 ADDRESS 函数配合 <a href="https://dev-coco.github.io/Excel/#Function/Others/ROW">ROW</a> 和 <a href="https://dev-coco.github.io/Excel/#Function/Others/COLUMN">COLUMN</a> 函数获取单元格自身的位置，不过要在 ROW 的位置加上 1，因为预期的效果是引用 A2:A。那么现在已经用 ADDRESS 函数获得了 $A$2，虽然是绝对引用，但并不会影响结果。<br>
-<img src="https://dev-coco.github.io/post-images/1652422511507.png" alt="" loading="lazy"><br>
+<img src="http://localhost:4000/post-images/1652422511507.png" alt="" loading="lazy"><br>
 再使用 <a href="https://dev-coco.github.io/Excel/#Function/Others/ADDRESS">ADDRESS</a> 函数用同样的方法，获取单元格自身的位置，不过在引用模式的参数设置 2，绝对引用行，这样的目的是为了接下来用正则表达式更方便的筛选。这个时候得到了一个 A$1，但是我们需要的是 A 列。<br>
-<img src="https://dev-coco.github.io/post-images/1652422525082.png" alt="" loading="lazy"><br>
+<img src="http://localhost:4000/post-images/1652422525082.png" alt="" loading="lazy"><br>
 使用 <a href="https://dev-coco.github.io/Excel/#Function/Text-Processing/REGEXREPLACE">REGEXREPLACE</a> 函数，用正则表达式进行替换，正则表达式语法 <code>\$.+</code>，获取从 $ 符号往后的所有字符，然后替换成空值。这样就得到了 A 列。<br>
-<img src="https://dev-coco.github.io/post-images/1652422533235.png" alt="" loading="lazy"><br>
+<img src="http://localhost:4000/post-images/1652422533235.png" alt="" loading="lazy"><br>
 然后将前面的 $A$2 和 A 列用 &amp;（与号）拼接在一起。</p>
 <pre><code>ADDRESS(ROW() + 1, COLUMN())&amp;&quot;:&quot;&amp;REGEXREPLACE(ADDRESS(ROW(), COLUMN(), 2), &quot;\$.+&quot;, &quot;&quot;)
 </code></pre>
 <p>这样就得到了一个引用的范围，$A$2:A。<br>
-<img src="https://dev-coco.github.io/post-images/1652422595665.png" alt="" loading="lazy"><br>
+<img src="http://localhost:4000/post-images/1652422595665.png" alt="" loading="lazy"><br>
 再使用 INDIRECT 函数引用这个范围。<br>
-<img src="https://dev-coco.github.io/post-images/1652421469925.png" alt="" loading="lazy"><br>
+<img src="http://localhost:4000/post-images/1652421469925.png" alt="" loading="lazy"><br>
 这样即使在下面添加行，引用的范围也不会偏移，同时横向移动的时候，引用的列也会自动改变成当前的列。</p>
 
           </div>
         </article>
         <div class="next-post">
           <div class="next">下一篇</div>
-          <a href="https://dev-coco.github.io/post/Bitdefender-Free-Trial/">
+          <a href="http://localhost:4000/post/Bitdefender-Free-Trial/">
             <h3 class="post-title">Bitdefender 免费试用活动</h3>
           </a>
         </div>
@@ -116,7 +116,7 @@
       <!-- right -->
       <div id="sidebar" class="main-container-right">
         <div class="id_card i-card">
-          <div class="id_card-avatar" style="background-image: url(https://dev-coco.github.io/images/avatar.png?v=1658778149314)"></div>
+          <div class="id_card-avatar" style="background-image: url(http://localhost:4000/images/avatar.png?v=1658836203061)"></div>
           <h1 class="id_card-title">Raz1ner</h1>
           <img style="margin-top: 15px;margin-bottom: 10px;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&amp;count_bg=%2310C1F9&amp;title_bg=%23555555&amp;icon=html5.svg&amp;icon_color=%23E7E7E7&amp;title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&amp;edge_flat=false">
           <p style="text-align: center;">
@@ -180,25 +180,26 @@
       </div>
       <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
         <div class="notice-content">
-          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/google-script/">Google 脚本</a>
-          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/security/">安全</a>
-          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/shell/">Shell</a>
-          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/macos/">macOS</a>
-          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/excel/">Excel</a>
-          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/other/">其它</a>
-          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/javascript/">Javascript</a>
-          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/software/">软件</a>
-          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
-          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
-          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/windows/">Windows</a>
-          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/ios/">iOS</a>
-          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="http://localhost:4000/tag/sololearn/">Sololearn</a>
+          <a class="tags-tag i-tag i-tag-error" href="http://localhost:4000/tag/google-script/">Google 脚本</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="http://localhost:4000/tag/security/">安全</a>
+          <a class="tags-tag i-tag i-tag-info" href="http://localhost:4000/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-banana" href="http://localhost:4000/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-" href="http://localhost:4000/tag/excel/">Excel</a>
+          <a class="tags-tag i-tag i-tag-banana" href="http://localhost:4000/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="http://localhost:4000/tag/javascript/">Javascript</a>
+          <a class="tags-tag i-tag i-tag-primary" href="http://localhost:4000/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-success" href="http://localhost:4000/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="http://localhost:4000/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="http://localhost:4000/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-success" href="http://localhost:4000/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-error" href="http://localhost:4000/tag/linux-command/">Linux命令</a>
         </div>
       </div>
       </div>
     </div>
     <div class="site-footer">
-    <span>Copyright © 2020-2022 Raz1ner - All Rights Reserved.</span> | <a class="rss" href="https://dev-coco.github.io/atom.xml" target="_blank">RSS</a>
+    <span>Copyright © 2020-2022 Raz1ner - All Rights Reserved.</span> | <a class="rss" href="http://localhost:4000/atom.xml" target="_blank">RSS</a>
     </div>
   </div>
   <script>
