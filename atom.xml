@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2022-07-27T00:46:03.322Z</updated>
+    <updated>2022-07-27T10:46:51.525Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
@@ -10,14 +10,14 @@
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, Raz1ner</rights>
     <entry>
-        <title type="html"><![CDATA[Sololearn HTML course Challenges answers]]></title>
-        <id>https://dev-coco.github.io/post/Sololearn-HTML-Course-Challenges-Answers/</id>
-        <link href="https://dev-coco.github.io/post/Sololearn-HTML-Course-Challenges-Answers/">
+        <title type="html"><![CDATA[YouTube 视频数据分析]]></title>
+        <id>https://dev-coco.github.io/post/YouTube-Analyze/</id>
+        <link href="https://dev-coco.github.io/post/YouTube-Analyze/">
         </link>
-        <updated>2022-07-27T12:29:01.000Z</updated>
-        <summary type="html"><![CDATA[<p>Sololearn HTML course Challenges answers</p>
+        <updated>2022-07-27T10:43:47.000Z</updated>
+        <summary type="html"><![CDATA[<p>查询视频的观看次数、点赞次数、评论次数、视频标题、上传日期、视频时长。</p>
 ]]></summary>
-        <content type="html"><![CDATA[<p>Sololearn HTML course Challenges answers</p>
+        <content type="html"><![CDATA[<p>查询视频的观看次数、点赞次数、评论次数、视频标题、上传日期、视频时长。</p>
 ]]></content>
     </entry>
     <entry>
@@ -51,6 +51,17 @@
         <summary type="html"><![CDATA[<p>Sololearn HTML course Overview answers</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>Sololearn HTML course Overview answers</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Sololearn HTML course Challenges answers]]></title>
+        <id>https://dev-coco.github.io/post/Sololearn-HTML-Course-Challenges-Answers/</id>
+        <link href="https://dev-coco.github.io/post/Sololearn-HTML-Course-Challenges-Answers/">
+        </link>
+        <updated>2022-07-26T22:29:01.000Z</updated>
+        <summary type="html"><![CDATA[<p>Sololearn HTML course Challenges answers</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Sololearn HTML course Challenges answers</p>
 ]]></content>
     </entry>
     <entry>
@@ -161,17 +172,6 @@
         <summary type="html"><![CDATA[<p>❄️ 为你的夏日带去清凉！</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>❄️ 为你的夏日带去清凉！</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[初识数组]]></title>
-        <id>https://dev-coco.github.io/post/Understand-Array/</id>
-        <link href="https://dev-coco.github.io/post/Understand-Array/">
-        </link>
-        <updated>2022-07-05T16:32:02.000Z</updated>
-        <summary type="html"><![CDATA[<p>数组可以包含任意数据类型，并且通过索引来获取元素。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>数组可以包含任意数据类型，并且通过索引来获取元素。</p>
 ]]></content>
     </entry>
 </feed>
