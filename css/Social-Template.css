@@ -85,43 +85,43 @@ a {
 }
 /* Twitter */
 .twitter {
-	background: #1D9BF0
+  background: #1D9BF0
 }
 /* Pinterest */
 .pinterest {
-	background: #E60023
+  background: #E60023
 }
 /* LinkedIn */
 .linkedin {
-	background: #0A66C2
+  background: #0A66C2
 }
 /* Skype */
 .skype {
-	background: #009EDC
+  background: #009EDC
 }
 /* Tumblr */
 .tumblr {
-	background: #35465C
+  background: #35465C
 }
 /* Flickr */
 .flickr {
-	background: #FF0084;
+  background: #FF0084;
 }
 /* YouTube */
 .youtube {
-	background: #FF0000
+  background: #FF0000
 }
 /* Instagram */
 .instagram {
-	background: radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%), radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%), radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent), linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
+  background: radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%), radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%), radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent), linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
 }
 /* OK */
 .odnoklassniki {
-	background: #ED812B
+  background: #ED812B
 }
 /* Reddit */
 .reddit-alien {
-	background: #FF4500
+  background: #FF4500
 }
 /* WhatsApp */
 .whatsapp {
@@ -129,11 +129,11 @@ a {
 }
 /* Telegram */
 .telegram {
-	background: #27A7E7
+  background: #27A7E7
 }
 /* VK */
 .vk {
-	background: #4C75A3
+  background: #4C75A3
 }
 /* Messenger */
 .facebook-messenger {
@@ -141,22 +141,22 @@ a {
 }
 /* Website */
 .globe {
-	background: #F16529
+  background: #F16529
 }
 /* LINE */
 .line {
-	background: #00B900
+  background: #00B900
 }
 /* App Store */
 .app-store-ios {
-	background: linear-gradient(#1bd0ff, #1e67f1);
+  background: linear-gradient(#1bd0ff, #1e67f1);
 }
 /* Android */
 .android {
-	background: #32DE84
+  background: #32DE84
 }
 /* Snapchat */
 .snapchat {
   color: black;
-	background: #FFFC00
+  background: #FFFC00
 }
