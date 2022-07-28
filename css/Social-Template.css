@@ -80,83 +80,83 @@ a {
   text-decoration: none;
 }
 /* Facebook */
-.facebook {
+.btn-icon .facebook {
   background: linear-gradient(#17A9FD, #0165E1);
 }
 /* Twitter */
-.twitter {
+.btn-icon .twitter {
   background: #1D9BF0
 }
 /* Pinterest */
-.pinterest {
+.btn-icon .pinterest {
   background: #E60023
 }
 /* LinkedIn */
-.linkedin {
+.btn-icon .linkedin {
   background: #0A66C2
 }
 /* Skype */
-.skype {
+.btn-icon .skype {
   background: #009EDC
 }
 /* Tumblr */
-.tumblr {
+.btn-icon .tumblr {
   background: #35465C
 }
 /* Flickr */
-.flickr {
+.btn-icon .flickr {
   background: #FF0084;
 }
 /* YouTube */
-.youtube {
+.btn-icon .youtube {
   background: #FF0000
 }
 /* Instagram */
-.instagram {
+.btn-icon .instagram {
   background: radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%), radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%), radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent), linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
 }
 /* OK */
-.odnoklassniki {
+.btn-icon .odnoklassniki {
   background: #ED812B
 }
 /* Reddit */
-.reddit-alien {
+.btn-icon .reddit-alien {
   background: #FF4500
 }
 /* WhatsApp */
-.whatsapp {
+.btn-icon .whatsapp {
   background: linear-gradient(#5FFC7B, #28D146);
 }
 /* Telegram */
-.telegram {
+.btn-icon .telegram {
   background: #27A7E7
 }
 /* VK */
-.vk {
+.btn-icon .vk {
   background: #4C75A3
 }
 /* Messenger */
-.facebook-messenger {
+.btn-icon .facebook-messenger {
   background: linear-gradient(to top right, #0695FF, #A334FA, #FF6968);
 }
 /* Website */
-.globe {
+.btn-icon .globe {
   background: #F16529
 }
 /* LINE */
-.line {
+.btn-icon .line {
   background: #00B900
 }
 /* App Store */
-.app-store-ios {
+.btn-icon .app-store-ios {
   background: linear-gradient(#1bd0ff, #1e67f1);
 }
 /* Android */
-.android {
+.btn-icon .android {
   background: #32DE84
 }
 /* Snapchat */
-.snapchat {
+.btn-icon .snapchat {
   color: black;
   background: #FFFC00
 }
