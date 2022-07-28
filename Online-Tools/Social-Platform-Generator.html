@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <title>社交平台生成器</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="keywords" content="dev-coco, 社交平台, 社交平台生成器">
+  <meta name="robots" content="index,follow">
+  <meta name="description" content="社交平台生成器。">
+  <link rel="icon" href="/images/avatar.png">
+  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="/css/Social-Template.css">
+  <script data-ad-client="ca-pub-6960947409660270" async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+  <style>
+    .row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-right: -15px;
+      margin: 0 auto;
+    }
+    .list-group {
+      display: flex;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      padding-left: 0;
+      margin-bottom: 0
+    }
+    .list-group-item {
+      position: relative;
+      display: block;
+      padding: 12px 20px;
+      background-color: #fff;
+      width: 300px;
+      margin-bottom: 5px;
+    }
+    i {
+      float: left;
+      padding: 7px;
+      position: relative;
+      width: 25px;
+      font-size: 25px;
+      color: #fff;
+      text-align: center;
+      background: #212121;
+    }
+    input:focus {
+      outline: none
+    }
+    input {
+      height: 35px;
+      font-size: 18px;
+      border-radius: 0px;
+      border: 1px solid #ccc;
+      width: 250px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 style="text-align:left;"><img class="logo" alt="dev-coco" src="/images/avatar.png">
+      <span> Raz1ner</span>
+      <img
+        src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&count_bg=%2310C1F9&title_bg=%23555555&icon=html5.svg&icon_color=%23E7E7E7&title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&edge_flat=false"
+        style="float:right;width:180px;">
+    </h1>
+    <div class="menu">
+      <a href="/">首页</a>
+      <a href="/Featured-Software.html">软件</a>
+      <a href="/Online-Tools">在线工具</a>
+      <a href="/post/Linux-Command">Linux命令</a>
+      <a href="/Excel/">Excel教程</a>
+      <a href="/post/Terms-and-Privacy">隐私与条款</a>
+      <a target="_blank" href="https://github.com/dev-coco">Github</a>
+    </div>
+    <h1>社交平台生成器</h1>
+    <p style="text-align: center;" id="download"></p>
+    <button class="button blue" style="width:150px;font-size:18px;margin:0 auto 10px auto;display:block" onclick="create()">生成</button>
+    <div class="row">
+      <div id="side-left" class="list-group btn-icon">
+        <div class="list-group-item pinterest">
+          <i class="fa-brands fa-pinterest"></i>
+          <input id="pinterest" type="text">
+        </div>
+        <div class="list-group-item youtube">
+          <i class="fa-brands fa-youtube"></i>
+          <input id="youtube" type="text">
+        </div>
+        <div class="list-group-item reddit-alien">
+          <i class="fa-brands fa-reddit-alien"></i>
+          <input id="reddit-alien" type="text">
+        </div>
+        <div class="list-group-item globe">
+          <i class="fa-solid fa-globe"></i>
+          <input id="globe" type="text">
+        </div>
+        <div class="list-group-item odnoklassniki">
+          <i class="fa-brands fa-odnoklassniki"></i>
+          <input id="odnoklassniki" type="text">
+        </div>
+        <div class="list-group-item snapchat">
+          <i class="fa-brands fa-snapchat"></i>
+          <input id="snapchat" type="text">
+        </div>
+        <div class="list-group-item whatsapp">
+          <i class="fa-brands fa-whatsapp"></i>
+          <input id="whatsapp" type="text">
+        </div>
+        <div class="list-group-item android">
+          <i class="fa-brands fa-android"></i>
+          <input id="android" type="text">
+        </div>
+        <div class="list-group-item line">
+          <i class="fa-brands fa-line"></i>
+          <input id="line" type="text">
+        </div>
+        <div class="list-group-item app-store-ios">
+          <i class="fa-brands fa-app-store-ios"></i>
+          <input id="app-store-ios" type="text">
+        </div>
+        <div class="list-group-item telegram">
+          <i class="fa-brands fa-telegram"></i>
+          <input id="telegram" type="text">
+        </div>
+        <div class="list-group-item skype">
+          <i class="fa-brands fa-skype"></i>
+          <input id="skype" type="text">
+        </div>
+        <div class="list-group-item twitter">
+          <i class="fa-brands fa-twitter"></i>
+          <input id="twitter" type="text">
+        </div>
+        <div class="list-group-item facebook">
+          <i class="fa-brands fa-facebook"></i>
+          <input id="facebook" type="text">
+        </div>
+        <div class="list-group-item linkedin">
+          <i class="fa-brands fa-linkedin"></i>
+          <input id="linkedin" type="text">
+        </div>
+        <div class="list-group-item vk">
+          <i class="fa-brands fa-vk"></i>
+          <input id="vk" type="text">
+        </div>
+        <div class="list-group-item facebook-messenger">
+          <i class="fa-brands fa-facebook-messenger"></i>
+          <input id="facebook-messenger" type="text">
+        </div>
+        <div class="list-group-item instagram">
+          <i class="fa-brands fa-instagram"></i>
+          <input id="instagram" type="text">
+        </div>
+        <div class="list-group-item flickr">
+          <i class="fa-brands fa-flickr"></i>
+          <input id="flickr" type="text">
+        </div>
+        <div class="list-group-item tumblr">
+          <i class="fa-brands fa-tumblr"></i>
+          <input id="tumblr" type="text">
+        </div>
+      </div>
+
+      <div id="side-right" class="list-group btn-icon">
+        <div class="list-group-item image">
+          <i class="fa-solid fa-image"></i>
+          <input id="image" type="text">
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js"></script>
+  <script>
+    const sideLeft = document.getElementById('side-left')
+    const sideRight = document.getElementById('side-right')
+    new Sortable(sideLeft, {
+      group: 'shared', // set both lists to same group
+      animation: 150,
+      ghostClass: 'blue-background-class'
+    });
+    new Sortable(sideRight, {
+      group: 'shared',
+      animation: 150
+    });
+  </script>
+  <script src="/js/Social-Platform-Generator.js"></script>
+</body>
+</html>
