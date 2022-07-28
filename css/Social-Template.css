@@ -1,38 +1,38 @@
-body {
+.social {
   text-align: center;
   margin-right: auto;
   margin-left: auto;
 }
 @media (min-width: 576px) {
-  body {
+  .social {
 max-width: 540px;
   }
 }
 @media (min-width: 768px) {
-  body {
+  .social {
 max-width: 720px;
   }
 }
 @media (min-width: 992px) {
-  body {
+  .social {
 max-width: 960px;
   }
 }
 @media (min-width: 1200px) {
-  body {
+  .social {
 max-width: 1140px;
   }
 }
 @media (min-width: 1400px) {
-  body {
+  .social {
 max-width: 1320px;
   }
 }
-.container {
-  position:relative;
-  font-size:1rem;
-  text-align:center;
-  overflow:hidden;
+#container {
+  position: relative;
+  font-size: 1rem;
+  text-align: center;
+  overflow: hidden;
 }
 .btn {
   font-size: .8em;
@@ -72,7 +72,7 @@ max-width: 1320px;
   width: 100%;
   border-radius: 0 5px 5px 0
 }
-.container,
+#container,
 .btn-icon {
   display: flex;
 }
@@ -80,83 +80,83 @@ a {
   text-decoration: none;
 }
 /* Facebook */
-.btn-facebook > span {
+.facebook {
   background: linear-gradient(#17A9FD, #0165E1);
 }
 /* Twitter */
-.btn-twitter > span {
+.twitter {
 	background: #1D9BF0
 }
 /* Pinterest */
-.btn-pinterest > span {
+.pinterest {
 	background: #E60023
 }
 /* LinkedIn */
-.btn-linkedin > span {
+.linkedin {
 	background: #0A66C2
 }
 /* Skype */
-.btn-skype > span {
+.skype {
 	background: #009EDC
 }
 /* Tumblr */
-.btn-tumblr > span {
+.tumblr {
 	background: #35465C
 }
 /* Flickr */
-.btn-flickr > span {
+.flickr {
 	background: #FF0084;
 }
 /* YouTube */
-.btn-youtube > span {
+.youtube {
 	background: #FF0000
 }
 /* Instagram */
-.btn-instagram > span {
+.instagram {
 	background: radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%), radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%), radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent), linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
 }
 /* OK */
-.btn-odnoklassniki>span {
+.odnoklassniki {
 	background: #ED812B
 }
 /* Reddit */
-.btn-reddit-alien > span {
+.reddit-alien {
 	background: #FF4500
 }
 /* WhatsApp */
-.btn-whatsapp > span {
+.whatsapp {
   background: linear-gradient(#5FFC7B, #28D146);
 }
 /* Telegram */
-.btn-telegram>span {
+.telegram {
 	background: #27A7E7
 }
 /* VK */
-.btn-vk > span {
+.vk {
 	background: #4C75A3
 }
 /* Messenger */
-.btn-facebook-messenger > span {
+.facebook-messenger {
   background: linear-gradient(to top right, #0695FF, #A334FA, #FF6968);
 }
 /* Website */
-.btn-globe > span {
+.globe {
 	background: #F16529
 }
 /* LINE */
-.btn-line > span {
+.line {
 	background: #00B900
 }
 /* App Store */
-.btn-app-store-ios > span {
+.app-store-ios {
 	background: linear-gradient(#1bd0ff, #1e67f1);
 }
 /* Android */
-.btn-android > span {
+.android {
 	background: #32DE84
 }
 /* Snapchat */
-.btn-snapchat > span {
+.snapchat {
   color: black;
 	background: #FFFC00
 }
