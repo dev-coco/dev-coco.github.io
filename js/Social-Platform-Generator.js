@@ -7,6 +7,7 @@ function create () {
   for (const item of getItems) {
     const itemName = item.classList[1]
     const url = document.querySelector(`#${itemName}`).value
+    console.log(itemName, url)
     if (itemName === 'image') {
       image = `<img src="${url}" alt="" style="width:100%">`
     } else {
@@ -58,37 +59,14 @@ function generateCode (type, value) {
       return `<a class="btn btn-icon btn-android" href="${value}"><i class="fa-brands fa-android"></i><span class="android">Andriod App</span></a>`
     case 'snapchat':
       return `<a class="btn btn-icon btn-snapchat" href="${value}"><i class="fa-brands fa-snapchat"></i><span class="snapchat">Snapchat</span></a>`
+    case 'none':
+      return `<a class="btn btn-icon btn-none" style="visibility: hidden" href=""><i class="fa-brands fa-none"></i><span class="none">none</span></a>`
     default:
       alert('出现错误')
   }
 }
 
-const source = (customCode, image) => `<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>Social Template</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex, nofollow">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
-  <link rel="stylesheet" href="https://dev-coco.github.io/css/Social-Template.css">
-</head>
-<body class="social">
-  <header>
-    ${image}
-  </header>
-  <main>
-    <h1></h1>
-    <div id="container">
-      <div style="columns: 2;margin: 0 auto">
-      ${customCode}
-    </div>
-  </div>
-  </main>
-  <script src="https://dev-coco.github.io/js/Social-Template.js"></script>
-</body>
-</html>
-`
+const source = (customCode, image) => `<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Social Template</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"><link rel="stylesheet" href="https://dev-coco.github.io/css/Social-Template.css"></head><body class="social"><header>${image}</header><main><h1></h1><div id="container"><div style="columns: 2;margin: 0 auto">${customCode}</div></div></main><script src="https://dev-coco.github.io/js/Social-Template.js"></script></body></html>`
 
 /**
  * @description HTML 实体转换
