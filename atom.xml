@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2022-07-28T19:34:14.004Z</updated>
+    <updated>2022-07-29T13:12:40.433Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[Google 脚本 读写内容]]></title>
+        <id>https://dev-coco.github.io/post/Google-Script-Read-Write-Value/</id>
+        <link href="https://dev-coco.github.io/post/Google-Script-Read-Write-Value/">
+        </link>
+        <updated>2022-07-30T01:10:24.000Z</updated>
+        <summary type="html"><![CDATA[<p>读取和写入指定单元格的内容。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>读取和写入指定单元格的内容。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Google 脚本 获取行和列数]]></title>
         <id>https://dev-coco.github.io/post/Google-Script-Get-Row-Column/</id>
@@ -161,17 +172,6 @@
         <summary type="html"><![CDATA[<p>Google 脚本的 SpreadsheetApp 服务可以读取、写入、创建表格。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>Google 脚本的 SpreadsheetApp 服务可以读取、写入、创建表格。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Google 脚本 界面介绍]]></title>
-        <id>https://dev-coco.github.io/post/Google-Script-Interface-Introduction/</id>
-        <link href="https://dev-coco.github.io/post/Google-Script-Interface-Introduction/">
-        </link>
-        <updated>2022-07-10T08:02:15.000Z</updated>
-        <summary type="html"><![CDATA[<p>基本的界面介绍。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>基本的界面介绍。</p>
 ]]></content>
     </entry>
 </feed>
