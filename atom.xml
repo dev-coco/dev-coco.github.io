@@ -2,13 +2,35 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2022-07-29T13:12:40.433Z</updated>
+    <updated>2022-08-01T18:59:37.695Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[Sololearn CSS course Working with Text answers]]></title>
+        <id>https://dev-coco.github.io/post/Sololearn-CSS-Course-Working-with-Text-Answers/</id>
+        <link href="https://dev-coco.github.io/post/Sololearn-CSS-Course-Working-with-Text-Answers/">
+        </link>
+        <updated>2022-08-01T06:59:27.000Z</updated>
+        <summary type="html"><![CDATA[<p>Sololearn CSS course Working with Text answers</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Sololearn CSS course Working with Text answers</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Sololearn CSS course The Basics answers]]></title>
+        <id>https://dev-coco.github.io/post/Sololearn-CSS-Sourse-The-Basics-Answers/</id>
+        <link href="https://dev-coco.github.io/post/Sololearn-CSS-Sourse-The-Basics-Answers/">
+        </link>
+        <updated>2022-08-01T06:58:40.000Z</updated>
+        <summary type="html"><![CDATA[<p>Sololearn CSS course The Basics answers</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Sololearn CSS course The Basics answers</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Google 脚本 读写内容]]></title>
         <id>https://dev-coco.github.io/post/Google-Script-Read-Write-Value/</id>
@@ -150,28 +172,6 @@
         <summary type="html"><![CDATA[<p>获取工作表的一些信息。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>获取工作表的一些信息。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Google 脚本 读取工作表]]></title>
-        <id>https://dev-coco.github.io/post/Google-Script-Read-Sheet/</id>
-        <link href="https://dev-coco.github.io/post/Google-Script-Read-Sheet/">
-        </link>
-        <updated>2022-07-13T15:18:37.000Z</updated>
-        <summary type="html"><![CDATA[<p>使用一些不同的方法获取工作表，然后才可以进行一些其它的操作。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>使用一些不同的方法获取工作表，然后才可以进行一些其它的操作。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Google 脚本 读取电子表格]]></title>
-        <id>https://dev-coco.github.io/post/Google-Script-Read-Spreadsheet/</id>
-        <link href="https://dev-coco.github.io/post/Google-Script-Read-Spreadsheet/">
-        </link>
-        <updated>2022-07-12T11:53:03.000Z</updated>
-        <summary type="html"><![CDATA[<p>Google 脚本的 SpreadsheetApp 服务可以读取、写入、创建表格。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>Google 脚本的 SpreadsheetApp 服务可以读取、写入、创建表格。</p>
 ]]></content>
     </entry>
 </feed>
