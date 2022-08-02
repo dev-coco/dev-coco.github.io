@@ -2,13 +2,35 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2022-08-01T18:59:37.695Z</updated>
+    <updated>2022-08-02T12:46:22.351Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[Sololearn CSS course Positioning and Layout answers]]></title>
+        <id>https://dev-coco.github.io/post/Sololearn-CSS-Course-Positioning-and-Layout-Answers/</id>
+        <link href="https://dev-coco.github.io/post/Sololearn-CSS-Course-Positioning-and-Layout-Answers/">
+        </link>
+        <updated>2022-08-02T00:45:55.000Z</updated>
+        <summary type="html"><![CDATA[<p>Sololearn CSS course Positioning and Layout answers</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Sololearn CSS course Positioning and Layout answers</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Sololearn CSS course Properties answers]]></title>
+        <id>https://dev-coco.github.io/post/Sololearn-CSS-Course-Properties-Answers/</id>
+        <link href="https://dev-coco.github.io/post/Sololearn-CSS-Course-Properties-Answers/">
+        </link>
+        <updated>2022-08-02T00:45:16.000Z</updated>
+        <summary type="html"><![CDATA[<p>Sololearn CSS course Properties answers</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Sololearn CSS course Properties answers</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Sololearn CSS course Working with Text answers]]></title>
         <id>https://dev-coco.github.io/post/Sololearn-CSS-Course-Working-with-Text-Answers/</id>
@@ -150,28 +172,6 @@
         <summary type="html"><![CDATA[<p>使用指纹快速授权，节省输入密码的时间。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>使用指纹快速授权，节省输入密码的时间。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Google 脚本 操作表格]]></title>
-        <id>https://dev-coco.github.io/post/Google-Script-Operate-Excel/</id>
-        <link href="https://dev-coco.github.io/post/Google-Script-Operate-Excel/">
-        </link>
-        <updated>2022-07-17T05:00:27.000Z</updated>
-        <summary type="html"><![CDATA[<p>通过脚本对表格进行操作。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>通过脚本对表格进行操作。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Google 脚本 工作表相关]]></title>
-        <id>https://dev-coco.github.io/post/Google-Script-Sheet-Related/</id>
-        <link href="https://dev-coco.github.io/post/Google-Script-Sheet-Related/">
-        </link>
-        <updated>2022-07-15T10:04:11.000Z</updated>
-        <summary type="html"><![CDATA[<p>获取工作表的一些信息。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>获取工作表的一些信息。</p>
 ]]></content>
     </entry>
 </feed>
