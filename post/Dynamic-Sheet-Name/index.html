@@ -4,9 +4,9 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Google Excel 动态获取表格名称 | Raz1ner</title>
-  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1659444358209">
-  <link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
-  <script src="https://dev-coco.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.ico?v=1659462813118">
+  <link rel="stylesheet" href="http://localhost:4000/styles/main.css">
+  <script src="http://localhost:4000/media/js/jquery.sticky-sidebar.min.js"></script>
 <script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 <body>
@@ -14,8 +14,8 @@
     <div class="header">
       <div class="nav">
         <div class="logo">
-          <a href="https://dev-coco.github.io">
-            <img class="avatar" src="https://dev-coco.github.io/images/avatar.png?v=1659444358209" alt="">
+          <a href="http://localhost:4000">
+            <img class="avatar" src="http://localhost:4000/images/avatar.png?v=1659462813118" alt="">
           </a>
           <div class="site-title">
             <h1>Raz1ner</h1>
@@ -44,7 +44,7 @@
             </li>
           </ul>
         </div>
-        <form id="gridea-search-form" action="https://dev-coco.github.io/search/" class="search">
+        <form id="gridea-search-form" action="http://localhost:4000/search/" class="search">
           <input type="search" name="q" class="search-box">
           <span class="search-button">
             <span class="search-icon"></span>
@@ -65,7 +65,7 @@
         <h2 class="post-title">Google Excel 动态获取表格名称</h2>
         <div class="post-info">
           <time class="post-time">2022-06-20 / 2 min read</time>
-            <a href="https://dev-coco.github.io/tag/excel/" class="post-tag i-tag i-tag-warning">#Excel</a>
+            <a href="http://localhost:4000/tag/excel/" class="post-tag i-tag i-tag-other_1">#Excel</a>
         </div>
           <div class="post-content">
             <p>再也不怕被修改表格名称，跨表获取不到数据啦！</p>
@@ -78,15 +78,15 @@
 </code></pre>
 <p>先来拆分出来理解一下这个公式运行的过程。<br>
 首先运行的是 FORMULATEXT(A1)，使用 <a href="https://dev-coco.github.io/Excel/#Function/Others/FORMULATEXT">FORMULATEXT</a> 函数以文本的格式输出单元格内的公式。<br>
-<img src="https://dev-coco.github.io/post-images/1653005884509.png" alt="" loading="lazy"><br>
+<img src="http://localhost:4000/post-images/1653005884509.png" alt="" loading="lazy"><br>
 使用 <a href="https://dev-coco.github.io/Excel/#Function/Text-Processing/REGEXREPLACE">REGEXREPLACE</a> 函数对表格名称以外的字符进行替换，<a href="https://dev-coco.github.io/post/Regex-Syntax/">正则表达式</a> 语法 <code>…$|[=']</code>，获取 = 和 ' 符号，还有末尾三位的 !A1，然后替换成空值。这样就得到了表格名称。<br>
-<img src="https://dev-coco.github.io/post-images/1653005889634.png" alt="" loading="lazy"><br>
+<img src="http://localhost:4000/post-images/1653005889634.png" alt="" loading="lazy"><br>
 虽然现在已经获取到了表格名称，但是还不完善，现在获取到的数据是静态的，也就是说当修改了分表的名称的时候，公式并不会更新表格的名称，需要再次编辑单元格才会更新。<br>
-<img src="https://dev-coco.github.io/post-images/1653005895145.png" alt="" loading="lazy"><br>
+<img src="http://localhost:4000/post-images/1653005895145.png" alt="" loading="lazy"><br>
 使用易失函数达到动态更新的效果，因为使用易失函数后，在表格内修改任意一个单元格后，会引起所有相关公式重新计算。<br>
 使用 <a href="https://dev-coco.github.io/Excel/#Function/Date/TODAY">TODAY</a> 函数做一个判断，例如 <code>TODAY() &lt; TRUE</code>，返回值是 TRUE，因为布尔型的值要比其它 <a href="https://dev-coco.github.io/Excel/#Basic-Core/Data-Type/Data-Type">数据类型</a> 都要大。<br>
 用 <a href="https://dev-coco.github.io/Excel/#Function/Logical-Judgments/IF">IF</a> 函数做一个判断，判断结果为 TRUE，返回获取表格名称的公式，这样在修改表格的时候，就会更新表格的名称了。<br>
-<img src="https://dev-coco.github.io/post-images/1653005900883.png" alt="" loading="lazy"><br>
+<img src="http://localhost:4000/post-images/1653005900883.png" alt="" loading="lazy"><br>
 最后使用 IMPORTRANGE 跨表引用辅助表里面的表格名称，即使在分表修改了名称，也会同步更新。</p>
 <pre><code>=IMPORTRANGE(&quot;SheetID&quot;, IMPORTRANGE(&quot;SheetID&quot;, &quot;辅助表!B1&quot;)&amp;&quot;!A:A&quot;)
 </code></pre>
@@ -95,7 +95,7 @@
         </article>
         <div class="next-post">
           <div class="next">下一篇</div>
-          <a href="https://dev-coco.github.io/post/WhatAapp-Batch-Recover-Banned/">
+          <a href="http://localhost:4000/post/WhatAapp-Batch-Recover-Banned/">
             <h3 class="post-title">WhatsApp batch recover banned</h3>
           </a>
         </div>
@@ -107,7 +107,7 @@
       <!-- right -->
       <div id="sidebar" class="main-container-right">
         <div class="id_card i-card">
-          <div class="id_card-avatar" style="background-image: url(https://dev-coco.github.io/images/avatar.png?v=1659444358209)"></div>
+          <div class="id_card-avatar" style="background-image: url(http://localhost:4000/images/avatar.png?v=1659462813118)"></div>
           <h1 class="id_card-title">Raz1ner</h1>
           <img style="margin-top: 15px;margin-bottom: 10px;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&amp;count_bg=%2310C1F9&amp;title_bg=%23555555&amp;icon=html5.svg&amp;icon_color=%23E7E7E7&amp;title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&amp;edge_flat=false">
           <p style="text-align: center;">
@@ -166,30 +166,30 @@
         </div>
       <div class="notice-card i-card ">
         <div class="notice-title i-card-title">公告</div>
-        <div class="notice-content">博客新增 Telegram 频道：<a href="https://t.me/raz1ner" target="_blank" style="color: blue">瑞景乐的博客</a>，欢迎关注，及时收到最新文章推送。</div>
+        <div class="notice-content">博客新开通 YouTube 频道：<a href="https://www.youtube.com/channel/UCEgNinV_DEntuv5Dm8Z_JvA" target="_blank" style="color: blue">瑞景乐的频道</a>，欢迎观看、订阅。</div>
       </div>
       <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
         <div class="notice-content">
-          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/sololearn/">Sololearn</a>
-          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/google-script/">Google 脚本</a>
-          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/security/">安全</a>
-          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/shell/">Shell</a>
-          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/macos/">macOS</a>
-          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/excel/">Excel</a>
-          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/other/">其它</a>
-          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/javascript/">Javascript</a>
-          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/software/">软件</a>
-          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
-          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
-          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/windows/">Windows</a>
-          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/ios/">iOS</a>
-          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
+          <a class="tags-tag i-tag i-tag-success" href="http://localhost:4000/tag/sololearn/">Sololearn</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="http://localhost:4000/tag/google-script/">Google 脚本</a>
+          <a class="tags-tag i-tag i-tag-error" href="http://localhost:4000/tag/security/">安全</a>
+          <a class="tags-tag i-tag i-tag-" href="http://localhost:4000/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-success" href="http://localhost:4000/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="http://localhost:4000/tag/excel/">Excel</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="http://localhost:4000/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="http://localhost:4000/tag/javascript/">Javascript</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="http://localhost:4000/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-info" href="http://localhost:4000/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-warning" href="http://localhost:4000/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="http://localhost:4000/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-" href="http://localhost:4000/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="http://localhost:4000/tag/linux-command/">Linux命令</a>
         </div>
       </div>
       </div>
     </div>
     <div class="site-footer">
-    <span>Copyright © 2020-2022 Raz1ner - All Rights Reserved.</span> | <a class="rss" href="https://dev-coco.github.io/atom.xml" target="_blank">RSS</a>
+    <span>Copyright © 2020-2022 Raz1ner - All Rights Reserved.</span> | <a class="rss" href="http://localhost:4000/atom.xml" target="_blank">RSS</a>
     </div>
   </div>
   <script>
