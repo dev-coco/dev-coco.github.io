@@ -1,18 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>http://localhost:4000</id>
+    <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2022-08-02T17:54:01.254Z</updated>
+    <updated>2022-08-03T16:27:20.101Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="http://localhost:4000"/>
-    <link rel="self" href="http://localhost:4000/atom.xml"/>
-    <logo>http://localhost:4000/images/avatar.png</logo>
-    <icon>http://localhost:4000/favicon.ico</icon>
+    <link rel="alternate" href="https://dev-coco.github.io"/>
+    <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
+    <logo>https://dev-coco.github.io/images/avatar.png</logo>
+    <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, Raz1ner</rights>
     <entry>
+        <title type="html"><![CDATA[Sololearn CSS course Gradients & Backgrounds answers]]></title>
+        <id>https://dev-coco.github.io/post/Sololearn-CSS-Course-Gradients-and-Backgrounds-Answers/</id>
+        <link href="https://dev-coco.github.io/post/Sololearn-CSS-Course-Gradients-and-Backgrounds-Answers/">
+        </link>
+        <updated>2022-08-03T04:02:36.000Z</updated>
+        <summary type="html"><![CDATA[<p>Sololearn CSS course Gradients &amp; Backgrounds answers</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Sololearn CSS course Gradients &amp; Backgrounds answers</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Sololearn CSS course CSS3 Basics answers]]></title>
+        <id>https://dev-coco.github.io/post/Sololearn-CSS-Course-CSS3-Basics-Answers/</id>
+        <link href="https://dev-coco.github.io/post/Sololearn-CSS-Course-CSS3-Basics-Answers/">
+        </link>
+        <updated>2022-08-03T04:01:49.000Z</updated>
+        <summary type="html"><![CDATA[<p>Sololearn CSS course CSS3 Basics answers</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Sololearn CSS course CSS3 Basics answers</p>
+]]></content>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Sololearn CSS course Positioning and Layout answers]]></title>
-        <id>http://localhost:4000/post/Sololearn-CSS-Course-Positioning-and-Layout-Answers/</id>
-        <link href="http://localhost:4000/post/Sololearn-CSS-Course-Positioning-and-Layout-Answers/">
+        <id>https://dev-coco.github.io/post/Sololearn-CSS-Course-Positioning-and-Layout-Answers/</id>
+        <link href="https://dev-coco.github.io/post/Sololearn-CSS-Course-Positioning-and-Layout-Answers/">
         </link>
         <updated>2022-08-02T00:45:55.000Z</updated>
         <summary type="html"><![CDATA[<p>Sololearn CSS course Positioning and Layout answers</p>
@@ -22,8 +44,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Sololearn CSS course Properties answers]]></title>
-        <id>http://localhost:4000/post/Sololearn-CSS-Course-Properties-Answers/</id>
-        <link href="http://localhost:4000/post/Sololearn-CSS-Course-Properties-Answers/">
+        <id>https://dev-coco.github.io/post/Sololearn-CSS-Course-Properties-Answers/</id>
+        <link href="https://dev-coco.github.io/post/Sololearn-CSS-Course-Properties-Answers/">
         </link>
         <updated>2022-08-02T00:45:16.000Z</updated>
         <summary type="html"><![CDATA[<p>Sololearn CSS course Properties answers</p>
@@ -33,8 +55,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Sololearn CSS course Working with Text answers]]></title>
-        <id>http://localhost:4000/post/Sololearn-CSS-Course-Working-with-Text-Answers/</id>
-        <link href="http://localhost:4000/post/Sololearn-CSS-Course-Working-with-Text-Answers/">
+        <id>https://dev-coco.github.io/post/Sololearn-CSS-Course-Working-with-Text-Answers/</id>
+        <link href="https://dev-coco.github.io/post/Sololearn-CSS-Course-Working-with-Text-Answers/">
         </link>
         <updated>2022-08-01T06:59:27.000Z</updated>
         <summary type="html"><![CDATA[<p>Sololearn CSS course Working with Text answers</p>
@@ -44,8 +66,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Sololearn CSS course The Basics answers]]></title>
-        <id>http://localhost:4000/post/Sololearn-CSS-Sourse-The-Basics-Answers/</id>
-        <link href="http://localhost:4000/post/Sololearn-CSS-Sourse-The-Basics-Answers/">
+        <id>https://dev-coco.github.io/post/Sololearn-CSS-Sourse-The-Basics-Answers/</id>
+        <link href="https://dev-coco.github.io/post/Sololearn-CSS-Sourse-The-Basics-Answers/">
         </link>
         <updated>2022-08-01T06:58:40.000Z</updated>
         <summary type="html"><![CDATA[<p>Sololearn CSS course The Basics answers</p>
@@ -55,8 +77,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Google 脚本 读写内容]]></title>
-        <id>http://localhost:4000/post/Google-Script-Read-Write-Value/</id>
-        <link href="http://localhost:4000/post/Google-Script-Read-Write-Value/">
+        <id>https://dev-coco.github.io/post/Google-Script-Read-Write-Value/</id>
+        <link href="https://dev-coco.github.io/post/Google-Script-Read-Write-Value/">
         </link>
         <updated>2022-07-29T13:10:24.000Z</updated>
         <summary type="html"><![CDATA[<p>读取和写入指定单元格的内容。</p>
@@ -66,8 +88,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Google 脚本 获取行和列数]]></title>
-        <id>http://localhost:4000/post/Google-Script-Get-Row-Column/</id>
-        <link href="http://localhost:4000/post/Google-Script-Get-Row-Column/">
+        <id>https://dev-coco.github.io/post/Google-Script-Get-Row-Column/</id>
+        <link href="https://dev-coco.github.io/post/Google-Script-Get-Row-Column/">
         </link>
         <updated>2022-07-28T12:12:47.000Z</updated>
         <summary type="html"><![CDATA[<p>获取指定范围的行和列数。</p>
@@ -76,20 +98,9 @@
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[YouTube 视频数据分析]]></title>
-        <id>http://localhost:4000/post/YouTube-Analyze/</id>
-        <link href="http://localhost:4000/post/YouTube-Analyze/">
-        </link>
-        <updated>2022-07-27T10:43:47.000Z</updated>
-        <summary type="html"><![CDATA[<p>查询视频的观看次数、点赞次数、评论次数、视频标题、上传日期、视频时长。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>查询视频的观看次数、点赞次数、评论次数、视频标题、上传日期、视频时长。</p>
-]]></content>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Sololearn HTML course HTML5 answers]]></title>
-        <id>http://localhost:4000/post/Sololearn-HTML-Course-HTML5-Answers/</id>
-        <link href="http://localhost:4000/post/Sololearn-HTML-Course-HTML5-Answers/">
+        <id>https://dev-coco.github.io/post/Sololearn-HTML-Course-HTML5-Answers/</id>
+        <link href="https://dev-coco.github.io/post/Sololearn-HTML-Course-HTML5-Answers/">
         </link>
         <updated>2022-07-27T01:04:15.000Z</updated>
         <summary type="html"><![CDATA[<p>Sololearn HTML course HTML5 answers</p>
@@ -99,8 +110,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Sololearn HTML course HTML Basics answers]]></title>
-        <id>http://localhost:4000/post/Sololearn-HTML-Course-HTML-Basics-Answers/</id>
-        <link href="http://localhost:4000/post/Sololearn-HTML-Course-HTML-Basics-Answers/">
+        <id>https://dev-coco.github.io/post/Sololearn-HTML-Course-HTML-Basics-Answers/</id>
+        <link href="https://dev-coco.github.io/post/Sololearn-HTML-Course-HTML-Basics-Answers/">
         </link>
         <updated>2022-07-27T00:43:12.000Z</updated>
         <summary type="html"><![CDATA[<p>Sololearn HTML course HTML Basics answers</p>
@@ -110,8 +121,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Sololearn HTML course Overview answers]]></title>
-        <id>http://localhost:4000/post/sololearn-html-course-overview-answers/</id>
-        <link href="http://localhost:4000/post/sololearn-html-course-overview-answers/">
+        <id>https://dev-coco.github.io/post/sololearn-html-course-overview-answers/</id>
+        <link href="https://dev-coco.github.io/post/sololearn-html-course-overview-answers/">
         </link>
         <updated>2022-07-26T23:52:50.000Z</updated>
         <summary type="html"><![CDATA[<p>Sololearn HTML course Overview answers</p>
@@ -120,9 +131,20 @@
 ]]></content>
     </entry>
     <entry>
+        <title type="html"><![CDATA[YouTube 视频数据分析]]></title>
+        <id>https://dev-coco.github.io/post/YouTube-Analyze/</id>
+        <link href="https://dev-coco.github.io/post/YouTube-Analyze/">
+        </link>
+        <updated>2022-07-26T22:43:47.000Z</updated>
+        <summary type="html"><![CDATA[<p>查询视频的观看次数、点赞次数、评论次数、视频标题、上传日期、视频时长。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>查询视频的观看次数、点赞次数、评论次数、视频标题、上传日期、视频时长。</p>
+]]></content>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Sololearn HTML course Challenges answers]]></title>
-        <id>http://localhost:4000/post/Sololearn-HTML-Course-Challenges-Answers/</id>
-        <link href="http://localhost:4000/post/Sololearn-HTML-Course-Challenges-Answers/">
+        <id>https://dev-coco.github.io/post/Sololearn-HTML-Course-Challenges-Answers/</id>
+        <link href="https://dev-coco.github.io/post/Sololearn-HTML-Course-Challenges-Answers/">
         </link>
         <updated>2022-07-26T22:29:01.000Z</updated>
         <summary type="html"><![CDATA[<p>Sololearn HTML course Challenges answers</p>
@@ -132,8 +154,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Google 脚本 获取范围]]></title>
-        <id>http://localhost:4000/post/Google-Script-Get-Range/</id>
-        <link href="http://localhost:4000/post/Google-Script-Get-Range/">
+        <id>https://dev-coco.github.io/post/Google-Script-Get-Range/</id>
+        <link href="https://dev-coco.github.io/post/Google-Script-Get-Range/">
         </link>
         <updated>2022-07-24T19:42:26.000Z</updated>
         <summary type="html"><![CDATA[<p>获取指定单元格的范围。</p>
@@ -143,35 +165,13 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Google 脚本 Logger 调试]]></title>
-        <id>http://localhost:4000/post/Google-Script-Logger-Debug/</id>
-        <link href="http://localhost:4000/post/Google-Script-Logger-Debug/">
+        <id>https://dev-coco.github.io/post/Google-Script-Logger-Debug/</id>
+        <link href="https://dev-coco.github.io/post/Google-Script-Logger-Debug/">
         </link>
         <updated>2022-07-23T02:03:04.000Z</updated>
         <summary type="html"><![CDATA[<p>将内容写入到日志进行调试。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>将内容写入到日志进行调试。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[ARP 断网攻击]]></title>
-        <id>http://localhost:4000/post/ARP-Disconnection-Attack/</id>
-        <link href="http://localhost:4000/post/ARP-Disconnection-Attack/">
-        </link>
-        <updated>2022-07-22T00:55:18.000Z</updated>
-        <summary type="html"><![CDATA[<p>ARP 断网攻击是针对地址解析协议的一种攻击技术，可以让攻击者取得内网的数据封包甚至篡改，也可以让被攻击的设备无法正常连接网络。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>ARP 断网攻击是针对地址解析协议的一种攻击技术，可以让攻击者取得内网的数据封包甚至篡改，也可以让被攻击的设备无法正常连接网络。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Touch ID 授权 MacOS 终端]]></title>
-        <id>http://localhost:4000/post/TouchID-Authorize-Terminal/</id>
-        <link href="http://localhost:4000/post/TouchID-Authorize-Terminal/">
-        </link>
-        <updated>2022-07-20T03:04:47.000Z</updated>
-        <summary type="html"><![CDATA[<p>使用指纹快速授权，节省输入密码的时间。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>使用指纹快速授权，节省输入密码的时间。</p>
 ]]></content>
     </entry>
 </feed>
