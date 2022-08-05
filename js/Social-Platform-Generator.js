@@ -20,7 +20,7 @@ function create () {
 function generateCode (type, value) {
   switch (type) {
     case 'facebook':
-      return `<a class="btn btn-icon btn-facebook" href="${value}"><i class="fa-brands fa-facebook"></i><span class="facebook">Facebook</span></a>`
+      return `<a class="btn btn-icon btn-facebook" href="fb://profile?id=${value}"><i class="fa-brands fa-facebook"></i><span class="facebook">Facebook</span></a>`
     case 'twitter':
       return `<a class="btn btn-icon btn-twitter" href="${value}"><i class="fa-brands fa-twitter"></i><span class="twitter">Twitter</span></a>`
     case 'pinterest':
@@ -34,7 +34,7 @@ function generateCode (type, value) {
     case 'flickr':
       return `<a class="btn btn-icon btn-flickr" href="${value}"><i class="fa-brands fa-flickr"></i><span class="flickr">Flickr</span></a>`
     case 'youtube':
-      return `<a class="btn btn-icon btn-youtube" href="${value}"><i class="fa-brands fa-youtube"></i><span class="youtube">YouTube</span></a>`
+      return `<a class="btn btn-icon btn-youtube" href="https://www.youtube.com/channel/${value}?sub_confirmation=1"><i class="fa-brands fa-youtube"></i><span class="youtube">YouTube</span></a>`
     case 'instagram':
       return `<a class="btn btn-icon btn-instagram" href="${value}"><i class="fa-brands fa-instagram"></i><span class="instagram">Instagram</span></a>`
     case 'odnoklassniki':

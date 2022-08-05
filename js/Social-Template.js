@@ -58,3 +58,9 @@ const langObject = {
 }
 const langType = navigator.language.substring(0, 2)
 langObject[langType] ? title.innerText = langObject[langType] : title.innerText = langObject.en
+try {
+  if (!/Mobi|Android|iPhone/i.test(navigator.userAgent)) {
+    let fb = document.getElementsByClassName("btn-facebook")[0]
+    fb.href = `https://facebook.com/${fb.href.replace(/[^0-9]/g, '')}`
+  }
+} catch {}
