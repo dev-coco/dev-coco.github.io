@@ -1,0 +1,256 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Google 脚本 菜单 | Raz1ner</title>
+  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1660693412665">
+  <link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
+  <script src="https://dev-coco.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
+<script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+  <div class="main">
+    <div class="header">
+      <div class="nav">
+        <div class="logo">
+          <a href="https://dev-coco.github.io">
+            <img class="avatar" src="https://dev-coco.github.io/images/avatar.png?v=1660693412665" alt="">
+          </a>
+          <div class="site-title">
+            <h1>Raz1ner</h1>
+          </div>
+        </div>
+        <span class="menu-btn fa fa-align-justify"></span>
+        <div class="menu-container">
+          <ul>
+            <li>
+              <a href="/" class="menu">首页</a>
+            </li>
+            <li>
+              <a href="/Featured-Software.html" class="menu">软件</a>
+            </li>
+            <li>
+              <a href="/Online-Tools" class="menu">在线工具</a>
+            </li>
+            <li>
+              <a href="/post/Linux-Command" class="menu">Linux命令</a>
+            </li>
+            <li>
+              <a href="/Excel" class="menu">Excel教程</a>
+            </li>
+            <li>
+              <a href="/post/Terms-and-Privacy" class="menu">隐私与条款</a>
+            </li>
+          </ul>
+        </div>
+        <form id="gridea-search-form" action="https://dev-coco.github.io/search/" class="search">
+          <input type="search" name="q" class="search-box">
+          <span class="search-button">
+            <span class="search-icon"></span>
+          </span>
+        </form>
+      </div>
+    </div>
+    <script>
+      document.getElementsByClassName('search-button')[0].addEventListener('click', function () {
+        document.getElementById('gridea-search-form').classList.toggle('open');
+      })
+    </script>
+
+    <div id="main-content" class="post-detail main-container">
+      <!-- left -->
+      <div id="content" class="main-container-left">
+        <article class="post i-card">
+        <h2 class="post-title">Google 脚本 菜单</h2>
+        <div class="post-info">
+          <time class="post-time">2022-08-16 / 3 min read</time>
+            <a href="https://dev-coco.github.io/tag/google-script/" class="post-tag i-tag i-tag-success">#Google 脚本</a>
+        </div>
+          <div class="post-content">
+            <p>在电子表格创建一个菜单。</p>
+<!-- more -->
+<script src="/js/prism.js"></script>
+<link rel="stylesheet" href="/css/prism.css">
+<div class="videoContainer"><iframe class="video" src="https://www.youtube.com/embed/MBXpqpIRyhg" title="Google 脚本中文教程 | 10 菜单 | Excel 教程" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<h2 id="创建菜单">创建菜单</h2>
+<pre><code class="language-Javascript">createMenu(caption)
+</code></pre>
+<p><code>caption</code> 放入菜单名称，然后创建一个菜单。代码示例：</p>
+<pre><code class="language-Javascript">const ui = SpreadsheetApp.getUi()
+ui.createMenu('主菜单')
+  .addItem('菜单1', 'test')
+  .addToUi()
+</code></pre>
+<p>需要先执行 <code>SpreadsheetApp.getUi()</code> 才能在用户界面添加菜单，然后使用 <code>ui.createMenu()</code> 创建一个名字叫主菜单的菜单，再使用 <code>addItem</code> 在菜单的下面添加项目，菜单内至少包含一个项目才可以创建，最后执行 <code>addToUi()</code> 将菜单添加到用户界面。<br>
+<img src="https://dev-coco.github.io/post-images/1656847419467.png" alt="" loading="lazy"></p>
+<h2 id="添加项目">添加项目</h2>
+<pre><code class="language-Javascript">addItem(caption, functionName)
+</code></pre>
+<p><code>caption</code> <code>放入项目名称，functionName</code> 放入函数的名称，文本类型，当点击了对应项目的时候，就会触发设置好的函数。</p>
+<pre><code class="language-Javascript">function myFunction() {
+  const ui = SpreadsheetApp.getUi()
+  const menu = ui.createMenu('主菜单')
+    .addItem('菜单1', 'test')
+    .addToUi()
+}
+
+function test () {
+  Logger.log('run')
+}
+</code></pre>
+<p>例如在菜单添加了一个菜单 1 的项目，点击后就会运行设置好的 test 函数。</p>
+<h2 id="分割线">分割线</h2>
+<pre><code class="language-Javascript">addSeparator()
+</code></pre>
+<p>在指定位置增加一个分割线。代码示例：</p>
+<pre><code class="language-Javascript">const ui = SpreadsheetApp.getUi()
+ui.createMenu('主菜单')
+  .addItem('菜单1', 'test')
+  .addSeparator()
+  .addToUi()
+</code></pre>
+<p>需要在菜单的后面加，而且必须在 <code>addToUi()</code> 的前面。</p>
+<p>添加子菜单</p>
+<pre><code class="language-Javascript">addSubMenu(menu)
+</code></pre>
+<p>需要在菜单的后面使用，<code>menu</code> 放入子菜单。代码示例：</p>
+<pre><code class="language-Javascript">const ui = SpreadsheetApp.getUi()
+const menu = ui.createMenu('主菜单')
+  .addItem('菜单1', 'test')
+  .addItem('菜单2', test)
+  .addSeparator()
+const subMenu = ui.createMenu('二级菜单')
+  .addItem('菜单3', 'test')
+  .addItem('菜单4', test)
+menu.addSubMenu(subMenu)
+  .addToUi()
+</code></pre>
+<p>创建后一个二级菜单后，将二级添加到主菜单的后面，这样就可以添加一个二级菜单了。<br>
+<img src="https://dev-coco.github.io/post-images/1656847608262.png" alt="" loading="lazy"></p>
+<h2 id="打开表格自动触发">打开表格自动触发</h2>
+<pre><code class="language-Javascript">onOpen()
+</code></pre>
+<p>这是一个触发器函数，在打开电子表格的时候会自动运行，通常的时候会配合菜单一起使用。代码示例：</p>
+<pre><code class="language-Javascript">function onOpen() {
+  const ui = SpreadsheetApp.getUi()
+  const menu = ui.createMenu('主菜单')
+    .addItem('菜单1', 'test')
+    .addToUi()
+}
+</code></pre>
+<p>将 <code>onOpen()</code> 设置为函数名称，每次打开表格的时候会自动运行函数内的代码，这样就可以实现在打开表格后自动加载好菜单。</p>
+
+          </div>
+        </article>
+        <div class="next-post">
+          <div class="next">下一篇</div>
+          <a href="https://dev-coco.github.io/post/Social-Platform-Generator/">
+            <h3 class="post-title">社交平台生成器</h3>
+          </a>
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="gitalk-container"></div>
+      </div>
+      <!-- middle -->
+      <div class="main-container-middle"></div>
+      <!-- right -->
+      <div id="sidebar" class="main-container-right">
+        <div class="id_card i-card">
+          <div class="id_card-avatar" style="background-image: url(https://dev-coco.github.io/images/avatar.png?v=1660693412665)"></div>
+          <h1 class="id_card-title">Raz1ner</h1>
+          <img style="margin-top: 15px;margin-bottom: 10px;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&amp;count_bg=%2310C1F9&amp;title_bg=%23555555&amp;icon=html5.svg&amp;icon_color=%23E7E7E7&amp;title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&amp;edge_flat=false">
+          <p style="text-align: center;">
+            <a href="https://github.com/dev-coco" target="_blank"><img class="social-icon" src="/images/social/GitHub.png"></a>
+            <a href="https://t.me/raz1ner" target="_blank"><img class="social-icon" src="/images/social/Telegram.png"></a>
+            <a href="https://www.youtube.com/channel/UCEgNinV_DEntuv5Dm8Z_JvA?sub_confirmation=1" target="_blank"><img class="social-icon" src="/images/social/YouTube.png"></a>
+            <a href="/atom.xml" target="_blank"><img class="social-icon" src="/images/social/RSS.png"></a>
+            <a href="mailto:ruijingle@gmail.com" target="_blank"><img class="social-icon" src="/images/social/Gmail.png"></a>
+          </p>
+          <!-- <h2 class="id_card-description"></h2> -->
+          <!--  -->
+          <div class="id_card-sns">
+            <!-- github -->
+            
+            <!-- twitter -->
+            <!-- weibo -->
+            <!-- facebook -->
+          </div>
+        </div>
+      <!-- toc -->
+      <div class="toc-card i-card ">
+        <div class="toc-title i-card-title">目录</div>
+          <div class="toc-content">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E5%88%9B%E5%BB%BA%E8%8F%9C%E5%8D%95">创建菜单</a></li>
+<li><a href="#%E6%B7%BB%E5%8A%A0%E9%A1%B9%E7%9B%AE">添加项目</a></li>
+<li><a href="#%E5%88%86%E5%89%B2%E7%BA%BF">分割线</a></li>
+<li><a href="#%E6%89%93%E5%BC%80%E8%A1%A8%E6%A0%BC%E8%87%AA%E5%8A%A8%E8%A7%A6%E5%8F%91">打开表格自动触发</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+          <script>
+            function locateCatelogList() {
+              /*获取文章目录集合,可通过:header过滤器*/
+              var alis = $('.post-content :header');
+              /*获取侧边栏目录列表集合**/
+              var sidebar_alis = $('.markdownIt-TOC a');
+              /*获取滚动条到顶部的距离*/
+              var scroll_height = $(window).scrollTop();
+              for (var i = 0; i < alis.length; i++) {
+                /*获取锚点集合中的元素分别到顶点的距离*/
+                var a_height = $(alis[i]).offset().top;
+                if (a_height < scroll_height) {
+                  /*高亮显示*/
+                  sidebar_alis.removeClass('on');
+                  $(sidebar_alis[i]).addClass('on');
+                }
+              }
+            }
+            $(function() {
+              /*绑定滚动事件 */
+              $(window).bind('scroll', locateCatelogList);
+              });
+          </script>
+        </div>
+      <div class="notice-card i-card ">
+        <div class="notice-title i-card-title">公告</div>
+        <div class="notice-content">博客新开通 YouTube 频道：<a href="https://www.youtube.com/channel/UCEgNinV_DEntuv5Dm8Z_JvA" target="_blank" style="color: blue">瑞景乐的频道</a>，欢迎观看、订阅。<br>商务合作请点击上方的邮箱与我联系。</div>
+      </div>
+      <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
+        <div class="notice-content">
+          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/google-script/">Google 脚本</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/sololearn/">Sololearn</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/security/">安全</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/excel/">Excel</a>
+          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/javascript/">Javascript</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="site-footer">
+    <span>Copyright © 2020-2022 Raz1ner - All Rights Reserved.</span> | <a class="rss" href="https://dev-coco.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+  <script>
+    $('#sidebar').stickySidebar({
+    topSpacing: 80,
+    // bottomSpacing: 60
+    });
+  </script>
+  
+</body>
+</html>

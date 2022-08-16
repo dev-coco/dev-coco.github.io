@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2022-08-16T02:51:41.412Z</updated>
+    <updated>2022-08-16T23:44:08.927Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[Google 脚本 菜单]]></title>
+        <id>https://dev-coco.github.io/post/Google-Script-Create-Menu/</id>
+        <link href="https://dev-coco.github.io/post/Google-Script-Create-Menu/">
+        </link>
+        <updated>2022-08-16T11:43:30.000Z</updated>
+        <summary type="html"><![CDATA[<p>在电子表格创建一个菜单。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>在电子表格创建一个菜单。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[社交平台生成器]]></title>
         <id>https://dev-coco.github.io/post/Social-Platform-Generator/</id>
@@ -161,17 +172,6 @@
         <summary type="html"><![CDATA[<p>Sololearn HTML course Overview answers</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>Sololearn HTML course Overview answers</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[YouTube 视频数据分析]]></title>
-        <id>https://dev-coco.github.io/post/YouTube-Analyze/</id>
-        <link href="https://dev-coco.github.io/post/YouTube-Analyze/">
-        </link>
-        <updated>2022-07-26T22:43:47.000Z</updated>
-        <summary type="html"><![CDATA[<p>查询视频的观看次数、点赞次数、评论次数、视频标题、上传日期、视频时长。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>查询视频的观看次数、点赞次数、评论次数、视频标题、上传日期、视频时长。</p>
 ]]></content>
     </entry>
 </feed>
