@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2022-08-16T23:44:08.927Z</updated>
+    <updated>2022-08-18T22:35:20.109Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[屏蔽 Bitdefender 和 Avira 安装插件]]></title>
+        <id>https://dev-coco.github.io/post/Disable-Bitdefender-Avira-Extensions/</id>
+        <link href="https://dev-coco.github.io/post/Disable-Bitdefender-Avira-Extensions/">
+        </link>
+        <updated>2022-08-18T10:35:09.000Z</updated>
+        <summary type="html"><![CDATA[<p>屏蔽 Bitdefender 和 Avira 杀毒软件强制给浏览器安装插件。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>屏蔽 Bitdefender 和 Avira 杀毒软件强制给浏览器安装插件。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Google 脚本 菜单]]></title>
         <id>https://dev-coco.github.io/post/Google-Script-Create-Menu/</id>
@@ -161,17 +172,6 @@
         <summary type="html"><![CDATA[<p>Sololearn HTML course HTML Basics answers</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>Sololearn HTML course HTML Basics answers</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Sololearn HTML course Overview answers]]></title>
-        <id>https://dev-coco.github.io/post/sololearn-html-course-overview-answers/</id>
-        <link href="https://dev-coco.github.io/post/sololearn-html-course-overview-answers/">
-        </link>
-        <updated>2022-07-26T23:52:50.000Z</updated>
-        <summary type="html"><![CDATA[<p>Sololearn HTML course Overview answers</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>Sololearn HTML course Overview answers</p>
 ]]></content>
     </entry>
 </feed>
