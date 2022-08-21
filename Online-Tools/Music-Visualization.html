@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <title>音频可视化</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="keywords" content="dev-coco, 音频可视化, Music Visualization">
+  <meta name="robots" content="index,follow">
+  <meta name="description" content="将音频可视化呈现。">
+  <link rel="icon" href="/images/avatar.png">
+  <link rel="stylesheet" href="/css/site.css">
+  <script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <style>
+    .content {
+      position: absolute;
+      left: 50%;
+      text-align: center;
+      -webkit-transform: translate(-50%, 0%);
+    }
+    input {
+      width: 300px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 style="text-align:left;"><img class="logo" alt="dev-coco" src="/images/avatar.png">
+      <span> Raz1ner</span>
+      <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&count_bg=%2310C1F9&title_bg=%23555555&icon=html5.svg&icon_color=%23E7E7E7&title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&edge_flat=false" style="float:right;width:180px;">
+    </h1>
+    <div class="menu">
+      <a href="/">首页</a>
+      <a href="/Featured-Software.html">软件</a>
+      <a href="/Online-Tools">在线工具</a>
+      <a href="/post/Linux-Command">Linux命令</a>
+      <a href="/Excel/">Excel教程</a>
+      <a href="/post/Terms-and-Privacy">隐私与条款</a>
+      <a target="_blank" href="https://github.com/dev-coco">Github</a>
+    </div>
+    <h1>音频可视化</h1>
+    <div class="content">
+      <input type="file" id='uploadFile'><br>
+      <input class="HexColor" value="#fff" placeholder="帽头"><br>
+      <input class="HexColor" value="#33136c" placeholder="渐变1"><br>
+      <input class="HexColor" value="#c4217c" placeholder="渐变2"><br>
+      <input class="HexColor" value="#d04399" placeholder="渐变3">
+  	  <div class="picture">
+    	  <canvas id="render" width="800" height="300"></canvas>
+      </div>
+    </div>
+  </div>
+  <script>
+    const musicVisualization = function () {
+        this.file = null
+        this.fileName = null
+        this.audioContext = null
+        this.source = null
+      }
+
+      musicVisualization.prototype._perpareAPI = function () {
+        window.AudioContext = window.AudioContext || window.webkitAudioContext || window.mozAudioContext || window.msAudioContext
+        window.requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.msRequestAnimationFrame
+        try {
+          this.audioContext = new AudioContext()
+        } catch (error) {
+          console.log(error)
+        }
+      }
+      
+      musicVisualization.prototype._addEventListenr = function () {
+        const that = this
+        const audioInput = document.getElementById('uploadFile')
+        const drapContainer = document.getElementsByTagName('canvas')[0]
+        audioInput.onchange = function () {
+          if (audioInput.files.length !== 0) {
+            that.file = audioInput.files[0]
+            that.fileName = audioInput.files[0].name
+            that._start()
+          }
+        }
+      }
+
+      musicVisualization.prototype._start = function () {
+        const that = this
+        const file = this.file
+        const fr = new FileReader()
+
+        fr.onload = function (event) {
+          const fileResult = event.target.result
+          const audioContext = that.audioContext
+          audioContext.decodeAudioData(fileResult, function (buffer) {
+            that._musicVisualization(audioContext, buffer)
+          }, function (event) {
+            console.log('解码失败')
+          })
+        }
+        fr.readAsArrayBuffer(file)
+      }
+
+      musicVisualization.prototype._musicVisualization = function (audioContext, buffer) {
+        const audioBufferSouceNode = audioContext.createBufferSource()
+        const analyser = audioContext.createAnalyser()
+        audioBufferSouceNode.connect(analyser)
+        analyser.connect(audioContext.destination)
+        audioBufferSouceNode.buffer = buffer
+        audioBufferSouceNode.start(0)
+        this._draw(analyser)
+      }
+
+      musicVisualization.prototype._draw = function (analyser) {
+        const HexColor = document.getElementsByClassName('HexColor')
+        const canvas = document.getElementById('render')
+        const cwidth = canvas.width
+        const cheight = canvas.height - 2
+        // 频谱条宽度
+        const meterWidth = 10
+        // 频谱条间距
+        const gap = 2
+        const capHeight = 2
+        const capStyle = HexColor[0].value
+        // 频谱条数量
+        const meterNum = 800 / (10 + 2)
+        const capYPositionArray = []
+        const ctx = canvas.getContext('2d')
+        const gradient = ctx.createLinearGradient(0, 0, 0, 300)
+        gradient.addColorStop(1, HexColor[1].value)
+        gradient.addColorStop(0.5, HexColor[2].value)
+        gradient.addColorStop(0, HexColor[3].value)
+        const drawMeter = function () {
+          const array = new Uint8Array(analyser.frequencyBinCount)
+          analyser.getByteFrequencyData(array)
+          const step = Math.round(array.length / meterNum)
+          ctx.clearRect(0, 0, cwidth, cheight)
+          for (let i = 0; i < meterNum; i++) {
+            const value = array[i * step]
+            if (capYPositionArray.length < Math.round(meterNum)) {
+              capYPositionArray.push(value)
+            }
+            ctx.fillStyle = capStyle
+            if (value < capYPositionArray[i]) {
+              ctx.fillRect(i * 12, cheight - (--capYPositionArray[i]), meterWidth, capHeight)
+            } else {
+              ctx.fillRect(i * 12, cheight - value, meterWidth, capHeight)
+              capYPositionArray[i] = value
+            }
+            ctx.fillStyle = gradient
+            ctx.fillRect(i * 12, cheight - value + capHeight, meterWidth, cheight)
+          }
+          requestAnimationFrame(drawMeter)
+        }
+        requestAnimationFrame(drawMeter)
+      }
+
+      const setup = new musicVisualization()
+      setup._perpareAPI()
+      setup._addEventListenr()
+  </script>
+</body>
+</html>
