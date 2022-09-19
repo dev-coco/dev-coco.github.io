@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2022-09-17T16:09:43.852Z</updated>
+    <updated>2022-09-19T11:35:29.673Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[Aria2c 下载文件]]></title>
+        <id>https://dev-coco.github.io/post/Aria2c-Download-File/</id>
+        <link href="https://dev-coco.github.io/post/Aria2c-Download-File/">
+        </link>
+        <updated>2022-09-18T23:35:10.000Z</updated>
+        <summary type="html"><![CDATA[<p>超快的下载速度和多线程下载文件。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>超快的下载速度和多线程下载文件。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Facebook 专页类别列表]]></title>
         <id>https://dev-coco.github.io/post/Facebook-Page-Categories/</id>
@@ -161,17 +172,6 @@
         <summary type="html"><![CDATA[<p>Sololearn CSS course CSS3 Basics answers</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>Sololearn CSS course CSS3 Basics answers</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Sololearn CSS course Positioning and Layout answers]]></title>
-        <id>https://dev-coco.github.io/post/Sololearn-CSS-Course-Positioning-and-Layout-Answers/</id>
-        <link href="https://dev-coco.github.io/post/Sololearn-CSS-Course-Positioning-and-Layout-Answers/">
-        </link>
-        <updated>2022-08-02T00:45:55.000Z</updated>
-        <summary type="html"><![CDATA[<p>Sololearn CSS course Positioning and Layout answers</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>Sololearn CSS course Positioning and Layout answers</p>
 ]]></content>
     </entry>
 </feed>
