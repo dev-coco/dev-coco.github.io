@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2022-09-27T15:53:14.564Z</updated>
+    <updated>2022-09-28T04:14:15.863Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[庆祝博客访问量突破 100 万！]]></title>
+        <id>https://dev-coco.github.io/post/Celebrating-100K-Visits/</id>
+        <link href="https://dev-coco.github.io/post/Celebrating-100K-Visits/">
+        </link>
+        <updated>2022-09-27T15:21:30.000Z</updated>
+        <summary type="html"><![CDATA[<p>记录一下。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>记录一下。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Facebook 背景颜色列表]]></title>
         <id>https://dev-coco.github.io/post/Facebook-Background-Color/</id>
@@ -161,17 +172,6 @@
         <summary type="html"><![CDATA[<p>Sololearn CSS course Transitions &amp; Transforms answers</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>Sololearn CSS course Transitions &amp; Transforms answers</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Sololearn CSS course Gradients & Backgrounds answers]]></title>
-        <id>https://dev-coco.github.io/post/Sololearn-CSS-Course-Gradients-and-Backgrounds-Answers/</id>
-        <link href="https://dev-coco.github.io/post/Sololearn-CSS-Course-Gradients-and-Backgrounds-Answers/">
-        </link>
-        <updated>2022-08-03T04:02:36.000Z</updated>
-        <summary type="html"><![CDATA[<p>Sololearn CSS course Gradients &amp; Backgrounds answers</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>Sololearn CSS course Gradients &amp; Backgrounds answers</p>
 ]]></content>
     </entry>
 </feed>
