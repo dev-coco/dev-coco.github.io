@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <title>二维码在线生成器</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="keywords" content="dev-coco, 二维码生成器, 二维码在线生成器, QRCode">
+  <meta name="robots" content="index,follow">
+  <meta name="description" content="一个便捷易用的二维码在线生成器。">
+  <link rel="icon" href="/images/avatar.png">
+  <link rel="stylesheet" href="/css/site.css">
+  <script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs@gh-pages/qrcode.min.js"></script>
+  <style>.tool{display:flex;width:300px;margin:0 auto}#url:focus{border-color:#86b7fe;outline:0;box-shadow:0 0 0 .25rem rgba(13,110,253,.25)}#url{flex:1 1 auto;padding:.375rem .75rem;font-size:1rem;border:1px solid #ced4da;border-radius:.375rem;transition:border-color .15s ease-in-out,box-shadow .15s ease-in-out}.btn{padding:.375rem .75rem;font-size:1rem;color:var(--color);cursor:pointer;border:1px solid var(--border-color);border-radius:.375rem;background-color:#fff;transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out}.btn:hover{color:#fff;background-color:var(--hover-bg);border-color:var(--hover-border-color)}.btn:focus{color:#fff;background-color:var(--hover-bg);border-color:var(--hover-border-color);outline:0;box-shadow:0 0 0 .25rem rgba(var(--focus-shadow-rgb),.5)}.blue{--color:#0d6efd;--border-color:#0d6efd;--hover-bg:#0d6efd;--hover-border-color:#0d6efd;--focus-shadow-rgb:13,110,253}#qrcode{margin-top:30px}img{margin:0 auto}</style>
+  <script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs@gh-pages/qrcode.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1 style="text-align:left;"><img class="logo" alt="dev-coco" src="/images/avatar.png">
+      <span> Raz1ner</span>
+      <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&count_bg=%2310C1F9&title_bg=%23555555&icon=html5.svg&icon_color=%23E7E7E7&title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&edge_flat=false" style="float:right;width:180px;">
+    </h1>
+    <div class="menu">
+      <a href="/">首页</a>
+      <a href="/Featured-Software.html">软件</a>
+      <a href="/Online-Tools">在线工具</a>
+      <a href="/post/Linux-Command">Linux命令</a>
+      <a href="/Excel/">Excel教程</a>
+      <a href="/post/Terms-and-Privacy">隐私与条款</a>
+      <a target="_blank" href="https://github.com/dev-coco">Github</a>
+    </div>
+    <h1>二维码在线生成器</h1>
+    <div class="tool">
+      <input id="url" placeholder="请输入链接">
+      <button class="btn blue" onclick="generation()">生成</button>
+    </div>
+    <div id="qrcode"></div>
+  </div>
+</body>
+<script>
+  function generation () {
+    try {
+      qrcode.clear()
+    } catch {}
+    const url = document.getElementById('url').value
+    document.getElementById('qrcode').innerHTML = ''
+    const qrcode = new QRCode('qrcode', {
+      text: url,
+      width: 350,
+      height: 350,
+      colorDark : '#000000',
+      colorLight : '#ffffff',
+      correctLevel: QRCode.CorrectLevel.L
+    })
+  }
+</script>
+</html>
