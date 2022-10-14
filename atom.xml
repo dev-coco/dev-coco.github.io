@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2022-10-12T00:18:49.299Z</updated>
+    <updated>2022-10-14T01:53:37.516Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[macOS M1 芯片安装 TensorFlow]]></title>
+        <id>https://dev-coco.github.io/post/Macos-M1-Install-Tensorflow/</id>
+        <link href="https://dev-coco.github.io/post/Macos-M1-Install-Tensorflow/">
+        </link>
+        <updated>2022-10-13T13:53:27.000Z</updated>
+        <summary type="html"><![CDATA[<p>跟着步骤安装一定能成功！</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>跟着步骤安装一定能成功！</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Sololearn JavaScript course Basic Concepts answers]]></title>
         <id>https://dev-coco.github.io/post/Sololearn-Javascript-Course-Basic-Concepts-Answers/</id>
@@ -29,6 +40,17 @@
         <summary type="html"><![CDATA[<p>Sololearn JavaScript course Objects answers</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>Sololearn JavaScript course Objects answers</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[读取表格数据最快的方法]]></title>
+        <id>https://dev-coco.github.io/post/Fastest-Way-Read-Excel/</id>
+        <link href="https://dev-coco.github.io/post/Fastest-Way-Read-Excel/">
+        </link>
+        <updated>2022-10-09T23:25:38.000Z</updated>
+        <summary type="html"><![CDATA[<p>读取大型数据必备方法！</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>读取大型数据必备方法！</p>
 ]]></content>
     </entry>
     <entry>
@@ -150,28 +172,6 @@
         <summary type="html"><![CDATA[<p>客户端和服务端互相传输数据。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>客户端和服务端互相传输数据。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Google 脚本 操作行和列]]></title>
-        <id>https://dev-coco.github.io/post/Google-Script-Operate-Row-Column/</id>
-        <link href="https://dev-coco.github.io/post/Google-Script-Operate-Row-Column/">
-        </link>
-        <updated>2022-08-21T09:51:33.000Z</updated>
-        <summary type="html"><![CDATA[<p>在表格增加或删减行或者列。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>在表格增加或删减行或者列。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Google 脚本 创建 Web 页面]]></title>
-        <id>https://dev-coco.github.io/post/Google-Script-Create-Web-Page/</id>
-        <link href="https://dev-coco.github.io/post/Google-Script-Create-Web-Page/">
-        </link>
-        <updated>2022-08-19T06:15:36.000Z</updated>
-        <summary type="html"><![CDATA[<p>发布一个 Web 页面。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>发布一个 Web 页面。</p>
 ]]></content>
     </entry>
 </feed>
