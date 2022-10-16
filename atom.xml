@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2022-10-14T01:53:37.516Z</updated>
+    <updated>2022-10-16T03:42:14.275Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[Sololearn JavaScript course Conditionals and Loops answers]]></title>
+        <id>https://dev-coco.github.io/post/Sololearn-Javascript-Course-Conditionals-and-loops-Answers/</id>
+        <link href="https://dev-coco.github.io/post/Sololearn-Javascript-Course-Conditionals-and-loops-Answers/">
+        </link>
+        <updated>2022-10-15T15:42:05.000Z</updated>
+        <summary type="html"><![CDATA[<p>Sololearn JavaScript course Conditionals and Loops answers</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Sololearn JavaScript course Conditionals and Loops answers</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[macOS M1 芯片安装 TensorFlow]]></title>
         <id>https://dev-coco.github.io/post/Macos-M1-Install-Tensorflow/</id>
@@ -161,17 +172,6 @@
         <summary type="html"><![CDATA[<p>有一个可以直接调用的接口真是太方便了！</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>有一个可以直接调用的接口真是太方便了！</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Google 脚本 客户端和服务端通信]]></title>
-        <id>https://dev-coco.github.io/post/Google-Script-Messages/</id>
-        <link href="https://dev-coco.github.io/post/Google-Script-Messages/">
-        </link>
-        <updated>2022-08-23T09:39:03.000Z</updated>
-        <summary type="html"><![CDATA[<p>客户端和服务端互相传输数据。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>客户端和服务端互相传输数据。</p>
 ]]></content>
     </entry>
 </feed>
