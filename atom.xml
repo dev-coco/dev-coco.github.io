@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2022-10-17T21:31:42.759Z</updated>
+    <updated>2022-10-20T12:54:53.983Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[Sololearn JavaScript course DOM & Events answers]]></title>
+        <id>https://dev-coco.github.io/post/Sololearn-Javascript-Course-DOM-and-Events-Answers/</id>
+        <link href="https://dev-coco.github.io/post/Sololearn-Javascript-Course-DOM-and-Events-Answers/">
+        </link>
+        <updated>2022-10-20T00:54:20.000Z</updated>
+        <summary type="html"><![CDATA[<p>Sololearn JavaScript course DOM &amp; Events answers</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Sololearn JavaScript course DOM &amp; Events answers</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Sololearn JavaScript course Core Objects answers]]></title>
         <id>https://dev-coco.github.io/post/Sololearn-Javascript-Course-Core-Objects-Answers/</id>
@@ -135,7 +146,7 @@
         <id>https://dev-coco.github.io/post/Facebook-Background-Color/</id>
         <link href="https://dev-coco.github.io/post/Facebook-Background-Color/">
         </link>
-        <updated>2022-09-25T18:20:11.000Z</updated>
+        <updated>2022-09-25T06:20:11.000Z</updated>
         <summary type="html"><![CDATA[<p>Facebook 背景颜色类名称和 ID 列表。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>Facebook 背景颜色类名称和 ID 列表。</p>
@@ -161,17 +172,6 @@
         <summary type="html"><![CDATA[<p>Facebook 专页类别的名称和 ID 列表。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>Facebook 专页类别的名称和 ID 列表。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[使用 Google 脚本实现 IMPORTRANGE]]></title>
-        <id>https://dev-coco.github.io/post/Google-Script-Importrange/</id>
-        <link href="https://dev-coco.github.io/post/Google-Script-Importrange/">
-        </link>
-        <updated>2022-09-08T01:22:11.000Z</updated>
-        <summary type="html"><![CDATA[<p>IMPORTRANGE 函数表格卡、老出错？不如试试这个方法！</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>IMPORTRANGE 函数表格卡、老出错？不如试试这个方法！</p>
 ]]></content>
     </entry>
 </feed>
