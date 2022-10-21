@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2022-10-20T12:54:53.983Z</updated>
+    <updated>2022-10-21T14:00:24.327Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[Sololearn JavaScript course ECMAScript 6 answers]]></title>
+        <id>https://dev-coco.github.io/post/Sololearn-Javascript-Course-ECMAScript6-Answers/</id>
+        <link href="https://dev-coco.github.io/post/Sololearn-Javascript-Course-ECMAScript6-Answers/">
+        </link>
+        <updated>2022-10-21T02:00:15.000Z</updated>
+        <summary type="html"><![CDATA[<p>Sololearn JavaScript course ECMAScript 6 answers</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Sololearn JavaScript course ECMAScript 6 answers</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Sololearn JavaScript course DOM & Events answers]]></title>
         <id>https://dev-coco.github.io/post/Sololearn-Javascript-Course-DOM-and-Events-Answers/</id>
@@ -161,17 +172,6 @@
         <summary type="html"><![CDATA[<p>超快的下载速度和多线程下载文件。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>超快的下载速度和多线程下载文件。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Facebook 专页类别列表]]></title>
-        <id>https://dev-coco.github.io/post/Facebook-Page-Categories/</id>
-        <link href="https://dev-coco.github.io/post/Facebook-Page-Categories/">
-        </link>
-        <updated>2022-09-13T22:59:38.000Z</updated>
-        <summary type="html"><![CDATA[<p>Facebook 专页类别的名称和 ID 列表。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>Facebook 专页类别的名称和 ID 列表。</p>
 ]]></content>
     </entry>
 </feed>
