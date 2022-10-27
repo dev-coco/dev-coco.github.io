@@ -1,0 +1,293 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>人脸识别 API 接口 | Raz1ner</title>
+  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1666838133513">
+  <link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
+  <script src="https://dev-coco.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
+<script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+  <div class="main">
+    <div class="header">
+      <div class="nav">
+        <div class="logo">
+          <a href="https://dev-coco.github.io">
+            <img class="avatar" src="https://dev-coco.github.io/images/avatar.png?v=1666838133513" alt="">
+          </a>
+          <div class="site-title">
+            <h1>Raz1ner</h1>
+          </div>
+        </div>
+        <span class="menu-btn fa fa-align-justify"></span>
+        <div class="menu-container">
+          <ul>
+            <li>
+              <a href="/" class="menu">首页</a>
+            </li>
+            <li>
+              <a href="/Featured-Software.html" class="menu">软件</a>
+            </li>
+            <li>
+              <a href="/Online-Tools" class="menu">在线工具</a>
+            </li>
+            <li>
+              <a href="/post/Linux-Command" class="menu">Linux命令</a>
+            </li>
+            <li>
+              <a href="/Excel" class="menu">Excel教程</a>
+            </li>
+            <li>
+              <a href="/post/Terms-and-Privacy" class="menu">隐私与条款</a>
+            </li>
+          </ul>
+        </div>
+        <form id="gridea-search-form" action="https://dev-coco.github.io/search/" class="search">
+          <input type="search" name="q" class="search-box">
+          <span class="search-button">
+            <span class="search-icon"></span>
+          </span>
+        </form>
+      </div>
+    </div>
+    <script>
+      document.getElementsByClassName('search-button')[0].addEventListener('click', function () {
+        document.getElementById('gridea-search-form').classList.toggle('open');
+      })
+    </script>
+
+    <div id="main-content" class="post-detail main-container">
+      <!-- left -->
+      <div id="content" class="main-container-left">
+        <article class="post i-card">
+        <h2 class="post-title">人脸识别 API 接口</h2>
+        <div class="post-info">
+          <time class="post-time">2022-10-26 / 2 min read</time>
+            <a href="https://dev-coco.github.io/tag/javascript/" class="post-tag i-tag i-tag-error">#Javascript</a>
+        </div>
+          <div class="post-content">
+            <p>简单易用的人脸识别 API 接口，可识别年龄、性别、人种，完全免费。</p>
+<!-- more -->
+<script src="/js/prism.js"></script>
+<link rel="stylesheet" href="/css/prism.css">
+<h2 id="基本信息">基本信息</h2>
+<p>请求类型: HTTP<br>
+接口地址: https://script.google.com/macros/s/AKfycbzgobSFBW0sbiKRrLIYYjKDbSUPEJgDpZwv-L0Gsm1bv6_pBeYeCWVQvvNILM-TvD9i/dev<br>
+请求方式: GET<br>
+数据类型: JSON</p>
+<h2 id="接口描述">接口描述</h2>
+<p>通过图片链接人脸识别年龄、性别、人种。</p>
+<h2 id="请求参数">请求参数</h2>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>是否必须</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>true</td>
+<td>string</td>
+<td>识别类型，支持同时使用多种，例：age,race,gender</td>
+</tr>
+<tr>
+<td>imageUrl</td>
+<td>true</td>
+<td>string</td>
+<td>图片链接</td>
+</tr>
+</tbody>
+</table>
+<p>例子：</p>
+<pre><code class="language-Javascript">const param = {
+  type: 'race,age',
+  imageUrl: 'https://example.com/test.jpg'
+}
+const json = await fetch(`https://script.google.com/macros/s/AKfycbzgobSFBW0sbiKRrLIYYjKDbSUPEJgDpZwv-L0Gsm1bv6_pBeYeCWVQvvNILM-TvD9i/dev?${new URLSearchParams(param)}`).then(response =&gt; response.json())
+</code></pre>
+<h2 id="响应数据">响应数据</h2>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>是否必须</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>age</td>
+<td>false</td>
+<td>string</td>
+<td>年龄</td>
+</tr>
+<tr>
+<td>race</td>
+<td>false</td>
+<td>string</td>
+<td>人种</td>
+</tr>
+<tr>
+<td>gender</td>
+<td>false</td>
+<td>string</td>
+<td>性别</td>
+</tr>
+</tbody>
+</table>
+<p>例子：</p>
+<pre><code class="language-Javascript">{
+  &quot;age&quot;: 38,
+  &quot;race&quot;: &quot;white&quot;,
+  &quot;gender&quot;: &quot;Man&quot;
+}
+</code></pre>
+<h2 id="响应错误代码">响应错误代码</h2>
+<table>
+<thead>
+<tr>
+<th>错误代码</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Error: 201</td>
+<td>图片链接错误</td>
+</tr>
+<tr>
+<td>Error: 202</td>
+<td>类型错误</td>
+</tr>
+<tr>
+<td>Error: 203</td>
+<td>类型数量错误</td>
+</tr>
+<tr>
+<td>Error: 204</td>
+<td>服务器出错</td>
+</tr>
+</tbody>
+</table>
+
+          </div>
+        </article>
+        <div class="next-post">
+          <div class="next">下一篇</div>
+          <a href="https://dev-coco.github.io/post/Google-Script-Tutorial/">
+            <h3 class="post-title">Google 脚本基础教程目录</h3>
+          </a>
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="gitalk-container"></div>
+      </div>
+      <!-- middle -->
+      <div class="main-container-middle"></div>
+      <!-- right -->
+      <div id="sidebar" class="main-container-right">
+        <div class="id_card i-card">
+          <div class="id_card-avatar" style="background-image: url(https://dev-coco.github.io/images/avatar.png?v=1666838133513)"></div>
+          <h1 class="id_card-title">Raz1ner</h1>
+          <img style="margin-top: 15px;margin-bottom: 10px;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&amp;count_bg=%2310C1F9&amp;title_bg=%23555555&amp;icon=html5.svg&amp;icon_color=%23E7E7E7&amp;title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&amp;edge_flat=false">
+          <p style="text-align: center;">
+            <a href="https://github.com/dev-coco" target="_blank"><img class="social-icon" src="/images/social/GitHub.png"></a>
+            <a href="https://t.me/raz1ner" target="_blank"><img class="social-icon" src="/images/social/Telegram.png"></a>
+            <a href="https://www.youtube.com/channel/UCEgNinV_DEntuv5Dm8Z_JvA?sub_confirmation=1" target="_blank"><img class="social-icon" src="/images/social/YouTube.png"></a>
+            <a href="/atom.xml" target="_blank"><img class="social-icon" src="/images/social/RSS.png"></a>
+            <a href="mailto:ruijingle@gmail.com" target="_blank"><img class="social-icon" src="/images/social/Gmail.png"></a>
+          </p>
+          <!-- <h2 class="id_card-description"></h2> -->
+          <!--  -->
+          <div class="id_card-sns">
+            <!-- github -->
+            
+            <!-- twitter -->
+            <!-- weibo -->
+            <!-- facebook -->
+          </div>
+        </div>
+      <!-- toc -->
+      <div class="toc-card i-card ">
+        <div class="toc-title i-card-title">目录</div>
+          <div class="toc-content">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF">基本信息</a></li>
+<li><a href="#%E6%8E%A5%E5%8F%A3%E6%8F%8F%E8%BF%B0">接口描述</a></li>
+<li><a href="#%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0">请求参数</a></li>
+<li><a href="#%E5%93%8D%E5%BA%94%E6%95%B0%E6%8D%AE">响应数据</a></li>
+<li><a href="#%E5%93%8D%E5%BA%94%E9%94%99%E8%AF%AF%E4%BB%A3%E7%A0%81">响应错误代码</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+          <script>
+            function locateCatelogList() {
+              /*获取文章目录集合,可通过:header过滤器*/
+              var alis = $('.post-content :header');
+              /*获取侧边栏目录列表集合**/
+              var sidebar_alis = $('.markdownIt-TOC a');
+              /*获取滚动条到顶部的距离*/
+              var scroll_height = $(window).scrollTop();
+              for (var i = 0; i < alis.length; i++) {
+                /*获取锚点集合中的元素分别到顶点的距离*/
+                var a_height = $(alis[i]).offset().top;
+                if (a_height < scroll_height) {
+                  /*高亮显示*/
+                  sidebar_alis.removeClass('on');
+                  $(sidebar_alis[i]).addClass('on');
+                }
+              }
+            }
+            $(function() {
+              /*绑定滚动事件 */
+              $(window).bind('scroll', locateCatelogList);
+              });
+          </script>
+        </div>
+      <div class="notice-card i-card ">
+        <div class="notice-title i-card-title">公告</div>
+        <div class="notice-content">博客新开通 Telegram 频道：<a href="https://t.me/raz1ner" target="_blank" style="color: blue">瑞景乐的博客</a>，欢迎订阅，随时收到最新资讯。<br>商务合作请点击上方的邮箱与我联系。</div>
+      </div>
+      <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
+        <div class="notice-content">
+          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/javascript/">Javascript</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/google-script/">Google 脚本</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/sololearn/">Sololearn</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/security/">安全</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/excel/">Excel</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="site-footer">
+    <span>Copyright © 2020-2022 Raz1ner - All Rights Reserved.</span> | <a class="rss" href="https://dev-coco.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+  <script>
+    $('#sidebar').stickySidebar({
+    topSpacing: 80,
+    // bottomSpacing: 60
+    });
+  </script>
+  
+</body>
+</html>
