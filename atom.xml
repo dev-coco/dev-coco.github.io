@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2022-10-27T02:36:08.843Z</updated>
+    <updated>2022-11-03T03:16:31.717Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[Google Excel 大数据性能优化]]></title>
+        <id>https://dev-coco.github.io/post/Google-Excel-Big-Data-Performance/</id>
+        <link href="https://dev-coco.github.io/post/Google-Excel-Big-Data-Performance/">
+        </link>
+        <updated>2022-11-02T15:15:24.000Z</updated>
+        <summary type="html"><![CDATA[<p>一个通用型性能优化技巧。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>一个通用型性能优化技巧。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[人脸识别 API 接口]]></title>
         <id>https://dev-coco.github.io/post/Face-Recognition-API/</id>
@@ -161,17 +172,6 @@
         <summary type="html"><![CDATA[<p>此工具非常简单易用，而且经过测试，解封成功率非常高。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>此工具非常简单易用，而且经过测试，解封成功率非常高。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[庆祝博客访问量突破 100 万！]]></title>
-        <id>https://dev-coco.github.io/post/Celebrating-100K-Visits/</id>
-        <link href="https://dev-coco.github.io/post/Celebrating-100K-Visits/">
-        </link>
-        <updated>2022-09-27T15:21:30.000Z</updated>
-        <summary type="html"><![CDATA[<p>记录一下。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>记录一下。</p>
 ]]></content>
     </entry>
 </feed>
