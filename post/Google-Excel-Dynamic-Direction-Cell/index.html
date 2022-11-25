@@ -4,9 +4,9 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Google Excel 动态指向单元格目录 | Raz1ner</title>
-  <link rel="shortcut icon" href="http://localhost:4000/favicon.ico?v=1669335056578">
-  <link rel="stylesheet" href="http://localhost:4000/styles/main.css">
-  <script src="http://localhost:4000/media/js/jquery.sticky-sidebar.min.js"></script>
+  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1669335056653">
+  <link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
+  <script src="https://dev-coco.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
 <script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 <body>
@@ -14,8 +14,8 @@
     <div class="header">
       <div class="nav">
         <div class="logo">
-          <a href="http://localhost:4000">
-            <img class="avatar" src="http://localhost:4000/images/avatar.png?v=1669335056578" alt="">
+          <a href="https://dev-coco.github.io">
+            <img class="avatar" src="https://dev-coco.github.io/images/avatar.png?v=1669335056653" alt="">
           </a>
           <div class="site-title">
             <h1>Raz1ner</h1>
@@ -44,7 +44,7 @@
             </li>
           </ul>
         </div>
-        <form id="gridea-search-form" action="http://localhost:4000/search/" class="search">
+        <form id="gridea-search-form" action="https://dev-coco.github.io/search/" class="search">
           <input type="search" name="q" class="search-box">
           <span class="search-button">
             <span class="search-icon"></span>
@@ -65,15 +65,15 @@
         <h2 class="post-title">Google Excel 动态指向单元格目录</h2>
         <div class="post-info">
           <time class="post-time">2022-11-24 / 3 min read</time>
-            <a href="http://localhost:4000/tag/excel/" class="post-tag i-tag i-tag-info">#Excel</a>
+            <a href="https://dev-coco.github.io/tag/excel/" class="post-tag i-tag i-tag-banana">#Excel</a>
         </div>
           <div class="post-content">
             <p>制作一个动态单元格目录，快速找到对应菜单。</p>
 <!-- more -->
 <p>在遇到一个特别宽表格的时候，横向找内容就会比较费劲，这个时候就需要使用指向单元格的链接功能建立一个超链接，点击链接就可以跳转到对应的标题。<br>
-<img src="http://localhost:4000/post-images/1653172528618.png" alt="" loading="lazy"><br>
+<img src="https://dev-coco.github.io/post-images/1653172528618.png" alt="" loading="lazy"><br>
 但是这样的方法存在一个问题，当表格增加新的列的时候，之前引用的范围就会发生偏移，就会导致对应不上。<br>
-<img src="http://localhost:4000/post-images/1653172641092.png" alt="" loading="lazy"></p>
+<img src="https://dev-coco.github.io/post-images/1653172641092.png" alt="" loading="lazy"></p>
 <h2 id="解决方法">解决方法</h2>
 <p>使用以下函数即可实现动态指向单元格目录。</p>
 <pre><code>=ARRAYFORMULA(HYPERLINK(&quot;#gid=id&amp;range=&quot;&amp;ADDRESS(1, MATCH(TRANSPOSE(FILTER(B1:1, B1:1 &lt;&gt; &quot;&quot;)), 1:1, 0), 4), TRANSPOSE(FILTER(B1:1, B1:1 &lt;&gt; &quot;&quot;))))
@@ -82,14 +82,14 @@
 超链接的格式：<code>#gid=XXXX&amp;range=B1</code>，中间的 gid 是当前表格的 id，range 对应的参数是指向单元格的位置。那么就可以使用 HYPERLINK 函数创建一个超文本链接，但是目前还需要获取到菜单的名称和菜单对应的单元格位置。</p>
 <h2 id="获取菜单名字">获取菜单名字</h2>
 <p>使用 <a href="https://dev-coco.github.io/Excel/#Function/Find-Filter/FILTER">FILTER</a> 函数获取菜单的内容，<code>FILTER(B1:1, B1:1 &lt;&gt; &quot;&quot;)</code> 并且去掉空的单元格，这样会比较严谨，如果是多个单元格合并的菜单也可以兼容。<br>
-<img src="http://localhost:4000/post-images/1653172667347.png" alt="" loading="lazy"><br>
+<img src="https://dev-coco.github.io/post-images/1653172667347.png" alt="" loading="lazy"><br>
 不过我们需要的是纵向的菜单，使用 <a href="https://dev-coco.github.io/Excel/#Function/Others/TRANSPOSE">TRANSPOSE</a> 将内容进行转置。<br>
-<img src="http://localhost:4000/post-images/1653172688668.png" alt="" loading="lazy"></p>
+<img src="https://dev-coco.github.io/post-images/1653172688668.png" alt="" loading="lazy"></p>
 <h2 id="获取单元格位置">获取单元格位置</h2>
 <p>在获取菜单名字的基础上，再使用 <a href="https://dev-coco.github.io/Excel/#Function/Find-Filter/MATCH">MATCH</a> 函数查询每个菜单出现的位置，并且使用数组输出查看效果。<br>
-<img src="http://localhost:4000/post-images/1653172703633.png" alt="" loading="lazy"><br>
+<img src="https://dev-coco.github.io/post-images/1653172703633.png" alt="" loading="lazy"><br>
 在此基础上添加 <a href="https://dev-coco.github.io/Excel/#Function/Others/ADDRESS">ADDRESS</a> 参数，行数设置第一行，列数放入刚才的参数，引用模式要选择相对引用行和列，因为指向单元格功能不支持绝对引用。<br>
-<img src="http://localhost:4000/post-images/1653172712442.png" alt="" loading="lazy"></p>
+<img src="https://dev-coco.github.io/post-images/1653172712442.png" alt="" loading="lazy"></p>
 <h2 id="超文本链接输出">超文本链接输出</h2>
 <p>最后再使用 <a href="https://dev-coco.github.io/Excel/#Function/Others/HYPERLINK">HYPERLINK</a> 函数放入菜单名字和单元格位置一起输出。因为指向单元格链接的格式中的 gid 无法通过原生函数获取到，所以需要手动设置，并且和获取到菜单的单元格位置拼接在一起。</p>
 <pre><code>HYPERLINK(&quot;#gid=1147213490&amp;range=&quot;&amp;ADDRESS(1, MATCH(TRANSPOSE(FILTER(B1:1, B1:1 &lt;&gt; &quot;&quot;)), 1:1, 0), 4), TRANSPOSE(FILTER(B1:1, B1:1 &lt;&gt; &quot;&quot;)))
@@ -100,7 +100,7 @@
         </article>
         <div class="next-post">
           <div class="next">下一篇</div>
-          <a href="http://localhost:4000/post/Facebook-Country-List/">
+          <a href="https://dev-coco.github.io/post/Facebook-Country-List/">
             <h3 class="post-title">Facebook 国家列表</h3>
           </a>
         </div>
@@ -112,7 +112,7 @@
       <!-- right -->
       <div id="sidebar" class="main-container-right">
         <div class="id_card i-card">
-          <div class="id_card-avatar" style="background-image: url(http://localhost:4000/images/avatar.png?v=1669335056578)"></div>
+          <div class="id_card-avatar" style="background-image: url(https://dev-coco.github.io/images/avatar.png?v=1669335056653)"></div>
           <h1 class="id_card-title">Raz1ner</h1>
           <img style="margin-top: 15px;margin-bottom: 10px;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&amp;count_bg=%2310C1F9&amp;title_bg=%23555555&amp;icon=html5.svg&amp;icon_color=%23E7E7E7&amp;title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&amp;edge_flat=false">
           <p style="text-align: center;">
@@ -178,26 +178,26 @@
       </div>
       <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
         <div class="notice-content">
-          <a class="tags-tag i-tag i-tag-info" href="http://localhost:4000/tag/excel/">Excel</a>
-          <a class="tags-tag i-tag i-tag-success" href="http://localhost:4000/tag/facebook/">Facebook</a>
-          <a class="tags-tag i-tag i-tag-banana" href="http://localhost:4000/tag/google-script/">Google 脚本</a>
-          <a class="tags-tag i-tag i-tag-" href="http://localhost:4000/tag/javascript/">Javascript</a>
-          <a class="tags-tag i-tag i-tag-error" href="http://localhost:4000/tag/sololearn/">Sololearn</a>
-          <a class="tags-tag i-tag i-tag-banana" href="http://localhost:4000/tag/macos/">macOS</a>
-          <a class="tags-tag i-tag i-tag-" href="http://localhost:4000/tag/whatsapp/">WhatsApp</a>
-          <a class="tags-tag i-tag i-tag-other_1" href="http://localhost:4000/tag/other/">其它</a>
-          <a class="tags-tag i-tag i-tag-other_1" href="http://localhost:4000/tag/shell/">Shell</a>
-          <a class="tags-tag i-tag i-tag-other_1" href="http://localhost:4000/tag/software/">软件</a>
-          <a class="tags-tag i-tag i-tag-" href="http://localhost:4000/tag/security/">安全</a>
-          <a class="tags-tag i-tag i-tag-success" href="http://localhost:4000/tag/windows/">Windows</a>
-          <a class="tags-tag i-tag i-tag-" href="http://localhost:4000/tag/ios/">iOS</a>
-          <a class="tags-tag i-tag i-tag-warning" href="http://localhost:4000/tag/linux-command/">Linux命令</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/excel/">Excel</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/google-script/">Google 脚本</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/javascript/">Javascript</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/sololearn/">Sololearn</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/security/">安全</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
         </div>
       </div>
       </div>
     </div>
     <div class="site-footer">
-    <span>Copyright © 2020-2022 Raz1ner - All Rights Reserved.</span> | <a class="rss" href="http://localhost:4000/atom.xml" target="_blank">RSS</a>
+    <span>Copyright © 2020-2022 Raz1ner - All Rights Reserved.</span> | <a class="rss" href="https://dev-coco.github.io/atom.xml" target="_blank">RSS</a>
     </div>
   </div>
   <script>
