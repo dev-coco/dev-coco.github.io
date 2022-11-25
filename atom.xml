@@ -1,18 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://dev-coco.github.io</id>
+    <id>http://localhost:4000</id>
     <title>Raz1ner</title>
-    <updated>2022-11-21T05:37:13.508Z</updated>
+    <updated>2022-11-25T00:11:01.516Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://dev-coco.github.io"/>
-    <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
-    <logo>https://dev-coco.github.io/images/avatar.png</logo>
-    <icon>https://dev-coco.github.io/favicon.ico</icon>
+    <link rel="alternate" href="http://localhost:4000"/>
+    <link rel="self" href="http://localhost:4000/atom.xml"/>
+    <logo>http://localhost:4000/images/avatar.png</logo>
+    <icon>http://localhost:4000/favicon.ico</icon>
     <rights>All rights reserved 2022, Raz1ner</rights>
     <entry>
+        <title type="html"><![CDATA[Google Excel 动态指向单元格目录]]></title>
+        <id>http://localhost:4000/post/Google-Excel-Dynamic-Direction-Cell/</id>
+        <link href="http://localhost:4000/post/Google-Excel-Dynamic-Direction-Cell/">
+        </link>
+        <updated>2022-11-24T12:10:54.000Z</updated>
+        <summary type="html"><![CDATA[<p>制作一个动态单元格目录，快速找到对应菜单。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>制作一个动态单元格目录，快速找到对应菜单。</p>
+]]></content>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Facebook 国家列表]]></title>
-        <id>https://dev-coco.github.io/post/Facebook-Country-List/</id>
-        <link href="https://dev-coco.github.io/post/Facebook-Country-List/">
+        <id>http://localhost:4000/post/Facebook-Country-List/</id>
+        <link href="http://localhost:4000/post/Facebook-Country-List/">
         </link>
         <updated>2022-11-16T13:59:39.000Z</updated>
         <summary type="html"><![CDATA[<p>Facebook 可识别的国家列表。</p>
@@ -22,8 +33,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[自动加行/列并设置日期]]></title>
-        <id>https://dev-coco.github.io/post/Google-Script-Add-Row-Column/</id>
-        <link href="https://dev-coco.github.io/post/Google-Script-Add-Row-Column/">
+        <id>http://localhost:4000/post/Google-Script-Add-Row-Column/</id>
+        <link href="http://localhost:4000/post/Google-Script-Add-Row-Column/">
         </link>
         <updated>2022-11-05T04:17:38.000Z</updated>
         <summary type="html"><![CDATA[<p>自动化操作，减少机械性操作。</p>
@@ -33,8 +44,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Google Excel 大数据性能优化]]></title>
-        <id>https://dev-coco.github.io/post/Google-Excel-Big-Data-Performance/</id>
-        <link href="https://dev-coco.github.io/post/Google-Excel-Big-Data-Performance/">
+        <id>http://localhost:4000/post/Google-Excel-Big-Data-Performance/</id>
+        <link href="http://localhost:4000/post/Google-Excel-Big-Data-Performance/">
         </link>
         <updated>2022-11-02T15:15:24.000Z</updated>
         <summary type="html"><![CDATA[<p>一个通用型性能优化技巧。</p>
@@ -44,8 +55,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[人脸识别 API 接口]]></title>
-        <id>https://dev-coco.github.io/post/Face-Recognition-API/</id>
-        <link href="https://dev-coco.github.io/post/Face-Recognition-API/">
+        <id>http://localhost:4000/post/Face-Recognition-API/</id>
+        <link href="http://localhost:4000/post/Face-Recognition-API/">
         </link>
         <updated>2022-10-26T14:35:31.000Z</updated>
         <summary type="html"><![CDATA[<p>简单易用的人脸识别 API 接口，可识别年龄、性别、人种，完全免费。</p>
@@ -55,8 +66,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Google 脚本基础教程目录]]></title>
-        <id>https://dev-coco.github.io/post/Google-Script-Tutorial/</id>
-        <link href="https://dev-coco.github.io/post/Google-Script-Tutorial/">
+        <id>http://localhost:4000/post/Google-Script-Tutorial/</id>
+        <link href="http://localhost:4000/post/Google-Script-Tutorial/">
         </link>
         <updated>2022-10-23T22:41:52.000Z</updated>
         <summary type="html"><![CDATA[<p>偏向于基础的循序渐进的教学内容。</p>
@@ -66,8 +77,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Sololearn JavaScript course ECMAScript 6 answers]]></title>
-        <id>https://dev-coco.github.io/post/Sololearn-Javascript-Course-ECMAScript6-Answers/</id>
-        <link href="https://dev-coco.github.io/post/Sololearn-Javascript-Course-ECMAScript6-Answers/">
+        <id>http://localhost:4000/post/Sololearn-Javascript-Course-ECMAScript6-Answers/</id>
+        <link href="http://localhost:4000/post/Sololearn-Javascript-Course-ECMAScript6-Answers/">
         </link>
         <updated>2022-10-21T02:00:15.000Z</updated>
         <summary type="html"><![CDATA[<p>Sololearn JavaScript course ECMAScript 6 answers</p>
@@ -77,8 +88,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Sololearn JavaScript course DOM & Events answers]]></title>
-        <id>https://dev-coco.github.io/post/Sololearn-Javascript-Course-DOM-and-Events-Answers/</id>
-        <link href="https://dev-coco.github.io/post/Sololearn-Javascript-Course-DOM-and-Events-Answers/">
+        <id>http://localhost:4000/post/Sololearn-Javascript-Course-DOM-and-Events-Answers/</id>
+        <link href="http://localhost:4000/post/Sololearn-Javascript-Course-DOM-and-Events-Answers/">
         </link>
         <updated>2022-10-20T00:54:20.000Z</updated>
         <summary type="html"><![CDATA[<p>Sololearn JavaScript course DOM &amp; Events answers</p>
@@ -88,8 +99,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Sololearn JavaScript course Core Objects answers]]></title>
-        <id>https://dev-coco.github.io/post/Sololearn-Javascript-Course-Core-Objects-Answers/</id>
-        <link href="https://dev-coco.github.io/post/Sololearn-Javascript-Course-Core-Objects-Answers/">
+        <id>http://localhost:4000/post/Sololearn-Javascript-Course-Core-Objects-Answers/</id>
+        <link href="http://localhost:4000/post/Sololearn-Javascript-Course-Core-Objects-Answers/">
         </link>
         <updated>2022-10-17T09:31:35.000Z</updated>
         <summary type="html"><![CDATA[<p>Sololearn JavaScript course Core Objects answers</p>
@@ -99,8 +110,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Sololearn JavaScript course Functions answers]]></title>
-        <id>https://dev-coco.github.io/post/Sololearn-Javascript-Course-Functions-Answers/</id>
-        <link href="https://dev-coco.github.io/post/Sololearn-Javascript-Course-Functions-Answers/">
+        <id>http://localhost:4000/post/Sololearn-Javascript-Course-Functions-Answers/</id>
+        <link href="http://localhost:4000/post/Sololearn-Javascript-Course-Functions-Answers/">
         </link>
         <updated>2022-10-16T10:10:07.000Z</updated>
         <summary type="html"><![CDATA[<p>Sololearn JavaScript course Functions answers</p>
@@ -110,8 +121,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Sololearn JavaScript course Conditionals and Loops answers]]></title>
-        <id>https://dev-coco.github.io/post/Sololearn-Javascript-Course-Conditionals-and-loops-Answers/</id>
-        <link href="https://dev-coco.github.io/post/Sololearn-Javascript-Course-Conditionals-and-loops-Answers/">
+        <id>http://localhost:4000/post/Sololearn-Javascript-Course-Conditionals-and-loops-Answers/</id>
+        <link href="http://localhost:4000/post/Sololearn-Javascript-Course-Conditionals-and-loops-Answers/">
         </link>
         <updated>2022-10-15T15:42:05.000Z</updated>
         <summary type="html"><![CDATA[<p>Sololearn JavaScript course Conditionals and Loops answers</p>
@@ -121,8 +132,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[macOS M1 芯片安装 TensorFlow]]></title>
-        <id>https://dev-coco.github.io/post/Macos-M1-Install-Tensorflow/</id>
-        <link href="https://dev-coco.github.io/post/Macos-M1-Install-Tensorflow/">
+        <id>http://localhost:4000/post/Macos-M1-Install-Tensorflow/</id>
+        <link href="http://localhost:4000/post/Macos-M1-Install-Tensorflow/">
         </link>
         <updated>2022-10-13T13:53:27.000Z</updated>
         <summary type="html"><![CDATA[<p>跟着步骤安装一定能成功！</p>
@@ -132,8 +143,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Sololearn JavaScript course Basic Concepts answers]]></title>
-        <id>https://dev-coco.github.io/post/Sololearn-Javascript-Course-Basic-Concepts-Answers/</id>
-        <link href="https://dev-coco.github.io/post/Sololearn-Javascript-Course-Basic-Concepts-Answers/">
+        <id>http://localhost:4000/post/Sololearn-Javascript-Course-Basic-Concepts-Answers/</id>
+        <link href="http://localhost:4000/post/Sololearn-Javascript-Course-Basic-Concepts-Answers/">
         </link>
         <updated>2022-10-11T12:18:40.000Z</updated>
         <summary type="html"><![CDATA[<p>Sololearn JavaScript course Basic Concepts answers</p>
@@ -143,8 +154,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Sololearn JavaScript course Objects answers]]></title>
-        <id>https://dev-coco.github.io/post/Sololearn-Javascript-Course-Objects-Answers/</id>
-        <link href="https://dev-coco.github.io/post/Sololearn-Javascript-Course-Objects-Answers/">
+        <id>http://localhost:4000/post/Sololearn-Javascript-Course-Objects-Answers/</id>
+        <link href="http://localhost:4000/post/Sololearn-Javascript-Course-Objects-Answers/">
         </link>
         <updated>2022-10-10T09:31:54.000Z</updated>
         <summary type="html"><![CDATA[<p>Sololearn JavaScript course Objects answers</p>
@@ -154,24 +165,13 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[读取表格数据最快的方法]]></title>
-        <id>https://dev-coco.github.io/post/Fastest-Way-Read-Excel/</id>
-        <link href="https://dev-coco.github.io/post/Fastest-Way-Read-Excel/">
+        <id>http://localhost:4000/post/Fastest-Way-Read-Excel/</id>
+        <link href="http://localhost:4000/post/Fastest-Way-Read-Excel/">
         </link>
         <updated>2022-10-09T23:25:38.000Z</updated>
         <summary type="html"><![CDATA[<p>读取大型数据必备方法！</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>读取大型数据必备方法！</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Sololearn JavaScript course Overview answers]]></title>
-        <id>https://dev-coco.github.io/post/Sololearn-Javascript-Course-Overview-Answers/</id>
-        <link href="https://dev-coco.github.io/post/Sololearn-Javascript-Course-Overview-Answers/">
-        </link>
-        <updated>2022-10-08T15:12:16.000Z</updated>
-        <summary type="html"><![CDATA[<p>Sololearn JavaScript course Overview answers</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>Sololearn JavaScript course Overview answers</p>
 ]]></content>
     </entry>
 </feed>
