@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2022-11-29T02:50:11.548Z</updated>
+    <updated>2022-12-04T22:28:21.228Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[头像加圣诞帽]]></title>
+        <id>https://dev-coco.github.io/post/Profile-Santa-Hat/</id>
+        <link href="https://dev-coco.github.io/post/Profile-Santa-Hat/">
+        </link>
+        <updated>2022-12-04T09:25:45.000Z</updated>
+        <summary type="html"><![CDATA[<p>🎄 圣诞帽头像一键生成，各种款式都有！请为你的头像戴上圣诞帽吧！</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>🎄 圣诞帽头像一键生成，各种款式都有！请为你的头像戴上圣诞帽吧！</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Windscribe VPN 免费 30GB 流量激活码]]></title>
         <id>https://dev-coco.github.io/post/Windscribe-VPN-Free-License/</id>
@@ -161,17 +172,6 @@
         <summary type="html"><![CDATA[<p>Sololearn JavaScript course Basic Concepts answers</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>Sololearn JavaScript course Basic Concepts answers</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Sololearn JavaScript course Objects answers]]></title>
-        <id>https://dev-coco.github.io/post/Sololearn-Javascript-Course-Objects-Answers/</id>
-        <link href="https://dev-coco.github.io/post/Sololearn-Javascript-Course-Objects-Answers/">
-        </link>
-        <updated>2022-10-10T09:31:54.000Z</updated>
-        <summary type="html"><![CDATA[<p>Sololearn JavaScript course Objects answers</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>Sololearn JavaScript course Objects answers</p>
 ]]></content>
     </entry>
 </feed>

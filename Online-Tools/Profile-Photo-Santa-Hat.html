@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <title>头像加圣诞帽</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="keywords" content="dev-coco, 圣诞帽, 头像加圣诞帽">
+  <meta name="robots" content="index,follow">
+  <meta name="description" content="为你的头像戴上圣诞帽。">
+  <link rel="icon" href="/images/avatar.png">
+  <link rel="stylesheet" href="https://dev-coco.github.io/css/site.css">
+  <script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <style>.canvas-container{margin:0 auto}#exportBtn,.hide{display:none}.upload{margin:4rem auto 3rem;height:10rem;width:10rem;border:solid 1px #aaa;box-shadow:0 0 5px #aaa;border-radius:1rem;line-height:10rem;position:relative}#export{display:none;margin:0 auto;width:250px;height:250px}button{font-size:18px;color:#fff;padding:0 30px;height:3rem;background:#8fd16f;border:0;border-radius:20px}.dropbtn{background-color:#4caf50;color:#fff;font-size:16px;border:none;cursor:pointer}.dropdown{position:relative;display:inline-block}.dropdown-content{display:none;position:absolute;background-color:#f5f5f5;min-width:140px;box-shadow:0 8px 16px 0 rgba(0,0,0,.2);z-index:1}.dropdown-content img{color:#000;padding:5px 16px;margin:0 auto;height:40px;text-decoration:none;display:block}.dropdown-content img:hover{background-color:#fff}.dropdown:hover .dropdown-content{display:block}.dropdown:hover .dropbtn{background-color:#3e8e41}</style>
+</head>
+<body>
+  <div class="container">
+    <h1 style="text-align:left;"><img class="logo" alt="dev-coco" src="/images/avatar.png">
+      <span> Raz1ner</span>
+      <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&count_bg=%2310C1F9&title_bg=%23555555&icon=html5.svg&icon_color=%23E7E7E7&title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&edge_flat=false" style="float:right;width:180px;">
+    </h1>
+    <div class="menu">
+      <a href="/">首页</a>
+      <a href="/Featured-Software.html">软件</a>
+      <a href="/Online-Tools">在线工具</a>
+      <a href="/post/Linux-Command">Linux命令</a>
+      <a href="/Excel/">Excel教程</a>
+      <a href="/post/Terms-and-Privacy">隐私与条款</a>
+      <a target="_blank" href="https://github.com/dev-coco">Github</a>
+    </div>
+    <div style="text-align:center;">
+      <div>
+        <h2>给头像戴上圣诞帽</h2>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">选择圣诞帽</button>
+        <div class="dropdown-content">
+          <img class="hat" id="0" src="/images/Santa_Hat/hat0.png">
+          <img class="hat" id="1" src="/images/Santa_Hat/hat1.png">
+          <img class="hat" id="2" src="/images/Santa_Hat/hat2.png">
+          <img class="hat" id="3" src="/images/Santa_Hat/hat3.png">
+          <img class="hat" id="4" src="/images/Santa_Hat/hat4.png">
+          <img class="hat" id="5" src="/images/Santa_Hat/hat5.png">
+          <img class="hat" id="6" src="/images/Santa_Hat/hat6.png">
+          <img class="hat" id="7" src="/images/Santa_Hat/hat7.png">
+          <img class="hat" id="8" src="/images/Santa_Hat/hat8.png">
+          <img class="hat" id="9" src="/images/Santa_Hat/hat9.png">
+          <img class="hat" id="10" src="/images/Santa_Hat/hat10.png">
+          <img class="hat" id="11" src="/images/Santa_Hat/hat11.png">
+          <img class="hat" id="12" src="/images/Santa_Hat/hat12.png">
+          <img class="hat" id="13" src="/images/Santa_Hat/hat13.png">
+          <img class="hat" id="14" src="/images/Santa_Hat/hat14.png">
+          <img class="hat" id="15" src="/images/Santa_Hat/hat15.png">
+          <img class="hat" id="16" src="/images/Santa_Hat/hat16.png">
+        </div>
+    </div>
+      <div class="upload" id="uploadContainer">
+        <small id="uploadText">上传头像</small>
+        <input id="upload" type="file" onchange="viewer()" style="height: 10rem; width: 10rem; position: absolute; top: 0; left: 0; opacity: 0">
+      </div>
+      <img id="export" src="">
+      <canvas id="cvs"></canvas>
+      <p id="tip" style="opacity: 0">点击圣诞帽调整位置和大小</p>
+      <div style="display: flex;justify-content: space-around;">
+        <button id="exportBtn" onClick="exportFunc()">生成头像</button>
+      </div>
+      <br>
+      <div style="display: none">
+        <img id="img" src="">
+        <img class="hide" id="Hat0" src="/images/Santa_Hat/hat0.png">
+        <img class="hide" id="Hat1" src="/images/Santa_Hat/hat1.png">
+        <img class="hide" id="Hat2" src="/images/Santa_Hat/hat2.png">
+        <img class="hide" id="Hat3" src="/images/Santa_Hat/hat3.png">
+        <img class="hide" id="Hat4" src="/images/Santa_Hat/hat4.png">
+        <img class="hide" id="Hat5" src="/images/Santa_Hat/hat5.png">
+        <img class="hide" id="Hat6" src="/images/Santa_Hat/hat6.png">
+        <img class="hide" id="Hat7" src="/images/Santa_Hat/hat7.png">
+        <img class="hide" id="Hat8" src="/images/Santa_Hat/hat8.png">
+        <img class="hide" id="Hat9" src="/images/Santa_Hat/hat9.png">
+        <img class="hide" id="Hat10" src="/images/Santa_Hat/hat10.png">
+        <img class="hide" id="Hat11" src="/images/Santa_Hat/hat11.png">
+        <img class="hide" id="Hat12" src="/images/Santa_Hat/hat12.png">
+        <img class="hide" id="Hat13" src="/images/Santa_Hat/hat13.png">
+        <img class="hide" id="Hat14" src="/images/Santa_Hat/hat14.png">
+        <img class="hide" id="Hat15" src="/images/Santa_Hat/hat15.png">
+        <img class="hide" id="Hat16" src="/images/Santa_Hat/hat16.png">
+      </div>
+      <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fdev-coco.github.io%2FOnline-Tools%2FProfile-Photo-Santa-Hat.html&layout=button&size=large&width=68&height=28&appId" width="68" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.0.0/fabric.min.js"></script>
+      <script>
+        document.querySelectorAll(".hat").forEach(e => { 
+          e.addEventListener("click", document => {
+            changeHat(e.id.toString())
+          })
+        })
+        var canvasFabric, HatInstance, cvs = document.getElementById("cvs"),
+          ctx = cvs.getContext("2d"),
+          exportImage = document.getElementById("export"),
+          img = document.getElementById("img"),
+          Hat = "Hat6",
+          screenWidth = window.screen.width < 500 ? window.screen.width : 640;
+
+        function viewer() {
+          var e = document.getElementById("upload").files[0];
+          console.log(e);
+          var t = new FileReader;
+          e ? (t.readAsDataURL(e), t.onload = function(e) {
+            img.src = t.result, img.onload = function() {
+              img2Cvs(img)
+            }
+          }) : img.src = ""
+        }
+
+        function img2Cvs(e) {
+          cvs.width = e.width, cvs.height = e.height, cvs.style.display = "block", canvasFabric = new fabric.Canvas("cvs", {
+            width: screenWidth,
+            height: screenWidth,
+            backgroundImage: new fabric.Image(e, {
+              scaleX: screenWidth / e.width,
+              scaleY: screenWidth / e.height
+            })
+          }), changeHat(), document.getElementById("uploadContainer").style.display = "none", document.getElementById("uploadText").style.display = "none", document.getElementById("upload").style.display = "none", document.getElementById("exportBtn").style.display = "block", document.getElementById("tip").style.opacity = 1
+        }
+
+        function changeHat(type = '6') {
+          document.getElementById("Hat" + type).style.display = "none";
+          var e = document.getElementsByClassName("hide");
+          console.log(type)
+          Hat = "Hat" + type;
+          var t = document.getElementById(Hat);
+          t.style.display = "block", HatInstance && canvasFabric.remove(HatInstance), (HatInstance = new fabric.Image(t, {
+            top: 40,
+            left: screenWidth / 3,
+            scaleX: 100 / t.width,
+            scaleY: 100 / t.height,
+            cornerColor: "#0b3a42",
+            cornerStrokeColor: "#fff",
+            cornerStyle: "circle",
+            transparentCorners: !1,
+            rotatingPointOffset: 30
+          })).setControlVisible("bl", !1), HatInstance.setControlVisible("tr", !1), HatInstance.setControlVisible("tl", !1), HatInstance.setControlVisible("mr", !1), HatInstance.setControlVisible("mt", !1), canvasFabric.add(HatInstance)
+        }
+
+        function exportFunc() {
+          document.getElementsByClassName("canvas-container")[0].style.display = "none", document.getElementById("exportBtn").style.display = "none", document.getElementById("tip").innerHTML = "请保存图片", cvs.style.display = "none", exportImage.style.display = "block", exportImage.src = canvasFabric.toDataURL({
+            width: screenWidth,
+            height: screenWidth
+          })
+        }
+      </script>
+    </div>
+  </div>
+</body>
+</html>
