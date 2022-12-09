@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2022-12-09T00:37:47.899Z</updated>
+    <updated>2022-12-09T06:11:39.924Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
@@ -14,7 +14,7 @@
         <id>https://dev-coco.github.io/post/Skype-Auto-Reply/</id>
         <link href="https://dev-coco.github.io/post/Skype-Auto-Reply/">
         </link>
-        <updated>2022-12-08T10:44:23.000Z</updated>
+        <updated>2022-12-08T17:10:52.000Z</updated>
         <summary type="html"><![CDATA[<p>Skype 自动回复用户自定义消息。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>Skype 自动回复用户自定义消息。</p>

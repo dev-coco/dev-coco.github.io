@@ -4,7 +4,7 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Skype 自动回复 | Raz1ner</title>
-  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1670546260007">
+  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1670566290346">
   <link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
   <script src="https://dev-coco.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
   <script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -29,7 +29,7 @@
       <div class="nav">
         <div class="logo">
           <a href="https://dev-coco.github.io">
-            <img class="avatar" src="https://dev-coco.github.io/images/avatar.png?v=1670546260007" alt="">
+            <img class="avatar" src="https://dev-coco.github.io/images/avatar.png?v=1670566290346" alt="">
           </a>
           <div class="site-title">
             <h1>Raz1ner</h1>
@@ -79,7 +79,7 @@
         <h2 class="post-title">Skype 自动回复</h2>
         <div class="post-info">
           <time class="post-time">2022-12-08 / 2 min read</time>
-            <a href="https://dev-coco.github.io/tag/other/" class="post-tag i-tag i-tag-warning">#其它</a>
+            <a href="https://dev-coco.github.io/tag/other/" class="post-tag i-tag i-tag-other_3">#其它</a>
         </div>
           <div class="post-content">
             <p>Skype 自动回复用户自定义消息。</p>
@@ -90,15 +90,20 @@
 <h2 id="设置">设置</h2>
 <p>安装插件后，点击右键，选项，进行设置。<br>
 <img src="https://dev-coco.github.io/post-images/1670456757771.png" alt="" loading="lazy"></p>
+<h3 id="域名前缀">域名前缀</h3>
+<p>登陆 Skype 网页版后，在浏览器的控制台找到网络，在请求头里面的请求链接找到域名前缀。<br>
+<img src="https://dev-coco.github.io/post-images/1670564707373.png" alt="" loading="lazy"><br>
+然后在插件设置里选择对应的域名前缀。在 Skype 网页版没有刷新的情况下，一般情况域名前缀不会变，如果刷新页面，可能域名前缀会发生变化。<br>
+<img src="https://dev-coco.github.io/post-images/1670565032340.png" alt="" loading="lazy"></p>
 <h3 id="skype-token">Skype Token</h3>
 <p>登陆 Skype 网页版后，在浏览器的控制台找到网络，在请求头里面找到skypetoken，等号(=)后面的就是Skype Token。<br>
 <img src="https://dev-coco.github.io/post-images/1670455238417.png" alt="" loading="lazy"></p>
 <h3 id="循环时间">循环时间</h3>
-<p>以秒为单位，每次循环扫描界面的间隔时间。例如设置 30，那么每 30 秒就会循环扫描一次界面，检测是否有新消息。</p>
+<p>以秒为单位，每次循环扫描界面的间隔时间。例如设置 30，那么每 30 秒就会循环扫描一次界面，检测是否有新消息。修改后不会实时生效，需要刷新 Skype 网页版后才能生效。</p>
 <h3 id="音量">音量</h3>
 <p>默认在发送消息之前会发出 🔔叮～ 的声音，可以自行调节音量声音的大小。</p>
 <h3 id="需要回复的内容">需要回复的内容</h3>
-<p>填写需要自动回复的内容。</p>
+<p>填写需要自动回复的内容，必须包含「自动回复」。</p>
 <h2 id="使用方法">使用方法</h2>
 <ol>
 <li>打开 Skype 网页版后，需要在左侧的聊天列表显示出最新聊天的联系人。因为程序只会扫描当前界面显示出来的联系人，如果当前界面不显示最新发消息的联系人，那么此功能就无法正常使用。<br>
@@ -106,6 +111,9 @@
 <li>点击插件后，会在左上角显示开始按钮，点击按钮后即可按照设置的参数自动运行。</li>
 <li>开始运行后不能关闭浏览器，进程也不能被冻结，否则会无法正常运行。</li>
 </ol>
+<p>相关推荐<br>
+<a href="/post/Disable-Skype-Update/">禁用 Skype 自动更新</a><br>
+<a href="/post/Disable-Squirrel-Update/">禁用 Squirrel 框架自动更新</a></p>
 
           </div>
         </article>
@@ -123,7 +131,7 @@
       <!-- right -->
       <div id="sidebar" class="main-container-right">
         <div class="id_card i-card">
-          <div class="id_card-avatar" style="background-image: url(https://dev-coco.github.io/images/avatar.png?v=1670546260007)"></div>
+          <div class="id_card-avatar" style="background-image: url(https://dev-coco.github.io/images/avatar.png?v=1670566290346)"></div>
           <h1 class="id_card-title">Raz1ner</h1>
           <img style="margin-top: 15px;margin-bottom: 10px;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&amp;count_bg=%2310C1F9&amp;title_bg=%23555555&amp;icon=html5.svg&amp;icon_color=%23E7E7E7&amp;title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&amp;edge_flat=false">
           <p style="text-align: center;">
@@ -153,6 +161,7 @@
 <li><a href="#%E4%BD%9C%E7%94%A8">作用</a></li>
 <li><a href="#%E8%AE%BE%E7%BD%AE">设置</a>
 <ul>
+<li><a href="#%E5%9F%9F%E5%90%8D%E5%89%8D%E7%BC%80">域名前缀</a></li>
 <li><a href="#skype-token">Skype Token</a></li>
 <li><a href="#%E5%BE%AA%E7%8E%AF%E6%97%B6%E9%97%B4">循环时间</a></li>
 <li><a href="#%E9%9F%B3%E9%87%8F">音量</a></li>
@@ -195,20 +204,20 @@
       </div>
       <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
         <div class="notice-content">
-          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/other/">其它</a>
-          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/software/">软件</a>
-          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/excel/">Excel</a>
-          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/excel/">Excel</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
           <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/google-script/">Google 脚本</a>
-          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/javascript/">Javascript</a>
-          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/sololearn/">Sololearn</a>
-          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/javascript/">Javascript</a>
+          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/sololearn/">Sololearn</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/macos/">macOS</a>
           <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
-          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/shell/">Shell</a>
           <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/security/">安全</a>
-          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/windows/">Windows</a>
-          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/ios/">iOS</a>
-          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
         </div>
       </div>
       </div>
