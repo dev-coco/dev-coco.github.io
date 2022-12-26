@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2022-12-16T19:39:11.371Z</updated>
+    <updated>2022-12-26T00:12:19.085Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[Google Excel 性能优化 - IF 管理函数执行]]></title>
+        <id>https://dev-coco.github.io/post/Google-Excel-Boost-IF-Manage/</id>
+        <link href="https://dev-coco.github.io/post/Google-Excel-Boost-IF-Manage/">
+        </link>
+        <updated>2022-12-25T11:02:02.000Z</updated>
+        <summary type="html"><![CDATA[<p>用 IF 函数做一个开关控制函数执行。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>用 IF 函数做一个开关控制函数执行。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Google Excel 快速生成 26 个字母]]></title>
         <id>https://dev-coco.github.io/post/Google-Excel-Create-Letter/</id>
@@ -161,17 +172,6 @@
         <summary type="html"><![CDATA[<p>Sololearn JavaScript course Core Objects answers</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>Sololearn JavaScript course Core Objects answers</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Sololearn JavaScript course Functions answers]]></title>
-        <id>https://dev-coco.github.io/post/Sololearn-Javascript-Course-Functions-Answers/</id>
-        <link href="https://dev-coco.github.io/post/Sololearn-Javascript-Course-Functions-Answers/">
-        </link>
-        <updated>2022-10-16T10:10:07.000Z</updated>
-        <summary type="html"><![CDATA[<p>Sololearn JavaScript course Functions answers</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>Sololearn JavaScript course Functions answers</p>
 ]]></content>
     </entry>
 </feed>
