@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2022-12-26T00:17:57.891Z</updated>
+    <updated>2022-12-28T19:51:29.717Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[Google Excel 性能优化 - IF 跳过无效内容]]></title>
+        <id>https://dev-coco.github.io/post/Google-Excel-Boost-Bypass-Blank/</id>
+        <link href="https://dev-coco.github.io/post/Google-Excel-Boost-Bypass-Blank/">
+        </link>
+        <updated>2022-12-28T06:51:17.000Z</updated>
+        <summary type="html"><![CDATA[<p>用 IF 函数跳过无效内容，加快运行速度。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>用 IF 函数跳过无效内容，加快运行速度。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Google Excel 性能优化 - IF 管理函数执行]]></title>
         <id>https://dev-coco.github.io/post/Google-Excel-Boost-IF-Manage/</id>
@@ -161,17 +172,6 @@
         <summary type="html"><![CDATA[<p>Sololearn JavaScript course DOM &amp; Events answers</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>Sololearn JavaScript course DOM &amp; Events answers</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Sololearn JavaScript course Core Objects answers]]></title>
-        <id>https://dev-coco.github.io/post/Sololearn-Javascript-Course-Core-Objects-Answers/</id>
-        <link href="https://dev-coco.github.io/post/Sololearn-Javascript-Course-Core-Objects-Answers/">
-        </link>
-        <updated>2022-10-17T09:31:35.000Z</updated>
-        <summary type="html"><![CDATA[<p>Sololearn JavaScript course Core Objects answers</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>Sololearn JavaScript course Core Objects answers</p>
 ]]></content>
     </entry>
 </feed>
