@@ -201,7 +201,7 @@
         </span>
       </div>
       <div class="card">
-        <a class="card-header" href="javascript:navigator.clipboard.writeText(Array.from(new Set([...document.getElementsByTagName('a')].filter(url=&gt;/^https:\/\/(www|m).facebook.com\/groups/.test(url)).map(x=&gt;'https://www.facebook.com/'+x.href.match(/groups\/.*?\//g)[0]))).join('\n'))">获取Facebook小组链接</a>
+        <a class="card-header" href="javascript:navigator.clipboard.writeText(Array.from(new Set([...document.getElementsByTagName('a')].filter(url=&gt;/^https.*?facebook.com\/groups\/.*?\//.test(url)).map(x=&gt;'https://www.facebook.com/'+x.href.match(/groups\/.*?\//g)[0]))).join('\n'))">获取Facebook小组链接</a>
         <span class="card-text">在任意页面使用，获取当前页面所有的 Facebook 小组链接。<br>
           <r>拖到书签后使用</r>。
         </span>
