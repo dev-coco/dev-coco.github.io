@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2023-01-13T15:16:14.214Z</updated>
+    <updated>2023-01-13T17:03:40.259Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
@@ -14,7 +14,7 @@
         <id>https://dev-coco.github.io/post/Chrome-Copy-Profile/</id>
         <link href="https://dev-coco.github.io/post/Chrome-Copy-Profile/">
         </link>
-        <updated>2023-01-12T13:02:33.000Z</updated>
+        <updated>2023-01-13T04:03:23.000Z</updated>
         <summary type="html"><![CDATA[<p>一个快捷、安全的方式复制浏览器的配置。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>一个快捷、安全的方式复制浏览器的配置。</p>
