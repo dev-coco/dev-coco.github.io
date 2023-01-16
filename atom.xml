@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2023-01-13T17:03:40.259Z</updated>
+    <updated>2023-01-16T14:44:27.289Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2023, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[Google Excel 性能优化 - 跨表引用]]></title>
+        <id>https://dev-coco.github.io/post/Google-Excel-Boost-Cross-Reference/</id>
+        <link href="https://dev-coco.github.io/post/Google-Excel-Boost-Cross-Reference/">
+        </link>
+        <updated>2023-01-16T01:44:16.000Z</updated>
+        <summary type="html"><![CDATA[<p>比原生的方式更快的方法。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>比原生的方式更快的方法。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Chrome 复制浏览器配置]]></title>
         <id>https://dev-coco.github.io/post/Chrome-Copy-Profile/</id>
@@ -161,17 +172,6 @@
         <summary type="html"><![CDATA[<p>自动化操作，减少机械性操作。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>自动化操作，减少机械性操作。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[人脸识别 API 接口]]></title>
-        <id>https://dev-coco.github.io/post/Face-Recognition-API/</id>
-        <link href="https://dev-coco.github.io/post/Face-Recognition-API/">
-        </link>
-        <updated>2022-10-26T14:35:31.000Z</updated>
-        <summary type="html"><![CDATA[<p>简单易用的人脸识别 API 接口，可识别年龄、性别、人种，完全免费。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>简单易用的人脸识别 API 接口，可识别年龄、性别、人种，完全免费。</p>
 ]]></content>
     </entry>
 </feed>
