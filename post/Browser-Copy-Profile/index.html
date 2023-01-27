@@ -3,8 +3,8 @@
   <meta charset="utf-8">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>人脸识别 API 接口 | Raz1ner</title>
-  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1673883173199">
+  <title>快速新建浏览器人员工具 | Raz1ner</title>
+  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1674787235707">
   <link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
   <script src="https://dev-coco.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
   <script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -29,7 +29,7 @@
       <div class="nav">
         <div class="logo">
           <a href="https://dev-coco.github.io">
-            <img class="avatar" src="https://dev-coco.github.io/images/avatar.png?v=1673883173199" alt="">
+            <img class="avatar" src="https://dev-coco.github.io/images/avatar.png?v=1674787235707" alt="">
           </a>
           <div class="site-title">
             <h1>Raz1ner</h1>
@@ -76,127 +76,36 @@
       <!-- left -->
       <div id="content" class="main-container-left">
         <article class="post i-card">
-        <h2 class="post-title">人脸识别 API 接口</h2>
+        <h2 class="post-title">快速新建浏览器人员工具</h2>
         <div class="post-info">
-          <time class="post-time">2022-10-26 / 2 min read</time>
-            <a href="https://dev-coco.github.io/tag/javascript/" class="post-tag i-tag i-tag-primary">#Javascript</a>
+          <time class="post-time">2023-01-26 / 1 min read</time>
+            <a href="https://dev-coco.github.io/tag/software/" class="post-tag i-tag i-tag-other_1">#软件</a>
+            <a href="https://dev-coco.github.io/tag/macos/" class="post-tag i-tag i-tag-error">#macOS</a>
         </div>
           <div class="post-content">
-            <p>简单易用的人脸识别 API 接口，可识别年龄、性别、人种，完全免费。</p>
+            <p>一个简单便捷的功能快速新建浏览器人员并且带配置。</p>
 <!-- more -->
-<script src="/js/prism.js"></script>
-<link rel="stylesheet" href="/css/prism.css">
-<h2 id="基本信息">基本信息</h2>
-<p>请求类型: HTTP<br>
-接口地址: https://script.google.com/macros/s/AKfycbzgobSFBW0sbiKRrLIYYjKDbSUPEJgDpZwv-L0Gsm1bv6_pBeYeCWVQvvNILM-TvD9i/dev<br>
-请求方式: GET<br>
-数据类型: JSON</p>
-<h2 id="接口描述">接口描述</h2>
-<p>通过图片链接人脸识别年龄、性别、人种。</p>
-<h2 id="请求参数">请求参数</h2>
-<table>
-<thead>
-<tr>
-<th>参数名称</th>
-<th>是否必须</th>
-<th>类型</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>type</td>
-<td>true</td>
-<td>string</td>
-<td>识别类型，支持同时使用多种，例：age,race,gender</td>
-</tr>
-<tr>
-<td>imageUrl</td>
-<td>true</td>
-<td>string</td>
-<td>图片链接</td>
-</tr>
-</tbody>
-</table>
-<p>例子：</p>
-<pre><code class="language-Javascript">const param = {
-  type: 'race,age',
-  imageUrl: 'https://example.com/test.jpg'
-}
-const json = await fetch(`https://script.google.com/macros/s/AKfycbzgobSFBW0sbiKRrLIYYjKDbSUPEJgDpZwv-L0Gsm1bv6_pBeYeCWVQvvNILM-TvD9i/dev?${new URLSearchParams(param)}`).then(response =&gt; response.json())
-</code></pre>
-<h2 id="响应数据">响应数据</h2>
-<table>
-<thead>
-<tr>
-<th>参数名称</th>
-<th>是否必须</th>
-<th>类型</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>age</td>
-<td>false</td>
-<td>string</td>
-<td>年龄</td>
-</tr>
-<tr>
-<td>race</td>
-<td>false</td>
-<td>string</td>
-<td>人种</td>
-</tr>
-<tr>
-<td>gender</td>
-<td>false</td>
-<td>string</td>
-<td>性别</td>
-</tr>
-</tbody>
-</table>
-<p>例子：</p>
-<pre><code class="language-Javascript">{
-  &quot;age&quot;: 38,
-  &quot;race&quot;: &quot;white&quot;,
-  &quot;gender&quot;: &quot;Man&quot;
-}
-</code></pre>
-<h2 id="响应错误代码">响应错误代码</h2>
-<table>
-<thead>
-<tr>
-<th>错误代码</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Error: 201</td>
-<td>图片链接错误</td>
-</tr>
-<tr>
-<td>Error: 202</td>
-<td>类型错误</td>
-</tr>
-<tr>
-<td>Error: 203</td>
-<td>类型数量错误</td>
-</tr>
-<tr>
-<td>Error: 204</td>
-<td>服务器出错</td>
-</tr>
-</tbody>
-</table>
+<h2 id="如何安装">如何安装</h2>
+<p>从 <a href="https://dev-coco.github.io/Featured-Software.html">软件列表</a> 下载 新建浏览器人员软件。<br>
+<img src="https://dev-coco.github.io/post-images/1674786509664.png" alt="" loading="lazy"></p>
+<h2 id="使用前的准备">使用前的准备</h2>
+<p>在桌面新建一个 browserConfig 名字的文件夹，然后参考 <a href="/post/Chrome-Copy-Profile/">Chrome 复制浏览器配置</a>，将浏览器人员设置好的配置文件放入 browserConfig 文件夹内。</p>
+<h2 id="使用说明">使用说明</h2>
+<p>打开软件后，选择对应的浏览器。<br>
+<img src="https://dev-coco.github.io/post-images/1674786371100.png" alt="" loading="lazy"><br>
+然后输入需要新建浏览器人员的数量，根据电脑配置选择，请勿一次性设置过多，避免卡顿。设置完成后点击 好 按钮，耐心等待。<br>
+<img src="https://dev-coco.github.io/post-images/1674786376053.png" alt="" loading="lazy"><br>
+如果是第一次使用，会出现下图的提示，点击好。<br>
+<img src="https://dev-coco.github.io/post-images/1674786380643.png" alt="" loading="lazy"><br>
+当通知中心提示完成，就说明已经建立完成。<br>
+<img src="https://dev-coco.github.io/post-images/1674786384319.png" alt="" loading="lazy"></p>
 
           </div>
         </article>
         <div class="next-post">
           <div class="next">下一篇</div>
-          <a href="https://dev-coco.github.io/post/Google-Script-Tutorial/">
-            <h3 class="post-title">Google 脚本基础教程目录</h3>
+          <a href="https://dev-coco.github.io/post/Google-Excel-Boost-Cross-Reference/">
+            <h3 class="post-title">Google Excel 性能优化 - 跨表引用</h3>
           </a>
         </div>
         <div id="disqus_thread"></div>
@@ -207,7 +116,7 @@ const json = await fetch(`https://script.google.com/macros/s/AKfycbzgobSFBW0sbiK
       <!-- right -->
       <div id="sidebar" class="main-container-right">
         <div class="id_card i-card">
-          <div class="id_card-avatar" style="background-image: url(https://dev-coco.github.io/images/avatar.png?v=1673883173199)"></div>
+          <div class="id_card-avatar" style="background-image: url(https://dev-coco.github.io/images/avatar.png?v=1674787235707)"></div>
           <h1 class="id_card-title">Raz1ner</h1>
           <img style="margin-top: 15px;margin-bottom: 10px;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&amp;count_bg=%2310C1F9&amp;title_bg=%23555555&amp;icon=html5.svg&amp;icon_color=%23E7E7E7&amp;title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&amp;edge_flat=false">
           <p style="text-align: center;">
@@ -234,11 +143,9 @@ const json = await fetch(`https://script.google.com/macros/s/AKfycbzgobSFBW0sbiK
             <ul class="markdownIt-TOC">
 <li>
 <ul>
-<li><a href="#%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF">基本信息</a></li>
-<li><a href="#%E6%8E%A5%E5%8F%A3%E6%8F%8F%E8%BF%B0">接口描述</a></li>
-<li><a href="#%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0">请求参数</a></li>
-<li><a href="#%E5%93%8D%E5%BA%94%E6%95%B0%E6%8D%AE">响应数据</a></li>
-<li><a href="#%E5%93%8D%E5%BA%94%E9%94%99%E8%AF%AF%E4%BB%A3%E7%A0%81">响应错误代码</a></li>
+<li><a href="#%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85">如何安装</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8%E5%89%8D%E7%9A%84%E5%87%86%E5%A4%87">使用前的准备</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E">使用说明</a></li>
 </ul>
 </li>
 </ul>
@@ -274,19 +181,19 @@ const json = await fetch(`https://script.google.com/macros/s/AKfycbzgobSFBW0sbiK
       </div>
       <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
         <div class="notice-content">
-          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/excel/">Excel</a>
-          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/software/">软件</a>
-          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/google-script/">Google 脚本</a>
-          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/other/">其它</a>
-          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
-          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/javascript/">Javascript</a>
-          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/sololearn/">Sololearn</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/software/">软件</a>
           <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/macos/">macOS</a>
-          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
-          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/shell/">Shell</a>
-          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/security/">安全</a>
-          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/windows/">Windows</a>
-          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/excel/">Excel</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/google-script/">Google 脚本</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/sololearn/">Sololearn</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/security/">安全</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/javascript/">Javascript</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/ios/">iOS</a>
           <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
         </div>
       </div>
