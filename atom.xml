@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2023-02-01T20:30:52.927Z</updated>
+    <updated>2023-02-02T23:44:22.061Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2023, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[Google Excel 性能优化 - 创建辅助表]]></title>
+        <id>https://dev-coco.github.io/post/Google-Excel-Boost-Auxiliary-Sheet/</id>
+        <link href="https://dev-coco.github.io/post/Google-Excel-Boost-Auxiliary-Sheet/">
+        </link>
+        <updated>2023-02-02T10:42:32.000Z</updated>
+        <summary type="html"><![CDATA[<p>创建小型辅助表。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>创建小型辅助表。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Apple 全家桶免费体验]]></title>
         <id>https://dev-coco.github.io/post/Apple-Service-Free-Trial/</id>
@@ -161,17 +172,6 @@
         <summary type="html"><![CDATA[<p>Windscribe 是加拿大的一家 VPN 服务供应商。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>Windscribe 是加拿大的一家 VPN 服务供应商。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Google Excel 动态指向单元格目录]]></title>
-        <id>https://dev-coco.github.io/post/Google-Excel-Dynamic-Direction-Cell/</id>
-        <link href="https://dev-coco.github.io/post/Google-Excel-Dynamic-Direction-Cell/">
-        </link>
-        <updated>2022-11-24T12:10:54.000Z</updated>
-        <summary type="html"><![CDATA[<p>制作一个动态单元格目录，快速找到对应菜单。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>制作一个动态单元格目录，快速找到对应菜单。</p>
 ]]></content>
     </entry>
 </feed>
