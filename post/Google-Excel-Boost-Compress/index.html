@@ -3,8 +3,8 @@
   <meta charset="utf-8">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>使用 Google 脚本实现 VLOOKUP | Raz1ner</title>
-  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1675724690763">
+  <title>Google Excel 性能优化 - 数据压缩 | Raz1ner</title>
+  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1675725215023">
   <link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
   <script src="https://dev-coco.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
   <script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -29,7 +29,7 @@
       <div class="nav">
         <div class="logo">
           <a href="https://dev-coco.github.io">
-            <img class="avatar" src="https://dev-coco.github.io/images/avatar.png?v=1675724690763" alt="">
+            <img class="avatar" src="https://dev-coco.github.io/images/avatar.png?v=1675725215023" alt="">
           </a>
           <div class="site-title">
             <h1>Raz1ner</h1>
@@ -76,97 +76,38 @@
       <!-- left -->
       <div id="content" class="main-container-left">
         <article class="post i-card">
-        <h2 class="post-title">使用 Google 脚本实现 VLOOKUP</h2>
+        <h2 class="post-title">Google Excel 性能优化 - 数据压缩</h2>
         <div class="post-info">
-          <time class="post-time">2023-02-06 / 4 min read</time>
-            <a href="https://dev-coco.github.io/tag/google-script/" class="post-tag i-tag i-tag-warning">#Google 脚本</a>
+          <time class="post-time">2023-02-06 / 3 min read</time>
+            <a href="https://dev-coco.github.io/tag/excel/" class="post-tag i-tag i-tag-other_3">#Excel</a>
         </div>
           <div class="post-content">
-            <p>再也不怕大数据量匹配造成的卡顿了！</p>
+            <p>一个通用型性能优化技巧，加快数据传输速度。</p>
 <!-- more -->
-<script src="/js/prism.js"></script>
-<link rel="stylesheet" href="/css/prism.css">
-<p>使用 Google 脚本实现 VLOOKUP 效果的思路如下图：</p>
-<div class="mxgraph" style="max-width:100%;border:1px solid transparent;margin:0 auto" data-mxgraph="{&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;nav&quot;:true,&quot;resize&quot;:true,&quot;xml&quot;:&quot;&lt;mxfile host=\&quot;app.diagrams.net\&quot; modified=\&quot;2023-02-06T23:04:05.408Z\&quot; agent=\&quot;5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36\&quot; etag=\&quot;8xSJvFWoDBY0JXG4yx7X\&quot; version=\&quot;20.8.17\&quot; type=\&quot;device\&quot;&gt;&lt;diagram id=\&quot;NwRBO1jsGi7coT0JEURL\&quot; name=\&quot;第 1 页\&quot;&gt;7Vldc5s4FP01ekxHIATiEWzSnWm72508tHmUQdhsMfJgubb761cC8U1snDiNdzZ5yEhXH1j3nHt1JAE0Wx8+5nSz+sIjlgITRgeA5sA0HdeS/5XhWBoMA+HSssyTSNsaw0Pyi2kj1NZdErFtp6PgPBXJpmsMeZaxUHRsNM/5vtst5mn3qxu6ZAPDQ0jTofVbEolVtQzbbRr+YMlypT9NTKdsWNOqs17JdkUjvm+ZUADQLOdclKX1YcZS5bzKL+W4+yda6x+Ws0xMGcC+zT9tHu/+IpZ/v1l8Pfp//7m707P8pOlOLxgELnBngEAQEODZgBggwIDMgO+qJiLLcxA4wPUAsUBgAxcDH6qCtHuBXqs4Vg7M+S6LmPoNBkD+fpUI9rChoWrdS8pI20qsU90c80xoDhiWrC9TulUAQlne/mAiXFWVypmqEidpOuMpz4svohhSBKmerWWHxZ8aLHL+g7Va/LlTtgx9WjmI5YIdWibt44+Mr5nIj7JL1WppvI+9+r5Fn4oTqxZzbG2jmrHLeuoGVFnQuF6AsTmC8QA2BbYBPHID+BkLajBziF9c/I3hB6EdePfXwQ+bN4cfHIDCIpmkdJXnYsWXPKNp0Fj9Bjbl4abPZ843Gqx/mBBHjRbdCd6Fkh0S8V0PV+VHVf6AdW1+aDXNj1Ulk+v93nRU1cdqPlVphhW1alyfNk/CuOW7PGQnfIX0FkHzJRPn857y40lS5CylIvnZ3QyujjA6FaEO8H2Vat8+MCPKSByOBaAdEraIrxWAuBOAFhwJQGMkAPFrBSAewtMHQ7pto4pxyg6ekh0FxyNdnIfK3UnYxaQbon2EtpLDohqf8YwN8YCQ0PENDULsnN7QzjK/5W18wtmTA0R/4StP5C+pwTZJL9s6PRDLiNej2uqmNxGGZyYqU8JgooIQ9bKfzxF3JIQt4JNCLWHgzYFLVEFKq5dusp0QfTKQ+3zqiyQSsnA0lhcEW/hKYsjubaamM4xlMsIu67VCucobHZxuEJ4IMxJZY/AQc4Fs+zrwWM6twTOyEw60z4vSai1railTC5SLZU0jZMZlzfNljDlVxsCbyuYY9fjU35KnZnO7d4gaMO6Vs7lhvfPwEh66N0VDu6cFBkezyTTEvYmM30zDCcrz/0DDyu1neYhuiof9dIiemw5xTyUj+Jt56IyoJgL8e+BahWrygRtMuAtUuHymC5Z2KUrTZJkp/kpiMClzfKVgkpCmnm5YJ1FU3mqwbfKLLor5FKU2asWFD7AP8HzSVcLpSOtrp/pmWX8VtC9vxzTVHfwAbfNl/Km68DjestdB1H7PLK2N6z2xvFFiIZMSiwM8F/he8RABgT/7LyWWKtCuklgMYnfwqu4xbzjRjF2MDF+Y5NYBlVHddlrAM1svTOXp3ClYMFP93/50Xl+8XfBCce5CbvqpHfVfKNDw1D76QoEuP7bLavNCWXKieedFwb8=&lt;/diagram&gt;&lt;/mxfile&gt;&quot;,&quot;toolbar&quot;:&quot;pages zoom layers lightbox&quot;,&quot;page&quot;:0}"></div>
-<script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script>
-<p>先获取当前的电子表格。</p>
-<pre><code class="language-Javascript">const sheet = SpreadsheetApp.getActiveSpreadsheet()
+<h2 id="适用场景">适用场景</h2>
+<p>有时候再 Google 表格使用 IMPORTRANGE 或 <a href="https://dev-coco.github.io/Excel/#Function/Find-Filter/VLOOKUP">VLOOKUP</a> 等函数，遇到大范围的数据，运行起来速度就会特别慢。</p>
+<h2 id="优化思路">优化思路</h2>
+<p>将数据 “压缩”，等传输或者运算后，再将数据 “解压缩”。</p>
+<h2 id="实例">实例</h2>
+<p>例如从 B1 到 V18 范围，如果要将这个范围的数据，使用 <a href="https://dev-coco.github.io/Excel/#Function/Others/IMPORTRANGE">IMPORTRANGE</a> 导入到其它电子表格，那么就需要导入 378 个单元格。<br>
+<img src="https://dev-coco.github.io/post-images/1657414803550.png" alt="" loading="lazy"><br>
+使用 <a href="https://dev-coco.github.io/Excel/#Function/Text-Processing/JOIN">JOIN</a> 函数对数据进行横向拼接。</p>
+<pre><code>=JOIN(&quot;@&quot;, B1:V1)
 </code></pre>
-<p>然后再获取需要匹配的数据和数据工作表</p>
-<pre><code class="language-Javascript">const origData = sheet.getSheetByName('需要匹配的数据')
-const dataSheet = sheet.getSheetByName('数据表')
+<p>注意，定界符必须是独一无二的，不能出现在拼接的数据中，否则下面的步骤会出现异常。JOIN 函数不支持数组，如果需要使用数组合并，需要将字符挨个拼接到一起。</p>
+<pre><code>=ARRAYFORMULA(B:B&amp;&quot;@&quot;&amp;C:C&amp;&quot;@&quot;&amp;D:D&amp;&quot;@&quot;&amp;E:E&amp;&quot;@&quot;&amp;F:F&amp;&quot;@&quot;&amp;G:G&amp;&quot;@&quot;&amp;H:H&amp;&quot;@&quot;&amp;I:I&amp;&quot;@&quot;&amp;J:J&amp;&quot;@&quot;&amp;K:K&amp;&quot;@&quot;&amp;L:L&amp;&quot;@&quot;&amp;M:M&amp;&quot;@&quot;&amp;N:N&amp;&quot;@&quot;&amp;O:O&amp;&quot;@&quot;&amp;P:P&amp;&quot;@&quot;&amp;Q:Q&amp;&quot;@&quot;&amp;R:R&amp;&quot;@&quot;&amp;S:S&amp;&quot;@&quot;&amp;T:T&amp;&quot;@&quot;&amp;U:U&amp;&quot;@&quot;&amp;V:V)
 </code></pre>
-<p>因为 Google 表格获取单元格的内容是二维数组，所以需要先将要进行匹配的数据转换成一维数组。<br>
-<code>flat()</code> 是 ES6 特有的方法，将数组“扁平化”。</p>
-<pre><code class="language-Javascript">const searchArray = origData.getRange('A:A').getValues().flat()
-const dataArray = dataSheet.getRange('A:A').getValues().flat()
+<p>拼接在一起后，A 列的数据就已经包含了右边一大堆的单元格的数据了。<br>
+<img src="https://dev-coco.github.io/post-images/1657414809407.png" alt="" loading="lazy"><br>
+现在将这一部分数据使用 IMPORTRANGE 函数导入到其它的电子表格，只需要获取 A1 到 A18 的范围，也就是 18个单元格，这样相比 378 个单元格的数据要少很多很多。<br>
+<img src="https://dev-coco.github.io/post-images/1657414813716.png" alt="" loading="lazy"><br>
+使用 <a href="https://dev-coco.github.io/Excel/#Function/Text-Processing/SPLIT">SPLIT</a> 函数将数据拆分开。</p>
+<pre><code>=SPLIT(A1, &quot;@&quot;, TRUE, FALSE)
 </code></pre>
-<p>获取数据表里需要匹配的结果。</p>
-<pre><code class="language-Javascript">const dataValues = dataSheet.getRange('B:C').getValues()
-</code></pre>
-<p>设置一个数组，因为待会要把匹配的结果写入到数组里。</p>
-<pre><code class="language-Javascript">const result = []
-</code></pre>
-<p>建立一个 for 循环，把需要匹配的数据进行循环，因为需要挨个搜索关键词在数据表中是否存在。</p>
-<pre><code class="language-Javascript">for (let i = 0; i &lt; searchArray.length; i++) {
-}
-</code></pre>
-<p>使用 <code>indexOf</code> 判断数组中是否包含关键词，也就是从数据表中搜索是否有包含待匹配的字符。</p>
-<pre><code class="language-Javascript">const index = dataArray.indexOf(searchArray[i])
-</code></pre>
-<p>再使用 <code>if</code> 进行判断，如果搜索到数据就写入之前设置好的变量，如果没有匹配到就返回对应长度的空数组。</p>
-<pre><code class="language-Javascript">if (searchArray[i] &amp;&amp; index &gt; -1) {
-  result.push(dataValues[index])
-} else {
-  result.push(new Array(2))
-}
-</code></pre>
-<p>那么完整的循环代码如下：</p>
-<pre><code class="language-Javascript">for (let i = 0; i &lt; searchArray.length; i++) {
-  const index = dataArray.indexOf(searchArray[i])
-  if (searchArray[i] &amp;&amp; index &gt; -1) {
-    result.push(dataValues[index])
-  } else {
-    result.push(new Array(2))
-  }
-}
-</code></pre>
-<p>最后将匹配完结果的数组写入到需要匹配的数据工作表的 B 和 C 列。</p>
-<pre><code class="language-Javascript">origData.getRange('B:C').setValues(result)
-</code></pre>
-<p>这样就实现了 VLOOKUP 函数一样的效果。不过如果数据量少的话，Google 脚本的运行速度是不如原生函数的，如果数据量很大的话，那使用 Google 脚本来实现是比较好的方案，因为数据不会实时更新，而且写入的数据是文本值，不会因为单元格更新了某个数据就引起所有数据的重新计算，也可以搭配触发器使用，在特定的条件下更新数据。</p>
-<p>成品代码如下：</p>
-<pre><code class="language-Javascript">/**
- * @description 使用 Google 脚本实现的 VLOOKUP
- * @param {string} searchColumn - 搜索列，例子：需要匹配的数据!A:A
- * @param {string} indexColumn - 索引列，例子：索引表!A:A
- * @param {string} indexRange - 索引数据范围，例子：B:C
- * @param {string} saveRange - 存放数据范围，例子：B:C
- */
-function powerLookup (searchColumn, indexColumn, indexRange, saveRange) {
-  const origStr = searchColumn.split('!')
-  const indexStr = indexColumn.split('!')
-  const sheet = SpreadsheetApp.getActiveSpreadsheet()
-  const origData = sheet.getSheetByName(origStr[0])
-  const dataSheet = sheet.getSheetByName(indexStr[0])
-  const searchArray = origData.getRange(origStr[1]).getValues().flat()
-  const dataArray = dataSheet.getRange(indexStr[1]).getValues().flat()
-  const dataValues = dataSheet.getRange(indexRange).getValues()
-  const result = []
-  for (let i = 0; i &lt; searchArray.length; i++) {
-    const index = dataArray.indexOf(searchArray[i])
-    if (searchArray[i] &amp;&amp; index &gt; -1) {
-      result.push(dataValues[index])
-    } else {
-      result.push(new Array(2))
-    }
-  }
-  origData.getRange(saveRange).setValues(result)
-}
-</code></pre>
-<p>将代码封装成函数可以直接调用，示例如下：</p>
-<pre><code class="language-Javascript">powerLookup('需要匹配的数据!A:A', '数据表!A:A', 'B:C', 'B:C')
-</code></pre>
+<p>移除空白参数要设置 FALSE，否则遇到空白的内容会跳过，这样会造成位置偏移。SPLIT 函数支持使用数组输出。拆分后的数据和源数据的显示效果是一样的。<br>
+<img src="https://dev-coco.github.io/post-images/1657414822623.png" alt="" loading="lazy"></p>
+<h2 id="思路总结">思路总结</h2>
+<p>这个思路有点类似文件压缩和解压缩，将大量的数据合并到一起，减少传输的数据量，获取到数据后再进行拆分。这个方法同样也适用于 VLOOKUP, <a href="https://dev-coco.github.io/Excel/#Function/Find-Filter/FILTER">FILTER</a>, <a href="https://dev-coco.github.io/Excel/#Function/Find-Filter/QUERY">QUERY</a> 等函数。</p>
 
           </div>
         </article>
@@ -184,7 +125,7 @@ function powerLookup (searchColumn, indexColumn, indexRange, saveRange) {
       <!-- right -->
       <div id="sidebar" class="main-container-right">
         <div class="id_card i-card">
-          <div class="id_card-avatar" style="background-image: url(https://dev-coco.github.io/images/avatar.png?v=1675724690763)"></div>
+          <div class="id_card-avatar" style="background-image: url(https://dev-coco.github.io/images/avatar.png?v=1675725215023)"></div>
           <h1 class="id_card-title">Raz1ner</h1>
           <img style="margin-top: 15px;margin-bottom: 10px;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&amp;count_bg=%2310C1F9&amp;title_bg=%23555555&amp;icon=html5.svg&amp;icon_color=%23E7E7E7&amp;title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&amp;edge_flat=false">
           <p style="text-align: center;">
@@ -208,7 +149,17 @@ function powerLookup (searchColumn, indexColumn, indexRange, saveRange) {
       <div class="toc-card i-card ">
         <div class="toc-title i-card-title">目录</div>
           <div class="toc-content">
-            
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E9%80%82%E7%94%A8%E5%9C%BA%E6%99%AF">适用场景</a></li>
+<li><a href="#%E4%BC%98%E5%8C%96%E6%80%9D%E8%B7%AF">优化思路</a></li>
+<li><a href="#%E5%AE%9E%E4%BE%8B">实例</a></li>
+<li><a href="#%E6%80%9D%E8%B7%AF%E6%80%BB%E7%BB%93">思路总结</a></li>
+</ul>
+</li>
+</ul>
+
           </div>
           <script>
             function locateCatelogList() {
@@ -240,20 +191,20 @@ function powerLookup (searchColumn, indexColumn, indexRange, saveRange) {
       </div>
       <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
         <div class="notice-content">
-          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/google-script/">Google 脚本</a>
-          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
-          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/excel/">Excel</a>
+          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/excel/">Excel</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
           <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/ios/">iOS</a>
-          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/software/">软件</a>
-          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/macos/">macOS</a>
-          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/other/">其它</a>
-          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/sololearn/">Sololearn</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/google-script/">Google 脚本</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/sololearn/">Sololearn</a>
           <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
-          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/shell/">Shell</a>
-          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/security/">安全</a>
-          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/javascript/">Javascript</a>
-          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/windows/">Windows</a>
-          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/security/">安全</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/javascript/">Javascript</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
         </div>
       </div>
       </div>
