@@ -1009,7 +1009,7 @@ p code {
 .post-detail .post .post-content img {
   display: block;
   margin: 24px auto;
-  max-width: 100%;
+  max-width: 80%;
   border-radius: 2px;
   box-shadow: 0 0 30px #eee;
   border-radius: 8px;
