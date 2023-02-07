@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2023-02-07T06:09:43.958Z</updated>
+    <updated>2023-02-07T23:11:18.369Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
@@ -14,7 +14,7 @@
         <id>https://dev-coco.github.io/post/Google-Excel-Boost-Compress/</id>
         <link href="https://dev-coco.github.io/post/Google-Excel-Boost-Compress/">
         </link>
-        <updated>2023-02-06T10:17:57.000Z</updated>
+        <updated>2023-02-05T21:17:57.000Z</updated>
         <summary type="html"><![CDATA[<p>一个通用型性能优化技巧，加快数据传输速度。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>一个通用型性能优化技巧，加快数据传输速度。</p>
@@ -54,11 +54,18 @@
 ]]></content>
     </entry>
     <entry>
+        <title type="html"><![CDATA[demo]]></title>
+        <id>https://dev-coco.github.io/post/demo/</id>
+        <link href="https://dev-coco.github.io/post/demo/">
+        </link>
+        <updated>2023-01-29T15:47:38.000Z</updated>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[快速新建浏览器人员工具]]></title>
         <id>https://dev-coco.github.io/post/Browser-Copy-Profile/</id>
         <link href="https://dev-coco.github.io/post/Browser-Copy-Profile/">
         </link>
-        <updated>2023-01-26T12:31:38.000Z</updated>
+        <updated>2023-01-25T23:31:38.000Z</updated>
         <summary type="html"><![CDATA[<p>一个简单便捷的功能快速新建浏览器人员并且带配置。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>一个简单便捷的功能快速新建浏览器人员并且带配置。</p>
@@ -69,7 +76,7 @@
         <id>https://dev-coco.github.io/post/Google-Excel-Boost-Cross-Reference/</id>
         <link href="https://dev-coco.github.io/post/Google-Excel-Boost-Cross-Reference/">
         </link>
-        <updated>2023-01-17T02:32:47.000Z</updated>
+        <updated>2023-01-16T13:32:47.000Z</updated>
         <summary type="html"><![CDATA[<p>比原生的方式更快的方法。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>比原生的方式更快的方法。</p>
@@ -102,7 +109,7 @@
         <id>https://dev-coco.github.io/post/Google-Excel-Boost-Reduce-Cell/</id>
         <link href="https://dev-coco.github.io/post/Google-Excel-Boost-Reduce-Cell/">
         </link>
-        <updated>2023-01-07T05:09:18.000Z</updated>
+        <updated>2023-01-06T16:09:18.000Z</updated>
         <summary type="html"><![CDATA[<p>单元格越少，速度相对越快。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>单元格越少，速度相对越快。</p>
@@ -113,7 +120,7 @@
         <id>https://dev-coco.github.io/post/Google-Excel-Boost-Reference-Range/</id>
         <link href="https://dev-coco.github.io/post/Google-Excel-Boost-Reference-Range/">
         </link>
-        <updated>2023-01-01T07:27:17.000Z</updated>
+        <updated>2022-12-31T18:27:17.000Z</updated>
         <summary type="html"><![CDATA[<p>不同的引用方式速度也不同。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>不同的引用方式速度也不同。</p>
@@ -124,7 +131,7 @@
         <id>https://dev-coco.github.io/post/Google-Excel-Boost-Bypass-Blank/</id>
         <link href="https://dev-coco.github.io/post/Google-Excel-Boost-Bypass-Blank/">
         </link>
-        <updated>2022-12-27T17:51:17.000Z</updated>
+        <updated>2022-12-27T04:51:17.000Z</updated>
         <summary type="html"><![CDATA[<p>用 IF 函数跳过无效内容，加快运行速度。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>用 IF 函数跳过无效内容，加快运行速度。</p>
@@ -135,7 +142,7 @@
         <id>https://dev-coco.github.io/post/Google-Excel-Boost-IF-Manage/</id>
         <link href="https://dev-coco.github.io/post/Google-Excel-Boost-IF-Manage/">
         </link>
-        <updated>2022-12-25T11:02:02.000Z</updated>
+        <updated>2022-12-24T22:02:02.000Z</updated>
         <summary type="html"><![CDATA[<p>用 IF 函数做一个开关控制函数执行。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>用 IF 函数做一个开关控制函数执行。</p>
@@ -146,7 +153,7 @@
         <id>https://dev-coco.github.io/post/Google-Excel-Create-Letter/</id>
         <link href="https://dev-coco.github.io/post/Google-Excel-Create-Letter/">
         </link>
-        <updated>2022-12-14T02:34:01.000Z</updated>
+        <updated>2022-12-13T13:34:01.000Z</updated>
         <summary type="html"><![CDATA[<p>一行公式快速生成 26 个字母。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>一行公式快速生成 26 个字母。</p>
@@ -161,17 +168,6 @@
         <summary type="html"><![CDATA[<p>Skype 自动回复用户自定义消息。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>Skype 自动回复用户自定义消息。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[抖音视频下载]]></title>
-        <id>https://dev-coco.github.io/post/TikTok-Video-Download/</id>
-        <link href="https://dev-coco.github.io/post/TikTok-Video-Download/">
-        </link>
-        <updated>2022-12-06T05:12:40.000Z</updated>
-        <summary type="html"><![CDATA[<p>抖音视频无水印高清下载。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>抖音视频无水印高清下载。</p>
 ]]></content>
     </entry>
 </feed>
