@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2023-02-08T02:39:15.270Z</updated>
+    <updated>2023-02-10T19:42:44.825Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2023, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[Logi Options+ 手势打开网页]]></title>
+        <id>https://dev-coco.github.io/post/Logi-Options-Open-Web/</id>
+        <link href="https://dev-coco.github.io/post/Logi-Options-Open-Web/">
+        </link>
+        <updated>2023-02-10T06:42:36.000Z</updated>
+        <summary type="html"><![CDATA[<p>软件本身没有此功能，但是可以通过其它方法实现。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>软件本身没有此功能，但是可以通过其它方法实现。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Google Excel 性能优化 - 数据压缩]]></title>
         <id>https://dev-coco.github.io/post/Google-Excel-Boost-Compress/</id>
@@ -52,13 +63,6 @@
 ]]></summary>
         <content type="html"><![CDATA[<p>Apple 全家桶包含：Fitness+、Apple TV、Apple Music、News+、Arcade、iCloud+。</p>
 ]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[demo]]></title>
-        <id>https://dev-coco.github.io/post/demo/</id>
-        <link href="https://dev-coco.github.io/post/demo/">
-        </link>
-        <updated>2023-01-29T15:47:38.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[快速新建浏览器人员工具]]></title>
