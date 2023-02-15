@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2023-02-13T18:41:49.442Z</updated>
+    <updated>2023-02-15T19:12:52.851Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2023, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[免费领取 Microsoft 全家桶和 OneDrive 5TB]]></title>
+        <id>https://dev-coco.github.io/post/Microsoft-365-Free/</id>
+        <link href="https://dev-coco.github.io/post/Microsoft-365-Free/">
+        </link>
+        <updated>2023-02-15T06:07:50.000Z</updated>
+        <summary type="html"><![CDATA[<p>Microsoft 全家桶包含：Microsoft Word、Microsoft Excel、Microsoft OneNote、Microsoft Outlook、Microsoft PowerPoint 和 OneDrive。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Microsoft 全家桶包含：Microsoft Word、Microsoft Excel、Microsoft OneNote、Microsoft Outlook、Microsoft PowerPoint 和 OneDrive。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[AI 人工智能列表]]></title>
         <id>https://dev-coco.github.io/post/AI-List/</id>
@@ -47,7 +58,7 @@
         <id>https://dev-coco.github.io/post/Facebook-Effect-Text/</id>
         <link href="https://dev-coco.github.io/post/Facebook-Effect-Text/">
         </link>
-        <updated>2023-02-04T14:37:22.000Z</updated>
+        <updated>2023-02-04T01:37:22.000Z</updated>
         <summary type="html"><![CDATA[<p>Facebook 特效文字，点击后可触发特效动画。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>Facebook 特效文字，点击后可触发特效动画。</p>
@@ -58,7 +69,7 @@
         <id>https://dev-coco.github.io/post/Google-Excel-Boost-Auxiliary-Sheet/</id>
         <link href="https://dev-coco.github.io/post/Google-Excel-Boost-Auxiliary-Sheet/">
         </link>
-        <updated>2023-02-03T08:42:32.000Z</updated>
+        <updated>2023-02-03T06:42:32.000Z</updated>
         <summary type="html"><![CDATA[<p>创建小型辅助表。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>创建小型辅助表。</p>
@@ -69,7 +80,7 @@
         <id>https://dev-coco.github.io/post/Apple-Service-Free-Trial/</id>
         <link href="https://dev-coco.github.io/post/Apple-Service-Free-Trial/">
         </link>
-        <updated>2023-02-01T07:15:32.000Z</updated>
+        <updated>2023-01-31T18:15:32.000Z</updated>
         <summary type="html"><![CDATA[<p>Apple 全家桶包含：Fitness+、Apple TV、Apple Music、News+、Arcade、iCloud+。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>Apple 全家桶包含：Fitness+、Apple TV、Apple Music、News+、Arcade、iCloud+。</p>
@@ -161,17 +172,6 @@
         <summary type="html"><![CDATA[<p>用 IF 函数做一个开关控制函数执行。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>用 IF 函数做一个开关控制函数执行。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Google Excel 快速生成 26 个字母]]></title>
-        <id>https://dev-coco.github.io/post/Google-Excel-Create-Letter/</id>
-        <link href="https://dev-coco.github.io/post/Google-Excel-Create-Letter/">
-        </link>
-        <updated>2022-12-13T13:34:01.000Z</updated>
-        <summary type="html"><![CDATA[<p>一行公式快速生成 26 个字母。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>一行公式快速生成 26 个字母。</p>
 ]]></content>
     </entry>
 </feed>
