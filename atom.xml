@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2023-02-15T19:12:52.851Z</updated>
+    <updated>2023-02-17T22:47:28.221Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2023, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[Google Excel 性能优化 - 跨表计数]]></title>
+        <id>https://dev-coco.github.io/post/Google-Excel-Boost-Cross-Count-Data/</id>
+        <link href="https://dev-coco.github.io/post/Google-Excel-Boost-Cross-Count-Data/">
+        </link>
+        <updated>2023-02-17T09:47:17.000Z</updated>
+        <summary type="html"><![CDATA[<p>使用节约性能的方式达到预期效果。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>使用节约性能的方式达到预期效果。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[免费领取 Microsoft 全家桶和 OneDrive 5TB]]></title>
         <id>https://dev-coco.github.io/post/Microsoft-365-Free/</id>
@@ -43,17 +54,6 @@
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Google Excel 性能优化 - 数据压缩]]></title>
-        <id>https://dev-coco.github.io/post/Google-Excel-Boost-Compress/</id>
-        <link href="https://dev-coco.github.io/post/Google-Excel-Boost-Compress/">
-        </link>
-        <updated>2023-02-05T21:17:57.000Z</updated>
-        <summary type="html"><![CDATA[<p>一个通用型性能优化技巧，加快数据传输速度。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>一个通用型性能优化技巧，加快数据传输速度。</p>
-]]></content>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Facebook 特效文字]]></title>
         <id>https://dev-coco.github.io/post/Facebook-Effect-Text/</id>
         <link href="https://dev-coco.github.io/post/Facebook-Effect-Text/">
@@ -62,6 +62,17 @@
         <summary type="html"><![CDATA[<p>Facebook 特效文字，点击后可触发特效动画。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>Facebook 特效文字，点击后可触发特效动画。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Google Excel 性能优化 - 数据压缩]]></title>
+        <id>https://dev-coco.github.io/post/Google-Excel-Boost-Compress/</id>
+        <link href="https://dev-coco.github.io/post/Google-Excel-Boost-Compress/">
+        </link>
+        <updated>2023-02-03T17:17:57.000Z</updated>
+        <summary type="html"><![CDATA[<p>一个通用型性能优化技巧，加快数据传输速度。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>一个通用型性能优化技巧，加快数据传输速度。</p>
 ]]></content>
     </entry>
     <entry>
@@ -102,18 +113,18 @@
         <id>https://dev-coco.github.io/post/Google-Excel-Boost-Cross-Reference/</id>
         <link href="https://dev-coco.github.io/post/Google-Excel-Boost-Cross-Reference/">
         </link>
-        <updated>2023-01-16T13:32:47.000Z</updated>
+        <updated>2023-01-16T00:32:47.000Z</updated>
         <summary type="html"><![CDATA[<p>比原生的方式更快的方法。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>比原生的方式更快的方法。</p>
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Chrome 复制浏览器配置]]></title>
+        <title type="html"><![CDATA[复制浏览器配置]]></title>
         <id>https://dev-coco.github.io/post/Chrome-Copy-Profile/</id>
         <link href="https://dev-coco.github.io/post/Chrome-Copy-Profile/">
         </link>
-        <updated>2023-01-12T15:03:23.000Z</updated>
+        <updated>2023-01-12T02:03:23.000Z</updated>
         <summary type="html"><![CDATA[<p>一个快捷、安全的方式复制浏览器的配置。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>一个快捷、安全的方式复制浏览器的配置。</p>
@@ -124,7 +135,7 @@
         <id>https://dev-coco.github.io/post/Luminar-AI-Free-License/</id>
         <link href="https://dev-coco.github.io/post/Luminar-AI-Free-License/">
         </link>
-        <updated>2023-01-09T02:49:05.000Z</updated>
+        <updated>2023-01-08T13:49:05.000Z</updated>
         <summary type="html"><![CDATA[<p>Skylum Luminar AI 是一款图像编辑软件。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>Skylum Luminar AI 是一款图像编辑软件。</p>
@@ -135,7 +146,7 @@
         <id>https://dev-coco.github.io/post/Google-Excel-Boost-Reduce-Cell/</id>
         <link href="https://dev-coco.github.io/post/Google-Excel-Boost-Reduce-Cell/">
         </link>
-        <updated>2023-01-06T16:09:18.000Z</updated>
+        <updated>2023-01-06T03:09:18.000Z</updated>
         <summary type="html"><![CDATA[<p>单元格越少，速度相对越快。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>单元格越少，速度相对越快。</p>
@@ -146,7 +157,7 @@
         <id>https://dev-coco.github.io/post/Google-Excel-Boost-Reference-Range/</id>
         <link href="https://dev-coco.github.io/post/Google-Excel-Boost-Reference-Range/">
         </link>
-        <updated>2022-12-31T18:27:17.000Z</updated>
+        <updated>2022-12-31T05:27:17.000Z</updated>
         <summary type="html"><![CDATA[<p>不同的引用方式速度也不同。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>不同的引用方式速度也不同。</p>
@@ -161,17 +172,6 @@
         <summary type="html"><![CDATA[<p>用 IF 函数跳过无效内容，加快运行速度。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>用 IF 函数跳过无效内容，加快运行速度。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Google Excel 性能优化 - IF 管理函数执行]]></title>
-        <id>https://dev-coco.github.io/post/Google-Excel-Boost-IF-Manage/</id>
-        <link href="https://dev-coco.github.io/post/Google-Excel-Boost-IF-Manage/">
-        </link>
-        <updated>2022-12-24T22:02:02.000Z</updated>
-        <summary type="html"><![CDATA[<p>用 IF 函数做一个开关控制函数执行。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>用 IF 函数做一个开关控制函数执行。</p>
 ]]></content>
     </entry>
 </feed>
