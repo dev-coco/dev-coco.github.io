@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2023-03-11T01:12:48.623Z</updated>
+    <updated>2023-03-12T05:15:07.261Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2023, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[浏览器窗口自动排版]]></title>
+        <id>https://dev-coco.github.io/post/Browser-Resize/</id>
+        <link href="https://dev-coco.github.io/post/Browser-Resize/">
+        </link>
+        <updated>2023-03-11T16:14:57.000Z</updated>
+        <summary type="html"><![CDATA[<p>浏览器自定义窗口大小摆放指定坐标。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>浏览器自定义窗口大小摆放指定坐标。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[快捷指令 - 充电提示]]></title>
         <id>https://dev-coco.github.io/post/Shortcuts-Charging-Reminder/</id>
@@ -161,17 +172,6 @@
         <summary type="html"><![CDATA[<p>比原生的方式更快的方法。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>比原生的方式更快的方法。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[复制浏览器配置]]></title>
-        <id>https://dev-coco.github.io/post/Chrome-Copy-Profile/</id>
-        <link href="https://dev-coco.github.io/post/Chrome-Copy-Profile/">
-        </link>
-        <updated>2023-01-12T02:03:23.000Z</updated>
-        <summary type="html"><![CDATA[<p>一个快捷、安全的方式复制浏览器的配置。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>一个快捷、安全的方式复制浏览器的配置。</p>
 ]]></content>
     </entry>
 </feed>
