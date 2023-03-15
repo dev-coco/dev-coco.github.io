@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2023-03-12T05:40:38.499Z</updated>
+    <updated>2023-03-15T03:50:57.232Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2023, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[Google Excel 性能优化 - 数组输出]]></title>
+        <id>https://dev-coco.github.io/post/Google-Excel-Array-Output/</id>
+        <link href="https://dev-coco.github.io/post/Google-Excel-Array-Output/">
+        </link>
+        <updated>2023-03-14T14:49:18.000Z</updated>
+        <summary type="html"><![CDATA[<p>一样的效果，数组的速度快得超乎想象。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>一样的效果，数组的速度快得超乎想象。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[浏览器窗口自动排版]]></title>
         <id>https://dev-coco.github.io/post/Browser-Resize/</id>
@@ -161,17 +172,6 @@
         <summary type="html"><![CDATA[<p>一个简单便捷的功能快速新建浏览器人员并且带配置。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>一个简单便捷的功能快速新建浏览器人员并且带配置。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Google Excel 性能优化 - 跨表引用]]></title>
-        <id>https://dev-coco.github.io/post/Google-Excel-Boost-Cross-Reference/</id>
-        <link href="https://dev-coco.github.io/post/Google-Excel-Boost-Cross-Reference/">
-        </link>
-        <updated>2023-01-16T00:32:47.000Z</updated>
-        <summary type="html"><![CDATA[<p>比原生的方式更快的方法。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>比原生的方式更快的方法。</p>
 ]]></content>
     </entry>
 </feed>
