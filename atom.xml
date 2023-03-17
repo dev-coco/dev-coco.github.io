@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2023-03-16T17:40:46.719Z</updated>
+    <updated>2023-03-17T02:58:55.012Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2023, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[Google Excel 性能优化 - 下拉菜单性能对比]]></title>
+        <id>https://dev-coco.github.io/post/Dropdown-Menu-Performance-Test/</id>
+        <link href="https://dev-coco.github.io/post/Dropdown-Menu-Performance-Test/">
+        </link>
+        <updated>2023-03-16T13:58:46.000Z</updated>
+        <summary type="html"><![CDATA[<p>不同样式的下拉菜单消耗的性能也不同。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>不同样式的下拉菜单消耗的性能也不同。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Google Excel 性能优化 - 数组输出]]></title>
         <id>https://dev-coco.github.io/post/Google-Excel-Array-Output/</id>
@@ -161,17 +172,6 @@
         <summary type="html"><![CDATA[<p>Apple 全家桶包含：Fitness+、Apple TV、Apple Music、News+、Arcade、iCloud+。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>Apple 全家桶包含：Fitness+、Apple TV、Apple Music、News+、Arcade、iCloud+。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[快速新建浏览器人员工具]]></title>
-        <id>https://dev-coco.github.io/post/Browser-Copy-Profile/</id>
-        <link href="https://dev-coco.github.io/post/Browser-Copy-Profile/">
-        </link>
-        <updated>2023-01-25T23:31:38.000Z</updated>
-        <summary type="html"><![CDATA[<p>一个简单便捷的功能快速新建浏览器人员并且带配置。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>一个简单便捷的功能快速新建浏览器人员并且带配置。</p>
 ]]></content>
     </entry>
 </feed>
