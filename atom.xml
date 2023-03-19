@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>http://localhost:4000</id>
+    <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2023-03-18T13:41:21.452Z</updated>
+    <updated>2023-03-19T03:08:27.245Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="http://localhost:4000"/>
-    <link rel="self" href="http://localhost:4000/atom.xml"/>
-    <logo>http://localhost:4000/images/avatar.png</logo>
-    <icon>http://localhost:4000/favicon.ico</icon>
+    <link rel="alternate" href="https://dev-coco.github.io"/>
+    <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
+    <logo>https://dev-coco.github.io/images/avatar.png</logo>
+    <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2023, Raz1ner</rights>
     <entry>
         <title type="html"><![CDATA[Google Excel 性能优化 - 下拉菜单性能对比]]></title>
-        <id>http://localhost:4000/post/Dropdown-Menu-Performance-Test/</id>
-        <link href="http://localhost:4000/post/Dropdown-Menu-Performance-Test/">
+        <id>https://dev-coco.github.io/post/Dropdown-Menu-Performance-Test/</id>
+        <link href="https://dev-coco.github.io/post/Dropdown-Menu-Performance-Test/">
         </link>
         <updated>2023-03-16T13:58:46.000Z</updated>
         <summary type="html"><![CDATA[<p>不同样式的下拉菜单消耗的性能也不同。</p>
@@ -21,20 +21,9 @@
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Levenshtein distance 编辑距离算法]]></title>
-        <id>http://localhost:4000/post/levenshtein-distance-bian-ji-ju-chi-suan-fa/</id>
-        <link href="http://localhost:4000/post/levenshtein-distance-bian-ji-ju-chi-suan-fa/">
-        </link>
-        <updated>2023-03-15T03:25:39.000Z</updated>
-        <summary type="html"><![CDATA[<p>详细解释算法的原理以及计算过程。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>详细解释算法的原理以及计算过程。</p>
-]]></content>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Google Excel 性能优化 - 数组输出]]></title>
-        <id>http://localhost:4000/post/Google-Excel-Array-Output/</id>
-        <link href="http://localhost:4000/post/Google-Excel-Array-Output/">
+        <id>https://dev-coco.github.io/post/Google-Excel-Array-Output/</id>
+        <link href="https://dev-coco.github.io/post/Google-Excel-Array-Output/">
         </link>
         <updated>2023-03-14T14:49:18.000Z</updated>
         <summary type="html"><![CDATA[<p>一样的效果，数组的速度快得超乎想象。</p>
@@ -44,8 +33,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[浏览器窗口自动排版]]></title>
-        <id>http://localhost:4000/post/Browser-Resize/</id>
-        <link href="http://localhost:4000/post/Browser-Resize/">
+        <id>https://dev-coco.github.io/post/Browser-Resize/</id>
+        <link href="https://dev-coco.github.io/post/Browser-Resize/">
         </link>
         <updated>2023-03-11T16:14:57.000Z</updated>
         <summary type="html"><![CDATA[<p>浏览器自定义窗口大小摆放指定坐标。</p>
@@ -55,8 +44,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[快捷指令 - 充电提示]]></title>
-        <id>http://localhost:4000/post/Shortcuts-Charging-Reminder/</id>
-        <link href="http://localhost:4000/post/Shortcuts-Charging-Reminder/">
+        <id>https://dev-coco.github.io/post/Shortcuts-Charging-Reminder/</id>
+        <link href="https://dev-coco.github.io/post/Shortcuts-Charging-Reminder/">
         </link>
         <updated>2023-03-10T12:12:39.000Z</updated>
         <summary type="html"><![CDATA[<p>充满电后自动语音播报。</p>
@@ -66,8 +55,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Chrome 插件代码逆向分析]]></title>
-        <id>http://localhost:4000/post/Chrome-Extension-Reverse-Engineering/</id>
-        <link href="http://localhost:4000/post/Chrome-Extension-Reverse-Engineering/">
+        <id>https://dev-coco.github.io/post/Chrome-Extension-Reverse-Engineering/</id>
+        <link href="https://dev-coco.github.io/post/Chrome-Extension-Reverse-Engineering/">
         </link>
         <updated>2023-03-05T11:56:19.000Z</updated>
         <summary type="html"><![CDATA[<p>记录一下遇到的一个 Chrome 盗号插件逆向分析的过程。</p>
@@ -77,8 +66,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Skype 自动回复]]></title>
-        <id>http://localhost:4000/post/Skype-Auto-Reply/</id>
-        <link href="http://localhost:4000/post/Skype-Auto-Reply/">
+        <id>https://dev-coco.github.io/post/Skype-Auto-Reply/</id>
+        <link href="https://dev-coco.github.io/post/Skype-Auto-Reply/">
         </link>
         <updated>2023-02-22T07:57:49.000Z</updated>
         <summary type="html"><![CDATA[<p>Skype 自动回复用户自定义消息。</p>
@@ -88,8 +77,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Google Excel LAMBDA 和 MAP 组合函数]]></title>
-        <id>http://localhost:4000/post/Google-Excel-LAMBDA-MAP-Function/</id>
-        <link href="http://localhost:4000/post/Google-Excel-LAMBDA-MAP-Function/">
+        <id>https://dev-coco.github.io/post/Google-Excel-LAMBDA-MAP-Function/</id>
+        <link href="https://dev-coco.github.io/post/Google-Excel-LAMBDA-MAP-Function/">
         </link>
         <updated>2023-02-18T23:26:20.000Z</updated>
         <summary type="html"><![CDATA[<p>类似 ARRAYFORMULA 函数实现数组输出的效果。</p>
@@ -99,8 +88,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Google Excel 性能优化 - 跨表计数]]></title>
-        <id>http://localhost:4000/post/Google-Excel-Boost-Cross-Count-Data/</id>
-        <link href="http://localhost:4000/post/Google-Excel-Boost-Cross-Count-Data/">
+        <id>https://dev-coco.github.io/post/Google-Excel-Boost-Cross-Count-Data/</id>
+        <link href="https://dev-coco.github.io/post/Google-Excel-Boost-Cross-Count-Data/">
         </link>
         <updated>2023-02-17T09:47:17.000Z</updated>
         <summary type="html"><![CDATA[<p>使用节约性能的方式达到预期效果。</p>
@@ -110,8 +99,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[免费领取 Microsoft 全家桶和 OneDrive 5TB]]></title>
-        <id>http://localhost:4000/post/Microsoft-365-Free/</id>
-        <link href="http://localhost:4000/post/Microsoft-365-Free/">
+        <id>https://dev-coco.github.io/post/Microsoft-365-Free/</id>
+        <link href="https://dev-coco.github.io/post/Microsoft-365-Free/">
         </link>
         <updated>2023-02-15T06:07:50.000Z</updated>
         <summary type="html"><![CDATA[<p>Microsoft 全家桶包含：Microsoft Word、Microsoft Excel、Microsoft OneNote、Microsoft Outlook、Microsoft PowerPoint 和 OneDrive。</p>
@@ -121,8 +110,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[AI 人工智能列表]]></title>
-        <id>http://localhost:4000/post/AI-List/</id>
-        <link href="http://localhost:4000/post/AI-List/">
+        <id>https://dev-coco.github.io/post/AI-List/</id>
+        <link href="https://dev-coco.github.io/post/AI-List/">
         </link>
         <updated>2023-02-13T05:41:38.000Z</updated>
         <summary type="html"><![CDATA[<p>从网络上收集的 AI 人工智能网站。</p>
@@ -132,8 +121,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Logi Options+ 手势打开网页]]></title>
-        <id>http://localhost:4000/post/Logi-Options-Open-Web/</id>
-        <link href="http://localhost:4000/post/Logi-Options-Open-Web/">
+        <id>https://dev-coco.github.io/post/Logi-Options-Open-Web/</id>
+        <link href="https://dev-coco.github.io/post/Logi-Options-Open-Web/">
         </link>
         <updated>2023-02-10T06:42:36.000Z</updated>
         <summary type="html"><![CDATA[<p>软件本身没有此功能，但是可以通过其它方法实现。</p>
@@ -143,8 +132,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Facebook 特效文字]]></title>
-        <id>http://localhost:4000/post/Facebook-Effect-Text/</id>
-        <link href="http://localhost:4000/post/Facebook-Effect-Text/">
+        <id>https://dev-coco.github.io/post/Facebook-Effect-Text/</id>
+        <link href="https://dev-coco.github.io/post/Facebook-Effect-Text/">
         </link>
         <updated>2023-02-04T01:37:22.000Z</updated>
         <summary type="html"><![CDATA[<p>Facebook 特效文字，点击后可触发特效动画。</p>
@@ -154,8 +143,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Google Excel 性能优化 - 数据压缩]]></title>
-        <id>http://localhost:4000/post/Google-Excel-Boost-Compress/</id>
-        <link href="http://localhost:4000/post/Google-Excel-Boost-Compress/">
+        <id>https://dev-coco.github.io/post/Google-Excel-Boost-Compress/</id>
+        <link href="https://dev-coco.github.io/post/Google-Excel-Boost-Compress/">
         </link>
         <updated>2023-02-03T17:17:57.000Z</updated>
         <summary type="html"><![CDATA[<p>一个通用型性能优化技巧，加快数据传输速度。</p>
@@ -165,13 +154,24 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Google Excel 性能优化 - 创建辅助表]]></title>
-        <id>http://localhost:4000/post/Google-Excel-Boost-Auxiliary-Sheet/</id>
-        <link href="http://localhost:4000/post/Google-Excel-Boost-Auxiliary-Sheet/">
+        <id>https://dev-coco.github.io/post/Google-Excel-Boost-Auxiliary-Sheet/</id>
+        <link href="https://dev-coco.github.io/post/Google-Excel-Boost-Auxiliary-Sheet/">
         </link>
         <updated>2023-02-03T06:42:32.000Z</updated>
         <summary type="html"><![CDATA[<p>创建小型辅助表。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>创建小型辅助表。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Apple 全家桶免费体验]]></title>
+        <id>https://dev-coco.github.io/post/Apple-Service-Free-Trial/</id>
+        <link href="https://dev-coco.github.io/post/Apple-Service-Free-Trial/">
+        </link>
+        <updated>2023-01-31T18:15:32.000Z</updated>
+        <summary type="html"><![CDATA[<p>Apple 全家桶包含：Fitness+、Apple TV、Apple Music、News+、Arcade、iCloud+。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Apple 全家桶包含：Fitness+、Apple TV、Apple Music、News+、Arcade、iCloud+。</p>
 ]]></content>
     </entry>
 </feed>
