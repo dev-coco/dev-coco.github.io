@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2023-03-21T00:17:01.404Z</updated>
+    <updated>2023-03-21T12:49:24.635Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2023, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[Google Excel 批量操作工具]]></title>
+        <id>https://dev-coco.github.io/post/Google-Excel-Batch-Action/</id>
+        <link href="https://dev-coco.github.io/post/Google-Excel-Batch-Action/">
+        </link>
+        <updated>2023-03-20T23:49:09.000Z</updated>
+        <summary type="html"><![CDATA[<p>超多功能 All in One，简单易用，必备工具。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>超多功能 All in One，简单易用，必备工具。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[快捷指令 - 夜间省电]]></title>
         <id>https://dev-coco.github.io/post/Nighttime-Power-Saving/</id>
@@ -161,17 +172,6 @@
         <summary type="html"><![CDATA[<p>一个通用型性能优化技巧，加快数据传输速度。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>一个通用型性能优化技巧，加快数据传输速度。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Google Excel 性能优化 - 创建辅助表]]></title>
-        <id>https://dev-coco.github.io/post/Google-Excel-Boost-Auxiliary-Sheet/</id>
-        <link href="https://dev-coco.github.io/post/Google-Excel-Boost-Auxiliary-Sheet/">
-        </link>
-        <updated>2023-02-03T06:42:32.000Z</updated>
-        <summary type="html"><![CDATA[<p>创建小型辅助表。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>创建小型辅助表。</p>
 ]]></content>
     </entry>
 </feed>
