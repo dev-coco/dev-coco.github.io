@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2023-03-23T13:52:34.024Z</updated>
+    <updated>2023-03-23T22:35:41.427Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2023, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[文字创意工坊]]></title>
+        <id>https://dev-coco.github.io/post/Text-Workshop/</id>
+        <link href="https://dev-coco.github.io/post/Text-Workshop/">
+        </link>
+        <updated>2023-03-23T10:30:53.000Z</updated>
+        <summary type="html"><![CDATA[<p>文字创意工坊是一个为创作者提供创作灵感和技巧分享的平台。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>文字创意工坊是一个为创作者提供创作灵感和技巧分享的平台。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[字符混淆]]></title>
         <id>https://dev-coco.github.io/post/String-Obfuscator/</id>
@@ -146,7 +157,7 @@
         <id>https://dev-coco.github.io/post/AI-List/</id>
         <link href="https://dev-coco.github.io/post/AI-List/">
         </link>
-        <updated>2023-02-13T05:41:38.000Z</updated>
+        <updated>2023-02-12T16:41:38.000Z</updated>
         <summary type="html"><![CDATA[<p>从网络上收集的 AI 人工智能网站。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>从网络上收集的 AI 人工智能网站。</p>
@@ -161,17 +172,6 @@
         <summary type="html"><![CDATA[<p>软件本身没有此功能，但是可以通过其它方法实现。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>软件本身没有此功能，但是可以通过其它方法实现。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Facebook 特效文字]]></title>
-        <id>https://dev-coco.github.io/post/Facebook-Effect-Text/</id>
-        <link href="https://dev-coco.github.io/post/Facebook-Effect-Text/">
-        </link>
-        <updated>2023-02-04T01:37:22.000Z</updated>
-        <summary type="html"><![CDATA[<p>Facebook 特效文字，点击后可触发特效动画。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>Facebook 特效文字，点击后可触发特效动画。</p>
 ]]></content>
     </entry>
 </feed>
