@@ -1,0 +1,338 @@
+html,
+body {
+  background-color: #c0d2e0;
+  margin: 0;
+}
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+
+/* 置顶菜单 */
+.menu {
+  background-color: #f5f5f5;
+}
+.menu a {
+  display: inline-block;
+  color: black;
+  text-align: center;
+  padding: 14px;
+  font-size: 16px;
+  text-decoration: none;
+}
+.menu a:hover {
+  background: #4D648D;
+  color: white;
+}
+
+/* 下拉菜单 */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-list {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+.dropdown-list a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px;
+    font-size: 16px;
+    text-decoration: none;
+}
+.dropdown-list a:hover {
+    background: #4D648D;
+    color: white;
+}
+.dropdown:hover .dropdown-list {
+    display: block;
+}
+
+/* 侧边栏菜单 */
+#wrapper:hover,
+#sidebar-menu:hover {
+  margin-left: 0;
+}
+#sidebar-menu {
+  border-right: 1px solid #dee2e6 !important;
+}
+#sidebar-menu {
+  height: 100vh;
+  margin-left: -16.6rem;
+  transition: margin 0.25s ease-out;
+  background-color: #D0E1F9;
+  position: fixed;
+}
+.menu-title {
+  background-color: #4D648D !important;
+  color: white;
+  padding: 0.875rem 1.25rem;
+  font-size: 1.2rem;
+  text-align: center;
+}
+.menu-list {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  margin-bottom: 0;
+  border-radius: 0.25rem;
+  width: 16.5rem;
+  overflow-y: scroll;
+  height: 93%;
+}
+.menu-list::-webkit-scrollbar {
+  display: none;
+}
+.menu-item {
+  position: relative;
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #212529;
+  text-decoration: none;
+  background: #e0ebf9;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+}
+.menu-item:hover {
+  background: rgba(77, 100, 141, 0.125);
+}
+.side-menu {
+  margin-left: 16.5rem;
+  position: absolute;
+  width: auto;
+  display: block;
+  background: #4D648D;
+  border: 1px solid #07575B;
+  color: white;
+  border-radius: 5px;
+  padding: .3rem .75rem;
+}
+      
+.row {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(var(--bs-gutter-y) * -1);
+  margin-right: calc(var(--bs-gutter-x) * -.5);
+  margin-left: calc(var(--bs-gutter-x) * -.5);
+  margin-bottom: 6px; 
+}
+.row > * {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  padding-right: calc(var(--bs-gutter-x) * .5);
+  padding-left: calc(var(--bs-gutter-x) * .5);
+  margin-top: var(--bs-gutter-y);
+}
+
+/* 搜索框 */
+.search-container {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  width: 100%;
+  margin: 8px auto 8px;
+}
+.search-container:not(.has-validation)> :not(:last-child) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.search-container> :not(:first-child) {
+  margin-left: -1px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.search-box {
+  width: 100%;
+  font-size: 14px;
+  padding: 1em;
+  border: 1px solid #ccc;
+  outline: none;
+}
+.search-box:focus {
+  border-color: #00bafa;
+}
+.checkbox {
+  display: flex;
+  align-items: center;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #e9ecef;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+}
+      
+/* Hover提示 */
+[aria-label] {
+  position: relative;
+  cursor: pointer;
+}
+[aria-label]:after {
+  opacity: 0;
+  font-size: 15px;
+  background: rgba(16, 16, 16, 0.95);
+  color: #fff;
+  border-radius: 8px;
+  content: attr(aria-label);
+  padding: .3em;
+  position: absolute;
+  z-index: 10;
+  text-align: center;
+}
+[aria-label]:before {
+  border: 5px solid transparent;
+  border-top-color: rgba(16, 16, 16, 0.95);
+  opacity: 0;
+  content: "";
+  position: absolute;
+  z-index: 10;
+}
+[aria-label]:hover:before,
+[aria-label]:hover:after {
+  opacity: 1;
+  pointer-events: none;
+}
+.tooltip:hover:after {
+  transform: translate(-50%, 0);
+}
+.tooltip:after {
+  margin-bottom: 10px;
+}
+.tooltip:before,
+.tooltip:after {
+  left: 50%;
+  bottom: 100%;
+}
+
+/* 通知 */
+.toastify {
+  padding: 12px 20px;
+  color: #ffffff;
+  display: inline-block;
+  box-shadow: 0 3px 6px -1px rgba(0, 0, 0, 0.12), 0 10px 36px -4px rgba(77, 96, 232, 0.3);
+  background: -webkit-linear-gradient(315deg, #73a5ff, #5477f5);
+  background: linear-gradient(135deg, #73a5ff, #5477f5);
+  position: fixed;
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+  border-radius: 2px;
+  text-decoration: none;
+  max-width: calc(50% - 20px);
+  z-index: 2147483647;
+}
+.toastify.on {
+  opacity: 1;
+}
+.toastify-right {
+  right: 15px;
+}
+
+/* 反馈 */
+#select-group,
+#input-name,
+#feedback {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  height: 25px;
+}
+#feedback {
+  resize: vertical;
+  height: 60px;
+}
+.form {
+  width: 300px;
+  display: block;
+  padding: 8px 15px;
+  border: solid 2px;
+  border-radius: 7px;
+  background: #f9fafb;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  text-align: center;
+  -webkit-transform: translate(-50%, -50%);
+}
+
+/* 按钮 */
+.btn {
+  text-align: center;
+  border: 1px solid;
+  padding: .375rem .75rem;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  color: #fff;
+}
+.blue {
+  color: #fff;
+  background-color: #0d6efd;
+}
+.blue:hover {
+  color: #fff;
+  background-color: #0b5ed7;
+}
+.gray {
+  color: #fff;
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+.gray:hover {
+  color: #fff;
+  background-color: #5c636a;
+  border-color: #565e64;
+}
+
+/* 置顶按钮 */
+#scrollup {
+  width: 3rem;
+  height: 3rem;
+  position: fixed;
+  bottom: 2rem;
+  right: 0.5rem;
+  z-index: 9999;
+  color: #283655;
+}
+
+/* 复制区域Hover */
+.copy:hover {
+  border: 1px solid white;
+}
