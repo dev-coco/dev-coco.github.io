@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2023-03-25T14:34:39.666Z</updated>
+    <updated>2023-03-28T15:13:37.402Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2023, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[日程记录]]></title>
+        <id>https://dev-coco.github.io/post/Schedule-Record/</id>
+        <link href="https://dev-coco.github.io/post/Schedule-Record/">
+        </link>
+        <updated>2023-03-28T03:11:48.000Z</updated>
+        <summary type="html"><![CDATA[<p>用来记录每个日程的时间并且记录到 Google Excel。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>用来记录每个日程的时间并且记录到 Google Excel。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[文字创意工坊]]></title>
         <id>https://dev-coco.github.io/post/Text-Workshop/</id>
@@ -25,7 +36,7 @@
         <id>https://dev-coco.github.io/post/String-Obfuscator/</id>
         <link href="https://dev-coco.github.io/post/String-Obfuscator/">
         </link>
-        <updated>2023-03-23T00:50:15.000Z</updated>
+        <updated>2023-03-22T12:50:15.000Z</updated>
         <summary type="html"><![CDATA[<p>用于伪原创，防止社交平台检测内容重复性。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>用于伪原创，防止社交平台检测内容重复性。</p>
@@ -161,17 +172,6 @@
         <summary type="html"><![CDATA[<p>从网络上收集的 AI 人工智能网站。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>从网络上收集的 AI 人工智能网站。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Logi Options+ 手势打开网页]]></title>
-        <id>https://dev-coco.github.io/post/Logi-Options-Open-Web/</id>
-        <link href="https://dev-coco.github.io/post/Logi-Options-Open-Web/">
-        </link>
-        <updated>2023-02-10T06:42:36.000Z</updated>
-        <summary type="html"><![CDATA[<p>软件本身没有此功能，但是可以通过其它方法实现。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>软件本身没有此功能，但是可以通过其它方法实现。</p>
 ]]></content>
     </entry>
 </feed>
