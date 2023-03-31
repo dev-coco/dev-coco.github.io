@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2023-03-29T23:09:09.904Z</updated>
+    <updated>2023-03-31T19:17:52.562Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2023, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[ChatGPT Prompt]]></title>
+        <id>https://dev-coco.github.io/post/chatgpt-prompt/</id>
+        <link href="https://dev-coco.github.io/post/chatgpt-prompt/">
+        </link>
+        <updated>2023-03-31T07:17:38.000Z</updated>
+        <summary type="html"><![CDATA[<p>自定义预设 ChatGPT 提示语。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>自定义预设 ChatGPT 提示语。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[日程记录]]></title>
         <id>https://dev-coco.github.io/post/Schedule-Record/</id>
@@ -161,17 +172,6 @@
         <summary type="html"><![CDATA[<p>Microsoft 全家桶包含：Microsoft Word、Microsoft Excel、Microsoft OneNote、Microsoft Outlook、Microsoft PowerPoint 和 OneDrive。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>Microsoft 全家桶包含：Microsoft Word、Microsoft Excel、Microsoft OneNote、Microsoft Outlook、Microsoft PowerPoint 和 OneDrive。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[AI 人工智能列表]]></title>
-        <id>https://dev-coco.github.io/post/AI-List/</id>
-        <link href="https://dev-coco.github.io/post/AI-List/">
-        </link>
-        <updated>2023-02-12T16:41:38.000Z</updated>
-        <summary type="html"><![CDATA[<p>从网络上收集的 AI 人工智能网站。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>从网络上收集的 AI 人工智能网站。</p>
 ]]></content>
     </entry>
 </feed>
