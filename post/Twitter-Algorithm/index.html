@@ -4,7 +4,7 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Twitter 演算法和推送机制 2023 最新 | Raz1ner</title>
-  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1681180784813">
+  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1681181417028">
   <link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
   <script src="/js/prism.js"></script>
   <link rel="stylesheet" href="/css/prism.css">
@@ -32,7 +32,7 @@
       <div class="nav">
         <div class="logo">
           <a href="https://dev-coco.github.io">
-            <img class="avatar" src="https://dev-coco.github.io/images/avatar.png?v=1681180784813" alt="">
+            <img class="avatar" src="https://dev-coco.github.io/images/avatar.png?v=1681181417028" alt="">
           </a>
           <div class="site-title">
             <h1>Raz1ner</h1>
@@ -82,7 +82,7 @@
         <h2 class="post-title">Twitter 演算法和推送机制 2023 最新</h2>
         <div class="post-info">
           <time class="post-time">2023-04-10 / 19 min read</time>
-            <a href="https://dev-coco.github.io/tag/other/" class="post-tag i-tag i-tag-warning">#其它</a>
+            <a href="https://dev-coco.github.io/tag/other/" class="post-tag i-tag i-tag-other_4">#其它</a>
         </div>
         <!--
           
@@ -94,7 +94,7 @@
 <style>.form{width:300px;margin-bottom:20px;background-color:#fff;border:1px solid transparent;border-radius:16px 16px 5px 5px;box-shadow:0 1px 1px rgba(0,0,0,.05);border-color:#428bca;margin:10px auto}.panel-heading{color:#fff;background-color:#428bca;border-color:#428bca;text-align:center;padding:15px;border-bottom:1px solid transparent;border-top-right-radius:13px;border-top-left-radius:13px}lable{width:100px;font-size:16px;padding-top:7px;float:left;text-align:right}.form-control{font-size:16px;margin-top:10px;margin-bottom:10px}.btn,input,select{margin-left:10px;padding:5px;font-size:16px;width:150px;box-sizing:border-box}.btn{margin:0 auto}#accountScore,#postScore{text-align:center;margin:5px}</style>
 <p>我将会详细解释我个人对 Twitter 演算法代码的理解并附上来源，然而不同的工程师分析出的结论可能会有所不同，另外 Twitter 演算法可能随时会发生变化。因此，请理性看待这篇文章的内容，仅供参考。</p>
 <p>如需转载请注明出处，并附上本文的链接。</p>
-<h2 id="帖文权重演算法">帖文权重演算法</h2>
+<h2 id="推文权重演算法">推文权重演算法</h2>
 <p>Twitter 的演算法模型中有一个叫做「Heavy Ranker」的机器学习模型，在首页的「为你推荐」中检索推文的权重分数进行排名。</p>
 <p>下面是总结的各项类型的权重值以及上限数值。不同的功能都有不同的上限值，即使某种功能的数量很大，也不会无限叠加增益。</p>
 <table style="margin: 0 auto;">
@@ -112,7 +112,7 @@
 			<td>100 分</td>
 		</tr>
 		<tr>
-			<td colspan="3">用户点赞了帖文。</td>
+			<td colspan="3">用户点赞了推文。</td>
 		</tr>
 		<tr style="text-align:center">
 			<td>转发</td>
@@ -176,7 +176,7 @@
 			<td>-1000 分</td>
 		</tr>
 		<tr>
-			<td colspan="3">用户对帖文做出负面反应（对这条推文不感兴趣、屏蔽作者、隐藏作者）。</td>
+			<td colspan="3">用户对推文做出负面反应（对这条推文不感兴趣、屏蔽作者、隐藏作者）。</td>
 		</tr>
 		<tr style="text-align:center">
 			<td>被举报</td>
@@ -652,7 +652,7 @@ if (scoringData.hasSeparateTextAndUrlHitDemotionApplied) {
 <p>衰减分数 = 基础分数 * exp(-衰减率 * (发布时间 - 当前时间) / 衰减半衰期)</p>
 <p>来源：<a href="https://github.com/twitter/the-algorithm/blob/main/src/thrift/com/twitter/search/common/ranking/ranking.thrift" target="_blank">ranking.thrift</a></p>
   <div class="form">
-    <div class="panel-heading">帖文权重衰减计算器</div>
+    <div class="panel-heading">推文权重衰减计算器</div>
     <div class="panel-body">
       <div class="form-control">
         <lable>发布时间</lable>
@@ -782,7 +782,7 @@ if (scoringData.hasSeparateTextAndUrlHitDemotionApplied) {
       <!-- right -->
       <div id="sidebar" class="main-container-right">
         <div class="id_card i-card">
-          <div class="id_card-avatar" style="background-image: url(https://dev-coco.github.io/images/avatar.png?v=1681180784813)"></div>
+          <div class="id_card-avatar" style="background-image: url(https://dev-coco.github.io/images/avatar.png?v=1681181417028)"></div>
           <h1 class="id_card-title">Raz1ner</h1>
           <img style="margin-top: 15px;margin-bottom: 10px;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&amp;count_bg=%2310C1F9&amp;title_bg=%23555555&amp;icon=html5.svg&amp;icon_color=%23E7E7E7&amp;title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&amp;edge_flat=false">
           <p style="text-align: center;">
@@ -809,7 +809,7 @@ if (scoringData.hasSeparateTextAndUrlHitDemotionApplied) {
             <ul class="markdownIt-TOC">
 <li>
 <ul>
-<li><a href="#%E5%B8%96%E6%96%87%E6%9D%83%E9%87%8D%E6%BC%94%E7%AE%97%E6%B3%95">帖文权重演算法</a>
+<li><a href="#%E6%8E%A8%E6%96%87%E6%9D%83%E9%87%8D%E6%BC%94%E7%AE%97%E6%B3%95">推文权重演算法</a>
 <ul>
 <li><a href="#%E6%80%BB%E5%88%86%E6%95%B0%E7%9A%84%E7%AE%97%E6%B3%95">总分数的算法</a></li>
 </ul>
@@ -856,21 +856,21 @@ if (scoringData.hasSeparateTextAndUrlHitDemotionApplied) {
       </div>
       <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
         <div class="notice-content">
-          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/other/">其它</a>
-          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/software/">软件</a>
-          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/macos/">macOS</a>
-          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/ai-tech/">AI 科技</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/ai-tech/">AI 科技</a>
           <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/javascript/">Javascript</a>
-          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/google-script/">Google 脚本</a>
-          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/excel/">Excel</a>
-          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/ios/">iOS</a>
-          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/security/">安全</a>
-          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
-          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/sololearn/">Sololearn</a>
-          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
-          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/shell/">Shell</a>
-          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/windows/">Windows</a>
-          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/google-script/">Google 脚本</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/excel/">Excel</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/security/">安全</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/sololearn/">Sololearn</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
         </div>
       </div>
       </div>
