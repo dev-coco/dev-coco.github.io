@@ -4,7 +4,7 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Facebook 演算法 2023 最新 | Raz1ner</title>
-  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1681425509161">
+  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1681489703396">
   <link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
   <script src="/js/prism.js"></script>
   <link rel="stylesheet" href="/css/prism.css">
@@ -32,7 +32,7 @@
       <div class="nav">
         <div class="logo">
           <a href="https://dev-coco.github.io">
-            <img class="avatar" src="https://dev-coco.github.io/images/avatar.png?v=1681425509161" alt="">
+            <img class="avatar" src="https://dev-coco.github.io/images/avatar.png?v=1681489703396" alt="">
           </a>
           <div class="site-title">
             <h1>Raz1ner</h1>
@@ -81,8 +81,8 @@
         <article class="post i-card">
         <h2 class="post-title">Facebook 演算法 2023 最新</h2>
         <div class="post-info">
-          <time class="post-time">2023-04-13 / 4 min read</time>
-            <a href="https://dev-coco.github.io/tag/facebook/" class="post-tag i-tag i-tag-other_2">#Facebook</a>
+          <time class="post-time">2023-04-12 / 4 min read</time>
+            <a href="https://dev-coco.github.io/tag/facebook/" class="post-tag i-tag i-tag-other_1">#Facebook</a>
         </div>
         <!--
           
@@ -161,7 +161,7 @@ S 代表分享次数。<br>
 wS 代表分享权重分数。</p>
 <p>举个例子，假设帖文有 19 个赞、8 个大爱、3 个抱抱、44 个评论、2 个分享。那么根据权重分数计算出 19 * 1 + 8 * 2 + 3 * 16 + 44 * 13 + 2 * 26 = 707 ，这个分值大于 400，那么就被判定为热门帖文。</p>
 <div class="form">
-  <div class="panel-heading">帖文权重计算器</div>
+  <div class="panel-heading" id="recationScoreCalc">帖文权重计算器</div>
   <div class="panel-body">
     <div class="form-control">
       <lable>点赞<img class="icon" src="/images/icon/like.png"></lable>
@@ -211,7 +211,7 @@ wS 代表分享权重分数。</p>
 <p>decayFactor = 0.5 ^ (age / halfLife)</p>
 <p>age 表示帖子发布到现在的时间间隔，halfLife 表示设定的半衰期，半衰期为 12 小时，单位也是毫秒。decayFactor 表示根据时间衰减计算得到的衰减因子，取值在 0 到 1 之间。</p>
 <div class="form">
-  <div class="panel-heading">推文权重衰减计算器</div>
+  <div class="panel-heading" id="postScoreCalc">帖文权重衰减计算器</div>
   <div class="panel-body">
     <div class="form-control">
       <lable>发布时间</lable>
@@ -269,7 +269,7 @@ wS 代表分享权重分数。</p>
       <!-- right -->
       <div id="sidebar" class="main-container-right">
         <div class="id_card i-card">
-          <div class="id_card-avatar" style="background-image: url(https://dev-coco.github.io/images/avatar.png?v=1681425509161)"></div>
+          <div class="id_card-avatar" style="background-image: url(https://dev-coco.github.io/images/avatar.png?v=1681489703396)"></div>
           <h1 class="id_card-title">Raz1ner</h1>
           <img style="margin-top: 15px;margin-bottom: 10px;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&amp;count_bg=%2310C1F9&amp;title_bg=%23555555&amp;icon=html5.svg&amp;icon_color=%23E7E7E7&amp;title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&amp;edge_flat=false">
           <p style="text-align: center;">
@@ -347,21 +347,21 @@ wS 代表分享权重分数。</p>
       </div>
       <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
         <div class="notice-content">
-          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
-          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/other/">其它</a>
-          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/software/">软件</a>
-          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/macos/">macOS</a>
-          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/ai-tech/">AI 科技</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/ai-tech/">AI 科技</a>
           <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/javascript/">Javascript</a>
-          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/google-script/">Google 脚本</a>
-          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/excel/">Excel</a>
-          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/google-script/">Google 脚本</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/excel/">Excel</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/ios/">iOS</a>
           <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/security/">安全</a>
-          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/sololearn/">Sololearn</a>
-          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
-          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/shell/">Shell</a>
-          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/windows/">Windows</a>
-          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/sololearn/">Sololearn</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
         </div>
       </div>
       </div>
