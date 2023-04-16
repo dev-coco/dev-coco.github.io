@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="keywords" content="Google Excel, Excel表格, FILTER">
+  <meta name="description" content="FILTER - 根据范围返回满足指定条件的行和列。">
+  <meta name="robots" content="index, follow">
+  <meta property="og:image" content="/images/Excel-Tutorial.jpg">
+  <title>FILTER</title>
+  <link rel="icon" href="/images/avatar.png">
+  <link href="/css/Excel/typo.css" rel="stylesheet">
+</head>
+<body class="typo">
+  <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&count_bg=%2310C1F9&title_bg=%23555555&icon=html5.svg&icon_color=%23E7E7E7&title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&edge_flat=false" style="display:none">
+  <h1 id="title">FILTER</h1>
+  <p>作用：根据范围返回满足指定条件的行和列。</p>
+  <p>语法：<span class="f">FILTER(<span class="q">范围</span>, <span class="t">条件1</span>, <span class="t">条件2</span>, …)</span></p>
+  <ul>
+    <li>范围：被过滤的数据。</li>
+    <li>条件：通过条件匹配的范围，可以是数字，文本，运算符。必须和范围的长度一样。</li>
+  </ul>
+  <p>例子：</p>
+  <iframe style="max-width:597px;height:195px;" src="https://docs.google.com/spreadsheets/d/18SJePJW6WTyRh8kQ8y5h6i3eY9mJWm4u9xsndHjLTU0/pubhtml/sheet?headers=true&gid=1362429064"></iframe>
+  <p>运用：匹配出指定内包含文本的单元格，排除掉空的单元格。</p>
+  <p>使用 FILTER 函数筛选 A 列的内容，再使用 <a href="/Excel/#Function/Text-Processing/LEN" target="_blank">LEN</a> 函数判断 A 列的单元格内容的文本长度，如果文本长度为 0 也就是空的单元格就会被筛选掉。</p>
+  <iframe style="max-width:418px;height:189px;" src="https://docs.google.com/spreadsheets/d/18SJePJW6WTyRh8kQ8y5h6i3eY9mJWm4u9xsndHjLTU0/pubhtml/sheet?headers=true&gid=202901311"></iframe>
+  <p class="home">
+    <a href="/Excel" target="_blank">
+      <img alt="Excel表格, Google Excel" src="/images/Excel.png">
+      <span>Excel 一点通</span>
+    </a>
+  </p>
+  <script src="/js/voice-playback.js"></script>
+</body>
+</html>
