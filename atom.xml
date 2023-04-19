@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2023-04-18T03:15:39.263Z</updated>
+    <updated>2023-04-19T12:30:30.981Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2023, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[庆祝博客访问量突破 200 万！]]></title>
+        <id>https://dev-coco.github.io/post/Celebrating-200W-Visits/</id>
+        <link href="https://dev-coco.github.io/post/Celebrating-200W-Visits/">
+        </link>
+        <updated>2023-04-19T00:29:02.000Z</updated>
+        <summary type="html"><![CDATA[<p>记录一下。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>记录一下。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[1.1.1.1 Warp+ 领取 24BP 流量]]></title>
         <id>https://dev-coco.github.io/post/1111-Free-Data/</id>
@@ -161,17 +172,6 @@
         <summary type="html"><![CDATA[<p>充满电后自动语音播报。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>充满电后自动语音播报。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Chrome 插件代码逆向分析]]></title>
-        <id>https://dev-coco.github.io/post/Chrome-Extension-Reverse-Engineering/</id>
-        <link href="https://dev-coco.github.io/post/Chrome-Extension-Reverse-Engineering/">
-        </link>
-        <updated>2023-03-05T11:56:19.000Z</updated>
-        <summary type="html"><![CDATA[<p>记录一下遇到的一个 Chrome 盗号插件逆向分析的过程。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>记录一下遇到的一个 Chrome 盗号插件逆向分析的过程。</p>
 ]]></content>
     </entry>
 </feed>
