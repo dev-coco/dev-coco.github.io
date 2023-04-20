@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2023-04-20T04:30:25.833Z</updated>
+    <updated>2023-04-20T17:08:14.850Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2023, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[Chrome 内核浏览器公布高危漏洞]]></title>
+        <id>https://dev-coco.github.io/post/Chrome-Security-Update/</id>
+        <link href="https://dev-coco.github.io/post/Chrome-Security-Update/">
+        </link>
+        <updated>2023-04-20T17:07:19.000Z</updated>
+        <summary type="html"><![CDATA[<p>Chrome 内核浏览器紧急发布了高危漏洞通知。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Chrome 内核浏览器紧急发布了高危漏洞通知。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[免费开启 GPT-4]]></title>
         <id>https://dev-coco.github.io/post/Free-Try-GPT-4/</id>
@@ -161,17 +172,6 @@
         <summary type="html"><![CDATA[<p>一样的效果，数组的速度快得超乎想象。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>一样的效果，数组的速度快得超乎想象。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[浏览器窗口自动排版]]></title>
-        <id>https://dev-coco.github.io/post/Browser-Resize/</id>
-        <link href="https://dev-coco.github.io/post/Browser-Resize/">
-        </link>
-        <updated>2023-03-11T16:14:57.000Z</updated>
-        <summary type="html"><![CDATA[<p>浏览器自定义窗口大小摆放指定坐标。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>浏览器自定义窗口大小摆放指定坐标。</p>
 ]]></content>
     </entry>
 </feed>
