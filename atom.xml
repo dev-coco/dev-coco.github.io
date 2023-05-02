@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2023-04-30T04:03:36.981Z</updated>
+    <updated>2023-05-02T00:25:35.795Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
@@ -10,11 +10,22 @@
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2023, Raz1ner</rights>
     <entry>
+        <title type="html"><![CDATA[Google Excel 性能优化教程目录]]></title>
+        <id>https://dev-coco.github.io/post/Google-Excel-Boost-Tutorial/</id>
+        <link href="https://dev-coco.github.io/post/Google-Excel-Boost-Tutorial/">
+        </link>
+        <updated>2023-05-01T12:20:57.000Z</updated>
+        <summary type="html"><![CDATA[<p>将 Google Excel 性能优化相关的文章整理成目录方便查找。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>将 Google Excel 性能优化相关的文章整理成目录方便查找。</p>
+]]></content>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Google Excel 性能优化 - 减少内存]]></title>
         <id>https://dev-coco.github.io/post/Google-Excel-Boost-Reduce-Storage/</id>
         <link href="https://dev-coco.github.io/post/Google-Excel-Boost-Reduce-Storage/">
         </link>
-        <updated>2023-05-01T03:24:32.000Z</updated>
+        <updated>2023-04-30T15:24:32.000Z</updated>
         <summary type="html"><![CDATA[<p>减少文件在 Google Excel 占用的内存。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>减少文件在 Google Excel 占用的内存。</p>
@@ -161,17 +172,6 @@
         <summary type="html"><![CDATA[<p>文字创意工坊是一个为创作者提供创作灵感和技巧分享的平台。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>文字创意工坊是一个为创作者提供创作灵感和技巧分享的平台。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[字符混淆]]></title>
-        <id>https://dev-coco.github.io/post/String-Obfuscator/</id>
-        <link href="https://dev-coco.github.io/post/String-Obfuscator/">
-        </link>
-        <updated>2023-03-22T12:50:15.000Z</updated>
-        <summary type="html"><![CDATA[<p>用于伪原创，防止社交平台检测内容重复性。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>用于伪原创，防止社交平台检测内容重复性。</p>
 ]]></content>
     </entry>
 </feed>
