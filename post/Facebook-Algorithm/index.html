@@ -4,7 +4,7 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Facebook 演算法 2023 最新 | Raz1ner</title>
-  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1682986878995">
+  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1683078180926">
   <link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
   <script src="/js/prism.js"></script>
   <link rel="stylesheet" href="/css/prism.css">
@@ -32,7 +32,7 @@
       <div class="nav">
         <div class="logo">
           <a href="https://dev-coco.github.io">
-            <img class="avatar" src="https://dev-coco.github.io/images/avatar.png?v=1682986878995" alt="">
+            <img class="avatar" src="https://dev-coco.github.io/images/avatar.png?v=1683078180926" alt="">
           </a>
           <div class="site-title">
             <h1>Raz1ner</h1>
@@ -82,7 +82,7 @@
         <h2 class="post-title">Facebook 演算法 2023 最新</h2>
         <div class="post-info">
           <time class="post-time">2023-04-12 / 5 min read</time>
-            <a href="https://dev-coco.github.io/tag/facebook/" class="post-tag i-tag i-tag-">#Facebook</a>
+            <a href="https://dev-coco.github.io/tag/facebook/" class="post-tag i-tag i-tag-other_2">#Facebook</a>
         </div>
         <!--
           
@@ -92,6 +92,7 @@
             <p>详细介绍 Facebook 最新演算法以及权重计算方式。</p>
 <!-- more -->
 <style>.form{width:300px;margin-bottom:20px;background-color:#fff;border:1px solid transparent;border-radius:16px 16px 5px 5px;box-shadow:0 1px 1px rgba(0,0,0,.05);border-color:#428bca;margin:10px auto}.panel-heading{color:#fff;background-color:#428bca;border-color:#428bca;text-align:center;padding:15px;border-bottom:1px solid transparent;border-top-right-radius:13px;border-top-left-radius:13px}lable{width:100px;font-size:16px;padding-top:7px;float:left;text-align:right}.form-control{font-size:16px;margin-top:10px;margin-bottom:10px}.btn,input,select{margin-left:10px;padding:5px;font-size:16px;width:150px;box-sizing:border-box}.btn{margin:0 auto}#postScore,#recationScore{text-align:center;margin:5px}.icon{width:20px;margin:0 5px!important;vertical-align:middle;display:inline!important}</style>
+<script src="/js/analyzeSentiment-min.js"></script>
 <p>我将介绍 Facebook 的演算法以及计算不同功能的权重方式。如需转载请注明出处，并附上本文的链接。</p>
 <h2 id="影响排序的因素">影响排序的因素</h2>
 <h3 id="亲密度分数">亲密度分数</h3>
@@ -226,6 +227,17 @@ wS 代表分享权重分数。</p>
 <h3 id="首页排名">首页排名</h3>
 <p>权重总分 = (亲密度分数 + 互动分数) * 时间衰减</p>
 <p>演算法会根据帖文权重总分将帖文放入“仓库中”，每次用户刷新首页的时候，就会从仓库中取出权重分数高的帖文呈现出来。</p>
+<h3 id="帖文情绪">帖文情绪</h3>
+<p>积极正面的情绪会让帖子更容易被推送，负面消极的情绪帖子会被减少推送。下面的工具可以根据输入的内容分析帖文的情绪是正面的还是负面的。</p>
+<div class="form" style="width:400px">
+  <div class="panel-heading" id="postSentiment">帖文情绪分析</div>
+  <div class="panel-body">
+    <div class="form-control" style="text-align:center;">
+      <textarea id="postContent" style="width: 370px; height: 165px;"></textarea>
+      <p id="sentimentStatus">请输入内容</p>
+    </div>
+  </div>
+</div>
 <script>
   function recationScore () {
     const like = document.getElementById('like').value
@@ -251,6 +263,30 @@ wS 代表分享权重分数。</p>
     const timeDecayFactor = Math.pow(0.5, age / halfLife)
     postScore.innerText = timeDecayFactor;
   }
+
+  const postContent = document.getElementById('postContent')
+const sentimentStatus = document.getElementById('sentimentStatus')
+
+postContent.addEventListener('keyup', () => {
+  if (!postContent.value) return sentimentStatus.innerText = '请输入内容'
+  const score = analyzeSentiment(postContent.value)
+  if (score >= 1) {
+    if (score > 3) {
+      sentimentStatus.innerText = '👍👍 非常积极'
+    } else {
+      sentimentStatus.innerText = '👍 积极正面'
+    }
+  } else if (score <= -1) {
+    if (score < -3) {
+      sentimentStatus.innerText = '👎👎 非常消极'
+    } else {
+      sentimentStatus.innerText = '👎 负面消极'
+    }
+  } else {
+    sentimentStatus.innerText = '未检测到任何情绪'
+  }
+})
+
 </script>
 
           </div>
@@ -269,7 +305,7 @@ wS 代表分享权重分数。</p>
       <!-- right -->
       <div id="sidebar" class="main-container-right">
         <div class="id_card i-card">
-          <div class="id_card-avatar" style="background-image: url(https://dev-coco.github.io/images/avatar.png?v=1682986878995)"></div>
+          <div class="id_card-avatar" style="background-image: url(https://dev-coco.github.io/images/avatar.png?v=1683078180926)"></div>
           <h1 class="id_card-title">Raz1ner</h1>
           <img style="margin-top: 15px;margin-bottom: 10px;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&amp;count_bg=%2310C1F9&amp;title_bg=%23555555&amp;icon=html5.svg&amp;icon_color=%23E7E7E7&amp;title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&amp;edge_flat=false">
           <p style="text-align: center;">
@@ -310,6 +346,7 @@ wS 代表分享权重分数。</p>
 </ul>
 </li>
 <li><a href="#%E9%A6%96%E9%A1%B5%E6%8E%92%E5%90%8D">首页排名</a></li>
+<li><a href="#%E5%B8%96%E6%96%87%E6%83%85%E7%BB%AA">帖文情绪</a></li>
 </ul>
 </li>
 </ul>
@@ -347,21 +384,21 @@ wS 代表分享权重分数。</p>
       </div>
       <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
         <div class="notice-content">
-          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/excel/">Excel</a>
-          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
-          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/other/">其它</a>
-          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/security/">安全</a>
-          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/ai-tech/">AI 科技</a>
-          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/software/">软件</a>
-          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/macos/">macOS</a>
-          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/javascript/">Javascript</a>
-          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/google-script/">Google 脚本</a>
-          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/ios/">iOS</a>
-          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/sololearn/">Sololearn</a>
-          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
-          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/shell/">Shell</a>
-          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/windows/">Windows</a>
-          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/excel/">Excel</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/security/">安全</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/ai-tech/">AI 科技</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/javascript/">Javascript</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/google-script/">Google 脚本</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/sololearn/">Sololearn</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
         </div>
       </div>
       </div>

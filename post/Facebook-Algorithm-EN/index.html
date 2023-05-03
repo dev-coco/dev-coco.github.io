@@ -4,7 +4,7 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Facebook Algorithm 2023 Update | Raz1ner</title>
-  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1682986878995">
+  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1683078180926">
   <link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
   <script src="/js/prism.js"></script>
   <link rel="stylesheet" href="/css/prism.css">
@@ -32,7 +32,7 @@
       <div class="nav">
         <div class="logo">
           <a href="https://dev-coco.github.io">
-            <img class="avatar" src="https://dev-coco.github.io/images/avatar.png?v=1682986878995" alt="">
+            <img class="avatar" src="https://dev-coco.github.io/images/avatar.png?v=1683078180926" alt="">
           </a>
           <div class="site-title">
             <h1>Raz1ner</h1>
@@ -81,8 +81,8 @@
         <article class="post i-card">
         <h2 class="post-title">Facebook Algorithm 2023 Update</h2>
         <div class="post-info">
-          <time class="post-time">2023-04-27 / 5 min read</time>
-            <a href="https://dev-coco.github.io/tag/facebook/" class="post-tag i-tag i-tag-warning">#Facebook</a>
+          <time class="post-time">2023-04-27 / 6 min read</time>
+            <a href="https://dev-coco.github.io/tag/facebook/" class="post-tag i-tag i-tag-">#Facebook</a>
         </div>
         <!--
           
@@ -92,6 +92,7 @@
             <p>Provide a detailed introduction to the latest Facebook algorithm and its weight calculation method.</p>
 <!-- more -->
 <style>.form{width:300px;margin-bottom:20px;background-color:#fff;border:1px solid transparent;border-radius:16px 16px 5px 5px;box-shadow:0 1px 1px rgba(0,0,0,.05);border-color:#428bca;margin:10px auto}.panel-heading{color:#fff;background-color:#428bca;border-color:#428bca;text-align:center;padding:15px;border-bottom:1px solid transparent;border-top-right-radius:13px;border-top-left-radius:13px}lable{width:100px;font-size:16px;padding-top:7px;float:left;text-align:right}.form-control{font-size:16px;margin-top:10px;margin-bottom:10px}.btn,input,select{margin-left:10px;padding:5px;font-size:16px;width:150px;box-sizing:border-box}.btn{margin:0 auto}#postScore,#recationScore{text-align:center;margin:5px}.icon{width:20px;margin:0 5px!important;vertical-align:middle;display:inline!important}</style>
+<script src="/js/analyzeSentiment-min.js"></script>
 <p>I will be discussing the algorithm used by Facebook and how weights are calculated for different features. If you wish to repost this content, please provide proper attribution and include a link to this article.</p>
 <h2 id="factors-that-influence-ranking">Factors that influence ranking</h2>
 <h3 id="affinity-score">Affinity Score</h3>
@@ -226,6 +227,17 @@ wS represents the weight score for shares.</p>
 <h3 id="homepage-ranking">Homepage Ranking</h3>
 <p>The total weight score is calculated as the sum of intimacy score and interaction score, multiplied by time decay.</p>
 <p>The algorithm will put the posts into the &quot;warehouse&quot; based on the total weight score. Every time a user refreshes the homepage, the posts with higher weight scores will be presented by selecting them from the warehouse.</p>
+<h3 id="post-sentiment">Post Sentiment</h3>
+<p>Positive sentiment make posts more likely to be promoted, while negative sentiment decrease the likelihood of post promotion. The following tool can analyze whether the sentiment in a post are positive or negative based on its content.</p>
+<div class="form" style="width:400px">
+  <div class="panel-heading" id="postSentiment">Post Sentiment Analyze</div>
+  <div class="panel-body">
+    <div class="form-control" style="text-align:center;">
+      <textarea id="postContent" style="width: 370px; height: 165px;"></textarea>
+      <p id="sentimentStatus">Please Enter content</p>
+    </div>
+  </div>
+</div>
 <script>
   function recationScore () {
     const like = document.getElementById('like').value
@@ -251,14 +263,37 @@ wS represents the weight score for shares.</p>
     const timeDecayFactor = Math.pow(0.5, age / halfLife)
     postScore.innerText = timeDecayFactor;
   }
+
+  const postContent = document.getElementById('postContent')
+  const sentimentStatus = document.getElementById('sentimentStatus')
+
+  postContent.addEventListener('keyup', () => {
+    if (!postContent.value) return sentimentStatus.innerText = 'Please Enter content'
+    const score = analyzeSentiment(postContent.value)
+    if (score >= 1) {
+      if (score > 3) {
+        sentimentStatus.innerText = '👍👍 Exceptionally positive'
+      } else {
+        sentimentStatus.innerText = '👍 Positive'
+      }
+    } else if (score <= -1) {
+      if (score < -3) {
+        sentimentStatus.innerText = '👎👎 Exceptionally negative'
+      } else {
+        sentimentStatus.innerText = '👎 Negative'
+      }
+    } else {
+      sentimentStatus.innerText = 'Didn\'t detect any sentiment'
+    }
+  })
 </script>
 
           </div>
         </article>
         <div class="next-post">
           <div class="next">下一篇</div>
-          <a href="https://dev-coco.github.io/post/Twitter-Algorithm-EN/">
-            <h3 class="post-title">Twitter Algorithm and Push Mechanism 2023 Update</h3>
+          <a href="https://dev-coco.github.io/post/Google-Excel-Boost-Data-Match-Compared/">
+            <h3 class="post-title">Google Excel 性能优化 - 数据匹配性能对比</h3>
           </a>
         </div>
         <div id="disqus_thread"></div>
@@ -269,7 +304,7 @@ wS represents the weight score for shares.</p>
       <!-- right -->
       <div id="sidebar" class="main-container-right">
         <div class="id_card i-card">
-          <div class="id_card-avatar" style="background-image: url(https://dev-coco.github.io/images/avatar.png?v=1682986878995)"></div>
+          <div class="id_card-avatar" style="background-image: url(https://dev-coco.github.io/images/avatar.png?v=1683078180926)"></div>
           <h1 class="id_card-title">Raz1ner</h1>
           <img style="margin-top: 15px;margin-bottom: 10px;" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&amp;count_bg=%2310C1F9&amp;title_bg=%23555555&amp;icon=html5.svg&amp;icon_color=%23E7E7E7&amp;title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&amp;edge_flat=false">
           <p style="text-align: center;">
@@ -310,6 +345,7 @@ wS represents the weight score for shares.</p>
 </ul>
 </li>
 <li><a href="#homepage-ranking">Homepage Ranking</a></li>
+<li><a href="#post-sentiment">Post Sentiment</a></li>
 </ul>
 </li>
 </ul>
@@ -348,19 +384,19 @@ wS represents the weight score for shares.</p>
       <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
         <div class="notice-content">
           <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/excel/">Excel</a>
-          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
-          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/other/">其它</a>
-          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/security/">安全</a>
-          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/ai-tech/">AI 科技</a>
-          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/software/">软件</a>
-          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/macos/">macOS</a>
-          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/javascript/">Javascript</a>
-          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/google-script/">Google 脚本</a>
-          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/ios/">iOS</a>
-          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/sololearn/">Sololearn</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/security/">安全</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/ai-tech/">AI 科技</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/javascript/">Javascript</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/google-script/">Google 脚本</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/sololearn/">Sololearn</a>
           <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
-          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/shell/">Shell</a>
-          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/windows/">Windows</a>
           <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
         </div>
       </div>
