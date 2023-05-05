@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2023-05-05T12:42:24.814Z</updated>
+    <updated>2023-05-05T14:44:46.087Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2023, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[批量登陆账号]]></title>
+        <id>https://dev-coco.github.io/post/Cookies-Login-Account/</id>
+        <link href="https://dev-coco.github.io/post/Cookies-Login-Account/">
+        </link>
+        <updated>2023-05-05T02:44:34.000Z</updated>
+        <summary type="html"><![CDATA[<p>使用 Cookies 在多个浏览器人员批量登陆账号。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>使用 Cookies 在多个浏览器人员批量登陆账号。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Google Excel 性能优化教程目录]]></title>
         <id>https://dev-coco.github.io/post/Google-Excel-Boost-Tutorial/</id>
@@ -161,17 +172,6 @@
         <summary type="html"><![CDATA[<p>用来记录每个日程的时间并且记录到 Google Excel。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>用来记录每个日程的时间并且记录到 Google Excel。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[文字创意工坊]]></title>
-        <id>https://dev-coco.github.io/post/Text-Workshop/</id>
-        <link href="https://dev-coco.github.io/post/Text-Workshop/">
-        </link>
-        <updated>2023-03-23T11:04:06.000Z</updated>
-        <summary type="html"><![CDATA[<p>文字创意工坊是一个为创作者提供创作灵感和技巧分享的平台。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>文字创意工坊是一个为创作者提供创作灵感和技巧分享的平台。</p>
 ]]></content>
     </entry>
 </feed>
