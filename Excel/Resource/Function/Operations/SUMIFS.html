@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="keywords" content="Google Excel, Excel表格, SUMIFS">
+  <meta name="description" content="SUMIF - 对指定范围设置多个条件计算总和。">
+  <meta name="robots" content="index, follow">
+  <meta property="og:image" content="/images/Excel-Tutorial.jpg">
+  <title>SUMIFS</title>
+  <link rel="icon" href="/images/avatar.png">
+  <link href="/css/Excel/typo.css" rel="stylesheet">
+</head>
+<body class="typo">
+  <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&count_bg=%2310C1F9&title_bg=%23555555&icon=html5.svg&icon_color=%23E7E7E7&title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&edge_flat=false" style="display:none">
+  <h1 id="title">SUMIFS</h1>
+  <p>作用：对指定范围设置多个条件计算总和。</p>
+  <p>语法：</p>
+  <ol>
+    <li><span class="f">SUMIFS(<span class="q">求和范围</span>, <span class="q">条件范围</span>, <span class="t">条件</span>)</span></li>
+    <li><span class="f">SUMIFS(<span class="q">求和范围</span>, <span class="q">条件范围1</span>, <span class="t">条件1</span>, <span class="q">条件范围2</span>, <span class="t">条件2</span>)</span></li>
+    <ul>
+    <li>求和范围<sup class="m">*</sup>：需要求和的范围。</li>
+    <li>条件<sup class="m">*</sup>：通过匹配的条件，可以是数字，文本，运算符，</li>
+    <li>条件范围<sup class="m">*</sup>：通过条件匹配的范围，必须和范围的长度一样。</li>
+  </ul>
+  </ol>
+  <p>例子：</p>
+  <iframe style="max-width:690px;height:195px;" src="https://docs.google.com/spreadsheets/d/1oKdWuxiZ-Ldz4YQ19CsnmlcUEF9MYlQBrHBhnsdh0-g/pubhtml/sheet?headers=true&gid=1663157384"></iframe>
+  <p>运用：计算小红的银行支出了多少金额。</p>
+  <p>需要计算的条件：</p>
+  <ol>
+    <li>名字等于小红</li>
+    <li>付款渠道等于银行卡</li>
+    <li>金额是负数</li>
+  </ol>
+  <p>选择 A 列，条件等于 <span class="f t">小红</span>，选择 B 列，条件等于 <span class="f t">银行卡</span>，因为要计算支出的金额，那么金额肯定是负数，这里就需要用到 &lt; 计算所有小于 0 的金额，这样就算出了小红的银行卡支出金额的合计了。</p>
+  <iframe style="max-width:798px;height:216px;" src="https://docs.google.com/spreadsheets/d/1oKdWuxiZ-Ldz4YQ19CsnmlcUEF9MYlQBrHBhnsdh0-g/pubhtml/sheet?headers=true&gid=1319253604"></iframe>
+  <p class="home">
+    <a href="/Excel" target="_blank">
+      <img alt="Excel表格, Google Excel" src="/images/Excel.png">
+      <span>Excel 一点通</span>
+    </a>
+  </p>
+  <script src="/js/voice-playback.js"></script>
+</body>
+</html>
