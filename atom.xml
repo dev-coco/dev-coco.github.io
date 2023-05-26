@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2023-05-19T12:26:44.906Z</updated>
+    <updated>2023-05-26T15:32:54.905Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2023, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[摆脱拖延症，提高效率]]></title>
+        <id>https://dev-coco.github.io/post/The-Procrastination/</id>
+        <link href="https://dev-coco.github.io/post/The-Procrastination/">
+        </link>
+        <updated>2023-05-26T13:24:57.000Z</updated>
+        <summary type="html"><![CDATA[<p>拖延症困扰着许多人，而提高效率成为我们追求的目标。让我们一起探索如何解决拖延症，提升工作和生活的效率！</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>拖延症困扰着许多人，而提高效率成为我们追求的目标。让我们一起探索如何解决拖延症，提升工作和生活的效率！</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[批量登陆账号]]></title>
         <id>https://dev-coco.github.io/post/Cookies-Login-Account/</id>
@@ -124,7 +135,7 @@
         <id>https://dev-coco.github.io/post/Facebook-Algorithm/</id>
         <link href="https://dev-coco.github.io/post/Facebook-Algorithm/">
         </link>
-        <updated>2023-04-12T10:38:24.000Z</updated>
+        <updated>2023-04-11T22:38:24.000Z</updated>
         <summary type="html"><![CDATA[<p>详细介绍 Facebook 最新演算法以及权重计算方式。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>详细介绍 Facebook 最新演算法以及权重计算方式。</p>
@@ -135,7 +146,7 @@
         <id>https://dev-coco.github.io/post/Twitter-Algorithm/</id>
         <link href="https://dev-coco.github.io/post/Twitter-Algorithm/">
         </link>
-        <updated>2023-04-10T02:50:14.000Z</updated>
+        <updated>2023-04-09T14:50:14.000Z</updated>
         <summary type="html"><![CDATA[<p>详细介绍推特 Twitter 的演算法以及推送机制。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>详细介绍推特 Twitter 的演算法以及推送机制。</p>
@@ -161,17 +172,6 @@
         <summary type="html"><![CDATA[<p>自定义预设 ChatGPT 提示语。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>自定义预设 ChatGPT 提示语。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[日程记录]]></title>
-        <id>https://dev-coco.github.io/post/Schedule-Record/</id>
-        <link href="https://dev-coco.github.io/post/Schedule-Record/">
-        </link>
-        <updated>2023-03-27T15:29:04.000Z</updated>
-        <summary type="html"><![CDATA[<p>用来记录每个日程的时间并且记录到 Google Excel。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>用来记录每个日程的时间并且记录到 Google Excel。</p>
 ]]></content>
     </entry>
 </feed>
