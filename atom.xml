@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2023-05-26T15:35:23.784Z</updated>
+    <updated>2023-06-01T01:57:20.453Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2023, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[免费领取 Bitdefender 180 天]]></title>
+        <id>https://dev-coco.github.io/post/Bitdefender-180-Free-Trial/</id>
+        <link href="https://dev-coco.github.io/post/Bitdefender-180-Free-Trial/">
+        </link>
+        <updated>2023-05-31T13:53:50.000Z</updated>
+        <summary type="html"><![CDATA[<p>Bitdefender 是一款由罗马尼亚的 Softwin 软件公司开发的杀毒软件。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Bitdefender 是一款由罗马尼亚的 Softwin 软件公司开发的杀毒软件。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[摆脱拖延症，提高效率]]></title>
         <id>https://dev-coco.github.io/post/The-Procrastination/</id>
@@ -161,17 +172,6 @@
         <summary type="html"><![CDATA[<p>全新 macOS 清理垃圾工具，超彻底深度清理。支持清理缓存，清理下载目录安装包，系统优化功能。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>全新 macOS 清理垃圾工具，超彻底深度清理。支持清理缓存，清理下载目录安装包，系统优化功能。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[ChatGPT Prompt]]></title>
-        <id>https://dev-coco.github.io/post/chatgpt-prompt/</id>
-        <link href="https://dev-coco.github.io/post/chatgpt-prompt/">
-        </link>
-        <updated>2023-03-31T07:17:38.000Z</updated>
-        <summary type="html"><![CDATA[<p>自定义预设 ChatGPT 提示语。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>自定义预设 ChatGPT 提示语。</p>
 ]]></content>
     </entry>
 </feed>
