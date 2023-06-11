@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2023-06-05T00:34:56.956Z</updated>
+    <updated>2023-06-11T16:48:59.268Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2023, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[Facebook 专页 BUG]]></title>
+        <id>https://dev-coco.github.io/post/Facebook-Page-Bug/</id>
+        <link href="https://dev-coco.github.io/post/Facebook-Page-Bug/">
+        </link>
+        <updated>2023-06-11T04:48:49.000Z</updated>
+        <summary type="html"><![CDATA[<p>5 行代码让 Facebook 专页异常，无法打开。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>5 行代码让 Facebook 专页异常，无法打开。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Facebook 账号解封]]></title>
         <id>https://dev-coco.github.io/post/Facebook-Account-Unlock/</id>
@@ -161,17 +172,6 @@
         <summary type="html"><![CDATA[<p>详细介绍 Facebook 最新演算法以及权重计算方式。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>详细介绍 Facebook 最新演算法以及权重计算方式。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[推特 Twitter 演算法和推送机制 2023 最新]]></title>
-        <id>https://dev-coco.github.io/post/Twitter-Algorithm/</id>
-        <link href="https://dev-coco.github.io/post/Twitter-Algorithm/">
-        </link>
-        <updated>2023-04-09T14:50:14.000Z</updated>
-        <summary type="html"><![CDATA[<p>详细介绍推特 Twitter 的演算法以及推送机制。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>详细介绍推特 Twitter 的演算法以及推送机制。</p>
 ]]></content>
     </entry>
 </feed>
