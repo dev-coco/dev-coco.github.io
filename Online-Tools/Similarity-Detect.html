@@ -239,8 +239,8 @@
         }
       }
       const distance = d[n][m]
-      const similarity = 1 - (distance / Math.max(m, n))
-      return similarity
+      const similarity = (1 - (distance / Math.max(m, n))) * 100
+      return similarity.toFixed(2)
     }
 
     function compareText () {
