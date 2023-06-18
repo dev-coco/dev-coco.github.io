@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2023-06-16T02:15:31.393Z</updated>
+    <updated>2023-06-18T22:39:20.936Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2023, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[Levenshtein distance 编辑距离算法]]></title>
+        <id>https://dev-coco.github.io/post/Levenshtein-Distance/</id>
+        <link href="https://dev-coco.github.io/post/Levenshtein-Distance/">
+        </link>
+        <updated>2023-06-18T10:38:07.000Z</updated>
+        <summary type="html"><![CDATA[<p>详细解释算法的原理以及计算过程。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>详细解释算法的原理以及计算过程。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[屏蔽 Skype 内置新闻功能]]></title>
         <id>https://dev-coco.github.io/post/Skype-Disable-News/</id>
@@ -161,17 +172,6 @@
         <summary type="html"><![CDATA[<p>记录一下。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>记录一下。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[1.1.1.1 Warp+ 领取 24BP 流量]]></title>
-        <id>https://dev-coco.github.io/post/1111-Free-Data/</id>
-        <link href="https://dev-coco.github.io/post/1111-Free-Data/">
-        </link>
-        <updated>2023-04-17T15:04:30.000Z</updated>
-        <summary type="html"><![CDATA[<p>免费领取 1.1.1.1 Warp+ 24BP 流量。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>免费领取 1.1.1.1 Warp+ 24BP 流量。</p>
 ]]></content>
     </entry>
 </feed>
