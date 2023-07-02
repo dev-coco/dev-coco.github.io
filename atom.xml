@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2023-06-29T22:25:30.198Z</updated>
+    <updated>2023-07-02T12:58:36.397Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2023, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[KeePassXC 自动输入（一）]]></title>
+        <id>https://dev-coco.github.io/post/KeePassXC-Auto-Type-1/</id>
+        <link href="https://dev-coco.github.io/post/KeePassXC-Auto-Type-1/">
+        </link>
+        <updated>2023-07-01T20:57:43.000Z</updated>
+        <summary type="html"><![CDATA[<p>快捷自动输入账号密码。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>快捷自动输入账号密码。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[JavaScript 反混淆]]></title>
         <id>https://dev-coco.github.io/post/JavaScript-Deobfuscator/</id>
@@ -161,17 +172,6 @@
         <summary type="html"><![CDATA[<p>Chrome 内核浏览器紧急发布了高危漏洞通知。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>Chrome 内核浏览器紧急发布了高危漏洞通知。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[免费开启 GPT-4]]></title>
-        <id>https://dev-coco.github.io/post/Free-Try-GPT-4/</id>
-        <link href="https://dev-coco.github.io/post/Free-Try-GPT-4/">
-        </link>
-        <updated>2023-04-20T04:30:13.000Z</updated>
-        <summary type="html"><![CDATA[<p>在 GPT-3.5 大语言模型的基础上免费开启 GPT-4 的功能。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>在 GPT-3.5 大语言模型的基础上免费开启 GPT-4 的功能。</p>
 ]]></content>
     </entry>
 </feed>
