@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>http://localhost:4000</id>
+    <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2023-07-07T14:43:09.504Z</updated>
+    <updated>2023-07-07T15:41:43.418Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="http://localhost:4000"/>
-    <link rel="self" href="http://localhost:4000/atom.xml"/>
-    <logo>http://localhost:4000/images/avatar.png</logo>
-    <icon>http://localhost:4000/favicon.ico</icon>
+    <link rel="alternate" href="https://dev-coco.github.io"/>
+    <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
+    <logo>https://dev-coco.github.io/images/avatar.png</logo>
+    <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2023, Raz1ner</rights>
     <entry>
         <title type="html"><![CDATA[KeePassXC 自动输入（二）]]></title>
-        <id>http://localhost:4000/post/KeePassXC-Auto-Type-2/</id>
-        <link href="http://localhost:4000/post/KeePassXC-Auto-Type-2/">
+        <id>https://dev-coco.github.io/post/KeePassXC-Auto-Type-2/</id>
+        <link href="https://dev-coco.github.io/post/KeePassXC-Auto-Type-2/">
         </link>
         <updated>2023-07-07T14:42:44.000Z</updated>
         <summary type="html"><![CDATA[<p>快捷输入账号密码。</p>
@@ -22,8 +22,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[KeePassXC 自动输入（一）]]></title>
-        <id>http://localhost:4000/post/KeePassXC-Auto-Type-1/</id>
-        <link href="http://localhost:4000/post/KeePassXC-Auto-Type-1/">
+        <id>https://dev-coco.github.io/post/KeePassXC-Auto-Type-1/</id>
+        <link href="https://dev-coco.github.io/post/KeePassXC-Auto-Type-1/">
         </link>
         <updated>2023-07-01T20:57:43.000Z</updated>
         <summary type="html"><![CDATA[<p>快捷自动输入账号密码。</p>
@@ -33,8 +33,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[JavaScript 反混淆]]></title>
-        <id>http://localhost:4000/post/JavaScript-Deobfuscator/</id>
-        <link href="http://localhost:4000/post/JavaScript-Deobfuscator/">
+        <id>https://dev-coco.github.io/post/JavaScript-Deobfuscator/</id>
+        <link href="https://dev-coco.github.io/post/JavaScript-Deobfuscator/">
         </link>
         <updated>2023-06-25T13:45:39.000Z</updated>
         <summary type="html"><![CDATA[<p>还原 JavaScript 混淆后的代码。</p>
@@ -44,8 +44,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Levenshtein distance 编辑距离算法]]></title>
-        <id>http://localhost:4000/post/Levenshtein-Distance/</id>
-        <link href="http://localhost:4000/post/Levenshtein-Distance/">
+        <id>https://dev-coco.github.io/post/Levenshtein-Distance/</id>
+        <link href="https://dev-coco.github.io/post/Levenshtein-Distance/">
         </link>
         <updated>2023-06-18T10:38:07.000Z</updated>
         <summary type="html"><![CDATA[<p>详细解释算法的原理以及计算过程。</p>
@@ -55,8 +55,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[屏蔽 Skype 内置新闻功能]]></title>
-        <id>http://localhost:4000/post/Skype-Disable-News/</id>
-        <link href="http://localhost:4000/post/Skype-Disable-News/">
+        <id>https://dev-coco.github.io/post/Skype-Disable-News/</id>
+        <link href="https://dev-coco.github.io/post/Skype-Disable-News/">
         </link>
         <updated>2023-06-13T13:40:38.000Z</updated>
         <summary type="html"><![CDATA[<p>使用 hosts 屏蔽 Skype 内置的新闻功能。</p>
@@ -66,8 +66,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Facebook 专页 BUG]]></title>
-        <id>http://localhost:4000/post/Facebook-Page-Bug/</id>
-        <link href="http://localhost:4000/post/Facebook-Page-Bug/">
+        <id>https://dev-coco.github.io/post/Facebook-Page-Bug/</id>
+        <link href="https://dev-coco.github.io/post/Facebook-Page-Bug/">
         </link>
         <updated>2023-06-11T04:48:49.000Z</updated>
         <summary type="html"><![CDATA[<p>5 行代码让 Facebook 专页异常，无法打开。</p>
@@ -77,8 +77,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Facebook 账号解封]]></title>
-        <id>http://localhost:4000/post/Facebook-Account-Unlock/</id>
-        <link href="http://localhost:4000/post/Facebook-Account-Unlock/">
+        <id>https://dev-coco.github.io/post/Facebook-Account-Unlock/</id>
+        <link href="https://dev-coco.github.io/post/Facebook-Account-Unlock/">
         </link>
         <updated>2023-06-04T12:34:32.000Z</updated>
         <summary type="html"><![CDATA[<p>一个超高概率解封成功的方法。</p>
@@ -88,8 +88,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[免费领取 Bitdefender 180 天]]></title>
-        <id>http://localhost:4000/post/Bitdefender-180-Free-Trial/</id>
-        <link href="http://localhost:4000/post/Bitdefender-180-Free-Trial/">
+        <id>https://dev-coco.github.io/post/Bitdefender-180-Free-Trial/</id>
+        <link href="https://dev-coco.github.io/post/Bitdefender-180-Free-Trial/">
         </link>
         <updated>2023-05-31T13:53:50.000Z</updated>
         <summary type="html"><![CDATA[<p>Bitdefender 是一款由罗马尼亚的 Softwin 软件公司开发的杀毒软件。</p>
@@ -99,8 +99,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[摆脱拖延症，提高效率]]></title>
-        <id>http://localhost:4000/post/The-Procrastination/</id>
-        <link href="http://localhost:4000/post/The-Procrastination/">
+        <id>https://dev-coco.github.io/post/The-Procrastination/</id>
+        <link href="https://dev-coco.github.io/post/The-Procrastination/">
         </link>
         <updated>2023-05-26T13:24:57.000Z</updated>
         <summary type="html"><![CDATA[<p>拖延症困扰着许多人，而提高效率成为我们追求的目标。让我们一起探索如何解决拖延症，提升工作和生活的效率！</p>
@@ -110,8 +110,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[批量登陆账号]]></title>
-        <id>http://localhost:4000/post/Cookies-Login-Account/</id>
-        <link href="http://localhost:4000/post/Cookies-Login-Account/">
+        <id>https://dev-coco.github.io/post/Cookies-Login-Account/</id>
+        <link href="https://dev-coco.github.io/post/Cookies-Login-Account/">
         </link>
         <updated>2023-05-05T02:44:34.000Z</updated>
         <summary type="html"><![CDATA[<p>使用 Cookies 在多个浏览器人员批量登陆账号。</p>
@@ -121,8 +121,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Google Excel 性能优化教程目录]]></title>
-        <id>http://localhost:4000/post/Google-Excel-Boost-Tutorial/</id>
-        <link href="http://localhost:4000/post/Google-Excel-Boost-Tutorial/">
+        <id>https://dev-coco.github.io/post/Google-Excel-Boost-Tutorial/</id>
+        <link href="https://dev-coco.github.io/post/Google-Excel-Boost-Tutorial/">
         </link>
         <updated>2023-05-01T12:20:57.000Z</updated>
         <summary type="html"><![CDATA[<p>将 Google Excel 性能优化相关的文章整理成目录方便查找。</p>
@@ -132,8 +132,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Google Excel 性能优化 - 减少内存]]></title>
-        <id>http://localhost:4000/post/Google-Excel-Boost-Reduce-Storage/</id>
-        <link href="http://localhost:4000/post/Google-Excel-Boost-Reduce-Storage/">
+        <id>https://dev-coco.github.io/post/Google-Excel-Boost-Reduce-Storage/</id>
+        <link href="https://dev-coco.github.io/post/Google-Excel-Boost-Reduce-Storage/">
         </link>
         <updated>2023-04-30T15:24:32.000Z</updated>
         <summary type="html"><![CDATA[<p>减少文件在 Google Excel 占用的内存。</p>
@@ -143,8 +143,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Twitter Algorithm and Push Mechanism 2023 Update]]></title>
-        <id>http://localhost:4000/post/Twitter-Algorithm-EN/</id>
-        <link href="http://localhost:4000/post/Twitter-Algorithm-EN/">
+        <id>https://dev-coco.github.io/post/Twitter-Algorithm-EN/</id>
+        <link href="https://dev-coco.github.io/post/Twitter-Algorithm-EN/">
         </link>
         <updated>2023-04-27T16:17:50.000Z</updated>
         <summary type="html"><![CDATA[<p>Provide a detailed explanation of Twitter's algorithm and its delivery mechanism.</p>
@@ -154,8 +154,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Facebook Algorithm 2023 Update]]></title>
-        <id>http://localhost:4000/post/Facebook-Algorithm-EN/</id>
-        <link href="http://localhost:4000/post/Facebook-Algorithm-EN/">
+        <id>https://dev-coco.github.io/post/Facebook-Algorithm-EN/</id>
+        <link href="https://dev-coco.github.io/post/Facebook-Algorithm-EN/">
         </link>
         <updated>2023-04-27T04:36:17.000Z</updated>
         <summary type="html"><![CDATA[<p>Provide a detailed introduction to the latest Facebook algorithm and its weight calculation method.</p>
@@ -165,8 +165,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Google Excel 性能优化 - 数据匹配性能对比]]></title>
-        <id>http://localhost:4000/post/Google-Excel-Boost-Data-Match-Compared/</id>
-        <link href="http://localhost:4000/post/Google-Excel-Boost-Data-Match-Compared/">
+        <id>https://dev-coco.github.io/post/Google-Excel-Boost-Data-Match-Compared/</id>
+        <link href="https://dev-coco.github.io/post/Google-Excel-Boost-Data-Match-Compared/">
         </link>
         <updated>2023-04-24T10:37:31.000Z</updated>
         <summary type="html"><![CDATA[<p>有多种方式都可以实现数据匹配，那么你知道哪种性能最快吗？</p>
