@@ -1152,6 +1152,7 @@ p code {
 }
 .social-icon {
   width: 28px;
+  height: 28px;
   margin: 5px;
 }
 .toc-card .toc-content .markdownIt-TOC {
