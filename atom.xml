@@ -2,13 +2,20 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2023-07-14T20:40:02.134Z</updated>
+    <updated>2023-07-19T14:21:33.504Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2023, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[ChatGPT 提示语使用指南（一）]]></title>
+        <id>https://dev-coco.github.io/post/ChatGPT-Prompt-Guide/</id>
+        <link href="https://dev-coco.github.io/post/ChatGPT-Prompt-Guide/">
+        </link>
+        <updated>2023-07-19T02:21:18.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Anthropic Claude 注册方法]]></title>
         <id>https://dev-coco.github.io/post/Claude-Register/</id>
@@ -161,17 +168,6 @@
         <summary type="html"><![CDATA[<p>使用 Cookies 在多个浏览器人员批量登陆账号。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>使用 Cookies 在多个浏览器人员批量登陆账号。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Google Excel 性能优化教程目录]]></title>
-        <id>https://dev-coco.github.io/post/Google-Excel-Boost-Tutorial/</id>
-        <link href="https://dev-coco.github.io/post/Google-Excel-Boost-Tutorial/">
-        </link>
-        <updated>2023-05-01T12:20:57.000Z</updated>
-        <summary type="html"><![CDATA[<p>将 Google Excel 性能优化相关的文章整理成目录方便查找。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>将 Google Excel 性能优化相关的文章整理成目录方便查找。</p>
 ]]></content>
     </entry>
 </feed>
