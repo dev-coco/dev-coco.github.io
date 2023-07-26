@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2023-07-19T14:26:06.242Z</updated>
+    <updated>2023-07-26T14:19:08.858Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2023, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[ChatGPT 提示语使用指南（一）]]></title>
+        <id>https://dev-coco.github.io/post/ChatGPT-Prompt-Guide-2/</id>
+        <link href="https://dev-coco.github.io/post/ChatGPT-Prompt-Guide-2/">
+        </link>
+        <updated>2023-07-26T02:18:41.000Z</updated>
+        <summary type="html"><![CDATA[<p>使用为 ChatGPT 设定角色的一些小技巧。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>使用为 ChatGPT 设定角色的一些小技巧。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[ChatGPT 提示语使用指南（一）]]></title>
         <id>https://dev-coco.github.io/post/ChatGPT-Prompt-Guide/</id>
@@ -161,17 +172,6 @@
         <summary type="html"><![CDATA[<p>拖延症困扰着许多人，而提高效率成为我们追求的目标。让我们一起探索如何解决拖延症，提升工作和生活的效率！</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>拖延症困扰着许多人，而提高效率成为我们追求的目标。让我们一起探索如何解决拖延症，提升工作和生活的效率！</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[批量登陆账号]]></title>
-        <id>https://dev-coco.github.io/post/Cookies-Login-Account/</id>
-        <link href="https://dev-coco.github.io/post/Cookies-Login-Account/">
-        </link>
-        <updated>2023-05-05T02:44:34.000Z</updated>
-        <summary type="html"><![CDATA[<p>使用 Cookies 在多个浏览器人员批量登陆账号。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>使用 Cookies 在多个浏览器人员批量登陆账号。</p>
 ]]></content>
     </entry>
 </feed>
