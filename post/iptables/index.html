@@ -1,0 +1,536 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="瑞景乐的个人博客。">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>iptables | Raz1ner</title>
+  <meta name="author" content="Raz1ner">
+  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1694196400954">
+  <link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
+  <script src="/js/prism.js"></script>
+  <link rel="stylesheet" href="/css/prism.css">
+  <script src="https://dev-coco.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
+  <script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script async src="https://fundingchoicesmessages.google.com/i/pub-6960947409660270?ers=1" nonce="3szuJwRueku-LVJlmdoLew"></script><script nonce="3szuJwRueku-LVJlmdoLew">(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+  <script>(function(){
+   'use strict';var aa=function(a){var b=0;return function(){return b<a.length?{done:!1,value:a[b++]}:{done:!0}}},ba="function"==typeof Object.create?Object.create:function(a){var b=function(){};b.prototype=a;return new b},k;if("function"==typeof Object.setPrototypeOf)k=Object.setPrototypeOf;else{var m;a:{var ca={a:!0},n={};try{n.__proto__=ca;m=n.a;break a}catch(a){}m=!1}k=m?function(a,b){a.__proto__=b;if(a.__proto__!==b)throw new TypeError(a+" is not extensible");return a}:null}
+   var p=k,q=function(a,b){a.prototype=ba(b.prototype);a.prototype.constructor=a;if(p)p(a,b);else for(var c in b)if("prototype"!=c)if(Object.defineProperties){var d=Object.getOwnPropertyDescriptor(b,c);d&&Object.defineProperty(a,c,d)}else a[c]=b[c];a.v=b.prototype},r=this||self,da=function(){},t=function(a){return a};var u;var w=function(a,b){this.g=b===v?a:""};w.prototype.toString=function(){return this.g+""};var v={},x=function(a){if(void 0===u){var b=null;var c=r.trustedTypes;if(c&&c.createPolicy){try{b=c.createPolicy("goog#html",{createHTML:t,createScript:t,createScriptURL:t})}catch(d){r.console&&r.console.error(d.message)}u=b}else u=b}a=(b=u)?b.createScriptURL(a):a;return new w(a,v)};var A=function(){return Math.floor(2147483648*Math.random()).toString(36)+Math.abs(Math.floor(2147483648*Math.random())^Date.now()).toString(36)};var B={},C=null;var D="function"===typeof Uint8Array;function E(a,b,c){return"object"===typeof a?D&&!Array.isArray(a)&&a instanceof Uint8Array?c(a):F(a,b,c):b(a)}function F(a,b,c){if(Array.isArray(a)){for(var d=Array(a.length),e=0;e<a.length;e++){var f=a[e];null!=f&&(d[e]=E(f,b,c))}Array.isArray(a)&&a.s&&G(d);return d}d={};for(e in a)Object.prototype.hasOwnProperty.call(a,e)&&(f=a[e],null!=f&&(d[e]=E(f,b,c)));return d}
+   function ea(a){return F(a,function(b){return"number"===typeof b?isFinite(b)?b:String(b):b},function(b){var c;void 0===c&&(c=0);if(!C){C={};for(var d="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789".split(""),e=["+/=","+/","-_=","-_.","-_"],f=0;5>f;f++){var h=d.concat(e[f].split(""));B[f]=h;for(var g=0;g<h.length;g++){var l=h[g];void 0===C[l]&&(C[l]=g)}}}c=B[c];d=Array(Math.floor(b.length/3));e=c[64]||"";for(f=h=0;h<b.length-2;h+=3){var y=b[h],z=b[h+1];l=b[h+2];g=c[y>>2];y=c[(y&3)<<
+   4|z>>4];z=c[(z&15)<<2|l>>6];l=c[l&63];d[f++]=""+g+y+z+l}g=0;l=e;switch(b.length-h){case 2:g=b[h+1],l=c[(g&15)<<2]||e;case 1:b=b[h],d[f]=""+c[b>>2]+c[(b&3)<<4|g>>4]+l+e}return d.join("")})}var fa={s:{value:!0,configurable:!0}},G=function(a){Array.isArray(a)&&!Object.isFrozen(a)&&Object.defineProperties(a,fa);return a};var H;var J=function(a,b,c){var d=H;H=null;a||(a=d);d=this.constructor.u;a||(a=d?[d]:[]);this.j=d?0:-1;this.h=null;this.g=a;a:{d=this.g.length;a=d-1;if(d&&(d=this.g[a],!(null===d||"object"!=typeof d||Array.isArray(d)||D&&d instanceof Uint8Array))){this.l=a-this.j;this.i=d;break a}void 0!==b&&-1<b?(this.l=Math.max(b,a+1-this.j),this.i=null):this.l=Number.MAX_VALUE}if(c)for(b=0;b<c.length;b++)a=c[b],a<this.l?(a+=this.j,(d=this.g[a])?G(d):this.g[a]=I):(d=this.l+this.j,this.g[d]||(this.i=this.g[d]={}),(d=this.i[a])?
+   G(d):this.i[a]=I)},I=Object.freeze(G([])),K=function(a,b){if(-1===b)return null;if(b<a.l){b+=a.j;var c=a.g[b];return c!==I?c:a.g[b]=G([])}if(a.i)return c=a.i[b],c!==I?c:a.i[b]=G([])},M=function(a,b){var c=L;if(-1===b)return null;a.h||(a.h={});if(!a.h[b]){var d=K(a,b);d&&(a.h[b]=new c(d))}return a.h[b]};J.prototype.toJSON=function(){var a=N(this,!1);return ea(a)};
+   var N=function(a,b){if(a.h)for(var c in a.h)if(Object.prototype.hasOwnProperty.call(a.h,c)){var d=a.h[c];if(Array.isArray(d))for(var e=0;e<d.length;e++)d[e]&&N(d[e],b);else d&&N(d,b)}return a.g},O=function(a,b){H=b=b?JSON.parse(b):null;a=new a(b);H=null;return a};J.prototype.toString=function(){return N(this,!1).toString()};var P=function(a){J.call(this,a)};q(P,J);function ha(a){var b,c=(a.ownerDocument&&a.ownerDocument.defaultView||window).document,d=null===(b=c.querySelector)||void 0===b?void 0:b.call(c,"script[nonce]");(b=d?d.nonce||d.getAttribute("nonce")||"":"")&&a.setAttribute("nonce",b)};var Q=function(a,b){b=String(b);"application/xhtml+xml"===a.contentType&&(b=b.toLowerCase());return a.createElement(b)},R=function(a){this.g=a||r.document||document};R.prototype.appendChild=function(a,b){a.appendChild(b)};var S=function(a,b,c,d,e,f){try{var h=a.g,g=Q(a.g,"SCRIPT");g.async=!0;g.src=b instanceof w&&b.constructor===w?b.g:"type_error:TrustedResourceUrl";ha(g);h.head.appendChild(g);g.addEventListener("load",function(){e();d&&h.head.removeChild(g)});g.addEventListener("error",function(){0<c?S(a,b,c-1,d,e,f):(d&&h.head.removeChild(g),f())})}catch(l){f()}};var ia=r.atob("aHR0cHM6Ly93d3cuZ3N0YXRpYy5jb20vaW1hZ2VzL2ljb25zL21hdGVyaWFsL3N5c3RlbS8xeC93YXJuaW5nX2FtYmVyXzI0ZHAucG5n"),ja=r.atob("WW91IGFyZSBzZWVpbmcgdGhpcyBtZXNzYWdlIGJlY2F1c2UgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlIGlzIGludGVyZmVyaW5nIHdpdGggdGhpcyBwYWdlLg=="),ka=r.atob("RGlzYWJsZSBhbnkgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlLCB0aGVuIHJlbG9hZCB0aGlzIHBhZ2Uu"),la=function(a,b,c){this.h=a;this.j=new R(this.h);this.g=null;this.i=[];this.l=!1;this.o=b;this.m=c},V=function(a){if(a.h.body&&!a.l){var b=
+   function(){T(a);r.setTimeout(function(){return U(a,3)},50)};S(a.j,a.o,2,!0,function(){r[a.m]||b()},b);a.l=!0}},T=function(a){for(var b=W(1,5),c=0;c<b;c++){var d=X(a);a.h.body.appendChild(d);a.i.push(d)}b=X(a);b.style.bottom="0";b.style.left="0";b.style.position="fixed";b.style.width=W(100,110).toString()+"%";b.style.zIndex=W(2147483544,2147483644).toString();b.style["background-color"]=ma(249,259,242,252,219,229);b.style["box-shadow"]="0 0 12px #888";b.style.color=ma(0,10,0,10,0,10);b.style.display=
+   "flex";b.style["justify-content"]="center";b.style["font-family"]="Roboto, Arial";c=X(a);c.style.width=W(80,85).toString()+"%";c.style.maxWidth=W(750,775).toString()+"px";c.style.margin="24px";c.style.display="flex";c.style["align-items"]="flex-start";c.style["justify-content"]="center";d=Q(a.j.g,"IMG");d.className=A();d.src=ia;d.style.height="24px";d.style.width="24px";d.style["padding-right"]="16px";var e=X(a),f=X(a);f.style["font-weight"]="bold";f.textContent=ja;var h=X(a);h.textContent=ka;Y(a,
+   e,f);Y(a,e,h);Y(a,c,d);Y(a,c,e);Y(a,b,c);a.g=b;a.h.body.appendChild(a.g);b=W(1,5);for(c=0;c<b;c++)d=X(a),a.h.body.appendChild(d),a.i.push(d)},Y=function(a,b,c){for(var d=W(1,5),e=0;e<d;e++){var f=X(a);b.appendChild(f)}b.appendChild(c);c=W(1,5);for(d=0;d<c;d++)e=X(a),b.appendChild(e)},W=function(a,b){return Math.floor(a+Math.random()*(b-a))},ma=function(a,b,c,d,e,f){return"rgb("+W(Math.max(a,0),Math.min(b,255)).toString()+","+W(Math.max(c,0),Math.min(d,255)).toString()+","+W(Math.max(e,0),Math.min(f,
+   255)).toString()+")"},X=function(a){a=Q(a.j.g,"DIV");a.className=A();return a},U=function(a,b){0>=b||null!=a.g&&0!=a.g.offsetHeight&&0!=a.g.offsetWidth||(na(a),T(a),r.setTimeout(function(){return U(a,b-1)},50))},na=function(a){var b=a.i;var c="undefined"!=typeof Symbol&&Symbol.iterator&&b[Symbol.iterator];b=c?c.call(b):{next:aa(b)};for(c=b.next();!c.done;c=b.next())(c=c.value)&&c.parentNode&&c.parentNode.removeChild(c);a.i=[];(b=a.g)&&b.parentNode&&b.parentNode.removeChild(b);a.g=null};var pa=function(a,b,c,d,e){var f=oa(c),h=function(l){l.appendChild(f);r.setTimeout(function(){f?(0!==f.offsetHeight&&0!==f.offsetWidth?b():a(),f.parentNode&&f.parentNode.removeChild(f)):a()},d)},g=function(l){document.body?h(document.body):0<l?r.setTimeout(function(){g(l-1)},e):b()};g(3)},oa=function(a){var b=document.createElement("div");b.className=a;b.style.width="1px";b.style.height="1px";b.style.position="absolute";b.style.left="-10000px";b.style.top="-10000px";b.style.zIndex="-10000";return b};var L=function(a){J.call(this,a)};q(L,J);var qa=function(a){J.call(this,a)};q(qa,J);var ra=function(a,b){this.l=a;this.m=new R(a.document);this.g=b;this.i=K(this.g,1);b=M(this.g,2);this.o=x(K(b,4)||"");this.h=!1;b=M(this.g,13);b=x(K(b,4)||"");this.j=new la(a.document,b,K(this.g,12))};ra.prototype.start=function(){sa(this)};
+   var sa=function(a){ta(a);S(a.m,a.o,3,!1,function(){a:{var b=a.i;var c=r.btoa(b);if(c=r[c]){try{var d=O(P,r.atob(c))}catch(e){b=!1;break a}b=b===K(d,1)}else b=!1}b?Z(a,K(a.g,14)):(Z(a,K(a.g,8)),V(a.j))},function(){pa(function(){Z(a,K(a.g,7));V(a.j)},function(){return Z(a,K(a.g,6))},K(a.g,9),K(a.g,10),K(a.g,11))})},Z=function(a,b){a.h||(a.h=!0,a=new a.l.XMLHttpRequest,a.open("GET",b,!0),a.send())},ta=function(a){var b=r.btoa(a.i);a.l[b]&&Z(a,K(a.g,5))};(function(a,b){r[a]=function(c){for(var d=[],e=0;e<arguments.length;++e)d[e-0]=arguments[e];r[a]=da;b.apply(null,d)}})("__h82AlnkH6D91__",function(a){"function"===typeof window.atob&&(new ra(window,O(qa,window.atob(a)))).start()});}).call(this);
+   window.__h82AlnkH6D91__("WyJwdWItNjk2MDk0NzQwOTY2MDI3MCIsW251bGwsbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9iL3B1Yi02OTYwOTQ3NDA5NjYwMjcwIl0sbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9lbC9BR1NLV3hWWkh4UHVLbUVuYUVHcDZmcldNVTVHZloyVUxJZW8zcHZhaV9wUVJ5a2M4dmlkZlVwMENZeVJQZEQxdExOQzRkOUN6cEQxS1hFZml1cnFJZXFIOVVsc1R3XHUwMDNkXHUwMDNkP3RlXHUwMDNkVE9LRU5fRVhQT1NFRCIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFhUNmRjRFppendkR2FaMmQ2dHBOMEF3TWowNERwVWVBaUd4Y1lsNXR1UWZFdmhDSTZmaWRxcEN3RXNQeGF1eWJUc004eFlhVWFLSWJENnNWdVIyNXIwT0FcdTAwM2RcdTAwM2Q/YWJcdTAwM2QxXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFVFeld6ZVhfYjlBSnJsR05ab2N0MG1UVHBKZFUxQVo1b2piaVNXMXc4TjNJdG93TndOZ2YtNzcwOVNEQUlrSWlUbW5UU2hvVW5DYml0QmVYVTM4Z3M3c2dcdTAwM2RcdTAwM2Q/YWJcdTAwM2QyXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFVWdXc5Q2tNRzNoX3p2WGJHcHlLdU95cE4weWVabEVVSmVsbFBnR2F4Y3NockhWdklpSmlPMzZKM3JhRlhDSl9fdnp2U0ZuRFNXS3dPUXl5enpLWG5zc0FcdTAwM2RcdTAwM2Q/c2JmXHUwMDNkMiIsImRpdi1ncHQtYWQiLDIwLDEwMCwiY0hWaUxUWTVOakE1TkRjME1EazJOakF5TnpBXHUwMDNkIixbbnVsbCxudWxsLG51bGwsImh0dHBzOi8vd3d3LmdzdGF0aWMuY29tLzBlbW4vZi9wL3B1Yi02OTYwOTQ3NDA5NjYwMjcwLmpzP3VzcXBcdTAwM2RDQXciXSwiaHR0cHM6Ly9mdW5kaW5nY2hvaWNlc21lc3NhZ2VzLmdvb2dsZS5jb20vZWwvQUdTS1d4V0M5M05iUXBSTC12eTBWbXd3TjBwVllQTDE5eDJLYWJfQkFZYjVucWlRM0VZTTJ0ZXRQMHJxRzE5ZHF5X3NfZjh6VmhPc0ZIWExmeVJGUnJJTEhSak5aZ1x1MDAzZFx1MDAzZCJd");</script>
+  <meta property="og:image" content="https://dev-coco.github.io/post-images/Linux-Command.png">
+  <meta name="description" content="Linux 上常用的防火墙软件。">
+  <link rel="canonical" href="https://dev-coco.github.io/post/iptables/">
+  <meta property="og:title" content="iptables - Raz1ner">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://dev-coco.github.io/post-images/Linux-Command.png">
+  <meta property="og:url" content="https://dev-coco.github.io/post/iptables/">
+  <meta property="og:description" content="Linux 上常用的防火墙软件。">
+  <meta name="twitter:title" content="iptables - Raz1ner">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://dev-coco.github.io/post-images/Linux-Command.png">
+  <meta name="twitter:description" content="Linux 上常用的防火墙软件。">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:300,300i,400,400i,700,700i,800" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Mallanna" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <div class="main">
+    <div class="header">
+      <div class="nav">
+        <div class="logo">
+          <a href="https://dev-coco.github.io">
+            <img class="avatar" alt="Raz1ner" src="https://dev-coco.github.io/images/avatar.png?v=1694196400954" alt="">
+          </a>
+          <div class="site-title">
+            <h1>Raz1ner</h1>
+          </div>
+        </div>
+        <span class="menu-btn fa fa-align-justify"></span>
+        <div class="menu-container">
+          <ul>
+            <li>
+              <a href="/" class="menu">首页</a>
+            </li>
+            <li>
+              <a href="/Featured-Software.html" class="menu">软件</a>
+            </li>
+            <li>
+              <a href="/post/Chrome-Extension-Collection" class="menu">插件</a>
+            </li>
+            <li>
+              <a href="/Online-Tools" class="menu">在线工具</a>
+            </li>
+            <li>
+              <a href="/post/Linux-Command" class="menu">Linux命令</a>
+            </li>
+            <li>
+              <a href="/Excel" class="menu">Excel教程</a>
+            </li>
+            <li>
+              <a href="/post/Terms-and-Privacy" class="menu">隐私与条款</a>
+            </li>
+          </ul>
+        </div>
+        <form id="gridea-search-form" action="https://dev-coco.github.io/search/" class="search">
+          <input type="search" name="q" class="search-box">
+          <span class="search-button">
+            <span class="search-icon"></span>
+          </span>
+        </form>
+      </div>
+    </div>
+    <script>
+      document.getElementsByClassName('search-button')[0].addEventListener('click', function () {
+        document.getElementById('gridea-search-form').classList.toggle('open');
+      })
+    </script>
+
+    <div id="main-content" class="post-detail main-container">
+      <!-- left -->
+      <div id="content" class="main-container-left">
+        <article class="post i-card">
+        <h2 class="post-title">iptables</h2>
+        <div class="post-info">
+          <time class="post-time">2022-02-02 / 14 min read</time>
+            <a href="https://dev-coco.github.io/tag/linux-command/" class="post-tag i-tag i-tag-success">#Linux命令</a>
+        </div>
+        <!--
+          
+        <div class="post-feature-image" style="background-image: url('https://dev-coco.github.io/post-images/Linux-Command.png')"></div>
+        -->
+          <div class="post-content">
+            <p>Linux 上常用的防火墙软件。</p>
+<!-- more -->
+<h2 id="补充说明">补充说明</h2>
+<p>iptables 命令是 Linux 上常用的防火墙软件，是 netfilter 项目的一部分。可以直接配置，也可以通过许多前端和图形界面配置。</p>
+<h2 id="语法">语法</h2>
+<pre><code class="language-Shell">iptables (选项) (参数)
+</code></pre>
+<h2 id="选项">选项</h2>
+<pre><code class="language-Shell">-t, --table table 对指定的表 table 进行操作， table 必须是 raw， nat，filter，mangle 中的一个。如果不指定此选项，默认的是 filter 表。
+
+# 通用匹配：源地址目标地址的匹配
+-p：指定要匹配的数据包协议类型；
+-s, --source [!] address[/mask] ：把指定的一个／一组地址作为源地址，按此规则进行过滤。当后面没有 mask 时，address 是一个地址，比如：192.168.1.1；当 mask 指定时，可以表示一组范围内的地址，比如：192.168.1.0/255.255.255.0。
+-d, --destination [!] address[/mask] ：地址格式同上，但这里是指定地址为目的地址，按此进行过滤。
+-i, --in-interface [!] &lt;网络接口name&gt; ：指定数据包的来自来自网络接口，比如最常见的 eth0 。注意：它只对 INPUT，FORWARD，PREROUTING 这三个链起作用。如果没有指定此选项， 说明可以来自任何一个网络接口。同前面类似，&quot;!&quot; 表示取反。
+-o, --out-interface [!] &lt;网络接口name&gt; ：指定数据包出去的网络接口。只对 OUTPUT，FORWARD，POSTROUTING 三个链起作用。
+
+# 查看管理命令
+-L, --list [chain] 列出链 chain 上面的所有规则，如果没有指定链，列出表上所有链的所有规则。
+
+# 规则管理命令
+-A, --append chain rule-specification 在指定链 chain 的末尾插入指定的规则，也就是说，这条规则会被放到最后，最后才会被执行。规则是由后面的匹配来指定。
+-I, --insert chain [rulenum] rule-specification 在链 chain 中的指定位置插入一条或多条规则。如果指定的规则号是1，则在链的头部插入。这也是默认的情况，如果没有指定规则号。
+-D, --delete chain rule-specification -D, --delete chain rulenum 在指定的链 chain 中删除一个或多个指定规则。
+-R num：Replays替换/修改第几条规则
+
+# 链管理命令（这都是立即生效的）
+-P, --policy chain target ：为指定的链 chain 设置策略 target。注意，只有内置的链才允许有策略，用户自定义的是不允许的。
+-F, --flush [chain] 清空指定链 chain 上面的所有规则。如果没有指定链，清空该表上所有链的所有规则。
+-N, --new-chain chain 用指定的名字创建一个新的链。
+-X, --delete-chain [chain] ：删除指定的链，这个链必须没有被其它任何规则引用，而且这条上必须没有任何规则。如果没有指定链名，则会删除该表中所有非内置的链。
+-E, --rename-chain old-chain new-chain ：用指定的新名字去重命名指定的链。这并不会对链内部造成任何影响。
+-Z, --zero [chain] ：把指定链，或者表中的所有链上的所有计数器清零。
+
+-j, --jump target &lt;指定目标&gt; ：即满足某条件时该执行什么样的动作。target 可以是内置的目标，比如 ACCEPT，也可以是用户自定义的链。
+-h：显示帮助信息；
+</code></pre>
+<h2 id="基本参数">基本参数</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">-P</td>
+<td style="text-align:center">设置默认策略:iptables -P INPUT (DROP</td>
+</tr>
+<tr>
+<td style="text-align:center">-F</td>
+<td style="text-align:center">清空规则链</td>
+</tr>
+<tr>
+<td style="text-align:center">-L</td>
+<td style="text-align:center">查看规则链</td>
+</tr>
+<tr>
+<td style="text-align:center">-A</td>
+<td style="text-align:center">在规则链的末尾加入新规则</td>
+</tr>
+<tr>
+<td style="text-align:center">-I</td>
+<td style="text-align:center">num 在规则链的头部加入新规则</td>
+</tr>
+<tr>
+<td style="text-align:center">-D</td>
+<td style="text-align:center">num 删除某一条规则</td>
+</tr>
+<tr>
+<td style="text-align:center">-s</td>
+<td style="text-align:center">匹配来源地址IP/MASK，加叹号&quot;!&quot;表示除这个IP外。</td>
+</tr>
+<tr>
+<td style="text-align:center">-d</td>
+<td style="text-align:center">匹配目标地址</td>
+</tr>
+<tr>
+<td style="text-align:center">-i</td>
+<td style="text-align:center">网卡名称 匹配从这块网卡流入的数据</td>
+</tr>
+<tr>
+<td style="text-align:center">-o</td>
+<td style="text-align:center">网卡名称 匹配从这块网卡流出的数据</td>
+</tr>
+<tr>
+<td style="text-align:center">-p</td>
+<td style="text-align:center">匹配协议,如tcp,udp,icmp</td>
+</tr>
+<tr>
+<td style="text-align:center">--dport num</td>
+<td style="text-align:center">匹配目标端口号</td>
+</tr>
+<tr>
+<td style="text-align:center">--sport num</td>
+<td style="text-align:center">匹配来源端口号</td>
+</tr>
+</tbody>
+</table>
+<h3 id="命令选项输入顺序">命令选项输入顺序</h3>
+<pre><code class="language-Shell">iptables -t 表名 &lt;-A/I/D/R&gt; 规则链名 [规则号 ] &lt;-i/o 网卡名&gt; -p 协议名 &lt;-s 源 IP/源子网&gt; --sport 源端口 &lt;-d 目标 IP/目标子网&gt; --dport 目标端口 -j 动作
+</code></pre>
+<h3 id="工作机制">工作机制</h3>
+<p>规则链名包括 (也被称为五个钩子函数（hook functions）)：</p>
+<ul>
+<li>INPUT 链 ：处理输入数据包。</li>
+<li>OUTPUT 链 ：处理输出数据包。</li>
+<li>FORWARD 链 ：处理转发数据包。</li>
+<li>PREROUTING 链 ：用于目标地址转换（DNAT）。</li>
+<li>POSTOUTING 链 ：用于源地址转换（SNAT）。</li>
+</ul>
+<h3 id="防火墙的策略">防火墙的策略</h3>
+<p>防火墙策略一般分为两种，一种叫<code>通</code>策略，一种叫<code>堵</code>策略，通策略，默认门是关着的，必须要定义谁能进。堵策略则是，大门是洞开的，但是你必须有身份认证，否则不能进。所以我们要定义，让进来的进来，让出去的出去，<code>所以通，是要全通，而堵，则是要选择</code>。当我们定义的策略的时候，要分别定义多条功能，其中：定义数据包中允许或者不允许的策略，filter 过滤的功能，而定义地址转换的功能的则是 nat 选项。为了让这些功能交替工作，我们制定出了“表”这个定义，来定义、区分各种不同的工作功能和处理方式。<br>
+我们现在用的比较多个功能有 3 个：</p>
+<ol>
+<li>filter 定义允许或者不允许的，只能做在 3 个链上：INPUT ，FORWARD ，OUTPUT</li>
+<li>nat 定义地址转换的，也只能做在 3 个链上：PREROUTING ，OUTPUT ，POSTROUTING</li>
+<li>mangle 功能:修改报文原数据，是 5 个链都可以做：PREROUTING，INPUT，FORWARD，OUTPUT，POSTROUTING</li>
+</ol>
+<p>我们修改报文原数据就是来修改 TTL 的。能够实现将数据包的元数据拆开，在里面做标记/修改内容的。而防火墙标记，其实就是靠 mangle 来实现的。<br>
+小扩展:</p>
+<ul>
+<li>对于 filter 来讲一般只能做在 3 个链上：INPUT ，FORWARD ，OUTPUT</li>
+<li>对于 nat 来讲一般也只能做在 3 个链上：PREROUTING ，OUTPUT ，POSTROUTING</li>
+<li>而 mangle 则是 5 个链都可以做：PREROUTING，INPUT，FORWARD，OUTPUT，POSTROUTING</li>
+</ul>
+<p>iptables/netfilter（这款软件）是工作在用户空间的，它可以让规则进行生效的，本身不是一种服务，而且规则是立即生效的。而我们 iptables 现在被做成了一个服务，可以进行启动，停止的。启动，则将规则直接生效，停止，则将规则撤销。<br>
+iptables 还支持自己定义链。但是自己定义的链，必须是跟某种特定的链关联起来的。在一个关卡设定，指定当有数据的时候专门去找某个特定的链来处理，当那个链处理完之后，再返回。接着在特定的链中继续检查。<br>
+注意：规则的次序非常关键，<code>谁的规则越严格，应该放的越靠前</code>，而检查规则的时候，是按照从上往下的方式进行检查的。<br>
+表名包括：</p>
+<ul>
+<li>raw ：高级功能，如：网址过滤。</li>
+<li>mangle ：数据包修改（QOS），用于实现服务质量。</li>
+<li>nat ：地址转换，用于网关路由器。</li>
+<li>filter ：包过滤，用于防火墙规则。</li>
+</ul>
+<p>动作包括：</p>
+<ul>
+<li>ACCEPT ：接收数据包。</li>
+<li>DROP ：丢弃数据包。</li>
+<li>REDIRECT ：重定向、映射、透明代理。</li>
+<li>SNAT ：源地址转换。</li>
+<li>DNAT ：目标地址转换。</li>
+<li>MASQUERADE ：IP 伪装（NAT），用于 ADSL。</li>
+<li>LOG ：日志记录。</li>
+</ul>
+<pre><code class="language-Shell">                             ┏╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍┓
+ ┌───────────────┐           ┃    Network    ┃
+ │ table: filter │           ┗━━━━━━━┳━━━━━━━┛
+ │ chain: INPUT  │◀────┐             │
+ └───────┬───────┘     │             ▼
+         │             │   ┌───────────────────┐
+  ┌      ▼      ┐      │   │ table: nat        │
+  │local process│      │   │ chain: PREROUTING │
+  └             ┘      │   └─────────┬─────────┘
+         │             │             │
+         ▼             │             ▼              ┌─────────────────┐
+┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅    │     ┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅      │table: nat       │
+ Routing decision      └───── outing decision ─────▶│chain: PREROUTING│
+┅┅┅┅┅┅┅┅┅┳┅┅┅┅┅┅┅┅┅          ┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅      └────────┬────────┘
+         │                                                   │
+         ▼                                                   │
+ ┌───────────────┐                                           │
+ │ table: nat    │           ┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅               │
+ │ chain: OUTPUT │    ┌─────▶ outing decision ◀──────────────┘
+ └───────┬───────┘    │      ┅┅┅┅┅┅┅┅┳┅┅┅┅┅┅┅┅
+         │            │              │
+         ▼            │              ▼
+ ┌───────────────┐    │   ┌────────────────────┐
+ │ table: filter │    │   │ chain: POSTROUTING │
+ │ chain: OUTPUT ├────┘   └──────────┬─────────┘
+ └───────────────┘                   │
+                                     ▼
+                             ┏╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍┓
+                             ┃    Network    ┃
+                             ┗━━━━━━━━━━━━━━━┛
+</code></pre>
+<h2 id="实例">实例</h2>
+<h3 id="空当前的所有规则和计数">空当前的所有规则和计数</h3>
+<pre><code class="language-Shell">iptables -F  # 清空所有的防火墙规则
+iptables -X  # 删除用户自定义的空链
+iptables -Z  # 清空计数
+</code></pre>
+<h3 id="配置允许-ssh-端口连接">配置允许 ssh 端口连接</h3>
+<pre><code class="language-Shell">iptables -A INPUT -s 192.168.1.0/24 -p tcp --dport 22 -j ACCEPT
+# 22为你的ssh端口， -s 192.168.1.0/24表示允许这个网段的机器来连接，其它网段的ip地址是登陆不了你的机器的。 -j ACCEPT表示接受这样的请求
+</code></pre>
+<h3 id="允许本地回环地址可以正常使用">允许本地回环地址可以正常使用</h3>
+<pre><code class="language-Shell">iptables -A INPUT -i lo -j ACCEPT
+#本地圆环地址就是那个127.0.0.1，是本机上使用的,它进与出都设置为允许
+iptables -A OUTPUT -o lo -j ACCEPT
+</code></pre>
+<h3 id="设置默认的规则">设置默认的规则</h3>
+<pre><code class="language-Shell">iptables -P INPUT DROP # 配置默认的不让进
+iptables -P FORWARD DROP # 默认的不允许转发
+iptables -P OUTPUT ACCEPT # 默认的可以出去
+</code></pre>
+<h3 id="配置白名单">配置白名单</h3>
+<pre><code class="language-Shell">iptables -A INPUT -p all -s 192.168.1.0/24 -j ACCEPT  # 允许机房内网机器可以访问
+iptables -A INPUT -p all -s 192.168.140.0/24 -j ACCEPT  # 允许机房内网机器可以访问
+iptables -A INPUT -p tcp -s 183.121.3.7 --dport 3380 -j ACCEPT # 允许183.121.3.7访问本机的3380端口
+</code></pre>
+<h3 id="开启相应的服务端口">开启相应的服务端口</h3>
+<pre><code class="language-Shell">iptables -A INPUT -p tcp --dport 80 -j ACCEPT # 开启80端口，因为web对外都是这个端口
+iptables -A INPUT -p icmp --icmp-type 8 -j ACCEPT # 允许被ping
+iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT # 已经建立的连接得让它进来
+</code></pre>
+<h3 id="保存规则到配置文件中">保存规则到配置文件中</h3>
+<pre><code class="language-Shell">cp /etc/sysconfig/iptables /etc/sysconfig/iptables.bak # 任何改动之前先备份，请保持这一优秀的习惯
+iptables-save &gt; /etc/sysconfig/iptables
+cat /etc/sysconfig/iptables
+</code></pre>
+<h3 id="列出已设置的规则">列出已设置的规则</h3>
+<p>iptables -L [-t 表名 ] [链名 ]</p>
+<ul>
+<li>四个表名 <code>raw</code>，<code>nat</code>，<code>filter</code>，<code>mangle</code></li>
+<li>五个规则链名 <code>INPUT</code>、<code>OUTPUT</code>、<code>FORWARD</code>、<code>PREROUTING</code>、<code>POSTROUTING</code></li>
+<li>filter 表包含<code>INPUT</code>、<code>OUTPUT</code>、<code>FORWARD</code>三个规则链</li>
+</ul>
+<pre><code class="language-Shell">iptables -L -t nat                  # 列出 nat 上面的所有规则
+#            ^ -t 参数指定，必须是 raw， nat，filter，mangle 中的一个
+iptables -L -t nat  --line-numbers  # 规则带编号
+iptables -L INPUT
+
+iptables -L -nv  # 查看，这个列表看起来更详细
+</code></pre>
+<h3 id="清除已有规则">清除已有规则</h3>
+<pre><code class="language-Shell">iptables -F INPUT  # 清空指定链 INPUT 上面的所有规则
+iptables -X INPUT  # 删除指定的链，这个链必须没有被其它任何规则引用，而且这条上必须没有任何规则。
+                   # 如果没有指定链名，则会删除该表中所有非内置的链。
+iptables -Z INPUT  # 把指定链，或者表中的所有链上的所有计数器清零。
+</code></pre>
+<h3 id="删除已添加的规则">删除已添加的规则</h3>
+<pre><code class="language-Shell"># 添加一条规则
+iptables -A INPUT -s 192.168.1.5 -j DROP
+</code></pre>
+<p>将所有 iptables 以序号标记显示，执行：</p>
+<pre><code class="language-Shell">iptables -L -n --line-numbers
+</code></pre>
+<p>比如要删除 INPUT 里序号为 8 的规则，执行：</p>
+<pre><code class="language-Shell">iptables -D INPUT 8
+</code></pre>
+<h3 id="开放指定的端口">开放指定的端口</h3>
+<pre><code class="language-Shell">iptables -A INPUT -s 127.0.0.1 -d 127.0.0.1 -j ACCEPT               #允许本地回环接口(即运行本机访问本机)
+iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT    #允许已建立的或相关连的通行
+iptables -A OUTPUT -j ACCEPT         #允许所有本机向外的访问
+iptables -A INPUT -p tcp --dport 22 -j ACCEPT    #允许访问22端口
+iptables -A INPUT -p tcp --dport 80 -j ACCEPT    #允许访问80端口
+iptables -A INPUT -p tcp --dport 21 -j ACCEPT    #允许ftp服务的21端口
+iptables -A INPUT -p tcp --dport 20 -j ACCEPT    #允许FTP服务的20端口
+iptables -A INPUT -j reject       #禁止其他未允许的规则访问
+iptables -A FORWARD -j REJECT     #禁止其他未允许的规则访问
+</code></pre>
+<h3 id="屏蔽-ip">屏蔽 IP</h3>
+<pre><code class="language-Shell">iptables -A INPUT -p tcp -m tcp -s 192.168.0.8 -j DROP  # 屏蔽恶意主机（比如，192.168.0.8
+iptables -I INPUT -s 123.45.6.7 -j DROP       #屏蔽单个IP的命令
+iptables -I INPUT -s 123.0.0.0/8 -j DROP      #封整个段即从123.0.0.1到123.255.255.254的命令
+iptables -I INPUT -s 124.45.0.0/16 -j DROP    #封IP段即从123.45.0.1到123.45.255.254的命令
+iptables -I INPUT -s 123.45.6.0/24 -j DROP    #封IP段即从123.45.6.1到123.45.6.254的命令
+</code></pre>
+<h3 id="指定数据包出去的网络接口">指定数据包出去的网络接口</h3>
+<p>只对 OUTPUT，FORWARD，POSTROUTING 三个链起作用。</p>
+<pre><code class="language-Shell">iptables -A FORWARD -o eth0
+</code></pre>
+<h3 id="查看已添加的规则">查看已添加的规则</h3>
+<pre><code class="language-Shell">iptables -L -n -v
+Chain INPUT (policy DROP 48106 packets, 2690K bytes)
+ pkts bytes target     prot opt in     out     source               destination
+ 5075  589K ACCEPT     all  --  lo     *       0.0.0.0/0            0.0.0.0/0
+ 191K   90M ACCEPT     tcp  --  *      *       0.0.0.0/0            0.0.0.0/0           tcp dpt:22
+1499K  133M ACCEPT     tcp  --  *      *       0.0.0.0/0            0.0.0.0/0           tcp dpt:80
+4364K 6351M ACCEPT     all  --  *      *       0.0.0.0/0            0.0.0.0/0           state RELATED,ESTABLISHED
+ 6256  327K ACCEPT     icmp --  *      *       0.0.0.0/0            0.0.0.0/0
+
+Chain FORWARD (policy ACCEPT 0 packets, 0 bytes)
+ pkts bytes target     prot opt in     out     source               destination
+
+Chain OUTPUT (policy ACCEPT 3382K packets, 1819M bytes)
+ pkts bytes target     prot opt in     out     source               destination
+ 5075  589K ACCEPT     all  --  *      lo      0.0.0.0/0            0.0.0.0/0
+</code></pre>
+<h3 id="启动网络转发规则">启动网络转发规则</h3>
+<p>公网<code>210.14.67.7</code>让内网<code>192.168.188.0/24</code>上网</p>
+<pre><code class="language-Shell">iptables -t nat -A POSTROUTING -s 192.168.188.0/24 -j SNAT --to-source 210.14.67.127
+</code></pre>
+<h3 id="端口映射">端口映射</h3>
+<p>本机的 2222 端口映射到内网 虚拟机的 22 端口</p>
+<pre><code class="language-Shell">iptables -t nat -A PREROUTING -d 210.14.67.127 -p tcp --dport 2222  -j DNAT --to-dest 192.168.188.115:22
+</code></pre>
+<h3 id="字符串匹配">字符串匹配</h3>
+<p>比如，我们要过滤所有 TCP 连接中的字符串<code>test</code>，一旦出现它我们就终止这个连接，我们可以这么做：</p>
+<pre><code class="language-Shell">iptables -A INPUT -p tcp -m string --algo kmp --string &quot;test&quot; -j REJECT --reject-with tcp-reset
+iptables -L
+
+# Chain INPUT (policy ACCEPT)
+# target     prot opt source               destination
+# REJECT     tcp  --  anywhere             anywhere            STRING match &quot;test&quot; ALGO name kmp TO 65535 reject-with tcp-reset
+#
+# Chain FORWARD (policy ACCEPT)
+# target     prot opt source               destination
+#
+# Chain OUTPUT (policy ACCEPT)
+# target     prot opt source               destination
+</code></pre>
+<h3 id="阻止-windows-蠕虫的攻击">阻止 Windows 蠕虫的攻击</h3>
+<pre><code class="language-Shell">iptables -I INPUT -j DROP -p tcp -s 0.0.0.0/0 -m string --algo kmp --string &quot;cmd.exe&quot;
+</code></pre>
+<h3 id="防止-syn-洪水攻击">防止 SYN 洪水攻击</h3>
+<pre><code class="language-Shell">iptables -A INPUT -p tcp --syn -m limit --limit 5/second -j ACCEPT
+</code></pre>
+
+          </div>
+        </article>
+        <div class="next-post">
+          <div class="next">下一篇</div>
+          <a href="https://dev-coco.github.io/post/objdump/">
+            <h3 class="post-title">objdump</h3>
+          </a>
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="gitalk-container"></div>
+      </div>
+      <!-- middle -->
+      <div class="main-container-middle"></div>
+      <!-- right -->
+      <div id="sidebar" class="main-container-right">
+        <div class="id_card i-card">
+          <div class="id_card-avatar" style="background-image: url(https://dev-coco.github.io/images/avatar.png?v=1694196400954)"></div>
+          <h1 class="id_card-title">Raz1ner</h1>
+          <img style="margin-top: 15px;margin-bottom: 10px;" alt="hits count" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&amp;count_bg=%2310C1F9&amp;title_bg=%23555555&amp;icon=html5.svg&amp;icon_color=%23E7E7E7&amp;title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&amp;edge_flat=false">
+          <p style="text-align: center;">
+            <a href="https://github.com/dev-coco" rel="nofollow noreferrer" target="_blank"><img class="social-icon" alt="Github" src="/images/social/GitHub.png"></a>
+            <a href="https://t.me/raz1ner" rel="nofollow noreferrer" target="_blank"><img class="social-icon" alt="Telegram" src="/images/social/Telegram.png"></a>
+            <a href="https://www.youtube.com/channel/UCEgNinV_DEntuv5Dm8Z_JvA?sub_confirmation=1" rel="nofollow noreferrer" target="_blank"><img class="social-icon" alt="YouTuebe" src="/images/social/YouTube.png"></a>
+            <a href="/atom.xml" target="_blank"><img class="social-icon" alt="rss" src="/images/social/RSS.png"></a>
+            <a href="mailto:ruijingle@gmail.com" target="_blank"><img class="social-icon" alt="Email" src="/images/social/Gmail.png"></a>
+          </p>
+          <!-- <h2 class="id_card-description"></h2> -->
+          <!--  -->
+          <div class="id_card-sns">
+            <!-- github -->
+            
+            <!-- twitter -->
+            <!-- weibo -->
+            <!-- facebook -->
+          </div>
+        </div>
+      <!-- toc -->
+      <div class="toc-card i-card" style="max-height:40%;overflow:auto">
+        <div class="toc-title i-card-title">目录</div>
+          <div class="toc-content">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E8%A1%A5%E5%85%85%E8%AF%B4%E6%98%8E">补充说明</a></li>
+<li><a href="#%E8%AF%AD%E6%B3%95">语法</a></li>
+<li><a href="#%E9%80%89%E9%A1%B9">选项</a></li>
+<li><a href="#%E5%9F%BA%E6%9C%AC%E5%8F%82%E6%95%B0">基本参数</a>
+<ul>
+<li><a href="#%E5%91%BD%E4%BB%A4%E9%80%89%E9%A1%B9%E8%BE%93%E5%85%A5%E9%A1%BA%E5%BA%8F">命令选项输入顺序</a></li>
+<li><a href="#%E5%B7%A5%E4%BD%9C%E6%9C%BA%E5%88%B6">工作机制</a></li>
+<li><a href="#%E9%98%B2%E7%81%AB%E5%A2%99%E7%9A%84%E7%AD%96%E7%95%A5">防火墙的策略</a></li>
+</ul>
+</li>
+<li><a href="#%E5%AE%9E%E4%BE%8B">实例</a>
+<ul>
+<li><a href="#%E7%A9%BA%E5%BD%93%E5%89%8D%E7%9A%84%E6%89%80%E6%9C%89%E8%A7%84%E5%88%99%E5%92%8C%E8%AE%A1%E6%95%B0">空当前的所有规则和计数</a></li>
+<li><a href="#%E9%85%8D%E7%BD%AE%E5%85%81%E8%AE%B8-ssh-%E7%AB%AF%E5%8F%A3%E8%BF%9E%E6%8E%A5">配置允许 ssh 端口连接</a></li>
+<li><a href="#%E5%85%81%E8%AE%B8%E6%9C%AC%E5%9C%B0%E5%9B%9E%E7%8E%AF%E5%9C%B0%E5%9D%80%E5%8F%AF%E4%BB%A5%E6%AD%A3%E5%B8%B8%E4%BD%BF%E7%94%A8">允许本地回环地址可以正常使用</a></li>
+<li><a href="#%E8%AE%BE%E7%BD%AE%E9%BB%98%E8%AE%A4%E7%9A%84%E8%A7%84%E5%88%99">设置默认的规则</a></li>
+<li><a href="#%E9%85%8D%E7%BD%AE%E7%99%BD%E5%90%8D%E5%8D%95">配置白名单</a></li>
+<li><a href="#%E5%BC%80%E5%90%AF%E7%9B%B8%E5%BA%94%E7%9A%84%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%8F%A3">开启相应的服务端口</a></li>
+<li><a href="#%E4%BF%9D%E5%AD%98%E8%A7%84%E5%88%99%E5%88%B0%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E4%B8%AD">保存规则到配置文件中</a></li>
+<li><a href="#%E5%88%97%E5%87%BA%E5%B7%B2%E8%AE%BE%E7%BD%AE%E7%9A%84%E8%A7%84%E5%88%99">列出已设置的规则</a></li>
+<li><a href="#%E6%B8%85%E9%99%A4%E5%B7%B2%E6%9C%89%E8%A7%84%E5%88%99">清除已有规则</a></li>
+<li><a href="#%E5%88%A0%E9%99%A4%E5%B7%B2%E6%B7%BB%E5%8A%A0%E7%9A%84%E8%A7%84%E5%88%99">删除已添加的规则</a></li>
+<li><a href="#%E5%BC%80%E6%94%BE%E6%8C%87%E5%AE%9A%E7%9A%84%E7%AB%AF%E5%8F%A3">开放指定的端口</a></li>
+<li><a href="#%E5%B1%8F%E8%94%BD-ip">屏蔽 IP</a></li>
+<li><a href="#%E6%8C%87%E5%AE%9A%E6%95%B0%E6%8D%AE%E5%8C%85%E5%87%BA%E5%8E%BB%E7%9A%84%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A3">指定数据包出去的网络接口</a></li>
+<li><a href="#%E6%9F%A5%E7%9C%8B%E5%B7%B2%E6%B7%BB%E5%8A%A0%E7%9A%84%E8%A7%84%E5%88%99">查看已添加的规则</a></li>
+<li><a href="#%E5%90%AF%E5%8A%A8%E7%BD%91%E7%BB%9C%E8%BD%AC%E5%8F%91%E8%A7%84%E5%88%99">启动网络转发规则</a></li>
+<li><a href="#%E7%AB%AF%E5%8F%A3%E6%98%A0%E5%B0%84">端口映射</a></li>
+<li><a href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D">字符串匹配</a></li>
+<li><a href="#%E9%98%BB%E6%AD%A2-windows-%E8%A0%95%E8%99%AB%E7%9A%84%E6%94%BB%E5%87%BB">阻止 Windows 蠕虫的攻击</a></li>
+<li><a href="#%E9%98%B2%E6%AD%A2-syn-%E6%B4%AA%E6%B0%B4%E6%94%BB%E5%87%BB">防止 SYN 洪水攻击</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      <div class="notice-card i-card ">
+        <div class="notice-title i-card-title">公告</div>
+        <div class="notice-content">博客新开通 Telegram 频道：<a href="https://t.me/raz1ner" target="_blank" style="color: blue">瑞景乐的博客</a>，欢迎订阅，随时收到最新资讯。<br>商务合作请点击上方的邮箱与我联系。</div>
+      </div>
+      <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
+        <div class="notice-content">
+          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/ai-tech/">AI 科技</a>
+          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/excel/">Excel</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/security/">安全</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/javascript/">Javascript</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/life/">生活</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/google-script/">Google 脚本</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/sololearn/">Sololearn</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="site-footer">
+    <span>Copyright © 2020-2023 Raz1ner - All Rights Reserved.</span> | <a class="rss" href="https://dev-coco.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+  
+</body>
+</html>

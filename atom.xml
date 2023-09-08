@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://dev-coco.github.io</id>
+    <title>Raz1ner</title>
+    <updated>2023-09-08T18:24:29.674Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://dev-coco.github.io"/>
+    <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
+    <logo>https://dev-coco.github.io/images/avatar.png</logo>
+    <icon>https://dev-coco.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2023, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[ChatGPT 提示语使用指南（二）]]></title>
+        <id>https://dev-coco.github.io/post/ChatGPT-Prompt-Guide-2/</id>
+        <link href="https://dev-coco.github.io/post/ChatGPT-Prompt-Guide-2/">
+        </link>
+        <updated>2023-07-26T04:47:24.000Z</updated>
+        <summary type="html"><![CDATA[<p>为 ChatGPT 设定角色的一些小技巧。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>为 ChatGPT 设定角色的一些小技巧。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[ChatGPT 提示语使用指南（一）]]></title>
+        <id>https://dev-coco.github.io/post/ChatGPT-Prompt-Guide/</id>
+        <link href="https://dev-coco.github.io/post/ChatGPT-Prompt-Guide/">
+        </link>
+        <updated>2023-07-18T14:21:18.000Z</updated>
+        <summary type="html"><![CDATA[<p>使用 ChatGPT 在问答场景下使用和优化提示语的一些小技巧。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>使用 ChatGPT 在问答场景下使用和优化提示语的一些小技巧。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Anthropic Claude 注册方法]]></title>
+        <id>https://dev-coco.github.io/post/Claude-Register/</id>
+        <link href="https://dev-coco.github.io/post/Claude-Register/">
+        </link>
+        <updated>2023-07-14T15:39:12.000Z</updated>
+        <summary type="html"><![CDATA[<p>Claude 几乎可以平替 ChatGPT 3.5 的一个 AI 工具。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Claude 几乎可以平替 ChatGPT 3.5 的一个 AI 工具。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[免费获取 YouTube 订阅者]]></title>
+        <id>https://dev-coco.github.io/post/Free-YouTube-Subscribers/</id>
+        <link href="https://dev-coco.github.io/post/Free-YouTube-Subscribers/">
+        </link>
+        <updated>2023-07-12T15:49:28.000Z</updated>
+        <summary type="html"><![CDATA[<p>每天都可以增长 YouTube 订阅人数。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>每天都可以增长 YouTube 订阅人数。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Google Excel 数组求和]]></title>
+        <id>https://dev-coco.github.io/post/Google-Excel-Array-Sum/</id>
+        <link href="https://dev-coco.github.io/post/Google-Excel-Array-Sum/">
+        </link>
+        <updated>2023-07-11T15:33:51.000Z</updated>
+        <summary type="html"><![CDATA[<p>横向/纵向数组求和。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>横向/纵向数组求和。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[批量清理 Google 云端与我共享]]></title>
+        <id>https://dev-coco.github.io/post/Google-Drive-Share-Clean/</id>
+        <link href="https://dev-coco.github.io/post/Google-Drive-Share-Clean/">
+        </link>
+        <updated>2023-07-09T14:38:56.000Z</updated>
+        <summary type="html"><![CDATA[<p>一键快速清理 Google 云端与我共享所有记录。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>一键快速清理 Google 云端与我共享所有记录。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[KeePassXC 自动输入（二）]]></title>
+        <id>https://dev-coco.github.io/post/KeePassXC-Auto-Type-2/</id>
+        <link href="https://dev-coco.github.io/post/KeePassXC-Auto-Type-2/">
+        </link>
+        <updated>2023-07-07T02:42:44.000Z</updated>
+        <summary type="html"><![CDATA[<p>快捷输入账号密码。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>快捷输入账号密码。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[KeePassXC 自动输入（一）]]></title>
+        <id>https://dev-coco.github.io/post/KeePassXC-Auto-Type-1/</id>
+        <link href="https://dev-coco.github.io/post/KeePassXC-Auto-Type-1/">
+        </link>
+        <updated>2023-07-01T20:57:43.000Z</updated>
+        <summary type="html"><![CDATA[<p>快捷自动输入账号密码。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>快捷自动输入账号密码。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[JavaScript 反混淆]]></title>
+        <id>https://dev-coco.github.io/post/JavaScript-Deobfuscator/</id>
+        <link href="https://dev-coco.github.io/post/JavaScript-Deobfuscator/">
+        </link>
+        <updated>2023-06-25T13:45:39.000Z</updated>
+        <summary type="html"><![CDATA[<p>还原 JavaScript 混淆后的代码。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>还原 JavaScript 混淆后的代码。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Levenshtein distance 编辑距离算法]]></title>
+        <id>https://dev-coco.github.io/post/Levenshtein-Distance/</id>
+        <link href="https://dev-coco.github.io/post/Levenshtein-Distance/">
+        </link>
+        <updated>2023-06-18T10:38:07.000Z</updated>
+        <summary type="html"><![CDATA[<p>详细解释算法的原理以及计算过程。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>详细解释算法的原理以及计算过程。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[屏蔽 Skype 内置新闻功能]]></title>
+        <id>https://dev-coco.github.io/post/Skype-Disable-News/</id>
+        <link href="https://dev-coco.github.io/post/Skype-Disable-News/">
+        </link>
+        <updated>2023-06-13T13:40:38.000Z</updated>
+        <summary type="html"><![CDATA[<p>使用 hosts 屏蔽 Skype 内置的新闻功能。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>使用 hosts 屏蔽 Skype 内置的新闻功能。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Facebook 专页 BUG]]></title>
+        <id>https://dev-coco.github.io/post/Facebook-Page-Bug/</id>
+        <link href="https://dev-coco.github.io/post/Facebook-Page-Bug/">
+        </link>
+        <updated>2023-06-11T04:48:49.000Z</updated>
+        <summary type="html"><![CDATA[<p>5 行代码让 Facebook 专页异常，无法打开。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>5 行代码让 Facebook 专页异常，无法打开。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Facebook 账号解封]]></title>
+        <id>https://dev-coco.github.io/post/Facebook-Account-Unlock/</id>
+        <link href="https://dev-coco.github.io/post/Facebook-Account-Unlock/">
+        </link>
+        <updated>2023-06-04T12:34:32.000Z</updated>
+        <summary type="html"><![CDATA[<p>一个超高概率解封成功的方法。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>一个超高概率解封成功的方法。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[免费领取 Bitdefender 180 天]]></title>
+        <id>https://dev-coco.github.io/post/Bitdefender-180-Free-Trial/</id>
+        <link href="https://dev-coco.github.io/post/Bitdefender-180-Free-Trial/">
+        </link>
+        <updated>2023-05-31T13:53:50.000Z</updated>
+        <summary type="html"><![CDATA[<p>Bitdefender 是一款由罗马尼亚的 Softwin 软件公司开发的杀毒软件。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Bitdefender 是一款由罗马尼亚的 Softwin 软件公司开发的杀毒软件。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[摆脱拖延症，提高效率]]></title>
+        <id>https://dev-coco.github.io/post/The-Procrastination/</id>
+        <link href="https://dev-coco.github.io/post/The-Procrastination/">
+        </link>
+        <updated>2023-05-26T13:24:57.000Z</updated>
+        <summary type="html"><![CDATA[<p>拖延症困扰着许多人，而提高效率成为我们追求的目标。让我们一起探索如何解决拖延症，提升工作和生活的效率！</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>拖延症困扰着许多人，而提高效率成为我们追求的目标。让我们一起探索如何解决拖延症，提升工作和生活的效率！</p>
+]]></content>
+    </entry>
+</feed>
