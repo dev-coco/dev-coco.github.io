@@ -405,6 +405,45 @@
         </div>
       </div>
     </div>
+    <h3>SimilarWeb 相关</h3>
+    <div class="row">
+      <div class="card">
+        <a class="card-header" href="javascript:(async()=&gt;{let e=prompt(&quot;请输入链接&quot;).match(/.+/g),t=[];for(let a of e){let i=await fetch(`https://pro.similarweb.com/api/WebsiteOverview/getsimilarsites?key=${a.replace(/(https|http):\/\/|\/.*|www\./g,&quot;&quot;)}&amp;limit=20`).then(e=&gt;e.json());for(let o of i)t.push(`https://${o.Domain}`)}let l=document.createElement(&quot;textarea&quot;);l.value=Array.from(new Set(t)).join(&quot;\n&quot;),document.body.appendChild(l),l.select(),document.execCommand(&quot;copy&quot;),document.body.removeChild(l),alert(&quot;完成&quot;)})();">获取类似网站</a>
+        <div class="card-body">
+          <p class="card-text">输入网址，获取类似网站。</p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">在<a href="https://pro.similarweb.com" rel="nofollow noreferrer" target="_blank">首页</a>登陆后使用</small>
+        </div>
+      </div>
+      <div class="card">
+        <a class="card-header" href="javascript:(async()=&gt;{let e=prompt(&quot;请输入链接&quot;).match(/.+/g),t=&quot;&quot;;for(let a of e){let l=a.replace(/(https|http):\/\/|\/.*|www\./g,&quot;&quot;),i=await fetch(`https://pro.similarweb.com/api/WebsiteOverview/getheader?key=${l}&amp;mainDomainOnly=true&amp;includeCrossData=true`).then(e=&gt;e.json()),o=parseInt(i[l].monthlyVisits),n=i[l].title;t+=`${n}\t${o}\n`}let r=document.createElement(&quot;textarea&quot;);r.value=t,document.body.appendChild(r),r.select(),document.execCommand(&quot;copy&quot;),document.body.removeChild(r),alert(&quot;完成&quot;)})();">获取标题和月访问量</a>
+        <div class="card-body">
+          <p class="card-text">输入网址，获取标题和月访问量。</p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">在<a href="https://pro.similarweb.com" rel="nofollow noreferrer" target="_blank">首页</a>登陆后使用</small>
+        </div>
+      </div>
+      <div class="card">
+        <a class="card-header" href="javascript:(async()=&gt;{let e=prompt(&quot;请输入链接&quot;).match(/.+/g),t=&quot;&quot;,a=new Date,o=a.getFullYear(),n=a.getMonth(),i=e=&gt;e.toLocaleString(&quot;zh-CN&quot;,{year:&quot;numeric&quot;,month:&quot;2-digit&quot;,day:&quot;2-digit&quot;}).replace(/\//g,&quot;|&quot;);for(let r of e){let l=r.replace(/(https|http):\/\/|\/.*|www\./g,&quot;&quot;),d={includeSubDomains:!0,keys:l,from:i(new Date(o,n-3,1)),to:i(new Date(o,n,0)),country:999,webSource:&quot;Total&quot;,isWindow:!1,timeGranularity:&quot;Monthly&quot;,page:1,pageSize:200},h=await fetch(`https://pro.similarweb.com/widgetApi/WebsiteGeographyExtended/GeographyExtended/Table?${new URLSearchParams(d).toString()}`).then(e=&gt;e.json()),c=h.Filters.country,g=[];for(let p=0;p&lt;c.length&amp;&amp;(g.push(`${c[p].text}  ${(100*h.Data[p].Share).toFixed(2)}%`),!(p&gt;9));p++);t+=`&quot;${g.join(&quot;\n&quot;)}&quot;\n`}let y=document.createElement(&quot;textarea&quot;);y.value=t,document.body.appendChild(y),y.select(),document.execCommand(&quot;copy&quot;),document.body.removeChild(y),alert(&quot;完成&quot;)})();">获取网站用户地理</a>
+        <div class="card-body">
+          <p class="card-text">输入网址，获取网站用户地理比例。</p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">在<a href="https://pro.similarweb.com" rel="nofollow noreferrer" target="_blank">首页</a>登陆后使用</small>
+        </div>
+      </div>
+      <div class="card">
+        <a class="card-header" href="javascript:(async()=&gt;{let e=prompt(&quot;请输入链接&quot;).match(/.+/g),t=[],o=new Date,n=o.getFullYear(),a=o.getMonth(),r=e=&gt;e.toLocaleString(&quot;zh-CN&quot;,{year:&quot;numeric&quot;,month:&quot;2-digit&quot;,day:&quot;2-digit&quot;}).replace(/\//g,&quot;|&quot;);for(let i of e){let l=i.replace(/(https|http):\/\/|\/.*|www\./g,&quot;&quot;),c={key:l,isWWW:!1,country:999,from:r(new Date(n,a-3,1)),to:r(new Date(n,a,0)),isWindow:!1,webSource:&quot;Total&quot;,orderBy:&quot;RelevancyScore desc&quot;,ignoreFilterConsistency:&quot;false&quot;},s=await fetch(`https://pro.similarweb.com/api/websiteanalysis/GetAudienceInterestsTable?${new URLSearchParams(c).toString()}`).then(e=&gt;e.json());for(let d of s.Records)&quot;grid.upgrade&quot;!==d.Domain&amp;&amp;t.push(d.Domain)}let m=document.createElement(&quot;textarea&quot;);m.value=Array.from(new Set(t)).join(&quot;\n&quot;),document.body.appendChild(m),m.select(),document.execCommand(&quot;copy&quot;),document.body.removeChild(m),alert(&quot;完成&quot;)})();">获取受众兴趣网站</a>
+        <div class="card-body">
+          <p class="card-text">输入网址，获取网站受众兴趣网站。</p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">在<a href="https://pro.similarweb.com" rel="nofollow noreferrer" target="_blank">首页</a>登陆后使用</small>
+        </div>
+      </div>
+    </div>
     <h3>TikTok 相关</h3>
     <div class="row">
       <div class="card">
