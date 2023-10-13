@@ -299,3 +299,9 @@ body {
     opacity: 1;
   }
 }
+
+.icon {
+  width: 25px;
+  margin: 3px;
+  vertical-align: middle;
+}

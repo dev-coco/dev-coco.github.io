@@ -1,5 +1,0 @@
-<div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
-        <div class="notice-content"><% site.tags.forEach(function(tag, tagIndex) { %>
-          <a class="tags-tag i-tag i-tag-<%= ['', 'primary', 'success', 'warning', 'info','error','banana','other_1','other_2','other_3','other_4',][Math.floor(Math.random()*11)] %>" href="<%= tag.link %>"><%= tag.name %></a><% }); %>
-        </div>
-      </div>
