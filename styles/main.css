@@ -613,6 +613,36 @@ body {
     position: sticky;
   }
 }
+@media (min-width: 1500px) {
+  .main {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding-top: 80px;
+    width: 100%;
+  }
+  .main .main-container {
+    display: flex;
+    flex: 1;
+    margin: 0 auto;
+    width: 1500px;
+  }
+  .main .main-container .main-container-left {
+    flex: 1;
+    max-width: 1200px;
+  }
+  .main .main-container .main-container-middle {
+    flex-shrink: 0;
+    width: 20px;
+  }
+  .main .main-container .main-container-right {
+    flex-shrink: 0;
+    width: 280px;
+    height: 100vh;
+    top: 80px;
+    position: sticky;
+  }
+}
 @media (max-width: 960px) {
   #gridea-search-form {
     display: none;
