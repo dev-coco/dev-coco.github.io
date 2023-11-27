@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2023-11-26T00:44:42.033Z</updated>
+    <updated>2023-11-27T18:58:58.782Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2023, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[Reddit 批量发送消息]]></title>
+        <id>https://dev-coco.github.io/post/Reddit-Bulk-Message-Sender/</id>
+        <link href="https://dev-coco.github.io/post/Reddit-Bulk-Message-Sender/">
+        </link>
+        <updated>2023-11-27T04:23:22.000Z</updated>
+        <summary type="html"><![CDATA[<p>Reddit 批量发送消息 Chrome 插件使用方法。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Reddit 批量发送消息 Chrome 插件使用方法。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[1.1.1.1 WARP 使用教程 macOS 版]]></title>
         <id>https://dev-coco.github.io/post/1111-macOS-Tutorial/</id>
@@ -161,17 +172,6 @@
         <summary type="html"><![CDATA[<p>快捷自动输入账号密码。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>快捷自动输入账号密码。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[JavaScript 反混淆]]></title>
-        <id>https://dev-coco.github.io/post/JavaScript-Deobfuscator/</id>
-        <link href="https://dev-coco.github.io/post/JavaScript-Deobfuscator/">
-        </link>
-        <updated>2023-06-25T13:45:39.000Z</updated>
-        <summary type="html"><![CDATA[<p>还原 JavaScript 混淆后的代码。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>还原 JavaScript 混淆后的代码。</p>
 ]]></content>
     </entry>
 </feed>
