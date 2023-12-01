@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2023-12-01T01:39:14.857Z</updated>
+    <updated>2023-12-01T13:47:38.917Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2023, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[Facebook 政策大全 | 实时更新]]></title>
+        <id>https://dev-coco.github.io/post/Facebook-Real-Time-Policy/</id>
+        <link href="https://dev-coco.github.io/post/Facebook-Real-Time-Policy/">
+        </link>
+        <updated>2023-12-01T07:30:01.000Z</updated>
+        <summary type="html"><![CDATA[<p>非常全面的 Facebook 平台政策，实时更新，掌握最新动态。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>非常全面的 Facebook 平台政策，实时更新，掌握最新动态。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[免费使用 GPT-4]]></title>
         <id>https://dev-coco.github.io/post/freeGPT-4/</id>
@@ -161,17 +172,6 @@
         <summary type="html"><![CDATA[<p>横向/纵向数组求和。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>横向/纵向数组求和。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[批量清理 Google 云端与我共享]]></title>
-        <id>https://dev-coco.github.io/post/Google-Drive-Share-Clean/</id>
-        <link href="https://dev-coco.github.io/post/Google-Drive-Share-Clean/">
-        </link>
-        <updated>2023-07-09T14:38:56.000Z</updated>
-        <summary type="html"><![CDATA[<p>一键快速清理 Google 云端与我共享所有记录。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>一键快速清理 Google 云端与我共享所有记录。</p>
 ]]></content>
     </entry>
 </feed>
