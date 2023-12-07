@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2023-12-05T13:53:44.221Z</updated>
+    <updated>2023-12-07T00:01:44.686Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2023, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[免费在线使用 GPT-4 | Free GPT-4 Online]]></title>
+        <id>https://dev-coco.github.io/post/Free-GPT-4-Online/</id>
+        <link href="https://dev-coco.github.io/post/Free-GPT-4-Online/">
+        </link>
+        <updated>2023-12-06T12:01:18.000Z</updated>
+        <summary type="html"><![CDATA[<p>免费在线使用 GPT-4，无需 API Key，支持上下文。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>免费在线使用 GPT-4，无需 API Key，支持上下文。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Whisper Transcription 限时免费]]></title>
         <id>https://dev-coco.github.io/post/Whisper-Transcription-Free-Limited-Time/</id>
@@ -161,17 +172,6 @@
         <summary type="html"><![CDATA[<p>使用 ChatGPT 在问答场景下使用和优化提示语的一些小技巧。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>使用 ChatGPT 在问答场景下使用和优化提示语的一些小技巧。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Anthropic Claude 注册方法]]></title>
-        <id>https://dev-coco.github.io/post/Claude-Register/</id>
-        <link href="https://dev-coco.github.io/post/Claude-Register/">
-        </link>
-        <updated>2023-07-14T15:39:12.000Z</updated>
-        <summary type="html"><![CDATA[<p>Claude 几乎可以平替 ChatGPT 3.5 的一个 AI 工具。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>Claude 几乎可以平替 ChatGPT 3.5 的一个 AI 工具。</p>
 ]]></content>
     </entry>
 </feed>
