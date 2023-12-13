@@ -274,7 +274,6 @@ h6 {
 ul {
   margin: 0;
   padding: 0;
-  list-style: none;
 }
 img {
   border: 0;
@@ -719,6 +718,7 @@ p code {
 }
 .header .nav .menu-container ul {
   display: flex;
+  list-style: none;
 }
 .header .nav .menu-container ul li + li {
   margin-left: 50px;
