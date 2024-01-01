@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2023-12-30T00:05:44.690Z</updated>
+    <updated>2024-01-01T13:08:58.315Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2023, Raz1ner</rights>
+    <rights>All rights reserved 2024, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[ChatGPT 提示语使用指南（五）]]></title>
+        <id>https://dev-coco.github.io/post/ChatGPT-Prompt-Guide-5/</id>
+        <link href="https://dev-coco.github.io/post/ChatGPT-Prompt-Guide-5/">
+        </link>
+        <updated>2024-01-01T01:05:16.000Z</updated>
+        <summary type="html"><![CDATA[<p>增强 ChatGPT 回复结果的准确性。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>增强 ChatGPT 回复结果的准确性。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[ChatGPT 提示语使用指南（四）]]></title>
         <id>https://dev-coco.github.io/post/ChatGPT-Prompt-Guide-4/</id>
@@ -161,17 +172,6 @@
         <summary type="html"><![CDATA[<p>1.1.1.1 WARP 各项功能使用教程 macOS 版。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>1.1.1.1 WARP 各项功能使用教程 macOS 版。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[VPN Kill Switch]]></title>
-        <id>https://dev-coco.github.io/post/vpn-kill-switch/</id>
-        <link href="https://dev-coco.github.io/post/vpn-kill-switch/">
-        </link>
-        <updated>2023-11-24T04:51:15.000Z</updated>
-        <summary type="html"><![CDATA[<p>任意 VPN 都通用的 Kill Switch 功能。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>任意 VPN 都通用的 Kill Switch 功能。</p>
 ]]></content>
     </entry>
 </feed>
