@@ -2,13 +2,35 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2024-01-01T13:08:58.315Z</updated>
+    <updated>2024-01-03T17:34:45.929Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2024, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[Easy Clean 使用方法]]></title>
+        <id>https://dev-coco.github.io/post/Easy-Clean/</id>
+        <link href="https://dev-coco.github.io/post/Easy-Clean/">
+        </link>
+        <updated>2024-01-03T05:26:30.000Z</updated>
+        <summary type="html"><![CDATA[<p>一键快捷清理浏览器缓存，同时在关闭浏览器后自动进行缓存清理，以保护您的隐私安全。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>一键快捷清理浏览器缓存，同时在关闭浏览器后自动进行缓存清理，以保护您的隐私安全。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Easy Clean User Guide]]></title>
+        <id>https://dev-coco.github.io/post/Easy-Clean-EN/</id>
+        <link href="https://dev-coco.github.io/post/Easy-Clean-EN/">
+        </link>
+        <updated>2024-01-03T05:26:20.000Z</updated>
+        <summary type="html"><![CDATA[<p>One-click quick cleanup of browser cache, with automatic cache clearance upon closing the browser to ensure the security of your privacy.</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>One-click quick cleanup of browser cache, with automatic cache clearance upon closing the browser to ensure the security of your privacy.</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[ChatGPT 提示语使用指南（五）]]></title>
         <id>https://dev-coco.github.io/post/ChatGPT-Prompt-Guide-5/</id>
@@ -150,28 +172,6 @@
         <summary type="html"><![CDATA[<p>1.1.1.1 WARP 各项功能使用教程 iOS 版。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>1.1.1.1 WARP 各项功能使用教程 iOS 版。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Reddit 批量发送消息]]></title>
-        <id>https://dev-coco.github.io/post/Reddit-Bulk-Message-Sender/</id>
-        <link href="https://dev-coco.github.io/post/Reddit-Bulk-Message-Sender/">
-        </link>
-        <updated>2023-11-26T15:23:22.000Z</updated>
-        <summary type="html"><![CDATA[<p>Reddit 批量发送消息 Chrome 插件使用方法。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>Reddit 批量发送消息 Chrome 插件使用方法。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[1.1.1.1 WARP 使用教程 macOS 版]]></title>
-        <id>https://dev-coco.github.io/post/1111-macOS-Tutorial/</id>
-        <link href="https://dev-coco.github.io/post/1111-macOS-Tutorial/">
-        </link>
-        <updated>2023-11-25T12:44:29.000Z</updated>
-        <summary type="html"><![CDATA[<p>1.1.1.1 WARP 各项功能使用教程 macOS 版。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>1.1.1.1 WARP 各项功能使用教程 macOS 版。</p>
 ]]></content>
     </entry>
 </feed>
