@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2024-01-09T12:53:40.073Z</updated>
+    <updated>2024-01-10T19:21:11.093Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2024, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[ChatGPT Prompt 提示语教程目录]]></title>
+        <id>https://dev-coco.github.io/post/ChatGPT-Prompt-Guide-Tutorial/</id>
+        <link href="https://dev-coco.github.io/post/ChatGPT-Prompt-Guide-Tutorial/">
+        </link>
+        <updated>2024-01-10T07:16:53.000Z</updated>
+        <summary type="html"><![CDATA[<p>将 ChatGPT Prompt 提示语教程整理成目录方便查找。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>将 ChatGPT Prompt 提示语教程整理成目录方便查找。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[ChatGPT 提示语使用指南（六）]]></title>
         <id>https://dev-coco.github.io/post/ChatGPT-Prompt-Guide-6/</id>
@@ -161,17 +172,6 @@
         <summary type="html"><![CDATA[<p>在 Instagram 上被禁止推送的标签。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>在 Instagram 上被禁止推送的标签。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[免费使用 GPT-4]]></title>
-        <id>https://dev-coco.github.io/post/freeGPT-4/</id>
-        <link href="https://dev-coco.github.io/post/freeGPT-4/">
-        </link>
-        <updated>2023-12-01T00:59:28.000Z</updated>
-        <summary type="html"><![CDATA[<p>这是一个封装成 Google Apps Script 的接口。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>这是一个封装成 Google Apps Script 的接口。</p>
 ]]></content>
     </entry>
 </feed>
