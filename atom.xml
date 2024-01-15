@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2024-01-10T19:21:11.093Z</updated>
+    <updated>2024-01-15T23:13:54.999Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2024, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[Google 脚本 Log 小技巧]]></title>
+        <id>https://dev-coco.github.io/post/Google-Script-Log-Tip/</id>
+        <link href="https://dev-coco.github.io/post/Google-Script-Log-Tip/">
+        </link>
+        <updated>2024-01-15T11:11:08.000Z</updated>
+        <summary type="html"><![CDATA[<p>完整打印超长内容。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>完整打印超长内容。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[ChatGPT Prompt 提示语教程目录]]></title>
         <id>https://dev-coco.github.io/post/ChatGPT-Prompt-Guide-Tutorial/</id>
@@ -161,17 +172,6 @@
         <summary type="html"><![CDATA[<p>免费在线使用 GPT-4，无需 API Key，支持上下文。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>免费在线使用 GPT-4，无需 API Key，支持上下文。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Instagram 被禁止的标签]]></title>
-        <id>https://dev-coco.github.io/post/Instagram-Banned-Hashtags/</id>
-        <link href="https://dev-coco.github.io/post/Instagram-Banned-Hashtags/">
-        </link>
-        <updated>2023-12-02T10:38:28.000Z</updated>
-        <summary type="html"><![CDATA[<p>在 Instagram 上被禁止推送的标签。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>在 Instagram 上被禁止推送的标签。</p>
 ]]></content>
     </entry>
 </feed>
