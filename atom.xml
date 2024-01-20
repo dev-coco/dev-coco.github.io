@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>http://localhost:4000</id>
+    <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2024-01-17T03:48:09.893Z</updated>
+    <updated>2024-01-20T17:14:51.013Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="http://localhost:4000"/>
-    <link rel="self" href="http://localhost:4000/atom.xml"/>
-    <logo>http://localhost:4000/images/avatar.png</logo>
-    <icon>http://localhost:4000/favicon.ico</icon>
+    <link rel="alternate" href="https://dev-coco.github.io"/>
+    <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
+    <logo>https://dev-coco.github.io/images/avatar.png</logo>
+    <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2024, Raz1ner</rights>
     <entry>
         <title type="html"><![CDATA[Google 脚本 Log 小技巧]]></title>
-        <id>http://localhost:4000/post/Google-Script-Log-Tip/</id>
-        <link href="http://localhost:4000/post/Google-Script-Log-Tip/">
+        <id>https://dev-coco.github.io/post/Google-Script-Log-Tip/</id>
+        <link href="https://dev-coco.github.io/post/Google-Script-Log-Tip/">
         </link>
         <updated>2024-01-15T11:11:08.000Z</updated>
         <summary type="html"><![CDATA[<p>完整打印超长内容。</p>
@@ -22,8 +22,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[ChatGPT Prompt 提示语教程目录]]></title>
-        <id>http://localhost:4000/post/ChatGPT-Prompt-Guide-Tutorial/</id>
-        <link href="http://localhost:4000/post/ChatGPT-Prompt-Guide-Tutorial/">
+        <id>https://dev-coco.github.io/post/ChatGPT-Prompt-Guide-Tutorial/</id>
+        <link href="https://dev-coco.github.io/post/ChatGPT-Prompt-Guide-Tutorial/">
         </link>
         <updated>2024-01-10T07:16:53.000Z</updated>
         <summary type="html"><![CDATA[<p>将 ChatGPT Prompt 提示语教程整理成目录方便查找。</p>
@@ -33,8 +33,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Google Excel 表格保护和区域保护]]></title>
-        <id>http://localhost:4000/post/Google-Excel-Sheet-Protect/</id>
-        <link href="http://localhost:4000/post/Google-Excel-Sheet-Protect/">
+        <id>https://dev-coco.github.io/post/Google-Excel-Sheet-Protect/</id>
+        <link href="https://dev-coco.github.io/post/Google-Excel-Sheet-Protect/">
         </link>
         <updated>2024-01-09T03:17:45.000Z</updated>
         <summary type="html"><![CDATA[<p>给表格设置保护权限，或者指定区域设置保护，防止多人编辑的时候数据被修改。</p>
@@ -44,8 +44,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[ChatGPT 提示语使用指南（六）]]></title>
-        <id>http://localhost:4000/post/ChatGPT-Prompt-Guide-6/</id>
-        <link href="http://localhost:4000/post/ChatGPT-Prompt-Guide-6/">
+        <id>https://dev-coco.github.io/post/ChatGPT-Prompt-Guide-6/</id>
+        <link href="https://dev-coco.github.io/post/ChatGPT-Prompt-Guide-6/">
         </link>
         <updated>2024-01-09T00:53:26.000Z</updated>
         <summary type="html"><![CDATA[<p>进阶增强 ChatGPT 回复结果的准确性。</p>
@@ -55,8 +55,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Easy Clean - Privacy Policy]]></title>
-        <id>http://localhost:4000/post/Easy-Clean-Privacy-Policy-EN/</id>
-        <link href="http://localhost:4000/post/Easy-Clean-Privacy-Policy-EN/">
+        <id>https://dev-coco.github.io/post/Easy-Clean-Privacy-Policy-EN/</id>
+        <link href="https://dev-coco.github.io/post/Easy-Clean-Privacy-Policy-EN/">
         </link>
         <updated>2024-01-08T00:34:43.000Z</updated>
         <summary type="html"><![CDATA[<p>Easy Clean Chrome Extension’s privacy policy is detailed here.</p>
@@ -66,8 +66,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Easy Clean 使用方法]]></title>
-        <id>http://localhost:4000/post/Easy-Clean/</id>
-        <link href="http://localhost:4000/post/Easy-Clean/">
+        <id>https://dev-coco.github.io/post/Easy-Clean/</id>
+        <link href="https://dev-coco.github.io/post/Easy-Clean/">
         </link>
         <updated>2024-01-03T05:39:58.000Z</updated>
         <summary type="html"><![CDATA[<p>一键快捷清理浏览器缓存，同时在关闭浏览器后自动进行缓存清理，以保护您的隐私安全。</p>
@@ -77,8 +77,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Easy Clean User Guide]]></title>
-        <id>http://localhost:4000/post/Easy-Clean-EN/</id>
-        <link href="http://localhost:4000/post/Easy-Clean-EN/">
+        <id>https://dev-coco.github.io/post/Easy-Clean-EN/</id>
+        <link href="https://dev-coco.github.io/post/Easy-Clean-EN/">
         </link>
         <updated>2024-01-03T05:39:51.000Z</updated>
         <summary type="html"><![CDATA[<p>One-click quick cleanup of browser cache, with automatic cache clearance upon closing the browser to ensure the security of your privacy.</p>
@@ -88,8 +88,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[ChatGPT 提示语使用指南（五）]]></title>
-        <id>http://localhost:4000/post/ChatGPT-Prompt-Guide-5/</id>
-        <link href="http://localhost:4000/post/ChatGPT-Prompt-Guide-5/">
+        <id>https://dev-coco.github.io/post/ChatGPT-Prompt-Guide-5/</id>
+        <link href="https://dev-coco.github.io/post/ChatGPT-Prompt-Guide-5/">
         </link>
         <updated>2024-01-01T01:05:16.000Z</updated>
         <summary type="html"><![CDATA[<p>增强 ChatGPT 回复结果的准确性。</p>
@@ -99,8 +99,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[ChatGPT 提示语使用指南（四）]]></title>
-        <id>http://localhost:4000/post/ChatGPT-Prompt-Guide-4/</id>
-        <link href="http://localhost:4000/post/ChatGPT-Prompt-Guide-4/">
+        <id>https://dev-coco.github.io/post/ChatGPT-Prompt-Guide-4/</id>
+        <link href="https://dev-coco.github.io/post/ChatGPT-Prompt-Guide-4/">
         </link>
         <updated>2023-12-29T12:05:33.000Z</updated>
         <summary type="html"><![CDATA[<p>让 ChatGPT 按照想要的格式输出内容。</p>
@@ -110,8 +110,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Instagram Banned Hashtags]]></title>
-        <id>http://localhost:4000/post/Instagram-Banned-Hashtags-EN/</id>
-        <link href="http://localhost:4000/post/Instagram-Banned-Hashtags-EN/">
+        <id>https://dev-coco.github.io/post/Instagram-Banned-Hashtags-EN/</id>
+        <link href="https://dev-coco.github.io/post/Instagram-Banned-Hashtags-EN/">
         </link>
         <updated>2023-12-28T11:59:13.000Z</updated>
         <summary type="html"><![CDATA[<p>Banned Hashtags on Instagram</p>
@@ -121,8 +121,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[ChatGPT 提示语使用指南（三）]]></title>
-        <id>http://localhost:4000/post/ChatGPT-Prompt-Guide-3/</id>
-        <link href="http://localhost:4000/post/ChatGPT-Prompt-Guide-3/">
+        <id>https://dev-coco.github.io/post/ChatGPT-Prompt-Guide-3/</id>
+        <link href="https://dev-coco.github.io/post/ChatGPT-Prompt-Guide-3/">
         </link>
         <updated>2023-12-26T04:15:18.000Z</updated>
         <summary type="html"><![CDATA[<p>为 ChatGPT 设定角色的一些小技巧。</p>
@@ -132,8 +132,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[ChatGPT 提示语使用指南（二）]]></title>
-        <id>http://localhost:4000/post/ChatGPT-Prompt-Guide-2/</id>
-        <link href="http://localhost:4000/post/ChatGPT-Prompt-Guide-2/">
+        <id>https://dev-coco.github.io/post/ChatGPT-Prompt-Guide-2/</id>
+        <link href="https://dev-coco.github.io/post/ChatGPT-Prompt-Guide-2/">
         </link>
         <updated>2023-12-18T07:20:30.000Z</updated>
         <summary type="html"><![CDATA[<p>使用 ChatGPT 在问答场景下使用和优化提示语的一些小技巧。</p>
@@ -143,8 +143,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[ChatGPT 提示语使用指南（一）]]></title>
-        <id>http://localhost:4000/post/ChatGPT-Prompt-Guide/</id>
-        <link href="http://localhost:4000/post/ChatGPT-Prompt-Guide/">
+        <id>https://dev-coco.github.io/post/ChatGPT-Prompt-Guide/</id>
+        <link href="https://dev-coco.github.io/post/ChatGPT-Prompt-Guide/">
         </link>
         <updated>2023-12-17T01:16:41.000Z</updated>
         <summary type="html"><![CDATA[<p>关于 ChatGPT 的一些基本介绍。</p>
@@ -154,8 +154,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[YouTube 自动回复]]></title>
-        <id>http://localhost:4000/post/YouTube-Automatic-Reply/</id>
-        <link href="http://localhost:4000/post/YouTube-Automatic-Reply/">
+        <id>https://dev-coco.github.io/post/YouTube-Automatic-Reply/</id>
+        <link href="https://dev-coco.github.io/post/YouTube-Automatic-Reply/">
         </link>
         <updated>2023-12-14T12:32:24.000Z</updated>
         <summary type="html"><![CDATA[<p>YouTube 自动回复视频和社区帖下的评论。</p>
@@ -165,8 +165,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[快速大量注册社交平台]]></title>
-        <id>http://localhost:4000/post/Register-Social-Apps/</id>
-        <link href="http://localhost:4000/post/Register-Social-Apps/">
+        <id>https://dev-coco.github.io/post/Register-Social-Apps/</id>
+        <link href="https://dev-coco.github.io/post/Register-Social-Apps/">
         </link>
         <updated>2023-12-13T04:05:51.000Z</updated>
         <summary type="html"><![CDATA[<p>快速大量注册社交平台的方法。</p>
