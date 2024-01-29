@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2024-01-23T21:06:56.839Z</updated>
+    <updated>2024-01-29T14:38:40.829Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2024, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[Google Excel 循环奔溃 BUG]]></title>
+        <id>https://dev-coco.github.io/post/Google-Excel-Crash-Bug/</id>
+        <link href="https://dev-coco.github.io/post/Google-Excel-Crash-Bug/">
+        </link>
+        <updated>2024-01-29T03:37:43.000Z</updated>
+        <summary type="html"><![CDATA[<p>一个函数导致 Google Excel 无限循环奔溃。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>一个函数导致 Google Excel 无限循环奔溃。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Google Excel 表格保护和区域保护]]></title>
         <id>https://dev-coco.github.io/post/Google-Excel-Sheet-Protect/</id>
@@ -161,17 +172,6 @@
         <summary type="html"><![CDATA[<p>YouTube 自动回复视频和社区帖下的评论。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>YouTube 自动回复视频和社区帖下的评论。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[快速大量注册社交平台]]></title>
-        <id>https://dev-coco.github.io/post/Register-Social-Apps/</id>
-        <link href="https://dev-coco.github.io/post/Register-Social-Apps/">
-        </link>
-        <updated>2023-12-13T04:05:51.000Z</updated>
-        <summary type="html"><![CDATA[<p>快速大量注册社交平台的方法。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>快速大量注册社交平台的方法。</p>
 ]]></content>
     </entry>
 </feed>
