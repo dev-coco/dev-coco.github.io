@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>YouTube 自动回复 | Raz1ner</title>
   <meta name="author" content="Raz1ner">
-  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1706539113094">
+  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1706662563731">
   <link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
   <script src="/js/prism.js"></script>
   <link rel="stylesheet" href="/css/prism.css">
@@ -47,7 +47,7 @@
       <div class="nav">
         <div class="logo">
           <a href="https://dev-coco.github.io">
-            <img class="avatar" alt="Raz1ner" src="https://dev-coco.github.io/images/avatar.png?v=1706539113094" alt="">
+            <img class="avatar" alt="Raz1ner" src="https://dev-coco.github.io/images/avatar.png?v=1706662563731" alt="">
           </a>
           <div class="site-title">
             <h1>Raz1ner</h1>
@@ -99,7 +99,7 @@
         <article class="post i-card">
         <h2 class="post-title">YouTube 自动回复</h2>
         <div class="post-info">
-          <time class="post-time">2023-12-14 / 2 min read</time>
+          <time class="post-time">2023-12-14 / 3 min read</time>
             <a href="https://dev-coco.github.io/tag/other/" class="post-tag i-tag i-tag-primary">#其它</a>
         </div>
         <!--
@@ -111,6 +111,7 @@
 <!-- more -->
 <p>插件下载：<a href="https://dev-coco.github.io/post/Chrome-Extension-Collection/">Chrome 插件合集</a></p>
 <h2 id="使用方法">使用方法</h2>
+<h3 id="设置">设置</h3>
 <p>第一次使用需要先设置发送的内容，对插件点击右键，选项，进行设置。</p>
 <ul>
 <li>表格链接
@@ -142,11 +143,42 @@ How are you today?
 Hello @@@!\nHow are you today?
 </code></pre>
 <figure data-type="image" tabindex="1"><img src="https://dev-coco.github.io/post-images/1702600330962.png" alt="" loading="lazy"></figure>
+<h3 id="youtube-工作室后台回复">YouTube 工作室后台回复</h3>
 <p>在 YouTube 工作室的评论界面刷新后会显示出「自动回复」的按钮。点击按钮开始运行。</p>
 <figure data-type="image" tabindex="2"><img src="https://dev-coco.github.io/post-images/1702600334977.png" alt="" loading="lazy"></figure>
 <p>在运行的过程中会显示评论和点红心的数量。</p>
 <figure data-type="image" tabindex="3"><img src="https://dev-coco.github.io/post-images/1702600338852.png" alt="" loading="lazy"></figure>
 <p>如果这个帖子是社区帖，会优先选择回复内容中包含链接的内容进行回复。当一个用户回复一次后，就不会再回复了，只会点红心。</p>
+<h3 id="社区帖回复">社区帖回复</h3>
+<p>打开社区帖界面，刷新后会显示「自动回复」按钮。点击按钮开始运行。</p>
+<figure data-type="image" tabindex="4"><img src="https://dev-coco.github.io/post-images/1706661508617.png" alt="" loading="lazy"></figure>
+<p>然后，页面会自动向下滚动加载评论数据。加载完成后，页面将自动复位，并开始自动回复。如果用户已回复或点过红心，将直接跳过，不再回复。</p>
+<h2 id="常见问题解答">常见问题解答</h2>
+<p><strong>点击「自动回复」按钮后没有任何反应。</strong></p>
+<blockquote>
+<p>按照以下步骤排查：</p>
+<ul>
+<li>检查插件设置是否设置正确。</li>
+<li>表格链接格式是否设置正确。
+<ul>
+<li>表格链接的尾缀应当是包含 gid 的格式，例如： <code>/edit#gid=xxxx</code></li>
+<li>如果是 <code>/edit?usp=sharing</code> 这种格式的链接是不支持的。</li>
+</ul>
+</li>
+<li>检查表格是否设置「编辑者」的权限。</li>
+<li>将 YouTube 账号登出后重新登陆。</li>
+</ul>
+</blockquote>
+<p><strong>自动回复的 emoji 分别代表什么意思</strong></p>
+<blockquote>
+<p>💬 - 回复评论<br>
+❤️ - 点红心<br>
+👤 - 拉黑或者重复跳过</p>
+</blockquote>
+<p><strong>为什么有的有评论，有的没有评论？</strong></p>
+<blockquote>
+<p>检查设置里的评论是否包含空行，如果有空行需要删除。</p>
+</blockquote>
 
           </div>
         </article>
@@ -164,7 +196,7 @@ Hello @@@!\nHow are you today?
       <!-- right -->
       <div id="sidebar" class="main-container-right">
         <div class="id_card i-card">
-          <div class="id_card-avatar" style="background-image: url(https://dev-coco.github.io/images/avatar.png?v=1706539113094)"></div>
+          <div class="id_card-avatar" style="background-image: url(https://dev-coco.github.io/images/avatar.png?v=1706662563731)"></div>
           <h1 class="id_card-title">Raz1ner</h1>
           <img style="margin-top: 15px;margin-bottom: 10px;" alt="hits count" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&amp;count_bg=%2310C1F9&amp;title_bg=%23555555&amp;icon=html5.svg&amp;icon_color=%23E7E7E7&amp;title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&amp;edge_flat=false">
           <p style="text-align: center;">
@@ -191,7 +223,14 @@ Hello @@@!\nHow are you today?
             <ul class="markdownIt-TOC">
 <li>
 <ul>
-<li><a href="#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95">使用方法</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95">使用方法</a>
+<ul>
+<li><a href="#%E8%AE%BE%E7%BD%AE">设置</a></li>
+<li><a href="#youtube-%E5%B7%A5%E4%BD%9C%E5%AE%A4%E5%90%8E%E5%8F%B0%E5%9B%9E%E5%A4%8D">YouTube 工作室后台回复</a></li>
+<li><a href="#%E7%A4%BE%E5%8C%BA%E5%B8%96%E5%9B%9E%E5%A4%8D">社区帖回复</a></li>
+</ul>
+</li>
+<li><a href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%A7%A3%E7%AD%94">常见问题解答</a></li>
 </ul>
 </li>
 </ul>
@@ -204,24 +243,24 @@ Hello @@@!\nHow are you today?
       </div>
       <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
         <div class="notice-content">
-          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/excel/">Excel</a>
-          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/google-script/">Google 脚本</a>
-          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/ai-tech/">AI 科技</a>
-          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/other/">其它</a>
-          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/instagram/">Instagram</a>
-          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
-          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/software/">软件</a>
-          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/ios/">iOS</a>
-          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/macos/">macOS</a>
-          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/security/">安全</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/excel/">Excel</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/google-script/">Google 脚本</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/ai-tech/">AI 科技</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/instagram/">Instagram</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/security/">安全</a>
           <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/shell/">Shell</a>
-          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/javascript/">Javascript</a>
-          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/twitter-x/">Twitter (X)</a>
-          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/life/">生活</a>
-          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/sololearn/">Sololearn</a>
-          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
-          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/windows/">Windows</a>
-          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
+          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/javascript/">Javascript</a>
+          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/twitter-x/">Twitter (X)</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/life/">生活</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/sololearn/">Sololearn</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
         </div>
       </div>
       </div>
