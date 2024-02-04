@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2024-01-31T04:52:23.126Z</updated>
+    <updated>2024-02-04T22:26:32.650Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
@@ -10,11 +10,22 @@
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2024, Raz1ner</rights>
     <entry>
+        <title type="html"><![CDATA[Google Excel IMPORTRANGE 数组输出]]></title>
+        <id>https://dev-coco.github.io/post/Google-Excel-Array-Importrange/</id>
+        <link href="https://dev-coco.github.io/post/Google-Excel-Array-Importrange/">
+        </link>
+        <updated>2024-02-04T10:17:50.000Z</updated>
+        <summary type="html"><![CDATA[<p>根据列表中一列表格链接和一列引用范围使用 IMPORTRANGE 引用数据并且数组输出。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>根据列表中一列表格链接和一列引用范围使用 IMPORTRANGE 引用数据并且数组输出。</p>
+]]></content>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Google Excel 多人编辑表格出现错误]]></title>
         <id>https://dev-coco.github.io/post/Google-Excel-Multi-Editor-Error/</id>
         <link href="https://dev-coco.github.io/post/Google-Excel-Multi-Editor-Error/">
         </link>
-        <updated>2024-01-31T04:37:02.000Z</updated>
+        <updated>2024-01-30T16:37:02.000Z</updated>
         <summary type="html"><![CDATA[<p>针对「目前有过多用户在编辑此文件，因此部分工具可能无法使用。」问题的解决方法。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>针对「目前有过多用户在编辑此文件，因此部分工具可能无法使用。」问题的解决方法。</p>
@@ -161,17 +172,6 @@
         <summary type="html"><![CDATA[<p>关于 ChatGPT 的一些基本介绍。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>关于 ChatGPT 的一些基本介绍。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[YouTube 自动回复]]></title>
-        <id>https://dev-coco.github.io/post/YouTube-Automatic-Reply/</id>
-        <link href="https://dev-coco.github.io/post/YouTube-Automatic-Reply/">
-        </link>
-        <updated>2023-12-14T12:32:24.000Z</updated>
-        <summary type="html"><![CDATA[<p>YouTube 自动回复视频和社区帖下的评论。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>YouTube 自动回复视频和社区帖下的评论。</p>
 ]]></content>
     </entry>
 </feed>
