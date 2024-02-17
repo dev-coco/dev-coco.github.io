@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2024-02-16T15:56:49.696Z</updated>
+    <updated>2024-02-17T16:46:30.821Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2024, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[Google Excel 使用函数导入社交媒体数据]]></title>
+        <id>https://dev-coco.github.io/post/Google-Excel-Import-Social-Media/</id>
+        <link href="https://dev-coco.github.io/post/Google-Excel-Import-Social-Media/">
+        </link>
+        <updated>2024-02-17T04:46:20.000Z</updated>
+        <summary type="html"><![CDATA[<p>使用谷歌表格中的 IMPORTXML 函数从社交媒体获取数据并且导入表格。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>使用谷歌表格中的 IMPORTXML 函数从社交媒体获取数据并且导入表格。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Google 脚本检测表格增加或删除]]></title>
         <id>https://dev-coco.github.io/post/Google-Script-Detect-Addition-Deletion/</id>
@@ -161,17 +172,6 @@
         <summary type="html"><![CDATA[<p>让 ChatGPT 按照想要的格式输出内容。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>让 ChatGPT 按照想要的格式输出内容。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Instagram Banned Hashtags]]></title>
-        <id>https://dev-coco.github.io/post/Instagram-Banned-Hashtags-EN/</id>
-        <link href="https://dev-coco.github.io/post/Instagram-Banned-Hashtags-EN/">
-        </link>
-        <updated>2023-12-28T11:59:13.000Z</updated>
-        <summary type="html"><![CDATA[<p>Banned Hashtags on Instagram</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>Banned Hashtags on Instagram</p>
 ]]></content>
     </entry>
 </feed>
