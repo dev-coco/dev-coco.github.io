@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2024-07-07T02:40:42.872Z</updated>
+    <updated>2024-07-11T00:15:48.960Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2024, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[导航页介绍]]></title>
+        <id>https://dev-coco.github.io/post/Navigation-Page/</id>
+        <link href="https://dev-coco.github.io/post/Navigation-Page/">
+        </link>
+        <updated>2024-07-10T12:14:33.000Z</updated>
+        <summary type="html"><![CDATA[<p>收集了一些常用网址做成了一个带有分类的导航页。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>收集了一些常用网址做成了一个带有分类的导航页。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[部署 ChatTTS 到 Google Colab]]></title>
         <id>https://dev-coco.github.io/post/Deploy-ChatTTS-Colab/</id>
@@ -161,17 +172,6 @@
         <summary type="html"><![CDATA[<p>Easy Clean Chrome Extension’s privacy policy is detailed here.</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>Easy Clean Chrome Extension’s privacy policy is detailed here.</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Easy Clean 使用方法]]></title>
-        <id>https://dev-coco.github.io/post/Easy-Clean/</id>
-        <link href="https://dev-coco.github.io/post/Easy-Clean/">
-        </link>
-        <updated>2024-01-03T05:39:58.000Z</updated>
-        <summary type="html"><![CDATA[<p>一键快捷清理浏览器缓存，同时在关闭浏览器后自动进行缓存清理，以保护您的隐私安全。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>一键快捷清理浏览器缓存，同时在关闭浏览器后自动进行缓存清理，以保护您的隐私安全。</p>
 ]]></content>
     </entry>
 </feed>
