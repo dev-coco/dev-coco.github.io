@@ -11,10 +11,16 @@ if (typeof window === 'undefined') {
   })
 
   self.addEventListener('fetch', (event) => {
-    if (event.request.url.includes('google')) {
-      // 如果是，直接使用原始请求，不做任何修改
+    if (event.request.url.includes('googleads.g.doubleclick.net')) {
+      event.respondWith(
+        fetch(event.request.url, {
+          mode: 'no-cors',
+          credentials: 'include'
+        })
+      )
       return
     }
+
     const request = (coepCredentialless && event.request.mode === 'no-cors')
       ? new Request(event.request, { credentials: 'omit' })
       : event.request
