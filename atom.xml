@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2024-08-03T16:47:25.020Z</updated>
+    <updated>2024-08-03T17:13:05.120Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
@@ -14,7 +14,7 @@
         <id>https://dev-coco.github.io/post/Video-Compression/</id>
         <link href="https://dev-coco.github.io/post/Video-Compression/">
         </link>
-        <updated>2024-08-03T04:24:25.000Z</updated>
+        <updated>2024-08-03T05:12:56.000Z</updated>
         <summary type="html"><![CDATA[<p>压缩率高达 80% - 90%。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>压缩率高达 80% - 90%。</p>
