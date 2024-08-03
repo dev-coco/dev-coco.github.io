@@ -11,6 +11,10 @@ if (typeof window === 'undefined') {
   })
 
   self.addEventListener('fetch', (event) => {
+    if (event.request.url.includes('google')) {
+      // 如果是，直接使用原始请求，不做任何修改
+      return
+    }
     const request = (coepCredentialless && event.request.mode === 'no-cors')
       ? new Request(event.request, { credentials: 'omit' })
       : event.request
