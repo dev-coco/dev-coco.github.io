@@ -12,12 +12,7 @@ if (typeof window === 'undefined') {
 
   self.addEventListener('fetch', (event) => {
     if (event.request.url.includes('googleads.g.doubleclick.net')) {
-      event.respondWith(
-        fetch(event.request.url, {
-          mode: 'no-cors',
-          credentials: 'include'
-        })
-      )
+      event.respondWith(fetch(event.request))
       return
     }
 
