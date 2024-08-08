@@ -1,18 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://dev-coco.github.io</id>
+    <id>http://localhost:4000</id>
     <title>Raz1ner</title>
-    <updated>2024-08-06T21:50:44.999Z</updated>
+    <updated>2024-08-08T22:23:40.626Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://dev-coco.github.io"/>
-    <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
-    <logo>https://dev-coco.github.io/images/avatar.png</logo>
-    <icon>https://dev-coco.github.io/favicon.ico</icon>
+    <link rel="alternate" href="http://localhost:4000"/>
+    <link rel="self" href="http://localhost:4000/atom.xml"/>
+    <logo>http://localhost:4000/images/avatar.png</logo>
+    <icon>http://localhost:4000/favicon.ico</icon>
     <rights>All rights reserved 2024, Raz1ner</rights>
     <entry>
+        <title type="html"><![CDATA[Prompt Menu 使用方法]]></title>
+        <id>http://localhost:4000/post/Prompt-Menu/</id>
+        <link href="http://localhost:4000/post/Prompt-Menu/">
+        </link>
+        <updated>2024-08-08T10:08:49.000Z</updated>
+        <summary type="html"><![CDATA[<p>提示语侧边栏菜单，可自定义预设提示语。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>提示语侧边栏菜单，可自定义预设提示语。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Prompt Menu User Guide]]></title>
+        <id>http://localhost:4000/post/Prompt-Menu-EN/</id>
+        <link href="http://localhost:4000/post/Prompt-Menu-EN/">
+        </link>
+        <updated>2024-08-08T10:08:22.000Z</updated>
+        <summary type="html"><![CDATA[<p>Prompt sidebar menu. Customizable preset prompts.</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Prompt sidebar menu. Customizable preset prompts.</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Prompt Menu Privacy Policy]]></title>
+        <id>http://localhost:4000/post/Prompt-Menu-Privacy-Policy-EN/</id>
+        <link href="http://localhost:4000/post/Prompt-Menu-Privacy-Policy-EN/">
+        </link>
+        <updated>2024-08-08T09:45:53.000Z</updated>
+        <summary type="html"><![CDATA[<p>Prompt Menu Chrome Extension’s privacy policy is detailed here.</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Prompt Menu Chrome Extension’s privacy policy is detailed here.</p>
+]]></content>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[视频压缩工具]]></title>
-        <id>https://dev-coco.github.io/post/Video-Compression/</id>
-        <link href="https://dev-coco.github.io/post/Video-Compression/">
+        <id>http://localhost:4000/post/Video-Compression/</id>
+        <link href="http://localhost:4000/post/Video-Compression/">
         </link>
         <updated>2024-08-03T05:12:56.000Z</updated>
         <summary type="html"><![CDATA[<p>压缩率高达 80% - 90%。</p>
@@ -22,8 +55,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[导航页介绍]]></title>
-        <id>https://dev-coco.github.io/post/Navigation-Page/</id>
-        <link href="https://dev-coco.github.io/post/Navigation-Page/">
+        <id>http://localhost:4000/post/Navigation-Page/</id>
+        <link href="http://localhost:4000/post/Navigation-Page/">
         </link>
         <updated>2024-07-10T12:14:33.000Z</updated>
         <summary type="html"><![CDATA[<p>收集了一些常用网址做成了一个带有分类的导航页。</p>
@@ -33,8 +66,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[部署 ChatTTS 到 Google Colab]]></title>
-        <id>https://dev-coco.github.io/post/Deploy-ChatTTS-Colab/</id>
-        <link href="https://dev-coco.github.io/post/Deploy-ChatTTS-Colab/">
+        <id>http://localhost:4000/post/Deploy-ChatTTS-Colab/</id>
+        <link href="http://localhost:4000/post/Deploy-ChatTTS-Colab/">
         </link>
         <updated>2024-06-08T05:10:31.000Z</updated>
         <summary type="html"><![CDATA[<p>无需购买服务器即可免费在线托管 ChatTTS。</p>
@@ -44,8 +77,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Google 脚本检测内容修改]]></title>
-        <id>https://dev-coco.github.io/post/Google-Script-Content-Modify/</id>
-        <link href="https://dev-coco.github.io/post/Google-Script-Content-Modify/">
+        <id>http://localhost:4000/post/Google-Script-Content-Modify/</id>
+        <link href="http://localhost:4000/post/Google-Script-Content-Modify/">
         </link>
         <updated>2024-02-27T10:29:14.000Z</updated>
         <summary type="html"><![CDATA[<p>使用 Google 脚本检测指定范围的内容是否被修改。</p>
@@ -55,8 +88,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Google 脚本检测表格名称修改]]></title>
-        <id>https://dev-coco.github.io/post/Google-Script-Detect-Sheet-Name-Modify/</id>
-        <link href="https://dev-coco.github.io/post/Google-Script-Detect-Sheet-Name-Modify/">
+        <id>http://localhost:4000/post/Google-Script-Detect-Sheet-Name-Modify/</id>
+        <link href="http://localhost:4000/post/Google-Script-Detect-Sheet-Name-Modify/">
         </link>
         <updated>2024-02-21T05:05:49.000Z</updated>
         <summary type="html"><![CDATA[<p>使用 Google Script 检测表格的名称是否被修改。</p>
@@ -66,8 +99,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Google Excel 使用函数导入社交媒体数据]]></title>
-        <id>https://dev-coco.github.io/post/Google-Excel-Import-Social-Media/</id>
-        <link href="https://dev-coco.github.io/post/Google-Excel-Import-Social-Media/">
+        <id>http://localhost:4000/post/Google-Excel-Import-Social-Media/</id>
+        <link href="http://localhost:4000/post/Google-Excel-Import-Social-Media/">
         </link>
         <updated>2024-02-17T05:18:05.000Z</updated>
         <summary type="html"><![CDATA[<p>使用谷歌表格中的 IMPORTXML 函数从社交媒体获取数据并且导入表格。</p>
@@ -77,8 +110,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Google 脚本检测表格增加或删除]]></title>
-        <id>https://dev-coco.github.io/post/Google-Script-Detect-Addition-Deletion/</id>
-        <link href="https://dev-coco.github.io/post/Google-Script-Detect-Addition-Deletion/">
+        <id>http://localhost:4000/post/Google-Script-Detect-Addition-Deletion/</id>
+        <link href="http://localhost:4000/post/Google-Script-Detect-Addition-Deletion/">
         </link>
         <updated>2024-02-14T14:24:31.000Z</updated>
         <summary type="html"><![CDATA[<p>使用 Google 脚本检测是否在原来的基础上增加了或删除了表格。</p>
@@ -88,8 +121,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Google 脚本检测表格行和列的长度]]></title>
-        <id>https://dev-coco.github.io/post/Google-Script-Detect-Row-Column/</id>
-        <link href="https://dev-coco.github.io/post/Google-Script-Detect-Row-Column/">
+        <id>http://localhost:4000/post/Google-Script-Detect-Row-Column/</id>
+        <link href="http://localhost:4000/post/Google-Script-Detect-Row-Column/">
         </link>
         <updated>2024-02-11T07:52:04.000Z</updated>
         <summary type="html"><![CDATA[<p>使用 Google 脚本检测表格行和列的长度是否超出指定范围。</p>
@@ -99,8 +132,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[修复电子表格分页限制]]></title>
-        <id>https://dev-coco.github.io/post/Spreadsheet-Tabs-Limit-Fix/</id>
-        <link href="https://dev-coco.github.io/post/Spreadsheet-Tabs-Limit-Fix/">
+        <id>http://localhost:4000/post/Spreadsheet-Tabs-Limit-Fix/</id>
+        <link href="http://localhost:4000/post/Spreadsheet-Tabs-Limit-Fix/">
         </link>
         <updated>2024-02-06T12:05:18.000Z</updated>
         <summary type="html"><![CDATA[<p>解决超过 100 人同时编辑电子表格的限制。</p>
@@ -110,8 +143,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Google Excel IMPORTRANGE 数组输出]]></title>
-        <id>https://dev-coco.github.io/post/Google-Excel-Array-Importrange/</id>
-        <link href="https://dev-coco.github.io/post/Google-Excel-Array-Importrange/">
+        <id>http://localhost:4000/post/Google-Excel-Array-Importrange/</id>
+        <link href="http://localhost:4000/post/Google-Excel-Array-Importrange/">
         </link>
         <updated>2024-02-04T10:17:50.000Z</updated>
         <summary type="html"><![CDATA[<p>根据列表中一列表格链接和一列引用范围使用 IMPORTRANGE 引用数据并且数组输出。</p>
@@ -121,8 +154,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Google Excel 多人编辑表格出现错误]]></title>
-        <id>https://dev-coco.github.io/post/Google-Excel-Multi-Editor-Error/</id>
-        <link href="https://dev-coco.github.io/post/Google-Excel-Multi-Editor-Error/">
+        <id>http://localhost:4000/post/Google-Excel-Multi-Editor-Error/</id>
+        <link href="http://localhost:4000/post/Google-Excel-Multi-Editor-Error/">
         </link>
         <updated>2024-01-30T04:37:02.000Z</updated>
         <summary type="html"><![CDATA[<p>针对「目前有过多用户在编辑此文件，因此部分工具可能无法使用。」问题的解决方法。</p>
@@ -132,46 +165,13 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Google Excel 表格保护和区域保护]]></title>
-        <id>https://dev-coco.github.io/post/Google-Excel-Sheet-Protect/</id>
-        <link href="https://dev-coco.github.io/post/Google-Excel-Sheet-Protect/">
+        <id>http://localhost:4000/post/Google-Excel-Sheet-Protect/</id>
+        <link href="http://localhost:4000/post/Google-Excel-Sheet-Protect/">
         </link>
         <updated>2024-01-21T15:16:25.000Z</updated>
         <summary type="html"><![CDATA[<p>给表格设置保护权限，或者指定区域设置保护，防止多人编辑的时候数据被修改。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>给表格设置保护权限，或者指定区域设置保护，防止多人编辑的时候数据被修改。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Google 脚本 Log 小技巧]]></title>
-        <id>https://dev-coco.github.io/post/Google-Script-Log-Tip/</id>
-        <link href="https://dev-coco.github.io/post/Google-Script-Log-Tip/">
-        </link>
-        <updated>2024-01-15T11:11:08.000Z</updated>
-        <summary type="html"><![CDATA[<p>完整打印超长内容。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>完整打印超长内容。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[ChatGPT Prompt 提示语教程目录]]></title>
-        <id>https://dev-coco.github.io/post/ChatGPT-Prompt-Guide-Tutorial/</id>
-        <link href="https://dev-coco.github.io/post/ChatGPT-Prompt-Guide-Tutorial/">
-        </link>
-        <updated>2024-01-10T07:16:53.000Z</updated>
-        <summary type="html"><![CDATA[<p>将 ChatGPT Prompt 提示语教程整理成目录方便查找。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>将 ChatGPT Prompt 提示语教程整理成目录方便查找。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[ChatGPT 提示语使用指南（六）]]></title>
-        <id>https://dev-coco.github.io/post/ChatGPT-Prompt-Guide-6/</id>
-        <link href="https://dev-coco.github.io/post/ChatGPT-Prompt-Guide-6/">
-        </link>
-        <updated>2024-01-09T00:53:26.000Z</updated>
-        <summary type="html"><![CDATA[<p>进阶增强 ChatGPT 回复结果的准确性。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>进阶增强 ChatGPT 回复结果的准确性。</p>
 ]]></content>
     </entry>
 </feed>

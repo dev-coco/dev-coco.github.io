@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ChatGPT 提示语使用指南（二） | Raz1ner</title>
   <meta name="author" content="Raz1ner">
-  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1722981037758">
-  <link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.ico?v=1723155810106">
+  <link rel="stylesheet" href="http://localhost:4000/styles/main.css">
   <script src="/js/prism.js"></script>
   <link rel="stylesheet" href="/css/prism.css">
-  <script src="https://dev-coco.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
+  <script src="http://localhost:4000/media/js/jquery.sticky-sidebar.min.js"></script>
   <script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script async src="https://fundingchoicesmessages.google.com/i/pub-6960947409660270?ers=1" nonce="3szuJwRueku-LVJlmdoLew"></script><script nonce="3szuJwRueku-LVJlmdoLew">(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
   <script>(function(){
@@ -27,11 +27,11 @@
    window.__h82AlnkH6D91__("WyJwdWItNjk2MDk0NzQwOTY2MDI3MCIsW251bGwsbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9iL3B1Yi02OTYwOTQ3NDA5NjYwMjcwIl0sbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9lbC9BR1NLV3hWWkh4UHVLbUVuYUVHcDZmcldNVTVHZloyVUxJZW8zcHZhaV9wUVJ5a2M4dmlkZlVwMENZeVJQZEQxdExOQzRkOUN6cEQxS1hFZml1cnFJZXFIOVVsc1R3XHUwMDNkXHUwMDNkP3RlXHUwMDNkVE9LRU5fRVhQT1NFRCIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFhUNmRjRFppendkR2FaMmQ2dHBOMEF3TWowNERwVWVBaUd4Y1lsNXR1UWZFdmhDSTZmaWRxcEN3RXNQeGF1eWJUc004eFlhVWFLSWJENnNWdVIyNXIwT0FcdTAwM2RcdTAwM2Q/YWJcdTAwM2QxXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFVFeld6ZVhfYjlBSnJsR05ab2N0MG1UVHBKZFUxQVo1b2piaVNXMXc4TjNJdG93TndOZ2YtNzcwOVNEQUlrSWlUbW5UU2hvVW5DYml0QmVYVTM4Z3M3c2dcdTAwM2RcdTAwM2Q/YWJcdTAwM2QyXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFVWdXc5Q2tNRzNoX3p2WGJHcHlLdU95cE4weWVabEVVSmVsbFBnR2F4Y3NockhWdklpSmlPMzZKM3JhRlhDSl9fdnp2U0ZuRFNXS3dPUXl5enpLWG5zc0FcdTAwM2RcdTAwM2Q/c2JmXHUwMDNkMiIsImRpdi1ncHQtYWQiLDIwLDEwMCwiY0hWaUxUWTVOakE1TkRjME1EazJOakF5TnpBXHUwMDNkIixbbnVsbCxudWxsLG51bGwsImh0dHBzOi8vd3d3LmdzdGF0aWMuY29tLzBlbW4vZi9wL3B1Yi02OTYwOTQ3NDA5NjYwMjcwLmpzP3VzcXBcdTAwM2RDQXciXSwiaHR0cHM6Ly9mdW5kaW5nY2hvaWNlc21lc3NhZ2VzLmdvb2dsZS5jb20vZWwvQUdTS1d4V0M5M05iUXBSTC12eTBWbXd3TjBwVllQTDE5eDJLYWJfQkFZYjVucWlRM0VZTTJ0ZXRQMHJxRzE5ZHF5X3NfZjh6VmhPc0ZIWExmeVJGUnJJTEhSak5aZ1x1MDAzZFx1MDAzZCJd");</script>
   <meta property="og:image" content="https://dev-coco.github.io/post-images/ChatGPT-Prompt-Guide.png">
   <meta name="description" content="使用 ChatGPT 在问答场景下使用和优化提示语的一些小技巧。">
-  <link rel="canonical" href="https://dev-coco.github.io/post/ChatGPT-Prompt-Guide-2/">
+  <link rel="canonical" href="http://localhost:4000/post/ChatGPT-Prompt-Guide-2/">
   <meta property="og:title" content="ChatGPT 提示语使用指南（二） - Raz1ner">
   <meta property="og:type" content="article">
   <meta property="og:image" content="https://dev-coco.github.io/post-images/ChatGPT-Prompt-Guide.png">
-  <meta property="og:url" content="https://dev-coco.github.io/post/ChatGPT-Prompt-Guide-2/">
+  <meta property="og:url" content="http://localhost:4000/post/ChatGPT-Prompt-Guide-2/">
   <meta property="og:description" content="使用 ChatGPT 在问答场景下使用和优化提示语的一些小技巧。">
   <meta name="twitter:title" content="ChatGPT 提示语使用指南（二） - Raz1ner">
   <meta name="twitter:card" content="summary_large_image">
@@ -45,8 +45,8 @@
     <div class="header">
       <div class="nav">
         <div class="logo">
-          <a href="https://dev-coco.github.io">
-            <img class="avatar" alt="Raz1ner" src="https://dev-coco.github.io/images/avatar.png?v=1722981037758" alt="">
+          <a href="http://localhost:4000">
+            <img class="avatar" alt="Raz1ner" src="http://localhost:4000/images/avatar.png?v=1723155810106" alt="">
           </a>
           <div class="site-title">
             <h1>Raz1ner</h1>
@@ -116,7 +116,7 @@
 
 
 
-        <form id="gridea-search-form" action="https://dev-coco.github.io/search/" class="search">
+        <form id="gridea-search-form" action="http://localhost:4000/search/" class="search">
           <input type="search" name="q" class="search-box">
           <span class="search-button">
             <span class="search-icon"></span>
@@ -145,7 +145,7 @@
         <h2 class="post-title">ChatGPT 提示语使用指南（二）</h2>
         <div class="post-info">
           <time class="post-time">2023-12-18 / 7 min read</time>
-            <a href="https://dev-coco.github.io/tag/ai-tech/" class="post-tag i-tag i-tag-other_1">#AI 科技</a>
+            <a href="http://localhost:4000/tag/ai-tech/" class="post-tag i-tag i-tag-error">#AI 科技</a>
         </div>
         <!--
           
@@ -157,44 +157,44 @@
 <h2 id="问答">问答</h2>
 <p>向 ChatGPT 提出问题，让 ChatGPT 根据问题进行回答。</p>
 <p>由于 ChatGPT 只训练了 2022 年 1 月之前的数据，所以如果提出的问题是具有时效性的，例如「2023 年 7 月 18 日纽约的天气怎么样？」这样的问题，ChatGPT 就无法准确的回答问题，甚至有可能会“胡编乱造”一个结果出来。</p>
-<figure data-type="image" tabindex="1"><img src="https://dev-coco.github.io/post-images/1689715401848.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="1"><img src="http://localhost:4000/post-images/1689715401848.png" alt="" loading="lazy"></figure>
 <p>ChatGPT 可以回答一些已知的问题，例如「地心引力是谁提出的？」。</p>
-<figure data-type="image" tabindex="2"><img src="https://dev-coco.github.io/post-images/1689715405856.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="2"><img src="http://localhost:4000/post-images/1689715405856.png" alt="" loading="lazy"></figure>
 <h2 id="基础用法">基础用法</h2>
 <ul>
 <li>需要清晰、明确、详细的描述问题，如果问题太宽泛，可能回复的结果就不太理想。</li>
 </ul>
 <p>举个例子「请告诉我水果的都包含哪些维生素？」。</p>
 <p>由于没有说明具体的水果名称，所以给出的就是一个比较宽泛的结果，并不是很理想。所以需要描述的描述问题。</p>
-<figure data-type="image" tabindex="3"><img src="https://dev-coco.github.io/post-images/1689715425187.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="3"><img src="http://localhost:4000/post-images/1689715425187.png" alt="" loading="lazy"></figure>
 <p>改进后的提示语：「一颗180克的青苹果都包含多少毫克的维生素？」这个问题就问得比较详细，具体的克数，苹果的类型，维生素的单位。返回的结果要比之前理想、精准一些。</p>
-<figure data-type="image" tabindex="4"><img src="https://dev-coco.github.io/post-images/1689715433083.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="4"><img src="http://localhost:4000/post-images/1689715433083.png" alt="" loading="lazy"></figure>
 <ul>
 <li>避免使用复杂的语言、模棱两可或让人难以理解的语言。</li>
 </ul>
 <p>这是一个不好的例子「我想做一碗牛肉面，但是我不想吃牛肉，也不想吃面条，请告诉我这碗面要怎么做？」</p>
 <p>这个问题问得就非常让人费劲，所以原本是问关于面条食谱的一个问题，让 ChatGPT 回复成蔬菜粥的食谱。</p>
-<figure data-type="image" tabindex="5"><img src="https://dev-coco.github.io/post-images/1702440029521.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="5"><img src="http://localhost:4000/post-images/1702440029521.png" alt="" loading="lazy"></figure>
 <p>改进后的的提示语「我不爱吃牛肉，也不想吃面条，请你为我推荐一个食谱。」</p>
 <p>简单明了的说明要求和需求，这样才可以让 ChatGPT 更好的理解。</p>
-<figure data-type="image" tabindex="6"><img src="https://dev-coco.github.io/post-images/1702440033823.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="6"><img src="http://localhost:4000/post-images/1702440033823.png" alt="" loading="lazy"></figure>
 <ul>
 <li>在必要时可以提供一些背景信息，以便 ChatGPT 更好的理解上下文。</li>
 </ul>
 <p>例如下面的例子，最开始的时候询问了「ChatGPT 的 Plus 会员是什么？」，下面我再要求总结结果的时候，ChatGPT 就会根据刚才回复的上下文以及问问题的背景来输出结果。</p>
-<figure data-type="image" tabindex="7"><img src="https://dev-coco.github.io/post-images/1702440041346.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="7"><img src="http://localhost:4000/post-images/1702440041346.png" alt="" loading="lazy"></figure>
 <ul>
 <li>输出内容的质量取决于提问的内容和 ChatGPT 模型的训练程序。提问用的关键词越准确，描述的问题越详细、越能给提供给 ChatGPT 的训练数据越多，得到的答案就会越准确。</li>
 </ul>
 <h2 id="要做什么不要做什么">要做什么，不要做什么</h2>
 <p>明确的告诉 ChatGPT 自己想要的是什么内容，不想要的是什么内容，经过这两个条件的筛选结果会更加准确。</p>
 <p>举个例子「我的朋友很难过，我需要购买什么礼物安慰他？礼物的结果不要超过100元。」这里就提到了需要让 ChatGPT 做的是推荐一些礼物，不要让 ChatGPT 做的是推荐超过 100 元的礼物，这样就将结果进一步的筛选，只能推荐 100 元以下可以购买到的礼物去安慰朋友。</p>
-<figure data-type="image" tabindex="8"><img src="https://dev-coco.github.io/post-images/1689715433083.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="8"><img src="http://localhost:4000/post-images/1689715433083.png" alt="" loading="lazy"></figure>
 <p>如果在提示语中不知道「不要做」的是什么，可以先把「要做」的内容表达清楚，让 ChatGPT 先给出一个宽泛的结果，然后再根据结果找出不需要的内容，然后再进一步优化提示语。</p>
 <h2 id="提供示例">提供示例</h2>
 <p>有时候可能很难用语言去表达一些东西，那么就可以尝试使用举例说明，给 ChatGPT 一个例子来学习。</p>
 <p>例如「请你推荐给我几首中文歌，告诉我是什么风格。」</p>
-<figure data-type="image" tabindex="9"><img src="https://dev-coco.github.io/post-images/1689715450137.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="9"><img src="http://localhost:4000/post-images/1689715450137.png" alt="" loading="lazy"></figure>
 <p>但实际上我想要的结果只需要告诉我风格就行了，但是并不需要介绍那么多的内容 ，也不需要歌曲作者的名字，那么就可以根据我的需要写一个例子然后再尝试问 ChatGPT。</p>
 <p>修改后的提示语如下：<br>
 请你推荐给我几首中文歌，告诉我是什么风格。下面是一些例子。<br>
@@ -205,34 +205,34 @@
 歌曲：岁月神偷<br>
 风格：民谣</p>
 <p>这样就很明确的告诉 ChatGPT 我需要歌曲的名字，简短的告诉我风格即可。</p>
-<figure data-type="image" tabindex="10"><img src="https://dev-coco.github.io/post-images/1689715455602.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="10"><img src="http://localhost:4000/post-images/1689715455602.png" alt="" loading="lazy"></figure>
 <h2 id="反复优化">反复优化</h2>
 <p>ChatGPT 可能不会一开始就给出一个满意的答案，因此需要反复的进行优化答案。</p>
 <p>例如初始问题「请简单列出 3 个人类对太空的探索历史。」</p>
 <p>然后根据回答的结果再进行追问或者优化「你能详细介绍一下私营公司关于太空探索的计划吗？」</p>
-<figure data-type="image" tabindex="11"><img src="https://dev-coco.github.io/post-images/1702440093386.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="11"><img src="http://localhost:4000/post-images/1702440093386.png" alt="" loading="lazy"></figure>
 <h2 id="避免问题模糊不清">避免问题模糊不清</h2>
 <p>不好的例子「你对手机有什么看法？请你告诉我手机的信息」</p>
 <p>原始的提示语是比较模糊和开放的，要求提供关于手机的信息，但没有具体说明需要什么样的信息。这可能导致提供的回答缺乏结构或深度，而且可能会达不到预期的效果。</p>
-<figure data-type="image" tabindex="12"><img src="https://dev-coco.github.io/post-images/1702440098797.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="12"><img src="http://localhost:4000/post-images/1702440098797.png" alt="" loading="lazy"></figure>
 <p>改进后的提示语「请你分别列出智能手机的五大好处和坏处、请分享一下你对智能手机在改变人们生活方式方面的看法。」</p>
 <p>改进后的提示语更具体和详细，明确要求列出智能手机的好处和坏处，并分享对智能手机在改变人们生活方式方面的看法。这样的提示语可以引导 ChatGPT 提供更具体、有深度的回答，而不仅仅是一般性的信息。</p>
-<figure data-type="image" tabindex="13"><img src="https://dev-coco.github.io/post-images/1702440102130.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="13"><img src="http://localhost:4000/post-images/1702440102130.png" alt="" loading="lazy"></figure>
 <h2 id="问重点">问重点</h2>
 <p>不好的提示语「ChatGPT 的发展会怎么样」</p>
 <p>这个提示语问的问题比较模糊，没有具体的方向和重点，这样会导致回答的问题很广泛，无法提供深刻的见解。</p>
-<figure data-type="image" tabindex="14"><img src="https://dev-coco.github.io/post-images/1702440106757.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="14"><img src="http://localhost:4000/post-images/1702440106757.png" alt="" loading="lazy"></figure>
 <p>改进后的提示语「请从ChatGPT的商业模式、技术革新、影响受众等角度分析其发展趋势」</p>
 <p>改进后的提示语则更具体和有针对性。提示语中明确了分析的方向，包括商业模式、技术创新和影响受众等方面。这种询问方式更有助于产生更深入、结构化的回答，使 ChatGPT 能够提供更多未来发展的具体信息。</p>
-<figure data-type="image" tabindex="15"><img src="https://dev-coco.github.io/post-images/1702440110643.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="15"><img src="http://localhost:4000/post-images/1702440110643.png" alt="" loading="lazy"></figure>
 <h3 id="上下文联系">上下文联系</h3>
 <p>ChatGPT 本身是会联系上下文来进行回答的，所以问的问题最好是接续上文的主题继续询问。</p>
 <p>不好的例子<br>
 「西瓜有什么营养价值？」 -&gt; 「小狗能吃巧克力吗？」</p>
-<figure data-type="image" tabindex="16"><img src="https://dev-coco.github.io/post-images/1702440115752.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="16"><img src="http://localhost:4000/post-images/1702440115752.png" alt="" loading="lazy"></figure>
 <p>好的例子</p>
 <p>「西瓜有什么营养价值？」 -&gt; 「有哪些吃法？」</p>
-<figure data-type="image" tabindex="17"><img src="https://dev-coco.github.io/post-images/1702440119499.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="17"><img src="http://localhost:4000/post-images/1702440119499.png" alt="" loading="lazy"></figure>
 <h3 id="通用提问小技巧">通用提问小技巧</h3>
 <p>一个比较通用的 RTF 提问框架。</p>
 <p>R = Role（角色）- 指定 ChatGPT 的角色。<br>
@@ -378,7 +378,7 @@ F = Format（格式）- 定义想要输出结果的格式。</p>
         </article>
         <div class="next-post">
           <div class="next">下一篇</div>
-          <a href="https://dev-coco.github.io/post/ChatGPT-Prompt-Guide/">
+          <a href="http://localhost:4000/post/ChatGPT-Prompt-Guide/">
             <h3 class="post-title">ChatGPT 提示语使用指南（一）</h3>
           </a>
         </div>
@@ -390,7 +390,7 @@ F = Format（格式）- 定义想要输出结果的格式。</p>
       <!-- right -->
       <div id="sidebar" class="main-container-right">
         <div class="id_card i-card">
-          <div class="id_card-avatar" style="background-image: url(https://dev-coco.github.io/images/avatar.png?v=1722981037758)"></div>
+          <div class="id_card-avatar" style="background-image: url(http://localhost:4000/images/avatar.png?v=1723155810106)"></div>
           <h1 class="id_card-title">Raz1ner</h1>
           <img style="margin-top: 15px;margin-bottom: 10px;" alt="hits count" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&amp;count_bg=%2310C1F9&amp;title_bg=%23555555&amp;icon=html5.svg&amp;icon_color=%23E7E7E7&amp;title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&amp;edge_flat=false">
           <p style="text-align: center;">
@@ -441,24 +441,24 @@ F = Format（格式）- 定义想要输出结果的格式。</p>
       </div>
       <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
         <div class="notice-content">
-          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/other/">其它</a>
-          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/ai-tech/">AI 科技</a>
-          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/google-script/">Google 脚本</a>
-          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/excel/">Excel</a>
-          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/instagram/">Instagram</a>
-          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
-          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/software/">软件</a>
-          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/ios/">iOS</a>
-          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/macos/">macOS</a>
-          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/security/">安全</a>
-          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/shell/">Shell</a>
-          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/javascript/">Javascript</a>
-          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/twitter-x/">Twitter (X)</a>
-          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/life/">生活</a>
-          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/sololearn/">Sololearn</a>
-          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
-          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/windows/">Windows</a>
-          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="http://localhost:4000/tag/ai-tech/">AI 科技</a>
+          <a class="tags-tag i-tag i-tag-info" href="http://localhost:4000/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-banana" href="http://localhost:4000/tag/google-script/">Google 脚本</a>
+          <a class="tags-tag i-tag i-tag-success" href="http://localhost:4000/tag/excel/">Excel</a>
+          <a class="tags-tag i-tag i-tag-primary" href="http://localhost:4000/tag/instagram/">Instagram</a>
+          <a class="tags-tag i-tag i-tag-primary" href="http://localhost:4000/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="http://localhost:4000/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-success" href="http://localhost:4000/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-primary" href="http://localhost:4000/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-banana" href="http://localhost:4000/tag/security/">安全</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="http://localhost:4000/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="http://localhost:4000/tag/javascript/">Javascript</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="http://localhost:4000/tag/twitter-x/">Twitter (X)</a>
+          <a class="tags-tag i-tag i-tag-info" href="http://localhost:4000/tag/life/">生活</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="http://localhost:4000/tag/sololearn/">Sololearn</a>
+          <a class="tags-tag i-tag i-tag-" href="http://localhost:4000/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-error" href="http://localhost:4000/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="http://localhost:4000/tag/linux-command/">Linux命令</a>
         </div>
       </div>
       </div>
@@ -471,7 +471,7 @@ F = Format（格式）- 定义想要输出结果的格式。</p>
         <a href="/atom.xml" target="_blank"><img class="social-icon" alt="rss" src="/images/social/RSS.png"></a>
         <a href="mailto:ruijingle@gmail.com" target="_blank"><img class="social-icon" alt="Email" src="/images/social/Gmail.png"></a>
       </p>
-    <span>Copyright © 2020-2024 Raz1ner - All Rights Reserved.</span> | <a class="rss" href="https://dev-coco.github.io/atom.xml" target="_blank">RSS</a>
+    <span>Copyright © 2020-2024 Raz1ner - All Rights Reserved.</span> | <a class="rss" href="http://localhost:4000/atom.xml" target="_blank">RSS</a>
 </div>
   </div>
   
