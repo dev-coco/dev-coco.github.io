@@ -1897,7 +1897,7 @@
           description: 'Install the extension from the Google Chrome store and refresh this page to use it.',
           download: 'Download'
         },
-        zh_CN: {
+        zh: {
           extName: '彩色背景帖子',
           title: '未安装扩展程序',
           description: '从 Google Chrome 商店安装扩展程序，刷新此页面后即可正常使用。',
@@ -1905,9 +1905,10 @@
         }
       }
       const elements = document.querySelectorAll('main:first-child [data-localize]')
-      const langCode = navigator.language
+      const langCode = navigator.language.substring(0, 2)
+
       for (const el of elements) {
-        el.innerText = lang[langCode.replace('-', '_')][el.getAttribute('data-localize')]
+        el.innerText = lang['zh' in lang ? 'zh' : 'en'][el.getAttribute('data-localize')]
       }
       // 加载 tooltip
       tippy('.image-radio img', {
