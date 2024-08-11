@@ -20,6 +20,12 @@ recordButton.addEventListener('click', startRecording)
 stopButton.addEventListener('click', stopRecording)
 downloadButton.addEventListener('click', downloadAudio)
 
+// 防止误刷新丢失内容
+let used = false
+window.onbeforeunload = e => {
+  if (used) return ''
+}
+
 // 开始录制
 function startRecording () {
   // 隐藏下载按钮
@@ -28,6 +34,7 @@ function startRecording () {
   recordButton.style.display = 'none'
   // 显示停止按钮
   stopButton.style.display = ''
+  used = true
   const constraints = { audio: true, video: false }
 
   navigator.mediaDevices.getUserMedia(constraints).then(stream => {
@@ -100,6 +107,7 @@ function downloadAudio () {
   a.download = new Date().toISOString() + '.mp3'
   a.click()
   window.URL.revokeObjectURL(url)
+  used = false
 }
 
 // 可视化
