@@ -61,7 +61,7 @@ function startRecording () {
     }
 
     recorder.setOptions({
-      // timeLimit: 120,
+      timeLimit: Infinity,
       encodeAfterRecord: true,
       mp3: { bitRate: 64 }
     })
