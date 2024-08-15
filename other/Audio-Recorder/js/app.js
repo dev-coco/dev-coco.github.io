@@ -14,6 +14,8 @@ const stopButton = document.getElementById('stopButton')
 const downloadButton = document.getElementById('downloadButton')
 // 音频元素
 const audioElement = document.getElementById('audioElement')
+// 状态
+const encoding = document.getElementById('encoding')
 
 // 监听事件
 recordButton.addEventListener('click', startRecording)
@@ -48,7 +50,7 @@ function startRecording () {
     isRecording = true
 
     recorder = new WebAudioRecorder(input, {
-      workerDir: 'js/', // must end with slash
+      workerDir: 'js/',
       encoding: 'mp3',
       numChannels: 2
     })
@@ -58,12 +60,13 @@ function startRecording () {
       audioBlob = blob
       audioElement.src = URL.createObjectURL(blob)
       audioElement.style.display = 'block'
+      encoding.style.display = 'none'
     }
 
     recorder.setOptions({
       timeLimit: Infinity,
       encodeAfterRecord: true,
-      mp3: { bitRate: 64 }
+      mp3: { bitRate: 96 }
     })
     recorder.startRecording()
 
@@ -95,6 +98,7 @@ function stopRecording () {
   audioStream.getAudioTracks()[0].stop()
   isRecording = false
   recorder.finishRecording()
+  encoding.style.display = ''
 }
 
 // 下载音频
