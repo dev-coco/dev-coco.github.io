@@ -2,13 +2,46 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2024-08-19T00:51:52.923Z</updated>
+    <updated>2024-08-19T15:08:59.862Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2024, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[自定义新分页链接 使用方法]]></title>
+        <id>https://dev-coco.github.io/post/Custom-New-Tab-URL/</id>
+        <link href="https://dev-coco.github.io/post/Custom-New-Tab-URL/">
+        </link>
+        <updated>2024-08-19T03:07:01.000Z</updated>
+        <summary type="html"><![CDATA[<p>自定义打开新分页的链接。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>自定义打开新分页的链接。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Custom New Tab URL User Guide]]></title>
+        <id>https://dev-coco.github.io/post/Custom-New-Tab-URL-EN/</id>
+        <link href="https://dev-coco.github.io/post/Custom-New-Tab-URL-EN/">
+        </link>
+        <updated>2024-08-19T03:06:52.000Z</updated>
+        <summary type="html"><![CDATA[<p>Customize the link to open a new tab.</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Customize the link to open a new tab.</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Custom New Tab URL Privacy Policy]]></title>
+        <id>https://dev-coco.github.io/post/Custom-New-Tab-URL-Privacy-Policy/</id>
+        <link href="https://dev-coco.github.io/post/Custom-New-Tab-URL-Privacy-Policy/">
+        </link>
+        <updated>2024-08-19T03:06:42.000Z</updated>
+        <summary type="html"><![CDATA[<p>Custom New Tab URL Chrome Extension’s privacy policy is detailed here.</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Custom New Tab URL Chrome Extension’s privacy policy is detailed here.</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Chrome Extension Manager Privacy Policy]]></title>
         <id>https://dev-coco.github.io/post/Chrome-Extension-Manager-Privacy-Policy/</id>
@@ -139,39 +172,6 @@
         <summary type="html"><![CDATA[<p>使用 Google Script 检测表格的名称是否被修改。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>使用 Google Script 检测表格的名称是否被修改。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Google Excel 使用函数导入社交媒体数据]]></title>
-        <id>https://dev-coco.github.io/post/Google-Excel-Import-Social-Media/</id>
-        <link href="https://dev-coco.github.io/post/Google-Excel-Import-Social-Media/">
-        </link>
-        <updated>2024-02-17T05:18:05.000Z</updated>
-        <summary type="html"><![CDATA[<p>使用谷歌表格中的 IMPORTXML 函数从社交媒体获取数据并且导入表格。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>使用谷歌表格中的 IMPORTXML 函数从社交媒体获取数据并且导入表格。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Google 脚本检测表格增加或删除]]></title>
-        <id>https://dev-coco.github.io/post/Google-Script-Detect-Addition-Deletion/</id>
-        <link href="https://dev-coco.github.io/post/Google-Script-Detect-Addition-Deletion/">
-        </link>
-        <updated>2024-02-14T14:24:31.000Z</updated>
-        <summary type="html"><![CDATA[<p>使用 Google 脚本检测是否在原来的基础上增加了或删除了表格。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>使用 Google 脚本检测是否在原来的基础上增加了或删除了表格。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Google 脚本检测表格行和列的长度]]></title>
-        <id>https://dev-coco.github.io/post/Google-Script-Detect-Row-Column/</id>
-        <link href="https://dev-coco.github.io/post/Google-Script-Detect-Row-Column/">
-        </link>
-        <updated>2024-02-11T07:52:04.000Z</updated>
-        <summary type="html"><![CDATA[<p>使用 Google 脚本检测表格行和列的长度是否超出指定范围。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>使用 Google 脚本检测表格行和列的长度是否超出指定范围。</p>
 ]]></content>
     </entry>
 </feed>
