@@ -2,13 +2,46 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2024-08-20T03:28:59.821Z</updated>
+    <updated>2024-08-22T12:57:10.294Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2024, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[元素选择器 使用方法]]></title>
+        <id>https://dev-coco.github.io/post/Element-Selector/</id>
+        <link href="https://dev-coco.github.io/post/Element-Selector/">
+        </link>
+        <updated>2024-08-22T00:46:39.000Z</updated>
+        <summary type="html"><![CDATA[<p>在网页选择元素并且获取内容。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>在网页选择元素并且获取内容。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Element Selector User Guide]]></title>
+        <id>https://dev-coco.github.io/post/Element-Selector-EN/</id>
+        <link href="https://dev-coco.github.io/post/Element-Selector-EN/">
+        </link>
+        <updated>2024-08-22T00:46:26.000Z</updated>
+        <summary type="html"><![CDATA[<p>Select and extract content from webpage elements.</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Select and extract content from webpage elements.</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Element Selector Privacy Policy]]></title>
+        <id>https://dev-coco.github.io/post/Element-Selector-Privacy-Policy/</id>
+        <link href="https://dev-coco.github.io/post/Element-Selector-Privacy-Policy/">
+        </link>
+        <updated>2024-08-22T00:46:14.000Z</updated>
+        <summary type="html"><![CDATA[<p>Element Selector Chrome Extension’s privacy policy is detailed here.</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Element Selector Chrome Extension’s privacy policy is detailed here.</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[自定义新分页链接 使用方法]]></title>
         <id>https://dev-coco.github.io/post/Custom-New-Tab-URL/</id>
@@ -139,39 +172,6 @@
         <summary type="html"><![CDATA[<p>收集了一些常用网址做成了一个带有分类的导航页。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>收集了一些常用网址做成了一个带有分类的导航页。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[部署 ChatTTS 到 Google Colab]]></title>
-        <id>https://dev-coco.github.io/post/Deploy-ChatTTS-Colab/</id>
-        <link href="https://dev-coco.github.io/post/Deploy-ChatTTS-Colab/">
-        </link>
-        <updated>2024-06-08T05:10:31.000Z</updated>
-        <summary type="html"><![CDATA[<p>无需购买服务器即可免费在线托管 ChatTTS。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>无需购买服务器即可免费在线托管 ChatTTS。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Google 脚本检测内容修改]]></title>
-        <id>https://dev-coco.github.io/post/Google-Script-Content-Modify/</id>
-        <link href="https://dev-coco.github.io/post/Google-Script-Content-Modify/">
-        </link>
-        <updated>2024-02-27T10:29:14.000Z</updated>
-        <summary type="html"><![CDATA[<p>使用 Google 脚本检测指定范围的内容是否被修改。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>使用 Google 脚本检测指定范围的内容是否被修改。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Google 脚本检测表格名称修改]]></title>
-        <id>https://dev-coco.github.io/post/Google-Script-Detect-Sheet-Name-Modify/</id>
-        <link href="https://dev-coco.github.io/post/Google-Script-Detect-Sheet-Name-Modify/">
-        </link>
-        <updated>2024-02-21T05:05:49.000Z</updated>
-        <summary type="html"><![CDATA[<p>使用 Google Script 检测表格的名称是否被修改。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>使用 Google Script 检测表格的名称是否被修改。</p>
 ]]></content>
     </entry>
 </feed>
