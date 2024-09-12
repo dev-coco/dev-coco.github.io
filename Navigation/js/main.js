@@ -48,10 +48,12 @@ const searchList = {
   'type-github': 'https://github.com/search?q=',
   'type-bing': 'https://www.bing.com/search?q=',
   'type-duckduckgo': 'https://duckduckgo.com/?q=',
-  'type-startpage': 'https://www.startpage.com/sp/search?query='
+  'type-google-drive': 'https://drive.google.com/drive/search?q='
 }
 const keywordSearch = document.getElementById('keyword-search')
 const searchText = document.getElementById('search-text')
+
+window.onload = () => searchText.focus()
 
 function textSearch () {
   const typeID = document.querySelector('input[name="type"]:checked').id
