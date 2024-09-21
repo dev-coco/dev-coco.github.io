@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2024-09-12T15:46:43.270Z</updated>
+    <updated>2024-09-21T17:09:35.756Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2024, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[Pocket AI Privacy Policy]]></title>
+        <id>https://dev-coco.github.io/post/Pocket-AI-Privacy-Policy/</id>
+        <link href="https://dev-coco.github.io/post/Pocket-AI-Privacy-Policy/">
+        </link>
+        <updated>2024-09-21T04:58:37.000Z</updated>
+        <summary type="html"><![CDATA[<p>Pocket AI Chrome Extension’s privacy policy is detailed here.</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Pocket AI Chrome Extension’s privacy policy is detailed here.</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[元素选择器 使用方法]]></title>
         <id>https://dev-coco.github.io/post/Element-Selector/</id>
@@ -161,17 +172,6 @@
         <summary type="html"><![CDATA[<p>压缩率高达 80% - 90%。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>压缩率高达 80% - 90%。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[导航页介绍]]></title>
-        <id>https://dev-coco.github.io/post/Navigation-Page/</id>
-        <link href="https://dev-coco.github.io/post/Navigation-Page/">
-        </link>
-        <updated>2024-07-10T12:14:33.000Z</updated>
-        <summary type="html"><![CDATA[<p>收集了一些常用网址做成了一个带有分类的导航页。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>收集了一些常用网址做成了一个带有分类的导航页。</p>
 ]]></content>
     </entry>
 </feed>
