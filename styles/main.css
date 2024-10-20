@@ -1145,6 +1145,24 @@ p code {
 #disqus_thread {
   padding: 0 30px;
 }
+.copyright {
+  margin: 2em 0 0;
+  padding: 0.5em 1em;
+  border-left: 3px solid #ff1700;
+  background-color: #f9f9f9;
+  list-style: none;
+}
+.copyright p {
+  margin: 5px;
+  letter-spacing: 0.05em;
+  font-size: 16px;
+  line-height: 1.725;
+}
+.copyright a {
+  transition: all 0.3s;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #2e9fff;
+}
 .id_card {
   display: flex;
   align-items: center;
