@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2024-11-03T04:32:07.464Z</updated>
+    <updated>2024-11-16T16:53:36.861Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2024, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[Mac 设备是否需要每天关机？]]></title>
+        <id>https://dev-coco.github.io/post/Mac-Device-Shutdown-Everyday/</id>
+        <link href="https://dev-coco.github.io/post/Mac-Device-Shutdown-Everyday/">
+        </link>
+        <updated>2024-11-16T04:53:10.000Z</updated>
+        <summary type="html"><![CDATA[<p>探讨 Mac 设备每天关机的必要性，分析关机与休眠对性能、硬件寿命以及能耗的影响。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>探讨 Mac 设备每天关机的必要性，分析关机与休眠对性能、硬件寿命以及能耗的影响。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[检测 Facebook 帖文是否违反政策]]></title>
         <id>https://dev-coco.github.io/post/Detect-Facebook-Post/</id>
@@ -161,17 +172,6 @@
         <summary type="html"><![CDATA[<p>Background Color Post Chrome Extension’s privacy policy is detailed here.</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>Background Color Post Chrome Extension’s privacy policy is detailed here.</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Prompt Menu 使用方法]]></title>
-        <id>https://dev-coco.github.io/post/Prompt-Menu/</id>
-        <link href="https://dev-coco.github.io/post/Prompt-Menu/">
-        </link>
-        <updated>2024-08-08T10:08:49.000Z</updated>
-        <summary type="html"><![CDATA[<p>提示语侧边栏菜单，可自定义预设提示语。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>提示语侧边栏菜单，可自定义预设提示语。</p>
 ]]></content>
     </entry>
 </feed>
