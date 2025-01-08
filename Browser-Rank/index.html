@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="浏览器性能测试排名。">
+  <meta name="keywords" content="Raz1ner, 浏览器性能, 浏览器排名, 浏览器速度排名">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>浏览器性能测试排名 - Raz1ner</title>
+  <meta name="author" content="Raz1ner">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <meta property="og:image" content="https://dev-coco.github.io/post-images/Raz1ner.png">
+  <link rel="canonical" href="https://dev-coco.github.io/Browser-Rank/">
+  <meta property="og:title" content="浏览器性能测试排名 - Raz1ner">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://dev-coco.github.io/post-images/Raz1ner.png">
+  <meta property="og:url" content="https://dev-coco.github.io/Navigation/">
+  <meta property="og:description" content="浏览器性能测试排名。">
+  <meta name="twitter:title" content="浏览器性能测试排名 - Raz1ner">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://dev-coco.github.io/post-images/Raz1ner.png">
+  <meta name="twitter:description" content="浏览器性能测试排名。">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f1f5f9;
+    }
+    .browser-card {
+      display: flex;
+      align-items: center;
+      padding: 1rem;
+      background-color: #fff;
+      border-radius: 0.5rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .browser-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    }
+    .browser-icon {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      border-radius: 0.25rem;
+      margin-right: 1rem;
+    }
+    .browser-info {
+      flex: 1;
+    }
+    .browser-info h5 {
+      margin: 0;
+      font-size: 1.25rem;
+    }
+    .browser-info small {
+      display: block;
+      color: #6c757d;
+    }
+    .score {
+      font-size: 1.25rem;
+      font-weight: bold;
+      color: #198754;
+    }
+    .browser-description {
+      font-size: 0.9rem;
+      color: #6c757d;
+    }
+    .special-description {
+      background-color: #f3e0dc;
+      padding: 0.3rem;
+      border-radius: 0.25rem;
+      font-size: 0.9rem;
+      margin: 0px;
+    }
+    .sm-container {
+      margin: auto;
+      width: 85%;
+    }
+    .site-footer {
+      padding-bottom: 30px;
+      color: #515a6e;
+      text-align: center;
+      font-size: 18px;
+    }
+    .social-icon {
+      width: 28px;
+      height: 28px;
+      margin: 5px;
+    }
+    .navbar {
+      background-color: #f1f5f9;
+      box-shadow: 0 -9px 49px rgba(22, 20, 37, .12), 0 -2.71324px 14.7721px rgba(22, 20, 37, .14), 0 -1.12694px 6.13556px rgba(22, 20, 37, .16), 0 -.407592px 2.21911px rgba(22, 20, 37, .18);
+      margin-left: 15.625rem;
+      z-index: 1022;
+      padding: .625rem 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container my-5">
+    <nav class="navbar navbar-expand-md fixed-top ms-0">
+      <a class="navbar-brand" href="/">
+        <img style="height: 29px" src="/images/logo.png" alt="Raz1ner">
+      </a>
+      <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="offcanvas" data-bs-target="#menu"
+        aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="menu" aria-labelledby="menuLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="menuLabel">菜单</h5>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="/">首页</a></li>
+            <li class="nav-item"><a class="nav-link" href="/Navigation">导航</a></li>
+            <li class="nav-item"><a class="nav-link" href="/Featured-Software.html">软件</a></li>
+            <li class="nav-item"><a class="nav-link" href="/post/Chrome-Extension-Collection/">插件</a></li>
+            <li class="nav-item"><a class="nav-link" href="/Online-Tools/">在线工具</a></li>
+            <li class="nav-item"><a class="nav-link" href="/post/Linux-Command/">Linux命令</a></li>
+            <li class="nav-item"><a class="nav-link" href="/Excel">Excel教程</a></li>
+            <li class="nav-item"><a class="nav-link" href="/post/Terms-and-Privacy">隐私与条款</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <h1 class="text-center mb-4" style="margin-top: 6rem;">浏览器性能测试排名</h1>
+    <div class="sm-container">
+      <p>以下数据测试工具来源于 <a href="https://browserbench.org/Speedometer3.0/" rel="nofollow noreferrer" target="_blank">Speedometer 3.0</a>。它是一款用于测量浏览器响应性能的工具，通过模拟日常 Web 应用的操作来评估各浏览器的执行效率。测试覆盖了包括 DOM 操作、数据绑定和 JavaScript 执行在内的多项关键性能指标。</p>
+      <p>每个浏览器都经过了 10 次测试，并取其平均值作为最终的测试分数。分数越高，代表浏览器的性能越快。</p>
+    </div>
+  </div>
+  <div class="site-footer">
+    <a href="#" class="mb-2"><img alt="Raz1ner" style="vertical-align: middle; width: auto" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&amp;count_bg=%2310C1F9&amp;title_bg=%23555555&amp;icon=html5.svg&amp;icon_color=%23E7E7E7&amp;title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&amp;edge_flat=false"></a>
+    <p class="text-center my-2">
+      <a href="https://github.com/dev-coco" rel="nofollow noreferrer" target="_blank"><img class="social-icon" alt="Github" src="/images/social/GitHub.png"></a>
+      <a href="https://t.me/raz1ner" rel="nofollow noreferrer" target="_blank"><img class="social-icon" alt="Telegram" src="/images/social/Telegram.png"></a>
+      <a href="https://www.youtube.com/channel/UCEgNinV_DEntuv5Dm8Z_JvA?sub_confirmation=1" rel="nofollow noreferrer" target="_blank"><img class="social-icon" alt="YouTuebe" src="/images/social/YouTube.png"></a>
+      <a href="/atom.xml" target="_blank"><img class="social-icon" alt="rss" src="/images/social/RSS.png"></a>
+      <a href="mailto:ruijingle@gmail.com" target="_blank"><img class="social-icon" alt="Email" src="/images/social/Gmail.png"></a>
+    </p>
+    <span>Copyright © 2020-2025 Raz1ner - All Rights Reserved.</span> | <a class="rss" href="https://dev-coco.github.io/atom.xml" target="_blank">RSS</a>
+  </div>
+  <script src="main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
