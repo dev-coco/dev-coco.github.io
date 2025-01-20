@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2025-01-19T19:41:04.270Z</updated>
+    <updated>2025-01-20T18:41:17.287Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2025, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[精品正版软件列表]]></title>
+        <id>https://dev-coco.github.io/post/Awesome-Software/</id>
+        <link href="https://dev-coco.github.io/post/Awesome-Software/">
+        </link>
+        <updated>2025-01-20T06:41:03.000Z</updated>
+        <summary type="html"><![CDATA[<p>打造您的正版软件宝库：全新精品正版软件列表网站上线！</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>打造您的正版软件宝库：全新精品正版软件列表网站上线！</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[多线程下载器]]></title>
         <id>https://dev-coco.github.io/post/Multi-Threaded-Downloader/</id>
@@ -161,17 +172,6 @@
         <summary type="html"><![CDATA[<p>Chrome Extension Manager Chrome Extension’s privacy policy is detailed here.</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>Chrome Extension Manager Chrome Extension’s privacy policy is detailed here.</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[彩色背景帖子 使用方法]]></title>
-        <id>https://dev-coco.github.io/post/Background-Color-Post/</id>
-        <link href="https://dev-coco.github.io/post/Background-Color-Post/">
-        </link>
-        <updated>2024-08-10T00:09:48.000Z</updated>
-        <summary type="html"><![CDATA[<p>发布彩色背景帖文。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>发布彩色背景帖文。</p>
 ]]></content>
     </entry>
 </feed>
