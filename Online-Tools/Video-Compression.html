@@ -1,0 +1,92 @@
+
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <title>视频压缩工具</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="keywords" content="Raz1ner, 压缩视频, 视频在线压缩, 在线压缩视频, 视频压缩工具">
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="视频压缩工具，压缩率高达 80% - 90%。">
+  <link rel="icon" href="/images/avatar.png">
+  <link rel="stylesheet" href="https://dev-coco.github.io/css/site.css">
+  <link rel="stylesheet" href="https://dev-coco.github.io/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ffmpeg/0.11.6/ffmpeg.min.js"></script>
+  <style>
+    .container-box {
+      max-width: 600px;
+      width: 100%;  
+    }
+    #drop-area {
+      border: 2px dashed #ccc;
+      border-radius: 20px;
+      padding: 20px;
+      margin: 20px auto;
+    }
+    #drop-area.highlight {
+      border-color: purple;
+    }
+    #progress-bar {
+      width: 100%;
+      height: 20px;
+      background-color: #f0f0f0;
+      border-radius: 10px;
+      margin-top: 20px;
+      overflow: hidden;
+    }
+    #progress {
+      width: 0%;
+      height: 100%;
+      background-color: #4CAF50;
+      transition: width 0.3s ease;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="text-start pt-3">
+      <img class="logo" alt="Raz1ner" src="/images/avatar.png">
+      <span> Raz1ner</span>
+      <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&count_bg=%2310C1F9&title_bg=%23555555&icon=html5.svg&icon_color=%23E7E7E7&title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&edge_flat=false" style="float:right;width:180px;">
+    </h1>
+    <div class="menu">
+      <a href="/">首页</a>
+      <a href="/Navigation/">导航</a>
+      <a href="/Featured-Software.html">软件</a>
+      <a href="/post/Chrome-Extension-Collection/">插件</a>
+      <a href="/Online-Tools">在线工具</a>
+      <a href="/post/Linux-Command">Linux命令</a>
+      <a href="/Excel/">Excel教程</a>
+      <a href="/post/Terms-and-Privacy">隐私与条款</a>
+      <a target="_blank" href="https://github.com/dev-coco">Github</a>
+    </div>
+    <h1 class="my-3">视频压缩工具</h1>
+    <div class="container-box mx-auto text-center">
+      <div id="drop-area">
+        <form class="my-form">
+          <p>拖入视频</p>
+          <p>或</p>
+          <input class="d-none" type="file" id="file-input" accept="video/*">
+          <label class="btn btn-success btn-lg" for="file-input">选择文件</label>
+        </form>
+      </div>
+      <div class="form-switch">
+        <input class="form-check-input mx-2" type="checkbox" role="switch" id="extreme-compression">
+        <label class="form-check-label" for="extreme-compression">极限压缩</label>
+      </div>
+      <div id="progress-bar">
+        <div id="progress"></div>
+      </div>
+      <div class="mt-2 fw-bold" id="file-info"></div>
+      <div class="mt-2 fw-bold" id="status"></div>
+      <div class="mt-2 fw-bold" id="time-info"></div>
+      <div class="mt-2 fw-bold" id="compression-info"></div>
+      <button id="compress-btn" class="btn btn-success btn-lg me-3" style="display: none;">压缩视频</button>
+      <a id="download-link" class="btn btn-success btn-lg" style="display: none;">下载压缩后的视频</a>
+    </div>
+  </div>
+  <script src="sw-handler.js"></script>
+  <script src="/js/video-compression.js"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="keywords" content="Google Excel, Excel表格, COUNTIF">
+  <meta name="description" content="COUNTIF - 用于统计满足条件的单元格数量。">
+  <meta name="robots" content="index, follow">
+  <meta property="og:image" content="/images/Excel-Tutorial.jpg">
+  <title>COUNTIF</title>
+  <link rel="icon" href="/images/avatar.png">
+  <link href="/css/Excel/typo.css" rel="stylesheet">
+</head>
+<body class="typo">
+  <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&count_bg=%2310C1F9&title_bg=%23555555&icon=html5.svg&icon_color=%23E7E7E7&title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&edge_flat=false" style="display:none">
+  <h1 id="title">COUNTIF</h1>
+  <p>作用：用于统计满足一种条件的单元格数量。</p>
+  <p>语法：<span class="f">COUNTIF(<span class="q">范围</span>, <span class="t">条件</span>)</span></p>
+  <ul>
+    <li>范围<sup class="m">*</sup>：通过条件检测的单元格范围。</li>
+    <li>条件<sup class="m">*</sup>：通过匹配的条件，可以是数字，文本，运算符。</li>
+  </ul>
+  <p>例子：</p>
+  <iframe style="max-width:408px;height:195px;" src="https://docs.google.com/spreadsheets/d/1iKdWYd-5SAHxVzyUKXJJzox5e4l5Q7FaQGGUtK8hc9M/pubhtml/sheet?headers=true&gid=658682838"></iframe>
+  <p>运用1：计算在一个范围内指定内容重复的次数。</p>
+  <p>使用 COUNTIF 计算 A 列中，结果为小红的单元格出现次数。</p>
+  <iframe style="max-width:417px;height:192px;" src="https://docs.google.com/spreadsheets/d/1iKdWYd-5SAHxVzyUKXJJzox5e4l5Q7FaQGGUtK8hc9M/pubhtml/sheet?headers=true&gid=1708679975"></iframe>
+  <p>运用2：计算在一个范围内指定内容第几次重复。</p>
+  <p>使用 COUNTIF 计算从 A 列到当前行，结果为 A 列当前行的内容出现的次数。这里起始的行数需要用<a href="/Excel/#Basic-Core/Operators/Reference-Operators" target="_blank">绝对引用</a>，固定不变，当公式往下复制的时候，就可以计算出从开始到当前行指定内容重复的次数。</p>
+  <iframe style="max-width:399px;height:192px;" src="https://docs.google.com/spreadsheets/d/1iKdWYd-5SAHxVzyUKXJJzox5e4l5Q7FaQGGUtK8hc9M/pubhtml/sheet?headers=true&gid=940721854"></iframe>
+  <p class="home">
+    <a href="/Excel" target="_blank">
+      <img alt="Excel表格, Google Excel" src="/images/Excel.png">
+      <span>Excel 一点通</span>
+    </a>
+  </p>
+  <script src="/js/voice-playback.js"></script>
+</body>
+</html>

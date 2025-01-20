@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="keywords" content="Google Excel, Excel表格, ADDRESS">
+  <meta name="description" content="ADDRESS - 以文本格式返回单元格的引用范围。">
+  <meta name="robots" content="index, follow">
+  <meta property="og:image" content="/images/Excel-Tutorial.jpg">
+  <title>ADDRESS</title>
+  <link rel="icon" href="/images/avatar.png">
+  <link href="/css/Excel/typo.css" rel="stylesheet">
+</head>
+<body class="typo">
+  <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&count_bg=%2310C1F9&title_bg=%23555555&icon=html5.svg&icon_color=%23E7E7E7&title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&edge_flat=false" style="display:none">
+  <h1 id="title">ADDRESS</h1>
+  <p>作用：以文本格式返回单元格的引用范围</p>
+  <p>语法：<span class="f">ADDRESS(<span class="n">行</span>, <span class="n">列</span>, <span class="n">引用模式</span>, <span class="n">样式</span>, <span class="t">工作表</span>)</span></p>
+  <ul>
+    <li>行<sup class="m">*</sup>：引用的行数</li>
+    <li>列<sup class="m">*</sup>：引用的列数</li>
+    <li>引用模式：</li>
+    <ul>
+      <li>1：默认值。绝对引用行和列。</li>
+      <li>2：绝对引用行，相对引用列。</li>
+      <li>3：相对引用行，绝对引用列。</li>
+      <li>4：相对引用行和列。</li>
+    </ul>
+    <li>样式：</li>
+    <ul>
+      <li>A1 样式：数字代表行数，字母代表列数，例如 B3 代表第二列的第三行。</li>
+      <li>R1C1 样式：R 的全称是 Row，代表行的意思，C 的全称是 Column 代表列的意思。例如 R3C2 同等于 B3，代表第二列的第三行。</li>
+    </ul>
+    <li>工作表：引用指定工作表的名称。</li>
+  </ul>
+  <p>例子：</p>
+  <iframe style="max-width:386px;height:135px;" src="https://docs.google.com/spreadsheets/d/1-yP7lV4QbhNK8KoGRDSy6Abmhv6Btg8r6xfoc6za95A/pubhtml/sheet?headers=true&gid=1836402486"></iframe>
+  <p>运用：获取当前位置。</p>
+  <p>使用 <a href="/Excel/Resource/Function/Others/ROW.html" target="_blank">ROW</a> 和 <a href="/Excel/Resource/Function/Others/ROW.html" target="_blank">COLUMN</a> 函数获取当前位置的行和列，再用 ADDRESS 输出，当前行和列的引用结果。</p>
+  <iframe style="max-width:352px;height:69px;" src="https://docs.google.com/spreadsheets/d/1-yP7lV4QbhNK8KoGRDSy6Abmhv6Btg8r6xfoc6za95A/pubhtml/sheet?headers=true&gid=771873837"></iframe>
+  <p class="home">
+    <a href="/Excel" target="_blank">
+      <img alt="Excel表格, Google Excel" src="/images/Excel.png">
+      <span>Excel 一点通</span>
+    </a>
+  </p>
+  <script src="/js/voice-playback.js"></script>
+</body>
+</html>
