@@ -8,8 +8,8 @@
   <meta name="robots" content="index,follow">
   <meta name="description" content="拖入图片批量添加水印。">
   <link rel="icon" href="/images/avatar.png">
-  <link rel="stylesheet" href="/css/site.css">
-  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://dev-coco.github.io/css/site.css">
+  <link rel="stylesheet" href="https://dev-coco.github.io/css/bootstrap.min.css">
   <script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script async src="https://fundingchoicesmessages.google.com/i/pub-6960947409660270?ers=1" nonce="3szuJwRueku-LVJlmdoLew"></script><script nonce="3szuJwRueku-LVJlmdoLew">(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
   <script>(function(){
@@ -82,6 +82,17 @@
       color: white;
       border-color: #2196f3;
     }
+    .color-section {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin: 10px 0;
+    }
+    .smart-color {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
     button {
       background: #2196f3;
       color: white;
@@ -127,8 +138,17 @@
           <span class="input-group-text" id="basic-addon1">水印文字</span>
           <input type="text" class="form-control" id="watermarkText" value="示例水印">
         </div>
-        <label for="watermarkColor">水印颜色：</label>
-        <input type="color" id="watermarkColor" value="#000000">
+        
+        <div class="color-section">
+          <div>
+              <label for="watermarkColor">水印颜色：</label>
+              <input type="color" id="watermarkColor" value="#000000">
+          </div>
+          <div class="smart-color">
+              <input type="checkbox" id="smartColor">
+              <label for="smartColor">智能选色</label>
+          </div>
+      </div>
         <div class="input-group mb-3 w-50">
           <label for="customRange1" class="form-label">水印透明度：<span id="opacityValue">50%</span></label>
           <input type="range" class="form-range" id="watermarkOpacity" min="0" max="100" value="50">
@@ -157,8 +177,15 @@
     const opacityRange = document.getElementById('watermarkOpacity')
     const opacityValue = document.getElementById('opacityValue')
     const positionOptions = document.querySelectorAll('.position-option')
+    const smartColorCheckbox = document.getElementById('smartColor')
+    const watermarkColorInput = document.getElementById('watermarkColor')
     let selectedPosition = 'bottom-right'
     let files = []
+
+    // 智能选色时禁用手动颜色选择
+    smartColorCheckbox.addEventListener('change', (e) => {
+      watermarkColorInput.disabled = e.target.checked
+    })
 
     // 位置选择
     positionOptions.forEach(option => {
@@ -218,7 +245,7 @@
     function getWatermarkPosition(position, canvas, text, fontSize) {
       const ctx = canvas.getContext('2d')
       const metrics = ctx.measureText(text)
-      const padding = 20 // 距离边缘的padding
+      const padding = 20
 
       const positions = {
         'top-left': {
@@ -242,11 +269,111 @@
       return positions[position]
     }
 
+    // 分析区域颜色并返回合适的水印颜色
+    function analyzeAreaColor(ctx, x, y, width, height) {
+      const imageData = ctx.getImageData(x, y, width, height)
+      const data = imageData.data
+      let totalR = 0; let totalG = 0; let totalB = 0
+
+      // 计算区域平均颜色
+      for (let i = 0; i < data.length; i += 4) {
+        totalR += data[i]
+        totalG += data[i + 1]
+        totalB += data[i + 2]
+      }
+
+      const pixels = data.length / 4
+      const avgR = totalR / pixels
+      const avgG = totalG / pixels
+      const avgB = totalB / pixels
+
+      // 计算亮度 (使用相对亮度公式)
+      const brightness = (avgR * 0.299 + avgG * 0.587 + avgB * 0.114) / 255
+
+      // 计算背景色的HSL值
+      const [h, s, l] = rgbToHsl(avgR, avgG, avgB)
+
+      // 根据背景颜色决定水印颜色
+      if (brightness > 0.5) {
+        // 如果背景偏亮，使用深色水印
+        // 保持色相，增加饱和度，大幅降低亮度
+        const darkL = Math.max(0, Math.min(l - 0.6, 0.2)) // 确保亮度足够低
+        const [r, g, b] = hslToRgb(h, Math.min(s + 0.3, 1), darkL)
+        return `rgb(${Math.round(r)}, ${Math.round(g)}, ${Math.round(b)})`
+      } else {
+        // 如果背景偏暗，使用亮色水印
+        // 保持色相，降低饱和度，大幅提高亮度
+        const lightL = Math.min(1, Math.max(l + 0.6, 0.8)) // 确保亮度足够高
+        const [r, g, b] = hslToRgb(h, Math.max(s - 0.3, 0), lightL)
+        return `rgb(${Math.round(r)}, ${Math.round(g)}, ${Math.round(b)})`
+      }
+    }
+
+    // RGB转HSL
+    function rgbToHsl(r, g, b) {
+      r /= 255
+      g /= 255
+      b /= 255
+
+      const max = Math.max(r, g, b)
+      const min = Math.min(r, g, b)
+      let h; let s; const l = (max + min) / 2
+
+      if (max === min) {
+        h = s = 0
+      } else {
+        const d = max - min
+        s = l > 0.5 ? d / (2 - max - min) : d / (max + min)
+
+        switch (max) {
+          case r:
+            h = (g - b) / d + (g < b ? 6 : 0)
+            break
+          case g:
+            h = (b - r) / d + 2
+            break
+          case b:
+            h = (r - g) / d + 4
+            break
+        }
+
+        h /= 6
+      }
+
+      return [h, s, l]
+    }
+
+    // HSL转RGB
+    function hslToRgb(h, s, l) {
+      let r, g, b
+
+      if (s === 0) {
+        r = g = b = l
+      } else {
+        const hue2rgb = (p, q, t) => {
+          if (t < 0) t += 1
+          if (t > 1) t -= 1
+          if (t < 1 / 6) return p + (q - p) * 6 * t
+          if (t < 1 / 2) return q
+          if (t < 2 / 3) return p + (q - p) * (2 / 3 - t) * 6
+          return p
+        }
+
+        const q = l < 0.5 ? l * (1 + s) : l + s - l * s
+        const p = 2 * l - q
+
+        r = hue2rgb(p, q, h + 1 / 3)
+        g = hue2rgb(p, q, h)
+        b = hue2rgb(p, q, h - 1 / 3)
+      }
+
+      return [r * 255, g * 255, b * 255]
+    }
+
     processButton.addEventListener('click', async () => {
       const watermarkText = document.getElementById('watermarkText').value
-      const watermarkColor = document.getElementById('watermarkColor').value
       const opacity = opacityRange.value / 100
-      const fontSize = document.getElementById('fontSize').value + 'px Arial'
+      const fontSize = parseInt(document.getElementById('fontSize').value)
 
       for (const file of files) {
         const img = await createImage(file)
@@ -259,10 +386,44 @@
         // 绘制原始图片
         ctx.drawImage(img, 0, 0)
 
+        // 获取水印位置
+        const position = getWatermarkPosition(selectedPosition, canvas, watermarkText, fontSize)
+
+        // 如果启用智能选色，分析对应区域的颜色
+        let watermarkColor
+        if (smartColorCheckbox.checked) {
+          const areaSize = fontSize * 2
+          let analyzeX, analyzeY
+
+          // 根据位置确定分析区域
+          switch (selectedPosition) {
+            case 'top-left':
+              analyzeX = 0
+              analyzeY = 0
+              break
+            case 'top-right':
+              analyzeX = canvas.width - areaSize
+              analyzeY = 0
+              break
+            case 'bottom-left':
+              analyzeX = 0
+              analyzeY = canvas.height - areaSize
+              break
+            case 'bottom-right':
+              analyzeX = canvas.width - areaSize
+              analyzeY = canvas.height - areaSize
+              break
+          }
+
+          watermarkColor = analyzeAreaColor(ctx, analyzeX, analyzeY, areaSize, areaSize)
+        } else {
+          watermarkColor = watermarkColorInput.value
+        }
+
         // 设置水印样式
         ctx.fillStyle = watermarkColor
         ctx.globalAlpha = opacity
-        ctx.font = fontSize
+        ctx.font = `${fontSize}px Arial`
 
         // 根据位置设置对齐方式
         if (selectedPosition.includes('right')) {
@@ -272,8 +433,7 @@
         }
         ctx.textBaseline = 'middle'
 
-        // 获取水印位置并绘制
-        const position = getWatermarkPosition(selectedPosition, canvas, watermarkText, parseInt(fontSize))
+        // 绘制水印
         ctx.fillText(watermarkText, position.x, position.y)
 
         // 下载处理后的图片
@@ -291,6 +451,7 @@
         img.src = URL.createObjectURL(file)
       })
     }
+
   </script>
   <script>(location.href.includes('dev-coco.github.io') || location.href.includes('localhost')) ? '' : window.open('https' + '://dev' + '-coco' + '.github.io/', '_self')</script>
 </body>

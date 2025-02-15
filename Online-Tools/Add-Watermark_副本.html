@@ -1,16 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
-    <meta charset="utf-8">
-  <meta name="description" content="瑞景乐的个人博客。">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Raz1ner</title>
-  <meta name="author" content="Raz1ner">
-  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1739588167552">
-  <link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
-  <script src="/js/prism.js"></script>
-  <link rel="stylesheet" href="/css/prism.css">
-  <script src="https://dev-coco.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
+  <title>图片批量添加水印</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="keywords" content="Raz1ner, 图片批量添加水印, 图片添加水印">
+  <meta name="robots" content="index,follow">
+  <meta name="description" content="拖入图片批量添加水印。">
+  <link rel="icon" href="/images/avatar.png">
+  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
   <script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script async src="https://fundingchoicesmessages.google.com/i/pub-6960947409660270?ers=1" nonce="3szuJwRueku-LVJlmdoLew"></script><script nonce="3szuJwRueku-LVJlmdoLew">(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
   <script>(function(){
@@ -26,130 +25,273 @@
    255)).toString()+")"},X=function(a){a=Q(a.j.g,"DIV");a.className=A();return a},U=function(a,b){0>=b||null!=a.g&&0!=a.g.offsetHeight&&0!=a.g.offsetWidth||(na(a),T(a),r.setTimeout(function(){return U(a,b-1)},50))},na=function(a){var b=a.i;var c="undefined"!=typeof Symbol&&Symbol.iterator&&b[Symbol.iterator];b=c?c.call(b):{next:aa(b)};for(c=b.next();!c.done;c=b.next())(c=c.value)&&c.parentNode&&c.parentNode.removeChild(c);a.i=[];(b=a.g)&&b.parentNode&&b.parentNode.removeChild(b);a.g=null};var pa=function(a,b,c,d,e){var f=oa(c),h=function(l){l.appendChild(f);r.setTimeout(function(){f?(0!==f.offsetHeight&&0!==f.offsetWidth?b():a(),f.parentNode&&f.parentNode.removeChild(f)):a()},d)},g=function(l){document.body?h(document.body):0<l?r.setTimeout(function(){g(l-1)},e):b()};g(3)},oa=function(a){var b=document.createElement("div");b.className=a;b.style.width="1px";b.style.height="1px";b.style.position="absolute";b.style.left="-10000px";b.style.top="-10000px";b.style.zIndex="-10000";return b};var L=function(a){J.call(this,a)};q(L,J);var qa=function(a){J.call(this,a)};q(qa,J);var ra=function(a,b){this.l=a;this.m=new R(a.document);this.g=b;this.i=K(this.g,1);b=M(this.g,2);this.o=x(K(b,4)||"");this.h=!1;b=M(this.g,13);b=x(K(b,4)||"");this.j=new la(a.document,b,K(this.g,12))};ra.prototype.start=function(){sa(this)};
    var sa=function(a){ta(a);S(a.m,a.o,3,!1,function(){a:{var b=a.i;var c=r.btoa(b);if(c=r[c]){try{var d=O(P,r.atob(c))}catch(e){b=!1;break a}b=b===K(d,1)}else b=!1}b?Z(a,K(a.g,14)):(Z(a,K(a.g,8)),V(a.j))},function(){pa(function(){Z(a,K(a.g,7));V(a.j)},function(){return Z(a,K(a.g,6))},K(a.g,9),K(a.g,10),K(a.g,11))})},Z=function(a,b){a.h||(a.h=!0,a=new a.l.XMLHttpRequest,a.open("GET",b,!0),a.send())},ta=function(a){var b=r.btoa(a.i);a.l[b]&&Z(a,K(a.g,5))};(function(a,b){r[a]=function(c){for(var d=[],e=0;e<arguments.length;++e)d[e-0]=arguments[e];r[a]=da;b.apply(null,d)}})("__h82AlnkH6D91__",function(a){"function"===typeof window.atob&&(new ra(window,O(qa,window.atob(a)))).start()});}).call(this);
    window.__h82AlnkH6D91__("WyJwdWItNjk2MDk0NzQwOTY2MDI3MCIsW251bGwsbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9iL3B1Yi02OTYwOTQ3NDA5NjYwMjcwIl0sbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9lbC9BR1NLV3hWWkh4UHVLbUVuYUVHcDZmcldNVTVHZloyVUxJZW8zcHZhaV9wUVJ5a2M4dmlkZlVwMENZeVJQZEQxdExOQzRkOUN6cEQxS1hFZml1cnFJZXFIOVVsc1R3XHUwMDNkXHUwMDNkP3RlXHUwMDNkVE9LRU5fRVhQT1NFRCIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFhUNmRjRFppendkR2FaMmQ2dHBOMEF3TWowNERwVWVBaUd4Y1lsNXR1UWZFdmhDSTZmaWRxcEN3RXNQeGF1eWJUc004eFlhVWFLSWJENnNWdVIyNXIwT0FcdTAwM2RcdTAwM2Q/YWJcdTAwM2QxXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFVFeld6ZVhfYjlBSnJsR05ab2N0MG1UVHBKZFUxQVo1b2piaVNXMXc4TjNJdG93TndOZ2YtNzcwOVNEQUlrSWlUbW5UU2hvVW5DYml0QmVYVTM4Z3M3c2dcdTAwM2RcdTAwM2Q/YWJcdTAwM2QyXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFVWdXc5Q2tNRzNoX3p2WGJHcHlLdU95cE4weWVabEVVSmVsbFBnR2F4Y3NockhWdklpSmlPMzZKM3JhRlhDSl9fdnp2U0ZuRFNXS3dPUXl5enpLWG5zc0FcdTAwM2RcdTAwM2Q/c2JmXHUwMDNkMiIsImRpdi1ncHQtYWQiLDIwLDEwMCwiY0hWaUxUWTVOakE1TkRjME1EazJOakF5TnpBXHUwMDNkIixbbnVsbCxudWxsLG51bGwsImh0dHBzOi8vd3d3LmdzdGF0aWMuY29tLzBlbW4vZi9wL3B1Yi02OTYwOTQ3NDA5NjYwMjcwLmpzP3VzcXBcdTAwM2RDQXciXSwiaHR0cHM6Ly9mdW5kaW5nY2hvaWNlc21lc3NhZ2VzLmdvb2dsZS5jb20vZWwvQUdTS1d4V0M5M05iUXBSTC12eTBWbXd3TjBwVllQTDE5eDJLYWJfQkFZYjVucWlRM0VZTTJ0ZXRQMHJxRzE5ZHF5X3NfZjh6VmhPc0ZIWExmeVJGUnJJTEhSak5aZ1x1MDAzZFx1MDAzZCJd");</script>
-</head>
-<body>
   <style>
-    .searched-keyword {
-      background-color: yellow;
+    .content {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      padding: 20px;
+    }
+    .drop-zone {
+      border: 2px dashed #ccc;
+      border-radius: 4px;
+      padding: 20px;
+      text-align: center;
+      margin: 20px 0;
+      min-height: 100px;
+    }
+    .drop-zone.dragover {
+      background: #e1f5fe;
+      border-color: #03a9f4;
+    }
+    .preview-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 20px 0;
+    }
+    .preview-item {
+      position: relative;
+      width: 150px;
+      height: 150px;
+    }
+    .preview-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .controls label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+    .position-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin: 10px 0;
+      max-width: 300px;
+    }
+    .position-option {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      cursor: pointer;
+      text-align: center;
+    }
+    .position-option.selected {
+      background: #2196f3;
+      color: white;
+      border-color: #2196f3;
+    }
+    button {
+      background: #2196f3;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    button:hover {
+      background: #1976d2;
     }
   </style>
-  <div class="main animated">
-        <div class="header">
-      <div class="nav">
-        <div class="logo">
-          <a href="https://dev-coco.github.io">
-            <img class="avatar" alt="Raz1ner" src="https://dev-coco.github.io/images/avatar.png?v=1739588167552" alt="">
-          </a>
-          <div class="site-title">
-            <h1>Raz1ner</h1>
-          </div>
-          <svg width="32" height="32" viewBox="0 0 16 16" id="menuBtn" style="position:absolute;right:15px">
-            <path d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5">
-          </svg>
-        </div>
-        <div class="mobile-menu" style="display: none;">
-          <div style="text-align: center">
-            
-              <div class="nav-item">
-                <a href="/" class="menu">首页</a>
-              </div>
-              <div class="nav-item">
-                <a href="/Navigation" class="menu">导航</a>
-              </div>
-              <div class="nav-item">
-                <a href="/Featured-Software.html" class="menu">软件</a>
-              </div>
-              <div class="nav-item">
-                <a href="/post/Chrome-Extension-Collection" class="menu">插件</a>
-              </div>
-              <div class="nav-item">
-                <a href="/Online-Tools" class="menu">在线工具</a>
-              </div>
-              <div class="nav-item">
-                <a href="/post/Linux-Command" class="menu">Linux命令</a>
-              </div>
-              <div class="nav-item">
-                <a href="/Excel" class="menu">Excel教程</a>
-              </div>
-              <div class="nav-item">
-                <a href="/post/Terms-and-Privacy" class="menu">隐私与条款</a>
-              </div>
-          </div>
-        </div>
-
-        <div class="menu-container">
-          <ul>
-            <li>
-              <a href="/" class="menu">首页</a>
-            </li>
-            <li>
-              <a href="/Navigation" class="menu">导航</a>
-            </li>
-            <li>
-              <a href="/Featured-Software.html" class="menu">软件</a>
-            </li>
-            <li>
-              <a href="/post/Chrome-Extension-Collection" class="menu">插件</a>
-            </li>
-            <li>
-              <a href="/Online-Tools" class="menu">在线工具</a>
-            </li>
-            <li>
-              <a href="/post/Linux-Command" class="menu">Linux命令</a>
-            </li>
-            <li>
-              <a href="/Excel" class="menu">Excel教程</a>
-            </li>
-            <li>
-              <a href="/post/Terms-and-Privacy" class="menu">隐私与条款</a>
-            </li>
-          </ul>
-        </div>
-
-
-
-        <form id="gridea-search-form" action="https://dev-coco.github.io/search/" class="search">
-          <input type="search" name="q" class="search-box">
-          <span class="search-button">
-            <span class="search-icon"></span>
-          </span>
-        </form>
-      </div>
+</head>
+<body>
+  <div class="container">
+    <h1 class="text-start pt-3">
+      <img class="logo" alt="Raz1ner" src="/images/avatar.png">
+      <span> Raz1ner</span>
+      <img
+        src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdev-coco.github.io&count_bg=%2310C1F9&title_bg=%23555555&icon=html5.svg&icon_color=%23E7E7E7&title=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&edge_flat=false"
+        style="float:right;width:180px;">
+    </h1>
+    <div class="menu">
+      <a href="/">首页</a>
+      <a href="/Navigation/">导航</a>
+      <a href="/Featured-Software.html">软件</a>
+      <a href="/post/Chrome-Extension-Collection/">插件</a>
+      <a href="/Online-Tools">在线工具</a>
+      <a href="/post/Linux-Command">Linux命令</a>
+      <a href="/Excel/">Excel教程</a>
+      <a href="/post/Terms-and-Privacy">隐私与条款</a>
+      <a target="_blank" href="https://github.com/dev-coco">Github</a>
     </div>
-    <script>
-      document.getElementsByClassName('search-button')[0].addEventListener('click', function () {
-        document.getElementById('gridea-search-form').classList.toggle('open');
-      })
-      document.getElementById('menuBtn').addEventListener('click', () => {
-        const element = document.querySelector('.mobile-menu')
-        if (element.style.display === 'none' || element.style.display === '') {
-          element.style.display = 'block'
-        } else {
-          element.style.display = 'none'
-        }
-      })
-    </script>
-
-      <div id="gridea-search-result" data-update="1739588167552">
-        <div class="searching">搜索中......</div>
-        <div class="no-result" style="display:none">未搜索到相关文章</div>
+    <h1 class="my-3">图片批量添加水印</h1>
+    <div class="content mx-auto">
+      <div class="drop-zone" id="dropZone">
+        拖放图片到这里或点击选择图片
+        <input type="file" id="fileInput" multiple accept="image/*" style="display: none;">
       </div>
+      <div class="controls">
+        <div class="input-group mb-3 w-50">
+          <span class="input-group-text" id="basic-addon1">水印文字</span>
+          <input type="text" class="form-control" id="watermarkText" value="示例水印">
+        </div>
+        <label for="watermarkColor">水印颜色：</label>
+        <input type="color" id="watermarkColor" value="#000000">
+        <div class="input-group mb-3 w-50">
+          <label for="customRange1" class="form-label">水印透明度：<span id="opacityValue">50%</span></label>
+          <input type="range" class="form-range" id="watermarkOpacity" min="0" max="100" value="50">
+        </div>
+        <div class="input-group mb-3 w-50">
+          <span class="input-group-text" id="basic-addon1">水印文字</span>
+          <input type="text" class="form-control" id="fontSize" value="24" min="8" max="200">
+        </div>
+        <label>水印位置：</label>
+        <div class="position-grid">
+          <div class="position-option" data-position="top-left">左上角</div>
+          <div class="position-option" data-position="top-right">右上角</div>
+          <div class="position-option" data-position="bottom-left">左下角</div>
+          <div class="position-option selected" data-position="bottom-right">右下角</div>
+        </div>
+      </div>
+      <div class="preview-container" id="previewContainer"></div>
+      <button id="processButton">处理图片</button>
+    </div>
   </div>
-  <!-- <div class="site-footer">
-    <p style="text-align: center;">
-        <a href="https://github.com/dev-coco" rel="nofollow noreferrer" target="_blank"><img class="social-icon" alt="Github" src="/images/social/GitHub.png"></a>
-        <a href="https://t.me/raz1ner" rel="nofollow noreferrer" target="_blank"><img class="social-icon" alt="Telegram" src="/images/social/Telegram.png"></a>
-        <a href="https://www.youtube.com/channel/UCEgNinV_DEntuv5Dm8Z_JvA?sub_confirmation=1" rel="nofollow noreferrer" target="_blank"><img class="social-icon" alt="YouTuebe" src="/images/social/YouTube.png"></a>
-        <a href="/atom.xml" target="_blank"><img class="social-icon" alt="rss" src="/images/social/RSS.png"></a>
-        <a href="mailto:ruijingle@gmail.com" target="_blank"><img class="social-icon" alt="Email" src="/images/social/Gmail.png"></a>
-      </p>
-    <span>Copyright © 2020-2025 Raz1ner - All Rights Reserved.</span>
-<script>(location.href.includes('dev-coco.github.io')||location.href.includes('localhost'))?'':window.open('https'+'://dev'+'-coco'+'.github.io/','_self')</script>
- | <a class="rss" href="https://dev-coco.github.io/atom.xml" target="_blank">RSS</a>
-</div> -->
-  <script src="https://dev-coco.github.io/media/gridea-search/result-template.ejs" type="text/ejs"></script>
-  <script src="https://dev-coco.github.io/media/gridea-search/fuse.basic.min.js"></script>
-  <script src="https://dev-coco.github.io/media/gridea-search/ejs.min.js"></script>
-  <script src="https://dev-coco.github.io/media/gridea-search/gridea-search.js"></script>
+  <script>
+    const dropZone = document.getElementById('dropZone')
+    const fileInput = document.getElementById('fileInput')
+    const previewContainer = document.getElementById('previewContainer')
+    const processButton = document.getElementById('processButton')
+    const opacityRange = document.getElementById('watermarkOpacity')
+    const opacityValue = document.getElementById('opacityValue')
+    const positionOptions = document.querySelectorAll('.position-option')
+    let selectedPosition = 'bottom-right'
+    let files = []
+
+    // 位置选择
+    positionOptions.forEach(option => {
+      option.addEventListener('click', () => {
+        positionOptions.forEach(opt => opt.classList.remove('selected'))
+        option.classList.add('selected')
+        selectedPosition = option.dataset.position
+      })
+    })
+
+    // 更新透明度显示
+    opacityRange.addEventListener('input', (e) => {
+      opacityValue.textContent = `${e.target.value}%`
+    })
+
+    // 处理拖放
+    dropZone.addEventListener('dragover', (e) => {
+      e.preventDefault()
+      dropZone.classList.add('dragover')
+    })
+
+    dropZone.addEventListener('dragleave', () => {
+      dropZone.classList.remove('dragover')
+    })
+
+    dropZone.addEventListener('drop', (e) => {
+      e.preventDefault()
+      dropZone.classList.remove('dragover')
+      handleFiles(e.dataTransfer.files)
+    })
+
+    // 点击选择文件
+    dropZone.addEventListener('click', () => {
+      fileInput.click()
+    })
+
+    fileInput.addEventListener('change', (e) => {
+      handleFiles(e.target.files)
+    })
+
+    function handleFiles(fileList) {
+      files = Array.from(fileList).filter(file => file.type.startsWith('image/'))
+      previewContainer.innerHTML = ''
+
+      files.forEach(file => {
+        const reader = new FileReader()
+        reader.onload = (e) => {
+          const div = document.createElement('div')
+          div.className = 'preview-item'
+          div.innerHTML = `<img src="${e.target.result}" alt="预览">`
+          previewContainer.appendChild(div)
+        }
+        reader.readAsDataURL(file)
+      })
+    }
+
+    function getWatermarkPosition(position, canvas, text, fontSize) {
+      const ctx = canvas.getContext('2d')
+      const metrics = ctx.measureText(text)
+      const padding = 20 // 距离边缘的padding
+
+      const positions = {
+        'top-left': {
+          x: padding,
+          y: padding + fontSize / 2
+        },
+        'top-right': {
+          x: canvas.width - padding,
+          y: padding + fontSize / 2
+        },
+        'bottom-left': {
+          x: padding,
+          y: canvas.height - padding
+        },
+        'bottom-right': {
+          x: canvas.width - padding,
+          y: canvas.height - padding
+        }
+      }
+
+      return positions[position]
+    }
+
+    processButton.addEventListener('click', async () => {
+      const watermarkText = document.getElementById('watermarkText').value
+      const watermarkColor = document.getElementById('watermarkColor').value
+      const opacity = opacityRange.value / 100
+      const fontSize = document.getElementById('fontSize').value + 'px Arial'
+
+      for (const file of files) {
+        const img = await createImage(file)
+        const canvas = document.createElement('canvas')
+        const ctx = canvas.getContext('2d')
+
+        canvas.width = img.width
+        canvas.height = img.height
+
+        // 绘制原始图片
+        ctx.drawImage(img, 0, 0)
+
+        // 设置水印样式
+        ctx.fillStyle = watermarkColor
+        ctx.globalAlpha = opacity
+        ctx.font = fontSize
+
+        // 根据位置设置对齐方式
+        if (selectedPosition.includes('right')) {
+          ctx.textAlign = 'right'
+        } else {
+          ctx.textAlign = 'left'
+        }
+        ctx.textBaseline = 'middle'
+
+        // 获取水印位置并绘制
+        const position = getWatermarkPosition(selectedPosition, canvas, watermarkText, parseInt(fontSize))
+        ctx.fillText(watermarkText, position.x, position.y)
+
+        // 下载处理后的图片
+        const link = document.createElement('a')
+        link.download = `${file.name.split('.')[0]}-加水印.${file.name.split('.').pop()}`
+        link.href = canvas.toDataURL(file.type)
+        link.click()
+      }
+    })
+
+    function createImage(file) {
+      return new Promise((resolve) => {
+        const img = new Image()
+        img.onload = () => resolve(img)
+        img.src = URL.createObjectURL(file)
+      })
+    }
+  </script>
+  <script>(location.href.includes('dev-coco.github.io') || location.href.includes('localhost')) ? '' : window.open('https' + '://dev' + '-coco' + '.github.io/', '_self')</script>
 </body>
 </html>
