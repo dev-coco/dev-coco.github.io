@@ -212,6 +212,7 @@
       if (!apiToken.value) return alert('请先放入 API Key')
 
       promptArea.value = ''
+      resultPreview.classList.remove('visible')
 
       // 显示加载动画
       loadingIndicator.style.display = 'block'
