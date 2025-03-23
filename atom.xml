@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2025-03-22T22:18:51.853Z</updated>
+    <updated>2025-03-23T13:01:19.479Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2025, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[数据归类工具]]></title>
+        <id>https://dev-coco.github.io/post/Data-Classification/</id>
+        <link href="https://dev-coco.github.io/post/Data-Classification/">
+        </link>
+        <updated>2025-03-23T12:29:13.000Z</updated>
+        <summary type="html"><![CDATA[<p>根据文本内容的相似度进行归类。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>根据文本内容的相似度进行归类。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[AI 生成类似图片]]></title>
         <id>https://dev-coco.github.io/post/AI-Image-to-Image/</id>
@@ -161,17 +172,6 @@
         <summary type="html"><![CDATA[<p>Select and extract content from webpage elements.</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>Select and extract content from webpage elements.</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Element Selector Privacy Policy]]></title>
-        <id>https://dev-coco.github.io/post/Element-Selector-Privacy-Policy/</id>
-        <link href="https://dev-coco.github.io/post/Element-Selector-Privacy-Policy/">
-        </link>
-        <updated>2024-08-22T00:46:14.000Z</updated>
-        <summary type="html"><![CDATA[<p>Element Selector Chrome Extension’s privacy policy is detailed here.</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>Element Selector Chrome Extension’s privacy policy is detailed here.</p>
 ]]></content>
     </entry>
 </feed>

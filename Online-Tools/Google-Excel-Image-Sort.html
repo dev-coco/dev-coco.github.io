@@ -50,6 +50,9 @@
       <option value="相似度匹配">相似度匹配</option>
       <option value="Hash 匹配">Hash 匹配</option>
     </select>
+    <div class="mb-3 mx-auto text-center">
+      <span>如果请求图片出现跨域问题，请点击 <a href="https://cors-anywhere.herokuapp.com/corsdemo" target="_blank" rel="nofollow noreferrer">链接</a> 允许临时访问。</span>
+    </div>
     <table cellpadding="1" cellspacing="1" class="middle">
       <tbody>
         <tr>
@@ -135,25 +138,85 @@
      * @param {string} url - 图片的 URL 地址
      * @returns {Promise<string>} 返回 Base64 编码的 Data URL
      */
+    // async function imgBase64 (url) {
+    //   return new Promise(resolve => {
+    //     const img = document.createElement('img')
+    //     img.src = url
+    //     img.onload = () => {
+    //       fetch(img.src)
+    //         .then(response => response.blob())
+    //         .then(blob => {
+    //           const reader = new FileReader()
+    //           reader.onloadend = () => {
+    //             resolve(reader.result)
+    //           }
+    //           reader.readAsDataURL(blob)
+    //         })
+    //         .catch(error => console.error('Error fetching image:', error))
+    //     }
+    //     img.onerror = error => resolve('data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEADMDOJaQAA3AA/uuuAAA=')
+    //   })
+    // }
+
     async function imgBase64 (url) {
       return new Promise(resolve => {
         const img = document.createElement('img')
         img.src = url
         img.onload = () => {
-          fetch(img.src)
-            .then(response => response.blob())
-            .then(blob => {
-              const reader = new FileReader()
-              reader.onloadend = () => {
-                resolve(reader.result)
-              }
-              reader.readAsDataURL(blob)
-            })
-            .catch(error => console.error('Error fetching image:', error))
+          fetchImage(url).then(resolve).catch(error => {
+            console.error('Final error fetching image:', error)
+            resolve('error')
+          })
         }
-        img.onerror = error => resolve('data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEADMDOJaQAA3AA/uuuAAA=')
+        img.onerror = () => resolve('data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEADMDOJaQAA3AA/uuuAAA=')
       })
     }
+
+    async function fetchImage (url) {
+      try {
+        return await getBase64(url)
+    } catch (error) {
+        console.warn('Error fetching image, trying proxy:', error)
+        try {
+          const proxyUrl = `https://cors-anywhere.herokuapp.com/${url}`
+          return await getBase64(proxyUrl)
+        } catch (proxyError) {
+          console.error('Error with proxy fetch:', proxyError)
+          throw proxyError
+        }
+      }
+    }
+
+    async function getBase64 (url) {
+      const response = await fetch(url)
+      if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`)
+      const blob = await response.blob()
+      return new Promise(resolve => {
+        const reader = new FileReader()
+        reader.onloadend = () => resolve(reader.result)
+        reader.readAsDataURL(blob)
+      })
+    }
+
+    // async function imgBase64 (url) {
+    //   return new Promise(resolve => {
+    //     const img = document.createElement('img')
+    //     img.src = url
+    //     img.onload = () => {
+    //       fetch(img.src)
+    //         .then(response => response.blob())
+    //         .then(blob => {
+    //           const reader = new FileReader()
+    //           reader.onloadend = () => {
+    //             resolve(reader.result)
+    //           }
+    //           reader.readAsDataURL(blob)
+    //         })
+    //         .catch(error => console.error('Error fetching image:', error))
+    //     }
+    //     img.onerror = error => resolve('data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEADMDOJaQAA3AA/uuuAAA=')
+    //   })
+    // }
 
     /**
      * @description 计算两个哈希值的相似度（基于汉明距离）
@@ -240,6 +303,6 @@
       return str
     }
   </script>
-  <script>(location.href.includes('dev-coco.github.io')||location.href.includes('localhost'))?'':window.open('https'+'://dev'+'-coco'+'.github.io/','_self')</script>
+  <!-- <script>(location.href.includes('dev-coco.github.io')||location.href.includes('localhost'))?'':window.open('https'+'://dev'+'-coco'+'.github.io/','_self')</script> -->
 </body>
 </html>
