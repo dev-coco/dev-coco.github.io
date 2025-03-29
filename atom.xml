@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://dev-coco.github.io</id>
+    <id>http://localhost:4000</id>
     <title>Raz1ner</title>
-    <updated>2025-03-23T13:01:19.479Z</updated>
+    <updated>2025-03-29T15:00:27.158Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://dev-coco.github.io"/>
-    <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
-    <logo>https://dev-coco.github.io/images/avatar.png</logo>
-    <icon>https://dev-coco.github.io/favicon.ico</icon>
+    <link rel="alternate" href="http://localhost:4000"/>
+    <link rel="self" href="http://localhost:4000/atom.xml"/>
+    <logo>http://localhost:4000/images/avatar.png</logo>
+    <icon>http://localhost:4000/favicon.ico</icon>
     <rights>All rights reserved 2025, Raz1ner</rights>
     <entry>
         <title type="html"><![CDATA[数据归类工具]]></title>
-        <id>https://dev-coco.github.io/post/Data-Classification/</id>
-        <link href="https://dev-coco.github.io/post/Data-Classification/">
+        <id>http://localhost:4000/post/Data-Classification/</id>
+        <link href="http://localhost:4000/post/Data-Classification/">
         </link>
         <updated>2025-03-23T12:29:13.000Z</updated>
         <summary type="html"><![CDATA[<p>根据文本内容的相似度进行归类。</p>
@@ -22,8 +22,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[AI 生成类似图片]]></title>
-        <id>https://dev-coco.github.io/post/AI-Image-to-Image/</id>
-        <link href="https://dev-coco.github.io/post/AI-Image-to-Image/">
+        <id>http://localhost:4000/post/AI-Image-to-Image/</id>
+        <link href="http://localhost:4000/post/AI-Image-to-Image/">
         </link>
         <updated>2025-03-22T01:23:22.000Z</updated>
         <summary type="html"><![CDATA[<p>上传参照图片并使用 AI 生成类似图片。</p>
@@ -33,8 +33,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[申请 Gemini API Key 步骤]]></title>
-        <id>https://dev-coco.github.io/post/Apply-Gemini-API-Key/</id>
-        <link href="https://dev-coco.github.io/post/Apply-Gemini-API-Key/">
+        <id>http://localhost:4000/post/Apply-Gemini-API-Key/</id>
+        <link href="http://localhost:4000/post/Apply-Gemini-API-Key/">
         </link>
         <updated>2025-03-21T07:35:55.000Z</updated>
         <summary type="html"><![CDATA[<p>详细介绍 Gemini API Key 申请步骤。</p>
@@ -44,8 +44,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[图片上传云端工具]]></title>
-        <id>https://dev-coco.github.io/post/Image-Upload-Google-Drive/</id>
-        <link href="https://dev-coco.github.io/post/Image-Upload-Google-Drive/">
+        <id>http://localhost:4000/post/Image-Upload-Google-Drive/</id>
+        <link href="http://localhost:4000/post/Image-Upload-Google-Drive/">
         </link>
         <updated>2025-03-17T04:08:58.000Z</updated>
         <summary type="html"><![CDATA[<p>快速将表格内的图片保存到云端。</p>
@@ -55,8 +55,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[截图 OCR]]></title>
-        <id>https://dev-coco.github.io/post/Screenshot-OCR/</id>
-        <link href="https://dev-coco.github.io/post/Screenshot-OCR/">
+        <id>http://localhost:4000/post/Screenshot-OCR/</id>
+        <link href="http://localhost:4000/post/Screenshot-OCR/">
         </link>
         <updated>2025-03-15T01:23:09.000Z</updated>
         <summary type="html"><![CDATA[<p>从网页截图中提取文本，并支持翻译功能。</p>
@@ -66,8 +66,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[精品正版软件列表]]></title>
-        <id>https://dev-coco.github.io/post/Awesome-Software/</id>
-        <link href="https://dev-coco.github.io/post/Awesome-Software/">
+        <id>http://localhost:4000/post/Awesome-Software/</id>
+        <link href="http://localhost:4000/post/Awesome-Software/">
         </link>
         <updated>2025-01-20T06:41:03.000Z</updated>
         <summary type="html"><![CDATA[<p>打造您的正版软件宝库：全新精品正版软件列表网站上线！</p>
@@ -77,8 +77,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[多线程下载器]]></title>
-        <id>https://dev-coco.github.io/post/Multi-Threaded-Downloader/</id>
-        <link href="https://dev-coco.github.io/post/Multi-Threaded-Downloader/">
+        <id>http://localhost:4000/post/Multi-Threaded-Downloader/</id>
+        <link href="http://localhost:4000/post/Multi-Threaded-Downloader/">
         </link>
         <updated>2025-01-19T07:14:42.000Z</updated>
         <summary type="html"><![CDATA[<p>加快大文件下载速度。</p>
@@ -88,8 +88,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[浏览器性能排名]]></title>
-        <id>https://dev-coco.github.io/post/Browser-Rank/</id>
-        <link href="https://dev-coco.github.io/post/Browser-Rank/">
+        <id>http://localhost:4000/post/Browser-Rank/</id>
+        <link href="http://localhost:4000/post/Browser-Rank/">
         </link>
         <updated>2025-01-08T07:38:49.000Z</updated>
         <summary type="html"><![CDATA[<p>市面上多种浏览器进行性能跑分测试并且整理出排名。</p>
@@ -99,8 +99,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Mac 设备是否需要每天关机？]]></title>
-        <id>https://dev-coco.github.io/post/Mac-Device-Shutdown-Everyday/</id>
-        <link href="https://dev-coco.github.io/post/Mac-Device-Shutdown-Everyday/">
+        <id>http://localhost:4000/post/Mac-Device-Shutdown-Everyday/</id>
+        <link href="http://localhost:4000/post/Mac-Device-Shutdown-Everyday/">
         </link>
         <updated>2024-11-16T04:53:10.000Z</updated>
         <summary type="html"><![CDATA[<p>探讨 Mac 设备每天关机的必要性，分析关机与休眠对性能、硬件寿命以及能耗的影响。</p>
@@ -110,8 +110,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[检测 Facebook 帖文是否违反政策]]></title>
-        <id>https://dev-coco.github.io/post/Detect-Facebook-Post/</id>
-        <link href="https://dev-coco.github.io/post/Detect-Facebook-Post/">
+        <id>http://localhost:4000/post/Detect-Facebook-Post/</id>
+        <link href="http://localhost:4000/post/Detect-Facebook-Post/">
         </link>
         <updated>2024-10-19T13:03:21.000Z</updated>
         <summary type="html"><![CDATA[<p>使用 ChatGPT 检测 Facebook 帖文是否违反平台政策。</p>
@@ -121,8 +121,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[口袋 AI 使用方法]]></title>
-        <id>https://dev-coco.github.io/post/Pocket-AI/</id>
-        <link href="https://dev-coco.github.io/post/Pocket-AI/">
+        <id>http://localhost:4000/post/Pocket-AI/</id>
+        <link href="http://localhost:4000/post/Pocket-AI/">
         </link>
         <updated>2024-09-26T03:05:20.000Z</updated>
         <summary type="html"><![CDATA[<p>在任意页面快速启动侧边栏 AI 网站。</p>
@@ -132,8 +132,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Pocket AI User Guide]]></title>
-        <id>https://dev-coco.github.io/post/Pocket-AI-EN/</id>
-        <link href="https://dev-coco.github.io/post/Pocket-AI-EN/">
+        <id>http://localhost:4000/post/Pocket-AI-EN/</id>
+        <link href="http://localhost:4000/post/Pocket-AI-EN/">
         </link>
         <updated>2024-09-26T03:04:31.000Z</updated>
         <summary type="html"><![CDATA[<p>Quickly Launch Sidebar AI Websites on Any Page.</p>
@@ -143,8 +143,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Pocket AI Privacy Policy]]></title>
-        <id>https://dev-coco.github.io/post/Pocket-AI-Privacy-Policy/</id>
-        <link href="https://dev-coco.github.io/post/Pocket-AI-Privacy-Policy/">
+        <id>http://localhost:4000/post/Pocket-AI-Privacy-Policy/</id>
+        <link href="http://localhost:4000/post/Pocket-AI-Privacy-Policy/">
         </link>
         <updated>2024-09-21T04:58:37.000Z</updated>
         <summary type="html"><![CDATA[<p>Pocket AI Chrome Extension’s privacy policy is detailed here.</p>
@@ -154,8 +154,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[元素选择器 使用方法]]></title>
-        <id>https://dev-coco.github.io/post/Element-Selector/</id>
-        <link href="https://dev-coco.github.io/post/Element-Selector/">
+        <id>http://localhost:4000/post/Element-Selector/</id>
+        <link href="http://localhost:4000/post/Element-Selector/">
         </link>
         <updated>2024-08-22T00:46:39.000Z</updated>
         <summary type="html"><![CDATA[<p>在网页选择元素并且获取内容。</p>
@@ -165,8 +165,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Element Selector User Guide]]></title>
-        <id>https://dev-coco.github.io/post/Element-Selector-EN/</id>
-        <link href="https://dev-coco.github.io/post/Element-Selector-EN/">
+        <id>http://localhost:4000/post/Element-Selector-EN/</id>
+        <link href="http://localhost:4000/post/Element-Selector-EN/">
         </link>
         <updated>2024-08-22T00:46:26.000Z</updated>
         <summary type="html"><![CDATA[<p>Select and extract content from webpage elements.</p>
