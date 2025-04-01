@@ -5,10 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Google Excel 动态指向单元格目录 | Raz1ner</title>
   <meta name="author" content="Raz1ner">
-  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1743264489998">
+  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1743473660500">
   <link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
-  <script src="/js/prism.js"></script>
-  <link rel="stylesheet" href="/css/prism.css">
+  
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script> -->
+  <!-- <script src="/js/prism.js"></script>
+  <link rel="stylesheet" href="/css/prism.css"> -->
   <script src="https://dev-coco.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
   <script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script async src="https://fundingchoicesmessages.google.com/i/pub-6960947409660270?ers=1" nonce="3szuJwRueku-LVJlmdoLew"></script><script nonce="3szuJwRueku-LVJlmdoLew">(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
@@ -46,6 +48,7 @@
   <meta name="twitter:description" content="制作一个动态单元格目录，快速找到对应菜单。">
   <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:300,300i,400,400i,700,700i,800" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Mallanna" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
 </head>
 <body>
   <div class="main">
@@ -53,7 +56,7 @@
       <div class="nav">
         <div class="logo">
           <a href="https://dev-coco.github.io">
-            <img class="avatar" alt="Raz1ner" src="https://dev-coco.github.io/images/avatar.png?v=1743264489998" alt="">
+            <img class="avatar" alt="Raz1ner" src="https://dev-coco.github.io/images/avatar.png?v=1743473660500" alt="">
           </a>
           <div class="site-title">
             <h1>Raz1ner</h1>
@@ -152,7 +155,7 @@
         <h2 class="post-title">Google Excel 动态指向单元格目录</h2>
         <div class="post-info">
           <time class="post-time">2022-11-23 / 3 min read</time>
-            <a href="https://dev-coco.github.io/tag/excel/" class="post-tag i-tag i-tag-banana">#Excel</a>
+            <a href="https://dev-coco.github.io/tag/excel/" class="post-tag i-tag i-tag-other_1">#Excel</a>
         </div>
         <!--
           
@@ -167,7 +170,7 @@
 <figure data-type="image" tabindex="2"><img src="https://dev-coco.github.io/post-images/1653172641092.png" alt="" loading="lazy"></figure>
 <h2 id="解决方法">解决方法</h2>
 <p>使用以下函数即可实现动态指向单元格目录。</p>
-<pre><code class="language-excel-formula">=ARRAYFORMULA(HYPERLINK(&quot;#gid=id&amp;range=&quot;&amp;ADDRESS(1, MATCH(TRANSPOSE(FILTER(B1:1, B1:1 &lt;&gt; &quot;&quot;)), 1:1, 0), 4), TRANSPOSE(FILTER(B1:1, B1:1 &lt;&gt; &quot;&quot;))))
+<pre><code class="language-excel">=ARRAYFORMULA(HYPERLINK(&quot;#gid=id&amp;range=&quot;&amp;ADDRESS(1, MATCH(TRANSPOSE(FILTER(B1:1, B1:1 &lt;&gt; &quot;&quot;)), 1:1, 0), 4), TRANSPOSE(FILTER(B1:1, B1:1 &lt;&gt; &quot;&quot;))))
 </code></pre>
 <p>先来分析一下指向单元格的原理。</p>
 <p>超链接的格式：<code>#gid=XXXX&amp;range=B1</code>，中间的 gid 是当前表格的 id，range 对应的参数是指向单元格的位置。那么就可以使用 HYPERLINK 函数创建一个超文本链接，但是目前还需要获取到菜单的名称和菜单对应的单元格位置。</p>
@@ -183,7 +186,7 @@
 <figure data-type="image" tabindex="5"><img src="https://dev-coco.github.io/post-images/1653172712442.png" alt="" loading="lazy"></figure>
 <h2 id="超文本链接输出">超文本链接输出</h2>
 <p>最后再使用 <a href="https://dev-coco.github.io/Excel/#Function/Others/HYPERLINK">HYPERLINK</a> 函数放入菜单名字和单元格位置一起输出。因为指向单元格链接的格式中的 gid 无法通过原生函数获取到，所以需要手动设置，并且和获取到菜单的单元格位置拼接在一起。</p>
-<pre><code class="language-excel-formula">HYPERLINK(&quot;#gid=1147213490&amp;range=&quot;&amp;ADDRESS(1, MATCH(TRANSPOSE(FILTER(B1:1, B1:1 &lt;&gt; &quot;&quot;)), 1:1, 0), 4), TRANSPOSE(FILTER(B1:1, B1:1 &lt;&gt; &quot;&quot;)))
+<pre><code class="language-excel">HYPERLINK(&quot;#gid=1147213490&amp;range=&quot;&amp;ADDRESS(1, MATCH(TRANSPOSE(FILTER(B1:1, B1:1 &lt;&gt; &quot;&quot;)), 1:1, 0), 4), TRANSPOSE(FILTER(B1:1, B1:1 &lt;&gt; &quot;&quot;)))
 </code></pre>
 <p>最后再使用 <a href="https://dev-coco.github.io/Excel/#Function/Others/ARRAYFORMULA">ARRAYFORMULA</a> 函数输出就可以实现动态指向单元格目录了，即使菜单使用合并单元格也不会影响。</p>
 
@@ -207,7 +210,7 @@
       <!-- right -->
       <div id="sidebar" class="main-container-right">
         <div class="id_card i-card">
-          <div class="id_card-avatar" style="background-image: url(https://dev-coco.github.io/images/avatar.png?v=1743264489998)"></div>
+          <div class="id_card-avatar" style="background-image: url(https://dev-coco.github.io/images/avatar.png?v=1743473660500)"></div>
           <h1 class="id_card-title">Raz1ner</h1>
           <p style="text-align: center;">
             <a href="https://github.com/dev-coco" rel="nofollow noreferrer" target="_blank"><img class="social-icon" alt="Github" src="/images/social/GitHub.png"></a>
@@ -249,24 +252,24 @@
       </div>
       <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
         <div class="notice-content">
+          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/excel/">Excel</a>
           <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/other/">其它</a>
-          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/ai-tech/">AI 科技</a>
-          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/google-script/">Google 脚本</a>
-          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/excel/">Excel</a>
-          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/windows/">Windows</a>
-          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/software/">软件</a>
-          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/macos/">macOS</a>
-          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
-          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/instagram/">Instagram</a>
-          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/ios/">iOS</a>
-          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/security/">安全</a>
-          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/shell/">Shell</a>
-          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/javascript/">Javascript</a>
-          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/twitter-x/">Twitter (X)</a>
-          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/life/">生活</a>
-          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/sololearn/">Sololearn</a>
-          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
-          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/ai-tech/">AI 科技</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/google-script/">Google 脚本</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/instagram/">Instagram</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/security/">安全</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/javascript/">Javascript</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/twitter-x/">Twitter (X)</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/life/">生活</a>
+          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/sololearn/">Sololearn</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
         </div>
       </div>
       </div>
@@ -285,5 +288,8 @@
 </div>
   </div>
   
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/excel.min.js"></script>
+            <script>hljs.highlightAll();</script>
 </body>
 </html>

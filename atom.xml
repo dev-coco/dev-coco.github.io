@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2025-03-29T16:12:43.631Z</updated>
+    <updated>2025-04-01T02:16:45.243Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2025, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[Google Sheets 函数 IMPORTRANGE]]></title>
+        <id>https://dev-coco.github.io/post/Google-Sheets-Importrange/</id>
+        <link href="https://dev-coco.github.io/post/Google-Sheets-Importrange/">
+        </link>
+        <updated>2025-03-31T14:14:17.000Z</updated>
+        <summary type="html"><![CDATA[<p>IMPORTRANGE 函数可用来引用一个表格中指定数据的范围到另一个表格中，支持跨表格数据引用。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>IMPORTRANGE 函数可用来引用一个表格中指定数据的范围到另一个表格中，支持跨表格数据引用。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[数据归类工具]]></title>
         <id>https://dev-coco.github.io/post/Data-Classification/</id>
@@ -161,17 +172,6 @@
         <summary type="html"><![CDATA[<p>在网页选择元素并且获取内容。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>在网页选择元素并且获取内容。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Element Selector User Guide]]></title>
-        <id>https://dev-coco.github.io/post/Element-Selector-EN/</id>
-        <link href="https://dev-coco.github.io/post/Element-Selector-EN/">
-        </link>
-        <updated>2024-08-22T00:46:26.000Z</updated>
-        <summary type="html"><![CDATA[<p>Select and extract content from webpage elements.</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>Select and extract content from webpage elements.</p>
 ]]></content>
     </entry>
 </feed>

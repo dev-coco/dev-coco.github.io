@@ -5,10 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Google Excel 性能优化 - 数据压缩 | Raz1ner</title>
   <meta name="author" content="Raz1ner">
-  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1743264489998">
+  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1743473660500">
   <link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
-  <script src="/js/prism.js"></script>
-  <link rel="stylesheet" href="/css/prism.css">
+  
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script> -->
+  <!-- <script src="/js/prism.js"></script>
+  <link rel="stylesheet" href="/css/prism.css"> -->
   <script src="https://dev-coco.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
   <script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script async src="https://fundingchoicesmessages.google.com/i/pub-6960947409660270?ers=1" nonce="3szuJwRueku-LVJlmdoLew"></script><script nonce="3szuJwRueku-LVJlmdoLew">(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
@@ -46,6 +48,7 @@
   <meta name="twitter:description" content="一个通用型性能优化技巧，加快数据传输速度。">
   <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:300,300i,400,400i,700,700i,800" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Mallanna" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
 </head>
 <body>
   <div class="main">
@@ -53,7 +56,7 @@
       <div class="nav">
         <div class="logo">
           <a href="https://dev-coco.github.io">
-            <img class="avatar" alt="Raz1ner" src="https://dev-coco.github.io/images/avatar.png?v=1743264489998" alt="">
+            <img class="avatar" alt="Raz1ner" src="https://dev-coco.github.io/images/avatar.png?v=1743473660500" alt="">
           </a>
           <div class="site-title">
             <h1>Raz1ner</h1>
@@ -152,7 +155,7 @@
         <h2 class="post-title">Google Excel 性能优化 - 数据压缩</h2>
         <div class="post-info">
           <time class="post-time">2023-02-03 / 3 min read</time>
-            <a href="https://dev-coco.github.io/tag/excel/" class="post-tag i-tag i-tag-other_2">#Excel</a>
+            <a href="https://dev-coco.github.io/tag/excel/" class="post-tag i-tag i-tag-banana">#Excel</a>
         </div>
         <!--
           
@@ -169,17 +172,17 @@
 <p>例如从 B1 到 V18 范围，如果要将这个范围的数据，使用 <a href="https://dev-coco.github.io/Excel/#Function/Others/IMPORTRANGE">IMPORTRANGE</a> 导入到其它电子表格，那么就需要导入 378 个单元格。</p>
 <figure data-type="image" tabindex="1"><img src="https://dev-coco.github.io/post-images/1657414803550.png" alt="" loading="lazy"></figure>
 <p>使用 <a href="https://dev-coco.github.io/Excel/#Function/Text-Processing/JOIN">JOIN</a> 函数对数据进行横向拼接。</p>
-<pre><code class="language-excel-formula">=JOIN(&quot;@&quot;, B1:V1)
+<pre><code class="language-excel">=JOIN(&quot;@&quot;, B1:V1)
 </code></pre>
 <p>注意，定界符必须是独一无二的，不能出现在拼接的数据中，否则下面的步骤会出现异常。JOIN 函数不支持数组，如果需要使用数组合并，需要将字符挨个拼接到一起。</p>
-<pre><code class="language-excel-formula">=ARRAYFORMULA(B:B&amp;&quot;@&quot;&amp;C:C&amp;&quot;@&quot;&amp;D:D&amp;&quot;@&quot;&amp;E:E&amp;&quot;@&quot;&amp;F:F&amp;&quot;@&quot;&amp;G:G&amp;&quot;@&quot;&amp;H:H&amp;&quot;@&quot;&amp;I:I&amp;&quot;@&quot;&amp;J:J&amp;&quot;@&quot;&amp;K:K&amp;&quot;@&quot;&amp;L:L&amp;&quot;@&quot;&amp;M:M&amp;&quot;@&quot;&amp;N:N&amp;&quot;@&quot;&amp;O:O&amp;&quot;@&quot;&amp;P:P&amp;&quot;@&quot;&amp;Q:Q&amp;&quot;@&quot;&amp;R:R&amp;&quot;@&quot;&amp;S:S&amp;&quot;@&quot;&amp;T:T&amp;&quot;@&quot;&amp;U:U&amp;&quot;@&quot;&amp;V:V)
+<pre><code class="language-excel">=ARRAYFORMULA(B:B&amp;&quot;@&quot;&amp;C:C&amp;&quot;@&quot;&amp;D:D&amp;&quot;@&quot;&amp;E:E&amp;&quot;@&quot;&amp;F:F&amp;&quot;@&quot;&amp;G:G&amp;&quot;@&quot;&amp;H:H&amp;&quot;@&quot;&amp;I:I&amp;&quot;@&quot;&amp;J:J&amp;&quot;@&quot;&amp;K:K&amp;&quot;@&quot;&amp;L:L&amp;&quot;@&quot;&amp;M:M&amp;&quot;@&quot;&amp;N:N&amp;&quot;@&quot;&amp;O:O&amp;&quot;@&quot;&amp;P:P&amp;&quot;@&quot;&amp;Q:Q&amp;&quot;@&quot;&amp;R:R&amp;&quot;@&quot;&amp;S:S&amp;&quot;@&quot;&amp;T:T&amp;&quot;@&quot;&amp;U:U&amp;&quot;@&quot;&amp;V:V)
 </code></pre>
 <p>拼接在一起后，A 列的数据就已经包含了右边一大堆的单元格的数据了。</p>
 <figure data-type="image" tabindex="2"><img src="https://dev-coco.github.io/post-images/1657414809407.png" alt="" loading="lazy"></figure>
 <p>现在将这一部分数据使用 IMPORTRANGE 函数导入到其它的电子表格，只需要获取 A1 到 A18 的范围，也就是 18个单元格，这样相比 378 个单元格的数据要少很多很多。</p>
 <figure data-type="image" tabindex="3"><img src="https://dev-coco.github.io/post-images/1657414813716.png" alt="" loading="lazy"></figure>
 <p>使用 <a href="https://dev-coco.github.io/Excel/#Function/Text-Processing/SPLIT">SPLIT</a> 函数将数据拆分开。</p>
-<pre><code class="language-excel-formula">=SPLIT(A1, &quot;@&quot;, TRUE, FALSE)
+<pre><code class="language-excel">=SPLIT(A1, &quot;@&quot;, TRUE, FALSE)
 </code></pre>
 <p>移除空白参数要设置 FALSE，否则遇到空白的内容会跳过，这样会造成位置偏移。SPLIT 函数支持使用数组输出。拆分后的数据和源数据的显示效果是一样的。</p>
 <figure data-type="image" tabindex="4"><img src="https://dev-coco.github.io/post-images/1657414822623.png" alt="" loading="lazy"></figure>
@@ -207,7 +210,7 @@
       <!-- right -->
       <div id="sidebar" class="main-container-right">
         <div class="id_card i-card">
-          <div class="id_card-avatar" style="background-image: url(https://dev-coco.github.io/images/avatar.png?v=1743264489998)"></div>
+          <div class="id_card-avatar" style="background-image: url(https://dev-coco.github.io/images/avatar.png?v=1743473660500)"></div>
           <h1 class="id_card-title">Raz1ner</h1>
           <p style="text-align: center;">
             <a href="https://github.com/dev-coco" rel="nofollow noreferrer" target="_blank"><img class="social-icon" alt="Github" src="/images/social/GitHub.png"></a>
@@ -249,24 +252,24 @@
       </div>
       <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
         <div class="notice-content">
-          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/other/">其它</a>
-          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/ai-tech/">AI 科技</a>
-          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/google-script/">Google 脚本</a>
-          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/excel/">Excel</a>
-          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/windows/">Windows</a>
-          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/software/">软件</a>
-          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/macos/">macOS</a>
-          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
-          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/instagram/">Instagram</a>
-          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/ios/">iOS</a>
-          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/security/">安全</a>
-          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/shell/">Shell</a>
-          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/javascript/">Javascript</a>
-          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/twitter-x/">Twitter (X)</a>
-          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/life/">生活</a>
-          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/sololearn/">Sololearn</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/excel/">Excel</a>
+          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/ai-tech/">AI 科技</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/google-script/">Google 脚本</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/instagram/">Instagram</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/security/">安全</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/javascript/">Javascript</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/twitter-x/">Twitter (X)</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/life/">生活</a>
+          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/sololearn/">Sololearn</a>
           <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
-          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
         </div>
       </div>
       </div>
@@ -285,5 +288,8 @@
 </div>
   </div>
   
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/excel.min.js"></script>
+            <script>hljs.highlightAll();</script>
 </body>
 </html>
