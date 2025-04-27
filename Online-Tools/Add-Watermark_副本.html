@@ -158,8 +158,8 @@
           <input type="range" class="form-range" id="watermarkOpacity" min="0" max="100" value="50">
         </div>
         <div class="input-group mb-3 w-50">
-          <span class="input-group-text" id="basic-addon1">文字大小</span>
-          <input type="number" class="form-control" id="fontSize" value="24" min="8" max="200">
+          <span class="input-group-text" id="basic-addon1">水印文字</span>
+          <input type="text" class="form-control" id="fontSize" value="24" min="8" max="200">
         </div>
         <label>水印位置：</label>
         <div class="position-grid">
@@ -246,188 +246,72 @@
       })
     }
 
+    function getWatermarkPosition(position, canvas, text, fontSize) {
+      const ctx = canvas.getContext('2d')
+      const metrics = ctx.measureText(text)
+      const padding = 20
 
-    function drawWrappedText(ctx, text, x, y, maxWidth, lineHeight, alignment, originalAlpha, position, canvas) {
-  // 分割文本为单词（对于中文和其他语言，可能需要不同的分割逻辑）
-  const words = text.split('');
-  let line = '';
-  const lines = [];
-  
-  // 逐字检查并形成行
-  for (let i = 0; i < words.length; i++) {
-    const testLine = line + words[i];
-    const metrics = ctx.measureText(testLine);
-    const testWidth = metrics.width;
-    
-    if (testWidth > maxWidth && i > 0) {
-      lines.push(line);
-      line = words[i];
-    } else {
-      line = testLine;
+      const positions = {
+        'top-left': {
+          x: padding,
+          y: padding + fontSize / 2
+        },
+        'top-right': {
+          x: canvas.width - padding,
+          y: padding + fontSize / 2
+        },
+        'bottom-left': {
+          x: padding,
+          y: canvas.height - padding
+        },
+        'bottom-right': {
+          x: canvas.width - padding,
+          y: canvas.height - padding
+        }
+      }
+
+      return positions[position]
     }
-  }
-  
-  // 添加最后一行
-  lines.push(line);
-  
-  // 保存当前绘图状态
-  ctx.save();
-  
-  // 计算总高度
-  const totalHeight = lines.length * lineHeight;
-  
-  // 基于总高度调整起始Y位置
-  let startY = y;
-  if (position.includes('bottom')) {
-    startY = startY - totalHeight + lineHeight;
-  }
-  
-  // 处理每一行
-  for (let i = 0; i < lines.length; i++) {
-    const currentY = startY + (i * lineHeight);
-    
-    // 智能选色：为每一行单独分析背景颜色
-    if (smartColorCheckbox.checked) {
-      const areaWidth = ctx.measureText(lines[i]).width + 20; // 加一些额外宽度
-      const areaHeight = lineHeight;
-      
-      // 根据对齐方式确定分析区域的X坐标
-      let analyzeX = x - (alignment === 'right' ? areaWidth : 0);
-      
-      // 确保分析区域在画布内
-      analyzeX = Math.max(0, Math.min(canvas.width - areaWidth, analyzeX));
-      const analyzeY = Math.max(0, Math.min(canvas.height - areaHeight, currentY - lineHeight/2));
-      
-      const smartColor = analyzeAreaColor(ctx, analyzeX, analyzeY, areaWidth, areaHeight);
-      ctx.fillStyle = smartColor;
-    }
-    
-    // 设置绘图属性
-    ctx.globalAlpha = originalAlpha;
-    
-    // 计算当前行的X坐标
-    let lineX = x;
-    if (alignment === 'right') {
-      lineX = x;
-    } else if (alignment === 'center') {
-      lineX = x - ctx.measureText(lines[i]).width / 2;
-    }
-    
-    // 添加文字阴影/描边效果增强可见性
-    ctx.shadowColor = 'rgba(0,0,0,0.5)';
-    ctx.shadowBlur = 2;
-    ctx.shadowOffsetX = 1;
-    ctx.shadowOffsetY = 1;
-    
-    // 绘制当前行文本
-    ctx.fillText(lines[i], lineX, currentY);
-  }
-  
-  // 恢复绘图状态
-  ctx.restore();
-  
-  return {
-    lines: lines.length,
-    totalHeight: totalHeight
-  };
-}
-
-
-
-
-function getWatermarkPosition(position, canvas, text, fontSize, maxWidth) {
-  const ctx = canvas.getContext('2d');
-  const padding = 20;
-  
-  // 预估行数和高度，用于初始位置计算
-  const estimatedWidth = ctx.measureText(text).width;
-  const estimatedLines = Math.max(1, Math.ceil(estimatedWidth / maxWidth));
-  const lineHeight = fontSize * 1.5; // 增加行高以容纳阴影效果
-  const totalHeight = estimatedLines * lineHeight;
-  
-  // 计算各个位置的坐标
-  const positions = {
-    'top-left': {
-      x: padding,
-      y: padding + lineHeight/2,
-      align: 'left'
-    },
-    'top-right': {
-      x: canvas.width - padding,
-      y: padding + lineHeight/2,
-      align: 'right'
-    },
-    'bottom-left': {
-      x: padding,
-      y: canvas.height - padding,
-      align: 'left'
-    },
-    'bottom-right': {
-      x: canvas.width - padding,
-      y: canvas.height - padding,
-      align: 'right'
-    }
-  };
-
-  const posInfo = positions[position];
-  posInfo.lineHeight = lineHeight;
-  posInfo.maxWidth = maxWidth;
-  posInfo.position = position;
-  
-  return posInfo;
-}
 
     // 分析区域颜色并返回合适的水印颜色
     function analyzeAreaColor(ctx, x, y, width, height) {
-  // 确保分析区域在画布范围内
-  x = Math.max(0, x);
-  y = Math.max(0, y);
-  width = Math.min(ctx.canvas.width - x, width);
-  height = Math.min(ctx.canvas.height - y, height);
-  
-  // 如果区域太小，返回默认颜色
-  if (width <= 0 || height <= 0) {
-    return '#ffffff';
-  }
-  
-  const imageData = ctx.getImageData(x, y, width, height);
-  const data = imageData.data;
-  let totalR = 0; let totalG = 0; let totalB = 0;
+      const imageData = ctx.getImageData(x, y, width, height)
+      const data = imageData.data
+      let totalR = 0; let totalG = 0; let totalB = 0
 
-  // 计算区域平均颜色
-  for (let i = 0; i < data.length; i += 4) {
-    totalR += data[i];
-    totalG += data[i + 1];
-    totalB += data[i + 2];
-  }
+      // 计算区域平均颜色
+      for (let i = 0; i < data.length; i += 4) {
+        totalR += data[i]
+        totalG += data[i + 1]
+        totalB += data[i + 2]
+      }
 
-  const pixels = data.length / 4;
-  const avgR = totalR / pixels;
-  const avgG = totalG / pixels;
-  const avgB = totalB / pixels;
+      const pixels = data.length / 4
+      const avgR = totalR / pixels
+      const avgG = totalG / pixels
+      const avgB = totalB / pixels
 
-  // 计算亮度 (使用相对亮度公式)
-  const brightness = (avgR * 0.299 + avgG * 0.587 + avgB * 0.114) / 255;
+      // 计算亮度 (使用相对亮度公式)
+      const brightness = (avgR * 0.299 + avgG * 0.587 + avgB * 0.114) / 255
 
-  // 计算背景色的HSL值
-  const [h, s, l] = rgbToHsl(avgR, avgG, avgB);
+      // 计算背景色的HSL值
+      const [h, s, l] = rgbToHsl(avgR, avgG, avgB)
 
-  // 根据背景颜色决定水印颜色并增加对比度
-  if (brightness > 0.5) {
-    // 如果背景偏亮，使用深色水印
-    // 保持色相，增加饱和度，大幅降低亮度
-    const darkL = Math.max(0, 0.1); // 固定为很暗的值
-    const [r, g, b] = hslToRgb(h, 0.8, darkL);
-    return `rgb(${Math.round(r)}, ${Math.round(g)}, ${Math.round(b)})`;
-  } else {
-    // 如果背景偏暗，使用亮色水印
-    // 保持色相，降低饱和度，大幅提高亮度
-    const lightL = Math.min(1, 0.9); // 固定为很亮的值
-    const [r, g, b] = hslToRgb(h, 0.2, lightL);
-    return `rgb(${Math.round(r)}, ${Math.round(g)}, ${Math.round(b)})`;
-  }
-}
-
+      // 根据背景颜色决定水印颜色
+      if (brightness > 0.5) {
+        // 如果背景偏亮，使用深色水印
+        // 保持色相，增加饱和度，大幅降低亮度
+        const darkL = Math.max(0, Math.min(l - 0.6, 0.2)) // 确保亮度足够低
+        const [r, g, b] = hslToRgb(h, Math.min(s + 0.3, 1), darkL)
+        return `rgb(${Math.round(r)}, ${Math.round(g)}, ${Math.round(b)})`
+      } else {
+        // 如果背景偏暗，使用亮色水印
+        // 保持色相，降低饱和度，大幅提高亮度
+        const lightL = Math.min(1, Math.max(l + 0.6, 0.8)) // 确保亮度足够高
+        const [r, g, b] = hslToRgb(h, Math.max(s - 0.3, 0), lightL)
+        return `rgb(${Math.round(r)}, ${Math.round(g)}, ${Math.round(b)})`
+      }
+    }
 
     // RGB转HSL
     function rgbToHsl(r, g, b) {
@@ -491,66 +375,79 @@ function getWatermarkPosition(position, canvas, text, fontSize, maxWidth) {
     }
 
     processButton.addEventListener('click', async () => {
-  const watermarkText = document.getElementById('watermarkText').value;
-  const opacity = opacityRange.value / 100;
-  const fontSize = parseInt(document.getElementById('fontSize').value);
+      const watermarkText = document.getElementById('watermarkText').value
+      const opacity = opacityRange.value / 100
+      const fontSize = parseInt(document.getElementById('fontSize').value)
 
-  for (const file of files) {
-    const img = await createImage(file);
-    const canvas = document.createElement('canvas');
-    const ctx = canvas.getContext('2d');
+      for (const file of files) {
+        const img = await createImage(file)
+        const canvas = document.createElement('canvas')
+        const ctx = canvas.getContext('2d')
 
-    canvas.width = img.width;
-    canvas.height = img.height;
+        canvas.width = img.width
+        canvas.height = img.height
 
-    // 绘制原始图片
-    ctx.drawImage(img, 0, 0);
-    
-    // 计算最大宽度，基于图片尺寸和边距
-    // 小图片使用较小的最大宽度，大图片使用较大的最大宽度
-    const maxWidth = Math.min(canvas.width * 0.8, canvas.width > 800 ? 500 : canvas.width * 0.6);
+        // 绘制原始图片
+        ctx.drawImage(img, 0, 0)
 
-    // 获取水印位置
-    const position = getWatermarkPosition(selectedPosition, canvas, watermarkText, fontSize, maxWidth);
+        // 获取水印位置
+        const position = getWatermarkPosition(selectedPosition, canvas, watermarkText, fontSize)
 
-    // 如果不是智能选色，就设置一个全局颜色
-    if (!smartColorCheckbox.checked) {
-      ctx.fillStyle = watermarkColorInput.value;
-    }
-    
-    // 设置水印样式
-    ctx.globalAlpha = opacity;
-    ctx.font = `${fontSize}px Arial`;
+        // 如果启用智能选色，分析对应区域的颜色
+        let watermarkColor
+        if (smartColorCheckbox.checked) {
+          const areaSize = fontSize * 2
+          let analyzeX, analyzeY
 
-    // 根据位置设置对齐方式
-    if (position.position.includes('right')) {
-      ctx.textAlign = 'right';
-    } else {
-      ctx.textAlign = 'left';
-    }
-    ctx.textBaseline = 'middle';
+          // 根据位置确定分析区域
+          switch (selectedPosition) {
+            case 'top-left':
+              analyzeX = 0
+              analyzeY = 0
+              break
+            case 'top-right':
+              analyzeX = canvas.width - areaSize
+              analyzeY = 0
+              break
+            case 'bottom-left':
+              analyzeX = 0
+              analyzeY = canvas.height - areaSize
+              break
+            case 'bottom-right':
+              analyzeX = canvas.width - areaSize
+              analyzeY = canvas.height - areaSize
+              break
+          }
 
-    // 绘制水印文字，使用自动换行函数
-    drawWrappedText(
-      ctx, 
-      watermarkText, 
-      position.x, 
-      position.y, 
-      position.maxWidth, 
-      position.lineHeight, 
-      position.align,
-      opacity,
-      position.position,
-      canvas
-    );
+          watermarkColor = analyzeAreaColor(ctx, analyzeX, analyzeY, areaSize, areaSize)
+        } else {
+          watermarkColor = watermarkColorInput.value
+        }
 
-    // 下载处理后的图片
-    const link = document.createElement('a');
-    link.download = `${file.name.split('.')[0]}-加水印.${file.name.split('.').pop()}`;
-    link.href = canvas.toDataURL(file.type);
-    link.click();
-  }
-});
+        // 设置水印样式
+        ctx.fillStyle = watermarkColor
+        ctx.globalAlpha = opacity
+        ctx.font = `${fontSize}px Arial`
+
+        // 根据位置设置对齐方式
+        if (selectedPosition.includes('right')) {
+          ctx.textAlign = 'right'
+        } else {
+          ctx.textAlign = 'left'
+        }
+        ctx.textBaseline = 'middle'
+
+        // 绘制水印
+        ctx.fillText(watermarkText, position.x, position.y)
+
+        // 下载处理后的图片
+        const link = document.createElement('a')
+        link.download = `${file.name.split('.')[0]}-加水印.${file.name.split('.').pop()}`
+        link.href = canvas.toDataURL(file.type)
+        link.click()
+      }
+    })
+
     function createImage(file) {
       return new Promise((resolve) => {
         const img = new Image()
@@ -560,6 +457,6 @@ function getWatermarkPosition(position, canvas, text, fontSize, maxWidth) {
     }
 
   </script>
-  <!-- <script>(location.href.includes('dev-coco.github.io') || location.href.includes('localhost')) ? '' : window.open('https' + '://dev' + '-coco' + '.github.io/', '_self')</script> -->
+  <script>(location.href.includes('dev-coco.github.io') || location.href.includes('localhost')) ? '' : window.open('https' + '://dev' + '-coco' + '.github.io/', '_self')</script>
 </body>
 </html>
