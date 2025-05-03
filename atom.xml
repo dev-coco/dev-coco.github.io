@@ -2,13 +2,35 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2025-04-30T14:31:17.754Z</updated>
+    <updated>2025-05-03T17:13:55.525Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2025, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[Teams 自动回复使用方法]]></title>
+        <id>https://dev-coco.github.io/post/Teams-Automatic-Reply/</id>
+        <link href="https://dev-coco.github.io/post/Teams-Automatic-Reply/">
+        </link>
+        <updated>2025-05-01T04:18:05.000Z</updated>
+        <summary type="html"><![CDATA[<p>自动回复 Teams 个人消息。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>自动回复 Teams 个人消息。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Teams Automatic Reply Privacy Policy]]></title>
+        <id>https://dev-coco.github.io/post/Teams-Automatic-Reply-Privacy-Policy/</id>
+        <link href="https://dev-coco.github.io/post/Teams-Automatic-Reply-Privacy-Policy/">
+        </link>
+        <updated>2025-05-01T04:17:54.000Z</updated>
+        <summary type="html"><![CDATA[<p>Teams Automatic Reply Chrome Extension’s privacy policy is detailed here.</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Teams Automatic Reply Chrome Extension’s privacy policy is detailed here.</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[日程管理工具]]></title>
         <id>https://dev-coco.github.io/post/Time-Management-Extension/</id>
@@ -150,28 +172,6 @@
         <summary type="html"><![CDATA[<p>使用 ChatGPT 检测 Facebook 帖文是否违反平台政策。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>使用 ChatGPT 检测 Facebook 帖文是否违反平台政策。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[口袋 AI 使用方法]]></title>
-        <id>https://dev-coco.github.io/post/Pocket-AI/</id>
-        <link href="https://dev-coco.github.io/post/Pocket-AI/">
-        </link>
-        <updated>2024-09-26T03:05:20.000Z</updated>
-        <summary type="html"><![CDATA[<p>在任意页面快速启动侧边栏 AI 网站。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>在任意页面快速启动侧边栏 AI 网站。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Pocket AI User Guide]]></title>
-        <id>https://dev-coco.github.io/post/Pocket-AI-EN/</id>
-        <link href="https://dev-coco.github.io/post/Pocket-AI-EN/">
-        </link>
-        <updated>2024-09-26T03:04:31.000Z</updated>
-        <summary type="html"><![CDATA[<p>Quickly Launch Sidebar AI Websites on Any Page.</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>Quickly Launch Sidebar AI Websites on Any Page.</p>
 ]]></content>
     </entry>
 </feed>
