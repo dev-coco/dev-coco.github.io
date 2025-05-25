@@ -1052,11 +1052,6 @@ p code {
   font-size: 16px;
   line-height: 1.725;
 }
-.post-detail .post .post-content li {
-  letter-spacing: 0.05em;
-  font-size: 16px;
-  line-height: 1.725;
-}
 .post-detail .post .post-content p code,
 .post-detail .post .post-content li code {
   padding: 0 2px;
