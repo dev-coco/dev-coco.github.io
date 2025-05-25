@@ -2,13 +2,156 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2025-01-08T19:44:40.371Z</updated>
+    <updated>2025-05-25T22:57:11.694Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2025, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[超链接管理面板使用方法]]></title>
+        <id>https://dev-coco.github.io/post/Link-Panel/</id>
+        <link href="https://dev-coco.github.io/post/Link-Panel/">
+        </link>
+        <updated>2025-05-25T10:46:10.000Z</updated>
+        <summary type="html"><![CDATA[<p>我做了个超链接管理面板，终于告别书签混乱了！</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>我做了个超链接管理面板，终于告别书签混乱了！</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[免费领取 Google One 会员]]></title>
+        <id>https://dev-coco.github.io/post/Receive-Gemini-Advanced/</id>
+        <link href="https://dev-coco.github.io/post/Receive-Gemini-Advanced/">
+        </link>
+        <updated>2025-05-06T13:36:24.000Z</updated>
+        <summary type="html"><![CDATA[<p>免费领取 Google One 会员以及旗下 AI 服务。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>免费领取 Google One 会员以及旗下 AI 服务。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Teams 自动回复使用方法]]></title>
+        <id>https://dev-coco.github.io/post/Teams-Automatic-Reply/</id>
+        <link href="https://dev-coco.github.io/post/Teams-Automatic-Reply/">
+        </link>
+        <updated>2025-05-01T13:33:09.000Z</updated>
+        <summary type="html"><![CDATA[<p>自动回复 Teams 个人消息。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>自动回复 Teams 个人消息。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Teams Automatic Reply Privacy Policy]]></title>
+        <id>https://dev-coco.github.io/post/Teams-Automatic-Reply-Privacy-Policy/</id>
+        <link href="https://dev-coco.github.io/post/Teams-Automatic-Reply-Privacy-Policy/">
+        </link>
+        <updated>2025-05-01T13:31:39.000Z</updated>
+        <summary type="html"><![CDATA[<p>Teams Automatic Reply Chrome Extension’s privacy policy is detailed here.</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Teams Automatic Reply Chrome Extension’s privacy policy is detailed here.</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[日程管理工具]]></title>
+        <id>https://dev-coco.github.io/post/Time-Management-Extension/</id>
+        <link href="https://dev-coco.github.io/post/Time-Management-Extension/">
+        </link>
+        <updated>2025-04-29T13:11:44.000Z</updated>
+        <summary type="html"><![CDATA[<p>日程管理工具是一款强大的效率工具，告别时间黑洞，迎接清晰、高效的每一天，将复杂的日程与任务管理化繁为简，专注于最重要的事。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>日程管理工具是一款强大的效率工具，告别时间黑洞，迎接清晰、高效的每一天，将复杂的日程与任务管理化繁为简，专注于最重要的事。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[日程管理扩展程序隐私政策]]></title>
+        <id>https://dev-coco.github.io/post/Time-Management-Extension-Privacy-Policy/</id>
+        <link href="https://dev-coco.github.io/post/Time-Management-Extension-Privacy-Policy/">
+        </link>
+        <updated>2025-04-29T13:10:16.000Z</updated>
+        <summary type="html"><![CDATA[<p>日程管理扩展程序的隐私政策详见此处。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>日程管理扩展程序的隐私政策详见此处。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Google Sheets 函数 IMPORTRANGE]]></title>
+        <id>https://dev-coco.github.io/post/Google-Sheets-Importrange/</id>
+        <link href="https://dev-coco.github.io/post/Google-Sheets-Importrange/">
+        </link>
+        <updated>2025-03-31T12:46:17.000Z</updated>
+        <summary type="html"><![CDATA[<p>IMPORTRANGE 函数可用来引用一个表格中指定数据的范围到另一个表格中，支持跨表格数据引用。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>IMPORTRANGE 函数可用来引用一个表格中指定数据的范围到另一个表格中，支持跨表格数据引用。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[数据归类工具]]></title>
+        <id>https://dev-coco.github.io/post/Data-Classification/</id>
+        <link href="https://dev-coco.github.io/post/Data-Classification/">
+        </link>
+        <updated>2025-03-24T00:42:40.000Z</updated>
+        <summary type="html"><![CDATA[<p>根据文本内容的相似度进行归类。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>根据文本内容的相似度进行归类。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[AI 生成类似图片]]></title>
+        <id>https://dev-coco.github.io/post/AI-Image-to-Image/</id>
+        <link href="https://dev-coco.github.io/post/AI-Image-to-Image/">
+        </link>
+        <updated>2025-03-22T00:39:45.000Z</updated>
+        <summary type="html"><![CDATA[<p>上传参照图片并使用 AI 生成类似图片。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>上传参照图片并使用 AI 生成类似图片。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[申请 Gemini API Key 步骤]]></title>
+        <id>https://dev-coco.github.io/post/Apply-Gemini-API-Key/</id>
+        <link href="https://dev-coco.github.io/post/Apply-Gemini-API-Key/">
+        </link>
+        <updated>2025-03-22T00:36:18.000Z</updated>
+        <summary type="html"><![CDATA[<p>详细介绍 Gemini API Key 申请步骤。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>详细介绍 Gemini API Key 申请步骤。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[图片上传云端工具]]></title>
+        <id>https://dev-coco.github.io/post/Image-Upload-Google-Drive/</id>
+        <link href="https://dev-coco.github.io/post/Image-Upload-Google-Drive/">
+        </link>
+        <updated>2025-03-17T12:29:35.000Z</updated>
+        <summary type="html"><![CDATA[<p>快速将表格内的图片保存到云端。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>快速将表格内的图片保存到云端。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[截图 OCR]]></title>
+        <id>https://dev-coco.github.io/post/Screenshot-OCR/</id>
+        <link href="https://dev-coco.github.io/post/Screenshot-OCR/">
+        </link>
+        <updated>2025-03-14T12:20:11.000Z</updated>
+        <summary type="html"><![CDATA[<p>从网页截图中提取文本，并支持翻译功能。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>从网页截图中提取文本，并支持翻译功能。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[精品正版软件列表]]></title>
+        <id>https://dev-coco.github.io/post/Awesome-Software/</id>
+        <link href="https://dev-coco.github.io/post/Awesome-Software/">
+        </link>
+        <updated>2025-01-15T14:40:10.000Z</updated>
+        <summary type="html"><![CDATA[<p>打造您的正版软件宝库：全新精品正版软件列表网站上线！</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>打造您的正版软件宝库：全新精品正版软件列表网站上线！</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[浏览器性能排名]]></title>
         <id>https://dev-coco.github.io/post/Browser-Rank/</id>
@@ -29,149 +172,6 @@
         <summary type="html"><![CDATA[<p>探讨 Mac 设备每天关机的必要性，分析关机与休眠对性能、硬件寿命以及能耗的影响。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>探讨 Mac 设备每天关机的必要性，分析关机与休眠对性能、硬件寿命以及能耗的影响。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[检测 Facebook 帖文是否违反政策]]></title>
-        <id>https://dev-coco.github.io/post/Detect-Facebook-Post/</id>
-        <link href="https://dev-coco.github.io/post/Detect-Facebook-Post/">
-        </link>
-        <updated>2024-10-19T13:03:21.000Z</updated>
-        <summary type="html"><![CDATA[<p>使用 ChatGPT 检测 Facebook 帖文是否违反平台政策。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>使用 ChatGPT 检测 Facebook 帖文是否违反平台政策。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[口袋 AI 使用方法]]></title>
-        <id>https://dev-coco.github.io/post/Pocket-AI/</id>
-        <link href="https://dev-coco.github.io/post/Pocket-AI/">
-        </link>
-        <updated>2024-09-26T03:05:20.000Z</updated>
-        <summary type="html"><![CDATA[<p>在任意页面快速启动侧边栏 AI 网站。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>在任意页面快速启动侧边栏 AI 网站。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Pocket AI User Guide]]></title>
-        <id>https://dev-coco.github.io/post/Pocket-AI-EN/</id>
-        <link href="https://dev-coco.github.io/post/Pocket-AI-EN/">
-        </link>
-        <updated>2024-09-26T03:04:31.000Z</updated>
-        <summary type="html"><![CDATA[<p>Quickly Launch Sidebar AI Websites on Any Page.</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>Quickly Launch Sidebar AI Websites on Any Page.</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Pocket AI Privacy Policy]]></title>
-        <id>https://dev-coco.github.io/post/Pocket-AI-Privacy-Policy/</id>
-        <link href="https://dev-coco.github.io/post/Pocket-AI-Privacy-Policy/">
-        </link>
-        <updated>2024-09-21T04:58:37.000Z</updated>
-        <summary type="html"><![CDATA[<p>Pocket AI Chrome Extension’s privacy policy is detailed here.</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>Pocket AI Chrome Extension’s privacy policy is detailed here.</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[元素选择器 使用方法]]></title>
-        <id>https://dev-coco.github.io/post/Element-Selector/</id>
-        <link href="https://dev-coco.github.io/post/Element-Selector/">
-        </link>
-        <updated>2024-08-22T00:46:39.000Z</updated>
-        <summary type="html"><![CDATA[<p>在网页选择元素并且获取内容。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>在网页选择元素并且获取内容。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Element Selector User Guide]]></title>
-        <id>https://dev-coco.github.io/post/Element-Selector-EN/</id>
-        <link href="https://dev-coco.github.io/post/Element-Selector-EN/">
-        </link>
-        <updated>2024-08-22T00:46:26.000Z</updated>
-        <summary type="html"><![CDATA[<p>Select and extract content from webpage elements.</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>Select and extract content from webpage elements.</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Element Selector Privacy Policy]]></title>
-        <id>https://dev-coco.github.io/post/Element-Selector-Privacy-Policy/</id>
-        <link href="https://dev-coco.github.io/post/Element-Selector-Privacy-Policy/">
-        </link>
-        <updated>2024-08-22T00:46:14.000Z</updated>
-        <summary type="html"><![CDATA[<p>Element Selector Chrome Extension’s privacy policy is detailed here.</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>Element Selector Chrome Extension’s privacy policy is detailed here.</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[自定义新分页链接 使用方法]]></title>
-        <id>https://dev-coco.github.io/post/Custom-New-Tab-URL/</id>
-        <link href="https://dev-coco.github.io/post/Custom-New-Tab-URL/">
-        </link>
-        <updated>2024-08-19T03:07:01.000Z</updated>
-        <summary type="html"><![CDATA[<p>自定义打开新分页的链接。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>自定义打开新分页的链接。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Custom New Tab URL User Guide]]></title>
-        <id>https://dev-coco.github.io/post/Custom-New-Tab-URL-EN/</id>
-        <link href="https://dev-coco.github.io/post/Custom-New-Tab-URL-EN/">
-        </link>
-        <updated>2024-08-19T03:06:52.000Z</updated>
-        <summary type="html"><![CDATA[<p>Customize the link to open a new tab.</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>Customize the link to open a new tab.</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Custom New Tab URL Privacy Policy]]></title>
-        <id>https://dev-coco.github.io/post/Custom-New-Tab-URL-Privacy-Policy/</id>
-        <link href="https://dev-coco.github.io/post/Custom-New-Tab-URL-Privacy-Policy/">
-        </link>
-        <updated>2024-08-19T03:06:42.000Z</updated>
-        <summary type="html"><![CDATA[<p>Custom New Tab URL Chrome Extension’s privacy policy is detailed here.</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>Custom New Tab URL Chrome Extension’s privacy policy is detailed here.</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Chrome Extension Manager Privacy Policy]]></title>
-        <id>https://dev-coco.github.io/post/Chrome-Extension-Manager-Privacy-Policy/</id>
-        <link href="https://dev-coco.github.io/post/Chrome-Extension-Manager-Privacy-Policy/">
-        </link>
-        <updated>2024-08-15T14:19:54.000Z</updated>
-        <summary type="html"><![CDATA[<p>Chrome Extension Manager Chrome Extension’s privacy policy is detailed here.</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>Chrome Extension Manager Chrome Extension’s privacy policy is detailed here.</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[彩色背景帖子 使用方法]]></title>
-        <id>https://dev-coco.github.io/post/Background-Color-Post/</id>
-        <link href="https://dev-coco.github.io/post/Background-Color-Post/">
-        </link>
-        <updated>2024-08-10T00:09:48.000Z</updated>
-        <summary type="html"><![CDATA[<p>发布彩色背景帖文。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>发布彩色背景帖文。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Backrgound Color Post User Guide]]></title>
-        <id>https://dev-coco.github.io/post/Background-Color-Post-EN/</id>
-        <link href="https://dev-coco.github.io/post/Background-Color-Post-EN/">
-        </link>
-        <updated>2024-08-10T00:09:38.000Z</updated>
-        <summary type="html"><![CDATA[<p>Publish a post with a colored background.</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>Publish a post with a colored background.</p>
 ]]></content>
     </entry>
 </feed>
