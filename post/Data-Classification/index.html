@@ -5,10 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>数据归类工具 | Raz1ner</title>
   <meta name="author" content="Raz1ner">
+<<<<<<< HEAD
   <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1748213432815">
   <link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
   <!-- <script src="/js/prism.js"></script> -->
   <!-- <link rel="stylesheet" href="/css/prism.css"> -->
+=======
+  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1746556575837">
+  <link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
+  
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script> -->
+  <!-- <script src="/js/prism.js"></script>
+  <link rel="stylesheet" href="/css/prism.css"> -->
+>>>>>>> 4cb756d8126c1a4e80a153dc85de0b025fbd63bd
   <script src="https://dev-coco.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
   <script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script async src="https://fundingchoicesmessages.google.com/i/pub-6960947409660270?ers=1" nonce="3szuJwRueku-LVJlmdoLew"></script><script nonce="3szuJwRueku-LVJlmdoLew">(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
@@ -54,7 +63,11 @@
       <div class="nav">
         <div class="logo">
           <a href="https://dev-coco.github.io">
+<<<<<<< HEAD
             <img class="avatar" alt="Raz1ner" src="https://dev-coco.github.io/images/avatar.png?v=1748213432815" alt="">
+=======
+            <img class="avatar" alt="Raz1ner" src="https://dev-coco.github.io/images/avatar.png?v=1746556575837" alt="">
+>>>>>>> 4cb756d8126c1a4e80a153dc85de0b025fbd63bd
           </a>
           <div class="site-title">
             <h1>Raz1ner</h1>
@@ -153,7 +166,11 @@
         <h2 class="post-title">数据归类工具</h2>
         <div class="post-info">
           <time class="post-time">2025-03-23 / 4 min read</time>
+<<<<<<< HEAD
             <a href="https://dev-coco.github.io/tag/other/" class="post-tag i-tag i-tag-other_4">#其它</a>
+=======
+            <a href="https://dev-coco.github.io/tag/other/" class="post-tag i-tag i-tag-primary">#其它</a>
+>>>>>>> 4cb756d8126c1a4e80a153dc85de0b025fbd63bd
         </div>
         <!--
           
@@ -162,6 +179,7 @@
           <div class="post-content">
             <p>根据文本内容的相似度进行归类。</p>
 <!-- more -->
+<<<<<<< HEAD
 <p>工具链接：<a href="/Online-Tools/Data-Classification.html">数据归类工具</a></p>
 <h2 id="使用方法">使用方法</h2>
 <p>放入对应工作表的链接，设置「文本内容列」和「归类列」。设置完成点击「开始归类」。</p>
@@ -203,6 +221,49 @@
 <p><strong>缺点</strong>：<br>
 • 适用于短文本，对长文本的效果较差。<br>
 • 主要基于字符匹配，对语义匹配能力有限。</p>
+=======
+<p>工具链接：<a href="https://dev-coco.github.io/Online-Tools/Data-Classification.html">数据归类工具</a></p>
+<h2 id="使用方法">使用方法</h2>
+<p>放入对应工作表的链接，设置「文本内容列」和「归类列」。设置完成点击「开始归类」。</p>
+<figure data-type="image" tabindex="1"><img src="https://dev-coco.github.io/post-images/1742733012597.png" alt="" loading="lazy"></figure>
+<p>程序会根据链接从指定的表格的文本内容列获取原始数据，然后计算文本的相似度，最后将归类好的编号填入表格的「归类列」。</p>
+<p>最后根据设置的「归类列」在表格里排序，就可以将所有类似的文本都归类到一起了，数据看起来会更加清晰。</p>
+<figure data-type="image" tabindex="2"><img src="https://dev-coco.github.io/post-images/1742733006456.png" alt="" loading="lazy"></figure>
+<h2 id="算法介绍">算法介绍</h2>
+<h3 id="编辑距离levenshtein-distance">编辑距离（Levenshtein Distance）</h3>
+<p><strong>优点：</strong><br>
+•	能够准确计算两个字符串之间的最小编辑操作（插入、删除、替换）次数，因此对于拼写错误的检测和字符串纠正很有效。<br>
+•	适用于短文本，尤其是单词或短语级别的相似度计算。</p>
+<p><strong>缺点：</strong><br>
+•	计算成本较高，尤其是长文本，计算复杂度为 O(m × n)（m 和 n 是字符串长度）。<br>
+•	不能考虑单词顺序和语义，只基于字符操作。<br>
+•	对于同义词、拼写错误不同但语义相近的词无能为力。</p>
+<h3 id="jaccard-相似度">Jaccard 相似度</h3>
+<p><strong>优点：</strong><br>
+•	计算两个字符串的字符集合（或单词集合）交集和并集的比值，简单直观。<br>
+•	计算速度快，适用于集合匹配（如标签、关键词匹配）。<br>
+•	可以用于长文本，只需基于单词（n-gram）集合计算，而不是逐字符计算。</p>
+<p><strong>缺点：</strong><br>
+•	忽略了字符串的顺序，比如 “apple banana” 和 “banana apple” 的相似度是 1，但它们的语义可能不同。<br>
+•	只考虑集合匹配，不适用于细粒度的文本匹配，比如短字符串或句子级别的匹配。</p>
+<h3 id="余弦相似度cosine-similarity">余弦相似度（Cosine Similarity）</h3>
+<p><strong>优点：</strong><br>
+•	考虑了单词频率，通过计算两个文本向量的余弦夹角来衡量相似度，适用于长文本分析。<br>
+•	不受文本长度影响，即使文本长度不同也可以计算相似度。<br>
+•	在 NLP（自然语言处理）领域广泛使用，比如文档分类、新闻推荐等。</p>
+<p><strong>缺点：</strong><br>
+•	需要先将文本转换成向量（如词袋模型），计算过程比 Jaccard 相似度复杂。<br>
+•	无法直接处理同义词，如“car”和“automobile”仍被视为不同的词。<br>
+•	适用于长文本，对短文本或单词级别的匹配效果较差。</p>
+<h3 id="jaro-winkler-相似度">Jaro-Winkler 相似度</h3>
+<p><strong>优点：</strong><br>
+•	主要用于字符串匹配，特别适合人名、地址、产品名称等短文本的匹配。<br>
+•	计算比 Levenshtein 更快，尤其适用于拼写不同但读音相近的文本匹配。<br>
+•	与 Levenshtein 编辑距离算法相比，某个算法在处理拼写错误时更稳定、适应性更强，不容易受到小的拼写错误影响，从而能更准确地识别相似的单词或短语。</p>
+<p><strong>缺点：</strong><br>
+•	适用于短文本，对长文本的效果较差。<br>
+•	主要基于字符匹配，对语义匹配能力有限。</p>
+>>>>>>> 4cb756d8126c1a4e80a153dc85de0b025fbd63bd
 <table>
 <thead>
 <tr>
@@ -265,7 +326,11 @@
       <!-- right -->
       <div id="sidebar" class="main-container-right">
         <div class="id_card i-card">
+<<<<<<< HEAD
           <div class="id_card-avatar" style="background-image: url(https://dev-coco.github.io/images/avatar.png?v=1748213432815)"></div>
+=======
+          <div class="id_card-avatar" style="background-image: url(https://dev-coco.github.io/images/avatar.png?v=1746556575837)"></div>
+>>>>>>> 4cb756d8126c1a4e80a153dc85de0b025fbd63bd
           <h1 class="id_card-title">Raz1ner</h1>
           <p style="text-align: center;">
             <a href="https://github.com/dev-coco" rel="nofollow noreferrer" target="_blank"><img class="social-icon" alt="Github" src="/images/social/GitHub.png"></a>
@@ -308,6 +373,7 @@
         </div>
       <div class="notice-card i-card ">
         <div class="notice-title i-card-title">公告</div>
+<<<<<<< HEAD
         <div class="notice-content"><p>博客新开通 Telegram 频道：<a href="https://t.me/raz1ner" target="_blank" style="color: blue">瑞景乐的博客</a>，欢迎订阅，随时收到最新资讯。</p><p>商务合作请点击上方的邮箱与我联系。<p></div>
       </div>
       <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
@@ -329,6 +395,29 @@
           <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/life/">生活</a>
           <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/sololearn/">Sololearn</a>
           <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
+=======
+        <div class="notice-content"><p style="margin-bottom: 5px">博客新开通 Telegram 频道：<a href="https://t.me/raz1ner" rel="nofollow noreferrer" target="_blank" style="color: blue">瑞景乐的博客</a>，欢迎订阅，随时收到最新资讯。</p><p>商务合作请点击上方的邮箱与我联系。</p></div>
+      </div>
+      <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
+        <div class="notice-content">
+          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/excel/">Excel</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/ai-tech/">AI 科技</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/google-script/">Google 脚本</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/instagram/">Instagram</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/security/">安全</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/javascript/">Javascript</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/twitter-x/">Twitter (X)</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/life/">生活</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/sololearn/">Sololearn</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
+>>>>>>> 4cb756d8126c1a4e80a153dc85de0b025fbd63bd
           <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
         </div>
       </div>
@@ -342,6 +431,7 @@
         <a href="/atom.xml" target="_blank"><img class="social-icon" alt="rss" src="/images/social/RSS.png"></a>
         <a href="mailto:ruijingle@gmail.com" target="_blank"><img class="social-icon" alt="Email" src="/images/social/Gmail.png"></a>
       </p>
+<<<<<<< HEAD
     <span>Copyright © 2020-2025 Raz1ner - All Rights Reserved.</span> | <a class="rss" href="https://dev-coco.github.io/atom.xml" target="_blank">RSS</a>
 </div>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
@@ -349,5 +439,16 @@
             <script>hljs.highlightAll();</script>
   </div>
   
+=======
+    <span>Copyright © 2020-2025 Raz1ner - All Rights Reserved.</span>
+<script>(location.href.includes('dev-coco.github.io')||location.href.includes('localhost'))?'':window.open('https'+'://dev'+'-coco'+'.github.io/','_self')</script>
+ | <a class="rss" href="https://dev-coco.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+  </div>
+  
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/excel.min.js"></script>
+            <script>hljs.highlightAll();</script>
+>>>>>>> 4cb756d8126c1a4e80a153dc85de0b025fbd63bd
 </body>
 </html>

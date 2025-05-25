@@ -5,10 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Google Excel LAMBDA 和 MAP 组合函数 | Raz1ner</title>
   <meta name="author" content="Raz1ner">
+<<<<<<< HEAD
   <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1748213432815">
   <link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
   <!-- <script src="/js/prism.js"></script> -->
   <!-- <link rel="stylesheet" href="/css/prism.css"> -->
+=======
+  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1746556575837">
+  <link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
+  
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script> -->
+  <!-- <script src="/js/prism.js"></script>
+  <link rel="stylesheet" href="/css/prism.css"> -->
+>>>>>>> 4cb756d8126c1a4e80a153dc85de0b025fbd63bd
   <script src="https://dev-coco.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
   <script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script async src="https://fundingchoicesmessages.google.com/i/pub-6960947409660270?ers=1" nonce="3szuJwRueku-LVJlmdoLew"></script><script nonce="3szuJwRueku-LVJlmdoLew">(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
@@ -54,7 +63,11 @@
       <div class="nav">
         <div class="logo">
           <a href="https://dev-coco.github.io">
+<<<<<<< HEAD
             <img class="avatar" alt="Raz1ner" src="https://dev-coco.github.io/images/avatar.png?v=1748213432815" alt="">
+=======
+            <img class="avatar" alt="Raz1ner" src="https://dev-coco.github.io/images/avatar.png?v=1746556575837" alt="">
+>>>>>>> 4cb756d8126c1a4e80a153dc85de0b025fbd63bd
           </a>
           <div class="site-title">
             <h1>Raz1ner</h1>
@@ -153,7 +166,7 @@
         <h2 class="post-title">Google Excel LAMBDA 和 MAP 组合函数</h2>
         <div class="post-info">
           <time class="post-time">2023-02-18 / 2 min read</time>
-            <a href="https://dev-coco.github.io/tag/excel/" class="post-tag i-tag i-tag-banana">#Excel</a>
+            <a href="https://dev-coco.github.io/tag/excel/" class="post-tag i-tag i-tag-info">#Excel</a>
         </div>
         <!--
           
@@ -165,13 +178,13 @@
 <h2 id="lambda">LAMBDA</h2>
 <p>LAMBDA 是一个自定义函数，允许将一个完整的公式封装成函数重复使用。</p>
 <h3 id="语法">语法</h3>
-<pre><code class="language-excel-formula">LAMBDA(变量, 公式)
+<pre><code class="language-excel">LAMBDA(变量, 公式)
 </code></pre>
 <h3 id="例子1">例子1</h3>
 <p>将 A1 的值乘以 20。</p>
 <figure data-type="image" tabindex="1"><img src="https://dev-coco.github.io/post-images/1676780510855.png" alt="" loading="lazy"></figure>
 <p>简单的写法是 <code>=A1 * 20</code>，不过下面会演示 LAMBDA 函数计算的原理。</p>
-<pre><code class="language-excel-formula">=LAMBDA(x, x * 20)(A1)
+<pre><code class="language-excel">=LAMBDA(x, x * 20)(A1)
 </code></pre>
 <p>第一个参数是变量，x 是自定义的变量，A1 是引用的内容。A1 的值会被赋值到 x 变量，x 的结果同等于  A1。</p>
 <figure data-type="image" tabindex="2"><img src="https://dev-coco.github.io/post-images/1676780483345.png" alt="" loading="lazy"></figure>
@@ -179,7 +192,7 @@
 <h3 id="例子2">例子2</h3>
 <p>计算两个数的平均值。</p>
 <figure data-type="image" tabindex="3"><img src="https://dev-coco.github.io/post-images/1676780544667.png" alt="" loading="lazy"></figure>
-<pre><code class="language-excel-formula">=LAMBDA(x, y, (x + y) / 2)(A1, B1)
+<pre><code class="language-excel">=LAMBDA(x, y, (x + y) / 2)(A1, B1)
 </code></pre>
 <p>LAMBDA 函数支持同时设置多个变量，并且按照顺序赋值。因为需要计算两个数的平均值，所以就设置两个变量对应不同的值，这里用的是 x 和 y。A1 的值赋值到 x 变量，B1 的值赋值到 y 变量。</p>
 <figure data-type="image" tabindex="4"><img src="https://dev-coco.github.io/post-images/1676780575406.png" alt="" loading="lazy"></figure>
@@ -187,7 +200,7 @@
 <h2 id="map">MAP</h2>
 <p>MAP 函数必需搭配 LAMBDA 一起使用，MAP 函数会将引用范围的每一个值应用到 LAMBDA 函数中。</p>
 <h3 id="语法-2">语法</h3>
-<pre><code class="language-excel-formula">MAP(范围, LAMBDA)
+<pre><code class="language-excel">MAP(范围, LAMBDA)
 </code></pre>
 <h3 id="例子">例子</h3>
 <p>计算 A1 到 A5 范围所有内容乘以 20 的结果。</p>
@@ -223,7 +236,11 @@
       <!-- right -->
       <div id="sidebar" class="main-container-right">
         <div class="id_card i-card">
+<<<<<<< HEAD
           <div class="id_card-avatar" style="background-image: url(https://dev-coco.github.io/images/avatar.png?v=1748213432815)"></div>
+=======
+          <div class="id_card-avatar" style="background-image: url(https://dev-coco.github.io/images/avatar.png?v=1746556575837)"></div>
+>>>>>>> 4cb756d8126c1a4e80a153dc85de0b025fbd63bd
           <h1 class="id_card-title">Raz1ner</h1>
           <p style="text-align: center;">
             <a href="https://github.com/dev-coco" rel="nofollow noreferrer" target="_blank"><img class="social-icon" alt="Github" src="/images/social/GitHub.png"></a>
@@ -271,6 +288,7 @@
         </div>
       <div class="notice-card i-card ">
         <div class="notice-title i-card-title">公告</div>
+<<<<<<< HEAD
         <div class="notice-content"><p>博客新开通 Telegram 频道：<a href="https://t.me/raz1ner" target="_blank" style="color: blue">瑞景乐的博客</a>，欢迎订阅，随时收到最新资讯。</p><p>商务合作请点击上方的邮箱与我联系。<p></div>
       </div>
       <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
@@ -292,6 +310,29 @@
           <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/life/">生活</a>
           <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/sololearn/">Sololearn</a>
           <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
+=======
+        <div class="notice-content"><p style="margin-bottom: 5px">博客新开通 Telegram 频道：<a href="https://t.me/raz1ner" rel="nofollow noreferrer" target="_blank" style="color: blue">瑞景乐的博客</a>，欢迎订阅，随时收到最新资讯。</p><p>商务合作请点击上方的邮箱与我联系。</p></div>
+      </div>
+      <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
+        <div class="notice-content">
+          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/excel/">Excel</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/ai-tech/">AI 科技</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/google-script/">Google 脚本</a>
+          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/instagram/">Instagram</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/security/">安全</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/javascript/">Javascript</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/twitter-x/">Twitter (X)</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/life/">生活</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/sololearn/">Sololearn</a>
+          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
+>>>>>>> 4cb756d8126c1a4e80a153dc85de0b025fbd63bd
           <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
         </div>
       </div>
@@ -305,12 +346,17 @@
         <a href="/atom.xml" target="_blank"><img class="social-icon" alt="rss" src="/images/social/RSS.png"></a>
         <a href="mailto:ruijingle@gmail.com" target="_blank"><img class="social-icon" alt="Email" src="/images/social/Gmail.png"></a>
       </p>
-    <span>Copyright © 2020-2025 Raz1ner - All Rights Reserved.</span> | <a class="rss" href="https://dev-coco.github.io/atom.xml" target="_blank">RSS</a>
+    <span>Copyright © 2020-2025 Raz1ner - All Rights Reserved.</span>
+<script>(location.href.includes('dev-coco.github.io')||location.href.includes('localhost'))?'':window.open('https'+'://dev'+'-coco'+'.github.io/','_self')</script>
+ | <a class="rss" href="https://dev-coco.github.io/atom.xml" target="_blank">RSS</a>
 </div>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/excel.min.js"></script>
             <script>hljs.highlightAll();</script>
   </div>
   
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/excel.min.js"></script>
+            <script>hljs.highlightAll();</script>
 </body>
 </html>

@@ -5,10 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Google Sheets 函数 IMPORTRANGE | Raz1ner</title>
   <meta name="author" content="Raz1ner">
+<<<<<<< HEAD
   <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1748213432815">
   <link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
   <!-- <script src="/js/prism.js"></script> -->
   <!-- <link rel="stylesheet" href="/css/prism.css"> -->
+=======
+  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1746556575837">
+  <link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
+  
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script> -->
+  <!-- <script src="/js/prism.js"></script>
+  <link rel="stylesheet" href="/css/prism.css"> -->
+>>>>>>> 4cb756d8126c1a4e80a153dc85de0b025fbd63bd
   <script src="https://dev-coco.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
   <script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script async src="https://fundingchoicesmessages.google.com/i/pub-6960947409660270?ers=1" nonce="3szuJwRueku-LVJlmdoLew"></script><script nonce="3szuJwRueku-LVJlmdoLew">(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
@@ -54,7 +63,11 @@
       <div class="nav">
         <div class="logo">
           <a href="https://dev-coco.github.io">
+<<<<<<< HEAD
             <img class="avatar" alt="Raz1ner" src="https://dev-coco.github.io/images/avatar.png?v=1748213432815" alt="">
+=======
+            <img class="avatar" alt="Raz1ner" src="https://dev-coco.github.io/images/avatar.png?v=1746556575837" alt="">
+>>>>>>> 4cb756d8126c1a4e80a153dc85de0b025fbd63bd
           </a>
           <div class="site-title">
             <h1>Raz1ner</h1>
@@ -153,7 +166,11 @@
         <h2 class="post-title">Google Sheets 函数 IMPORTRANGE</h2>
         <div class="post-info">
           <time class="post-time">2025-03-31 / 8 min read</time>
+<<<<<<< HEAD
             <a href="https://dev-coco.github.io/tag/excel/" class="post-tag i-tag i-tag-other_4">#Excel</a>
+=======
+            <a href="https://dev-coco.github.io/tag/excel/" class="post-tag i-tag i-tag-other_1">#Excel</a>
+>>>>>>> 4cb756d8126c1a4e80a153dc85de0b025fbd63bd
         </div>
         <!--
           
@@ -173,23 +190,39 @@
 工作表名称是可选项，如果未设置工作表名称，默认情况下会引用第一张工作表的指定范围的数据。</li>
 </ul>
 <h2 id="使用例子">使用例子</h2>
+<<<<<<< HEAD
 <p>从来源表格里引用「财务报表」的 A1:G10 范围的数据。<br>
 <img src="https://dev-coco.github.io/post-images/1748177276348.png" alt="" loading="lazy"></p>
+=======
+<p>从来源表格里引用「财务报表」的 A1:G10 范围的数据。</p>
+<figure data-type="image" tabindex="1"><img src="https://dev-coco.github.io/post-images/1743464772871.png" alt="" loading="lazy"></figure>
+>>>>>>> 4cb756d8126c1a4e80a153dc85de0b025fbd63bd
 <h2 id="权限说明">权限说明</h2>
 <p><strong>来源表格的访问权限为公开</strong></p>
 <p>如果来源的表格有相应的访问权限（查看者、评论者或编辑者任意一种），可以直接使用 IMPORTRANGE 函数引用数据，无需额外操作。</p>
 <p><strong>来源表格的访问权限为受限</strong></p>
 <ul>
+<<<<<<< HEAD
 <li>没有访问权限</li>
 <li>如果没有访问表格的权限，将无法使用 IMPORTRANGE 函数引用数据，会出现 #REF! 错误并提示「您无权访问该电子表格。」</li>
 </ul>
 <figure data-type="image" tabindex="1"><img src="https://dev-coco.github.io/post-images/1748177306955.png" alt="" loading="lazy"></figure>
+=======
+<li>没有访问权限<br>
+如果没有访问表格的权限，将无法使用 IMPORTRANGE 函数引用数据，会出现 #REF! 错误并提示「您无权访问该电子表格。」</li>
+</ul>
+<figure data-type="image" tabindex="2"><img src="https://dev-coco.github.io/post-images/1743464818860.png" alt="" loading="lazy"></figure>
+>>>>>>> 4cb756d8126c1a4e80a153dc85de0b025fbd63bd
 <ul>
 <li>已授权邮箱访问<br>
 如果表格的访问权限设置为受限，但已为某个邮箱授予访问权限，在首次使用 IMPORTRANGE 函数时会显示一个「允许访问」的提示。点击按钮后，目标表格将可以访问来源表格的数据，之后即可正常引用数据。<br>
 注意：即使之前已有访问权限，如果表格的访问权限发生变化（例如从公开改为受限），仍需点击「允许访问」按钮以重新授权，才能继续使用 IMPORTRANGE。</li>
 </ul>
+<<<<<<< HEAD
 <figure data-type="image" tabindex="2"><img src="https://dev-coco.github.io/post-images/1748177336097.png" alt="" loading="lazy"></figure>
+=======
+<figure data-type="image" tabindex="3"><img src="https://dev-coco.github.io/post-images/1743464831866.png" alt="" loading="lazy"></figure>
+>>>>>>> 4cb756d8126c1a4e80a153dc85de0b025fbd63bd
 <h2 id="更新频率">更新频率</h2>
 <ol>
 <li>
@@ -242,6 +275,7 @@ IMPORTRANGE 函数内的参数设置错误，请查看参数说明，按照规�
 <p><strong class="green">解决方法</strong><br>
 第一个参数的电子表格链接或者电子表格 ID 无效，不是正确的电子表格。</p>
 <p><strong class="red">错误提示</strong><br>
+<<<<<<< HEAD
 数组结果未展开，因为它会覆盖 &quot;xxxxx&quot; 中的数据。<br>
 <img src="https://dev-coco.github.io/post-images/1748177560750.png" alt="" loading="lazy"></p>
 <p><strong class="green">解决方法</strong><br>
@@ -249,6 +283,15 @@ IMPORTRANGE 函数内的参数设置错误，请查看参数说明，按照规�
 <p><strong class="red">错误提示</strong><br>
 这个 IMPORTRANGE 的来源工作表目前有大量用户使用。<br>
 <img src="https://dev-coco.github.io/post-images/1748177586477.png" alt="" loading="lazy"></p>
+=======
+数组结果未展开，因为它会覆盖 &quot;xxxxx&quot; 中的数据。</p>
+<figure data-type="image" tabindex="4"><img src="https://dev-coco.github.io/post-images/1743465191021.png" alt="" loading="lazy"></figure>
+<p><strong class="green">解决方法</strong><br>
+由于 IMPORTRANGE 函数是数组输出的，所以在输出的范围不允许填入任何内容。错误提示里会说明覆盖了具体哪个单元格范围的数据，清除目标区域内可能覆盖数据的单元格，确保数组数据能够完全展开。</p>
+<p><strong class="red">错误提示</strong><br>
+这个 IMPORTRANGE 的来源工作表目前有大量用户使用。</p>
+<figure data-type="image" tabindex="5"><img src="https://dev-coco.github.io/post-images/1743469228616.png" alt="" loading="lazy"></figure>
+>>>>>>> 4cb756d8126c1a4e80a153dc85de0b025fbd63bd
 <p><strong class="green">解决方法</strong><br>
 来源的电子表格被大量频繁的引用，需要减少 IMPORTRANGE 引用来源工作表的次数。</p>
 <p>非常不建议使用类似以下的方法去计算数据，这会导致重复而且大量的 IMPORTRANGE 函数引用，每计算一个单元格都会重复引用多次来源的电子表格进行计算。</p>
@@ -273,8 +316,13 @@ IMPORTRANGE 函数内的参数设置错误，请查看参数说明，按照规�
 )
 </code></pre>
 <p><strong class="red">错误提示</strong><br>
+<<<<<<< HEAD
 结果过大。<br>
 <img src="https://dev-coco.github.io/post-images/1748177632805.png" alt="" loading="lazy"></p>
+=======
+结果过大。</p>
+<figure data-type="image" tabindex="6"><img src="https://dev-coco.github.io/post-images/1743465215380.png" alt="" loading="lazy"></figure>
+>>>>>>> 4cb756d8126c1a4e80a153dc85de0b025fbd63bd
 <p><strong class="green">解决方法</strong><br>
 一个 IMPORTRANGE 函数单次只能引用约 10 MB（约 10,479,706 个字符）的数据。如果引用的数据量太大，需要拆分成多次引用。</p>
 <p>例子</p>
@@ -307,9 +355,15 @@ IMPORTRANGE(
      &quot;Sheet!C:C&quot;
 )}
 </code></pre>
+<<<<<<< HEAD
 <p><strong class="red">错误提示</strong><br>
 “导入范围“时出现内部错误。</p>
 <figure data-type="image" tabindex="3"><img src="https://dev-coco.github.io/post-images/1748177684903.png" alt="" loading="lazy"></figure>
+=======
+<p><strong class="red">错误提示</strong></p>
+<p>“导入范围“时出现内部错误。</p>
+<figure data-type="image" tabindex="7"><img src="https://dev-coco.github.io/post-images/1743465237488.png" alt="" loading="lazy"></figure>
+>>>>>>> 4cb756d8126c1a4e80a153dc85de0b025fbd63bd
 <p><strong class="green">解决方法</strong></p>
 <p><strong>原因1</strong><br>
 如果引用的电子表格内含有大量或者复杂的计算公式，那么 IMPORTRANGE 函数会等待来源表格里的公式运行完成后再引用数据到当前表格。当来源表格的公式计算的耗时太长，就会导致 IMPORTRANGE 函数请求超时，导致出现「内部错误」的提示。</p>
@@ -359,7 +413,11 @@ IMPORTRANGE(
       <!-- right -->
       <div id="sidebar" class="main-container-right">
         <div class="id_card i-card">
+<<<<<<< HEAD
           <div class="id_card-avatar" style="background-image: url(https://dev-coco.github.io/images/avatar.png?v=1748213432815)"></div>
+=======
+          <div class="id_card-avatar" style="background-image: url(https://dev-coco.github.io/images/avatar.png?v=1746556575837)"></div>
+>>>>>>> 4cb756d8126c1a4e80a153dc85de0b025fbd63bd
           <h1 class="id_card-title">Raz1ner</h1>
           <p style="text-align: center;">
             <a href="https://github.com/dev-coco" rel="nofollow noreferrer" target="_blank"><img class="social-icon" alt="Github" src="/images/social/GitHub.png"></a>
@@ -398,6 +456,7 @@ IMPORTRANGE(
         </div>
       <div class="notice-card i-card ">
         <div class="notice-title i-card-title">公告</div>
+<<<<<<< HEAD
         <div class="notice-content"><p>博客新开通 Telegram 频道：<a href="https://t.me/raz1ner" target="_blank" style="color: blue">瑞景乐的博客</a>，欢迎订阅，随时收到最新资讯。</p><p>商务合作请点击上方的邮箱与我联系。<p></div>
       </div>
       <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
@@ -420,6 +479,30 @@ IMPORTRANGE(
           <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/sololearn/">Sololearn</a>
           <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
           <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
+=======
+        <div class="notice-content"><p style="margin-bottom: 5px">博客新开通 Telegram 频道：<a href="https://t.me/raz1ner" rel="nofollow noreferrer" target="_blank" style="color: blue">瑞景乐的博客</a>，欢迎订阅，随时收到最新资讯。</p><p>商务合作请点击上方的邮箱与我联系。</p></div>
+      </div>
+      <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
+        <div class="notice-content">
+          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/excel/">Excel</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/ai-tech/">AI 科技</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/google-script/">Google 脚本</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/instagram/">Instagram</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/security/">安全</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/javascript/">Javascript</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/twitter-x/">Twitter (X)</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/life/">生活</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/sololearn/">Sololearn</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
+>>>>>>> 4cb756d8126c1a4e80a153dc85de0b025fbd63bd
         </div>
       </div>
       </div>
@@ -432,6 +515,7 @@ IMPORTRANGE(
         <a href="/atom.xml" target="_blank"><img class="social-icon" alt="rss" src="/images/social/RSS.png"></a>
         <a href="mailto:ruijingle@gmail.com" target="_blank"><img class="social-icon" alt="Email" src="/images/social/Gmail.png"></a>
       </p>
+<<<<<<< HEAD
     <span>Copyright © 2020-2025 Raz1ner - All Rights Reserved.</span> | <a class="rss" href="https://dev-coco.github.io/atom.xml" target="_blank">RSS</a>
 </div>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
@@ -439,5 +523,16 @@ IMPORTRANGE(
             <script>hljs.highlightAll();</script>
   </div>
   
+=======
+    <span>Copyright © 2020-2025 Raz1ner - All Rights Reserved.</span>
+<script>(location.href.includes('dev-coco.github.io')||location.href.includes('localhost'))?'':window.open('https'+'://dev'+'-coco'+'.github.io/','_self')</script>
+ | <a class="rss" href="https://dev-coco.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+  </div>
+  
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/excel.min.js"></script>
+            <script>hljs.highlightAll();</script>
+>>>>>>> 4cb756d8126c1a4e80a153dc85de0b025fbd63bd
 </body>
 </html>

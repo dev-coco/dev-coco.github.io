@@ -5,10 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Google Excel 使用函数导入社交媒体数据 | Raz1ner</title>
   <meta name="author" content="Raz1ner">
+<<<<<<< HEAD
   <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1748213432815">
   <link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
   <!-- <script src="/js/prism.js"></script> -->
   <!-- <link rel="stylesheet" href="/css/prism.css"> -->
+=======
+  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1746556575837">
+  <link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
+  
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script> -->
+  <!-- <script src="/js/prism.js"></script>
+  <link rel="stylesheet" href="/css/prism.css"> -->
+>>>>>>> 4cb756d8126c1a4e80a153dc85de0b025fbd63bd
   <script src="https://dev-coco.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
   <script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script async src="https://fundingchoicesmessages.google.com/i/pub-6960947409660270?ers=1" nonce="3szuJwRueku-LVJlmdoLew"></script><script nonce="3szuJwRueku-LVJlmdoLew">(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
@@ -54,7 +63,11 @@
       <div class="nav">
         <div class="logo">
           <a href="https://dev-coco.github.io">
+<<<<<<< HEAD
             <img class="avatar" alt="Raz1ner" src="https://dev-coco.github.io/images/avatar.png?v=1748213432815" alt="">
+=======
+            <img class="avatar" alt="Raz1ner" src="https://dev-coco.github.io/images/avatar.png?v=1746556575837" alt="">
+>>>>>>> 4cb756d8126c1a4e80a153dc85de0b025fbd63bd
           </a>
           <div class="site-title">
             <h1>Raz1ner</h1>
@@ -152,8 +165,13 @@
         <article class="post i-card">
         <h2 class="post-title">Google Excel 使用函数导入社交媒体数据</h2>
         <div class="post-info">
+<<<<<<< HEAD
           <time class="post-time">2024-02-17 / 7 min read</time>
             <a href="https://dev-coco.github.io/tag/excel/" class="post-tag i-tag i-tag-other_2">#Excel</a>
+=======
+          <time class="post-time">2024-02-16 / 8 min read</time>
+            <a href="https://dev-coco.github.io/tag/excel/" class="post-tag i-tag i-tag-other_4">#Excel</a>
+>>>>>>> 4cb756d8126c1a4e80a153dc85de0b025fbd63bd
         </div>
         <!--
           
@@ -166,53 +184,100 @@
 <h2 id="facebook">Facebook</h2>
 <h3 id="facebook-小组">Facebook 小组</h3>
 <p>小组名称</p>
-<pre><code class="language-excel-formula">=IMPORTXML(A1, &quot;//title&quot;)
+<pre><code class="language-excel">=IMPORTXML(A1, &quot;//title&quot;)
 </code></pre>
 <p>小组横幅图</p>
-<pre><code class="language-excel-formula">=IMAGE(IMPORTXML(A1, &quot;//meta[@property='og:image']/@content&quot;))
+<pre><code class="language-excel">=IMAGE(IMPORTXML(A1, &quot;//meta[@property='og:image']/@content&quot;))
 </code></pre>
 <p>小组简介如果太长会显示不完整。</p>
-<pre><code class="language-excel-formula">=IMPORTXML(A1, &quot;//meta[@name='description']/@content&quot;)
+<pre><code class="language-excel">=IMPORTXML(A1, &quot;//meta[@name='description']/@content&quot;)
 </code></pre>
 <p>小组 ID</p>
-<pre><code class="language-excel-formula">=REGEXREPLACE(IMPORTXML(A1, &quot;//meta[@property='al:android:url']/@content&quot;), &quot;[^\d]&quot;, &quot;&quot;)
+<pre><code class="language-excel">=REGEXREPLACE(IMPORTXML(A1, &quot;//meta[@property='al:android:url']/@content&quot;), &quot;[^\d]&quot;, &quot;&quot;)
 </code></pre>
 <figure data-type="image" tabindex="1"><img src="https://dev-coco.github.io/post-images/1708184649068.png" alt="" loading="lazy"></figure>
 <h3 id="facebook-专页时间线">Facebook 专页/时间线</h3>
 <p>专页/时间线名称</p>
-<pre><code class="language-excel-formula">=IMPORTXML(A1, &quot;//title&quot;)
+<pre><code class="language-excel">=IMPORTXML(A1, &quot;//title&quot;)
 </code></pre>
 <p>专页/时间线头像</p>
-<pre><code class="language-excel-formula">=IMAGE(IMPORTXML(A1, &quot;//meta[@property='og:image']/@content&quot;))
+<pre><code class="language-excel">=IMAGE(IMPORTXML(A1, &quot;//meta[@property='og:image']/@content&quot;))
+</code></pre>
+<p>专页/时间线头像（仅限 ID）</p>
+<pre><code class="language-excel">=IMAGE(&quot;https://graph.facebook.com/&quot;&amp;A1&amp;&quot;/picture?width=9999&amp;access_token=2712477385668128|b429aeb53369951d411e1cae8e810640&quot;)
 </code></pre>
 <p>专页点赞数和简介</p>
-<pre><code class="language-excel-formula">=LAMBDA(desc, {
+<pre><code class="language-excel">=LAMBDA(desc, {
     REGEXREPLACE(REGEXREPLACE(desc, &quot; likes ·.+&quot;, &quot;&quot;), &quot;.+\. &quot;, &quot;&quot;),
     REGEXREPLACE(desc, &quot;.+talking about this. |.+were here. &quot;, &quot;&quot;)
 })(SUBSTITUTE(IMPORTXML(A1, &quot;//meta[@name='description']/@content&quot;), CHAR(10), &quot;&quot;))
 </code></pre>
 <p>专页/时间线 ID</p>
-<pre><code class="language-excel-formula">=REGEXREPLACE(IMPORTXML(A1, &quot;//meta[@property='al:android:url']/@content&quot;), &quot;[^\d]&quot;, &quot;&quot;)
+<pre><code class="language-excel">=REGEXREPLACE(IMPORTXML(A1, &quot;//meta[@property='al:android:url']/@content&quot;), &quot;[^\d]&quot;, &quot;&quot;)
 </code></pre>
 <figure data-type="image" tabindex="2"><img src="https://dev-coco.github.io/post-images/1708184834112.png" alt="" loading="lazy"></figure>
 <h3 id="facebook-帖子">Facebook 帖子</h3>
 <p>帖子内容</p>
-<pre><code class="language-excel-formula">=IMPORTXML(A1, &quot;//meta[@name='description']/@content&quot;)
+<pre><code class="language-excel">=IMPORTXML(A1, &quot;//meta[@name='description']/@content&quot;)
 </code></pre>
 <p>帖子图片</p>
-<pre><code class="language-excel-formula">=IMAGE(IMPORTXML(A1, &quot;//meta[@property='og:image']/@content&quot;))
+<pre><code class="language-excel">=IMAGE(IMPORTXML(A1, &quot;//meta[@property='og:image']/@content&quot;))
 </code></pre>
 <p>帖子 ID</p>
-<pre><code class="language-excel-formula">=REGEXREPLACE(REGEXREPLACE(IMPORTXML(A1, &quot;//meta[@property='og:url']/@content&quot;), &quot;.+\D\/|\/$&quot;, &quot;&quot;), &quot;.+\/&quot;, &quot;&quot;)
+<pre><code class="language-excel">=REGEXREPLACE(REGEXREPLACE(IMPORTXML(A1, &quot;//meta[@property='og:url']/@content&quot;), &quot;.+\D\/|\/$&quot;, &quot;&quot;), &quot;.+\/&quot;, &quot;&quot;)
+</code></pre>
+<p>获取小组帖子的发帖账号 ID、发帖日期和发帖时间。<br>
+注意，如果是正在审核中的帖子，将不会显示任何内容。</p>
+<pre><code class="language-excel">=LAMBDA(
+    info,
+    IF(
+        REGEXMATCH(
+            info,
+            &quot;dateCreated&quot;
+        ),
+        {REGEXREPLACE(
+            REGEXEXTRACT(
+                info,
+                 &quot;identifier....*?:&quot;
+            ),
+             &quot;\D&quot;,
+             &quot;&quot;
+        ),
+        SPLIT(
+            REGEXREPLACE(
+                REGEXREPLACE(
+                    info,
+                    &quot;\n&quot;,
+                    &quot;&quot;
+                ),
+                &quot;.*?},.dateCreated...|.{5}&quot;&quot;.+&quot;,
+                &quot;&quot;
+            ),
+            &quot;T&quot;
+        )},
+        &quot;&quot;
+    )
+)(REGEXREPLACE(
+    IMPORTXML(
+        SUBSTITUTE(
+            A1,
+            &quot;pending_&quot;,
+            &quot;&quot;
+        ),
+        &quot;//script[1]/text()&quot;
+    ),
+    &quot;\n&quot;,
+    &quot;&quot;
+))
 </code></pre>
 <figure data-type="image" tabindex="3"><img src="https://dev-coco.github.io/post-images/1708185044095.png" alt="" loading="lazy"></figure>
 <h2 id="instagram">Instagram</h2>
 <h3 id="instagram-主页">Instagram 主页</h3>
 <p>主页名称</p>
-<pre><code class="language-excel-formula">=REGEXREPLACE(IMPORTXML(A1, &quot;//title&quot;), &quot;..@.+&quot;, &quot;&quot;)
+<pre><code class="language-excel">=REGEXREPLACE(IMPORTXML(A1, &quot;//title&quot;), &quot;..@.+&quot;, &quot;&quot;)
 </code></pre>
 <p>主页粉丝数、关注数、帖子数</p>
-<pre><code class="language-excel-formula">=LAMBDA(desc, {
+<pre><code class="language-excel">=LAMBDA(desc, {
     LAMBDA(follower,
         IFERROR(SWITCH(REGEXEXTRACT(follower, &quot;K|M&quot;), &quot;K&quot;, REGEXREPLACE(follower, &quot;\D&quot;,&quot;&quot;) * 1000, &quot;M&quot;, REGEXREPLACE(follower, &quot;\D&quot;,&quot;&quot;) * 1000000), follower)
     )(REGEXREPLACE(desc, &quot; Followers.+&quot;, &quot;&quot;)),
@@ -223,13 +288,13 @@
 <figure data-type="image" tabindex="4"><img src="https://dev-coco.github.io/post-images/1708185471173.png" alt="" loading="lazy"></figure>
 <h3 id="instagram-帖子">Instagram 帖子</h3>
 <p>帖子 ID</p>
-<pre><code class="language-excel-formula">=REGEXREPLACE(IMPORTXML(A1, &quot;//meta[@property='al:ios:url']/@content&quot;), &quot;[^\d]&quot;, &quot;&quot;)
+<pre><code class="language-excel">=REGEXREPLACE(IMPORTXML(A1, &quot;//meta[@property='al:ios:url']/@content&quot;), &quot;[^\d]&quot;, &quot;&quot;)
 </code></pre>
 <p>帖子缩略图</p>
-<pre><code class="language-excel-formula">=IMAGE(IMPORTXML(A1, &quot;//meta[@property='og:image']/@content&quot;))
+<pre><code class="language-excel">=IMAGE(IMPORTXML(A1, &quot;//meta[@property='og:image']/@content&quot;))
 </code></pre>
 <p>点赞数、评论数、帖子发布日期、帖子内容</p>
-<pre><code class="language-excel-formula">=LAMBDA(desc, {
+<pre><code class="language-excel">=LAMBDA(desc, {
     LAMBDA(likes,
         IFERROR(SWITCH(REGEXEXTRACT(likes, &quot;K|M&quot;), &quot;K&quot;, REGEXREPLACE(likes, &quot;\D&quot;,&quot;&quot;) * 1000, &quot;M&quot;, REGEXREPLACE(likes, &quot;\D&quot;,&quot;&quot;) * 1000000), likes)
     )(REGEXREPLACE(desc, &quot; likes.+&quot;, &quot;&quot;)),
@@ -243,17 +308,17 @@
 <figure data-type="image" tabindex="5"><img src="https://dev-coco.github.io/post-images/1708185926897.png" alt="" loading="lazy"></figure>
 <h3 id="instagram-标签">Instagram 标签</h3>
 <p>标签帖子数量</p>
-<pre><code class="language-excel-formula">=LAMBDA(desc, 
+<pre><code class="language-excel">=LAMBDA(desc, 
 IFERROR(SWITCH(REGEXEXTRACT(desc, &quot;K|M&quot;), &quot;K&quot;, REGEXREPLACE(desc, &quot;\D&quot;,&quot;&quot;) * 1000, &quot;M&quot;, REGEXREPLACE(desc, &quot;\D&quot;,&quot;&quot;) * 1000000), desc)
 )(REGEXREPLACE(A1, &quot; posts.+&quot;, &quot;&quot;))
 </code></pre>
 <h2 id="tiktok">Tiktok</h2>
 <h3 id="tiktok-主页">Tiktok 主页</h3>
 <p>主页关注数</p>
-<pre><code class="language-excel-formula">=IMPORTXML(A1, &quot;//strong[@data-e2e='following-count']&quot;)
+<pre><code class="language-excel">=IMPORTXML(A1, &quot;//strong[@data-e2e='following-count']&quot;)
 </code></pre>
 <p>主页点赞数、粉丝数、简介</p>
-<pre><code class="language-excel-formula">=LAMBDA(json, {
+<pre><code class="language-excel">=LAMBDA(json, {
     REGEXREPLACE(json, &quot;\n|.+LikeAction&quot;&quot;},&quot;&quot;userInteractionCount&quot;&quot;:|}.+&quot;, &quot;&quot;),
     REGEXREPLACE(json, &quot;\n|.+FollowAction&quot;&quot;},&quot;&quot;userInteractionCount&quot;&quot;:|}.+&quot;, &quot;&quot;),
     SUBSTITUTE(REGEXREPLACE(json, &quot;\n|.+description&quot;&quot;:&quot;&quot;|&quot;&quot;,&quot;&quot;alternateName.+&quot;, &quot;&quot;), &quot;\n&quot;, CHAR(10))
@@ -262,86 +327,86 @@ IFERROR(SWITCH(REGEXEXTRACT(desc, &quot;K|M&quot;), &quot;K&quot;, REGEXREPLACE(
 <figure data-type="image" tabindex="6"><img src="https://dev-coco.github.io/post-images/1708186297277.png" alt="" loading="lazy"></figure>
 <h3 id="tiktok-帖子">Tiktok 帖子</h3>
 <p>帖子点赞数</p>
-<pre><code class="language-excel-formula">=IMPORTXML(A1, &quot;//strong[@data-e2e='like-count']&quot;)
+<pre><code class="language-excel">=IMPORTXML(A1, &quot;//strong[@data-e2e='like-count']&quot;)
 </code></pre>
 <p>帖子评论数</p>
-<pre><code class="language-excel-formula">=IMPORTXML(A1, &quot;//strong[@data-e2e='comment-count']&quot;)
+<pre><code class="language-excel">=IMPORTXML(A1, &quot;//strong[@data-e2e='comment-count']&quot;)
 </code></pre>
 <p>帖子收藏数</p>
-<pre><code class="language-excel-formula">=IMPORTXML(A1, &quot;//strong[@data-e2e='undefined-count']&quot;)
+<pre><code class="language-excel">=IMPORTXML(A1, &quot;//strong[@data-e2e='undefined-count']&quot;)
 </code></pre>
 <p>帖子分享数</p>
-<pre><code class="language-excel-formula">=IMPORTXML(A1, &quot;//strong[@data-e2e='share-count']&quot;)
+<pre><code class="language-excel">=IMPORTXML(A1, &quot;//strong[@data-e2e='share-count']&quot;)
 </code></pre>
 <p>帖子描述</p>
-<pre><code class="language-excel-formula">=REGEXEXTRACT(SUBSTITUTE(IMPORTXML(A1, &quot;//meta[@name='description']/@content&quot;), CHAR(10), &quot;&quot;), &quot;“.*?”&quot;)
+<pre><code class="language-excel">=REGEXEXTRACT(SUBSTITUTE(IMPORTXML(A1, &quot;//meta[@name='description']/@content&quot;), CHAR(10), &quot;&quot;), &quot;“.*?”&quot;)
 </code></pre>
 <p>帖子使用的背景音乐</p>
-<pre><code class="language-excel-formula">=INDEX(IMPORTXML(A1, &quot;//div[@class='tiktok-pvx3oa-DivMusicText epjbyn3']&quot;), 1)
+<pre><code class="language-excel">=INDEX(IMPORTXML(A1, &quot;//div[@class='tiktok-pvx3oa-DivMusicText epjbyn3']&quot;), 1)
 </code></pre>
 <p>帖子发帖时间</p>
-<pre><code class="language-excel-formula">=IMPORTXML(A1, &quot;//span[@data-e2e='browser-nickname']/span[3]&quot;)
+<pre><code class="language-excel">=IMPORTXML(A1, &quot;//span[@data-e2e='browser-nickname']/span[3]&quot;)
 </code></pre>
 <figure data-type="image" tabindex="7"><img src="https://dev-coco.github.io/post-images/1708186306604.png" alt="" loading="lazy"></figure>
 <h2 id="whatsapp">WhatsApp</h2>
 <p>群组名称</p>
-<pre><code class="language-excel-formula">=INDEX(IMPORTXML(A1, &quot;//h3&quot;), 2)
+<pre><code class="language-excel">=INDEX(IMPORTXML(A1, &quot;//h3&quot;), 2)
 </code></pre>
 <figure data-type="image" tabindex="8"><img src="https://dev-coco.github.io/post-images/1654307428779.png" alt="" loading="lazy"></figure>
 <p>群组头像</p>
-<pre><code class="language-excel-formula">=IMAGE(INDEX(IMPORTXML(A1, &quot;//img/@src&quot;), 3))
+<pre><code class="language-excel">=IMAGE(INDEX(IMPORTXML(A1, &quot;//img/@src&quot;), 3))
 </code></pre>
 <figure data-type="image" tabindex="9"><img src="https://dev-coco.github.io/post-images/1654307221019.png" alt="" loading="lazy"></figure>
 <h2 id="telegram">Telegram</h2>
 <h3 id="telegram-小组">Telegram 小组</h3>
 <p>小组名称</p>
-<pre><code class="language-excel-formula">=IMPORTXML(A1, &quot;//div[@class='tgme_page_title']&quot;)
+<pre><code class="language-excel">=IMPORTXML(A1, &quot;//div[@class='tgme_page_title']&quot;)
 </code></pre>
 <p>小组成员数</p>
-<pre><code class="language-excel-formula">=REGEXREPLACE(IMPORTXML(A1, &quot;//div[@class='tgme_page_extra']&quot;), &quot;members.+|\D&quot;, &quot;&quot;)
+<pre><code class="language-excel">=REGEXREPLACE(IMPORTXML(A1, &quot;//div[@class='tgme_page_extra']&quot;), &quot;members.+|\D&quot;, &quot;&quot;)
 </code></pre>
 <p>小组简介</p>
-<pre><code class="language-excel-formula">=JOIN(CHAR(10), IMPORTXML(A1, &quot;//div[@class='tgme_page_description']&quot;))
+<pre><code class="language-excel">=JOIN(CHAR(10), IMPORTXML(A1, &quot;//div[@class='tgme_page_description']&quot;))
 </code></pre>
 <p>小组头像</p>
-<pre><code class="language-excel-formula">=IMAGE(IMPORTXML(A1, &quot;//meta[@property='og:image']/@content&quot;))
+<pre><code class="language-excel">=IMAGE(IMPORTXML(A1, &quot;//meta[@property='og:image']/@content&quot;))
 </code></pre>
 <figure data-type="image" tabindex="10"><img src="https://dev-coco.github.io/post-images/1708187121549.png" alt="" loading="lazy"></figure>
 <h3 id="telegram-频道">Telegram 频道</h3>
 <p>频道名称</p>
-<pre><code class="language-excel-formula">=IMPORTXML(A1, &quot;//div[@class='tgme_channel_info_header_title']&quot;)
+<pre><code class="language-excel">=IMPORTXML(A1, &quot;//div[@class='tgme_channel_info_header_title']&quot;)
 </code></pre>
 <p>频道头像</p>
-<pre><code class="language-excel-formula">=IMAGE(IMPORTXML(A1, &quot;//a[@class='tgme_header_link']//img//@src&quot;))
+<pre><code class="language-excel">=IMAGE(IMPORTXML(A1, &quot;//a[@class='tgme_header_link']//img//@src&quot;))
 </code></pre>
 <p>频道关注数、图片数、链接数</p>
-<pre><code class="language-excel-formula">=TRANSPOSE(IMPORTXML(A1, &quot;//span[@class='counter_value']&quot;))
+<pre><code class="language-excel">=TRANSPOSE(IMPORTXML(A1, &quot;//span[@class='counter_value']&quot;))
 </code></pre>
 <p>频道描述</p>
-<pre><code class="language-excel-formula">=JOIN(CHAR(10), IMPORTXML(A1, &quot;//div[@class='tgme_channel_info_description']&quot;))
+<pre><code class="language-excel">=JOIN(CHAR(10), IMPORTXML(A1, &quot;//div[@class='tgme_channel_info_description']&quot;))
 </code></pre>
 <p>频道近期帖文链接</p>
-<pre><code class="language-excel-formula">=IMPORTXML(A1, &quot;//div[@data-post]/@data-post&quot;)
+<pre><code class="language-excel">=IMPORTXML(A1, &quot;//div[@data-post]/@data-post&quot;)
 </code></pre>
 <figure data-type="image" tabindex="11"><img src="https://dev-coco.github.io/post-images/1708187245664.png" alt="" loading="lazy"></figure>
 <h2 id="youtube">YouTube</h2>
 <p>频道名称</p>
-<pre><code class="language-excel-formula">=IMPORTXML(A1, &quot;//meta[@name='twitter:title']/@content&quot;)
+<pre><code class="language-excel">=IMPORTXML(A1, &quot;//meta[@name='twitter:title']/@content&quot;)
 </code></pre>
 <p>频道头像</p>
-<pre><code class="language-excel-formula">=IMAGE(IMPORTXML(A1, &quot;//meta[@property='og:image']/@content&quot;))
+<pre><code class="language-excel">=IMAGE(IMPORTXML(A1, &quot;//meta[@property='og:image']/@content&quot;))
 </code></pre>
 <p>频道简介</p>
-<pre><code class="language-excel-formula">=IMPORTXML(A1, &quot;//meta[@property='og:description']/@content&quot;)
+<pre><code class="language-excel">=IMPORTXML(A1, &quot;//meta[@property='og:description']/@content&quot;)
 </code></pre>
 <p>视频缩略图</p>
-<pre><code class="language-excel-formula">=IMAGE(&quot;https://img.youtube.com/vi/&quot;&amp;REGEXREPLACE(A1, &quot;.+\.be\/|.+shorts\/|.+\.com\/watch\?v=|\?.+&quot;, &quot;&quot;)&amp;&quot;/maxresdefault.jpg&quot;)
+<pre><code class="language-excel">=IMAGE(&quot;https://img.youtube.com/vi/&quot;&amp;REGEXREPLACE(A1, &quot;.+\.be\/|.+shorts\/|.+\.com\/watch\?v=|\?.+&quot;, &quot;&quot;)&amp;&quot;/maxresdefault.jpg&quot;)
 </code></pre>
 <p>YouTube 的缩略图有 4 种分辨率，分别是：maxresdefault、hqdefault、sddefault、mqdefault。</p>
 <figure data-type="image" tabindex="12"><img src="https://dev-coco.github.io/post-images/1708187405126.png" alt="" loading="lazy"></figure>
 <h2 id="pinterest">Pinterest</h2>
 <p>主页粉丝数和关注数</p>
-<pre><code class="language-excel-formula">=LAMBDA(info,
+<pre><code class="language-excel">=LAMBDA(info,
     LAMBDA(fans, follower, {
         IFERROR(SWITCH(REGEXEXTRACT(fans, &quot;k|M&quot;), &quot;k&quot;, REGEXREPLACE(fans, &quot;\D&quot;,&quot;&quot;) * 1000, &quot;M&quot;, REGEXREPLACE(fans, &quot;\D&quot;,&quot;&quot;) * 1000000), fans),
         IFERROR(SWITCH(REGEXEXTRACT(follower, &quot;k|M&quot;), &quot;k&quot;, REGEXREPLACE(follower, &quot;\D&quot;,&quot;&quot;) * 1000, &quot;M&quot;, REGEXREPLACE(follower, &quot;\D&quot;,&quot;&quot;) * 1000000), follower)
@@ -350,24 +415,24 @@ IFERROR(SWITCH(REGEXEXTRACT(desc, &quot;K|M&quot;), &quot;K&quot;, REGEXREPLACE(
 )(IMPORTXML(A1, &quot;//div[@class='tBJ dyH iFc sAJ O2T zDA IZT H2s']&quot;))
 </code></pre>
 <p>主页简介</p>
-<pre><code class="language-excel-formula">=SUBSTITUTE(IMPORTXML(A1, &quot;//span[@class='tBJ dyH iFc sAJ O2T zDA IZT swG']&quot;), CHAR(10), &quot;&quot;)
+<pre><code class="language-excel">=SUBSTITUTE(IMPORTXML(A1, &quot;//span[@class='tBJ dyH iFc sAJ O2T zDA IZT swG']&quot;), CHAR(10), &quot;&quot;)
 </code></pre>
 <figure data-type="image" tabindex="13"><img src="https://dev-coco.github.io/post-images/1708187607132.png" alt="" loading="lazy"></figure>
 <h2 id="reddit">Reddit</h2>
 <h3 id="reddit-主页">Reddit 主页</h3>
 <p>主页帖子和评论 Karma 分数</p>
-<pre><code class="language-excel-formula">=TRANSPOSE(IMPORTXML(A1, &quot;//span[@data-testid='karma-number']&quot;))
+<pre><code class="language-excel">=TRANSPOSE(IMPORTXML(A1, &quot;//span[@data-testid='karma-number']&quot;))
 </code></pre>
 <p>注册时间</p>
-<pre><code class="language-excel-formula">=REGEXREPLACE(IMPORTXML(A1, &quot;//time[@data-testid='cake-day']/@datetime&quot;), &quot;T.+&quot;, &quot;&quot;)
+<pre><code class="language-excel">=REGEXREPLACE(IMPORTXML(A1, &quot;//time[@data-testid='cake-day']/@datetime&quot;), &quot;T.+&quot;, &quot;&quot;)
 </code></pre>
 <figure data-type="image" tabindex="14"><img src="https://dev-coco.github.io/post-images/1708188294197.png" alt="" loading="lazy"></figure>
 <h3 id="reddit-帖子">Reddit 帖子</h3>
 <p>帖子标题</p>
-<pre><code class="language-excel-formula">=TRIM(JOIN(&quot;&quot;, IMPORTXML(A1, &quot;//h1[@slot='title']&quot;)))
+<pre><code class="language-excel">=TRIM(JOIN(&quot;&quot;, IMPORTXML(A1, &quot;//h1[@slot='title']&quot;)))
 </code></pre>
 <p>帖子内容</p>
-<pre><code class="language-excel-formula">=TRIM(JOIN(&quot;&quot;, IMPORTXML(A1, &quot;//div[@data-post-click-location='text-body']&quot;)))
+<pre><code class="language-excel">=TRIM(JOIN(&quot;&quot;, IMPORTXML(A1, &quot;//div[@data-post-click-location='text-body']&quot;)))
 </code></pre>
 <figure data-type="image" tabindex="15"><img src="https://dev-coco.github.io/post-images/1708188285821.png" alt="" loading="lazy"></figure>
 <p>相关推荐：<br>
@@ -394,7 +459,11 @@ IFERROR(SWITCH(REGEXEXTRACT(desc, &quot;K|M&quot;), &quot;K&quot;, REGEXREPLACE(
       <!-- right -->
       <div id="sidebar" class="main-container-right">
         <div class="id_card i-card">
+<<<<<<< HEAD
           <div class="id_card-avatar" style="background-image: url(https://dev-coco.github.io/images/avatar.png?v=1748213432815)"></div>
+=======
+          <div class="id_card-avatar" style="background-image: url(https://dev-coco.github.io/images/avatar.png?v=1746556575837)"></div>
+>>>>>>> 4cb756d8126c1a4e80a153dc85de0b025fbd63bd
           <h1 class="id_card-title">Raz1ner</h1>
           <p style="text-align: center;">
             <a href="https://github.com/dev-coco" rel="nofollow noreferrer" target="_blank"><img class="social-icon" alt="Github" src="/images/social/GitHub.png"></a>
@@ -463,6 +532,7 @@ IFERROR(SWITCH(REGEXEXTRACT(desc, &quot;K|M&quot;), &quot;K&quot;, REGEXREPLACE(
         </div>
       <div class="notice-card i-card ">
         <div class="notice-title i-card-title">公告</div>
+<<<<<<< HEAD
         <div class="notice-content"><p>博客新开通 Telegram 频道：<a href="https://t.me/raz1ner" target="_blank" style="color: blue">瑞景乐的博客</a>，欢迎订阅，随时收到最新资讯。</p><p>商务合作请点击上方的邮箱与我联系。<p></div>
       </div>
       <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
@@ -485,6 +555,30 @@ IFERROR(SWITCH(REGEXEXTRACT(desc, &quot;K|M&quot;), &quot;K&quot;, REGEXREPLACE(
           <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/sololearn/">Sololearn</a>
           <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
           <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
+=======
+        <div class="notice-content"><p style="margin-bottom: 5px">博客新开通 Telegram 频道：<a href="https://t.me/raz1ner" rel="nofollow noreferrer" target="_blank" style="color: blue">瑞景乐的博客</a>，欢迎订阅，随时收到最新资讯。</p><p>商务合作请点击上方的邮箱与我联系。</p></div>
+      </div>
+      <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
+        <div class="notice-content">
+          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/excel/">Excel</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/ai-tech/">AI 科技</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/google-script/">Google 脚本</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/instagram/">Instagram</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/security/">安全</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/javascript/">Javascript</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/twitter-x/">Twitter (X)</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/life/">生活</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/sololearn/">Sololearn</a>
+          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
+>>>>>>> 4cb756d8126c1a4e80a153dc85de0b025fbd63bd
         </div>
       </div>
       </div>
@@ -497,12 +591,17 @@ IFERROR(SWITCH(REGEXEXTRACT(desc, &quot;K|M&quot;), &quot;K&quot;, REGEXREPLACE(
         <a href="/atom.xml" target="_blank"><img class="social-icon" alt="rss" src="/images/social/RSS.png"></a>
         <a href="mailto:ruijingle@gmail.com" target="_blank"><img class="social-icon" alt="Email" src="/images/social/Gmail.png"></a>
       </p>
-    <span>Copyright © 2020-2025 Raz1ner - All Rights Reserved.</span> | <a class="rss" href="https://dev-coco.github.io/atom.xml" target="_blank">RSS</a>
+    <span>Copyright © 2020-2025 Raz1ner - All Rights Reserved.</span>
+<script>(location.href.includes('dev-coco.github.io')||location.href.includes('localhost'))?'':window.open('https'+'://dev'+'-coco'+'.github.io/','_self')</script>
+ | <a class="rss" href="https://dev-coco.github.io/atom.xml" target="_blank">RSS</a>
 </div>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/excel.min.js"></script>
             <script>hljs.highlightAll();</script>
   </div>
   
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/excel.min.js"></script>
+            <script>hljs.highlightAll();</script>
 </body>
 </html>

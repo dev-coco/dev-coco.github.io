@@ -5,10 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Google Excel 性能优化 - 数据匹配性能对比 | Raz1ner</title>
   <meta name="author" content="Raz1ner">
+<<<<<<< HEAD
   <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1748213432815">
   <link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
   <!-- <script src="/js/prism.js"></script> -->
   <!-- <link rel="stylesheet" href="/css/prism.css"> -->
+=======
+  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1746556575837">
+  <link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
+  
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script> -->
+  <!-- <script src="/js/prism.js"></script>
+  <link rel="stylesheet" href="/css/prism.css"> -->
+>>>>>>> 4cb756d8126c1a4e80a153dc85de0b025fbd63bd
   <script src="https://dev-coco.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
   <script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script async src="https://fundingchoicesmessages.google.com/i/pub-6960947409660270?ers=1" nonce="3szuJwRueku-LVJlmdoLew"></script><script nonce="3szuJwRueku-LVJlmdoLew">(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
@@ -54,7 +63,11 @@
       <div class="nav">
         <div class="logo">
           <a href="https://dev-coco.github.io">
+<<<<<<< HEAD
             <img class="avatar" alt="Raz1ner" src="https://dev-coco.github.io/images/avatar.png?v=1748213432815" alt="">
+=======
+            <img class="avatar" alt="Raz1ner" src="https://dev-coco.github.io/images/avatar.png?v=1746556575837" alt="">
+>>>>>>> 4cb756d8126c1a4e80a153dc85de0b025fbd63bd
           </a>
           <div class="site-title">
             <h1>Raz1ner</h1>
@@ -153,7 +166,11 @@
         <h2 class="post-title">Google Excel 性能优化 - 数据匹配性能对比</h2>
         <div class="post-info">
           <time class="post-time">2023-04-23 / 2 min read</time>
+<<<<<<< HEAD
             <a href="https://dev-coco.github.io/tag/excel/" class="post-tag i-tag i-tag-success">#Excel</a>
+=======
+            <a href="https://dev-coco.github.io/tag/excel/" class="post-tag i-tag i-tag-other_4">#Excel</a>
+>>>>>>> 4cb756d8126c1a4e80a153dc85de0b025fbd63bd
         </div>
         <!--
           
@@ -167,17 +184,17 @@
 <h2 id="测试条件">测试条件</h2>
 <p>在 50 万的数据中匹配出对应的内容。</p>
 <h2 id="vlookup-完全匹配">VLOOKUP 完全匹配</h2>
-<pre><code class="language-excel-formula">=VLOOKUP(A1, '工作表1'!A:B, 2, 0)
+<pre><code class="language-excel">=VLOOKUP(A1, '工作表1'!A:B, 2, 0)
 </code></pre>
 <p>耗时约 22 秒左右。</p>
 <figure data-type="image" tabindex="1"><img src="https://dev-coco.github.io/post-images/1671998130672.png" alt="" loading="lazy"></figure>
 <h2 id="index-match">INDEX + MATCH</h2>
-<pre><code class="language-excel-formula">=INDEX('工作表1'!B:B, MATCH(A1, '工作表1'!A:A, 0))
+<pre><code class="language-excel">=INDEX('工作表1'!B:B, MATCH(A1, '工作表1'!A:A, 0))
 </code></pre>
 <p>耗时约 1.7 秒左右。</p>
 <figure data-type="image" tabindex="2"><img src="https://dev-coco.github.io/post-images/1671998145898.png" alt="" loading="lazy"></figure>
 <h2 id="indirect-match">INDIRECT + MATCH</h2>
-<pre><code class="language-excel-formula">=INDIRECT(&quot;工作表1!B&quot;&amp;MATCH(A1, '工作表1'!A:A, 0))
+<pre><code class="language-excel">=INDIRECT(&quot;工作表1!B&quot;&amp;MATCH(A1, '工作表1'!A:A, 0))
 </code></pre>
 <p>耗时约 1.1 秒左右。</p>
 <figure data-type="image" tabindex="3"><img src="https://dev-coco.github.io/post-images/1671998158672.png" alt="" loading="lazy"></figure>
@@ -187,7 +204,7 @@
 <figure data-type="image" tabindex="4"><img src="https://dev-coco.github.io/post-images/1671998186247.png" alt="" loading="lazy"></figure>
 <p>从以上测试结果可以得出 VLOOKUP 的完全匹配是最慢的，MATCH 完全匹配的速度要比 VLOOKUP 快非常多，但是在相同使用 MATCH 的情况下，使用 <a href="/Excel/#Function/Find-Filter/INDIRECT">INDIRECT</a> 的速度要比 <a href="/Excel/#Function/Find-Filter/INDEX">INDEX</a> 略微快一些。VLOOKUP 的近似匹配速度是最快的，但是也有缺陷，近似匹配没办法保证数据是精准的。</p>
 <p>根据以上结论可以将这些组合起来使用，在复杂数据中达到最佳的性能。优先使用 <a href="/Excel/#Function/Find-Filter/VLOOKUP">VLOOKUP</a> 近似匹配，判断内容是否一致，若是一致返回对应结果，若是不一致再使用 INDIRECT + MATCH 进行匹配。因为 VLOOKUP 的近似匹配运行速度几乎是毫秒级的，如果能匹配出数据要大幅的节约了 <a href="/Excel/#Function/Find-Filter/MATCH">MATCH</a> 查询所要消耗的时间。</p>
-<pre><code class="language-excel-formula">=IF(IFERROR(VLOOKUP(A1, '工作表1'!A:A, 1, 1)) = A1, VLOOKUP(A1, '工作表1'!A:B, 2, 1), INDIRECT(&quot;工作表1!B&quot;&amp;MATCH(A1, '工作表1'!A:A, 0)))
+<pre><code class="language-excel">=IF(IFERROR(VLOOKUP(A1, '工作表1'!A:A, 1, 1)) = A1, VLOOKUP(A1, '工作表1'!A:B, 2, 1), INDIRECT(&quot;工作表1!B&quot;&amp;MATCH(A1, '工作表1'!A:A, 0)))
 </code></pre>
 <p>为你推荐：<a href="https://dev-coco.github.io/post/Google-Excel-Boost-Tutorial/">Google Excel 性能优化教程目录</a></p>
 
@@ -211,7 +228,11 @@
       <!-- right -->
       <div id="sidebar" class="main-container-right">
         <div class="id_card i-card">
+<<<<<<< HEAD
           <div class="id_card-avatar" style="background-image: url(https://dev-coco.github.io/images/avatar.png?v=1748213432815)"></div>
+=======
+          <div class="id_card-avatar" style="background-image: url(https://dev-coco.github.io/images/avatar.png?v=1746556575837)"></div>
+>>>>>>> 4cb756d8126c1a4e80a153dc85de0b025fbd63bd
           <h1 class="id_card-title">Raz1ner</h1>
           <p style="text-align: center;">
             <a href="https://github.com/dev-coco" rel="nofollow noreferrer" target="_blank"><img class="social-icon" alt="Github" src="/images/social/GitHub.png"></a>
@@ -251,6 +272,7 @@
         </div>
       <div class="notice-card i-card ">
         <div class="notice-title i-card-title">公告</div>
+<<<<<<< HEAD
         <div class="notice-content"><p>博客新开通 Telegram 频道：<a href="https://t.me/raz1ner" target="_blank" style="color: blue">瑞景乐的博客</a>，欢迎订阅，随时收到最新资讯。</p><p>商务合作请点击上方的邮箱与我联系。<p></div>
       </div>
       <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
@@ -273,6 +295,30 @@
           <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/sololearn/">Sololearn</a>
           <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
           <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
+=======
+        <div class="notice-content"><p style="margin-bottom: 5px">博客新开通 Telegram 频道：<a href="https://t.me/raz1ner" rel="nofollow noreferrer" target="_blank" style="color: blue">瑞景乐的博客</a>，欢迎订阅，随时收到最新资讯。</p><p>商务合作请点击上方的邮箱与我联系。</p></div>
+      </div>
+      <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
+        <div class="notice-content">
+          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/excel/">Excel</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/ai-tech/">AI 科技</a>
+          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/google-script/">Google 脚本</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/instagram/">Instagram</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/security/">安全</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/javascript/">Javascript</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/twitter-x/">Twitter (X)</a>
+          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/life/">生活</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/sololearn/">Sololearn</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
+>>>>>>> 4cb756d8126c1a4e80a153dc85de0b025fbd63bd
         </div>
       </div>
       </div>
@@ -285,12 +331,17 @@
         <a href="/atom.xml" target="_blank"><img class="social-icon" alt="rss" src="/images/social/RSS.png"></a>
         <a href="mailto:ruijingle@gmail.com" target="_blank"><img class="social-icon" alt="Email" src="/images/social/Gmail.png"></a>
       </p>
-    <span>Copyright © 2020-2025 Raz1ner - All Rights Reserved.</span> | <a class="rss" href="https://dev-coco.github.io/atom.xml" target="_blank">RSS</a>
+    <span>Copyright © 2020-2025 Raz1ner - All Rights Reserved.</span>
+<script>(location.href.includes('dev-coco.github.io')||location.href.includes('localhost'))?'':window.open('https'+'://dev'+'-coco'+'.github.io/','_self')</script>
+ | <a class="rss" href="https://dev-coco.github.io/atom.xml" target="_blank">RSS</a>
 </div>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/excel.min.js"></script>
             <script>hljs.highlightAll();</script>
   </div>
   
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/excel.min.js"></script>
+            <script>hljs.highlightAll();</script>
 </body>
 </html>
