@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2025-06-05T01:16:33.129Z</updated>
+    <updated>2025-06-05T11:47:32.394Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2025, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[ChatGPT Team 团队版首月 1 美元]]></title>
+        <id>https://dev-coco.github.io/post/ChatGPT-Team-One-Dollar/</id>
+        <link href="https://dev-coco.github.io/post/ChatGPT-Team-One-Dollar/">
+        </link>
+        <updated>2025-06-04T23:46:02.000Z</updated>
+        <summary type="html"><![CDATA[<p>ChatGPT Team 团队版账号优惠活动，首月仅需 1 美元，附开通教程。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>ChatGPT Team 团队版账号优惠活动，首月仅需 1 美元，附开通教程。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[超链接管理面板使用方法]]></title>
         <id>https://dev-coco.github.io/post/Link-Panel/</id>
@@ -161,17 +172,6 @@
         <summary type="html"><![CDATA[<p>市面上多种浏览器进行性能跑分测试并且整理出排名。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>市面上多种浏览器进行性能跑分测试并且整理出排名。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Mac 设备是否需要每天关机？]]></title>
-        <id>https://dev-coco.github.io/post/Mac-Device-Shutdown-Everyday/</id>
-        <link href="https://dev-coco.github.io/post/Mac-Device-Shutdown-Everyday/">
-        </link>
-        <updated>2024-11-16T04:53:10.000Z</updated>
-        <summary type="html"><![CDATA[<p>探讨 Mac 设备每天关机的必要性，分析关机与休眠对性能、硬件寿命以及能耗的影响。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>探讨 Mac 设备每天关机的必要性，分析关机与休眠对性能、硬件寿命以及能耗的影响。</p>
 ]]></content>
     </entry>
 </feed>
