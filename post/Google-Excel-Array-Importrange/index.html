@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Google Excel IMPORTRANGE 数组输出 | Raz1ner</title>
   <meta name="author" content="Raz1ner">
-  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1749124858790">
+  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1749268518739">
   <link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
   <!-- <script src="/js/prism.js"></script> -->
   <!-- <link rel="stylesheet" href="/css/prism.css"> -->
@@ -54,7 +54,7 @@
       <div class="nav">
         <div class="logo">
           <a href="https://dev-coco.github.io">
-            <img class="avatar" alt="Raz1ner" src="https://dev-coco.github.io/images/avatar.png?v=1749124858790" alt="">
+            <img class="avatar" alt="Raz1ner" src="https://dev-coco.github.io/images/avatar.png?v=1749268518739" alt="">
           </a>
           <div class="site-title">
             <h1>Raz1ner</h1>
@@ -152,8 +152,8 @@
         <article class="post i-card">
         <h2 class="post-title">Google Excel IMPORTRANGE 数组输出</h2>
         <div class="post-info">
-          <time class="post-time">2024-02-04 / 3 min read</time>
-            <a href="https://dev-coco.github.io/tag/excel/" class="post-tag i-tag i-tag-primary">#Excel</a>
+          <time class="post-time">2024-02-03 / 3 min read</time>
+            <a href="https://dev-coco.github.io/tag/excel/" class="post-tag i-tag i-tag-info">#Excel</a>
         </div>
         <!--
           
@@ -166,14 +166,14 @@
 <p>例如表格内 A 列是表格链接，B 列是引用范围。</p>
 <figure data-type="image" tabindex="1"><img src="https://dev-coco.github.io/post-images/1707071696749.png" alt="" loading="lazy"></figure>
 <p>那么常规的方法一般会使用 {}（大括号），把内容合并为数组输出。</p>
-<pre><code class="language-excel-formula">={
+<pre><code class="language-excel">={
   IMPORTRANGE(A1, B1);
   IMPORTRANGE(A2, B2)
 }
 </code></pre>
 <p>虽然也可以实现这个效果，但是引用的范围是静态的，当列表中增加或者删减需要引用的表格链接和范围，那么就需要手动更改函数。</p>
 <h2 id="解决方法">解决方法</h2>
-<pre><code class="language-excel-formula">=WRAPROWS(
+<pre><code class="language-excel">=WRAPROWS(
   TOROW(MAP(
     A1:A2, B1:B2, 
     LAMBDA(
@@ -187,25 +187,25 @@
 </code></pre>
 <h2 id="原理分析">原理分析</h2>
 <p>这里使用了 <a href="https://dev-coco.github.io/post/Google-Excel-LAMBDA-MAP-Function/">LAMBDA 和 MAP 组合函数</a>，把引用的 A 列和 B 列在 LAMBDA 函数中分别自定义 ssUrl 和 ssRange 变量，这两个变量分别对应表格链接和引用范围。然后再把这两个变量的值传入 IMPORTRANGE 函数中。</p>
-<pre><code class="language-excel-formula">=MAP(A1:A2, B1:B2, LAMBDA(ssUrl, ssRange, IMPORTRANGE(ssUrl, ssRange)))
+<pre><code class="language-excel">=MAP(A1:A2, B1:B2, LAMBDA(ssUrl, ssRange, IMPORTRANGE(ssUrl, ssRange)))
 </code></pre>
 <p>但是直接这么使用的话函数会出错，因为 LAMBDA 函数只支持单行输出，而 <a href="https://dev-coco.github.io/Excel/#Function/Others/IMPORTRANGE">IMPORTRANGE</a> 引用的数据是一整个范围的。</p>
 <figure data-type="image" tabindex="2"><img src="https://dev-coco.github.io/post-images/1707074793477.png" alt="" loading="lazy"></figure>
 <p>所以需要把 IMPORTRANGE 引用的数据转换成行。这里用到 TOROW 函数，作用是将一个数组或者一个范围的数据转换成单行。</p>
-<pre><code class="language-excel-formula">=MAP(A1:A2, B1:B2, LAMBDA(ssUrl, ssRange, TOROW(IMPORTRANGE(ssUrl, ssRange))))
+<pre><code class="language-excel">=MAP(A1:A2, B1:B2, LAMBDA(ssUrl, ssRange, TOROW(IMPORTRANGE(ssUrl, ssRange))))
 </code></pre>
 <figure data-type="image" tabindex="3"><img src="https://dev-coco.github.io/post-images/1707074812389.png" alt="" loading="lazy"></figure>
 <p>因为列表中 A 列的表格链接有两个，虽然刚才把 IMPORTRANGE 输出的结果转换成单行了，但是有两个链接，所以会输出两行的数据，需要再次使用 TOROW 函数把所有数据都转换成单行。</p>
-<pre><code class="language-excel-formula">=TOROW(MAP(A1:A2, B1:B2, LAMBDA(ssUrl, ssRange, TOROW(IMPORTRANGE(ssUrl, ssRange)))))
+<pre><code class="language-excel">=TOROW(MAP(A1:A2, B1:B2, LAMBDA(ssUrl, ssRange, TOROW(IMPORTRANGE(ssUrl, ssRange)))))
 </code></pre>
 <p>现在已经把所有的数据都引用过来了，需要把数据的格式还原。这里用到 WRAPROWS 函数，将数据按照指定的列数拆分并且换行。</p>
 <p>在列表中 B 列引用的范围是 A 到 E 列，这个范围一共有 5 列，那么在 WRAPROWS 函数中第二个参数需要设置 5，意思是每 5 列将数据换行。</p>
-<pre><code class="language-excel-formula">=WRAPROWS(TOROW(MAP(A1:A2, B1:B2, LAMBDA(ssUrl, ssRange, TOROW(IMPORTRANGE(ssUrl, ssRange))))), 5)
+<pre><code class="language-excel">=WRAPROWS(TOROW(MAP(A1:A2, B1:B2, LAMBDA(ssUrl, ssRange, TOROW(IMPORTRANGE(ssUrl, ssRange))))), 5)
 </code></pre>
 <figure data-type="image" tabindex="4"><img src="https://dev-coco.github.io/post-images/1707074817924.png" alt="" loading="lazy"></figure>
 <p>这样就实现了 IMPORTRANGE 数组输出，只需要在列表中 A 列和 B 列修改表格链接和引用范围就可以自动根据这些范围引用内容。</p>
 <p>如果想去掉引用数据的空行，可以使用 <a href="https://dev-coco.github.io/Excel/#Function/Find-Filter/QUERY">QUERY</a> 函数筛选非空行，例子如下。</p>
-<pre><code class="language-excel-formula">=QUERY(
+<pre><code class="language-excel">=QUERY(
   WRAPROWS(
     TOROW(MAP(
       A1:A2, B1:B2, 
@@ -241,7 +241,7 @@
       <!-- right -->
       <div id="sidebar" class="main-container-right">
         <div class="id_card i-card">
-          <div class="id_card-avatar" style="background-image: url(https://dev-coco.github.io/images/avatar.png?v=1749124858790)"></div>
+          <div class="id_card-avatar" style="background-image: url(https://dev-coco.github.io/images/avatar.png?v=1749268518739)"></div>
           <h1 class="id_card-title">Raz1ner</h1>
           <p style="text-align: center;">
             <a href="https://github.com/dev-coco" rel="nofollow noreferrer" target="_blank"><img class="social-icon" alt="Github" src="/images/social/GitHub.png"></a>
@@ -281,24 +281,24 @@
       </div>
       <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
         <div class="notice-content">
-          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/ai-tech/">AI 科技</a>
-          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/other/">其它</a>
-          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/excel/">Excel</a>
-          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/google-script/">Google 脚本</a>
-          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/windows/">Windows</a>
-          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/software/">软件</a>
-          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/macos/">macOS</a>
-          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
-          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/instagram/">Instagram</a>
-          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/ios/">iOS</a>
-          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/security/">安全</a>
-          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/shell/">Shell</a>
-          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/javascript/">Javascript</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/ai-tech/">AI 科技</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/excel/">Excel</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/google-script/">Google 脚本</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/instagram/">Instagram</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/security/">安全</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/javascript/">Javascript</a>
           <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/twitter-x/">Twitter (X)</a>
-          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/life/">生活</a>
-          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/sololearn/">Sololearn</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/life/">生活</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/sololearn/">Sololearn</a>
           <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
-          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
         </div>
       </div>
       </div>
