@@ -2,13 +2,46 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://dev-coco.github.io</id>
     <title>Raz1ner</title>
-    <updated>2025-06-23T01:59:43.222Z</updated>
+    <updated>2025-06-28T20:49:25.102Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dev-coco.github.io"/>
     <link rel="self" href="https://dev-coco.github.io/atom.xml"/>
     <logo>https://dev-coco.github.io/images/avatar.png</logo>
     <icon>https://dev-coco.github.io/favicon.ico</icon>
     <rights>All rights reserved 2025, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[加快网页加载速度]]></title>
+        <id>https://dev-coco.github.io/post/Page-Load-Booster/</id>
+        <link href="https://dev-coco.github.io/post/Page-Load-Booster/">
+        </link>
+        <updated>2025-06-27T12:05:40.000Z</updated>
+        <summary type="html"><![CDATA[<p>加快页面加载速度，安装即用，无需任何设置。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>加快页面加载速度，安装即用，无需任何设置。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Page Load Booster]]></title>
+        <id>https://dev-coco.github.io/post/Page-Load-Booster-EN/</id>
+        <link href="https://dev-coco.github.io/post/Page-Load-Booster-EN/">
+        </link>
+        <updated>2025-06-27T12:03:29.000Z</updated>
+        <summary type="html"><![CDATA[<p>Accelerate page loading with a plugin that works out of the box—no configuration needed.</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Accelerate page loading with a plugin that works out of the box—no configuration needed.</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Page Load Booster Privacy Policy]]></title>
+        <id>https://dev-coco.github.io/post/Page-Load-Booster-Privacy-Policy/</id>
+        <link href="https://dev-coco.github.io/post/Page-Load-Booster-Privacy-Policy/">
+        </link>
+        <updated>2025-06-27T12:03:15.000Z</updated>
+        <summary type="html"><![CDATA[<p>Page Load Booster Chrome Extension’s privacy policy is detailed here.</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Page Load Booster Chrome Extension’s privacy policy is detailed here.</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[ChatGPT Team 团队版首月 1 美元]]></title>
         <id>https://dev-coco.github.io/post/ChatGPT-Team-One-Dollar/</id>
@@ -139,39 +172,6 @@
         <summary type="html"><![CDATA[<p>快速将表格内的图片保存到云端。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>快速将表格内的图片保存到云端。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[截图 OCR]]></title>
-        <id>https://dev-coco.github.io/post/Screenshot-OCR/</id>
-        <link href="https://dev-coco.github.io/post/Screenshot-OCR/">
-        </link>
-        <updated>2025-03-14T12:20:11.000Z</updated>
-        <summary type="html"><![CDATA[<p>从网页截图中提取文本，并支持翻译功能。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>从网页截图中提取文本，并支持翻译功能。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[精品正版软件列表]]></title>
-        <id>https://dev-coco.github.io/post/Awesome-Software/</id>
-        <link href="https://dev-coco.github.io/post/Awesome-Software/">
-        </link>
-        <updated>2025-01-15T14:40:10.000Z</updated>
-        <summary type="html"><![CDATA[<p>打造您的正版软件宝库：全新精品正版软件列表网站上线！</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>打造您的正版软件宝库：全新精品正版软件列表网站上线！</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[浏览器性能排名]]></title>
-        <id>https://dev-coco.github.io/post/Browser-Rank/</id>
-        <link href="https://dev-coco.github.io/post/Browser-Rank/">
-        </link>
-        <updated>2025-01-08T07:38:49.000Z</updated>
-        <summary type="html"><![CDATA[<p>市面上多种浏览器进行性能跑分测试并且整理出排名。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>市面上多种浏览器进行性能跑分测试并且整理出排名。</p>
 ]]></content>
     </entry>
 </feed>
