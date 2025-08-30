@@ -1,0 +1,41 @@
+<h3><strong>Privacy Policy</strong></h3>
+<p>&nbsp;</p>
+<p>This policy clarifies how your application handles user data, which is the most important part of Google OAuth verification.</p>
+<p><strong>Image Upload to Cloud - Privacy Policy</strong></p>
+<p><strong>Last Updated:</strong> [Insert current date, e.g., August 29, 2025]</p>
+
+<p><strong>1. Introduction</strong></p>
+<p>"Image Upload to Cloud" is a Google Apps Script application (hereinafter referred to as "the Application"), designed to help users manage image data within Google Sheets. This Application is committed to protecting your privacy and handling your data transparently.</p>
+
+<p><strong>2. How the Application Processes Your Data</strong></p>
+<p>When running, the Application requests access to the following Google account data:</p>
+
+<p><strong>Google Sheets (Spreadsheet):</strong> The Application needs access to the Google Sheets you provide in order to read image links and write OCR recognition and translation results. <strong>It only reads and writes specific cells in the designated spreadsheet, and does not access or modify other spreadsheets in your account.</strong></p>
+
+<p><strong>Google Drive (Drive):</strong> The Application creates, writes, and reads your Google Drive files in order to save images from external URLs into a "Stored Images" folder in your Google Drive. <strong>The Application only has access to this specific folder.</strong></p>
+
+<p><strong>Google Language Service (LanguageApp):</strong> The Application uses Google’s language service to translate OCR-recognized text. This service may process your text content, but we do not store such content.</p>
+
+<p><strong>3. Data Storage & Security</strong></p>
+<p><strong>No Storage:</strong> The Application itself <strong>does not store any user data</strong>, including your Google account information, spreadsheet content, or image data. All operations occur directly within your Google account and Google services.</p>
+
+<p><strong>Data Flow:</strong></p>
+<ul>
+<li>Reads image URLs from your Google Sheets</li>
+<li>Temporarily fetches image data via <code>UrlFetchApp</code></li>
+<li>Saves image data into your Google Drive using <code>DriveApp</code> or <code>Drive</code> services</li>
+<li>Performs OCR via Google Drive services</li>
+<li>Translates OCR results via <code>LanguageApp</code></li>
+<li>Writes OCR and translation results back into your Google Sheets via <code>SpreadsheetApp</code></li>
+</ul>
+
+<p>We <strong>do not</strong> transfer your data to any third parties.</p>
+
+<p><strong>4. User Control</strong></p>
+<p>You may control your data at any time by:</p>
+
+<p><strong>Revoking Authorization:</strong> You may revoke this Application’s access via your Google account security settings. Once revoked, the Application can no longer access your Google services.</p>
+<p><strong>Deleting Data:</strong> The images created by the Application are stored in your Google Drive under the "Stored Images" folder. You may delete this folder or any of its files at any time.</p>
+
+<p><strong>5. Policy Updates</strong></p>
+<p>This policy may be updated at any time. Changes will be published on this page. We recommend reviewing this policy regularly to stay informed.</p>
