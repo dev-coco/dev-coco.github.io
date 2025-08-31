@@ -110,7 +110,7 @@ function sendFeedback () {
 问题：${getFeedback}`
   /**
    * botToken 和 userID 需要替换
-   * https://dev-coco.github.io/post/Create-Telegram-Bot/
+   * https://raz1ner.com/post/Create-Telegram-Bot/
    */
   fetch('https://api.telegram.org/botToken/sendMessage?chat_id=userID&text=' + encodeURIComponent(sendMessenger))
   document.getElementById('resp_status').innerText = '提交成功'

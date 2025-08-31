@@ -1,4 +1,4 @@
-var website = "https://dev-coco.github.io/Online-Tools/Facebook-Site-Search/";
+var website = "https://raz1ner.com/Online-Tools/Facebook-Site-Search/";
 
 function India_Facebook() {
     document.getElementById("devices").src = website + "India/India-Facebook.html"

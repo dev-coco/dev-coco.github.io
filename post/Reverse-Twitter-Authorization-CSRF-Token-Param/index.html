@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>逆向 Twitter 接口 authorization 和 CSRF token | Raz1ner</title>
   <meta name="author" content="Raz1ner">
-  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1756558594116">
-  <link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
+  <link rel="shortcut icon" href="https://raz1ner.com/favicon.ico?v=1756610439545">
+  <link rel="stylesheet" href="https://raz1ner.com/styles/main.css">
   <!-- <script src="/js/prism.js"></script> -->
   <!-- <link rel="stylesheet" href="/css/prism.css"> -->
-  <script src="https://dev-coco.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
+  <script src="https://raz1ner.com/media/js/jquery.sticky-sidebar.min.js"></script>
   <script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script async src="https://fundingchoicesmessages.google.com/i/pub-6960947409660270?ers=1" nonce="3szuJwRueku-LVJlmdoLew"></script><script nonce="3szuJwRueku-LVJlmdoLew">(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
   <script>(function(){
@@ -32,17 +32,17 @@
       gtag('js', new Date())
       gtag('config', 'G-24X8H1LT7N')
    </script>
-  <meta property="og:image" content="https://dev-coco.github.io/post-images/Reverse-Twitter-Authorization-CSRF-Token-Param.png">
+  <meta property="og:image" content="https://raz1ner.com/post-images/Reverse-Twitter-Authorization-CSRF-Token-Param.png">
   <meta name="description" content="逆向 Twitter 接口参数。">
-  <link rel="canonical" href="https://dev-coco.github.io/post/Reverse-Twitter-Authorization-CSRF-Token-Param/">
+  <link rel="canonical" href="https://raz1ner.com/post/Reverse-Twitter-Authorization-CSRF-Token-Param/">
   <meta property="og:title" content="逆向 Twitter 接口 authorization 和 CSRF token - Raz1ner">
   <meta property="og:type" content="article">
-  <meta property="og:image" content="https://dev-coco.github.io/post-images/Reverse-Twitter-Authorization-CSRF-Token-Param.png">
-  <meta property="og:url" content="https://dev-coco.github.io/post/Reverse-Twitter-Authorization-CSRF-Token-Param/">
+  <meta property="og:image" content="https://raz1ner.com/post-images/Reverse-Twitter-Authorization-CSRF-Token-Param.png">
+  <meta property="og:url" content="https://raz1ner.com/post/Reverse-Twitter-Authorization-CSRF-Token-Param/">
   <meta property="og:description" content="逆向 Twitter 接口参数。">
   <meta name="twitter:title" content="逆向 Twitter 接口 authorization 和 CSRF token - Raz1ner">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://dev-coco.github.io/post-images/Reverse-Twitter-Authorization-CSRF-Token-Param.png">
+  <meta name="twitter:image" content="https://raz1ner.com/post-images/Reverse-Twitter-Authorization-CSRF-Token-Param.png">
   <meta name="twitter:description" content="逆向 Twitter 接口参数。">
   <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:300,300i,400,400i,700,700i,800" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Mallanna" rel="stylesheet">
@@ -53,8 +53,8 @@
     <div class="header">
       <div class="nav">
         <div class="logo">
-          <a href="https://dev-coco.github.io">
-            <img class="avatar" alt="Raz1ner" src="https://dev-coco.github.io/images/avatar.png?v=1756558594116" alt="">
+          <a href="https://raz1ner.com">
+            <img class="avatar" alt="Raz1ner" src="https://raz1ner.com/images/avatar.png?v=1756610439545" alt="">
           </a>
           <div class="site-title">
             <h1>Raz1ner</h1>
@@ -124,7 +124,7 @@
 
 
 
-        <form id="gridea-search-form" action="https://dev-coco.github.io/search/" class="search">
+        <form id="gridea-search-form" action="https://raz1ner.com/search/" class="search">
           <input type="search" name="q" class="search-box">
           <span class="search-button">
             <span class="search-icon"></span>
@@ -153,11 +153,11 @@
         <h2 class="post-title">逆向 Twitter 接口 authorization 和 CSRF token</h2>
         <div class="post-info">
           <time class="post-time">2023-10-15 / 2 min read</time>
-            <a href="https://dev-coco.github.io/tag/twitter-x/" class="post-tag i-tag i-tag-banana">#Twitter (X)</a>
+            <a href="https://raz1ner.com/tag/twitter-x/" class="post-tag i-tag i-tag-primary">#Twitter (X)</a>
         </div>
         <!--
           
-        <div class="post-feature-image" style="background-image: url('https://dev-coco.github.io/post-images/Reverse-Twitter-Authorization-CSRF-Token-Param.png')"></div>
+        <div class="post-feature-image" style="background-image: url('https://raz1ner.com/post-images/Reverse-Twitter-Authorization-CSRF-Token-Param.png')"></div>
         -->
           <div class="post-content">
             <p>逆向 Twitter 接口参数。</p>
@@ -165,15 +165,15 @@
 <p>在请求推特接口的时候，在 headers 里面有两个必须的参数，一个是 authorization，另外一个是 x-csrf-token。</p>
 <h2 id="authorization">authorization</h2>
 <p>authorization 这个参数的值有一个特征，前面是由很多个 A 开头的，先来搜索一下看看有没有什么线索。</p>
-<figure data-type="image" tabindex="1"><img src="https://dev-coco.github.io/post-images/1697298653066.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="1"><img src="https://raz1ner.com/post-images/1697298653066.png" alt="" loading="lazy"></figure>
 <p>在这个文件里面找到了 authorization 参数对应的值，但是这里的代码是用 webpack 打包的，没办法获取到代码内部的变量值。</p>
-<figure data-type="image" tabindex="2"><img src="https://dev-coco.github.io/post-images/1697298656943.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="2"><img src="https://raz1ner.com/post-images/1697298656943.png" alt="" loading="lazy"></figure>
 <p>不过可以请求这个 js 文件，然后把代码里面的值给筛选出来。</p>
 <pre><code class="language-JavaScript">const authorization = await fetch('https://abs.twimg.com/responsive-web/client-web/main.e6b82e4a.js').then(response =&gt; response.text()).then(text =&gt; text.match(/Bearer AAAAAAAAAAA.*?(?=&quot;)/)[0])
 console.log(authorization)
 </code></pre>
 <p>这里就获取到了 authorization 的值，但是这样的方法还有一个问题，main 后面的 e6b82e4a 看起来是一个随机值，如果哪天改动了，就会失效。那么再进一步分析看看还有没有什么特征可以获取到这个文件。</p>
-<figure data-type="image" tabindex="3"><img src="https://dev-coco.github.io/post-images/1697298661737.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="3"><img src="https://raz1ner.com/post-images/1697298661737.png" alt="" loading="lazy"></figure>
 <p>这个文件的命名格式是 main 开头然后 xxxx 结尾，在整个 HTML 里面的 head 里面只有一个名字包含 main 的 js 文件。这样就简单了，只需要循环一遍页面上所有的 link 标签，然后找到包含 main 的文件即可。</p>
 <pre><code class="language-JavaScript">let authorization
 const link = document.querySelectorAll('link')
@@ -182,22 +182,22 @@ console.log(authorization)
 </code></pre>
 <h2 id="csrf-token">CSRF token</h2>
 <p>CSRF token 的值并没有看到有什么特征，那么就先搜索一下试试看。</p>
-<figure data-type="image" tabindex="4"><img src="https://dev-coco.github.io/post-images/1697298687649.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="4"><img src="https://raz1ner.com/post-images/1697298687649.png" alt="" loading="lazy"></figure>
 <p>在这个地方可以看到 CSRF token 的赋值方式。</p>
-<figure data-type="image" tabindex="5"><img src="https://dev-coco.github.io/post-images/1697298698894.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="5"><img src="https://raz1ner.com/post-images/1697298698894.png" alt="" loading="lazy"></figure>
 <p>从这里可以看到 x-csrf-token 参数的值是从 <code>r.vlaue</code> 赋值的，<code>r</code> 的值是从 <code>self.cookieStore.get(&quot;ct0&quot;)</code> 传入的，这样就获取到 CSRF token 的值了。</p>
 <pre><code class="language-JavaScript">await cookieStore.get('ct0').then(r =&gt; r.value)
 </code></pre>
 
           </div>
           <div class="copyright">
-            <p>本文链接： <a href="https://dev-coco.github.io/post/Reverse-Twitter-Authorization-CSRF-Token-Param/">https://dev-coco.github.io/post/Reverse-Twitter-Authorization-CSRF-Token-Param/</a></p>
+            <p>本文链接： <a href="https://raz1ner.com/post/Reverse-Twitter-Authorization-CSRF-Token-Param/">https://raz1ner.com/post/Reverse-Twitter-Authorization-CSRF-Token-Param/</a></p>
             <p>版权声明： 本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="nofollow noreferrer" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</p>
           </div>
         </article>
         <div class="next-post">
           <div class="next">下一篇</div>
-          <a href="https://dev-coco.github.io/post/Reverse-Facebook-__dyn-Param/">
+          <a href="https://raz1ner.com/post/Reverse-Facebook-__dyn-Param/">
             <h3 class="post-title">逆向 Facebook 接口 __dyn 参数</h3>
           </a>
         </div>
@@ -209,7 +209,7 @@ console.log(authorization)
       <!-- right -->
       <div id="sidebar" class="main-container-right">
         <div class="id_card i-card">
-          <div class="id_card-avatar" style="background-image: url(https://dev-coco.github.io/images/avatar.png?v=1756558594116)"></div>
+          <div class="id_card-avatar" style="background-image: url(https://raz1ner.com/images/avatar.png?v=1756610439545)"></div>
           <h1 class="id_card-title">Raz1ner</h1>
           <p style="text-align: center;">
             <a href="https://github.com/dev-coco" rel="nofollow noreferrer" target="_blank"><img class="social-icon" alt="Github" src="/images/social/GitHub.png"></a>
@@ -249,24 +249,24 @@ console.log(authorization)
       </div>
       <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
         <div class="notice-content">
-          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/ai-tech/">AI 科技</a>
-          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/other/">其它</a>
-          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/excel/">Excel</a>
-          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/google-script/">Google 脚本</a>
-          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/windows/">Windows</a>
-          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/software/">软件</a>
-          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/macos/">macOS</a>
-          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
-          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/instagram/">Instagram</a>
-          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/ios/">iOS</a>
-          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/security/">安全</a>
-          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/shell/">Shell</a>
-          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/javascript/">Javascript</a>
-          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/twitter-x/">Twitter (X)</a>
-          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/life/">生活</a>
-          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/sololearn/">Sololearn</a>
-          <a class="tags-tag i-tag i-tag-banana" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
-          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/ai-tech/">AI 科技</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/excel/">Excel</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/google-script/">Google 脚本</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://raz1ner.com/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://raz1ner.com/tag/instagram/">Instagram</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/security/">安全</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/javascript/">Javascript</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/twitter-x/">Twitter (X)</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/life/">生活</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://raz1ner.com/tag/sololearn/">Sololearn</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/linux-command/">Linux命令</a>
         </div>
       </div>
       </div>
@@ -279,7 +279,7 @@ console.log(authorization)
         <a href="/atom.xml" target="_blank"><img class="social-icon" alt="rss" src="/images/social/RSS.png"></a>
         <a href="mailto:ruijingle@gmail.com" target="_blank"><img class="social-icon" alt="Email" src="/images/social/Gmail.png"></a>
       </p>
-    <span>Copyright © 2020-2025 Raz1ner - All Rights Reserved.</span> | <a class="rss" href="https://dev-coco.github.io/atom.xml" target="_blank">RSS</a>
+    <span>Copyright © 2020-2025 Raz1ner - All Rights Reserved.</span> | <a class="rss" href="https://raz1ner.com/atom.xml" target="_blank">RSS</a>
 </div>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/excel.min.js"></script>

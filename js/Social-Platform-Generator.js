@@ -66,7 +66,7 @@ function generateCode (type, value) {
   }
 }
 
-const source = (customCode, image) => `<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Social Template</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"><link rel="stylesheet" href="https://dev-coco.github.io/css/Social-Template.css"></head><body class="social"><header>${image}</header><main><h1></h1><div id="container"><div style="columns: 2;margin: 0 auto">${customCode}</div></div></main><script src="https://dev-coco.github.io/js/Social-Template.js"></script></body></html>`
+const source = (customCode, image) => `<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Social Template</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"><link rel="stylesheet" href="https://raz1ner.com/css/Social-Template.css"></head><body class="social"><header>${image}</header><main><h1></h1><div id="container"><div style="columns: 2;margin: 0 auto">${customCode}</div></div></main><script src="https://raz1ner.com/js/Social-Template.js"></script></body></html>`
 
 /**
  * @description HTML 实体转换

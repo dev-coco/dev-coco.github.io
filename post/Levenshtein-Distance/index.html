@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Levenshtein distance 编辑距离算法 | Raz1ner</title>
   <meta name="author" content="Raz1ner">
-  <link rel="shortcut icon" href="https://dev-coco.github.io/favicon.ico?v=1756558594116">
-  <link rel="stylesheet" href="https://dev-coco.github.io/styles/main.css">
+  <link rel="shortcut icon" href="https://raz1ner.com/favicon.ico?v=1756610439545">
+  <link rel="stylesheet" href="https://raz1ner.com/styles/main.css">
   <!-- <script src="/js/prism.js"></script> -->
   <!-- <link rel="stylesheet" href="/css/prism.css"> -->
-  <script src="https://dev-coco.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
+  <script src="https://raz1ner.com/media/js/jquery.sticky-sidebar.min.js"></script>
   <script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script async src="https://fundingchoicesmessages.google.com/i/pub-6960947409660270?ers=1" nonce="3szuJwRueku-LVJlmdoLew"></script><script nonce="3szuJwRueku-LVJlmdoLew">(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
   <script>(function(){
@@ -32,17 +32,17 @@
       gtag('js', new Date())
       gtag('config', 'G-24X8H1LT7N')
    </script>
-  <meta property="og:image" content="https://dev-coco.github.io/post-images/Levenshtein-Distance.jpg">
+  <meta property="og:image" content="https://raz1ner.com/post-images/Levenshtein-Distance.jpg">
   <meta name="description" content="详细解释算法的原理以及计算过程。">
-  <link rel="canonical" href="https://dev-coco.github.io/post/Levenshtein-Distance/">
+  <link rel="canonical" href="https://raz1ner.com/post/Levenshtein-Distance/">
   <meta property="og:title" content="Levenshtein distance 编辑距离算法 - Raz1ner">
   <meta property="og:type" content="article">
-  <meta property="og:image" content="https://dev-coco.github.io/post-images/Levenshtein-Distance.jpg">
-  <meta property="og:url" content="https://dev-coco.github.io/post/Levenshtein-Distance/">
+  <meta property="og:image" content="https://raz1ner.com/post-images/Levenshtein-Distance.jpg">
+  <meta property="og:url" content="https://raz1ner.com/post/Levenshtein-Distance/">
   <meta property="og:description" content="详细解释算法的原理以及计算过程。">
   <meta name="twitter:title" content="Levenshtein distance 编辑距离算法 - Raz1ner">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://dev-coco.github.io/post-images/Levenshtein-Distance.jpg">
+  <meta name="twitter:image" content="https://raz1ner.com/post-images/Levenshtein-Distance.jpg">
   <meta name="twitter:description" content="详细解释算法的原理以及计算过程。">
   <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:300,300i,400,400i,700,700i,800" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Mallanna" rel="stylesheet">
@@ -53,8 +53,8 @@
     <div class="header">
       <div class="nav">
         <div class="logo">
-          <a href="https://dev-coco.github.io">
-            <img class="avatar" alt="Raz1ner" src="https://dev-coco.github.io/images/avatar.png?v=1756558594116" alt="">
+          <a href="https://raz1ner.com">
+            <img class="avatar" alt="Raz1ner" src="https://raz1ner.com/images/avatar.png?v=1756610439545" alt="">
           </a>
           <div class="site-title">
             <h1>Raz1ner</h1>
@@ -124,7 +124,7 @@
 
 
 
-        <form id="gridea-search-form" action="https://dev-coco.github.io/search/" class="search">
+        <form id="gridea-search-form" action="https://raz1ner.com/search/" class="search">
           <input type="search" name="q" class="search-box">
           <span class="search-button">
             <span class="search-icon"></span>
@@ -153,11 +153,11 @@
         <h2 class="post-title">Levenshtein distance 编辑距离算法</h2>
         <div class="post-info">
           <time class="post-time">2023-06-18 / 6 min read</time>
-            <a href="https://dev-coco.github.io/tag/javascript/" class="post-tag i-tag i-tag-warning">#Javascript</a>
+            <a href="https://raz1ner.com/tag/javascript/" class="post-tag i-tag i-tag-other_3">#Javascript</a>
         </div>
         <!--
           
-        <div class="post-feature-image" style="background-image: url('https://dev-coco.github.io/post-images/Levenshtein-Distance.jpg')"></div>
+        <div class="post-feature-image" style="background-image: url('https://raz1ner.com/post-images/Levenshtein-Distance.jpg')"></div>
         -->
           <div class="post-content">
             <p>详细解释算法的原理以及计算过程。</p>
@@ -171,7 +171,7 @@
 </ul>
 <h2 id="定义">定义</h2>
 <p>如果分别用 |a| 和 |b| 表示 a,b 两个字符串的长度，那么它们的列文斯坦距离为 lev<sub>a,b</sub>(|a|,|b|)，它符合：</p>
-<figure data-type="image" tabindex="1"><img src="https://dev-coco.github.io/post-images/1679111224730.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="1"><img src="https://raz1ner.com/post-images/1679111224730.png" alt="" loading="lazy"></figure>
 <p>l<sub>(a<sub>i</sub>≠b<sub>j</sub>)</sub> 是一个指示函数，当 a<sub>i</sub> = b<sub>j</sub> 时，其值为 0，其他时候它等于 1 。</p>
 <p>lev<sub>a,b</sub>(i,j) 表示 a 的前 i 个字符与 b 的前 j 个字符之间的列文斯坦距离。（i 和 j 都是从 1 开始的下标）</p>
 <p>注意：min运算中的第一个公式代表（ 从 a 中）删除字符（以到达 b）；第二个公式代表插入字符；第三个代表替换（取决于当前字符是否相同）。</p>
@@ -200,61 +200,61 @@
 <h2 id="实例">实例</h2>
 <p>例如，计算 dance 转换成 pacaed 需要使用最少的步骤。（这个词是我作为例子生造的，没有其它特殊意义。）</p>
 <p>那么先将这两个单词的每一个字符列出一个矩阵，每个单词的的开头保留一个空值。</p>
-<figure data-type="image" tabindex="2"><img src="https://dev-coco.github.io/post-images/1679112870588.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="2"><img src="https://raz1ner.com/post-images/1679112870588.png" alt="" loading="lazy"></figure>
 <p>先来计算第一行。两个空值是一致的，不需要进行任何的操作，所以将一个空值转换成空值，需要使用最少的步骤是 0。</p>
-<figure data-type="image" tabindex="3"><img src="https://dev-coco.github.io/post-images/1679113306694.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="3"><img src="https://raz1ner.com/post-images/1679113306694.png" alt="" loading="lazy"></figure>
 <p>将一个空值和 d 转换成空值，已知第一个步骤不需要进行任何的操作，但是第二个字符是多余的，需要将 d 删除，所以将空值和 d 转换成空值最少需要用到的步骤是 1。</p>
-<figure data-type="image" tabindex="4"><img src="https://dev-coco.github.io/post-images/1679113303247.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="4"><img src="https://raz1ner.com/post-images/1679113303247.png" alt="" loading="lazy"></figure>
 <p>那么继续往右计算，将一个空值和 da 转换成空值。和空值对比，da 是多余的字符，所以需要两个删除字符的步骤才能转换成和空值一致。</p>
-<figure data-type="image" tabindex="5"><img src="https://dev-coco.github.io/post-images/1679113628003.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="5"><img src="https://raz1ner.com/post-images/1679113628003.png" alt="" loading="lazy"></figure>
 <p>那么后面以此类推都是一样的，这里就可以“偷个懒”，往右直接加 1 就可以了。因为后面比空值都多一个字符，所以都需要多一个删除字符的步骤。</p>
-<figure data-type="image" tabindex="6"><img src="https://dev-coco.github.io/post-images/1679113860855.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="6"><img src="https://raz1ner.com/post-images/1679113860855.png" alt="" loading="lazy"></figure>
 <p>纵列也是一样的算法，将空值转换成空值和 p，需要使用删除字符，将 p 删掉，所以需要用到的步骤是 1。</p>
-<figure data-type="image" tabindex="7"><img src="https://dev-coco.github.io/post-images/1679114017437.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="7"><img src="https://raz1ner.com/post-images/1679114017437.png" alt="" loading="lazy"></figure>
 <p>下面的算法一样，直接往下加 1 即可。<br>
-<img src="https://dev-coco.github.io/post-images/1679115642799.png" alt="" loading="lazy"></p>
+<img src="https://raz1ner.com/post-images/1679115642799.png" alt="" loading="lazy"></p>
 <p>继续计算第二行，将空值 d 转换成空值 p 所需的步骤，只需要将 d 替换成 p，所以需要用到的步骤是 1。计算的原理是这样的，如果遇到很长的字符这样算起来就太慢，下面介绍一个便捷的算法，先对比当前对应的字符是否一致。</p>
-<figure data-type="image" tabindex="8"><img src="https://dev-coco.github.io/post-images/1679116285110.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="8"><img src="https://raz1ner.com/post-images/1679116285110.png" alt="" loading="lazy"></figure>
 <p>如果不一致，就从矩阵中取这个范围内最小的值，也就是 0，然后再加 1。</p>
-<figure data-type="image" tabindex="9"><img src="https://dev-coco.github.io/post-images/1679116330193.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="9"><img src="https://raz1ner.com/post-images/1679116330193.png" alt="" loading="lazy"></figure>
 <p>那么就得出了将将空值 d 转换成空值 p 所需的步骤。</p>
-<figure data-type="image" tabindex="10"><img src="https://dev-coco.github.io/post-images/1679116495558.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="10"><img src="https://raz1ner.com/post-images/1679116495558.png" alt="" loading="lazy"></figure>
 <p>后面也是一样的算法，判断 a 和 p 是否一致，如果不一样，从矩阵中取这个范围内最小值，也就是 1，再加上 1。</p>
-<figure data-type="image" tabindex="11"><img src="https://dev-coco.github.io/post-images/1679116688268.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="11"><img src="https://raz1ner.com/post-images/1679116688268.png" alt="" loading="lazy"></figure>
 <p>那么就得出了将将空值 da 转换成空值 p 所需的步骤是 2。</p>
-<figure data-type="image" tabindex="12"><img src="https://dev-coco.github.io/post-images/1679116856218.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="12"><img src="https://raz1ner.com/post-images/1679116856218.png" alt="" loading="lazy"></figure>
 <p>还有一个更便捷的计算方法，判断在所有的范围里，是否包含 p，若不包含，根据上面的步骤，先计算出第一个所需的步骤，然后往后加 1 即可。</p>
-<figure data-type="image" tabindex="13"><img src="https://dev-coco.github.io/post-images/1679117217914.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="13"><img src="https://raz1ner.com/post-images/1679117217914.png" alt="" loading="lazy"></figure>
 <p>下面也是一样的算法， 先判断对应的字符，a 和 d 是否一致，若是不一致，从矩阵中取这个范围内最小值再加上 1。</p>
-<figure data-type="image" tabindex="14"><img src="https://dev-coco.github.io/post-images/1679141971036.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="14"><img src="https://raz1ner.com/post-images/1679141971036.png" alt="" loading="lazy"></figure>
 <p>所以得出的结果是 2。</p>
-<figure data-type="image" tabindex="15"><img src="https://dev-coco.github.io/post-images/1679142586271.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="15"><img src="https://raz1ner.com/post-images/1679142586271.png" alt="" loading="lazy"></figure>
 <p>如果对应字符一致，只需要从矩阵中取这个范围最小值，不需要加 1，因为相同的两个字符不需要任何的操作。</p>
-<figure data-type="image" tabindex="16"><img src="https://dev-coco.github.io/post-images/1679143463035.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="16"><img src="https://raz1ner.com/post-images/1679143463035.png" alt="" loading="lazy"></figure>
 <p>所以结果是 1。</p>
-<figure data-type="image" tabindex="17"><img src="https://dev-coco.github.io/post-images/1679143849770.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="17"><img src="https://raz1ner.com/post-images/1679143849770.png" alt="" loading="lazy"></figure>
 <p>后面的内容和 a 都不一致，从矩阵中取这个范围的最小值，也就是 1。因为 n 和 a 是不一致的，需要将最小值再加 1。剩下的往右加 1 即可。</p>
-<figure data-type="image" tabindex="18"><img src="https://dev-coco.github.io/post-images/1679144815271.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="18"><img src="https://raz1ner.com/post-images/1679144815271.png" alt="" loading="lazy"></figure>
 <p>继续往下计算，对应的 c 和 d 不一致，从矩阵中取这个范围内最小值再加上 1。</p>
-<figure data-type="image" tabindex="19"><img src="https://dev-coco.github.io/post-images/1679145712773.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="19"><img src="https://raz1ner.com/post-images/1679145712773.png" alt="" loading="lazy"></figure>
 <p>结果是 3。</p>
-<figure data-type="image" tabindex="20"><img src="https://dev-coco.github.io/post-images/1679146316051.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="20"><img src="https://raz1ner.com/post-images/1679146316051.png" alt="" loading="lazy"></figure>
 <p>往右也是一样的算法，判断 a 和 c 是否一致，如果不一致，从矩阵中取这个范围内最小值再加上 1。</p>
-<figure data-type="image" tabindex="21"><img src="https://dev-coco.github.io/post-images/1679146552057.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="21"><img src="https://raz1ner.com/post-images/1679146552057.png" alt="" loading="lazy"></figure>
 <p>不过需要注意的是最小值的位置不固定，可能会在第二个格子，也有可能会在第一个格子，所以不管存在哪个位置都取最小值。因为我看到有些解释是从第一个格子取值，但是这样的算法并不准确，在某些情况下会算错。</p>
 <p>后面的算法都是一样的，就不一一举例了，只需要注意当前要计算对应的字符是否一致，判断是否需要加 1。</p>
 <p>全部算完后，右下角的格子就是最终的结果，也就是说从 dance 转换成 pacaed 最少需要四个步骤。</p>
-<figure data-type="image" tabindex="22"><img src="https://dev-coco.github.io/post-images/1679146849222.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="22"><img src="https://raz1ner.com/post-images/1679146849222.png" alt="" loading="lazy"></figure>
 
           </div>
           <div class="copyright">
-            <p>本文链接： <a href="https://dev-coco.github.io/post/Levenshtein-Distance/">https://dev-coco.github.io/post/Levenshtein-Distance/</a></p>
+            <p>本文链接： <a href="https://raz1ner.com/post/Levenshtein-Distance/">https://raz1ner.com/post/Levenshtein-Distance/</a></p>
             <p>版权声明： 本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="nofollow noreferrer" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</p>
           </div>
         </article>
         <div class="next-post">
           <div class="next">下一篇</div>
-          <a href="https://dev-coco.github.io/post/Skype-Disable-News/">
+          <a href="https://raz1ner.com/post/Skype-Disable-News/">
             <h3 class="post-title">屏蔽 Skype 内置新闻功能</h3>
           </a>
         </div>
@@ -266,7 +266,7 @@
       <!-- right -->
       <div id="sidebar" class="main-container-right">
         <div class="id_card i-card">
-          <div class="id_card-avatar" style="background-image: url(https://dev-coco.github.io/images/avatar.png?v=1756558594116)"></div>
+          <div class="id_card-avatar" style="background-image: url(https://raz1ner.com/images/avatar.png?v=1756610439545)"></div>
           <h1 class="id_card-title">Raz1ner</h1>
           <p style="text-align: center;">
             <a href="https://github.com/dev-coco" rel="nofollow noreferrer" target="_blank"><img class="social-icon" alt="Github" src="/images/social/GitHub.png"></a>
@@ -308,24 +308,24 @@
       </div>
       <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
         <div class="notice-content">
-          <a class="tags-tag i-tag i-tag-" href="https://dev-coco.github.io/tag/ai-tech/">AI 科技</a>
-          <a class="tags-tag i-tag i-tag-primary" href="https://dev-coco.github.io/tag/other/">其它</a>
-          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/excel/">Excel</a>
-          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/google-script/">Google 脚本</a>
-          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/windows/">Windows</a>
-          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/software/">软件</a>
-          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/macos/">macOS</a>
-          <a class="tags-tag i-tag i-tag-info" href="https://dev-coco.github.io/tag/facebook/">Facebook</a>
-          <a class="tags-tag i-tag i-tag-other_1" href="https://dev-coco.github.io/tag/instagram/">Instagram</a>
-          <a class="tags-tag i-tag i-tag-other_4" href="https://dev-coco.github.io/tag/ios/">iOS</a>
-          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/security/">安全</a>
-          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/shell/">Shell</a>
-          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/javascript/">Javascript</a>
-          <a class="tags-tag i-tag i-tag-error" href="https://dev-coco.github.io/tag/twitter-x/">Twitter (X)</a>
-          <a class="tags-tag i-tag i-tag-other_3" href="https://dev-coco.github.io/tag/life/">生活</a>
-          <a class="tags-tag i-tag i-tag-success" href="https://dev-coco.github.io/tag/sololearn/">Sololearn</a>
-          <a class="tags-tag i-tag i-tag-warning" href="https://dev-coco.github.io/tag/whatsapp/">WhatsApp</a>
-          <a class="tags-tag i-tag i-tag-other_2" href="https://dev-coco.github.io/tag/linux-command/">Linux命令</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://raz1ner.com/tag/ai-tech/">AI 科技</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://raz1ner.com/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/excel/">Excel</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://raz1ner.com/tag/google-script/">Google 脚本</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://raz1ner.com/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/instagram/">Instagram</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://raz1ner.com/tag/security/">安全</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/javascript/">Javascript</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/twitter-x/">Twitter (X)</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://raz1ner.com/tag/life/">生活</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/sololearn/">Sololearn</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/linux-command/">Linux命令</a>
         </div>
       </div>
       </div>
@@ -338,7 +338,7 @@
         <a href="/atom.xml" target="_blank"><img class="social-icon" alt="rss" src="/images/social/RSS.png"></a>
         <a href="mailto:ruijingle@gmail.com" target="_blank"><img class="social-icon" alt="Email" src="/images/social/Gmail.png"></a>
       </p>
-    <span>Copyright © 2020-2025 Raz1ner - All Rights Reserved.</span> | <a class="rss" href="https://dev-coco.github.io/atom.xml" target="_blank">RSS</a>
+    <span>Copyright © 2020-2025 Raz1ner - All Rights Reserved.</span> | <a class="rss" href="https://raz1ner.com/atom.xml" target="_blank">RSS</a>
 </div>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/excel.min.js"></script>

@@ -19,7 +19,7 @@ jobs:
       id: sitemap
       uses: cicirello/generate-sitemap@v1
       with:
-        base-url-path: https://dev-coco.github.io/
+        base-url-path: https://raz1ner.com/
 
     - name: Output stats
       run: |
