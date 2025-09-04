@@ -1,41 +1,36 @@
 <h3><strong>Privacy Policy</strong></h3>
-<p>&nbsp;</p>
-<p>This policy clarifies how your application handles user data, which is the most important part of Google OAuth verification.</p>
-<p><strong>Image Upload to Cloud - Privacy Policy</strong></p>
-<p><strong>Last Updated:</strong> [Insert current date, e.g., August 29, 2025]</p>
+<p><strong>Last Updated:</strong> September 4, 2025</p>
 
 <p><strong>1. Introduction</strong></p>
-<p>"Image Upload to Cloud" is a Google Apps Script application (hereinafter referred to as "the Application"), designed to help users manage image data within Google Sheets. This Application is committed to protecting your privacy and handling your data transparently.</p>
+<p>"Image Upload to Cloud" is a Google Apps Script application (hereinafter referred to as "the Application"), designed to help users manage image data within Google Sheets. This Application is committed to protecting your privacy and handling your data transparently in compliance with Google API Services User Data Policy.</p>
 
-<p><strong>2. How the Application Processes Your Data</strong></p>
-<p>When running, the Application requests access to the following Google account data:</p>
-
-<p><strong>Google Sheets (Spreadsheet):</strong> The Application needs access to the Google Sheets you provide in order to read image links and write OCR recognition and translation results. <strong>It only reads and writes specific cells in the designated spreadsheet, and does not access or modify other spreadsheets in your account.</strong></p>
-
-<p><strong>Google Drive (Drive):</strong> The Application creates, writes, and reads your Google Drive files in order to save images from external URLs into a "Stored Images" folder in your Google Drive. <strong>The Application only has access to this specific folder.</strong></p>
-
-<p><strong>Google Language Service (LanguageApp):</strong> The Application uses Google’s language service to translate OCR-recognized text. This service may process your text content, but we do not store such content.</p>
-
-<p><strong>3. Data Storage & Security</strong></p>
-<p><strong>No Storage:</strong> The Application itself <strong>does not store any user data</strong>, including your Google account information, spreadsheet content, or image data. All operations occur directly within your Google account and Google services.</p>
-
-<p><strong>Data Flow:</strong></p>
+<p><strong>2. Google User Data Access</strong></p>
+<p>The Application may request access to the following Google services and data:</p>
 <ul>
-<li>Reads image URLs from your Google Sheets</li>
-<li>Temporarily fetches image data via <code>UrlFetchApp</code></li>
-<li>Saves image data into your Google Drive using <code>DriveApp</code> or <code>Drive</code> services</li>
-<li>Performs OCR via Google Drive services</li>
-<li>Translates OCR results via <code>LanguageApp</code></li>
-<li>Writes OCR and translation results back into your Google Sheets via <code>SpreadsheetApp</code></li>
+  <li><strong>Google Sheets:</strong> Read and write access to spreadsheets you select. Specifically, the Application reads image URLs from certain cells and writes OCR and translation results into specific cells. No other spreadsheets or cells are accessed.</li>
+  <li><strong>Google Drive:</strong> Create, read, and write files in a folder named "Stored Images". The Application does not access or modify any other files in your Google Drive.</li>
+  <li><strong>Google Drive OCR:</strong> Temporary processing of image files to extract text via Google’s built-in OCR functionality.</li>
+  <li><strong>Google Translate (LanguageApp):</strong> Translate OCR results. Text is only sent to Google’s translation API for processing and is not stored by the Application.</li>
 </ul>
 
-<p>We <strong>do not</strong> transfer your data to any third parties.</p>
+<p><strong>3. Data Sharing & Disclosure</strong></p>
+<p>The Application does <strong>not</strong> share, sell, or disclose your Google user data to any third parties. All data stays within your Google account and Google services.</p>
 
-<p><strong>4. User Control</strong></p>
-<p>You may control your data at any time by:</p>
+<p><strong>4. Data Security & Sensitive Data Protection</strong></p>
+<ul>
+  <li>All operations occur within Google’s secure cloud environment (Google Sheets, Google Drive, Language services).</li>
+  <li>No data is transmitted to external servers or stored outside your Google account.</li>
+  <li>The Application only requests the minimum necessary permissions (principle of least privilege).</li>
+  <li>Any temporary processing (e.g., OCR, translation) occurs through Google APIs with encrypted communication.</li>
+</ul>
 
-<p><strong>Revoking Authorization:</strong> You may revoke this Application’s access via your Google account security settings. Once revoked, the Application can no longer access your Google services.</p>
-<p><strong>Deleting Data:</strong> The images created by the Application are stored in your Google Drive under the "Stored Images" folder. You may delete this folder or any of its files at any time.</p>
+<p><strong>5. Data Retention & Deletion</strong></p>
+<ul>
+  <li><strong>Retention:</strong> The Application itself does not retain any Google user data. Files and results remain only in your Google Drive and Google Sheets.</li>
+  <li><strong>User Control:</strong> You may delete any created files or folders ("Stored Images") at any time from your Google Drive.</li>
+  <li><strong>Revoking Access:</strong> You can revoke the Application’s access to your Google account at any time through <a href="https://myaccount.google.com/permissions">Google Account Permissions</a>.</li>
+  <li><strong>Deletion:</strong> Upon revocation, the Application immediately loses access to all your Google user data.</li>
+</ul>
 
-<p><strong>5. Policy Updates</strong></p>
-<p>This policy may be updated at any time. Changes will be published on this page. We recommend reviewing this policy regularly to stay informed.</p>
+<p><strong>6. Policy Updates</strong></p>
+<p>This Privacy Policy may be updated from time to time. Any changes will be posted on this page with a revised "Last Updated" date. We encourage you to review this page periodically.</p>

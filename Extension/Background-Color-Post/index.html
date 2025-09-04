@@ -2569,7 +2569,7 @@
       tippy('.image-radio img', {
         content (data) {
           console.log(data)
-          const imgID = data.src.replace(/.+img|\D/g, '')
+          const imgID = data.src.replace(/.+\/|\D/g, '')
           return `<img loading="lazy" class="zoom-img" src="/images/Background-Color/${imgID}-2x.png">`
         },
         maxWidth: 420,
