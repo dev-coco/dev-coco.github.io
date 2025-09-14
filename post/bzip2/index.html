@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>bzip2 | Raz1ner</title>
   <meta name="author" content="Raz1ner">
-  <link rel="shortcut icon" href="https://raz1ner.com/favicon.ico?v=1757249920914">
+  <link rel="shortcut icon" href="https://raz1ner.com/favicon.ico?v=1757825666966">
   <link rel="stylesheet" href="https://raz1ner.com/styles/main.css">
   <!-- <script src="/js/prism.js"></script> -->
   <!-- <link rel="stylesheet" href="/css/prism.css"> -->
@@ -32,17 +32,17 @@
       gtag('js', new Date())
       gtag('config', 'G-24X8H1LT7N')
    </script>
-  <meta property="og:image" content="https://dev-coco.github.io/post-images/Linux-Command.png">
+  <meta property="og:image" content="https://raz1ner.com/post-images/Linux-Command.png">
   <meta name="description" content="将文件压缩成 bz2 格式。">
   <link rel="canonical" href="https://raz1ner.com/post/bzip2/">
   <meta property="og:title" content="bzip2 - Raz1ner">
   <meta property="og:type" content="article">
-  <meta property="og:image" content="https://dev-coco.github.io/post-images/Linux-Command.png">
+  <meta property="og:image" content="https://raz1ner.com/post-images/Linux-Command.png">
   <meta property="og:url" content="https://raz1ner.com/post/bzip2/">
   <meta property="og:description" content="将文件压缩成 bz2 格式。">
   <meta name="twitter:title" content="bzip2 - Raz1ner">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://dev-coco.github.io/post-images/Linux-Command.png">
+  <meta name="twitter:image" content="https://raz1ner.com/post-images/Linux-Command.png">
   <meta name="twitter:description" content="将文件压缩成 bz2 格式。">
   <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:300,300i,400,400i,700,700i,800" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Mallanna" rel="stylesheet">
@@ -54,7 +54,7 @@
       <div class="nav">
         <div class="logo">
           <a href="https://raz1ner.com">
-            <img class="avatar" alt="Raz1ner" src="https://raz1ner.com/images/avatar.png?v=1757249920914" alt="">
+            <img class="avatar" alt="Raz1ner" src="https://raz1ner.com/images/avatar.png?v=1757825666966" alt="">
           </a>
           <div class="site-title">
             <h1>Raz1ner</h1>
@@ -153,11 +153,11 @@
         <h2 class="post-title">bzip2</h2>
         <div class="post-info">
           <time class="post-time">2022-01-30 / 8 min read</time>
-            <a href="https://raz1ner.com/tag/linux-command/" class="post-tag i-tag i-tag-warning">#Linux命令</a>
+            <a href="https://raz1ner.com/tag/linux-command/" class="post-tag i-tag i-tag-banana">#Linux命令</a>
         </div>
         <!--
           
-        <div class="post-feature-image" style="background-image: url('https://dev-coco.github.io/post-images/Linux-Command.png')"></div>
+        <div class="post-feature-image" style="background-image: url('https://raz1ner.com/post-images/Linux-Command.png')"></div>
         -->
           <div class="post-content">
             <p>将文件压缩成 bz2 格式。</p>
@@ -179,7 +179,7 @@ anyothername    解压成   anyothername.out
 <p>如果文件名的后缀不是下列之一： .bz2, .bz, .tbz2 或 .tbz, .bzip2 将抱怨无法确定原始文件名，并采用原文件名加 .out 作为解压缩文件名。<br>
 在压缩时，如果不提供文件名，bzip2 将从标准输入读取数据，压缩结果写往标准输出。<br>
 bzip2 采用 32 位 CRC 校验码作自我检查，以确认解压后的文件与原始文件相同。 这可用于检测压缩文件是否损坏，并防止 bzip2 中未知的缺陷（运气好的话这种可能性非常小）。 数据损坏而未检测到的几率非常之小， 对于每个被处理的文件大约是四十亿分之一。 检查是在解压缩时进行的，因此它只能说明某个地方出问题了。 它能帮助恢复原始未压缩的数据。可以用 bzip2recover 来尝试从损坏的文件中恢复数据。<br>
-返回值：正常退出返回 0， 出现环境问题返回 1 （文件未找到，非法的选项，I/O错误等）， 返回 2 表明压缩文件损坏，出现导致 bzip2 紧急退出的内部一致性错误（例如缺陷）时返回 3。</p>
+返回值：正常退出返回 0， 出现环境问题返回 1 （文件未找到，非法的选项，I/O 错误等）， 返回 2 表明压缩文件损坏，出现导致 bzip2 紧急退出的内部一致性错误（例如缺陷）时返回 3。</p>
 <h2 id="语法">语法</h2>
 <pre><code class="language-Shell">bzip2 [ -cdfkqstvzVL123456789 ] [ filenames ...  ]
 </code></pre>
@@ -273,7 +273,7 @@ bzip2: I won't write compressed data to a terminal.
 bzip2: For help, type: `bzip2 --help'.
 </code></pre>
 <p>这里，使用<code>-c</code>指定压缩到标准输出不删除原有文件，不同的是，压缩后的文件无法输出到标准输出。</p>
-<h3 id="使用bzip2的时候将所有后面的看作文件即使文件名以-开头">使用bzip2的时候将所有后面的看作文件(即使文件名以'-'开头)：</h3>
+<h3 id="使用-bzip2-的时候将所有后面的看作文件即使文件名以-开头">使用 bzip2 的时候将所有后面的看作文件(即使文件名以'-'开头)：</h3>
 <pre><code class="language-Shell">bzip2 -- -myfilename
 </code></pre>
 <p>这里主要是为了防止文件名中-产生以为是选项的歧义。</p>
@@ -298,7 +298,7 @@ bzip2: For help, type: `bzip2 --help'.
       <!-- right -->
       <div id="sidebar" class="main-container-right">
         <div class="id_card i-card">
-          <div class="id_card-avatar" style="background-image: url(https://raz1ner.com/images/avatar.png?v=1757249920914)"></div>
+          <div class="id_card-avatar" style="background-image: url(https://raz1ner.com/images/avatar.png?v=1757825666966)"></div>
           <h1 class="id_card-title">Raz1ner</h1>
           <p style="text-align: center;">
             <a href="https://github.com/dev-coco" rel="nofollow noreferrer" target="_blank"><img class="social-icon" alt="Github" src="/images/social/GitHub.png"></a>
@@ -337,7 +337,7 @@ bzip2: For help, type: `bzip2 --help'.
 <li><a href="#%E5%8E%8B%E7%BC%A9%E8%A7%A3%E5%8E%8B%E7%9A%84%E6%97%B6%E5%80%99%E9%99%A4%E4%BA%86%E7%94%9F%E6%88%90%E7%BB%93%E6%9E%9C%E6%96%87%E4%BB%B6%E5%B0%86%E5%8E%9F%E6%9D%A5%E7%9A%84%E6%96%87%E4%BB%B6%E4%B9%9F%E4%BF%9D%E5%AD%98">压缩解压的时候，除了生成结果文件，将原来的文件也保存</a></li>
 <li><a href="#%E8%A7%A3%E5%8E%8B%E5%88%B0%E6%A0%87%E5%87%86%E8%BE%93%E5%87%BA">解压到标准输出</a></li>
 <li><a href="#%E5%8E%8B%E7%BC%A9%E5%88%B0%E6%A0%87%E5%87%86%E8%BE%93%E5%87%BA">压缩到标准输出</a></li>
-<li><a href="#%E4%BD%BF%E7%94%A8bzip2%E7%9A%84%E6%97%B6%E5%80%99%E5%B0%86%E6%89%80%E6%9C%89%E5%90%8E%E9%9D%A2%E7%9A%84%E7%9C%8B%E4%BD%9C%E6%96%87%E4%BB%B6%E5%8D%B3%E4%BD%BF%E6%96%87%E4%BB%B6%E5%90%8D%E4%BB%A5-%E5%BC%80%E5%A4%B4">使用bzip2的时候将所有后面的看作文件(即使文件名以'-'开头)：</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8-bzip2-%E7%9A%84%E6%97%B6%E5%80%99%E5%B0%86%E6%89%80%E6%9C%89%E5%90%8E%E9%9D%A2%E7%9A%84%E7%9C%8B%E4%BD%9C%E6%96%87%E4%BB%B6%E5%8D%B3%E4%BD%BF%E6%96%87%E4%BB%B6%E5%90%8D%E4%BB%A5-%E5%BC%80%E5%A4%B4">使用 bzip2 的时候将所有后面的看作文件(即使文件名以'-'开头)：</a></li>
 </ul>
 </li>
 </ul>
@@ -352,24 +352,24 @@ bzip2: For help, type: `bzip2 --help'.
       </div>
       <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
         <div class="notice-content">
-          <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/ai-tech/">AI 科技</a>
           <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/other/">其它</a>
-          <a class="tags-tag i-tag i-tag-success" href="https://raz1ner.com/tag/excel/">Excel</a>
-          <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/google-script/">Google 脚本</a>
-          <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/windows/">Windows</a>
-          <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://raz1ner.com/tag/ai-tech/">AI 科技</a>
+          <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/excel/">Excel</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://raz1ner.com/tag/google-script/">Google 脚本</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/software/">软件</a>
           <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/macos/">macOS</a>
-          <a class="tags-tag i-tag i-tag-info" href="https://raz1ner.com/tag/facebook/">Facebook</a>
-          <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/instagram/">Instagram</a>
-          <a class="tags-tag i-tag i-tag-banana" href="https://raz1ner.com/tag/ios/">iOS</a>
-          <a class="tags-tag i-tag i-tag-banana" href="https://raz1ner.com/tag/security/">安全</a>
-          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/shell/">Shell</a>
-          <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/javascript/">Javascript</a>
-          <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/twitter-x/">Twitter (X)</a>
-          <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/life/">生活</a>
-          <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/sololearn/">Sololearn</a>
-          <a class="tags-tag i-tag i-tag-banana" href="https://raz1ner.com/tag/whatsapp/">WhatsApp</a>
-          <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/linux-command/">Linux命令</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/instagram/">Instagram</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/security/">安全</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://raz1ner.com/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/javascript/">Javascript</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://raz1ner.com/tag/twitter-x/">Twitter (X)</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/life/">生活</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/sololearn/">Sololearn</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/linux-command/">Linux命令</a>
         </div>
       </div>
       </div>

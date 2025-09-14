@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>超链接管理面板使用方法 | Raz1ner</title>
   <meta name="author" content="Raz1ner">
-  <link rel="shortcut icon" href="https://raz1ner.com/favicon.ico?v=1757249920914">
+  <link rel="shortcut icon" href="https://raz1ner.com/favicon.ico?v=1757825666966">
   <link rel="stylesheet" href="https://raz1ner.com/styles/main.css">
   <!-- <script src="/js/prism.js"></script> -->
   <!-- <link rel="stylesheet" href="/css/prism.css"> -->
@@ -54,7 +54,7 @@
       <div class="nav">
         <div class="logo">
           <a href="https://raz1ner.com">
-            <img class="avatar" alt="Raz1ner" src="https://raz1ner.com/images/avatar.png?v=1757249920914" alt="">
+            <img class="avatar" alt="Raz1ner" src="https://raz1ner.com/images/avatar.png?v=1757825666966" alt="">
           </a>
           <div class="site-title">
             <h1>Raz1ner</h1>
@@ -153,7 +153,7 @@
         <h2 class="post-title">超链接管理面板使用方法</h2>
         <div class="post-info">
           <time class="post-time">2025-05-25 / 5 min read</time>
-            <a href="https://raz1ner.com/tag/other/" class="post-tag i-tag i-tag-warning">#其它</a>
+            <a href="https://raz1ner.com/tag/other/" class="post-tag i-tag i-tag-other_3">#其它</a>
         </div>
         <!--
           
@@ -163,7 +163,7 @@
             <p>我做了个超链接管理面板，终于告别书签混乱了！</p>
 <!-- more -->
 <p>作为一个经常需要收集各种资料的人，我的浏览器书签早就乱成一团了。每次想找到之前保存过的链接都要花很多时间，有时候还找不到。后来就自己做了个超链接管理面板，用了一段时间，效果非常不错，分享给大家。</p>
-<p>效果预览：<a href="https://dev-coco.github.io/other/Link-Panel/?sheet=1CN0aH8199EOrY1LNuEPGvDCNjai-HJre5fM6Cx2E1zk">https://dev-coco.github.io/other/Link-Panel/?sheet=1CN0aH8199EOrY1LNuEPGvDCNjai-HJre5fM6Cx2E1zk</a></p>
+<p>效果预览：<a href="https://raz1ner.com/other/Link-Panel/?sheet=1CN0aH8199EOrY1LNuEPGvDCNjai-HJre5fM6Cx2E1zk">https://raz1ner.com/other/Link-Panel/?sheet=1CN0aH8199EOrY1LNuEPGvDCNjai-HJre5fM6Cx2E1zk</a></p>
 <h2 id="功能介绍">功能介绍</h2>
 <h3 id="为什么要做这个工具">为什么要做这个工具？</h3>
 <p>一开始我也尝试过使用其它的书签管理工具，但总是有不太符合我需求的问题：</p>
@@ -234,7 +234,7 @@
 <li>设置链接
 <ul>
 <li>在下面的链接参数后面加上表格的 ID，打开后即可使用。</li>
-<li>https://dev-coco.github.io/other/Link-Panel/?sheet=表格ID</li>
+<li>https://raz1ner.com/other/Link-Panel/?sheet=表格ID</li>
 </ul>
 </li>
 </ol>
@@ -248,7 +248,14 @@
 <p>在 D 列可以放入 JavaScript 代码，格式必须以 <code>javascript:</code> 开头，代码必须压缩成一行。</p>
 <figure data-type="image" tabindex="8"><img src="https://raz1ner.com/post-images/1748209963319.png" alt="" loading="lazy"></figure>
 <p>例如，我想把剪切板里面的内容的表情符号全部都去掉。那就可以把下面的代码放在表格的 D 列。</p>
-<pre><code class="language-javascript">javascript:(async()=&gt;{let a=await navigator.clipboard.readText(),e=a.replace(/(\p{Emoji_Presentation}|\p{Emoji}\uFE0F)/gu,&quot;&quot;);await navigator.clipboard.writeText(e).then(()=&gt;alert(&quot;完成&quot;)).catch(()=&gt;alert(&quot;格式化失败&quot;))})();
+<pre><code class="language-javascript">javascript: (async () =&gt; {
+  let a = await navigator.clipboard.readText(),
+    e = a.replace(/(\p{Emoji_Presentation}|\p{Emoji}\uFE0F)/gu, '')
+  await navigator.clipboard
+    .writeText(e)
+    .then(() =&gt; alert('完成'))
+    .catch(() =&gt; alert('格式化失败'))
+})()
 </code></pre>
 <p>点击后，即可运行 JavaScript 代码。</p>
 <figure data-type="image" tabindex="9"><img src="https://raz1ner.com/post-images/1748210068239.png" alt="" loading="lazy"></figure>
@@ -275,7 +282,7 @@
       <!-- right -->
       <div id="sidebar" class="main-container-right">
         <div class="id_card i-card">
-          <div class="id_card-avatar" style="background-image: url(https://raz1ner.com/images/avatar.png?v=1757249920914)"></div>
+          <div class="id_card-avatar" style="background-image: url(https://raz1ner.com/images/avatar.png?v=1757825666966)"></div>
           <h1 class="id_card-title">Raz1ner</h1>
           <p style="text-align: center;">
             <a href="https://github.com/dev-coco" rel="nofollow noreferrer" target="_blank"><img class="social-icon" alt="Github" src="/images/social/GitHub.png"></a>
@@ -330,24 +337,24 @@
       </div>
       <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
         <div class="notice-content">
-          <a class="tags-tag i-tag i-tag-info" href="https://raz1ner.com/tag/ai-tech/">AI 科技</a>
-          <a class="tags-tag i-tag i-tag-info" href="https://raz1ner.com/tag/other/">其它</a>
-          <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/excel/">Excel</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/ai-tech/">AI 科技</a>
+          <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/excel/">Excel</a>
           <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/google-script/">Google 脚本</a>
-          <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/windows/">Windows</a>
-          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/software/">软件</a>
-          <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/macos/">macOS</a>
-          <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/facebook/">Facebook</a>
-          <a class="tags-tag i-tag i-tag-success" href="https://raz1ner.com/tag/instagram/">Instagram</a>
-          <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/ios/">iOS</a>
-          <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/security/">安全</a>
-          <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/shell/">Shell</a>
-          <a class="tags-tag i-tag i-tag-banana" href="https://raz1ner.com/tag/javascript/">Javascript</a>
-          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/twitter-x/">Twitter (X)</a>
-          <a class="tags-tag i-tag i-tag-success" href="https://raz1ner.com/tag/life/">生活</a>
-          <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/sololearn/">Sololearn</a>
-          <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/whatsapp/">WhatsApp</a>
-          <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/linux-command/">Linux命令</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/instagram/">Instagram</a>
+          <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://raz1ner.com/tag/security/">安全</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/javascript/">Javascript</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/twitter-x/">Twitter (X)</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/life/">生活</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/sololearn/">Sololearn</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/linux-command/">Linux命令</a>
         </div>
       </div>
       </div>

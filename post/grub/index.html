@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>grub | Raz1ner</title>
   <meta name="author" content="Raz1ner">
-  <link rel="shortcut icon" href="https://raz1ner.com/favicon.ico?v=1757249920914">
+  <link rel="shortcut icon" href="https://raz1ner.com/favicon.ico?v=1757825666966">
   <link rel="stylesheet" href="https://raz1ner.com/styles/main.css">
   <!-- <script src="/js/prism.js"></script> -->
   <!-- <link rel="stylesheet" href="/css/prism.css"> -->
@@ -32,17 +32,17 @@
       gtag('js', new Date())
       gtag('config', 'G-24X8H1LT7N')
    </script>
-  <meta property="og:image" content="https://dev-coco.github.io/post-images/Linux-Command.png">
+  <meta property="og:image" content="https://raz1ner.com/post-images/Linux-Command.png">
   <meta name="description" content="多重引导程序 grub 的命令行 shell 工具。">
   <link rel="canonical" href="https://raz1ner.com/post/grub/">
   <meta property="og:title" content="grub - Raz1ner">
   <meta property="og:type" content="article">
-  <meta property="og:image" content="https://dev-coco.github.io/post-images/Linux-Command.png">
+  <meta property="og:image" content="https://raz1ner.com/post-images/Linux-Command.png">
   <meta property="og:url" content="https://raz1ner.com/post/grub/">
   <meta property="og:description" content="多重引导程序 grub 的命令行 shell 工具。">
   <meta name="twitter:title" content="grub - Raz1ner">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://dev-coco.github.io/post-images/Linux-Command.png">
+  <meta name="twitter:image" content="https://raz1ner.com/post-images/Linux-Command.png">
   <meta name="twitter:description" content="多重引导程序 grub 的命令行 shell 工具。">
   <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:300,300i,400,400i,700,700i,800" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Mallanna" rel="stylesheet">
@@ -54,7 +54,7 @@
       <div class="nav">
         <div class="logo">
           <a href="https://raz1ner.com">
-            <img class="avatar" alt="Raz1ner" src="https://raz1ner.com/images/avatar.png?v=1757249920914" alt="">
+            <img class="avatar" alt="Raz1ner" src="https://raz1ner.com/images/avatar.png?v=1757825666966" alt="">
           </a>
           <div class="site-title">
             <h1>Raz1ner</h1>
@@ -153,11 +153,11 @@
         <h2 class="post-title">grub</h2>
         <div class="post-info">
           <time class="post-time">2022-02-02 / 4 min read</time>
-            <a href="https://raz1ner.com/tag/linux-command/" class="post-tag i-tag i-tag-primary">#Linux命令</a>
+            <a href="https://raz1ner.com/tag/linux-command/" class="post-tag i-tag i-tag-info">#Linux命令</a>
         </div>
         <!--
           
-        <div class="post-feature-image" style="background-image: url('https://dev-coco.github.io/post-images/Linux-Command.png')"></div>
+        <div class="post-feature-image" style="background-image: url('https://raz1ner.com/post-images/Linux-Command.png')"></div>
         -->
           <div class="post-content">
             <p>多重引导程序 grub 的命令行 shell 工具。</p>
@@ -186,8 +186,8 @@
 当然，在正常启动情况下，屏幕上出现 grub 的启动项选择菜单时按<code>c</code>键也是可以进入<code>grub&gt;</code>状态的。这时候我们需要用 grub 的命令来手工启动系统。<br>
 只需要用到四个命令 boot、kernel、initrd、boot。<br>
 但 grub 本身命令很多，比如查看文件内容的 cat ，你输入 help 会得到。<br>
-首先，输入“ root (hd ” ，然后按两次 TAB 键； /* 这会列出你电脑上可能的磁盘设备，硬盘为 hd0/hd1 或 sd0/sd1 等 <em>/<br>
-然后，选择你的安装 Linux 系统的硬盘，比如 hd0 ，输入 “ root (hd0, ” 再按两次 TAB 键； /</em> 这会列出你的第一块硬盘上的分区情况，你会知道哪个是 swap 交换分区， 0x82 ，哪个是 Linux 分区 0x83 */<br>
+首先，输入“ root (hd ” ，然后按两次 TAB 键； /_ 这会列出你电脑上可能的磁盘设备，硬盘为 hd0/hd1 或 sd0/sd1 等 <em>/<br>
+然后，选择你的安装 Linux 系统的硬盘，比如 hd0 ，输入 “ root (hd0, ” 再按两次 TAB 键； /</em> 这会列出你的第一块硬盘上的分区情况，你会知道哪个是 swap 交换分区， 0x82 ，哪个是 Linux 分区 0x83 _/<br>
 选择你认为可能的 /boot 目录所在的分区， 输入<code>root (hd0, 1)</code>回车；</p>
 <p>接着，输入<code>cat /boot/vm</code>， 按两次 TAB 键，如果出现一些 vm 开头的文件，比如 vmlinuz-2.6.15-26-386 说明这里是 /boot 所在的分区。<br>
 删除上一次的输入，再输入<code>cat /boot/initrd</code>，按两次 TAB 键，如果出现一些 initrd 开头的文件，比如 initrd.img-2.6.15-26-386 说明这个 /boot 所在的分区有 initrd ，即 ramdisk 镜像；</p>
@@ -222,7 +222,7 @@ boot
       <!-- right -->
       <div id="sidebar" class="main-container-right">
         <div class="id_card i-card">
-          <div class="id_card-avatar" style="background-image: url(https://raz1ner.com/images/avatar.png?v=1757249920914)"></div>
+          <div class="id_card-avatar" style="background-image: url(https://raz1ner.com/images/avatar.png?v=1757825666966)"></div>
           <h1 class="id_card-title">Raz1ner</h1>
           <p style="text-align: center;">
             <a href="https://github.com/dev-coco" rel="nofollow noreferrer" target="_blank"><img class="social-icon" alt="Github" src="/images/social/GitHub.png"></a>
@@ -264,24 +264,24 @@ boot
       </div>
       <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
         <div class="notice-content">
-          <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/ai-tech/">AI 科技</a>
           <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/other/">其它</a>
-          <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/excel/">Excel</a>
-          <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/google-script/">Google 脚本</a>
-          <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/windows/">Windows</a>
-          <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/ai-tech/">AI 科技</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/excel/">Excel</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/google-script/">Google 脚本</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://raz1ner.com/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/software/">软件</a>
           <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/macos/">macOS</a>
-          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/facebook/">Facebook</a>
           <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/instagram/">Instagram</a>
-          <a class="tags-tag i-tag i-tag-success" href="https://raz1ner.com/tag/ios/">iOS</a>
-          <a class="tags-tag i-tag i-tag-banana" href="https://raz1ner.com/tag/security/">安全</a>
-          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://raz1ner.com/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/security/">安全</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/shell/">Shell</a>
           <a class="tags-tag i-tag i-tag-info" href="https://raz1ner.com/tag/javascript/">Javascript</a>
-          <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/twitter-x/">Twitter (X)</a>
-          <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/life/">生活</a>
-          <a class="tags-tag i-tag i-tag-info" href="https://raz1ner.com/tag/sololearn/">Sololearn</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/twitter-x/">Twitter (X)</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://raz1ner.com/tag/life/">生活</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/sololearn/">Sololearn</a>
           <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/whatsapp/">WhatsApp</a>
-          <a class="tags-tag i-tag i-tag-banana" href="https://raz1ner.com/tag/linux-command/">Linux命令</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://raz1ner.com/tag/linux-command/">Linux命令</a>
         </div>
       </div>
       </div>

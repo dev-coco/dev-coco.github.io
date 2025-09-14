@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>trap | Raz1ner</title>
   <meta name="author" content="Raz1ner">
-  <link rel="shortcut icon" href="https://raz1ner.com/favicon.ico?v=1757249920914">
+  <link rel="shortcut icon" href="https://raz1ner.com/favicon.ico?v=1757825666966">
   <link rel="stylesheet" href="https://raz1ner.com/styles/main.css">
   <!-- <script src="/js/prism.js"></script> -->
   <!-- <link rel="stylesheet" href="/css/prism.css"> -->
@@ -32,17 +32,17 @@
       gtag('js', new Date())
       gtag('config', 'G-24X8H1LT7N')
    </script>
-  <meta property="og:image" content="https://dev-coco.github.io/post-images/Linux-Command.png">
+  <meta property="og:image" content="https://raz1ner.com/post-images/Linux-Command.png">
   <meta name="description" content="捕捉信号和其他事件并执行命令。。">
   <link rel="canonical" href="https://raz1ner.com/post/trap/">
   <meta property="og:title" content="trap - Raz1ner">
   <meta property="og:type" content="article">
-  <meta property="og:image" content="https://dev-coco.github.io/post-images/Linux-Command.png">
+  <meta property="og:image" content="https://raz1ner.com/post-images/Linux-Command.png">
   <meta property="og:url" content="https://raz1ner.com/post/trap/">
   <meta property="og:description" content="捕捉信号和其他事件并执行命令。。">
   <meta name="twitter:title" content="trap - Raz1ner">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://dev-coco.github.io/post-images/Linux-Command.png">
+  <meta name="twitter:image" content="https://raz1ner.com/post-images/Linux-Command.png">
   <meta name="twitter:description" content="捕捉信号和其他事件并执行命令。。">
   <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:300,300i,400,400i,700,700i,800" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Mallanna" rel="stylesheet">
@@ -54,7 +54,7 @@
       <div class="nav">
         <div class="logo">
           <a href="https://raz1ner.com">
-            <img class="avatar" alt="Raz1ner" src="https://raz1ner.com/images/avatar.png?v=1757249920914" alt="">
+            <img class="avatar" alt="Raz1ner" src="https://raz1ner.com/images/avatar.png?v=1757825666966" alt="">
           </a>
           <div class="site-title">
             <h1>Raz1ner</h1>
@@ -153,11 +153,11 @@
         <h2 class="post-title">trap</h2>
         <div class="post-info">
           <time class="post-time">2022-02-03 / 5 min read</time>
-            <a href="https://raz1ner.com/tag/linux-command/" class="post-tag i-tag i-tag-other_3">#Linux命令</a>
+            <a href="https://raz1ner.com/tag/linux-command/" class="post-tag i-tag i-tag-error">#Linux命令</a>
         </div>
         <!--
           
-        <div class="post-feature-image" style="background-image: url('https://dev-coco.github.io/post-images/Linux-Command.png')"></div>
+        <div class="post-feature-image" style="background-image: url('https://raz1ner.com/post-images/Linux-Command.png')"></div>
         -->
           <div class="post-content">
             <p>捕捉信号和其他事件并执行命令。。</p>
@@ -195,7 +195,7 @@
 <tr>
 <td style="text-align:center">SIGHUP</td>
 <td style="text-align:center">1</td>
-<td style="text-align:center">本信号在用户终端连接（正常或非正常）结束时发出，通常是在终端的控制进程结束时，通知同一session内的各个作业，这时它们与控制终端不再关联。登录Linux时，系统会分配给登录用户一个终端(Session)。在这个终端运行的所有程序，包括前台进程组和后台进程组，一般都属于这个Session。当用户退出Linux登录时，前台进程组和后台有对终端输出的进程将会收到SIGHUP信号。这个信号的默认操作为终止进程，因此前台进程组和后台有终端输出的进程就会中止。对于与终端脱离关系的守护进程，这个信号用于通知它重新读取配置文件。</td>
+<td style="text-align:center">本信号在用户终端连接（正常或非正常）结束时发出，通常是在终端的控制进程结束时，通知同一 session 内的各个作业，这时它们与控制终端不再关联。登录 Linux 时，系统会分配给登录用户一个终端(Session)。在这个终端运行的所有程序，包括前台进程组和后台进程组，一般都属于这个 Session。当用户退出 Linux 登录时，前台进程组和后台有对终端输出的进程将会收到 SIGHUP 信号。这个信号的默认操作为终止进程，因此前台进程组和后台有终端输出的进程就会中止。对于与终端脱离关系的守护进程，这个信号用于通知它重新读取配置文件。</td>
 </tr>
 <tr>
 <td style="text-align:center">SIGINT</td>
@@ -205,12 +205,12 @@
 <tr>
 <td style="text-align:center">SIGQUIT</td>
 <td style="text-align:center">3</td>
-<td style="text-align:center">和SIGINT类似，但由QUIT字符(通常是Ctrl /)来控制。进程在因收到SIGQUIT退出时会产生core文件，在这个意义上类似于一个程序错误信号。</td>
+<td style="text-align:center">和 SIGINT 类似，但由 QUIT 字符(通常是 Ctrl /)来控制。进程在因收到 SIGQUIT 退出时会产生 core 文件，在这个意义上类似于一个程序错误信号。</td>
 </tr>
 <tr>
 <td style="text-align:center">SIGFPE</td>
 <td style="text-align:center">8</td>
-<td style="text-align:center">在发生致命的算术运算错误时发出。不仅包括浮点运算错误，还包括溢出及除数为0等其它所有的算术错误。</td>
+<td style="text-align:center">在发生致命的算术运算错误时发出。不仅包括浮点运算错误，还包括溢出及除数为 0 等其它所有的算术错误。</td>
 </tr>
 <tr>
 <td style="text-align:center">SIGKILL</td>
@@ -225,7 +225,7 @@
 <tr>
 <td style="text-align:center">SIGTERM</td>
 <td style="text-align:center">15</td>
-<td style="text-align:center">程序结束(terminate)信号, 与SIGKILL不同的是该信号可以被阻塞和处理. 通常用来要求程序自己正常退出；kill 命令缺省产生这个信号。</td>
+<td style="text-align:center">程序结束(terminate)信号, 与 SIGKILL 不同的是该信号可以被阻塞和处理. 通常用来要求程序自己正常退出；kill 命令缺省产生这个信号。</td>
 </tr>
 </tbody>
 </table>
@@ -273,7 +273,7 @@
       <!-- right -->
       <div id="sidebar" class="main-container-right">
         <div class="id_card i-card">
-          <div class="id_card-avatar" style="background-image: url(https://raz1ner.com/images/avatar.png?v=1757249920914)"></div>
+          <div class="id_card-avatar" style="background-image: url(https://raz1ner.com/images/avatar.png?v=1757825666966)"></div>
           <h1 class="id_card-title">Raz1ner</h1>
           <p style="text-align: center;">
             <a href="https://github.com/dev-coco" rel="nofollow noreferrer" target="_blank"><img class="social-icon" alt="Github" src="/images/social/GitHub.png"></a>
@@ -327,24 +327,24 @@
       </div>
       <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
         <div class="notice-content">
-          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/ai-tech/">AI 科技</a>
-          <a class="tags-tag i-tag i-tag-info" href="https://raz1ner.com/tag/other/">其它</a>
-          <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/excel/">Excel</a>
-          <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/google-script/">Google 脚本</a>
-          <a class="tags-tag i-tag i-tag-info" href="https://raz1ner.com/tag/windows/">Windows</a>
-          <a class="tags-tag i-tag i-tag-banana" href="https://raz1ner.com/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/ai-tech/">AI 科技</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/excel/">Excel</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/google-script/">Google 脚本</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/software/">软件</a>
           <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/macos/">macOS</a>
-          <a class="tags-tag i-tag i-tag-banana" href="https://raz1ner.com/tag/facebook/">Facebook</a>
-          <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/instagram/">Instagram</a>
-          <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/ios/">iOS</a>
-          <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/security/">安全</a>
-          <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/shell/">Shell</a>
-          <a class="tags-tag i-tag i-tag-info" href="https://raz1ner.com/tag/javascript/">Javascript</a>
-          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/twitter-x/">Twitter (X)</a>
-          <a class="tags-tag i-tag i-tag-banana" href="https://raz1ner.com/tag/life/">生活</a>
-          <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/sololearn/">Sololearn</a>
-          <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/whatsapp/">WhatsApp</a>
-          <a class="tags-tag i-tag i-tag-banana" href="https://raz1ner.com/tag/linux-command/">Linux命令</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/instagram/">Instagram</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/security/">安全</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/javascript/">Javascript</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/twitter-x/">Twitter (X)</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/life/">生活</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/sololearn/">Sololearn</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/linux-command/">Linux命令</a>
         </div>
       </div>
       </div>

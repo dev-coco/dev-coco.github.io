@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Twitter Algorithm and Push Mechanism 2023 Update | Raz1ner</title>
   <meta name="author" content="Raz1ner">
-  <link rel="shortcut icon" href="https://raz1ner.com/favicon.ico?v=1757249920914">
+  <link rel="shortcut icon" href="https://raz1ner.com/favicon.ico?v=1757825666966">
   <link rel="stylesheet" href="https://raz1ner.com/styles/main.css">
   <!-- <script src="/js/prism.js"></script> -->
   <!-- <link rel="stylesheet" href="/css/prism.css"> -->
@@ -54,7 +54,7 @@
       <div class="nav">
         <div class="logo">
           <a href="https://raz1ner.com">
-            <img class="avatar" alt="Raz1ner" src="https://raz1ner.com/images/avatar.png?v=1757249920914" alt="">
+            <img class="avatar" alt="Raz1ner" src="https://raz1ner.com/images/avatar.png?v=1757825666966" alt="">
           </a>
           <div class="site-title">
             <h1>Raz1ner</h1>
@@ -153,7 +153,7 @@
         <h2 class="post-title">Twitter Algorithm and Push Mechanism 2023 Update</h2>
         <div class="post-info">
           <time class="post-time">2023-04-27 / 22 min read</time>
-            <a href="https://raz1ner.com/tag/twitter-x/" class="post-tag i-tag i-tag-primary">#Twitter (X)</a>
+            <a href="https://raz1ner.com/tag/twitter-x/" class="post-tag i-tag i-tag-banana">#Twitter (X)</a>
         </div>
         <!--
           
@@ -478,7 +478,7 @@ score = (score min 1.0) max 0
 score *= 100
 </code></pre>
 <p>Next, the score will be calculated based on the account's number of following and followers. It is calculated by adding 1 to the sum of following and dividing by 1 plus the sum of followers. For example, assuming the account has 600 following and 450 followers, the ratio of following to followers would be (1 + 600) / (1 + 450) ≈ 1.3325942350332594.</p>
-<pre><code class="language-Scala">val friendsToFollowersRatio = (1.0 + numFollowings) / (1.0 + numFollowers) 
+<pre><code class="language-Scala">val friendsToFollowersRatio = (1.0 + numFollowings) / (1.0 + numFollowers)
 </code></pre>
 <p>First, two conditions are evaluated: whether the number of followers is greater than the user's minimum follower count (500) and whether the ratio of followers to following is greater than the threshold (0.6). If these two conditions are not met, the previously calculated score is returned without further calculation.</p>
 <p>If both conditions are met, the difference between the ratio of followers to following and the threshold is multiplied by the constant factor of followers and fans, resulting in 5 * (1.3325942350332594 - 0.6) = 3.6629711751662968. This result is then used to calculate the exponent using the exponential function.</p>
@@ -661,7 +661,7 @@ if (data.hasNewsUrl) {
   relevanceStats.setNumWithNews(relevanceStats.getNumWithNews() + 1);
 }
 </code></pre>
-<p>If a tweet contains images, videos, or news links, it will increase the weight of the tweet. The calculation method is: total score * (1 * (number of images + 1)).</p>
+<p>If a tweet contains images, videos, or news links, it will increase the weight of the tweet. The calculation method is: total score _ (1 _ (number of images + 1)).</p>
 <pre><code class="language-Java">// Media/News url boosts.
 if (data.hasImageUrl || data.hasVideoUrl) {
   data.hasMedialUrlBoostApplied = true;
@@ -722,7 +722,7 @@ Source: <a href="https://github.com/twitter/the-algorithm/blob/main/src/java/com
 }(persisted='true')
 </code></pre>
 <p>Here, a time decay function is used with a decay rate of 0.003 and a decay half-life of 360 minutes. This decay function indicates that the score of a tweet will gradually decrease over time, with the rate of decrease depending on the time difference and decay rate. In this case, when a tweet's posting time is 500 minutes apart from the current time, the decay score of the tweet can be calculated using the following formula:</p>
-<p>Decay Score = Base Score * exp(-Decay Rate * (Posting Time - Current Time) / Decay Half-life)</p>
+<p>Decay Score = Base Score _ exp(-Decay Rate _ (Posting Time - Current Time) / Decay Half-life)</p>
 <p>Source: <a href="https://github.com/twitter/the-algorithm/blob/main/src/thrift/com/twitter/search/common/ranking/ranking.thrift" target="_blank">ranking.thrift</a></p>
   <div class="form">
     <div class="panel-heading">Tweet Weight Decay Calculator</div>
@@ -838,6 +838,7 @@ Source: <a href="https://github.com/twitter/the-algorithm/blob/main/src/java/com
       postScore.innerText = score
     }
   </script>
+
           </div>
           <div class="copyright">
             <p>本文链接： <a href="https://raz1ner.com/post/Twitter-Algorithm-EN/">https://raz1ner.com/post/Twitter-Algorithm-EN/</a></p>
@@ -858,7 +859,7 @@ Source: <a href="https://github.com/twitter/the-algorithm/blob/main/src/java/com
       <!-- right -->
       <div id="sidebar" class="main-container-right">
         <div class="id_card i-card">
-          <div class="id_card-avatar" style="background-image: url(https://raz1ner.com/images/avatar.png?v=1757249920914)"></div>
+          <div class="id_card-avatar" style="background-image: url(https://raz1ner.com/images/avatar.png?v=1757825666966)"></div>
           <h1 class="id_card-title">Raz1ner</h1>
           <p style="text-align: center;">
             <a href="https://github.com/dev-coco" rel="nofollow noreferrer" target="_blank"><img class="social-icon" alt="Github" src="/images/social/GitHub.png"></a>
@@ -908,24 +909,24 @@ Source: <a href="https://github.com/twitter/the-algorithm/blob/main/src/java/com
       </div>
       <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
         <div class="notice-content">
-          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/ai-tech/">AI 科技</a>
-          <a class="tags-tag i-tag i-tag-banana" href="https://raz1ner.com/tag/other/">其它</a>
-          <a class="tags-tag i-tag i-tag-info" href="https://raz1ner.com/tag/excel/">Excel</a>
-          <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/google-script/">Google 脚本</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://raz1ner.com/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/ai-tech/">AI 科技</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/excel/">Excel</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/google-script/">Google 脚本</a>
           <a class="tags-tag i-tag i-tag-info" href="https://raz1ner.com/tag/windows/">Windows</a>
           <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/software/">软件</a>
-          <a class="tags-tag i-tag i-tag-info" href="https://raz1ner.com/tag/macos/">macOS</a>
-          <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/facebook/">Facebook</a>
-          <a class="tags-tag i-tag i-tag-banana" href="https://raz1ner.com/tag/instagram/">Instagram</a>
-          <a class="tags-tag i-tag i-tag-info" href="https://raz1ner.com/tag/ios/">iOS</a>
-          <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/security/">安全</a>
-          <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/shell/">Shell</a>
-          <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/javascript/">Javascript</a>
-          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/twitter-x/">Twitter (X)</a>
-          <a class="tags-tag i-tag i-tag-success" href="https://raz1ner.com/tag/life/">生活</a>
-          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/sololearn/">Sololearn</a>
-          <a class="tags-tag i-tag i-tag-success" href="https://raz1ner.com/tag/whatsapp/">WhatsApp</a>
-          <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/linux-command/">Linux命令</a>
+          <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/instagram/">Instagram</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/security/">安全</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/javascript/">Javascript</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/twitter-x/">Twitter (X)</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/life/">生活</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://raz1ner.com/tag/sololearn/">Sololearn</a>
+          <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/linux-command/">Linux命令</a>
         </div>
       </div>
       </div>

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>hping3 | Raz1ner</title>
   <meta name="author" content="Raz1ner">
-  <link rel="shortcut icon" href="https://raz1ner.com/favicon.ico?v=1757249920914">
+  <link rel="shortcut icon" href="https://raz1ner.com/favicon.ico?v=1757825666966">
   <link rel="stylesheet" href="https://raz1ner.com/styles/main.css">
   <!-- <script src="/js/prism.js"></script> -->
   <!-- <link rel="stylesheet" href="/css/prism.css"> -->
@@ -32,17 +32,17 @@
       gtag('js', new Date())
       gtag('config', 'G-24X8H1LT7N')
    </script>
-  <meta property="og:image" content="https://dev-coco.github.io/post-images/Linux-Command.png">
+  <meta property="og:image" content="https://raz1ner.com/post-images/Linux-Command.png">
   <meta name="description" content="测试网络及主机的安全。">
   <link rel="canonical" href="https://raz1ner.com/post/hping3/">
   <meta property="og:title" content="hping3 - Raz1ner">
   <meta property="og:type" content="article">
-  <meta property="og:image" content="https://dev-coco.github.io/post-images/Linux-Command.png">
+  <meta property="og:image" content="https://raz1ner.com/post-images/Linux-Command.png">
   <meta property="og:url" content="https://raz1ner.com/post/hping3/">
   <meta property="og:description" content="测试网络及主机的安全。">
   <meta name="twitter:title" content="hping3 - Raz1ner">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://dev-coco.github.io/post-images/Linux-Command.png">
+  <meta name="twitter:image" content="https://raz1ner.com/post-images/Linux-Command.png">
   <meta name="twitter:description" content="测试网络及主机的安全。">
   <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:300,300i,400,400i,700,700i,800" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Mallanna" rel="stylesheet">
@@ -54,7 +54,7 @@
       <div class="nav">
         <div class="logo">
           <a href="https://raz1ner.com">
-            <img class="avatar" alt="Raz1ner" src="https://raz1ner.com/images/avatar.png?v=1757249920914" alt="">
+            <img class="avatar" alt="Raz1ner" src="https://raz1ner.com/images/avatar.png?v=1757825666966" alt="">
           </a>
           <div class="site-title">
             <h1>Raz1ner</h1>
@@ -153,11 +153,11 @@
         <h2 class="post-title">hping3</h2>
         <div class="post-info">
           <time class="post-time">2022-02-02 / 9 min read</time>
-            <a href="https://raz1ner.com/tag/linux-command/" class="post-tag i-tag i-tag-warning">#Linux命令</a>
+            <a href="https://raz1ner.com/tag/linux-command/" class="post-tag i-tag i-tag-other_3">#Linux命令</a>
         </div>
         <!--
           
-        <div class="post-feature-image" style="background-image: url('https://dev-coco.github.io/post-images/Linux-Command.png')"></div>
+        <div class="post-feature-image" style="background-image: url('https://raz1ner.com/post-images/Linux-Command.png')"></div>
         -->
           <div class="post-content">
             <p>测试网络及主机的安全。</p>
@@ -222,7 +222,7 @@ make install
 </code></pre>
 <h3 id="hping3-功能">Hping3 功能</h3>
 <p>Hping3 主要有以下典型功能应用：</p>
-<h3 id="防火墙测试">#  防火墙测试</h3>
+<h3 id="防火墙测试"># 防火墙测试</h3>
 <p>使用 Hping3 指定各种数据包字段，依次对防火墙进行详细测试。</p>
 <p>测试防火墙对 ICMP 包的反应、是否支持 traceroute、是否开放某个端口、对防火墙进行拒绝服务攻击（DoS attack）。例如，以 LandAttack 方式测试目标防火墙（Land Attack 是将发送源地址设置为与目标地址相同，诱使目标机与自己不停地建立连接）。</p>
 <pre><code class="language-Shell">hping3 -S  -c 1000000 -a 10.10.10.10 -p 21 10.10.10.10
@@ -283,7 +283,7 @@ hping3 192.168.10.44 -p53 -d 100 --udp --sign siganature --file ./test.cmd
       <!-- right -->
       <div id="sidebar" class="main-container-right">
         <div class="id_card i-card">
-          <div class="id_card-avatar" style="background-image: url(https://raz1ner.com/images/avatar.png?v=1757249920914)"></div>
+          <div class="id_card-avatar" style="background-image: url(https://raz1ner.com/images/avatar.png?v=1757825666966)"></div>
           <h1 class="id_card-title">Raz1ner</h1>
           <p style="text-align: center;">
             <a href="https://github.com/dev-coco" rel="nofollow noreferrer" target="_blank"><img class="social-icon" alt="Github" src="/images/social/GitHub.png"></a>
@@ -314,7 +314,7 @@ hping3 192.168.10.44 -p53 -d 100 --udp --sign siganature --file ./test.cmd
 <li><a href="#%E9%80%89%E9%A1%B9">选项</a>
 <ul>
 <li><a href="#hping3-%E5%8A%9F%E8%83%BD">Hping3 功能</a></li>
-<li><a href="#%E9%98%B2%E7%81%AB%E5%A2%99%E6%B5%8B%E8%AF%95">#  防火墙测试</a></li>
+<li><a href="#%E9%98%B2%E7%81%AB%E5%A2%99%E6%B5%8B%E8%AF%95"># 防火墙测试</a></li>
 <li><a href="#%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F"># 端口扫描</a></li>
 <li><a href="#idle-%E6%89%AB%E6%8F%8F"># Idle 扫描</a></li>
 <li><a href="#%E6%8B%92%E7%BB%9D%E6%9C%8D%E5%8A%A1%E6%94%BB%E5%87%BB"># 拒绝服务攻击</a></li>
@@ -334,24 +334,24 @@ hping3 192.168.10.44 -p53 -d 100 --udp --sign siganature --file ./test.cmd
       </div>
       <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
         <div class="notice-content">
-          <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/ai-tech/">AI 科技</a>
-          <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/other/">其它</a>
-          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/excel/">Excel</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://raz1ner.com/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/ai-tech/">AI 科技</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://raz1ner.com/tag/excel/">Excel</a>
           <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/google-script/">Google 脚本</a>
-          <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/windows/">Windows</a>
-          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/software/">软件</a>
-          <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/macos/">macOS</a>
-          <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/facebook/">Facebook</a>
-          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/instagram/">Instagram</a>
-          <a class="tags-tag i-tag i-tag-success" href="https://raz1ner.com/tag/ios/">iOS</a>
-          <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/security/">安全</a>
-          <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/shell/">Shell</a>
-          <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/javascript/">Javascript</a>
-          <a class="tags-tag i-tag i-tag-success" href="https://raz1ner.com/tag/twitter-x/">Twitter (X)</a>
-          <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/life/">生活</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/instagram/">Instagram</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/security/">安全</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/javascript/">Javascript</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/twitter-x/">Twitter (X)</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/life/">生活</a>
           <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/sololearn/">Sololearn</a>
-          <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/whatsapp/">WhatsApp</a>
-          <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/linux-command/">Linux命令</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/linux-command/">Linux命令</a>
         </div>
       </div>
       </div>

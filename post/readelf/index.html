@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>readelf | Raz1ner</title>
   <meta name="author" content="Raz1ner">
-  <link rel="shortcut icon" href="https://raz1ner.com/favicon.ico?v=1757249920914">
+  <link rel="shortcut icon" href="https://raz1ner.com/favicon.ico?v=1757825666966">
   <link rel="stylesheet" href="https://raz1ner.com/styles/main.css">
   <!-- <script src="/js/prism.js"></script> -->
   <!-- <link rel="stylesheet" href="/css/prism.css"> -->
@@ -32,17 +32,17 @@
       gtag('js', new Date())
       gtag('config', 'G-24X8H1LT7N')
    </script>
-  <meta property="og:image" content="https://dev-coco.github.io/post-images/Linux-Command.png">
+  <meta property="og:image" content="https://raz1ner.com/post-images/Linux-Command.png">
   <meta name="description" content="用于显示 elf 格式文件的信息。">
   <link rel="canonical" href="https://raz1ner.com/post/readelf/">
   <meta property="og:title" content="readelf - Raz1ner">
   <meta property="og:type" content="article">
-  <meta property="og:image" content="https://dev-coco.github.io/post-images/Linux-Command.png">
+  <meta property="og:image" content="https://raz1ner.com/post-images/Linux-Command.png">
   <meta property="og:url" content="https://raz1ner.com/post/readelf/">
   <meta property="og:description" content="用于显示 elf 格式文件的信息。">
   <meta name="twitter:title" content="readelf - Raz1ner">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://dev-coco.github.io/post-images/Linux-Command.png">
+  <meta name="twitter:image" content="https://raz1ner.com/post-images/Linux-Command.png">
   <meta name="twitter:description" content="用于显示 elf 格式文件的信息。">
   <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:300,300i,400,400i,700,700i,800" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Mallanna" rel="stylesheet">
@@ -54,7 +54,7 @@
       <div class="nav">
         <div class="logo">
           <a href="https://raz1ner.com">
-            <img class="avatar" alt="Raz1ner" src="https://raz1ner.com/images/avatar.png?v=1757249920914" alt="">
+            <img class="avatar" alt="Raz1ner" src="https://raz1ner.com/images/avatar.png?v=1757825666966" alt="">
           </a>
           <div class="site-title">
             <h1>Raz1ner</h1>
@@ -153,11 +153,11 @@
         <h2 class="post-title">readelf</h2>
         <div class="post-info">
           <time class="post-time">2022-02-01 / 24 min read</time>
-            <a href="https://raz1ner.com/tag/linux-command/" class="post-tag i-tag i-tag-info">#Linux命令</a>
+            <a href="https://raz1ner.com/tag/linux-command/" class="post-tag i-tag i-tag-error">#Linux命令</a>
         </div>
         <!--
           
-        <div class="post-feature-image" style="background-image: url('https://dev-coco.github.io/post-images/Linux-Command.png')"></div>
+        <div class="post-feature-image" style="background-image: url('https://raz1ner.com/post-images/Linux-Command.png')"></div>
         -->
           <div class="post-content">
             <p>用于显示 elf 格式文件的信息。</p>
@@ -255,7 +255,7 @@ elf 文件头描述 elf 文件的总体信息。包括：系统相关，类型�
 -W
 --wide 宽行输出。
 
-@file 可以将选项集中到一个文件中，然后使用这个@file选项载入。 
+@file 可以将选项集中到一个文件中，然后使用这个@file选项载入。
 </code></pre>
 <h2 id="实例">实例</h2>
 <p>先给出如下例子：</p>
@@ -264,7 +264,7 @@ elf 文件头描述 elf 文件的总体信息。包括：系统相关，类型�
 </ol>
 <p>(1) 查看可执行程序的源代码如下：</p>
 <pre><code class="language-Shell">root@localhost [test]$ cat main.cpp
-#include &lt;iostream&gt; 
+#include &lt;iostream&gt;
 using std::cout;
 using std::endl;
 void my_print();
@@ -279,31 +279,31 @@ int main(int argc, char *argv[])
 void  my_print()
 {
         cout&lt;&lt;&quot;print!&quot;&lt;&lt;endl;
-} 
+}
 </code></pre>
 <p>(2) 编译如下：</p>
 <pre><code class="language-Shell">[root@localhost test]$ g++ main.cpp -o main
-[root@localhost test]$ g++ -g main.cpp -o main.debug 
+[root@localhost test]$ g++ -g main.cpp -o main.debug
 </code></pre>
 <p>(3) 编译之后，查看生成的文件：</p>
 <pre><code class="language-Shell">[root@localhost test]$ ls -l
 总计 64
 -rwxr-xr-x 1 quietheart quietheart  6700 07-07 18:04 main
 -rw-r--r-- 1 quietheart quietheart   201 07-07 18:02 main.cpp
--rwxr-xr-x 1 quietheart quietheart 38932 07-07 18:04 main.debug 
+-rwxr-xr-x 1 quietheart quietheart 38932 07-07 18:04 main.debug
 </code></pre>
 <p>这里，main.debug 是带有调试信息的可执行文件，main 是一般的可执行文件。</p>
 <ol start="2">
 <li>对于库文件形式的 elf 格式文件：</li>
 </ol>
 <p>(1) 查看库的源代码如下：</p>
-<pre><code class="language-Shell">//myfile.h#ifndef __MYFILE_H #define __MYFILE_H void printInfo();#endif //myfile.cpp#include &quot;myfile.h&quot; #include &amp;lt;iostream&amp;gt; using std::cout;using std::endl;void printInfo(){    cout&amp;lt;&amp;lt;&quot;hello&quot;&amp;lt;&amp;lt;endl;} 
+<pre><code class="language-Shell">//myfile.h#ifndef __MYFILE_H #define __MYFILE_H void printInfo();#endif //myfile.cpp#include &quot;myfile.h&quot; #include &amp;lt;iostream&amp;gt; using std::cout;using std::endl;void printInfo(){    cout&amp;lt;&amp;lt;&quot;hello&quot;&amp;lt;&amp;lt;endl;}
 </code></pre>
 <p>(2) 编译如下：</p>
 <pre><code class="language-Shell">[root@localhost test]$ g++ -c myfile.cpp
 [root@localhost test]$ g++ -shared -fPCI -o libmy.so myfile.o
 [root@localhost test]$ ar -r libmy.a myfile.o
-ar: creating libmy.a 
+ar: creating libmy.a
 </code></pre>
 <p>(3) 编译之后，查看生成的文件：</p>
 <pre><code class="language-Shell">[root@localhost test]$ ls -l
@@ -314,7 +314,7 @@ ar: creating libmy.a
 -rwxr-xr-x 1 quietheart quietheart  117 07-08 16:06 myfile.cpp
 -rwxr-xr-x 1 quietheart quietheart   63 07-08 16:08 myfile.h
 -rw-r--r-- 1 quietheart quietheart 2004 07-08 16:08 myfile.o
-libmy.a  libmy.so  myfile.cpp  myfile.h  myfile.o 
+libmy.a  libmy.so  myfile.cpp  myfile.h  myfile.o
 </code></pre>
 <p>这里，分别生成目标文件 myfile.o，共享库文件 libmy.so，和静态库文件 libmy.a。<br>
 基于以上可执行文件和库，这里给出一些常用的命令。<br>
@@ -339,7 +339,7 @@ ELF Header:
   Number of program headers:         8
   Size of section headers:           40 (bytes)
   Number of section headers:         29
-  Section header string table index: 26 
+  Section header string table index: 26
 </code></pre>
 <p>这里，可见可执行文件的 elf 文件，其类型为 EXEC (可执行文件)。另外，含调试信息的&quot;main.debug&quot;和不含调试信息的&quot;main&quot;除了一些大小信息之外，其内容是一样的。并且由此可见文件的体系结构为 Intel 80386。<br>
 读取目标文件形式的 elf 文件头信息：</p>
@@ -363,7 +363,7 @@ ELF Header:
   Number of program headers:         0
   Size of section headers:           40 (bytes)
   Number of section headers:         15
-  Section header string table index: 12 
+  Section header string table index: 12
 </code></pre>
 <p>这里，可见目标文件的 elf 文件，其类型为 REL (可重定位文件)。<br>
 读取静态库文件形式的 elf 文件头信息：</p>
@@ -388,7 +388,7 @@ ELF Header:
   Number of program headers:         0
   Size of section headers:           40 (bytes)
   Number of section headers:         15
-  Section header string table index: 12 
+  Section header string table index: 12
 </code></pre>
 <p>这里，可见静态库文件的 elf 文件，其类型为 REL (可重定位文件)。<br>
 读取动态库文件形式的 elf 文件头信息：</p>
@@ -412,7 +412,7 @@ ELF Header:
   Number of program headers:         5
   Size of section headers:           40 (bytes)
   Number of section headers:         27
-  Section header string table index: 24 
+  Section header string table index: 24
 </code></pre>
 <p>这里，可见动态库文件的 elf 文件，其类型为 DYN (共享目标文件)。<br>
 查看可执行的 elf 文件程序头表信息：</p>
@@ -442,18 +442,18 @@ Section to Segment mapping:
    04     .dynamic
    05     .note.ABI-tag
    06     .eh_frame_hdr
-   07     
+   07
 </code></pre>
 <p>这里，含调试信息的&quot;main.debug&quot;和不含调试信息的&quot;main&quot;其内容是一样的。<br>
 查看目标文件的 elf 文件程序头表信息：</p>
 <pre><code class="language-Shell">[root@localhost test]$ readelf -l myfile.o
-There are no program headers in this file. 
+There are no program headers in this file.
 </code></pre>
 <p>这里可知，可重定位的目标文件，它没程序头表。<br>
 查看静态库文件的 elf 文件程序头表信息：</p>
 <pre><code class="language-Shell">[root@localhost test]$ readelf -l libmy.a
 File: libmy.a(myfile.o)
-There are no program headers in this file. 
+There are no program headers in this file.
 </code></pre>
 <p>这里可知，可重定位的静态库文件，它没程序头表。<br>
 查看动态库文件的 elf 文件程序头表信息：</p>
@@ -476,7 +476,7 @@ Section to Segment mapping:
    01     .ctors .dtors .jcr .data.rel.ro .dynamic .got .got.plt .bss
    02     .dynamic
    03     .eh_frame_hdr
-   04   
+   04
 </code></pre>
 <p>这里可知，做为共享目标文件的动态库，它程序头表。<br>
 查看一个可执行的 elf 文件的节信息：</p>
@@ -516,7 +516,7 @@ Section Headers:
 Key to Flags:
   W (write), A (alloc), X (execute), M (merge), S (strings)
   I (info), L (link order), G (group), x (unknown)
-  O (extra OS processing required) o (OS specific), p (processor specific) 
+  O (extra OS processing required) o (OS specific), p (processor specific)
 </code></pre>
 <p>这里，main 是可执行文件，不含调试信息。<br>
 查看一个包含调试信息的可执行的 elf 文件的节信息：</p>
@@ -565,7 +565,7 @@ Section Headers:
 Key to Flags:
   W (write), A (alloc), X (execute), M (merge), S (strings)
   I (info), L (link order), G (group), x (unknown)
-  O (extra OS processing required) o (OS specific), p (processor specific) 
+  O (extra OS processing required) o (OS specific), p (processor specific)
 </code></pre>
 <p>可见，相对非调试版本的可执行文件，多了&quot;.debug*&quot;段的信息。<br>
 查看一个目标文件的 elf 文件的节信息：</p>
@@ -624,7 +624,7 @@ Section Headers:
 Key to Flags:
   W (write), A (alloc), X (execute), M (merge), S (strings)
   I (info), L (link order), G (group), x (unknown)
-  O (extra OS processing required) o (OS specific), p (processor specific) 
+  O (extra OS processing required) o (OS specific), p (processor specific)
 </code></pre>
 <p>查看一个动态库文件的 elf 文件的节信息：</p>
 <pre><code class="language-Shell">[root@localhost test]$ readelf -S libmy.so
@@ -662,7 +662,7 @@ Section Headers:
 Key to Flags:
   W (write), A (alloc), X (execute), M (merge), S (strings)
   I (info), L (link order), G (group), x (unknown)
-  O (extra OS processing required) o (OS specific), p (processor specific) 
+  O (extra OS processing required) o (OS specific), p (processor specific)
 </code></pre>
 
           </div>
@@ -685,7 +685,7 @@ Key to Flags:
       <!-- right -->
       <div id="sidebar" class="main-container-right">
         <div class="id_card i-card">
-          <div class="id_card-avatar" style="background-image: url(https://raz1ner.com/images/avatar.png?v=1757249920914)"></div>
+          <div class="id_card-avatar" style="background-image: url(https://raz1ner.com/images/avatar.png?v=1757825666966)"></div>
           <h1 class="id_card-title">Raz1ner</h1>
           <p style="text-align: center;">
             <a href="https://github.com/dev-coco" rel="nofollow noreferrer" target="_blank"><img class="social-icon" alt="Github" src="/images/social/GitHub.png"></a>
@@ -727,24 +727,24 @@ Key to Flags:
       </div>
       <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
         <div class="notice-content">
-          <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/ai-tech/">AI 科技</a>
-          <a class="tags-tag i-tag i-tag-info" href="https://raz1ner.com/tag/other/">其它</a>
-          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/excel/">Excel</a>
-          <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/google-script/">Google 脚本</a>
+          <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/ai-tech/">AI 科技</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://raz1ner.com/tag/excel/">Excel</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/google-script/">Google 脚本</a>
           <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/windows/">Windows</a>
-          <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/software/">软件</a>
-          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/macos/">macOS</a>
-          <a class="tags-tag i-tag i-tag-success" href="https://raz1ner.com/tag/facebook/">Facebook</a>
-          <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/instagram/">Instagram</a>
-          <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/ios/">iOS</a>
-          <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/security/">安全</a>
-          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/shell/">Shell</a>
-          <a class="tags-tag i-tag i-tag-success" href="https://raz1ner.com/tag/javascript/">Javascript</a>
-          <a class="tags-tag i-tag i-tag-success" href="https://raz1ner.com/tag/twitter-x/">Twitter (X)</a>
-          <a class="tags-tag i-tag i-tag-success" href="https://raz1ner.com/tag/life/">生活</a>
-          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/sololearn/">Sololearn</a>
-          <a class="tags-tag i-tag i-tag-success" href="https://raz1ner.com/tag/whatsapp/">WhatsApp</a>
-          <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/linux-command/">Linux命令</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://raz1ner.com/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://raz1ner.com/tag/instagram/">Instagram</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://raz1ner.com/tag/security/">安全</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://raz1ner.com/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/javascript/">Javascript</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/twitter-x/">Twitter (X)</a>
+          <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/life/">生活</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/sololearn/">Sololearn</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/linux-command/">Linux命令</a>
         </div>
       </div>
       </div>

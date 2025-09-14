@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>sed | Raz1ner</title>
   <meta name="author" content="Raz1ner">
-  <link rel="shortcut icon" href="https://raz1ner.com/favicon.ico?v=1757249920914">
+  <link rel="shortcut icon" href="https://raz1ner.com/favicon.ico?v=1757825666966">
   <link rel="stylesheet" href="https://raz1ner.com/styles/main.css">
   <!-- <script src="/js/prism.js"></script> -->
   <!-- <link rel="stylesheet" href="/css/prism.css"> -->
@@ -32,17 +32,17 @@
       gtag('js', new Date())
       gtag('config', 'G-24X8H1LT7N')
    </script>
-  <meta property="og:image" content="https://dev-coco.github.io/post-images/Linux-Command.png">
+  <meta property="og:image" content="https://raz1ner.com/post-images/Linux-Command.png">
   <meta name="description" content="功能强大的流式文本编辑器。">
   <link rel="canonical" href="https://raz1ner.com/post/sed/">
   <meta property="og:title" content="sed - Raz1ner">
   <meta property="og:type" content="article">
-  <meta property="og:image" content="https://dev-coco.github.io/post-images/Linux-Command.png">
+  <meta property="og:image" content="https://raz1ner.com/post-images/Linux-Command.png">
   <meta property="og:url" content="https://raz1ner.com/post/sed/">
   <meta property="og:description" content="功能强大的流式文本编辑器。">
   <meta name="twitter:title" content="sed - Raz1ner">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://dev-coco.github.io/post-images/Linux-Command.png">
+  <meta name="twitter:image" content="https://raz1ner.com/post-images/Linux-Command.png">
   <meta name="twitter:description" content="功能强大的流式文本编辑器。">
   <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:300,300i,400,400i,700,700i,800" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Mallanna" rel="stylesheet">
@@ -54,7 +54,7 @@
       <div class="nav">
         <div class="logo">
           <a href="https://raz1ner.com">
-            <img class="avatar" alt="Raz1ner" src="https://raz1ner.com/images/avatar.png?v=1757249920914" alt="">
+            <img class="avatar" alt="Raz1ner" src="https://raz1ner.com/images/avatar.png?v=1757825666966" alt="">
           </a>
           <div class="site-title">
             <h1>Raz1ner</h1>
@@ -153,11 +153,11 @@
         <h2 class="post-title">sed</h2>
         <div class="post-info">
           <time class="post-time">2022-02-02 / 12 min read</time>
-            <a href="https://raz1ner.com/tag/linux-command/" class="post-tag i-tag i-tag-error">#Linux命令</a>
+            <a href="https://raz1ner.com/tag/linux-command/" class="post-tag i-tag i-tag-other_1">#Linux命令</a>
         </div>
         <!--
           
-        <div class="post-feature-image" style="background-image: url('https://dev-coco.github.io/post-images/Linux-Command.png')"></div>
+        <div class="post-feature-image" style="background-image: url('https://raz1ner.com/post-images/Linux-Command.png')"></div>
         -->
           <div class="post-content">
             <p>功能强大的流式文本编辑器。</p>
@@ -205,17 +205,17 @@ b lable # 分支到脚本中带有标记的地方，如果分支不存在则分�
 r file # 从 file 中读行。
 t label # if 分支，从最后一行开始，条件一旦满足或者 T，t 命令，将导致分支到带有标号的命令处，或者到脚本的末尾。
 T label # 错误分支，从最后一行开始，一旦发生错误或者 T，t 命令，将导致分支到带有标号的命令处，或者到脚本的末尾。
-w file # 写并追加模板块到 file 末尾。  
-W file # 写并追加模板块的第一行到 file 末尾。  
-! # 表示后面的命令对所有没有被选定的行发生作用。  
-= # 打印当前行号码。  
-# # 把注释扩展到下一个换行符以前。  
+w file # 写并追加模板块到 file 末尾。
+W file # 写并追加模板块的第一行到 file 末尾。
+! # 表示后面的命令对所有没有被选定的行发生作用。
+= # 打印当前行号码。
+# # 把注释扩展到下一个换行符以前。
 </code></pre>
 <h3 id="sed-替换标记">sed 替换标记</h3>
-<pre><code class="language-Shell">g # 表示行内全面替换。  
-p # 表示打印行。  
-w # 表示把行写入一个文件。  
-x # 表示互换模板块中的文本和缓冲区中的文本。  
+<pre><code class="language-Shell">g # 表示行内全面替换。
+p # 表示打印行。
+w # 表示把行写入一个文件。
+x # 表示互换模板块中的文本和缓冲区中的文本。
 y # 表示把一个字符翻译为另外的字符（但是不用于正则表达式）
 \1 # 子串匹配标记
 &amp; # 已匹配字符串标记
@@ -225,7 +225,7 @@ y # 表示把一个字符翻译为另外的字符（但是不用于正则表达�
 $ # 匹配行结束，如：/sed$/匹配所有以 sed 结尾的行。
 . # 匹配一个非换行符的任意字符，如：/s.d/匹配 s 后接一个任意字符，最后是 d。
 * # 匹配 0 个或多个字符，如：/*sed/匹配所有模板是一个或多个空格后紧跟 sed 的行。
-[] # 匹配一个指定范围内的字符，如/[ss]ed/匹配 sed 和 Sed。  
+[] # 匹配一个指定范围内的字符，如/[ss]ed/匹配 sed 和 Sed。
 [^] # 匹配一个不在指定范围内的字符，如：/[^A-RT-Z]ed/匹配不包含 A-R 和 T-Z 的一个字母开头，紧跟 ed 的行。
 \(..\) # 匹配子串，保存匹配的字符，如 s/\(love\)able/\1rs，loveable 被替换成 lovers。
 &amp; # 保存搜索字符用来替换其他字符，如 s/love/ **&amp;** /，love 这成 **love** 。
@@ -233,7 +233,7 @@ $ # 匹配行结束，如：/sed$/匹配所有以 sed 结尾的行。
 \&gt; # 匹配单词的结束，如/love\&gt;/匹配包含以 love 结尾的单词的行。
 x\{m\} # 重复字符 x，m 次，如：/0\{5\}/匹配包含 5 个 0 的行。
 x\{m,\} # 重复字符 x，至少 m 次，如：/0\{5,\}/匹配至少有 5 个 0 的行。
-x\{m,n\} # 重复字符 x，至少 m 次，不多于 n 次，如：/0\{5,10\}/匹配 5~10 个 0 的行。  
+x\{m,n\} # 重复字符 x，至少 m 次，不多于 n 次，如：/0\{5,10\}/匹配 5~10 个 0 的行。
 </code></pre>
 <h2 id="sed-用法实例">sed 用法实例</h2>
 <h3 id="替换操作s-命令">替换操作：s 命令</h3>
@@ -297,7 +297,7 @@ sed 's|test|TEXT|g'
 <pre><code class="language-Shell">echo this is digit 7 in a number | sed 's/digit \([0-9]\)/&lt;span title=&quot;\1&quot;&gt;\1/'
 this is 7 in a number
 </code></pre>
-<p>命令中 digit 7，被替换成了 7。样式匹配到的子串是 7，(..) 用于匹配子串，对于匹配到的第一个子串就标记为  \1 ，依此类推匹配到的第二个结果就是  \2 ，例如：</p>
+<p>命令中 digit 7，被替换成了 7。样式匹配到的子串是 7，(..) 用于匹配子串，对于匹配到的第一个子串就标记为 \1 ，依此类推匹配到的第二个结果就是 \2 ，例如：</p>
 <pre><code class="language-Shell">echo aaa BBB | sed 's/\([a-z]\+\) \([A-Z]\+\)/&lt;span title=&quot;\2&quot;&gt;\2 &lt;span title=&quot;\1&quot;&gt;\1/'
 BBB aaa
 </code></pre>
@@ -417,7 +417,7 @@ awk '/SCC/{getline; print}' URFILE
       <!-- right -->
       <div id="sidebar" class="main-container-right">
         <div class="id_card i-card">
-          <div class="id_card-avatar" style="background-image: url(https://raz1ner.com/images/avatar.png?v=1757249920914)"></div>
+          <div class="id_card-avatar" style="background-image: url(https://raz1ner.com/images/avatar.png?v=1757825666966)"></div>
           <h1 class="id_card-title">Raz1ner</h1>
           <p style="text-align: center;">
             <a href="https://github.com/dev-coco" rel="nofollow noreferrer" target="_blank"><img class="social-icon" alt="Github" src="/images/social/GitHub.png"></a>
@@ -491,24 +491,24 @@ awk '/SCC/{getline; print}' URFILE
       </div>
       <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
         <div class="notice-content">
-          <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/ai-tech/">AI 科技</a>
-          <a class="tags-tag i-tag i-tag-banana" href="https://raz1ner.com/tag/other/">其它</a>
-          <a class="tags-tag i-tag i-tag-success" href="https://raz1ner.com/tag/excel/">Excel</a>
-          <a class="tags-tag i-tag i-tag-success" href="https://raz1ner.com/tag/google-script/">Google 脚本</a>
-          <a class="tags-tag i-tag i-tag-info" href="https://raz1ner.com/tag/windows/">Windows</a>
-          <a class="tags-tag i-tag i-tag-info" href="https://raz1ner.com/tag/software/">软件</a>
-          <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/macos/">macOS</a>
-          <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/facebook/">Facebook</a>
-          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/instagram/">Instagram</a>
-          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/ios/">iOS</a>
-          <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/security/">安全</a>
-          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/shell/">Shell</a>
-          <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/javascript/">Javascript</a>
-          <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/twitter-x/">Twitter (X)</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/ai-tech/">AI 科技</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/excel/">Excel</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://raz1ner.com/tag/google-script/">Google 脚本</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://raz1ner.com/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/instagram/">Instagram</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://raz1ner.com/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/security/">安全</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://raz1ner.com/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/javascript/">Javascript</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/twitter-x/">Twitter (X)</a>
           <a class="tags-tag i-tag i-tag-success" href="https://raz1ner.com/tag/life/">生活</a>
-          <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/sololearn/">Sololearn</a>
-          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/whatsapp/">WhatsApp</a>
-          <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/linux-command/">Linux命令</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/sololearn/">Sololearn</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://raz1ner.com/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/linux-command/">Linux命令</a>
         </div>
       </div>
       </div>

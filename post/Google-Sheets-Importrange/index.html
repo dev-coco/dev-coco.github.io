@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Google Sheets 函数 IMPORTRANGE | Raz1ner</title>
   <meta name="author" content="Raz1ner">
-  <link rel="shortcut icon" href="https://raz1ner.com/favicon.ico?v=1757249920914">
+  <link rel="shortcut icon" href="https://raz1ner.com/favicon.ico?v=1757825666966">
   <link rel="stylesheet" href="https://raz1ner.com/styles/main.css">
   <!-- <script src="/js/prism.js"></script> -->
   <!-- <link rel="stylesheet" href="/css/prism.css"> -->
@@ -54,7 +54,7 @@
       <div class="nav">
         <div class="logo">
           <a href="https://raz1ner.com">
-            <img class="avatar" alt="Raz1ner" src="https://raz1ner.com/images/avatar.png?v=1757249920914" alt="">
+            <img class="avatar" alt="Raz1ner" src="https://raz1ner.com/images/avatar.png?v=1757825666966" alt="">
           </a>
           <div class="site-title">
             <h1>Raz1ner</h1>
@@ -153,7 +153,7 @@
         <h2 class="post-title">Google Sheets 函数 IMPORTRANGE</h2>
         <div class="post-info">
           <time class="post-time">2025-03-31 / 8 min read</time>
-            <a href="https://raz1ner.com/tag/excel/" class="post-tag i-tag i-tag-other_2">#Excel</a>
+            <a href="https://raz1ner.com/tag/excel/" class="post-tag i-tag i-tag-">#Excel</a>
         </div>
         <!--
           
@@ -232,8 +232,8 @@
 <p><strong class="red">错误提示</strong></p>
 <ul>
 <li>公式解析错误。</li>
-<li>&quot;IMPORTRANGE&quot; 函数的第1个参数&quot;的值是 &quot;xxxx&quot;。这不是有效的单元格/范围引用。</li>
-<li>&quot;IMPORTRANGE&quot; 中的参数数品有误。应有2个参数，但实际只有 xxx 个。</li>
+<li>&quot;IMPORTRANGE&quot; 函数的第 1 个参数&quot;的值是 &quot;xxxx&quot;。这不是有效的单元格/范围引用。</li>
+<li>&quot;IMPORTRANGE&quot; 中的参数数品有误。应有 2 个参数，但实际只有 xxx 个。</li>
 </ul>
 <p><strong class="green">解决方法</strong><br>
 IMPORTRANGE 函数内的参数设置错误，请查看参数说明，按照规范设置参数。</p>
@@ -311,13 +311,13 @@ IMPORTRANGE(
 “导入范围“时出现内部错误。</p>
 <figure data-type="image" tabindex="3"><img src="https://raz1ner.com/post-images/1748177684903.png" alt="" loading="lazy"></figure>
 <p><strong class="green">解决方法</strong></p>
-<p><strong>原因1</strong><br>
+<p><strong>原因 1</strong><br>
 如果引用的电子表格内含有大量或者复杂的计算公式，那么 IMPORTRANGE 函数会等待来源表格里的公式运行完成后再引用数据到当前表格。当来源表格的公式计算的耗时太长，就会导致 IMPORTRANGE 函数请求超时，导致出现「内部错误」的提示。</p>
 <p>减少来源表格的计算公式可缓解此问题。</p>
-<p><strong>原因2</strong><br>
-当前表格内使用了大量联网请求的函数，包括但不限于 IMPORTRANGE、IMPORTXML、GOOGLETRANSLATE、IMPORTHTML等等。Google 对于联网请求有一定的速率限制，短时间内大量调用联网函数可能超过限额，导致部分请求被拒绝或者延迟。</p>
+<p><strong>原因 2</strong><br>
+当前表格内使用了大量联网请求的函数，包括但不限于 IMPORTRANGE、IMPORTXML、GOOGLETRANSLATE、IMPORTHTML 等等。Google 对于联网请求有一定的速率限制，短时间内大量调用联网函数可能超过限额，导致部分请求被拒绝或者延迟。</p>
 <p>减少使用联网函数可缓解此问题。</p>
-<p><strong>原因3</strong><br>
+<p><strong>原因 3</strong><br>
 有可能是 Google Sheets 后台服务出现了间歇性问题，导致 IMPORTRANGE 无法正常工作。</p>
 <p>可以关注 Google Workspace 的状态仪表盘，确认是否为广泛服务中断。<a href="https://www.google.com/appsstatus/dashboard/?hl=zh-cn" rel="nofollow noreferrer" target="_blank">Google Workspace 状态信息中心</a></p>
 <p><strong>通用临时解决方案</strong><br>
@@ -336,8 +336,8 @@ IMPORTRANGE(
 财务报表!a1:g10
 </code></pre>
 <p>相关推荐：<br>
-<a href="https://dev-coco.github.io/post/Google-Excel-Array-Importrange/">Google Excel IMPORTRANGE 数组输出</a><br>
-<a href="https://dev-coco.github.io/post/Google-Script-Importrange/">使用 Google 脚本实现 IMPORTRANGE</a></p>
+<a href="https://raz1ner.com/post/Google-Excel-Array-Importrange/">Google Excel IMPORTRANGE 数组输出</a><br>
+<a href="https://raz1ner.com/post/Google-Script-Importrange/">使用 Google 脚本实现 IMPORTRANGE</a></p>
 
           </div>
           <div class="copyright">
@@ -359,7 +359,7 @@ IMPORTRANGE(
       <!-- right -->
       <div id="sidebar" class="main-container-right">
         <div class="id_card i-card">
-          <div class="id_card-avatar" style="background-image: url(https://raz1ner.com/images/avatar.png?v=1757249920914)"></div>
+          <div class="id_card-avatar" style="background-image: url(https://raz1ner.com/images/avatar.png?v=1757825666966)"></div>
           <h1 class="id_card-title">Raz1ner</h1>
           <p style="text-align: center;">
             <a href="https://github.com/dev-coco" rel="nofollow noreferrer" target="_blank"><img class="social-icon" alt="Github" src="/images/social/GitHub.png"></a>
@@ -402,24 +402,24 @@ IMPORTRANGE(
       </div>
       <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
         <div class="notice-content">
-          <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/ai-tech/">AI 科技</a>
-          <a class="tags-tag i-tag i-tag-success" href="https://raz1ner.com/tag/other/">其它</a>
-          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/excel/">Excel</a>
-          <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/google-script/">Google 脚本</a>
-          <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/windows/">Windows</a>
-          <a class="tags-tag i-tag i-tag-success" href="https://raz1ner.com/tag/software/">软件</a>
-          <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/macos/">macOS</a>
-          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/facebook/">Facebook</a>
-          <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/instagram/">Instagram</a>
-          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/ai-tech/">AI 科技</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/excel/">Excel</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://raz1ner.com/tag/google-script/">Google 脚本</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/instagram/">Instagram</a>
+          <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/ios/">iOS</a>
           <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/security/">安全</a>
-          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/shell/">Shell</a>
-          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/javascript/">Javascript</a>
-          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/twitter-x/">Twitter (X)</a>
-          <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/life/">生活</a>
-          <a class="tags-tag i-tag i-tag-banana" href="https://raz1ner.com/tag/sololearn/">Sololearn</a>
-          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/whatsapp/">WhatsApp</a>
-          <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/linux-command/">Linux命令</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/javascript/">Javascript</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/twitter-x/">Twitter (X)</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/life/">生活</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/sololearn/">Sololearn</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://raz1ner.com/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/linux-command/">Linux命令</a>
         </div>
       </div>
       </div>

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ethtool | Raz1ner</title>
   <meta name="author" content="Raz1ner">
-  <link rel="shortcut icon" href="https://raz1ner.com/favicon.ico?v=1757249920914">
+  <link rel="shortcut icon" href="https://raz1ner.com/favicon.ico?v=1757825666966">
   <link rel="stylesheet" href="https://raz1ner.com/styles/main.css">
   <!-- <script src="/js/prism.js"></script> -->
   <!-- <link rel="stylesheet" href="/css/prism.css"> -->
@@ -32,17 +32,17 @@
       gtag('js', new Date())
       gtag('config', 'G-24X8H1LT7N')
    </script>
-  <meta property="og:image" content="https://dev-coco.github.io/post-images/Linux-Command.png">
+  <meta property="og:image" content="https://raz1ner.com/post-images/Linux-Command.png">
   <meta name="description" content="显示或修改以太网卡的配置信息。">
   <link rel="canonical" href="https://raz1ner.com/post/ethtool/">
   <meta property="og:title" content="ethtool - Raz1ner">
   <meta property="og:type" content="article">
-  <meta property="og:image" content="https://dev-coco.github.io/post-images/Linux-Command.png">
+  <meta property="og:image" content="https://raz1ner.com/post-images/Linux-Command.png">
   <meta property="og:url" content="https://raz1ner.com/post/ethtool/">
   <meta property="og:description" content="显示或修改以太网卡的配置信息。">
   <meta name="twitter:title" content="ethtool - Raz1ner">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://dev-coco.github.io/post-images/Linux-Command.png">
+  <meta name="twitter:image" content="https://raz1ner.com/post-images/Linux-Command.png">
   <meta name="twitter:description" content="显示或修改以太网卡的配置信息。">
   <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:300,300i,400,400i,700,700i,800" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Mallanna" rel="stylesheet">
@@ -54,7 +54,7 @@
       <div class="nav">
         <div class="logo">
           <a href="https://raz1ner.com">
-            <img class="avatar" alt="Raz1ner" src="https://raz1ner.com/images/avatar.png?v=1757249920914" alt="">
+            <img class="avatar" alt="Raz1ner" src="https://raz1ner.com/images/avatar.png?v=1757825666966" alt="">
           </a>
           <div class="site-title">
             <h1>Raz1ner</h1>
@@ -157,7 +157,7 @@
         </div>
         <!--
           
-        <div class="post-feature-image" style="background-image: url('https://dev-coco.github.io/post-images/Linux-Command.png')"></div>
+        <div class="post-feature-image" style="background-image: url('https://raz1ner.com/post-images/Linux-Command.png')"></div>
         -->
           <div class="post-content">
             <p>显示或修改以太网卡的配置信息。</p>
@@ -204,8 +204,8 @@ ethtool [-s] ethX [speed 10|100|1000] [duplex half|full] [autoneg on|off] [port 
 <thead>
 <tr>
 <th style="text-align:center">命令选项</th>
-<th style="text-align:center">struct ethtool_ops成员函数</th>
-<th style="text-align:center">Ethtool命令显示参数的来源（以网卡驱动BNX2为例）</th>
+<th style="text-align:center">struct ethtool_ops 成员函数</th>
+<th style="text-align:center">Ethtool 命令显示参数的来源（以网卡驱动 BNX2 为例）</th>
 </tr>
 </thead>
 <tbody>
@@ -217,47 +217,47 @@ ethtool [-s] ethX [speed 10|100|1000] [duplex half|full] [autoneg on|off] [port 
 <tr>
 <td style="text-align:center">-a -A</td>
 <td style="text-align:center">get_pauseparam set_pauseparam</td>
-<td style="text-align:center">从网卡寄存器中获得Autonegotiate/RX/TX模块的状态：on oroff，可配置。</td>
+<td style="text-align:center">从网卡寄存器中获得 Autonegotiate/RX/TX 模块的状态：on oroff，可配置。</td>
 </tr>
 <tr>
 <td style="text-align:center">-c -C</td>
 <td style="text-align:center">get_coalesceset_coalesce</td>
-<td style="text-align:center">从网卡寄存器中获得coalescing参数：TX/RX一个数据包后，推迟发生TX/RX中断的时间(us)/数据包个数。—减小该值可以提高网卡的响应时间。 当rx-usecs&amp;rx-frames同时被设为0时，RX中断停止。 当tx-usecs&amp;tx-frames同时被设为0时，TX中断停止。</td>
+<td style="text-align:center">从网卡寄存器中获得 coalescing 参数：TX/RX 一个数据包后，推迟发生 TX/RX 中断的时间(us)/数据包个数。—减小该值可以提高网卡的响应时间。 当 rx-usecs&amp;rx-frames 同时被设为 0 时，RX 中断停止。 当 tx-usecs&amp;tx-frames 同时被设为 0 时，TX 中断停止。</td>
 </tr>
 <tr>
 <td style="text-align:center">-g -G</td>
 <td style="text-align:center">get_ringparam set_ringparam</td>
-<td style="text-align:center">除当前TX/RX ring的值（从网卡寄存器中读取得到，可配置）外，其它为网卡bnx2自己固定的信息。</td>
+<td style="text-align:center">除当前 TX/RX ring 的值（从网卡寄存器中读取得到，可配置）外，其它为网卡 bnx2 自己固定的信息。</td>
 </tr>
 <tr>
 <td style="text-align:center">-k -K</td>
 <td style="text-align:center">get_rx_csumget_tx_csum get_sg get_tso set_rx_csum set_tx_csum set_sg set_tso</td>
-<td style="text-align:center">显示信息从保存该状态的变量中读取得到，没有对应的寄存器。因此，TX/RX校验等模块一直处于on状态，实际上是无法修改的。</td>
+<td style="text-align:center">显示信息从保存该状态的变量中读取得到，没有对应的寄存器。因此，TX/RX 校验等模块一直处于 on 状态，实际上是无法修改的。</td>
 </tr>
 <tr>
 <td style="text-align:center">-i</td>
 <td style="text-align:center">get_drvinfo[self_test_count, get_stats_coun,t get_regs_len, get_eeprom_len]</td>
-<td style="text-align:center">网卡bnx2自己固定的信息，如： ——————————————————– driver: bnx2 version: 1.4.30 firmware-version: 1.8.0.5 bus-info: 0000:09:00.0 ——————————————————–</td>
+<td style="text-align:center">网卡 bnx2 自己固定的信息，如： ——————————————————– driver: bnx2 version: 1.4.30 firmware-version: 1.8.0.5 bus-info: 0000:09:00.0 ——————————————————–</td>
 </tr>
 <tr>
 <td style="text-align:center">-d</td>
 <td style="text-align:center">get_drvinfoget_regs</td>
-<td style="text-align:center">不支持，即bnx2中没有实现函数get_regs。</td>
+<td style="text-align:center">不支持，即 bnx2 中没有实现函数 get_regs。</td>
 </tr>
 <tr>
 <td style="text-align:center">-e -E</td>
 <td style="text-align:center">get_eepromset_eeprom</td>
-<td style="text-align:center">不支持，即bnx2中没有实现函数get_eeprom。</td>
+<td style="text-align:center">不支持，即 bnx2 中没有实现函数 get_eeprom。</td>
 </tr>
 <tr>
 <td style="text-align:center">-r</td>
 <td style="text-align:center">nway_reset</td>
-<td style="text-align:center">配置网卡MII_BMCR寄存器，重启Auto negotiation模块。</td>
+<td style="text-align:center">配置网卡 MII_BMCR 寄存器，重启 Auto negotiation 模块。</td>
 </tr>
 <tr>
 <td style="text-align:center">-p</td>
 <td style="text-align:center">phys_id</td>
-<td style="text-align:center">配置网卡BNX2_EMAC_LED寄存器，实现LED闪功能。</td>
+<td style="text-align:center">配置网卡 BNX2_EMAC_LED 寄存器，实现 LED 闪功能。</td>
 </tr>
 <tr>
 <td style="text-align:center">-t</td>
@@ -267,7 +267,7 @@ ethtool [-s] ethX [speed 10|100|1000] [duplex half|full] [autoneg on|off] [port 
 <tr>
 <td style="text-align:center">-S</td>
 <td style="text-align:center">get_ethtool_stats</td>
-<td style="text-align:center">显示信息来源于网卡驱动中的结构体变量stats_blk。（网卡通过DMA方式，将寄存器BNX2_HC_STATISTICS _ADDR_L和BNX2_HC_STATISTICS_ADDR_H中的数据实时地读取到结构体变量struct statistics_block *stats_blk中。） —显示的数据都是从网卡寄存器中统计得到的，各项的含义需查询网卡（芯片）手册。</td>
+<td style="text-align:center">显示信息来源于网卡驱动中的结构体变量 stats_blk。（网卡通过 DMA 方式，将寄存器 BNX2_HC_STATISTICS _ADDR_L 和 BNX2_HC_STATISTICS_ADDR_H 中的数据实时地读取到结构体变量 struct statistics_block *stats_blk 中。） —显示的数据都是从网卡寄存器中统计得到的，各项的含义需查询网卡（芯片）手册。</td>
 </tr>
 </tbody>
 </table>
@@ -316,7 +316,7 @@ version: 1.4.30 等信息。关闭网卡对收到的数据包的校验功能，�
       <!-- right -->
       <div id="sidebar" class="main-container-right">
         <div class="id_card i-card">
-          <div class="id_card-avatar" style="background-image: url(https://raz1ner.com/images/avatar.png?v=1757249920914)"></div>
+          <div class="id_card-avatar" style="background-image: url(https://raz1ner.com/images/avatar.png?v=1757825666966)"></div>
           <h1 class="id_card-title">Raz1ner</h1>
           <p style="text-align: center;">
             <a href="https://github.com/dev-coco" rel="nofollow noreferrer" target="_blank"><img class="social-icon" alt="Github" src="/images/social/GitHub.png"></a>
@@ -362,24 +362,24 @@ version: 1.4.30 等信息。关闭网卡对收到的数据包的校验功能，�
       </div>
       <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
         <div class="notice-content">
-          <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/ai-tech/">AI 科技</a>
           <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/ai-tech/">AI 科技</a>
           <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/excel/">Excel</a>
-          <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/google-script/">Google 脚本</a>
+          <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/google-script/">Google 脚本</a>
           <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/windows/">Windows</a>
-          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/software/">软件</a>
-          <a class="tags-tag i-tag i-tag-success" href="https://raz1ner.com/tag/macos/">macOS</a>
-          <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/facebook/">Facebook</a>
-          <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/instagram/">Instagram</a>
-          <a class="tags-tag i-tag i-tag-banana" href="https://raz1ner.com/tag/ios/">iOS</a>
-          <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/security/">安全</a>
-          <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/shell/">Shell</a>
-          <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/javascript/">Javascript</a>
-          <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/twitter-x/">Twitter (X)</a>
-          <a class="tags-tag i-tag i-tag-info" href="https://raz1ner.com/tag/life/">生活</a>
-          <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/sololearn/">Sololearn</a>
-          <a class="tags-tag i-tag i-tag-info" href="https://raz1ner.com/tag/whatsapp/">WhatsApp</a>
-          <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/linux-command/">Linux命令</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://raz1ner.com/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://raz1ner.com/tag/instagram/">Instagram</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://raz1ner.com/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://raz1ner.com/tag/security/">安全</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/javascript/">Javascript</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/twitter-x/">Twitter (X)</a>
+          <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/life/">生活</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/sololearn/">Sololearn</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/linux-command/">Linux命令</a>
         </div>
       </div>
       </div>

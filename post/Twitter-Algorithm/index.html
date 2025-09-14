@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>推特 Twitter 演算法和推送机制 2023 最新 | Raz1ner</title>
   <meta name="author" content="Raz1ner">
-  <link rel="shortcut icon" href="https://raz1ner.com/favicon.ico?v=1757249920914">
+  <link rel="shortcut icon" href="https://raz1ner.com/favicon.ico?v=1757825666966">
   <link rel="stylesheet" href="https://raz1ner.com/styles/main.css">
   <!-- <script src="/js/prism.js"></script> -->
   <!-- <link rel="stylesheet" href="/css/prism.css"> -->
@@ -54,7 +54,7 @@
       <div class="nav">
         <div class="logo">
           <a href="https://raz1ner.com">
-            <img class="avatar" alt="Raz1ner" src="https://raz1ner.com/images/avatar.png?v=1757249920914" alt="">
+            <img class="avatar" alt="Raz1ner" src="https://raz1ner.com/images/avatar.png?v=1757825666966" alt="">
           </a>
           <div class="site-title">
             <h1>Raz1ner</h1>
@@ -153,7 +153,7 @@
         <h2 class="post-title">推特 Twitter 演算法和推送机制 2023 最新</h2>
         <div class="post-info">
           <time class="post-time">2023-04-08 / 19 min read</time>
-            <a href="https://raz1ner.com/tag/twitter-x/" class="post-tag i-tag i-tag-warning">#Twitter (X)</a>
+            <a href="https://raz1ner.com/tag/twitter-x/" class="post-tag i-tag i-tag-success">#Twitter (X)</a>
         </div>
         <!--
           
@@ -476,8 +476,8 @@ if (isRestricted) score *= restrictedWeightMultiplicative
 score = (score min 1.0) max 0
 score *= 100
 </code></pre>
-<p>接下来会根据账号的关注数和粉丝数进行计算分数。1 加上关注数的和除以1 加上粉丝数的和。假设账号关注数有 600，粉丝数有 450，那么关注数和粉丝数的比例是：(1 + 600) / (1 + 450) ≈ 1.3325942350332594。</p>
-<pre><code class="language-Scala">val friendsToFollowersRatio = (1.0 + numFollowings) / (1.0 + numFollowers) 
+<p>接下来会根据账号的关注数和粉丝数进行计算分数。1 加上关注数的和除以 1 加上粉丝数的和。假设账号关注数有 600，粉丝数有 450，那么关注数和粉丝数的比例是：(1 + 600) / (1 + 450) ≈ 1.3325942350332594。</p>
+<pre><code class="language-Scala">val friendsToFollowersRatio = (1.0 + numFollowings) / (1.0 + numFollowers)
 </code></pre>
 <p>先判断两个条件，一个是关注数是否大于设定的用户最小关注数 (500) 和比例是否大于关注数与粉丝数阈值 (0.6)，如果不满足这两个条件则不会进行下面的计算，直接返回之前计算好的分数。</p>
 <p>如果满足以上的两个条件，会先用比例减去关注数与粉丝数阈值的差乘以关注数与粉丝数常量因子的值，结果为：5 * (1.3325942350332594 - 0.6) = 3.6629711751662968，再根据这个结果使用指数函数计算幂值。</p>
@@ -659,7 +659,7 @@ if (data.hasNewsUrl) {
   relevanceStats.setNumWithNews(relevanceStats.getNumWithNews() + 1);
 }
 </code></pre>
-<p>如果内容包含图片、视频或者新闻链接，会给推文增加权重，计算方式：总分数 * (1 * (图片数量 + 1))</p>
+<p>如果内容包含图片、视频或者新闻链接，会给推文增加权重，计算方式：总分数 _ (1 _ (图片数量 + 1))</p>
 <pre><code class="language-Java">// Media/News url boosts.
 if (data.hasImageUrl || data.hasVideoUrl) {
   data.hasMedialUrlBoostApplied = true;
@@ -720,7 +720,7 @@ if (scoringData.hasSeparateTextAndUrlHitDemotionApplied) {
 }(persisted='true')
 </code></pre>
 <p>这里使用了时间衰减函数，衰减率为 0.003，衰减半衰期为 360 分钟。这个衰减函数表示，随着时间的推移，一个推文的分数将逐渐下降，下降的速率取决于时间的差距和衰减率。在这种情况下，当一个推文的发布时间与当前时间相差 500 分钟时，可以通过以下面的公式计算推文的衰减分数：</p>
-<p>衰减分数 = 基础分数 * exp(-衰减率 * (发布时间 - 当前时间) / 衰减半衰期)</p>
+<p>衰减分数 = 基础分数 _ exp(-衰减率 _ (发布时间 - 当前时间) / 衰减半衰期)</p>
 <p>来源：<a href="https://github.com/twitter/the-algorithm/blob/main/src/thrift/com/twitter/search/common/ranking/ranking.thrift" target="_blank">ranking.thrift</a></p>
   <div class="form">
     <div class="panel-heading">推文权重衰减计算器</div>
@@ -837,6 +837,7 @@ if (scoringData.hasSeparateTextAndUrlHitDemotionApplied) {
       postScore.innerText = score
     }
   </script>
+
           </div>
           <div class="copyright">
             <p>本文链接： <a href="https://raz1ner.com/post/Twitter-Algorithm/">https://raz1ner.com/post/Twitter-Algorithm/</a></p>
@@ -857,7 +858,7 @@ if (scoringData.hasSeparateTextAndUrlHitDemotionApplied) {
       <!-- right -->
       <div id="sidebar" class="main-container-right">
         <div class="id_card i-card">
-          <div class="id_card-avatar" style="background-image: url(https://raz1ner.com/images/avatar.png?v=1757249920914)"></div>
+          <div class="id_card-avatar" style="background-image: url(https://raz1ner.com/images/avatar.png?v=1757825666966)"></div>
           <h1 class="id_card-title">Raz1ner</h1>
           <p style="text-align: center;">
             <a href="https://github.com/dev-coco" rel="nofollow noreferrer" target="_blank"><img class="social-icon" alt="Github" src="/images/social/GitHub.png"></a>
@@ -907,23 +908,23 @@ if (scoringData.hasSeparateTextAndUrlHitDemotionApplied) {
       </div>
       <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
         <div class="notice-content">
-          <a class="tags-tag i-tag i-tag-banana" href="https://raz1ner.com/tag/ai-tech/">AI 科技</a>
-          <a class="tags-tag i-tag i-tag-banana" href="https://raz1ner.com/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/ai-tech/">AI 科技</a>
           <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/excel/">Excel</a>
-          <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/google-script/">Google 脚本</a>
-          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/windows/">Windows</a>
-          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/software/">软件</a>
-          <a class="tags-tag i-tag i-tag-info" href="https://raz1ner.com/tag/macos/">macOS</a>
-          <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/facebook/">Facebook</a>
-          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/instagram/">Instagram</a>
-          <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/ios/">iOS</a>
-          <a class="tags-tag i-tag i-tag-success" href="https://raz1ner.com/tag/security/">安全</a>
-          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/shell/">Shell</a>
-          <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/javascript/">Javascript</a>
-          <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/twitter-x/">Twitter (X)</a>
-          <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/life/">生活</a>
-          <a class="tags-tag i-tag i-tag-info" href="https://raz1ner.com/tag/sololearn/">Sololearn</a>
-          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/google-script/">Google 脚本</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://raz1ner.com/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://raz1ner.com/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/instagram/">Instagram</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://raz1ner.com/tag/security/">安全</a>
+          <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/javascript/">Javascript</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/twitter-x/">Twitter (X)</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/life/">生活</a>
+          <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/sololearn/">Sololearn</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/whatsapp/">WhatsApp</a>
           <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/linux-command/">Linux命令</a>
         </div>
       </div>

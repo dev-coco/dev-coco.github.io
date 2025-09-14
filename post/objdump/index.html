@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>objdump | Raz1ner</title>
   <meta name="author" content="Raz1ner">
-  <link rel="shortcut icon" href="https://raz1ner.com/favicon.ico?v=1757249920914">
+  <link rel="shortcut icon" href="https://raz1ner.com/favicon.ico?v=1757825666966">
   <link rel="stylesheet" href="https://raz1ner.com/styles/main.css">
   <!-- <script src="/js/prism.js"></script> -->
   <!-- <link rel="stylesheet" href="/css/prism.css"> -->
@@ -32,17 +32,17 @@
       gtag('js', new Date())
       gtag('config', 'G-24X8H1LT7N')
    </script>
-  <meta property="og:image" content="https://dev-coco.github.io/post-images/Linux-Command.png">
+  <meta property="og:image" content="https://raz1ner.com/post-images/Linux-Command.png">
   <meta name="description" content="显示二进制文件信息。">
   <link rel="canonical" href="https://raz1ner.com/post/objdump/">
   <meta property="og:title" content="objdump - Raz1ner">
   <meta property="og:type" content="article">
-  <meta property="og:image" content="https://dev-coco.github.io/post-images/Linux-Command.png">
+  <meta property="og:image" content="https://raz1ner.com/post-images/Linux-Command.png">
   <meta property="og:url" content="https://raz1ner.com/post/objdump/">
   <meta property="og:description" content="显示二进制文件信息。">
   <meta name="twitter:title" content="objdump - Raz1ner">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://dev-coco.github.io/post-images/Linux-Command.png">
+  <meta name="twitter:image" content="https://raz1ner.com/post-images/Linux-Command.png">
   <meta name="twitter:description" content="显示二进制文件信息。">
   <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:300,300i,400,400i,700,700i,800" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Mallanna" rel="stylesheet">
@@ -54,7 +54,7 @@
       <div class="nav">
         <div class="logo">
           <a href="https://raz1ner.com">
-            <img class="avatar" alt="Raz1ner" src="https://raz1ner.com/images/avatar.png?v=1757249920914" alt="">
+            <img class="avatar" alt="Raz1ner" src="https://raz1ner.com/images/avatar.png?v=1757825666966" alt="">
           </a>
           <div class="site-title">
             <h1>Raz1ner</h1>
@@ -153,11 +153,11 @@
         <h2 class="post-title">objdump</h2>
         <div class="post-info">
           <time class="post-time">2022-02-02 / 15 min read</time>
-            <a href="https://raz1ner.com/tag/linux-command/" class="post-tag i-tag i-tag-warning">#Linux命令</a>
+            <a href="https://raz1ner.com/tag/linux-command/" class="post-tag i-tag i-tag-other_2">#Linux命令</a>
         </div>
         <!--
           
-        <div class="post-feature-image" style="background-image: url('https://dev-coco.github.io/post-images/Linux-Command.png')"></div>
+        <div class="post-feature-image" style="background-image: url('https://raz1ner.com/post-images/Linux-Command.png')"></div>
         -->
           <div class="post-content">
             <p>显示二进制文件信息。</p>
@@ -166,36 +166,36 @@
 <p>objdump 命令是用查看目标文件或者可执行的目标文件的构成的 gcc 工具。</p>
 <h2 id="选项">选项</h2>
 <pre><code class="language-Shell">-a --archive-headers
-# 显示档案库的成员信息,类似ls -l将lib*.a的信息列出。 
+# 显示档案库的成员信息,类似ls -l将lib*.a的信息列出。
 
 -b bfdname --target=bfdname
-# 指定目标码格式。这不是必须的，objdump能自动识别许多格式，比如： 
+# 指定目标码格式。这不是必须的，objdump能自动识别许多格式，比如：
 
 objdump -b oasys -m vax -h fu.o
-# 显示fu.o的头部摘要信息，明确指出该文件是Vax系统下用Oasys编译器生成的目标文件。objdump -i将给出这里可以指定的目标码格式列表。 
+# 显示fu.o的头部摘要信息，明确指出该文件是Vax系统下用Oasys编译器生成的目标文件。objdump -i将给出这里可以指定的目标码格式列表。
 
 -C --demangle
-# 将底层的符号名解码成用户级名字，除了去掉所开头的下划线之外，还使得C++函数名以可理解的方式显示出来。 
+# 将底层的符号名解码成用户级名字，除了去掉所开头的下划线之外，还使得C++函数名以可理解的方式显示出来。
 --debugging
 -g
-# 显示调试信息。企图解析保存在文件中的调试信息并以C语言的语法显示出来。仅仅支持某些类型的调试信息。有些其他的格式被readelf -w支持。 
+# 显示调试信息。企图解析保存在文件中的调试信息并以C语言的语法显示出来。仅仅支持某些类型的调试信息。有些其他的格式被readelf -w支持。
 
 -e --debugging-tags
-# 类似-g选项，但是生成的信息是和ctags工具相兼容的格式。 
+# 类似-g选项，但是生成的信息是和ctags工具相兼容的格式。
 --disassemble
 -d
-# 从objfile中反汇编那些特定指令机器码的section。 
+# 从objfile中反汇编那些特定指令机器码的section。
 
 -D --disassemble-all
-# 与 -d 类似，但反汇编所有section. 
+# 与 -d 类似，但反汇编所有section.
 
 --prefix-addresses
-# 反汇编的时候，显示每一行的完整地址。这是一种比较老的反汇编格式。 
+# 反汇编的时候，显示每一行的完整地址。这是一种比较老的反汇编格式。
 
 -EB
 -EL
 --endian={big|little}
-# 指定目标文件的小端。这个项将影响反汇编出来的指令。在反汇编的文件没描述小端信息的时候用。例如S-records. 
+# 指定目标文件的小端。这个项将影响反汇编出来的指令。在反汇编的文件没描述小端信息的时候用。例如S-records.
 
 -f
 --file-headers
@@ -278,7 +278,7 @@ objdump -b oasys -m vax -h fu.o
 </code></pre>
 <h2 id="实例">实例</h2>
 <p>首先，在给出后面大部分测试所基于的源代码以及编译指令。 源代码如下：</p>
-<pre><code class="language-Shell">root@localhost [test]# nl mytest.cpp 
+<pre><code class="language-Shell">root@localhost [test]# nl mytest.cpp
 </code></pre>
 <pre><code class="language-Shell">void printTest() {
     char a;
@@ -291,31 +291,31 @@ a+=2;
 }
 </code></pre>
 <p>对以上源代码进行编译，如下：</p>
-<pre><code class="language-Shell">[root@localhost test]# g++ -c -g mytest.cpp 
+<pre><code class="language-Shell">[root@localhost test]# g++ -c -g mytest.cpp
 </code></pre>
 <p>这里，生成的文件是 mytest.o，为了方便测试包含了调试的信息，对可执行文件的测试，显示的结果类似。<br>
 查看当前使用的 objdump 的版本号：</p>
-<pre><code class="language-Shell">[root@localhost test]# objdump -V 
+<pre><code class="language-Shell">[root@localhost test]# objdump -V
 GNU objdump 2.17.50.0.6-14.el5 20061020
 Copyright 2005 free Software Foundation, Inc.
 This program is free software; you may redistribute it under the terms of
-the GNU General Public License.  This program has absolutely no warranty. 
+the GNU General Public License.  This program has absolutely no warranty.
 </code></pre>
 <p>查看档案库文件中的信息：</p>
-<pre><code class="language-Shell">[root@localhost test]# objdump -a libmy2.a 
+<pre><code class="language-Shell">[root@localhost test]# objdump -a libmy2.a
 In archive libmy2.a:
 myfile.o:     file format elf32-i386
 rwxrwxrwx 0/0   2724 Nov 16 16:06 2009 myfile.o
 mytest.o:     file format elf32-i386
-rw-r--r-- 0/0    727 Jul 13 15:32 2011 mytest.o 
+rw-r--r-- 0/0    727 Jul 13 15:32 2011 mytest.o
 </code></pre>
 <p>这里，libmy2.a 是一个使用 ar 命令将多个 </em>.o 目标文件打包而生成的静态库。命令的输出类似<code>ar -tv</code>，相比较<code>ar -tv</code>输出如下：</p>
-<pre><code class="language-Shell">[root@localhost test]# ar -tv libmy2.a 
+<pre><code class="language-Shell">[root@localhost test]# ar -tv libmy2.a
 rwxrwxrwx 0/0   2724 Nov 16 16:06 2009 myfile.o
-rw-r--r-- 0/0    727 Jul 13 15:32 2011 mytest.o 
+rw-r--r-- 0/0    727 Jul 13 15:32 2011 mytest.o
 </code></pre>
 <p>显示可用的架构和目标结构列表：</p>
-<pre><code class="language-Shell">[root@localhost test]# objdump -i 
+<pre><code class="language-Shell">[root@localhost test]# objdump -i
 BFD header file version 2.17.50.0.6-14.el5 20061020
 elf32-i386
 (header little endian, data little endian)
@@ -366,19 +366,19 @@ trad-core
           i386 elf64-little elf64-big elf32-little elf32-big srec symbolsrec
 
               tekhex binary ihex trad-core
-          i386 tekhex binary ihex --------- 
+          i386 tekhex binary ihex ---------
 </code></pre>
 <p>这里，显示的信息是相对于 -b 或者 -m 选项可用的架构和目标格式列表。<br>
 显示 mytest.o 文件中的 text 段的内容：</p>
-<pre><code class="language-Shell">[root@localhost test]# objdump --section=.text -s mytest.o 
+<pre><code class="language-Shell">[root@localhost test]# objdump --section=.text -s mytest.o
 mytest.o:     file format elf32-i386
 Contents of section .text:
 0000 5589e583 ec10c645 ff61c9c3 5589e583  U......E.a..U...
-0010 ec10c745 fc020000 008345fc 02c9c3    ...E......E.... 
+0010 ec10c745 fc020000 008345fc 02c9c3    ...E......E....
 </code></pre>
 <p>这里注意，不能单独使用-j 或者--section，例如<code>objdump --section=.text mytest.o</code>是不会运行成功的。<br>
 反汇编 mytest.o 中的 text 段内容，并尽可能用源代码形式表示：</p>
-<pre><code class="language-Shell">[root@localhost test]# objdump -j .text -S mytest.o 
+<pre><code class="language-Shell">[root@localhost test]# objdump -j .text -S mytest.o
 mytest.o:     file format elf32-i386
 Disassembly of section .text:
 00000000 &lt;_Z9printTestv&gt;:
@@ -406,15 +406,15 @@ void printTest2()
   19:   83 45 fc 02             addl   $0x2,0xfffffffc(%ebp)
 }
   1d:   c9                      leave
-  1e:   c3                      ret    
+  1e:   c3                      ret
 </code></pre>
 <p>这里注意，不能单独使用-j 或者--section，例如<code>objdump -j .text mytest.o 是不会运行成功的</code>。另外-S 命令对于包含调试信息的目标文件，显示的效果比较好，如果编译时没有指定 g++的-g 选项，那么目标文件就不包含调试信息，那么显示效果就差多了。<br>
 反汇编出 mytest.o 的源代码：</p>
-<pre><code class="language-Shell">[root@localhost test]# objdump -S mytest.o mytest.o:     file format elf32-i386Disassembly of section .text:00000000 &lt;_Z9printTestv&gt;:void printTest()   0:   55                      push   %ebp   1:   89 e5                   mov    %esp,%ebp   3:   83 ec 10                sub    $0x10,%esp{        char a;        a = 'a';   6:   c6 45 ff 61             movb   $0x61,0xffffffff(%ebp)}   a:   c9                      leave   b:   c3                      ret0000000c &lt;_Z10printTest2v&gt;:void printTest2()   c:   55                      push   %ebp   d:   89 e5                   mov    %esp,%ebp   f:   83 ec 10                sub    $0x10,%esp{       int a = 2;  12:   c7 45 fc 02 00 00 00    movl   $0x2,0xfffffffc(%ebp)        a+=2;  19:   83 45 fc 02             addl   $0x2,0xfffffffc(%ebp)}  1d:   c9                      leave  1e:   c3                      ret    
+<pre><code class="language-Shell">[root@localhost test]# objdump -S mytest.o mytest.o:     file format elf32-i386Disassembly of section .text:00000000 &lt;_Z9printTestv&gt;:void printTest()   0:   55                      push   %ebp   1:   89 e5                   mov    %esp,%ebp   3:   83 ec 10                sub    $0x10,%esp{        char a;        a = 'a';   6:   c6 45 ff 61             movb   $0x61,0xffffffff(%ebp)}   a:   c9                      leave   b:   c3                      ret0000000c &lt;_Z10printTest2v&gt;:void printTest2()   c:   55                      push   %ebp   d:   89 e5                   mov    %esp,%ebp   f:   83 ec 10                sub    $0x10,%esp{       int a = 2;  12:   c7 45 fc 02 00 00 00    movl   $0x2,0xfffffffc(%ebp)        a+=2;  19:   83 45 fc 02             addl   $0x2,0xfffffffc(%ebp)}  1d:   c9                      leave  1e:   c3                      ret
 </code></pre>
 <p>这里，尤其当编译的时候指定了-g 这种调试参数时，反汇编的效果比较明显。隐含了-d 参数。<br>
 显示文件的符号表入口：</p>
-<pre><code class="language-Shell">[root@localhost test]# objdump -t mytest.o 
+<pre><code class="language-Shell">[root@localhost test]# objdump -t mytest.o
 mytest.o:     file format elf32-i386
 
 SYMBOL TABLE:
@@ -433,16 +433,16 @@ SYMBOL TABLE:
 00000000 l    d  .comment       00000000 .comment
 00000000 g     F .text  0000000c _Z9printTestv
 00000000         *UND*  00000000 __gxx_personality_v0
-0000000c g     F .text  00000013 _Z10printTest2v 
+0000000c g     F .text  00000013 _Z10printTest2v
 </code></pre>
 <p>这里，输出的信息类似<code>nm -s</code>命令的输出，相比较之下，nm 命令的输出如下：</p>
-<pre><code class="language-Shell">[root@localhost test]# nm -s mytest.o 
+<pre><code class="language-Shell">[root@localhost test]# nm -s mytest.o
 0000000c T _Z10printTest2v
 00000000 T _Z9printTestv
-         U __gxx_personality_v0 
+         U __gxx_personality_v0
 </code></pre>
 <p>显示文件的符号表入口，将底层符号解码并表示成用户级别：</p>
-<pre><code class="language-Shell">[root@localhost test]# objdump -t -C mytest.o 
+<pre><code class="language-Shell">[root@localhost test]# objdump -t -C mytest.o
 mytest.o:     file format elf32-i386
 SYMBOL TABLE:
 00000000 l    df *ABS*  00000000 mytest.cpp
@@ -460,11 +460,11 @@ SYMBOL TABLE:
 00000000 l    d  .comment       00000000 .comment
 00000000 g     F .text  0000000c printTest()
 00000000         *UND*  00000000 __gxx_personality_v0
-0000000c g     F .text  00000013 printTest2() 
+0000000c g     F .text  00000013 printTest2()
 </code></pre>
 <p>这里，和没-C 相比，printTest2 函数可读性增加了。<br>
 反汇编目标文件的特定机器码段：</p>
-<pre><code class="language-Shell">[root@localhost test]# objdump -d mytest.o 
+<pre><code class="language-Shell">[root@localhost test]# objdump -d mytest.o
 mytest.o:     file format elf32-i386
 Disassembly of section .text:
 
@@ -483,7 +483,7 @@ Disassembly of section .text:
   12:   c7 45 fc 02 00 00 00    movl   $0x2,0xfffffffc(%ebp)
   19:   83 45 fc 02             addl   $0x2,0xfffffffc(%ebp)
   1d:   c9                      leave
-  1e:   c3                      ret    
+  1e:   c3                      ret
 </code></pre>
 <p>这里，对 text 段的内容进行了反汇编。<br>
 反汇编特定段，并将汇编代码对应的文件名称和行号对应上：</p>
@@ -515,11 +515,11 @@ _Z10printTest2v():
   19:   83 45 fc 02             addl   $0x2,0xfffffffc(%ebp)
 /root/test/04_libraryTest/mytest.cpp:10
   1d:   c9                      leave
-  1e:   c3                      ret  
+  1e:   c3                      ret
 </code></pre>
 <p>这里，项&quot;-d&quot;从 objfile 中反汇编那些特定指令机器码的 section，而使用&quot;-l&quot;指定用文件名和行号标注相应的目标代码，仅仅和-d、-D 或者-r 一起使用，使用-ld 和使用-d 的区别不是很大，在源码级调试的时候有用，要求编译时使用了-g 之类的调试编译选项。<br>
 显示目标文件各个段的头部摘要信息：</p>
-<pre><code class="language-Shell">[root@localhost test]# objdump -h mytest.o 
+<pre><code class="language-Shell">[root@localhost test]# objdump -h mytest.o
 mytest.o:     file format elf32-i386
 
 Sections:
@@ -547,7 +547,7 @@ Idx Name          Size      VMA       LMA       File off  Algn
 10 .comment      0000002e  00000000  00000000  000002b3  2**0
                   CONTENTS, READONLY
 11 .note.GNU-stack 00000000  00000000  00000000  000002e1  2**0
-                  CONTENTS, READONLY 
+                  CONTENTS, READONLY
 </code></pre>
 <p>这里，更多的内容参见<code>man objdump</code>中的这个选项。</p>
 
@@ -571,7 +571,7 @@ Idx Name          Size      VMA       LMA       File off  Algn
       <!-- right -->
       <div id="sidebar" class="main-container-right">
         <div class="id_card i-card">
-          <div class="id_card-avatar" style="background-image: url(https://raz1ner.com/images/avatar.png?v=1757249920914)"></div>
+          <div class="id_card-avatar" style="background-image: url(https://raz1ner.com/images/avatar.png?v=1757825666966)"></div>
           <h1 class="id_card-title">Raz1ner</h1>
           <p style="text-align: center;">
             <a href="https://github.com/dev-coco" rel="nofollow noreferrer" target="_blank"><img class="social-icon" alt="Github" src="/images/social/GitHub.png"></a>
@@ -612,24 +612,24 @@ Idx Name          Size      VMA       LMA       File off  Algn
       </div>
       <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
         <div class="notice-content">
-          <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/ai-tech/">AI 科技</a>
-          <a class="tags-tag i-tag i-tag-success" href="https://raz1ner.com/tag/other/">其它</a>
-          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/excel/">Excel</a>
-          <a class="tags-tag i-tag i-tag-info" href="https://raz1ner.com/tag/google-script/">Google 脚本</a>
-          <a class="tags-tag i-tag i-tag-success" href="https://raz1ner.com/tag/windows/">Windows</a>
-          <a class="tags-tag i-tag i-tag-info" href="https://raz1ner.com/tag/software/">软件</a>
-          <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/macos/">macOS</a>
-          <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://raz1ner.com/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/ai-tech/">AI 科技</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://raz1ner.com/tag/excel/">Excel</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/google-script/">Google 脚本</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://raz1ner.com/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/facebook/">Facebook</a>
           <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/instagram/">Instagram</a>
-          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/ios/">iOS</a>
-          <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/security/">安全</a>
-          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/shell/">Shell</a>
-          <a class="tags-tag i-tag i-tag-banana" href="https://raz1ner.com/tag/javascript/">Javascript</a>
-          <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/twitter-x/">Twitter (X)</a>
-          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/life/">生活</a>
-          <a class="tags-tag i-tag i-tag-success" href="https://raz1ner.com/tag/sololearn/">Sololearn</a>
-          <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/whatsapp/">WhatsApp</a>
-          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/linux-command/">Linux命令</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/security/">安全</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/javascript/">Javascript</a>
+          <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/twitter-x/">Twitter (X)</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/life/">生活</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/sololearn/">Sololearn</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://raz1ner.com/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/linux-command/">Linux命令</a>
         </div>
       </div>
       </div>

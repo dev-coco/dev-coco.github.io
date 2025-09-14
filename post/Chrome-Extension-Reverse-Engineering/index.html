@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Chrome 插件代码逆向分析 | Raz1ner</title>
   <meta name="author" content="Raz1ner">
-  <link rel="shortcut icon" href="https://raz1ner.com/favicon.ico?v=1757249920914">
+  <link rel="shortcut icon" href="https://raz1ner.com/favicon.ico?v=1757825666966">
   <link rel="stylesheet" href="https://raz1ner.com/styles/main.css">
   <!-- <script src="/js/prism.js"></script> -->
   <!-- <link rel="stylesheet" href="/css/prism.css"> -->
@@ -54,7 +54,7 @@
       <div class="nav">
         <div class="logo">
           <a href="https://raz1ner.com">
-            <img class="avatar" alt="Raz1ner" src="https://raz1ner.com/images/avatar.png?v=1757249920914" alt="">
+            <img class="avatar" alt="Raz1ner" src="https://raz1ner.com/images/avatar.png?v=1757825666966" alt="">
           </a>
           <div class="site-title">
             <h1>Raz1ner</h1>
@@ -153,8 +153,8 @@
         <h2 class="post-title">Chrome 插件代码逆向分析</h2>
         <div class="post-info">
           <time class="post-time">2023-03-05 / 11 min read</time>
-            <a href="https://raz1ner.com/tag/security/" class="post-tag i-tag i-tag-error">#安全</a>
-            <a href="https://raz1ner.com/tag/javascript/" class="post-tag i-tag i-tag-primary">#Javascript</a>
+            <a href="https://raz1ner.com/tag/security/" class="post-tag i-tag i-tag-other_3">#安全</a>
+            <a href="https://raz1ner.com/tag/javascript/" class="post-tag i-tag i-tag-other_2">#Javascript</a>
         </div>
         <!--
           
@@ -170,7 +170,7 @@
 <p>先来分析一下这个插件安装包的整体结构。</p>
 <figure data-type="image" tabindex="1"><img src="https://raz1ner.com/post-images/1677715844648.png" alt="" loading="lazy"></figure>
 <p>主要的功能是通过 JavaScript 代码来控制的，所以主要分析的文件有 background.js, popup.js 和 manifest.json。</p>
-<p>因为 manifest.json 记录了 Chrome 插件的配置文件，里面记录了哪些 JavaScript 文件在哪些域名使用，以及插件所用到的权限。content.js 虽然是 JavaScript 文件，但是不作为主要分析的文件，因为大小是 0字节，是一个空文件。jquery.min.js 是一个常见的 JavaScript 库，一般情况下不会在里面写入恶意代码，当然，不排除这种小概率事件。</p>
+<p>因为 manifest.json 记录了 Chrome 插件的配置文件，里面记录了哪些 JavaScript 文件在哪些域名使用，以及插件所用到的权限。content.js 虽然是 JavaScript 文件，但是不作为主要分析的文件，因为大小是 0 字节，是一个空文件。jquery.min.js 是一个常见的 JavaScript 库，一般情况下不会在里面写入恶意代码，当然，不排除这种小概率事件。</p>
 <h2 id="manifestjson">manifest.json</h2>
 <p>这个文件里有几个地方比较可疑，content_scripts 和 permissions 设置的 <code>http://*/*</code>、<code>https://*/*</code> 和 <code>&lt;all_urls&gt;</code> 都是全局加载的。但是这个插件只是 Facebook 小组相关的功能，只需要在 Facebook 域名下使用即可，但是插件里面设置的是所有的域名都会加载代码，获取的权限太高了，超出了功能该有的权限。而且还用到了 <code>unsafe-eval</code> 这个比较危险的东西，可以将字符串当作代码执行。</p>
 <pre><code class="language-JavaScript">{
@@ -448,7 +448,7 @@ function GetIPAdress () {
       <!-- right -->
       <div id="sidebar" class="main-container-right">
         <div class="id_card i-card">
-          <div class="id_card-avatar" style="background-image: url(https://raz1ner.com/images/avatar.png?v=1757249920914)"></div>
+          <div class="id_card-avatar" style="background-image: url(https://raz1ner.com/images/avatar.png?v=1757825666966)"></div>
           <h1 class="id_card-title">Raz1ner</h1>
           <p style="text-align: center;">
             <a href="https://github.com/dev-coco" rel="nofollow noreferrer" target="_blank"><img class="social-icon" alt="Github" src="/images/social/GitHub.png"></a>
@@ -491,24 +491,24 @@ function GetIPAdress () {
       </div>
       <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
         <div class="notice-content">
-          <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/ai-tech/">AI 科技</a>
-          <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/other/">其它</a>
-          <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/excel/">Excel</a>
-          <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/google-script/">Google 脚本</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/ai-tech/">AI 科技</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/excel/">Excel</a>
+          <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/google-script/">Google 脚本</a>
           <a class="tags-tag i-tag i-tag-success" href="https://raz1ner.com/tag/windows/">Windows</a>
-          <a class="tags-tag i-tag i-tag-info" href="https://raz1ner.com/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/software/">软件</a>
           <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/macos/">macOS</a>
           <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/facebook/">Facebook</a>
-          <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/instagram/">Instagram</a>
-          <a class="tags-tag i-tag i-tag-banana" href="https://raz1ner.com/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/instagram/">Instagram</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/ios/">iOS</a>
           <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/security/">安全</a>
           <a class="tags-tag i-tag i-tag-success" href="https://raz1ner.com/tag/shell/">Shell</a>
-          <a class="tags-tag i-tag i-tag-info" href="https://raz1ner.com/tag/javascript/">Javascript</a>
-          <a class="tags-tag i-tag i-tag-banana" href="https://raz1ner.com/tag/twitter-x/">Twitter (X)</a>
-          <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/life/">生活</a>
-          <a class="tags-tag i-tag i-tag-success" href="https://raz1ner.com/tag/sololearn/">Sololearn</a>
-          <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/whatsapp/">WhatsApp</a>
-          <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/linux-command/">Linux命令</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/javascript/">Javascript</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/twitter-x/">Twitter (X)</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/life/">生活</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/sololearn/">Sololearn</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/linux-command/">Linux命令</a>
         </div>
       </div>
       </div>

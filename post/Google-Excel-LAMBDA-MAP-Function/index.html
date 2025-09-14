@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Google Excel LAMBDA 和 MAP 组合函数 | Raz1ner</title>
   <meta name="author" content="Raz1ner">
-  <link rel="shortcut icon" href="https://raz1ner.com/favicon.ico?v=1757249920914">
+  <link rel="shortcut icon" href="https://raz1ner.com/favicon.ico?v=1757825666966">
   <link rel="stylesheet" href="https://raz1ner.com/styles/main.css">
   <!-- <script src="/js/prism.js"></script> -->
   <!-- <link rel="stylesheet" href="/css/prism.css"> -->
@@ -54,7 +54,7 @@
       <div class="nav">
         <div class="logo">
           <a href="https://raz1ner.com">
-            <img class="avatar" alt="Raz1ner" src="https://raz1ner.com/images/avatar.png?v=1757249920914" alt="">
+            <img class="avatar" alt="Raz1ner" src="https://raz1ner.com/images/avatar.png?v=1757825666966" alt="">
           </a>
           <div class="site-title">
             <h1>Raz1ner</h1>
@@ -153,7 +153,7 @@
         <h2 class="post-title">Google Excel LAMBDA 和 MAP 组合函数</h2>
         <div class="post-info">
           <time class="post-time">2023-02-17 / 2 min read</time>
-            <a href="https://raz1ner.com/tag/excel/" class="post-tag i-tag i-tag-other_2">#Excel</a>
+            <a href="https://raz1ner.com/tag/excel/" class="post-tag i-tag i-tag-">#Excel</a>
         </div>
         <!--
           
@@ -167,16 +167,16 @@
 <h3 id="语法">语法</h3>
 <pre><code class="language-excel">LAMBDA(变量, 公式)
 </code></pre>
-<h3 id="例子1">例子1</h3>
+<h3 id="例子-1">例子 1</h3>
 <p>将 A1 的值乘以 20。</p>
 <figure data-type="image" tabindex="1"><img src="https://raz1ner.com/post-images/1676780510855.png" alt="" loading="lazy"></figure>
 <p>简单的写法是 <code>=A1 * 20</code>，不过下面会演示 LAMBDA 函数计算的原理。</p>
 <pre><code class="language-excel">=LAMBDA(x, x * 20)(A1)
 </code></pre>
-<p>第一个参数是变量，x 是自定义的变量，A1 是引用的内容。A1 的值会被赋值到 x 变量，x 的结果同等于  A1。</p>
+<p>第一个参数是变量，x 是自定义的变量，A1 是引用的内容。A1 的值会被赋值到 x 变量，x 的结果同等于 A1。</p>
 <figure data-type="image" tabindex="2"><img src="https://raz1ner.com/post-images/1676780483345.png" alt="" loading="lazy"></figure>
 <p>第二个参数是公式，将 x 变量乘以 20，同等于 A1 * 20。最后输出的结果是 200。</p>
-<h3 id="例子2">例子2</h3>
+<h3 id="例子-2">例子 2</h3>
 <p>计算两个数的平均值。</p>
 <figure data-type="image" tabindex="3"><img src="https://raz1ner.com/post-images/1676780544667.png" alt="" loading="lazy"></figure>
 <pre><code class="language-excel">=LAMBDA(x, y, (x + y) / 2)(A1, B1)
@@ -197,11 +197,11 @@
 <p>最后会以数组的形式输出结果。</p>
 <h2 id="组合使用">组合使用</h2>
 <p>MAP 和 LAMBDA 组合使用的效果和 ARRAYFORMULA 函数很像，但是有的函数不支持 <a href="/Excel/#Function/Others/ARRAYFORMULA">ARRAYFORMULA</a> 函数数组输出，但是可以使用 MAP 和 LAMBDA 组合，例如：SUMIF、<a href="/Excel/#Function/Operations/SUMIFS">SUMIFS</a>、GOOGLETRANSLATE 等等...</p>
-<p>下面以 GOOGLETRANSLATE 函数为例子，将 <a href="/Excel/#Function/Others/GOOGLETRANSLATE/Excel/#Function/Others/GOOGLETRANSLATE">GOOGLETRANSLATE</a>  作为 LAMBDA 的公式，配合 MAP 函数，将 A1 到 A4 循环应用到 LAMBDA 中翻译，最后以数组的格式输出。</p>
+<p>下面以 GOOGLETRANSLATE 函数为例子，将 <a href="/Excel/#Function/Others/GOOGLETRANSLATE/Excel/#Function/Others/GOOGLETRANSLATE">GOOGLETRANSLATE</a> 作为 LAMBDA 的公式，配合 MAP 函数，将 A1 到 A4 循环应用到 LAMBDA 中翻译，最后以数组的格式输出。</p>
 <figure data-type="image" tabindex="7"><img src="https://raz1ner.com/post-images/1676780698676.png" alt="" loading="lazy"></figure>
 <p>相关推荐：<br>
-<a href="https://dev-coco.github.io/post/Google-Excel-Array-Output/">Google Excel 性能优化 - 数组输出</a><br>
-<a href="https://dev-coco.github.io/post/Google-Excel-Array-Importrange/">Google Excel IMPORTRANGE 数组输出</a></p>
+<a href="https://raz1ner.com/post/Google-Excel-Array-Output/">Google Excel 性能优化 - 数组输出</a><br>
+<a href="https://raz1ner.com/post/Google-Excel-Array-Importrange/">Google Excel IMPORTRANGE 数组输出</a></p>
 
           </div>
           <div class="copyright">
@@ -223,7 +223,7 @@
       <!-- right -->
       <div id="sidebar" class="main-container-right">
         <div class="id_card i-card">
-          <div class="id_card-avatar" style="background-image: url(https://raz1ner.com/images/avatar.png?v=1757249920914)"></div>
+          <div class="id_card-avatar" style="background-image: url(https://raz1ner.com/images/avatar.png?v=1757825666966)"></div>
           <h1 class="id_card-title">Raz1ner</h1>
           <p style="text-align: center;">
             <a href="https://github.com/dev-coco" rel="nofollow noreferrer" target="_blank"><img class="social-icon" alt="Github" src="/images/social/GitHub.png"></a>
@@ -252,8 +252,8 @@
 <li><a href="#lambda">LAMBDA</a>
 <ul>
 <li><a href="#%E8%AF%AD%E6%B3%95">语法</a></li>
-<li><a href="#%E4%BE%8B%E5%AD%901">例子1</a></li>
-<li><a href="#%E4%BE%8B%E5%AD%902">例子2</a></li>
+<li><a href="#%E4%BE%8B%E5%AD%90-1">例子 1</a></li>
+<li><a href="#%E4%BE%8B%E5%AD%90-2">例子 2</a></li>
 </ul>
 </li>
 <li><a href="#map">MAP</a>
@@ -275,24 +275,24 @@
       </div>
       <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
         <div class="notice-content">
-          <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/ai-tech/">AI 科技</a>
-          <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://raz1ner.com/tag/ai-tech/">AI 科技</a>
           <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/excel/">Excel</a>
-          <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/google-script/">Google 脚本</a>
-          <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/windows/">Windows</a>
-          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/software/">软件</a>
-          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/macos/">macOS</a>
-          <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/facebook/">Facebook</a>
-          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/instagram/">Instagram</a>
-          <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/ios/">iOS</a>
-          <a class="tags-tag i-tag i-tag-info" href="https://raz1ner.com/tag/security/">安全</a>
-          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/shell/">Shell</a>
-          <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/javascript/">Javascript</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://raz1ner.com/tag/google-script/">Google 脚本</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://raz1ner.com/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://raz1ner.com/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/instagram/">Instagram</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://raz1ner.com/tag/security/">安全</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/javascript/">Javascript</a>
           <a class="tags-tag i-tag i-tag-success" href="https://raz1ner.com/tag/twitter-x/">Twitter (X)</a>
           <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/life/">生活</a>
-          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/sololearn/">Sololearn</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/sololearn/">Sololearn</a>
           <a class="tags-tag i-tag i-tag-success" href="https://raz1ner.com/tag/whatsapp/">WhatsApp</a>
-          <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/linux-command/">Linux命令</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://raz1ner.com/tag/linux-command/">Linux命令</a>
         </div>
       </div>
       </div>

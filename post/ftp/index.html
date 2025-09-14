@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ftp | Raz1ner</title>
   <meta name="author" content="Raz1ner">
-  <link rel="shortcut icon" href="https://raz1ner.com/favicon.ico?v=1757249920914">
+  <link rel="shortcut icon" href="https://raz1ner.com/favicon.ico?v=1757825666966">
   <link rel="stylesheet" href="https://raz1ner.com/styles/main.css">
   <!-- <script src="/js/prism.js"></script> -->
   <!-- <link rel="stylesheet" href="/css/prism.css"> -->
@@ -32,17 +32,17 @@
       gtag('js', new Date())
       gtag('config', 'G-24X8H1LT7N')
    </script>
-  <meta property="og:image" content="https://dev-coco.github.io/post-images/Linux-Command.png">
+  <meta property="og:image" content="https://raz1ner.com/post-images/Linux-Command.png">
   <meta name="description" content="用来设置文件系统相关功能。">
   <link rel="canonical" href="https://raz1ner.com/post/ftp/">
   <meta property="og:title" content="ftp - Raz1ner">
   <meta property="og:type" content="article">
-  <meta property="og:image" content="https://dev-coco.github.io/post-images/Linux-Command.png">
+  <meta property="og:image" content="https://raz1ner.com/post-images/Linux-Command.png">
   <meta property="og:url" content="https://raz1ner.com/post/ftp/">
   <meta property="og:description" content="用来设置文件系统相关功能。">
   <meta name="twitter:title" content="ftp - Raz1ner">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://dev-coco.github.io/post-images/Linux-Command.png">
+  <meta name="twitter:image" content="https://raz1ner.com/post-images/Linux-Command.png">
   <meta name="twitter:description" content="用来设置文件系统相关功能。">
   <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:300,300i,400,400i,700,700i,800" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Mallanna" rel="stylesheet">
@@ -54,7 +54,7 @@
       <div class="nav">
         <div class="logo">
           <a href="https://raz1ner.com">
-            <img class="avatar" alt="Raz1ner" src="https://raz1ner.com/images/avatar.png?v=1757249920914" alt="">
+            <img class="avatar" alt="Raz1ner" src="https://raz1ner.com/images/avatar.png?v=1757825666966" alt="">
           </a>
           <div class="site-title">
             <h1>Raz1ner</h1>
@@ -153,11 +153,11 @@
         <h2 class="post-title">ftp</h2>
         <div class="post-info">
           <time class="post-time">2022-02-02 / 4 min read</time>
-            <a href="https://raz1ner.com/tag/linux-command/" class="post-tag i-tag i-tag-success">#Linux命令</a>
+            <a href="https://raz1ner.com/tag/linux-command/" class="post-tag i-tag i-tag-other_3">#Linux命令</a>
         </div>
         <!--
           
-        <div class="post-feature-image" style="background-image: url('https://dev-coco.github.io/post-images/Linux-Command.png')"></div>
+        <div class="post-feature-image" style="background-image: url('https://raz1ner.com/post-images/Linux-Command.png')"></div>
         -->
           <div class="post-content">
             <p>用来设置文件系统相关功能。</p>
@@ -177,38 +177,38 @@
 <h2 id="参数">参数</h2>
 <p>主机：指定要连接的 FTP 服务器的主机名或 ip 地址。</p>
 <h2 id="实例">实例</h2>
-<pre><code class="language-Shell">ftp&gt; ascii  # 设定以 ASCII 方式传送文件 (缺省值) 
-ftp&gt; bell   # 每完成一次文件传送,报警提示. 
-ftp&gt; binary # 设定以二进制方式传送文件. 
-ftp&gt; bye    # 终止主机 FTP 进程,并退出 FTP 管理方式. 
-ftp&gt; case   # 当为 ON 时,用 MGET 命令拷贝的文件名到本地机器中,全部转换为小写字母. 
-ftp&gt; cd     # 同 UNIX 的 CD 命令. 
-ftp&gt; cdup   # 返回上一级目录. 
-ftp&gt; chmod  # 改变远端主机的文件权限. 
-ftp&gt; close  # 终止远端的 FTP 进程,返回到 FTP 命令状态, 所有的宏定义都被删除. 
-ftp&gt; delete # 删除远端主机中的文件. 
-ftp&gt; dir [remote-directory] [local-file] # 列出当前远端主机目录中的文件.如果有本地文件,就将结果写至本地文件. 
-ftp&gt; get [remote-file] [local-file] # 从远端主机中传送至本地主机中. 
-ftp&gt; help [command] # 输出命令的解释. 
-ftp&gt; lcd # 改变当前本地主机的工作目录,如果缺省,就转到当前用户的 HOME 目录. 
-ftp&gt; ls [remote-directory] [local-file] # 同 DIR. 
-ftp&gt; macdef                 # 定义宏命令. 
-ftp&gt; mdelete [remote-files] # 删除一批文件. 
-ftp&gt; mget [remote-files]    # 从远端主机接收一批文件至本地主机. 
-ftp&gt; mkdir directory-name   # 在远端主机中建立目录. 
-ftp&gt; mput local-files # 将本地主机中一批文件传送至远端主机. 
-ftp&gt; open host [port] # 重新建立一个新的连接. 
-ftp&gt; prompt           # 交互提示模式. 
-ftp&gt; put local-file [remote-file] # 将本地一个文件传送至远端主机中. 
-ftp&gt; pwd  # 列出当前远端主机目录. 
-ftp&gt; quit # 同 BYE. 
-ftp&gt; recv remote-file [local-file] # 同 GET. 
-ftp&gt; rename [from] [to]     # 改变远端主机中的文件名. 
-ftp&gt; rmdir directory-name   # 删除远端主机中的目录. 
-ftp&gt; send local-file [remote-file] # 同 PUT. 
-ftp&gt; status   # 显示当前 FTP 的状态. 
-ftp&gt; system   # 显示远端主机系统类型. 
-ftp&gt; user user-name [password] [account] # 重新以别的用户名登录远端主机. 
+<pre><code class="language-Shell">ftp&gt; ascii  # 设定以 ASCII 方式传送文件 (缺省值)
+ftp&gt; bell   # 每完成一次文件传送,报警提示.
+ftp&gt; binary # 设定以二进制方式传送文件.
+ftp&gt; bye    # 终止主机 FTP 进程,并退出 FTP 管理方式.
+ftp&gt; case   # 当为 ON 时,用 MGET 命令拷贝的文件名到本地机器中,全部转换为小写字母.
+ftp&gt; cd     # 同 UNIX 的 CD 命令.
+ftp&gt; cdup   # 返回上一级目录.
+ftp&gt; chmod  # 改变远端主机的文件权限.
+ftp&gt; close  # 终止远端的 FTP 进程,返回到 FTP 命令状态, 所有的宏定义都被删除.
+ftp&gt; delete # 删除远端主机中的文件.
+ftp&gt; dir [remote-directory] [local-file] # 列出当前远端主机目录中的文件.如果有本地文件,就将结果写至本地文件.
+ftp&gt; get [remote-file] [local-file] # 从远端主机中传送至本地主机中.
+ftp&gt; help [command] # 输出命令的解释.
+ftp&gt; lcd # 改变当前本地主机的工作目录,如果缺省,就转到当前用户的 HOME 目录.
+ftp&gt; ls [remote-directory] [local-file] # 同 DIR.
+ftp&gt; macdef                 # 定义宏命令.
+ftp&gt; mdelete [remote-files] # 删除一批文件.
+ftp&gt; mget [remote-files]    # 从远端主机接收一批文件至本地主机.
+ftp&gt; mkdir directory-name   # 在远端主机中建立目录.
+ftp&gt; mput local-files # 将本地主机中一批文件传送至远端主机.
+ftp&gt; open host [port] # 重新建立一个新的连接.
+ftp&gt; prompt           # 交互提示模式.
+ftp&gt; put local-file [remote-file] # 将本地一个文件传送至远端主机中.
+ftp&gt; pwd  # 列出当前远端主机目录.
+ftp&gt; quit # 同 BYE.
+ftp&gt; recv remote-file [local-file] # 同 GET.
+ftp&gt; rename [from] [to]     # 改变远端主机中的文件名.
+ftp&gt; rmdir directory-name   # 删除远端主机中的目录.
+ftp&gt; send local-file [remote-file] # 同 PUT.
+ftp&gt; status   # 显示当前 FTP 的状态.
+ftp&gt; system   # 显示远端主机系统类型.
+ftp&gt; user user-name [password] [account] # 重新以别的用户名登录远端主机.
 ftp&gt; ? [command] # 同 HELP. [command] 指定需要帮助的命令名称。如果没有指定 command，ftp 将显示全部命令的列表。
 ftp&gt; ! # 从 ftp 子系统退出到外壳。
 </code></pre>
@@ -219,7 +219,7 @@ quit
 </code></pre>
 <p>下载文件</p>
 <pre><code class="language-Shell">ftp&gt; get readme.txt # 下载 readme.txt 文件
-ftp&gt; mget *.txt     # 下载 
+ftp&gt; mget *.txt     # 下载
 </code></pre>
 <p>上传文件</p>
 <pre><code class="language-Shell">ftp&gt; put /path/readme.txt # 上传 readme.txt 文件
@@ -246,7 +246,7 @@ ftp&gt; mput *.txt           # 可以上传多个文件
       <!-- right -->
       <div id="sidebar" class="main-container-right">
         <div class="id_card i-card">
-          <div class="id_card-avatar" style="background-image: url(https://raz1ner.com/images/avatar.png?v=1757249920914)"></div>
+          <div class="id_card-avatar" style="background-image: url(https://raz1ner.com/images/avatar.png?v=1757825666966)"></div>
           <h1 class="id_card-title">Raz1ner</h1>
           <p style="text-align: center;">
             <a href="https://github.com/dev-coco" rel="nofollow noreferrer" target="_blank"><img class="social-icon" alt="Github" src="/images/social/GitHub.png"></a>
@@ -289,24 +289,24 @@ ftp&gt; mput *.txt           # 可以上传多个文件
       </div>
       <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
         <div class="notice-content">
-          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/ai-tech/">AI 科技</a>
-          <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/other/">其它</a>
-          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/excel/">Excel</a>
-          <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/google-script/">Google 脚本</a>
-          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/windows/">Windows</a>
-          <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/software/">软件</a>
-          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/macos/">macOS</a>
-          <a class="tags-tag i-tag i-tag-success" href="https://raz1ner.com/tag/facebook/">Facebook</a>
-          <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/instagram/">Instagram</a>
-          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/ios/">iOS</a>
-          <a class="tags-tag i-tag i-tag-banana" href="https://raz1ner.com/tag/security/">安全</a>
-          <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/shell/">Shell</a>
-          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/javascript/">Javascript</a>
-          <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/twitter-x/">Twitter (X)</a>
-          <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/life/">生活</a>
-          <a class="tags-tag i-tag i-tag-success" href="https://raz1ner.com/tag/sololearn/">Sololearn</a>
-          <a class="tags-tag i-tag i-tag-banana" href="https://raz1ner.com/tag/whatsapp/">WhatsApp</a>
-          <a class="tags-tag i-tag i-tag-info" href="https://raz1ner.com/tag/linux-command/">Linux命令</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://raz1ner.com/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/ai-tech/">AI 科技</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/excel/">Excel</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://raz1ner.com/tag/google-script/">Google 脚本</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://raz1ner.com/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://raz1ner.com/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://raz1ner.com/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://raz1ner.com/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/instagram/">Instagram</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/security/">安全</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/javascript/">Javascript</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://raz1ner.com/tag/twitter-x/">Twitter (X)</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/life/">生活</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://raz1ner.com/tag/sololearn/">Sololearn</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/linux-command/">Linux命令</a>
         </div>
       </div>
       </div>

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Google Excel 快速生成 26 个字母 | Raz1ner</title>
   <meta name="author" content="Raz1ner">
-  <link rel="shortcut icon" href="https://raz1ner.com/favicon.ico?v=1757249920914">
+  <link rel="shortcut icon" href="https://raz1ner.com/favicon.ico?v=1757825666966">
   <link rel="stylesheet" href="https://raz1ner.com/styles/main.css">
   <!-- <script src="/js/prism.js"></script> -->
   <!-- <link rel="stylesheet" href="/css/prism.css"> -->
@@ -54,7 +54,7 @@
       <div class="nav">
         <div class="logo">
           <a href="https://raz1ner.com">
-            <img class="avatar" alt="Raz1ner" src="https://raz1ner.com/images/avatar.png?v=1757249920914" alt="">
+            <img class="avatar" alt="Raz1ner" src="https://raz1ner.com/images/avatar.png?v=1757825666966" alt="">
           </a>
           <div class="site-title">
             <h1>Raz1ner</h1>
@@ -153,7 +153,7 @@
         <h2 class="post-title">Google Excel 快速生成 26 个字母</h2>
         <div class="post-info">
           <time class="post-time">2022-12-11 / 2 min read</time>
-            <a href="https://raz1ner.com/tag/excel/" class="post-tag i-tag i-tag-error">#Excel</a>
+            <a href="https://raz1ner.com/tag/excel/" class="post-tag i-tag i-tag-">#Excel</a>
         </div>
         <!--
           
@@ -163,26 +163,26 @@
             <p>一行公式快速生成 26 个字母。</p>
 <!-- more -->
 <p>有时候会需要用到 26 个英文字母，如果用键盘一个一个地敲 A, B, C, D… 的话就太花时间了，下面有两个方法快速生成 26 个字母。</p>
-<h2 id="方法1">方法1</h2>
+<h2 id="方法-1">方法 1</h2>
 <pre><code class="language-excel">=ARRAYFORMULA(REGEXEXTRACT(ADDRESS(1, ROW(A1:A26), 2), &quot;^.&quot;))
 </code></pre>
 <h3 id="原理分析">原理分析</h3>
-<p>使用 <a href="https://dev-coco.github.io/Excel/#Function/Others/ROW">ROW</a> 函数获取开头 26 行，因为一共有 26 个英文字母。现在还没有使用数组，所以目前只会输出 1 个。</p>
+<p>使用 <a href="https://raz1ner.com/Excel/#Function/Others/ROW">ROW</a> 函数获取开头 26 行，因为一共有 26 个英文字母。现在还没有使用数组，所以目前只会输出 1 个。</p>
 <figure data-type="image" tabindex="1"><img src="https://raz1ner.com/post-images/1654553388041.png" alt="" loading="lazy"></figure>
-<p>再使用 <a href="https://dev-coco.github.io/Excel/#Function/Others/ADDRESS">ADDRESS</a> 函数，将刚才 ROW 函数计算的结果放到列参数里，因为列是按照字母排序的，引用模式选择相对应用列，为了方便接下来的筛选，绝对引用。使用 <a href="https://dev-coco.github.io/Excel/#Function/Others/ARRAYFORMULA">ARRAYFORMULA</a> 数组函数输出看一下效果。</p>
+<p>再使用 <a href="https://raz1ner.com/Excel/#Function/Others/ADDRESS">ADDRESS</a> 函数，将刚才 ROW 函数计算的结果放到列参数里，因为列是按照字母排序的，引用模式选择相对应用列，为了方便接下来的筛选，绝对引用。使用 <a href="https://raz1ner.com/Excel/#Function/Others/ARRAYFORMULA">ARRAYFORMULA</a> 数组函数输出看一下效果。</p>
 <figure data-type="image" tabindex="2"><img src="https://raz1ner.com/post-images/1654553393210.png" alt="" loading="lazy"></figure>
-<p>现在已经获取了 26 个引用的位置，也包含了 26 个字母，使用 <a href="https://dev-coco.github.io/Excel/#Function/Text-Processing/REGEXEXTRACT">REGEXEXTRACT</a> 函数用正则表达式语法 <code>^.</code> 获取开头的第一个字符，并且用数组输出，这样就获取了 26 个大写字母。</p>
+<p>现在已经获取了 26 个引用的位置，也包含了 26 个字母，使用 <a href="https://raz1ner.com/Excel/#Function/Text-Processing/REGEXEXTRACT">REGEXEXTRACT</a> 函数用正则表达式语法 <code>^.</code> 获取开头的第一个字符，并且用数组输出，这样就获取了 26 个大写字母。</p>
 <figure data-type="image" tabindex="3"><img src="https://raz1ner.com/post-images/1654553398617.png" alt="" loading="lazy"></figure>
 <p>如果要生成 26 个小写字母，在 REGEXEXTRACT 函数的外面使用 LOWER 函数。</p>
 <pre><code class="language-excel">=ARRAYFORMULA(LOWER(REGEXEXTRACT(ADDRESS(1, ROW(A1:A26), 2), &quot;^.&quot;)))
 </code></pre>
-<h2 id="方法2">方法2</h2>
+<h2 id="方法-2">方法 2</h2>
 <pre><code class="language-excel">=ARRAYFORMULA(CHAR(ROW(A65:A90)))
 </code></pre>
 <h3 id="原理分析-2">原理分析</h3>
 <p>使用 ROW 函数获取 A65 到 A90 的行数，也就就是从 65 到 90。现在还没有使用数组，所有目前只会输出 1 个。</p>
 <figure data-type="image" tabindex="4"><img src="https://raz1ner.com/post-images/1654553409862.png" alt="" loading="lazy"></figure>
-<p>因为 A 对应的十进制 Unicode 编码是 65，那么使用 <a href="https://dev-coco.github.io/Excel/#Function/Text-Processing/CHAR">CHAR</a> 函数将计算出来的行数转换成字符，最后再用数组输出。</p>
+<p>因为 A 对应的十进制 Unicode 编码是 65，那么使用 <a href="https://raz1ner.com/Excel/#Function/Text-Processing/CHAR">CHAR</a> 函数将计算出来的行数转换成字符，最后再用数组输出。</p>
 <figure data-type="image" tabindex="5"><img src="https://raz1ner.com/post-images/1654553414544.png" alt="" loading="lazy"></figure>
 <p>如果要生成 26 个小写字母，可以使用下面的公式：</p>
 <pre><code class="language-excel">=ARRAYFORMULA(CHAR(ROW(A97:A122)))
@@ -209,7 +209,7 @@
       <!-- right -->
       <div id="sidebar" class="main-container-right">
         <div class="id_card i-card">
-          <div class="id_card-avatar" style="background-image: url(https://raz1ner.com/images/avatar.png?v=1757249920914)"></div>
+          <div class="id_card-avatar" style="background-image: url(https://raz1ner.com/images/avatar.png?v=1757825666966)"></div>
           <h1 class="id_card-title">Raz1ner</h1>
           <p style="text-align: center;">
             <a href="https://github.com/dev-coco" rel="nofollow noreferrer" target="_blank"><img class="social-icon" alt="Github" src="/images/social/GitHub.png"></a>
@@ -235,12 +235,12 @@
             <ul class="markdownIt-TOC">
 <li>
 <ul>
-<li><a href="#%E6%96%B9%E6%B3%951">方法1</a>
+<li><a href="#%E6%96%B9%E6%B3%95-1">方法 1</a>
 <ul>
 <li><a href="#%E5%8E%9F%E7%90%86%E5%88%86%E6%9E%90">原理分析</a></li>
 </ul>
 </li>
-<li><a href="#%E6%96%B9%E6%B3%952">方法2</a>
+<li><a href="#%E6%96%B9%E6%B3%95-2">方法 2</a>
 <ul>
 <li><a href="#%E5%8E%9F%E7%90%86%E5%88%86%E6%9E%90-2">原理分析</a></li>
 </ul>
@@ -257,23 +257,23 @@
       </div>
       <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
         <div class="notice-content">
-          <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/ai-tech/">AI 科技</a>
-          <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/other/">其它</a>
-          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/excel/">Excel</a>
-          <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/google-script/">Google 脚本</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/ai-tech/">AI 科技</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/excel/">Excel</a>
+          <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/google-script/">Google 脚本</a>
           <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/windows/">Windows</a>
-          <a class="tags-tag i-tag i-tag-success" href="https://raz1ner.com/tag/software/">软件</a>
-          <a class="tags-tag i-tag i-tag-success" href="https://raz1ner.com/tag/macos/">macOS</a>
-          <a class="tags-tag i-tag i-tag-banana" href="https://raz1ner.com/tag/facebook/">Facebook</a>
-          <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/instagram/">Instagram</a>
-          <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/ios/">iOS</a>
-          <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/security/">安全</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://raz1ner.com/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://raz1ner.com/tag/instagram/">Instagram</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://raz1ner.com/tag/security/">安全</a>
           <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/shell/">Shell</a>
-          <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/javascript/">Javascript</a>
-          <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/twitter-x/">Twitter (X)</a>
-          <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/life/">生活</a>
-          <a class="tags-tag i-tag i-tag-banana" href="https://raz1ner.com/tag/sololearn/">Sololearn</a>
-          <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/javascript/">Javascript</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/twitter-x/">Twitter (X)</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/life/">生活</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/sololearn/">Sololearn</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://raz1ner.com/tag/whatsapp/">WhatsApp</a>
           <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/linux-command/">Linux命令</a>
         </div>
       </div>

@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://raz1ner.com</id>
     <title>Raz1ner</title>
-    <updated>2025-09-07T12:58:54.217Z</updated>
+    <updated>2025-09-14T04:56:48.608Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://raz1ner.com"/>
     <link rel="self" href="https://raz1ner.com/atom.xml"/>
     <logo>https://raz1ner.com/images/avatar.png</logo>
     <icon>https://raz1ner.com/favicon.ico</icon>
     <rights>All rights reserved 2025, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[Teams 清理账号使用方法]]></title>
+        <id>https://raz1ner.com/post/Teams-Clean-Account/</id>
+        <link href="https://raz1ner.com/post/Teams-Clean-Account/">
+        </link>
+        <updated>2025-09-14T08:54:18.000Z</updated>
+        <summary type="html"><![CDATA[<p>自动清理 Teams 账号里所有的聊天信息。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>自动清理 Teams 账号里所有的聊天信息。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Google Gemini 一年免费计划申请流程]]></title>
         <id>https://raz1ner.com/post/Google-Gemini-Free-Pro-Plan/</id>
@@ -161,17 +172,6 @@
         <summary type="html"><![CDATA[<p>根据文本内容的相似度进行归类。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>根据文本内容的相似度进行归类。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[AI 生成类似图片]]></title>
-        <id>https://raz1ner.com/post/AI-Image-to-Image/</id>
-        <link href="https://raz1ner.com/post/AI-Image-to-Image/">
-        </link>
-        <updated>2025-03-22T00:39:45.000Z</updated>
-        <summary type="html"><![CDATA[<p>上传参照图片并使用 AI 生成类似图片。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>上传参照图片并使用 AI 生成类似图片。</p>
 ]]></content>
     </entry>
 </feed>

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>crontab | Raz1ner</title>
   <meta name="author" content="Raz1ner">
-  <link rel="shortcut icon" href="https://raz1ner.com/favicon.ico?v=1757249920914">
+  <link rel="shortcut icon" href="https://raz1ner.com/favicon.ico?v=1757825666966">
   <link rel="stylesheet" href="https://raz1ner.com/styles/main.css">
   <!-- <script src="/js/prism.js"></script> -->
   <!-- <link rel="stylesheet" href="/css/prism.css"> -->
@@ -32,17 +32,17 @@
       gtag('js', new Date())
       gtag('config', 'G-24X8H1LT7N')
    </script>
-  <meta property="og:image" content="https://dev-coco.github.io/post-images/Linux-Command.png">
+  <meta property="og:image" content="https://raz1ner.com/post-images/Linux-Command.png">
   <meta name="description" content="提交和管理用户的需要周期性执行的任务。">
   <link rel="canonical" href="https://raz1ner.com/post/crontab/">
   <meta property="og:title" content="crontab - Raz1ner">
   <meta property="og:type" content="article">
-  <meta property="og:image" content="https://dev-coco.github.io/post-images/Linux-Command.png">
+  <meta property="og:image" content="https://raz1ner.com/post-images/Linux-Command.png">
   <meta property="og:url" content="https://raz1ner.com/post/crontab/">
   <meta property="og:description" content="提交和管理用户的需要周期性执行的任务。">
   <meta name="twitter:title" content="crontab - Raz1ner">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://dev-coco.github.io/post-images/Linux-Command.png">
+  <meta name="twitter:image" content="https://raz1ner.com/post-images/Linux-Command.png">
   <meta name="twitter:description" content="提交和管理用户的需要周期性执行的任务。">
   <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:300,300i,400,400i,700,700i,800" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Mallanna" rel="stylesheet">
@@ -54,7 +54,7 @@
       <div class="nav">
         <div class="logo">
           <a href="https://raz1ner.com">
-            <img class="avatar" alt="Raz1ner" src="https://raz1ner.com/images/avatar.png?v=1757249920914" alt="">
+            <img class="avatar" alt="Raz1ner" src="https://raz1ner.com/images/avatar.png?v=1757825666966" alt="">
           </a>
           <div class="site-title">
             <h1>Raz1ner</h1>
@@ -153,17 +153,17 @@
         <h2 class="post-title">crontab</h2>
         <div class="post-info">
           <time class="post-time">2022-01-31 / 6 min read</time>
-            <a href="https://raz1ner.com/tag/linux-command/" class="post-tag i-tag i-tag-">#Linux命令</a>
+            <a href="https://raz1ner.com/tag/linux-command/" class="post-tag i-tag i-tag-primary">#Linux命令</a>
         </div>
         <!--
           
-        <div class="post-feature-image" style="background-image: url('https://dev-coco.github.io/post-images/Linux-Command.png')"></div>
+        <div class="post-feature-image" style="background-image: url('https://raz1ner.com/post-images/Linux-Command.png')"></div>
         -->
           <div class="post-content">
             <p>提交和管理用户的需要周期性执行的任务。</p>
 <!-- more -->
 <h2 id="补充说明">补充说明</h2>
-<p>crontab 命令被用来提交和管理用户的需要周期性执行的任务，与 windows 下的计划任务类似，当安装完成操作系统后，默认会安装此服务工具，并且会自动启动crond进程，crond 进程每分钟会定期检查是否有要执行的任务，如果有要执行的任务，则自动执行该任务。</p>
+<p>crontab 命令被用来提交和管理用户的需要周期性执行的任务，与 windows 下的计划任务类似，当安装完成操作系统后，默认会安装此服务工具，并且会自动启动 crond 进程，crond 进程每分钟会定期检查是否有要执行的任务，如果有要执行的任务，则自动执行该任务。</p>
 <h2 id="语法">语法</h2>
 <pre><code class="language-Shell">crontab (选项) (参数)
 </code></pre>
@@ -204,7 +204,7 @@ MAILTO=&quot;&quot;HOME=/
 <li>hour：表示小时，可以是从 0 到 23 之间的任何整数。</li>
 <li>day：表示日期，可以是从 1 到 31 之间的任何整数。</li>
 <li>month：表示月份，可以是从 1 到 12 之间的任何整数。</li>
-<li>week：表示星期几，可以是从 0 到 7 之间的任何整数，这里的0或7代表星期日。</li>
+<li>week：表示星期几，可以是从 0 到 7 之间的任何整数，这里的 0 或 7 代表星期日。</li>
 <li>command：要执行的命令，可以是系统命令，也可以是自己编写的脚本文件。</li>
 </ul>
 <p>在以上各个字段中，还可以使用以下特殊字符：</p>
@@ -214,68 +214,68 @@ MAILTO=&quot;&quot;HOME=/
 <li>中杠（-）：可以用整数之间的中杠表示一个整数范围，例如“2-6”表示“2,3,4,5,6”</li>
 <li>正斜线（/）：可以用正斜线指定时间的间隔频率，例如“0-23/2”表示每两小时执行一次。同时正斜线可以和星号一起使用，例如*/10，如果用在 minute 字段，表示每十分钟执行一次。</li>
 </ul>
-<h2 id="crond服务">crond服务</h2>
+<h2 id="crond-服务">crond 服务</h2>
 <pre><code class="language-Shell">/sbin/service crond start    # 启动服务
 /sbin/service crond stop     # 关闭服务
 /sbin/service crond restart  # 重启服务
 /sbin/service crond reload   # 重新载入配置
 </code></pre>
-<p>查看crontab服务状态：</p>
+<p>查看 crontab 服务状态：</p>
 <pre><code class="language-Shell">service crond status
 </code></pre>
-<p>手动启动crontab服务：</p>
+<p>手动启动 crontab 服务：</p>
 <pre><code class="language-Shell">service crond start
 </code></pre>
-<p>查看crontab服务是否已设置为开机启动，执行命令：</p>
+<p>查看 crontab 服务是否已设置为开机启动，执行命令：</p>
 <pre><code class="language-Shell">ntsysv
 </code></pre>
 <p>加入开机自动启动：</p>
 <pre><code class="language-Shell">chkconfig –level 35 crond on
 </code></pre>
 <h2 id="实例">实例</h2>
-<p>每1分钟执行一次command</p>
+<p>每 1 分钟执行一次 command</p>
 <pre><code class="language-Shell">* * * * * command
 </code></pre>
-<p>每小时的第3和第15分钟执行</p>
+<p>每小时的第 3 和第 15 分钟执行</p>
 <pre><code class="language-Shell">3,15 * * * * command
 </code></pre>
-<p>在上午8点到11点的第3和第15分钟执行</p>
+<p>在上午 8 点到 11 点的第 3 和第 15 分钟执行</p>
 <pre><code class="language-Shell">3,15 8-11 * * * command
 </code></pre>
-<p>每隔两天的上午8点到11点的第3和第15分钟执行</p>
+<p>每隔两天的上午 8 点到 11 点的第 3 和第 15 分钟执行</p>
 <pre><code class="language-Shell">3,15 8-11 */2 * * command
 每个星期一的上午8点到11点的第3和第15分钟执行
 ```Shell
 3,15 8-11 * * 1 command
 </code></pre>
-<p>每晚的21:30重启smb</p>
+<p>每晚的 21:30 重启 smb</p>
 <pre><code class="language-Shell">30 21 * * * /etc/init.d/smb restart
 </code></pre>
-<p>每月1、10、22日的4 : 45重启smb</p>
+<p>每月 1、10、22 日的 4 : 45 重启 smb</p>
 <pre><code class="language-Shell">45 4 1,10,22 * * /etc/init.d/smb restart
 </code></pre>
-<p>每周六、周日的1:10重启smb</p>
+<p>每周六、周日的 1:10 重启 smb</p>
 <pre><code class="language-Shell">10 1 * * 6,0 /etc/init.d/smb restart
 </code></pre>
-<p>每天18 : 00至23 : 00之间每隔30分钟重启smb</p>
+<p>每天 18 : 00 至 23 : 00 之间每隔 30 分钟重启 smb</p>
 <pre><code class="language-Shell">0,30 18-23 * * * /etc/init.d/smb restart
 </code></pre>
-<p>每星期六的晚上11:00 pm重启smb</p>
+<p>每星期六的晚上 11:00 pm 重启 smb</p>
 <pre><code class="language-Shell">0 23 * * 6 /etc/init.d/smb restart
 </code></pre>
-<p>每一小时重启smb</p>
+<p>每一小时重启 smb</p>
 <pre><code class="language-Shell">* */1 * * * /etc/init.d/smb restart
 </code></pre>
-<p>晚上11点到早上7点之间，每隔一小时重启smb</p>
+<p>晚上 11 点到早上 7 点之间，每隔一小时重启 smb</p>
 <pre><code class="language-Shell">* 23-7/1 * * * /etc/init.d/smb restart
 </code></pre>
-<p>每月的4号与每周一到周三的11点重启smb</p>
+<p>每月的 4 号与每周一到周三的 11 点重启 smb</p>
 <pre><code class="language-Shell">0 11 4 * mon-wed /etc/init.d/smb restart
 </code></pre>
-<p>一月一号的4点重启smb</p>
+<p>一月一号的 4 点重启 smb</p>
 <pre><code class="language-Shell">0 4 1 jan * /etc/init.d/smb restart
 </code></pre>
-<p>每小时执行/etc/cron.hourly目录内的脚本</p>
+<p>每小时执行/etc/cron.hourly 目录内的脚本</p>
 <pre><code class="language-Shell">01 * * * * root run-parts /etc/cron.hourly
 </code></pre>
 
@@ -299,7 +299,7 @@ MAILTO=&quot;&quot;HOME=/
       <!-- right -->
       <div id="sidebar" class="main-container-right">
         <div class="id_card i-card">
-          <div class="id_card-avatar" style="background-image: url(https://raz1ner.com/images/avatar.png?v=1757249920914)"></div>
+          <div class="id_card-avatar" style="background-image: url(https://raz1ner.com/images/avatar.png?v=1757825666966)"></div>
           <h1 class="id_card-title">Raz1ner</h1>
           <p style="text-align: center;">
             <a href="https://github.com/dev-coco" rel="nofollow noreferrer" target="_blank"><img class="social-icon" alt="Github" src="/images/social/GitHub.png"></a>
@@ -330,7 +330,7 @@ MAILTO=&quot;&quot;HOME=/
 <li><a href="#%E9%80%89%E9%A1%B9">选项</a></li>
 <li><a href="#%E5%8F%82%E6%95%B0">参数</a></li>
 <li><a href="#%E7%9F%A5%E8%AF%86%E6%89%A9%E5%B1%95">知识扩展</a></li>
-<li><a href="#crond%E6%9C%8D%E5%8A%A1">crond服务</a></li>
+<li><a href="#crond-%E6%9C%8D%E5%8A%A1">crond 服务</a></li>
 <li><a href="#%E5%AE%9E%E4%BE%8B">实例</a></li>
 </ul>
 </li>
@@ -344,24 +344,24 @@ MAILTO=&quot;&quot;HOME=/
       </div>
       <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
         <div class="notice-content">
-          <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/ai-tech/">AI 科技</a>
-          <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/other/">其它</a>
-          <a class="tags-tag i-tag i-tag-success" href="https://raz1ner.com/tag/excel/">Excel</a>
-          <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/google-script/">Google 脚本</a>
-          <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/windows/">Windows</a>
-          <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/software/">软件</a>
-          <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/macos/">macOS</a>
-          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/facebook/">Facebook</a>
-          <a class="tags-tag i-tag i-tag-banana" href="https://raz1ner.com/tag/instagram/">Instagram</a>
-          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/ios/">iOS</a>
-          <a class="tags-tag i-tag i-tag-success" href="https://raz1ner.com/tag/security/">安全</a>
-          <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/shell/">Shell</a>
-          <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/javascript/">Javascript</a>
-          <a class="tags-tag i-tag i-tag-banana" href="https://raz1ner.com/tag/twitter-x/">Twitter (X)</a>
-          <a class="tags-tag i-tag i-tag-info" href="https://raz1ner.com/tag/life/">生活</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/ai-tech/">AI 科技</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/excel/">Excel</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://raz1ner.com/tag/google-script/">Google 脚本</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://raz1ner.com/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/instagram/">Instagram</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/security/">安全</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://raz1ner.com/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://raz1ner.com/tag/javascript/">Javascript</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://raz1ner.com/tag/twitter-x/">Twitter (X)</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/life/">生活</a>
           <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/sololearn/">Sololearn</a>
-          <a class="tags-tag i-tag i-tag-success" href="https://raz1ner.com/tag/whatsapp/">WhatsApp</a>
-          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/linux-command/">Linux命令</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/linux-command/">Linux命令</a>
         </div>
       </div>
       </div>

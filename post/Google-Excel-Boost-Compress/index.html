@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Google Excel 性能优化 - 数据压缩 | Raz1ner</title>
   <meta name="author" content="Raz1ner">
-  <link rel="shortcut icon" href="https://raz1ner.com/favicon.ico?v=1757249920914">
+  <link rel="shortcut icon" href="https://raz1ner.com/favicon.ico?v=1757825666966">
   <link rel="stylesheet" href="https://raz1ner.com/styles/main.css">
   <!-- <script src="/js/prism.js"></script> -->
   <!-- <link rel="stylesheet" href="/css/prism.css"> -->
@@ -54,7 +54,7 @@
       <div class="nav">
         <div class="logo">
           <a href="https://raz1ner.com">
-            <img class="avatar" alt="Raz1ner" src="https://raz1ner.com/images/avatar.png?v=1757249920914" alt="">
+            <img class="avatar" alt="Raz1ner" src="https://raz1ner.com/images/avatar.png?v=1757825666966" alt="">
           </a>
           <div class="site-title">
             <h1>Raz1ner</h1>
@@ -153,7 +153,7 @@
         <h2 class="post-title">Google Excel 性能优化 - 数据压缩</h2>
         <div class="post-info">
           <time class="post-time">2023-02-02 / 3 min read</time>
-            <a href="https://raz1ner.com/tag/excel/" class="post-tag i-tag i-tag-other_1">#Excel</a>
+            <a href="https://raz1ner.com/tag/excel/" class="post-tag i-tag i-tag-other_3">#Excel</a>
         </div>
         <!--
           
@@ -163,13 +163,13 @@
             <p>一个通用型性能优化技巧，加快数据传输速度。</p>
 <!-- more -->
 <h2 id="适用场景">适用场景</h2>
-<p>有时候在 Google 表格使用 IMPORTRANGE 或 <a href="https://dev-coco.github.io/Excel/#Function/Find-Filter/VLOOKUP">VLOOKUP</a> 等函数，遇到大范围的数据，运行起来速度就会特别慢。</p>
+<p>有时候在 Google 表格使用 IMPORTRANGE 或 <a href="https://raz1ner.com/Excel/#Function/Find-Filter/VLOOKUP">VLOOKUP</a> 等函数，遇到大范围的数据，运行起来速度就会特别慢。</p>
 <h2 id="优化思路">优化思路</h2>
 <p>将数据 “压缩”，等传输或者运算后，再将数据 “解压缩”。</p>
 <h2 id="实例">实例</h2>
-<p>例如从 B1 到 V18 范围，如果要将这个范围的数据，使用 <a href="https://dev-coco.github.io/Excel/#Function/Others/IMPORTRANGE">IMPORTRANGE</a> 导入到其它电子表格，那么就需要导入 378 个单元格。</p>
+<p>例如从 B1 到 V18 范围，如果要将这个范围的数据，使用 <a href="https://raz1ner.com/Excel/#Function/Others/IMPORTRANGE">IMPORTRANGE</a> 导入到其它电子表格，那么就需要导入 378 个单元格。</p>
 <figure data-type="image" tabindex="1"><img src="https://raz1ner.com/post-images/1657414803550.png" alt="" loading="lazy"></figure>
-<p>使用 <a href="https://dev-coco.github.io/Excel/#Function/Text-Processing/JOIN">JOIN</a> 函数对数据进行横向拼接。</p>
+<p>使用 <a href="https://raz1ner.com/Excel/#Function/Text-Processing/JOIN">JOIN</a> 函数对数据进行横向拼接。</p>
 <pre><code class="language-excel">=JOIN(&quot;@&quot;, B1:V1)
 </code></pre>
 <p>注意，定界符必须是独一无二的，不能出现在拼接的数据中，否则下面的步骤会出现异常。JOIN 函数不支持数组，如果需要使用数组合并，需要将字符挨个拼接到一起。</p>
@@ -177,16 +177,16 @@
 </code></pre>
 <p>拼接在一起后，A 列的数据就已经包含了右边一大堆的单元格的数据了。</p>
 <figure data-type="image" tabindex="2"><img src="https://raz1ner.com/post-images/1657414809407.png" alt="" loading="lazy"></figure>
-<p>现在将这一部分数据使用 IMPORTRANGE 函数导入到其它的电子表格，只需要获取 A1 到 A18 的范围，也就是 18个单元格，这样相比 378 个单元格的数据要少很多很多。</p>
+<p>现在将这一部分数据使用 IMPORTRANGE 函数导入到其它的电子表格，只需要获取 A1 到 A18 的范围，也就是 18 个单元格，这样相比 378 个单元格的数据要少很多很多。</p>
 <figure data-type="image" tabindex="3"><img src="https://raz1ner.com/post-images/1657414813716.png" alt="" loading="lazy"></figure>
-<p>使用 <a href="https://dev-coco.github.io/Excel/#Function/Text-Processing/SPLIT">SPLIT</a> 函数将数据拆分开。</p>
+<p>使用 <a href="https://raz1ner.com/Excel/#Function/Text-Processing/SPLIT">SPLIT</a> 函数将数据拆分开。</p>
 <pre><code class="language-excel">=SPLIT(A1, &quot;@&quot;, TRUE, FALSE)
 </code></pre>
 <p>移除空白参数要设置 FALSE，否则遇到空白的内容会跳过，这样会造成位置偏移。SPLIT 函数支持使用数组输出。拆分后的数据和源数据的显示效果是一样的。</p>
 <figure data-type="image" tabindex="4"><img src="https://raz1ner.com/post-images/1657414822623.png" alt="" loading="lazy"></figure>
 <h2 id="思路总结">思路总结</h2>
-<p>这个思路有点类似文件压缩和解压缩，将大量的数据合并到一起，减少传输的数据量，获取到数据后再进行拆分。这个方法同样也适用于 VLOOKUP, <a href="https://dev-coco.github.io/Excel/#Function/Find-Filter/FILTER">FILTER</a>, <a href="https://dev-coco.github.io/Excel/#Function/Find-Filter/QUERY">QUERY</a> 等函数。</p>
-<p>为你推荐：<a href="https://dev-coco.github.io/post/Google-Excel-Boost-Tutorial/">Google Excel 性能优化教程目录</a></p>
+<p>这个思路有点类似文件压缩和解压缩，将大量的数据合并到一起，减少传输的数据量，获取到数据后再进行拆分。这个方法同样也适用于 VLOOKUP, <a href="https://raz1ner.com/Excel/#Function/Find-Filter/FILTER">FILTER</a>, <a href="https://raz1ner.com/Excel/#Function/Find-Filter/QUERY">QUERY</a> 等函数。</p>
+<p>为你推荐：<a href="https://raz1ner.com/post/Google-Excel-Boost-Tutorial/">Google Excel 性能优化教程目录</a></p>
 
           </div>
           <div class="copyright">
@@ -208,7 +208,7 @@
       <!-- right -->
       <div id="sidebar" class="main-container-right">
         <div class="id_card i-card">
-          <div class="id_card-avatar" style="background-image: url(https://raz1ner.com/images/avatar.png?v=1757249920914)"></div>
+          <div class="id_card-avatar" style="background-image: url(https://raz1ner.com/images/avatar.png?v=1757825666966)"></div>
           <h1 class="id_card-title">Raz1ner</h1>
           <p style="text-align: center;">
             <a href="https://github.com/dev-coco" rel="nofollow noreferrer" target="_blank"><img class="social-icon" alt="Github" src="/images/social/GitHub.png"></a>
@@ -250,24 +250,24 @@
       </div>
       <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
         <div class="notice-content">
-          <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/ai-tech/">AI 科技</a>
-          <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/other/">其它</a>
-          <a class="tags-tag i-tag i-tag-banana" href="https://raz1ner.com/tag/excel/">Excel</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://raz1ner.com/tag/ai-tech/">AI 科技</a>
+          <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/excel/">Excel</a>
           <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/google-script/">Google 脚本</a>
           <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/windows/">Windows</a>
-          <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/software/">软件</a>
           <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/macos/">macOS</a>
-          <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/facebook/">Facebook</a>
-          <a class="tags-tag i-tag i-tag-info" href="https://raz1ner.com/tag/instagram/">Instagram</a>
-          <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://raz1ner.com/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/instagram/">Instagram</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://raz1ner.com/tag/ios/">iOS</a>
           <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/security/">安全</a>
-          <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/shell/">Shell</a>
-          <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/javascript/">Javascript</a>
-          <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/twitter-x/">Twitter (X)</a>
-          <a class="tags-tag i-tag i-tag-info" href="https://raz1ner.com/tag/life/">生活</a>
-          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/sololearn/">Sololearn</a>
-          <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/whatsapp/">WhatsApp</a>
-          <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/linux-command/">Linux命令</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://raz1ner.com/tag/javascript/">Javascript</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://raz1ner.com/tag/twitter-x/">Twitter (X)</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/life/">生活</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/sololearn/">Sololearn</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/linux-command/">Linux命令</a>
         </div>
       </div>
       </div>
