@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://raz1ner.com</id>
     <title>Raz1ner</title>
-    <updated>2025-09-29T17:17:12.970Z</updated>
+    <updated>2025-10-05T00:06:26.585Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://raz1ner.com"/>
     <link rel="self" href="https://raz1ner.com/atom.xml"/>
     <logo>https://raz1ner.com/images/avatar.png</logo>
     <icon>https://raz1ner.com/favicon.ico</icon>
     <rights>All rights reserved 2025, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[Perplexity Pro 一年免费计划申请流程]]></title>
+        <id>https://raz1ner.com/post/Perplexity-Pro-Free-Pro-Plan/</id>
+        <link href="https://raz1ner.com/post/Perplexity-Pro-Free-Pro-Plan/">
+        </link>
+        <updated>2025-10-04T15:10:45.000Z</updated>
+        <summary type="html"><![CDATA[<p>Perplexity 提供了一年免费 Pro 计划，只需简单几步即可开通使用。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Perplexity 提供了一年免费 Pro 计划，只需简单几步即可开通使用。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[链接转换工具使用方法]]></title>
         <id>https://raz1ner.com/post/FB-Preview-Link-Converter/</id>
@@ -161,17 +172,6 @@
         <summary type="html"><![CDATA[<p>日程管理扩展程序的隐私政策详见此处。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>日程管理扩展程序的隐私政策详见此处。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Google Sheets 函数 IMPORTRANGE]]></title>
-        <id>https://raz1ner.com/post/Google-Sheets-Importrange/</id>
-        <link href="https://raz1ner.com/post/Google-Sheets-Importrange/">
-        </link>
-        <updated>2025-03-31T12:46:17.000Z</updated>
-        <summary type="html"><![CDATA[<p>IMPORTRANGE 函数可用来引用一个表格中指定数据的范围到另一个表格中，支持跨表格数据引用。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>IMPORTRANGE 函数可用来引用一个表格中指定数据的范围到另一个表格中，支持跨表格数据引用。</p>
 ]]></content>
     </entry>
 </feed>
