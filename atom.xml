@@ -2,13 +2,46 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://raz1ner.com</id>
     <title>Raz1ner</title>
-    <updated>2025-10-18T18:25:30.151Z</updated>
+    <updated>2025-10-20T13:03:20.222Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://raz1ner.com"/>
     <link rel="self" href="https://raz1ner.com/atom.xml"/>
     <logo>https://raz1ner.com/images/avatar.png</logo>
     <icon>https://raz1ner.com/favicon.ico</icon>
     <rights>All rights reserved 2025, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[Tab Zen 使用方法]]></title>
+        <id>https://raz1ner.com/post/Tab-Zen/</id>
+        <link href="https://raz1ner.com/post/Tab-Zen/">
+        </link>
+        <updated>2025-10-20T00:29:47.000Z</updated>
+        <summary type="html"><![CDATA[<p>定时自动挂起或者关闭非活跃的标签页，释放内存，优化浏览器性能，加速运行速度。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>定时自动挂起或者关闭非活跃的标签页，释放内存，优化浏览器性能，加速运行速度。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Tab Zen User Guide]]></title>
+        <id>https://raz1ner.com/post/Tab-Zen-EN/</id>
+        <link href="https://raz1ner.com/post/Tab-Zen-EN/">
+        </link>
+        <updated>2025-10-20T00:29:39.000Z</updated>
+        <summary type="html"><![CDATA[<p>Automatically suspend or close inactive tabs on a schedule to free up memory, optimize browser performance, and speed up browsing.</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Automatically suspend or close inactive tabs on a schedule to free up memory, optimize browser performance, and speed up browsing.</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Tab Zen Privacy Policy]]></title>
+        <id>https://raz1ner.com/post/Tab-Zen-Privacy-Policy/</id>
+        <link href="https://raz1ner.com/post/Tab-Zen-Privacy-Policy/">
+        </link>
+        <updated>2025-10-20T00:28:41.000Z</updated>
+        <summary type="html"><![CDATA[<p>Tab Zen Chrome Extension’s privacy policy is detailed here.</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Tab Zen Chrome Extension’s privacy policy is detailed here.</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Perplexity Pro 一年免费计划申请流程]]></title>
         <id>https://raz1ner.com/post/Perplexity-Pro-Free-Pro-Plan/</id>
@@ -139,39 +172,6 @@
         <summary type="html"><![CDATA[<p>自动回复 Teams 个人消息。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>自动回复 Teams 个人消息。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Teams Automatic Reply Privacy Policy]]></title>
-        <id>https://raz1ner.com/post/Teams-Automatic-Reply-Privacy-Policy/</id>
-        <link href="https://raz1ner.com/post/Teams-Automatic-Reply-Privacy-Policy/">
-        </link>
-        <updated>2025-05-01T13:31:39.000Z</updated>
-        <summary type="html"><![CDATA[<p>Teams Automatic Reply Chrome Extension’s privacy policy is detailed here.</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>Teams Automatic Reply Chrome Extension’s privacy policy is detailed here.</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[日程管理工具]]></title>
-        <id>https://raz1ner.com/post/Time-Management-Extension/</id>
-        <link href="https://raz1ner.com/post/Time-Management-Extension/">
-        </link>
-        <updated>2025-04-29T13:11:44.000Z</updated>
-        <summary type="html"><![CDATA[<p>日程管理工具是一款强大的效率工具，告别时间黑洞，迎接清晰、高效的每一天，将复杂的日程与任务管理化繁为简，专注于最重要的事。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>日程管理工具是一款强大的效率工具，告别时间黑洞，迎接清晰、高效的每一天，将复杂的日程与任务管理化繁为简，专注于最重要的事。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[日程管理扩展程序隐私政策]]></title>
-        <id>https://raz1ner.com/post/Time-Management-Extension-Privacy-Policy/</id>
-        <link href="https://raz1ner.com/post/Time-Management-Extension-Privacy-Policy/">
-        </link>
-        <updated>2025-04-29T13:10:16.000Z</updated>
-        <summary type="html"><![CDATA[<p>日程管理扩展程序的隐私政策详见此处。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>日程管理扩展程序的隐私政策详见此处。</p>
 ]]></content>
     </entry>
 </feed>
