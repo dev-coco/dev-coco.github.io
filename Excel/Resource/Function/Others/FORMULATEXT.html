@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="keywords" content="Google Excel, Excel表格, FORMULATEXT">
+  <meta name="description" content="FORMULATEXT - 以文本格式返回公式。">
+  <meta name="robots" content="index, follow">
+  <meta property="og:image" content="/images/Excel-Tutorial.jpg">
+  <title>FORMULATEXT</title>
+  <link rel="icon" href="/images/avatar.png">
+  <link href="/css/Excel/typo.css" rel="stylesheet">
+</head>
+<body class="typo">
+  <h1 id="title">FORMULATEXT</h1>
+  <p>作用：以文本格式返回公式。</p>
+  <p>语法：<span class="f">FORMULATEXT(<span class="q">内容</span>)</span></p>
+  <p>例子：</p>
+  <iframe style="max-width:434px;height:69px;" src="https://docs.google.com/spreadsheets/d/1zRYRnFXwUrihLdvCot2CAmBK8XyasQdsxz3sfl29KAk/pubhtml/sheet?headers=true&gid=1748074511"></iframe>
+  <p>运用：获取 <a href="/Excel/#Function/Others/HYPERLINK" target="_blank">HYPERLINK</a> 函数创建的链接。</p>
+  <p>使用 FORMULATEXT 获取单元格公式的文本，使用 <a href="/post/Regex-Syntax/" target="_blank">正则表达式</a> 匹配带有引号的内容，因为在表格内只能返回匹配到的第一个值，所以即使匹配的结果有多个也只返回第一个，这样就获取到了链接。</p>
+  <iframe style="max-width:641px;height:72px;" src="https://docs.google.com/spreadsheets/d/1zRYRnFXwUrihLdvCot2CAmBK8XyasQdsxz3sfl29KAk/pubhtml/sheet?headers=true&gid=1242471427"></iframe>
+  <p class="home">
+    <a href="/Excel" target="_blank">
+      <img alt="Excel表格, Google Excel" src="/images/Excel.png">
+      <span>Excel 一点通</span>
+    </a>
+  </p>
+  <script src="/js/voice-playback.js"></script>
+</body>
+</html>

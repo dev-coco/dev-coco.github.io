@@ -1,0 +1,395 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="瑞景乐的个人博客。">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>macOS 系统优化 | Raz1ner</title>
+  <meta name="author" content="Raz1ner">
+  <link rel="shortcut icon" href="https://raz1ner.com/favicon.ico?v=1764290830388">
+  <link rel="stylesheet" href="https://raz1ner.com/styles/main.css">
+  <!-- <script src="/js/prism.js"></script> -->
+  <!-- <link rel="stylesheet" href="/css/prism.css"> -->
+  <script src="https://raz1ner.com/media/js/jquery.sticky-sidebar.min.js"></script>
+  <script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script async src="https://fundingchoicesmessages.google.com/i/pub-6960947409660270?ers=1" nonce="3szuJwRueku-LVJlmdoLew"></script><script nonce="3szuJwRueku-LVJlmdoLew">(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+  <script>(function(){
+   'use strict';var aa=function(a){var b=0;return function(){return b<a.length?{done:!1,value:a[b++]}:{done:!0}}},ba="function"==typeof Object.create?Object.create:function(a){var b=function(){};b.prototype=a;return new b},k;if("function"==typeof Object.setPrototypeOf)k=Object.setPrototypeOf;else{var m;a:{var ca={a:!0},n={};try{n.__proto__=ca;m=n.a;break a}catch(a){}m=!1}k=m?function(a,b){a.__proto__=b;if(a.__proto__!==b)throw new TypeError(a+" is not extensible");return a}:null}
+   var p=k,q=function(a,b){a.prototype=ba(b.prototype);a.prototype.constructor=a;if(p)p(a,b);else for(var c in b)if("prototype"!=c)if(Object.defineProperties){var d=Object.getOwnPropertyDescriptor(b,c);d&&Object.defineProperty(a,c,d)}else a[c]=b[c];a.v=b.prototype},r=this||self,da=function(){},t=function(a){return a};var u;var w=function(a,b){this.g=b===v?a:""};w.prototype.toString=function(){return this.g+""};var v={},x=function(a){if(void 0===u){var b=null;var c=r.trustedTypes;if(c&&c.createPolicy){try{b=c.createPolicy("goog#html",{createHTML:t,createScript:t,createScriptURL:t})}catch(d){r.console&&r.console.error(d.message)}u=b}else u=b}a=(b=u)?b.createScriptURL(a):a;return new w(a,v)};var A=function(){return Math.floor(2147483648*Math.random()).toString(36)+Math.abs(Math.floor(2147483648*Math.random())^Date.now()).toString(36)};var B={},C=null;var D="function"===typeof Uint8Array;function E(a,b,c){return"object"===typeof a?D&&!Array.isArray(a)&&a instanceof Uint8Array?c(a):F(a,b,c):b(a)}function F(a,b,c){if(Array.isArray(a)){for(var d=Array(a.length),e=0;e<a.length;e++){var f=a[e];null!=f&&(d[e]=E(f,b,c))}Array.isArray(a)&&a.s&&G(d);return d}d={};for(e in a)Object.prototype.hasOwnProperty.call(a,e)&&(f=a[e],null!=f&&(d[e]=E(f,b,c)));return d}
+   function ea(a){return F(a,function(b){return"number"===typeof b?isFinite(b)?b:String(b):b},function(b){var c;void 0===c&&(c=0);if(!C){C={};for(var d="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789".split(""),e=["+/=","+/","-_=","-_.","-_"],f=0;5>f;f++){var h=d.concat(e[f].split(""));B[f]=h;for(var g=0;g<h.length;g++){var l=h[g];void 0===C[l]&&(C[l]=g)}}}c=B[c];d=Array(Math.floor(b.length/3));e=c[64]||"";for(f=h=0;h<b.length-2;h+=3){var y=b[h],z=b[h+1];l=b[h+2];g=c[y>>2];y=c[(y&3)<<
+   4|z>>4];z=c[(z&15)<<2|l>>6];l=c[l&63];d[f++]=""+g+y+z+l}g=0;l=e;switch(b.length-h){case 2:g=b[h+1],l=c[(g&15)<<2]||e;case 1:b=b[h],d[f]=""+c[b>>2]+c[(b&3)<<4|g>>4]+l+e}return d.join("")})}var fa={s:{value:!0,configurable:!0}},G=function(a){Array.isArray(a)&&!Object.isFrozen(a)&&Object.defineProperties(a,fa);return a};var H;var J=function(a,b,c){var d=H;H=null;a||(a=d);d=this.constructor.u;a||(a=d?[d]:[]);this.j=d?0:-1;this.h=null;this.g=a;a:{d=this.g.length;a=d-1;if(d&&(d=this.g[a],!(null===d||"object"!=typeof d||Array.isArray(d)||D&&d instanceof Uint8Array))){this.l=a-this.j;this.i=d;break a}void 0!==b&&-1<b?(this.l=Math.max(b,a+1-this.j),this.i=null):this.l=Number.MAX_VALUE}if(c)for(b=0;b<c.length;b++)a=c[b],a<this.l?(a+=this.j,(d=this.g[a])?G(d):this.g[a]=I):(d=this.l+this.j,this.g[d]||(this.i=this.g[d]={}),(d=this.i[a])?
+   G(d):this.i[a]=I)},I=Object.freeze(G([])),K=function(a,b){if(-1===b)return null;if(b<a.l){b+=a.j;var c=a.g[b];return c!==I?c:a.g[b]=G([])}if(a.i)return c=a.i[b],c!==I?c:a.i[b]=G([])},M=function(a,b){var c=L;if(-1===b)return null;a.h||(a.h={});if(!a.h[b]){var d=K(a,b);d&&(a.h[b]=new c(d))}return a.h[b]};J.prototype.toJSON=function(){var a=N(this,!1);return ea(a)};
+   var N=function(a,b){if(a.h)for(var c in a.h)if(Object.prototype.hasOwnProperty.call(a.h,c)){var d=a.h[c];if(Array.isArray(d))for(var e=0;e<d.length;e++)d[e]&&N(d[e],b);else d&&N(d,b)}return a.g},O=function(a,b){H=b=b?JSON.parse(b):null;a=new a(b);H=null;return a};J.prototype.toString=function(){return N(this,!1).toString()};var P=function(a){J.call(this,a)};q(P,J);function ha(a){var b,c=(a.ownerDocument&&a.ownerDocument.defaultView||window).document,d=null===(b=c.querySelector)||void 0===b?void 0:b.call(c,"script[nonce]");(b=d?d.nonce||d.getAttribute("nonce")||"":"")&&a.setAttribute("nonce",b)};var Q=function(a,b){b=String(b);"application/xhtml+xml"===a.contentType&&(b=b.toLowerCase());return a.createElement(b)},R=function(a){this.g=a||r.document||document};R.prototype.appendChild=function(a,b){a.appendChild(b)};var S=function(a,b,c,d,e,f){try{var h=a.g,g=Q(a.g,"SCRIPT");g.async=!0;g.src=b instanceof w&&b.constructor===w?b.g:"type_error:TrustedResourceUrl";ha(g);h.head.appendChild(g);g.addEventListener("load",function(){e();d&&h.head.removeChild(g)});g.addEventListener("error",function(){0<c?S(a,b,c-1,d,e,f):(d&&h.head.removeChild(g),f())})}catch(l){f()}};var ia=r.atob("aHR0cHM6Ly93d3cuZ3N0YXRpYy5jb20vaW1hZ2VzL2ljb25zL21hdGVyaWFsL3N5c3RlbS8xeC93YXJuaW5nX2FtYmVyXzI0ZHAucG5n"),ja=r.atob("WW91IGFyZSBzZWVpbmcgdGhpcyBtZXNzYWdlIGJlY2F1c2UgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlIGlzIGludGVyZmVyaW5nIHdpdGggdGhpcyBwYWdlLg=="),ka=r.atob("RGlzYWJsZSBhbnkgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlLCB0aGVuIHJlbG9hZCB0aGlzIHBhZ2Uu"),la=function(a,b,c){this.h=a;this.j=new R(this.h);this.g=null;this.i=[];this.l=!1;this.o=b;this.m=c},V=function(a){if(a.h.body&&!a.l){var b=
+   function(){T(a);r.setTimeout(function(){return U(a,3)},50)};S(a.j,a.o,2,!0,function(){r[a.m]||b()},b);a.l=!0}},T=function(a){for(var b=W(1,5),c=0;c<b;c++){var d=X(a);a.h.body.appendChild(d);a.i.push(d)}b=X(a);b.style.bottom="0";b.style.left="0";b.style.position="fixed";b.style.width=W(100,110).toString()+"%";b.style.zIndex=W(2147483544,2147483644).toString();b.style["background-color"]=ma(249,259,242,252,219,229);b.style["box-shadow"]="0 0 12px #888";b.style.color=ma(0,10,0,10,0,10);b.style.display=
+   "flex";b.style["justify-content"]="center";b.style["font-family"]="Roboto, Arial";c=X(a);c.style.width=W(80,85).toString()+"%";c.style.maxWidth=W(750,775).toString()+"px";c.style.margin="24px";c.style.display="flex";c.style["align-items"]="flex-start";c.style["justify-content"]="center";d=Q(a.j.g,"IMG");d.className=A();d.src=ia;d.style.height="24px";d.style.width="24px";d.style["padding-right"]="16px";var e=X(a),f=X(a);f.style["font-weight"]="bold";f.textContent=ja;var h=X(a);h.textContent=ka;Y(a,
+   e,f);Y(a,e,h);Y(a,c,d);Y(a,c,e);Y(a,b,c);a.g=b;a.h.body.appendChild(a.g);b=W(1,5);for(c=0;c<b;c++)d=X(a),a.h.body.appendChild(d),a.i.push(d)},Y=function(a,b,c){for(var d=W(1,5),e=0;e<d;e++){var f=X(a);b.appendChild(f)}b.appendChild(c);c=W(1,5);for(d=0;d<c;d++)e=X(a),b.appendChild(e)},W=function(a,b){return Math.floor(a+Math.random()*(b-a))},ma=function(a,b,c,d,e,f){return"rgb("+W(Math.max(a,0),Math.min(b,255)).toString()+","+W(Math.max(c,0),Math.min(d,255)).toString()+","+W(Math.max(e,0),Math.min(f,
+   255)).toString()+")"},X=function(a){a=Q(a.j.g,"DIV");a.className=A();return a},U=function(a,b){0>=b||null!=a.g&&0!=a.g.offsetHeight&&0!=a.g.offsetWidth||(na(a),T(a),r.setTimeout(function(){return U(a,b-1)},50))},na=function(a){var b=a.i;var c="undefined"!=typeof Symbol&&Symbol.iterator&&b[Symbol.iterator];b=c?c.call(b):{next:aa(b)};for(c=b.next();!c.done;c=b.next())(c=c.value)&&c.parentNode&&c.parentNode.removeChild(c);a.i=[];(b=a.g)&&b.parentNode&&b.parentNode.removeChild(b);a.g=null};var pa=function(a,b,c,d,e){var f=oa(c),h=function(l){l.appendChild(f);r.setTimeout(function(){f?(0!==f.offsetHeight&&0!==f.offsetWidth?b():a(),f.parentNode&&f.parentNode.removeChild(f)):a()},d)},g=function(l){document.body?h(document.body):0<l?r.setTimeout(function(){g(l-1)},e):b()};g(3)},oa=function(a){var b=document.createElement("div");b.className=a;b.style.width="1px";b.style.height="1px";b.style.position="absolute";b.style.left="-10000px";b.style.top="-10000px";b.style.zIndex="-10000";return b};var L=function(a){J.call(this,a)};q(L,J);var qa=function(a){J.call(this,a)};q(qa,J);var ra=function(a,b){this.l=a;this.m=new R(a.document);this.g=b;this.i=K(this.g,1);b=M(this.g,2);this.o=x(K(b,4)||"");this.h=!1;b=M(this.g,13);b=x(K(b,4)||"");this.j=new la(a.document,b,K(this.g,12))};ra.prototype.start=function(){sa(this)};
+   var sa=function(a){ta(a);S(a.m,a.o,3,!1,function(){a:{var b=a.i;var c=r.btoa(b);if(c=r[c]){try{var d=O(P,r.atob(c))}catch(e){b=!1;break a}b=b===K(d,1)}else b=!1}b?Z(a,K(a.g,14)):(Z(a,K(a.g,8)),V(a.j))},function(){pa(function(){Z(a,K(a.g,7));V(a.j)},function(){return Z(a,K(a.g,6))},K(a.g,9),K(a.g,10),K(a.g,11))})},Z=function(a,b){a.h||(a.h=!0,a=new a.l.XMLHttpRequest,a.open("GET",b,!0),a.send())},ta=function(a){var b=r.btoa(a.i);a.l[b]&&Z(a,K(a.g,5))};(function(a,b){r[a]=function(c){for(var d=[],e=0;e<arguments.length;++e)d[e-0]=arguments[e];r[a]=da;b.apply(null,d)}})("__h82AlnkH6D91__",function(a){"function"===typeof window.atob&&(new ra(window,O(qa,window.atob(a)))).start()});}).call(this);
+   window.__h82AlnkH6D91__("WyJwdWItNjk2MDk0NzQwOTY2MDI3MCIsW251bGwsbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9iL3B1Yi02OTYwOTQ3NDA5NjYwMjcwIl0sbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9lbC9BR1NLV3hWWkh4UHVLbUVuYUVHcDZmcldNVTVHZloyVUxJZW8zcHZhaV9wUVJ5a2M4dmlkZlVwMENZeVJQZEQxdExOQzRkOUN6cEQxS1hFZml1cnFJZXFIOVVsc1R3XHUwMDNkXHUwMDNkP3RlXHUwMDNkVE9LRU5fRVhQT1NFRCIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFhUNmRjRFppendkR2FaMmQ2dHBOMEF3TWowNERwVWVBaUd4Y1lsNXR1UWZFdmhDSTZmaWRxcEN3RXNQeGF1eWJUc004eFlhVWFLSWJENnNWdVIyNXIwT0FcdTAwM2RcdTAwM2Q/YWJcdTAwM2QxXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFVFeld6ZVhfYjlBSnJsR05ab2N0MG1UVHBKZFUxQVo1b2piaVNXMXc4TjNJdG93TndOZ2YtNzcwOVNEQUlrSWlUbW5UU2hvVW5DYml0QmVYVTM4Z3M3c2dcdTAwM2RcdTAwM2Q/YWJcdTAwM2QyXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFVWdXc5Q2tNRzNoX3p2WGJHcHlLdU95cE4weWVabEVVSmVsbFBnR2F4Y3NockhWdklpSmlPMzZKM3JhRlhDSl9fdnp2U0ZuRFNXS3dPUXl5enpLWG5zc0FcdTAwM2RcdTAwM2Q/c2JmXHUwMDNkMiIsImRpdi1ncHQtYWQiLDIwLDEwMCwiY0hWaUxUWTVOakE1TkRjME1EazJOakF5TnpBXHUwMDNkIixbbnVsbCxudWxsLG51bGwsImh0dHBzOi8vd3d3LmdzdGF0aWMuY29tLzBlbW4vZi9wL3B1Yi02OTYwOTQ3NDA5NjYwMjcwLmpzP3VzcXBcdTAwM2RDQXciXSwiaHR0cHM6Ly9mdW5kaW5nY2hvaWNlc21lc3NhZ2VzLmdvb2dsZS5jb20vZWwvQUdTS1d4V0M5M05iUXBSTC12eTBWbXd3TjBwVllQTDE5eDJLYWJfQkFZYjVucWlRM0VZTTJ0ZXRQMHJxRzE5ZHF5X3NfZjh6VmhPc0ZIWExmeVJGUnJJTEhSak5aZ1x1MDAzZFx1MDAzZCJd");</script>
+   <script async src="https://www.googletagmanager.com/gtag/js?id=G-24X8H1LT7N"></script>
+   <script>
+      window.dataLayer = window.dataLayer || []
+      function gtag(){dataLayer.push(arguments)}
+      gtag('js', new Date())
+      gtag('config', 'G-24X8H1LT7N')
+   </script>
+  <meta property="og:image" content="https://raz1ner.com/post-images/Mac-System-Boost.png">
+  <meta name="description" content="你的电脑是否经常遇到卡顿，运行缓慢的问题呢？">
+  <link rel="canonical" href="https://raz1ner.com/post/Mac-System-Boost/">
+  <meta property="og:title" content="macOS 系统优化 - Raz1ner">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://raz1ner.com/post-images/Mac-System-Boost.png">
+  <meta property="og:url" content="https://raz1ner.com/post/Mac-System-Boost/">
+  <meta property="og:description" content="你的电脑是否经常遇到卡顿，运行缓慢的问题呢？">
+  <meta name="twitter:title" content="macOS 系统优化 - Raz1ner">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://raz1ner.com/post-images/Mac-System-Boost.png">
+  <meta name="twitter:description" content="你的电脑是否经常遇到卡顿，运行缓慢的问题呢？">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:300,300i,400,400i,700,700i,800" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Mallanna" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+</head>
+<body>
+  <div class="main">
+    <div class="header">
+      <div class="nav">
+        <div class="logo">
+          <a href="https://raz1ner.com">
+            <img class="avatar" alt="Raz1ner" src="https://raz1ner.com/images/avatar.png?v=1764290830388" alt="">
+          </a>
+          <div class="site-title">
+            <h1>Raz1ner</h1>
+          </div>
+          <svg width="32" height="32" viewBox="0 0 16 16" id="menuBtn" style="position:absolute;right:15px">
+            <path d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5">
+          </svg>
+        </div>
+        <div class="mobile-menu" style="display: none;">
+          <div style="text-align: center">
+            
+              <div class="nav-item">
+                <a href="/" class="menu">首页</a>
+              </div>
+              <div class="nav-item">
+                <a href="/Navigation" class="menu">导航</a>
+              </div>
+              <div class="nav-item">
+                <a href="/Awesome-Software" class="menu">软件</a>
+              </div>
+              <div class="nav-item">
+                <a href="/Extension/" class="menu">插件</a>
+              </div>
+              <div class="nav-item">
+                <a href="/Online-Tools" class="menu">在线工具</a>
+              </div>
+              <div class="nav-item">
+                <a href="/post/Linux-Command" class="menu">Linux命令</a>
+              </div>
+              <div class="nav-item">
+                <a href="/Excel" class="menu">Excel教程</a>
+              </div>
+              <div class="nav-item">
+                <a href="/post/Terms-and-Privacy" class="menu">隐私与条款</a>
+              </div>
+          </div>
+        </div>
+
+        <div class="menu-container">
+          <ul>
+            <li>
+              <a href="/" class="menu">首页</a>
+            </li>
+            <li>
+              <a href="/Navigation" class="menu">导航</a>
+            </li>
+            <li>
+              <a href="/Awesome-Software" class="menu">软件</a>
+            </li>
+            <li>
+              <a href="/Extension/" class="menu">插件</a>
+            </li>
+            <li>
+              <a href="/Online-Tools" class="menu">在线工具</a>
+            </li>
+            <li>
+              <a href="/post/Linux-Command" class="menu">Linux命令</a>
+            </li>
+            <li>
+              <a href="/Excel" class="menu">Excel教程</a>
+            </li>
+            <li>
+              <a href="/post/Terms-and-Privacy" class="menu">隐私与条款</a>
+            </li>
+          </ul>
+        </div>
+
+
+
+        <form id="gridea-search-form" action="https://raz1ner.com/search/" class="search">
+          <input type="search" name="q" class="search-box">
+          <span class="search-button">
+            <span class="search-icon"></span>
+          </span>
+        </form>
+      </div>
+    </div>
+    <script>
+      document.getElementsByClassName('search-button')[0].addEventListener('click', function () {
+        document.getElementById('gridea-search-form').classList.toggle('open');
+      })
+      document.getElementById('menuBtn').addEventListener('click', () => {
+        const element = document.querySelector('.mobile-menu')
+        if (element.style.display === 'none' || element.style.display === '') {
+          element.style.display = 'block'
+        } else {
+          element.style.display = 'none'
+        }
+      })
+    </script>
+
+    <div id="main-content" class="post-detail main-container">
+      <!-- left -->
+      <div id="content" class="main-container-left">
+        <article class="post i-card">
+        <h2 class="post-title">macOS 系统优化</h2>
+        <div class="post-info">
+          <time class="post-time">2022-02-05 / 7 min read</time>
+            <a href="https://raz1ner.com/tag/software/" class="post-tag i-tag i-tag-">#软件</a>
+            <a href="https://raz1ner.com/tag/macos/" class="post-tag i-tag i-tag-banana">#macOS</a>
+        </div>
+        <!--
+          
+        <div class="post-feature-image" style="background-image: url('https://raz1ner.com/post-images/Mac-System-Boost.png')"></div>
+        -->
+          <div class="post-content">
+            <p>你的电脑是否经常遇到卡顿，运行缓慢的问题呢？</p>
+<!-- more -->
+<p>macOS 系统是否能提供最佳的性能是办公的关键，本文将告诉你如何优化 macOS 系统的运行速度，主要围绕软件方面和硬件方面。</p>
+<h2 id="软件方面">软件方面</h2>
+<h3 id="清理垃圾缓存">清理垃圾缓存</h3>
+<p>系统和软件在运行过程中会产生各种各样的文件，例如：缓存文件 (Cache Files)，文件缓冲 (File Cache)，临时文件 (Temporary Files)，日志（Logs），软件卸载残留文件等等。</p>
+<p>这里给大家推荐一款 <a href="/post/Mac-Cleaner/">macOS 清理垃圾</a> 软件，简单易用，清理效果好。使用方法特别简单，运行程序，选择“清理缓存”，点击“好”就清理完成了。<br>
+<img src="https://raz1ner.com/post-images/1644172507535.png" alt="" loading="lazy"></p>
+<h3 id="系统优化">系统优化</h3>
+<p>Mac 系统其实有自带的性能模式。可以通过命令来开启。开启后需要重启一次电脑，界面不会有任何的提示或者变化，静默运行的。更多详细内容可以查看 <a href="https://support.apple.com/zh-cn/HT202528" target="_blank">苹果官方文档</a>。</p>
+<p>10.0 ~ 10.10.5 版本</p>
+<pre><code class="language-Shell">开启性能模式
+serverinfo --setperfmode 1
+
+关闭性能模式
+serverinfo --setperfmode 0
+
+查看当前模式
+serverinfo --perfmode
+</code></pre>
+<p>10.11 及更高版本</p>
+<pre><code class="language-Shell">开启性能模式
+sudo nvram boot-args=&quot;serverperfmode=1 $(nvram boot-args 2&gt;/dev/null | cut -f 2-)&quot;
+
+关闭性能模式
+sudo nvram boot-args=&quot;$(nvram boot-args 2&gt;/dev/null | sed -e $'s/boot-args\t//;s/serverperfmode=1//')&quot;
+
+查看当前模式
+nvram boot-args
+</code></pre>
+<p>在 <a href="/post/Mac-Cleaner/">macOS 清理垃圾</a> 软件内也包含了这个功能，使用系统优化功能即可开启性能模式。<br>
+<img src="https://raz1ner.com/post-images/1644172585656.png" alt="" loading="lazy"></p>
+<h3 id="管理启动项">管理启动项</h3>
+<p>过多的启动项会拖慢系统的开机速度，在启动的时候消耗过多的 RAM，如果不是必要的程序，可以在启动后再运行。</p>
+<p>打开系统偏好设定 —— 使用者与群组 —— 登陆项目<br>
+<img src="https://raz1ner.com/post-images/1644172665075.png" alt="" loading="lazy"></p>
+<p>把需要关闭的启动项选中，点击 — 符号删除。</p>
+<p>以下三个是启动项的目录，有的启动项不会在系统偏好内显示，但是可以在下面的目录中找到，可以使用 launchctl 命令关闭不需要的进程后再删除文件。</p>
+<pre><code class="language-Shell">/Library/LaunchAgents
+/Library/LaunchDaemons
+/Users/$USER/Library/LaunchAgents
+</code></pre>
+<h3 id="关闭-dashboard">关闭 Dashboard</h3>
+<p>Mac 系统上有个叫 Dashboard 的东西，也叫仪表盘，这个东西在日常使用中几乎用不到，而且还占用着 CPU 使用率和内存。<br>
+<img src="https://raz1ner.com/post-images/1644172770664.png" alt="" loading="lazy"></p>
+<p>打开系统偏好设定——指挥中心——仪表盘（关闭）<br>
+<img src="https://raz1ner.com/post-images/1644172800039.png" alt="" loading="lazy"></p>
+<p>如果你想彻底关它可以使用以下命令</p>
+<pre><code class="language-Shell">defaults write com.apple.dashboard mcx-disabled -boolean YES
+</code></pre>
+<p>如果你想关闭后再重新开启，可以使用以下命令</p>
+<pre><code class="language-Shell">defaults write com.apple.dashboard mcx-disabled -boolean NO
+</code></pre>
+<h3 id="关闭独显">关闭独显</h3>
+<p>当设备使用独立显卡的时候，将会更多的消耗设备的内存和 CPU 使用，同时设备的温度也会升高，如果是用不到独显的话，建议禁用。</p>
+<p>禁用独显</p>
+<pre><code class="language-Shell">sudo pmset -a GPUSwitch 0
+</code></pre>
+<p>如果想要强制使用独显可以把值设置成 1，2 是自动切换显卡。</p>
+<p>关闭 Spotlight</p>
+<p>Spotlight 是 macOS 上的一个搜索引擎，能够快速的搜索到想要的文档，但是 Spotlight 也有一个弊端，它会不断的索引文件，所以会看到 Spotlight 在后台默默的占用资源，关闭这个功能后会降低设备的温度也会加快设备的流畅度。<br>
+<img src="https://raz1ner.com/post-images/1644172888060.png" alt="" loading="lazy"></p>
+<p>打开系统偏好设定——Spotlight——搜索结果（全部取消选择）<br>
+<img src="https://raz1ner.com/post-images/1644172902393.png" alt="" loading="lazy"></p>
+<p>然后再运行以下命令关闭 Spotlight 功能</p>
+<pre><code class="language-Shell">关闭Spotlight
+sudo mdutil -a -i off
+sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.Spotlight.plist
+
+开启Spotlight
+sudo mdutil -a -i on
+sudo launchctl load -w /System/Library/LaunchAgents/com.apple.Spotlight.plist
+</code></pre>
+<p>不过在操作前需要暂时关闭 SIP 保护。在 Mac 开机的时候按 Command ⌘ + R 进入恢复模式，然后执行 SIP 相关命令。</p>
+<h3 id="风扇">风扇</h3>
+<p>设备的温度如果过高会导致 CPU 降频，降低设备的运行速度。macOS 虽然有自动调节风扇转速的机制，但是有时候不太精准。推荐使用 Macs Fan Control 这个软件，可以自定义设置风扇的转速来调节。在使用的过程中有一点需要注意，不要开了风扇忘记关了，这样让风扇长时间在高转速的状态下运行，会过多的消耗风扇的寿命。<br>
+<img src="https://raz1ner.com/post-images/1644173061520.png" alt="" loading="lazy"></p>
+<h3 id="优化内存">优化内存</h3>
+<p>有时候有的程序会大量的占用内存，使用下面这个命令可以暂时的释放出内存。</p>
+<pre><code class="language-Shell">sudo purge
+</code></pre>
+<h3 id="清理-dns-缓存">清理 DNS 缓存</h3>
+<p>macOS 开机使用一段时间后就会发现，网络没问题，但是 macOS 打开网页加载就特别慢，或者无法打开网页。那么这个时候就需要清理一下 DNS 缓存了，可以使用以下命令。</p>
+<pre><code class="language-Shell">dscacheutil -flushcache
+</code></pre>
+<p>推荐使用 <a href="/post/Mac-Cleaner/">macOS 清理垃圾</a> 软件内置的系统优化功能，可以在每 30 分钟清理一次 DNS 缓存和释放内存。</p>
+<h3 id="限制-cpu-使用率">限制 CPU 使用率</h3>
+<p>当 Mac 多个程序同时运行的时候，个别程序如果占用 CPU 太高，会导致系统整体卡顿，设备发热。这时候就可以使用 <a href="/post/CPU-Limit-GUI/">限制软件 CPU 使用率</a> 这个程序，合理分配程序的 CPU 使用率，可以让多个程序运行的同时，系统还可以流畅运行。<br>
+<img src="https://raz1ner.com/post-images/1644173279162.png" alt="" loading="lazy"></p>
+<h2 id="硬件层">硬件层</h2>
+<h3 id="配件">配件</h3>
+<p>有的人喜欢使用键盘膜，可以反止灰尘从键盘进入，而且还可以防止水溅到键盘流到设备内部，但是有利也有弊。使用键盘膜的时候同时也会阻挡了设备更好的散热，当设备温度过高的时候 CPU 就会降频，降低流畅度。</p>
+<p>设备机身的材质是使用铝合金，铝合金材质本身散热效果就不错，但是有的人喜欢使用保护壳，避免磕磕碰碰对 Mac 的机身造成损伤，不过使用保护壳会导致设备的散热效果降低，如果需要使用保护壳切记要记得避免皮质和毛绒材质的保护壳，这类材质散热效果差。在选用保护壳之前需要先了解设备的出风口在哪，避免遮挡保护壳导致无法正常散热。</p>
+<h3 id="内存">内存</h3>
+<p>增加系统流畅度最有效的方法就是给设备安装内存条，增加运行内存。</p>
+<h3 id="清理灰尘">清理灰尘</h3>
+<p>当设备用过几年后，设备内就会积攒了灰尘，影响散热，同时也会影响系统的流畅度，可以定期清理一次设备内的灰尘。</p>
+<h3 id="散热">散热</h3>
+<p>当设备温度过高的时候就会造成 CPU 降频，影响系统的流畅度。这里就给大家介绍几种常见的散热方式。</p>
+<ol>
+<li>
+<p>散热底座<br>
+散热底座是从底部向上吹风，用于吹设备的底部。</p>
+</li>
+<li>
+<p>抽风式散热器<br>
+大风量抽出设备内部的热气。</p>
+</li>
+<li>
+<p>支架<br>
+将设备架高，让设备的底部有更多的空间散热。</p>
+</li>
+</ol>
+
+          </div>
+          <div class="copyright">
+            <p>本文链接： <a href="https://raz1ner.com/post/Mac-System-Boost/">https://raz1ner.com/post/Mac-System-Boost/</a></p>
+            <p>版权声明： 本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="nofollow noreferrer" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</p>
+          </div>
+        </article>
+        <div class="next-post">
+          <div class="next">下一篇</div>
+          <a href="https://raz1ner.com/post/Mac-Cleaner/">
+            <h3 class="post-title">macOS 清理垃圾</h3>
+          </a>
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="gitalk-container"></div>
+      </div>
+      <!-- middle -->
+      <div class="main-container-middle"></div>
+      <!-- right -->
+      <div id="sidebar" class="main-container-right">
+        <div class="id_card i-card">
+          <div class="id_card-avatar" style="background-image: url(https://raz1ner.com/images/avatar.png?v=1764290830388)"></div>
+          <h1 class="id_card-title">Raz1ner</h1>
+          <p style="text-align: center;">
+            <a href="https://github.com/dev-coco" rel="nofollow noreferrer" target="_blank"><img class="social-icon" alt="Github" src="/images/social/GitHub.png"></a>
+            <a href="https://t.me/raz1ner" rel="nofollow noreferrer" target="_blank"><img class="social-icon" alt="Telegram" src="/images/social/Telegram.png"></a>
+            <a href="https://www.youtube.com/channel/UCEgNinV_DEntuv5Dm8Z_JvA?sub_confirmation=1" rel="nofollow noreferrer" target="_blank"><img class="social-icon" alt="YouTuebe" src="/images/social/YouTube.png"></a>
+            <a href="/atom.xml" target="_blank"><img class="social-icon" alt="rss" src="/images/social/RSS.png"></a>
+            <a href="mailto:ruijingle@gmail.com" target="_blank"><img class="social-icon" alt="Email" src="/images/social/Gmail.png"></a>
+          </p>
+          <!-- <h2 class="id_card-description"></h2> -->
+          <!--  -->
+          <div class="id_card-sns">
+            <!-- github -->
+            
+            <!-- twitter -->
+            <!-- weibo -->
+            <!-- facebook -->
+          </div>
+        </div>
+      <!-- toc -->
+      <div class="toc-card i-card" style="max-height:40%;overflow:auto">
+        <div class="toc-title i-card-title">目录</div>
+          <div class="toc-content">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E8%BD%AF%E4%BB%B6%E6%96%B9%E9%9D%A2">软件方面</a>
+<ul>
+<li><a href="#%E6%B8%85%E7%90%86%E5%9E%83%E5%9C%BE%E7%BC%93%E5%AD%98">清理垃圾缓存</a></li>
+<li><a href="#%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96">系统优化</a></li>
+<li><a href="#%E7%AE%A1%E7%90%86%E5%90%AF%E5%8A%A8%E9%A1%B9">管理启动项</a></li>
+<li><a href="#%E5%85%B3%E9%97%AD-dashboard">关闭 Dashboard</a></li>
+<li><a href="#%E5%85%B3%E9%97%AD%E7%8B%AC%E6%98%BE">关闭独显</a></li>
+<li><a href="#%E9%A3%8E%E6%89%87">风扇</a></li>
+<li><a href="#%E4%BC%98%E5%8C%96%E5%86%85%E5%AD%98">优化内存</a></li>
+<li><a href="#%E6%B8%85%E7%90%86-dns-%E7%BC%93%E5%AD%98">清理 DNS 缓存</a></li>
+<li><a href="#%E9%99%90%E5%88%B6-cpu-%E4%BD%BF%E7%94%A8%E7%8E%87">限制 CPU 使用率</a></li>
+</ul>
+</li>
+<li><a href="#%E7%A1%AC%E4%BB%B6%E5%B1%82">硬件层</a>
+<ul>
+<li><a href="#%E9%85%8D%E4%BB%B6">配件</a></li>
+<li><a href="#%E5%86%85%E5%AD%98">内存</a></li>
+<li><a href="#%E6%B8%85%E7%90%86%E7%81%B0%E5%B0%98">清理灰尘</a></li>
+<li><a href="#%E6%95%A3%E7%83%AD">散热</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      <div class="notice-card i-card ">
+        <div class="notice-title i-card-title">公告</div>
+        <div class="notice-content"><p>博客新开通 Telegram 频道：<a href="https://t.me/raz1ner" target="_blank" style="color: blue">瑞景乐的博客</a>，欢迎订阅，随时收到最新资讯。</p><p>商务合作请点击上方的邮箱与我联系。<p></div>
+      </div>
+      <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
+        <div class="notice-content">
+          <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/ai-tech/">AI 科技</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://raz1ner.com/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/excel/">Excel</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://raz1ner.com/tag/google-script/">Google 脚本</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/instagram/">Instagram</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/security/">安全</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/javascript/">Javascript</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://raz1ner.com/tag/twitter-x/">Twitter (X)</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/life/">生活</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/sololearn/">Sololearn</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/linux-command/">Linux命令</a>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="site-footer">
+    <p style="text-align: center;">
+        <a href="https://github.com/dev-coco" rel="nofollow noreferrer" target="_blank"><img class="social-icon" alt="Github" src="/images/social/GitHub.png"></a>
+        <a href="https://t.me/raz1ner" rel="nofollow noreferrer" target="_blank"><img class="social-icon" alt="Telegram" src="/images/social/Telegram.png"></a>
+        <a href="https://www.youtube.com/channel/UCEgNinV_DEntuv5Dm8Z_JvA?sub_confirmation=1" rel="nofollow noreferrer" target="_blank"><img class="social-icon" alt="YouTuebe" src="/images/social/YouTube.png"></a>
+        <a href="/atom.xml" target="_blank"><img class="social-icon" alt="rss" src="/images/social/RSS.png"></a>
+        <a href="mailto:ruijingle@gmail.com" target="_blank"><img class="social-icon" alt="Email" src="/images/social/Gmail.png"></a>
+      </p>
+    <span>Copyright © 2020-2025 Raz1ner - All Rights Reserved.</span> | <a class="rss" href="https://raz1ner.com/atom.xml" target="_blank">RSS</a>
+</div>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/excel.min.js"></script>
+            <script>hljs.highlightAll();</script>
+  </div>
+  
+</body>
+</html>

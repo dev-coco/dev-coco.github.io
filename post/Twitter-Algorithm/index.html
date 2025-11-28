@@ -1,0 +1,949 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="瑞景乐的个人博客。">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>推特 Twitter 演算法和推送机制 2023 最新 | Raz1ner</title>
+  <meta name="author" content="Raz1ner">
+  <link rel="shortcut icon" href="https://raz1ner.com/favicon.ico?v=1764290830388">
+  <link rel="stylesheet" href="https://raz1ner.com/styles/main.css">
+  <!-- <script src="/js/prism.js"></script> -->
+  <!-- <link rel="stylesheet" href="/css/prism.css"> -->
+  <script src="https://raz1ner.com/media/js/jquery.sticky-sidebar.min.js"></script>
+  <script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script async src="https://fundingchoicesmessages.google.com/i/pub-6960947409660270?ers=1" nonce="3szuJwRueku-LVJlmdoLew"></script><script nonce="3szuJwRueku-LVJlmdoLew">(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+  <script>(function(){
+   'use strict';var aa=function(a){var b=0;return function(){return b<a.length?{done:!1,value:a[b++]}:{done:!0}}},ba="function"==typeof Object.create?Object.create:function(a){var b=function(){};b.prototype=a;return new b},k;if("function"==typeof Object.setPrototypeOf)k=Object.setPrototypeOf;else{var m;a:{var ca={a:!0},n={};try{n.__proto__=ca;m=n.a;break a}catch(a){}m=!1}k=m?function(a,b){a.__proto__=b;if(a.__proto__!==b)throw new TypeError(a+" is not extensible");return a}:null}
+   var p=k,q=function(a,b){a.prototype=ba(b.prototype);a.prototype.constructor=a;if(p)p(a,b);else for(var c in b)if("prototype"!=c)if(Object.defineProperties){var d=Object.getOwnPropertyDescriptor(b,c);d&&Object.defineProperty(a,c,d)}else a[c]=b[c];a.v=b.prototype},r=this||self,da=function(){},t=function(a){return a};var u;var w=function(a,b){this.g=b===v?a:""};w.prototype.toString=function(){return this.g+""};var v={},x=function(a){if(void 0===u){var b=null;var c=r.trustedTypes;if(c&&c.createPolicy){try{b=c.createPolicy("goog#html",{createHTML:t,createScript:t,createScriptURL:t})}catch(d){r.console&&r.console.error(d.message)}u=b}else u=b}a=(b=u)?b.createScriptURL(a):a;return new w(a,v)};var A=function(){return Math.floor(2147483648*Math.random()).toString(36)+Math.abs(Math.floor(2147483648*Math.random())^Date.now()).toString(36)};var B={},C=null;var D="function"===typeof Uint8Array;function E(a,b,c){return"object"===typeof a?D&&!Array.isArray(a)&&a instanceof Uint8Array?c(a):F(a,b,c):b(a)}function F(a,b,c){if(Array.isArray(a)){for(var d=Array(a.length),e=0;e<a.length;e++){var f=a[e];null!=f&&(d[e]=E(f,b,c))}Array.isArray(a)&&a.s&&G(d);return d}d={};for(e in a)Object.prototype.hasOwnProperty.call(a,e)&&(f=a[e],null!=f&&(d[e]=E(f,b,c)));return d}
+   function ea(a){return F(a,function(b){return"number"===typeof b?isFinite(b)?b:String(b):b},function(b){var c;void 0===c&&(c=0);if(!C){C={};for(var d="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789".split(""),e=["+/=","+/","-_=","-_.","-_"],f=0;5>f;f++){var h=d.concat(e[f].split(""));B[f]=h;for(var g=0;g<h.length;g++){var l=h[g];void 0===C[l]&&(C[l]=g)}}}c=B[c];d=Array(Math.floor(b.length/3));e=c[64]||"";for(f=h=0;h<b.length-2;h+=3){var y=b[h],z=b[h+1];l=b[h+2];g=c[y>>2];y=c[(y&3)<<
+   4|z>>4];z=c[(z&15)<<2|l>>6];l=c[l&63];d[f++]=""+g+y+z+l}g=0;l=e;switch(b.length-h){case 2:g=b[h+1],l=c[(g&15)<<2]||e;case 1:b=b[h],d[f]=""+c[b>>2]+c[(b&3)<<4|g>>4]+l+e}return d.join("")})}var fa={s:{value:!0,configurable:!0}},G=function(a){Array.isArray(a)&&!Object.isFrozen(a)&&Object.defineProperties(a,fa);return a};var H;var J=function(a,b,c){var d=H;H=null;a||(a=d);d=this.constructor.u;a||(a=d?[d]:[]);this.j=d?0:-1;this.h=null;this.g=a;a:{d=this.g.length;a=d-1;if(d&&(d=this.g[a],!(null===d||"object"!=typeof d||Array.isArray(d)||D&&d instanceof Uint8Array))){this.l=a-this.j;this.i=d;break a}void 0!==b&&-1<b?(this.l=Math.max(b,a+1-this.j),this.i=null):this.l=Number.MAX_VALUE}if(c)for(b=0;b<c.length;b++)a=c[b],a<this.l?(a+=this.j,(d=this.g[a])?G(d):this.g[a]=I):(d=this.l+this.j,this.g[d]||(this.i=this.g[d]={}),(d=this.i[a])?
+   G(d):this.i[a]=I)},I=Object.freeze(G([])),K=function(a,b){if(-1===b)return null;if(b<a.l){b+=a.j;var c=a.g[b];return c!==I?c:a.g[b]=G([])}if(a.i)return c=a.i[b],c!==I?c:a.i[b]=G([])},M=function(a,b){var c=L;if(-1===b)return null;a.h||(a.h={});if(!a.h[b]){var d=K(a,b);d&&(a.h[b]=new c(d))}return a.h[b]};J.prototype.toJSON=function(){var a=N(this,!1);return ea(a)};
+   var N=function(a,b){if(a.h)for(var c in a.h)if(Object.prototype.hasOwnProperty.call(a.h,c)){var d=a.h[c];if(Array.isArray(d))for(var e=0;e<d.length;e++)d[e]&&N(d[e],b);else d&&N(d,b)}return a.g},O=function(a,b){H=b=b?JSON.parse(b):null;a=new a(b);H=null;return a};J.prototype.toString=function(){return N(this,!1).toString()};var P=function(a){J.call(this,a)};q(P,J);function ha(a){var b,c=(a.ownerDocument&&a.ownerDocument.defaultView||window).document,d=null===(b=c.querySelector)||void 0===b?void 0:b.call(c,"script[nonce]");(b=d?d.nonce||d.getAttribute("nonce")||"":"")&&a.setAttribute("nonce",b)};var Q=function(a,b){b=String(b);"application/xhtml+xml"===a.contentType&&(b=b.toLowerCase());return a.createElement(b)},R=function(a){this.g=a||r.document||document};R.prototype.appendChild=function(a,b){a.appendChild(b)};var S=function(a,b,c,d,e,f){try{var h=a.g,g=Q(a.g,"SCRIPT");g.async=!0;g.src=b instanceof w&&b.constructor===w?b.g:"type_error:TrustedResourceUrl";ha(g);h.head.appendChild(g);g.addEventListener("load",function(){e();d&&h.head.removeChild(g)});g.addEventListener("error",function(){0<c?S(a,b,c-1,d,e,f):(d&&h.head.removeChild(g),f())})}catch(l){f()}};var ia=r.atob("aHR0cHM6Ly93d3cuZ3N0YXRpYy5jb20vaW1hZ2VzL2ljb25zL21hdGVyaWFsL3N5c3RlbS8xeC93YXJuaW5nX2FtYmVyXzI0ZHAucG5n"),ja=r.atob("WW91IGFyZSBzZWVpbmcgdGhpcyBtZXNzYWdlIGJlY2F1c2UgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlIGlzIGludGVyZmVyaW5nIHdpdGggdGhpcyBwYWdlLg=="),ka=r.atob("RGlzYWJsZSBhbnkgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlLCB0aGVuIHJlbG9hZCB0aGlzIHBhZ2Uu"),la=function(a,b,c){this.h=a;this.j=new R(this.h);this.g=null;this.i=[];this.l=!1;this.o=b;this.m=c},V=function(a){if(a.h.body&&!a.l){var b=
+   function(){T(a);r.setTimeout(function(){return U(a,3)},50)};S(a.j,a.o,2,!0,function(){r[a.m]||b()},b);a.l=!0}},T=function(a){for(var b=W(1,5),c=0;c<b;c++){var d=X(a);a.h.body.appendChild(d);a.i.push(d)}b=X(a);b.style.bottom="0";b.style.left="0";b.style.position="fixed";b.style.width=W(100,110).toString()+"%";b.style.zIndex=W(2147483544,2147483644).toString();b.style["background-color"]=ma(249,259,242,252,219,229);b.style["box-shadow"]="0 0 12px #888";b.style.color=ma(0,10,0,10,0,10);b.style.display=
+   "flex";b.style["justify-content"]="center";b.style["font-family"]="Roboto, Arial";c=X(a);c.style.width=W(80,85).toString()+"%";c.style.maxWidth=W(750,775).toString()+"px";c.style.margin="24px";c.style.display="flex";c.style["align-items"]="flex-start";c.style["justify-content"]="center";d=Q(a.j.g,"IMG");d.className=A();d.src=ia;d.style.height="24px";d.style.width="24px";d.style["padding-right"]="16px";var e=X(a),f=X(a);f.style["font-weight"]="bold";f.textContent=ja;var h=X(a);h.textContent=ka;Y(a,
+   e,f);Y(a,e,h);Y(a,c,d);Y(a,c,e);Y(a,b,c);a.g=b;a.h.body.appendChild(a.g);b=W(1,5);for(c=0;c<b;c++)d=X(a),a.h.body.appendChild(d),a.i.push(d)},Y=function(a,b,c){for(var d=W(1,5),e=0;e<d;e++){var f=X(a);b.appendChild(f)}b.appendChild(c);c=W(1,5);for(d=0;d<c;d++)e=X(a),b.appendChild(e)},W=function(a,b){return Math.floor(a+Math.random()*(b-a))},ma=function(a,b,c,d,e,f){return"rgb("+W(Math.max(a,0),Math.min(b,255)).toString()+","+W(Math.max(c,0),Math.min(d,255)).toString()+","+W(Math.max(e,0),Math.min(f,
+   255)).toString()+")"},X=function(a){a=Q(a.j.g,"DIV");a.className=A();return a},U=function(a,b){0>=b||null!=a.g&&0!=a.g.offsetHeight&&0!=a.g.offsetWidth||(na(a),T(a),r.setTimeout(function(){return U(a,b-1)},50))},na=function(a){var b=a.i;var c="undefined"!=typeof Symbol&&Symbol.iterator&&b[Symbol.iterator];b=c?c.call(b):{next:aa(b)};for(c=b.next();!c.done;c=b.next())(c=c.value)&&c.parentNode&&c.parentNode.removeChild(c);a.i=[];(b=a.g)&&b.parentNode&&b.parentNode.removeChild(b);a.g=null};var pa=function(a,b,c,d,e){var f=oa(c),h=function(l){l.appendChild(f);r.setTimeout(function(){f?(0!==f.offsetHeight&&0!==f.offsetWidth?b():a(),f.parentNode&&f.parentNode.removeChild(f)):a()},d)},g=function(l){document.body?h(document.body):0<l?r.setTimeout(function(){g(l-1)},e):b()};g(3)},oa=function(a){var b=document.createElement("div");b.className=a;b.style.width="1px";b.style.height="1px";b.style.position="absolute";b.style.left="-10000px";b.style.top="-10000px";b.style.zIndex="-10000";return b};var L=function(a){J.call(this,a)};q(L,J);var qa=function(a){J.call(this,a)};q(qa,J);var ra=function(a,b){this.l=a;this.m=new R(a.document);this.g=b;this.i=K(this.g,1);b=M(this.g,2);this.o=x(K(b,4)||"");this.h=!1;b=M(this.g,13);b=x(K(b,4)||"");this.j=new la(a.document,b,K(this.g,12))};ra.prototype.start=function(){sa(this)};
+   var sa=function(a){ta(a);S(a.m,a.o,3,!1,function(){a:{var b=a.i;var c=r.btoa(b);if(c=r[c]){try{var d=O(P,r.atob(c))}catch(e){b=!1;break a}b=b===K(d,1)}else b=!1}b?Z(a,K(a.g,14)):(Z(a,K(a.g,8)),V(a.j))},function(){pa(function(){Z(a,K(a.g,7));V(a.j)},function(){return Z(a,K(a.g,6))},K(a.g,9),K(a.g,10),K(a.g,11))})},Z=function(a,b){a.h||(a.h=!0,a=new a.l.XMLHttpRequest,a.open("GET",b,!0),a.send())},ta=function(a){var b=r.btoa(a.i);a.l[b]&&Z(a,K(a.g,5))};(function(a,b){r[a]=function(c){for(var d=[],e=0;e<arguments.length;++e)d[e-0]=arguments[e];r[a]=da;b.apply(null,d)}})("__h82AlnkH6D91__",function(a){"function"===typeof window.atob&&(new ra(window,O(qa,window.atob(a)))).start()});}).call(this);
+   window.__h82AlnkH6D91__("WyJwdWItNjk2MDk0NzQwOTY2MDI3MCIsW251bGwsbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9iL3B1Yi02OTYwOTQ3NDA5NjYwMjcwIl0sbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9lbC9BR1NLV3hWWkh4UHVLbUVuYUVHcDZmcldNVTVHZloyVUxJZW8zcHZhaV9wUVJ5a2M4dmlkZlVwMENZeVJQZEQxdExOQzRkOUN6cEQxS1hFZml1cnFJZXFIOVVsc1R3XHUwMDNkXHUwMDNkP3RlXHUwMDNkVE9LRU5fRVhQT1NFRCIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFhUNmRjRFppendkR2FaMmQ2dHBOMEF3TWowNERwVWVBaUd4Y1lsNXR1UWZFdmhDSTZmaWRxcEN3RXNQeGF1eWJUc004eFlhVWFLSWJENnNWdVIyNXIwT0FcdTAwM2RcdTAwM2Q/YWJcdTAwM2QxXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFVFeld6ZVhfYjlBSnJsR05ab2N0MG1UVHBKZFUxQVo1b2piaVNXMXc4TjNJdG93TndOZ2YtNzcwOVNEQUlrSWlUbW5UU2hvVW5DYml0QmVYVTM4Z3M3c2dcdTAwM2RcdTAwM2Q/YWJcdTAwM2QyXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFVWdXc5Q2tNRzNoX3p2WGJHcHlLdU95cE4weWVabEVVSmVsbFBnR2F4Y3NockhWdklpSmlPMzZKM3JhRlhDSl9fdnp2U0ZuRFNXS3dPUXl5enpLWG5zc0FcdTAwM2RcdTAwM2Q/c2JmXHUwMDNkMiIsImRpdi1ncHQtYWQiLDIwLDEwMCwiY0hWaUxUWTVOakE1TkRjME1EazJOakF5TnpBXHUwMDNkIixbbnVsbCxudWxsLG51bGwsImh0dHBzOi8vd3d3LmdzdGF0aWMuY29tLzBlbW4vZi9wL3B1Yi02OTYwOTQ3NDA5NjYwMjcwLmpzP3VzcXBcdTAwM2RDQXciXSwiaHR0cHM6Ly9mdW5kaW5nY2hvaWNlc21lc3NhZ2VzLmdvb2dsZS5jb20vZWwvQUdTS1d4V0M5M05iUXBSTC12eTBWbXd3TjBwVllQTDE5eDJLYWJfQkFZYjVucWlRM0VZTTJ0ZXRQMHJxRzE5ZHF5X3NfZjh6VmhPc0ZIWExmeVJGUnJJTEhSak5aZ1x1MDAzZFx1MDAzZCJd");</script>
+   <script async src="https://www.googletagmanager.com/gtag/js?id=G-24X8H1LT7N"></script>
+   <script>
+      window.dataLayer = window.dataLayer || []
+      function gtag(){dataLayer.push(arguments)}
+      gtag('js', new Date())
+      gtag('config', 'G-24X8H1LT7N')
+   </script>
+  <meta property="og:image" content="https://raz1ner.com/post-images/Twitter-Algorithm.png">
+  <meta name="description" content="详细介绍推特 Twitter 的演算法以及推送机制。">
+  <link rel="canonical" href="https://raz1ner.com/post/Twitter-Algorithm/">
+  <meta property="og:title" content="推特 Twitter 演算法和推送机制 2023 最新 - Raz1ner">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://raz1ner.com/post-images/Twitter-Algorithm.png">
+  <meta property="og:url" content="https://raz1ner.com/post/Twitter-Algorithm/">
+  <meta property="og:description" content="详细介绍推特 Twitter 的演算法以及推送机制。">
+  <meta name="twitter:title" content="推特 Twitter 演算法和推送机制 2023 最新 - Raz1ner">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://raz1ner.com/post-images/Twitter-Algorithm.png">
+  <meta name="twitter:description" content="详细介绍推特 Twitter 的演算法以及推送机制。">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:300,300i,400,400i,700,700i,800" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Mallanna" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+</head>
+<body>
+  <div class="main">
+    <div class="header">
+      <div class="nav">
+        <div class="logo">
+          <a href="https://raz1ner.com">
+            <img class="avatar" alt="Raz1ner" src="https://raz1ner.com/images/avatar.png?v=1764290830388" alt="">
+          </a>
+          <div class="site-title">
+            <h1>Raz1ner</h1>
+          </div>
+          <svg width="32" height="32" viewBox="0 0 16 16" id="menuBtn" style="position:absolute;right:15px">
+            <path d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5">
+          </svg>
+        </div>
+        <div class="mobile-menu" style="display: none;">
+          <div style="text-align: center">
+            
+              <div class="nav-item">
+                <a href="/" class="menu">首页</a>
+              </div>
+              <div class="nav-item">
+                <a href="/Navigation" class="menu">导航</a>
+              </div>
+              <div class="nav-item">
+                <a href="/Awesome-Software" class="menu">软件</a>
+              </div>
+              <div class="nav-item">
+                <a href="/Extension/" class="menu">插件</a>
+              </div>
+              <div class="nav-item">
+                <a href="/Online-Tools" class="menu">在线工具</a>
+              </div>
+              <div class="nav-item">
+                <a href="/post/Linux-Command" class="menu">Linux命令</a>
+              </div>
+              <div class="nav-item">
+                <a href="/Excel" class="menu">Excel教程</a>
+              </div>
+              <div class="nav-item">
+                <a href="/post/Terms-and-Privacy" class="menu">隐私与条款</a>
+              </div>
+          </div>
+        </div>
+
+        <div class="menu-container">
+          <ul>
+            <li>
+              <a href="/" class="menu">首页</a>
+            </li>
+            <li>
+              <a href="/Navigation" class="menu">导航</a>
+            </li>
+            <li>
+              <a href="/Awesome-Software" class="menu">软件</a>
+            </li>
+            <li>
+              <a href="/Extension/" class="menu">插件</a>
+            </li>
+            <li>
+              <a href="/Online-Tools" class="menu">在线工具</a>
+            </li>
+            <li>
+              <a href="/post/Linux-Command" class="menu">Linux命令</a>
+            </li>
+            <li>
+              <a href="/Excel" class="menu">Excel教程</a>
+            </li>
+            <li>
+              <a href="/post/Terms-and-Privacy" class="menu">隐私与条款</a>
+            </li>
+          </ul>
+        </div>
+
+
+
+        <form id="gridea-search-form" action="https://raz1ner.com/search/" class="search">
+          <input type="search" name="q" class="search-box">
+          <span class="search-button">
+            <span class="search-icon"></span>
+          </span>
+        </form>
+      </div>
+    </div>
+    <script>
+      document.getElementsByClassName('search-button')[0].addEventListener('click', function () {
+        document.getElementById('gridea-search-form').classList.toggle('open');
+      })
+      document.getElementById('menuBtn').addEventListener('click', () => {
+        const element = document.querySelector('.mobile-menu')
+        if (element.style.display === 'none' || element.style.display === '') {
+          element.style.display = 'block'
+        } else {
+          element.style.display = 'none'
+        }
+      })
+    </script>
+
+    <div id="main-content" class="post-detail main-container">
+      <!-- left -->
+      <div id="content" class="main-container-left">
+        <article class="post i-card">
+        <h2 class="post-title">推特 Twitter 演算法和推送机制 2023 最新</h2>
+        <div class="post-info">
+          <time class="post-time">2023-04-08 / 19 min read</time>
+            <a href="https://raz1ner.com/tag/twitter-x/" class="post-tag i-tag i-tag-">#Twitter (X)</a>
+        </div>
+        <!--
+          
+        <div class="post-feature-image" style="background-image: url('https://raz1ner.com/post-images/Twitter-Algorithm.png')"></div>
+        -->
+          <div class="post-content">
+            <p>详细介绍推特 Twitter 的演算法以及推送机制。</p>
+<!-- more -->
+<style>.form{width:300px;margin-bottom:20px;background-color:#fff;border:1px solid transparent;border-radius:16px 16px 5px 5px;box-shadow:0 1px 1px rgba(0,0,0,.05);border-color:#428bca;margin:10px auto}.panel-heading{color:#fff;background-color:#428bca;border-color:#428bca;text-align:center;padding:15px;border-bottom:1px solid transparent;border-top-right-radius:13px;border-top-left-radius:13px}lable{width:100px;font-size:16px;padding-top:7px;float:left;text-align:right}.form-control{font-size:16px;margin-top:10px;margin-bottom:10px}.btn,input,select{margin-left:10px;padding:5px;font-size:16px;width:150px;box-sizing:border-box}.btn{margin:0 auto}#accountScore,#postScore{text-align:center;margin:5px}</style>
+<p>我将会详细解释我个人对 Twitter 演算法代码的理解并附上来源，然而不同的工程师分析出的结论可能会有所不同，另外 Twitter 演算法可能随时会发生变化。因此，请理性看待这篇文章的内容，仅供参考。</p>
+<p>如需转载请注明出处，并附上本文的链接。</p>
+<h2 id="推文权重演算法">推文权重演算法</h2>
+<p>Twitter 的演算法模型中有一个叫做「Heavy Ranker」的机器学习模型，在首页的「为你推荐」中检索推文的权重分数进行排名。</p>
+<p>下面是总结的各项类型的权重值以及上限数值。不同的功能都有不同的上限值，即使某种功能的数量很大，也不会无限叠加增益。</p>
+<table style="margin: 0 auto;">
+	<thead>
+		<tr>
+			<th scope="col">类型</th>
+			<th scope="col">分数</th>
+			<th scope="col">上限</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr style="text-align:center">
+			<td>点赞</td>
+			<td>+0.5 分</td>
+			<td>100 分</td>
+		</tr>
+		<tr>
+			<td colspan="3">用户点赞了推文。</td>
+		</tr>
+		<tr style="text-align:center">
+			<td>转发</td>
+			<td>+1.0 分</td>
+			<td>100 分</td>
+		</tr>
+		<tr>
+			<td colspan="3">用户转发了推文。</td>
+		</tr>
+		<tr style="text-align:center">
+			<td>回复</td>
+			<td>+13.5 分</td>
+			<td>100 分</td>
+		</tr>
+		<tr>
+			<td colspan="3">用户对推文回复。</td>
+		</tr>
+		<tr style="text-align:center">
+			<td>进入个人主页</td>
+			<td>+12 分</td>
+			<td>1000000 分</td>
+		</tr>
+		<tr>
+			<td colspan="3">从推文进入作者主页并点赞或者回复。</td>
+		</tr>
+		<tr style="text-align:center">
+			<td>视频被播放</td>
+			<td>+0.005 分</td>
+			<td>100 分</td>
+		</tr>
+		<tr>
+			<td colspan="3">视频类型的推文，用户观看进度至少 50% 以上。</td>
+		</tr>
+		<tr style="text-align:center">
+			<td>作者回复</td>
+			<td>+75 分</td>
+			<td>200 分</td>
+		</tr>
+		<tr>
+			<td colspan="3">推文的作者回复了用户对该推文的回复。</td>
+		</tr>
+		<tr style="text-align:center">
+			<td>回复的回复</td>
+			<td>+11 分</td>
+			<td>1000000 分</td>
+		</tr>
+		<tr>
+			<td colspan="3">用户对推文的回复进行点赞或者回复。</td>
+		</tr>
+		<tr style="text-align:center">
+			<td>浏览 2 分钟</td>
+			<td>+10 分</td>
+			<td>1000000 分</td>
+		</tr>
+		<tr>
+			<td colspan="3">用户浏览推文停留不少于 2 分钟。</td>
+		</tr>
+		<tr style="text-align:center">
+			<td>负面反应</td>
+			<td>-74 分</td>
+			<td>-1000 分</td>
+		</tr>
+		<tr>
+			<td colspan="3">用户对推文做出负面反应（对这条推文不感兴趣、屏蔽作者、隐藏作者）。</td>
+		</tr>
+		<tr style="text-align:center">
+			<td>被举报</td>
+			<td>-369 分</td>
+			<td>-20000 分</td>
+		</tr>
+		<tr>
+			<td colspan="3">用户举报了推文。</td>
+		</tr>
+	</tbody>
+</table>
+<br>
+<p>各项类型分数相关代码。由于上限这部分代码太长，所以就不放过来了，可以从下面的来源中找到。</p>
+<pre><code class="language-Scala">scored_tweets_model_weight_fav: 0.5
+scored_tweets_model_weight_retweet: 1.0
+scored_tweets_model_weight_reply: 13.5
+scored_tweets_model_weight_good_profile_click: 12.0
+scored_tweets_model_weight_video_playback50: 0.005
+scored_tweets_model_weight_reply_engaged_by_author: 75.0
+scored_tweets_model_weight_good_click: 11.0
+scored_tweets_model_weight_good_click_v2: 10.0
+scored_tweets_model_weight_negative_feedback_v2: -74.0
+scored_tweets_model_weight_report: -369.0
+</code></pre>
+<h3 id="总分数的算法">总分数的算法</h3>
+<pre><code class="language-Scala">score = sum_i { (weight of engagement i) * (probability of engagement i) }
+</code></pre>
+<p>总分 = 权重 * 参与数</p>
+<p>举个例子，例如有 10 个用户给推文点赞了，那么点赞的权重是 +0.5 分，参与数有 10 个用户，也就是 0.5 * 10 = 5。总计是 5 分的权重。</p>
+<p>推文演算法和总分数算法来源：<a href="https://github.com/twitter/the-algorithm-ml/blob/main/projects/home/recap/README.md" target="_blank">README.md</a></p>
+<p>上限来源：<a href="https://github.com/twitter/the-algorithm/blob/main/home-mixer/server/src/main/scala/com/twitter/home_mixer/product/scored_tweets/param/ScoredTweetsParam.scala" target="_blank">ScoredTweetsParam.scala</a></p>
+<p>不过网上还有一个广为流传的说法，点赞权重 30，转发权重 20。我查了一下这个说法的代码来源。</p>
+<pre><code class="language-Scala">private def getLinearRankingParams: ThriftRankingParams = {
+  ThriftRankingParams(
+    `type` = Some(ThriftScoringFunctionType.Linear),
+    minScore = -1.0e100,
+    retweetCountParams = Some(ThriftLinearFeatureRankingParams(weight = 20.0)),
+    replyCountParams = Some(ThriftLinearFeatureRankingParams(weight = 1.0)),
+    reputationParams = Some(ThriftLinearFeatureRankingParams(weight = 0.2)),
+    luceneScoreParams = Some(ThriftLinearFeatureRankingParams(weight = 2.0)),
+    textScoreParams = Some(ThriftLinearFeatureRankingParams(weight = 0.18)),
+    urlParams = Some(ThriftLinearFeatureRankingParams(weight = 2.0)),
+    isReplyParams = Some(ThriftLinearFeatureRankingParams(weight = 1.0)),
+    favCountParams = Some(ThriftLinearFeatureRankingParams(weight = 30.0)),
+    langEnglishUIBoost = 0.5,
+    langEnglishTweetBoost = 0.2,
+    langDefaultBoost = 0.02,
+    unknownLanguageBoost = 0.05,
+    offensiveBoost = 0.1,
+    inTrustedCircleBoost = 3.0,
+    multipleHashtagsOrTrendsBoost = 0.6,
+    inDirectFollowBoost = 4.0,
+    tweetHasTrendBoost = 1.1,
+    selfTweetBoost = 2.0,
+    tweetHasImageUrlBoost = 2.0,
+    tweetHasVideoUrlBoost = 2.0,
+    useUserLanguageInfo = true,
+    ageDecayParams = Some(ThriftAgeDecayRankingParams(slope = 0.005, base = 1.0))
+  )
+}
+</code></pre>
+<p>这段代码确实写着点赞的权限默认 30，转发 20，不过这段代码已经被移除，原因是这段代码是多余的，并没有使用这段代码进行排名。</p>
+<figure data-type="image" tabindex="1"><img src="https://raz1ner.com/post-images/1681162788813.png" alt="" loading="lazy"></figure>
+<p>来源： <a href="https://github.com/twitter/the-algorithm/commit/138bb519975407d4ea0dc1478d897d451ef05dab" target="_blank">EarlybirdTensorflowBasedSimilarityEngine.scala</a></p>
+<h2 id="广告权重演算法">广告权重演算法</h2>
+<p>广告：+10000 分权重</p>
+<pre><code class="language-Scala">object AdsCandidateGenerationScoreBoostFactor
+    extends FSBoundedParam[Double](
+      name = &quot;ads_candidate_generation_score_boost_factor&quot;,
+      default = 10000.0,
+      min = 1.0,
+      max = 100000.0
+    )
+</code></pre>
+<p>来源：<a href="https://github.com/twitter/the-algorithm/blob/main/cr-mixer/server/src/main/scala/com/twitter/cr_mixer/param/AdsParams.scala" target="_blank">AdsParams.scala</a></p>
+<h2 id="twitter-blue-权重演算法">Twitter Blue 权重演算法</h2>
+<p>开通了 Twitter Blue 可以获得额外的权重加成。</p>
+<table style="margin: 0 auto;">
+	<thead>
+		<tr>
+			<th scope="col">类型</th>
+			<th scope="col">分数</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr style="text-align: center;">
+			<td>Twitter Blue (关注)</td>
+			<td>4x</td>
+		</tr>
+		<tr>
+			<td colspan="2">已经关注的账户。</td>
+		</tr>
+		<tr style="text-align: center;">
+			<td>Twitter Blue (非关注)</td>
+			<td>2x</td>
+		</tr>
+		<tr>
+			<td colspan="2">未关注的账户。</td>
+		</tr>
+	</tbody>
+</table>
+<br>
+<p>Twitter Blue 权重相关的代码</p>
+<pre><code class="language-Scala">object BlueVerifiedAuthorInNetworkMultiplierParam
+    extends FSBoundedParam[Double](
+      name = &quot;home_mixer_blue_verified_author_in_network_multiplier&quot;,
+      default = 4.0,
+      min = 0.0,
+      max = 100.0
+    )
+
+object BlueVerifiedAuthorOutOfNetworkMultiplierParam
+    extends FSBoundedParam[Double](
+      name = &quot;home_mixer_blue_verified_author_out_of_network_multiplier&quot;,
+      default = 2.0,
+      min = 0.0,
+      max = 100.0
+    )
+</code></pre>
+<p>Twitter Blue 权重来源：<a href="https://github.com/twitter/the-algorithm/blob/main/home-mixer/server/src/main/scala/com/twitter/home_mixer/param/HomeGlobalParams.scala" target="_blank">HomeGlobalParams.scala</a></p>
+<h2 id="账号权重演算法">账号权重演算法</h2>
+<p>根据账号的状态计算账号的权重值。<br>
+被停用的账号：0 分<br>
+已验证的账号：100 分<br>
+未验证的账号：根据设备、账号情况和年龄综合计算分数，最高 55 分。<br>
+在此基础上还会计算关注数和粉丝数的比例来决定最终的权重值。</p>
+<p>相关代码</p>
+<pre><code class="language-Scala">object UserMass {
+  private val currentTimestamp = Time.now.inMilliseconds
+  private val constantDivisionFactorGt_threshFriendsToFollowersRatioUMass = 5.0
+  private val threshAbsNumFriendsUMass = 500
+  private val threshFriendsToFollowersRatioUMass = 0.6
+  private val deviceWeightAdditive = 0.5
+  private val ageWeightAdditive = 0.2
+  private val restrictedWeightMultiplicative = 0.1
+  def getUserMass(combinedUser: CombinedUser): Option[UserMassInfo] = {
+    val user = Option(combinedUser.user)
+    val userId = user.map(_.id).getOrElse(0L)
+    val userExtended = Option(combinedUser.user_extended)
+    val age = user.map(_.created_at_msec).map(DateUtil.diffDays(_, currentTimestamp)).getOrElse(0)
+    val isRestricted = user.map(_.safety).exists(_.restricted)
+    val isSuspended = user.map(_.safety).exists(_.suspended)
+    val isVerified = user.map(_.safety).exists(_.verified)
+    val hasValidDevice = user.flatMap(u =&gt; Option(u.devices)).exists(_.isSetMessaging_devices)
+    val numFollowers = userExtended.flatMap(u =&gt; Option(u.followers)).map(_.toInt).getOrElse(0)
+    val numFollowings = userExtended.flatMap(u =&gt; Option(u.followings)).map(_.toInt).getOrElse(0)
+    if (userId == 0L || user.map(_.safety).exists(_.deactivated)) {
+      None
+    } else {
+      val mass =
+        if (isSuspended)
+          0
+        else if (isVerified)
+          100
+        else {
+          var score = deviceWeightAdditive * 0.1 +
+            (if (hasValidDevice) deviceWeightAdditive else 0)
+          val normalizedAge = if (age &gt; 30) 1.0 else (1.0 min scala.math.log(1.0 + age / 15.0))
+          score *= normalizedAge
+          if (score &lt; 0.01) score = 0.01
+          if (isRestricted) score *= restrictedWeightMultiplicative
+          score = (score min 1.0) max 0
+          score *= 100
+          score
+        }
+      val friendsToFollowersRatio = (1.0 + numFollowings) / (1.0 + numFollowers)
+      val adjustedMass =
+        if (numFollowings &gt; threshAbsNumFriendsUMass &amp;&amp;
+          friendsToFollowersRatio &gt; threshFriendsToFollowersRatioUMass) {
+          mass / scala.math.exp(
+            constantDivisionFactorGt_threshFriendsToFollowersRatioUMass *
+              (friendsToFollowersRatio - threshFriendsToFollowersRatioUMass)
+          )
+        } else {
+          mass
+        }
+      Some(UserMassInfo(userId, adjustedMass))
+    }
+  }
+}
+</code></pre>
+<p>这里定义了一些变量值：<br>
+currentTimestamp: 当前的时间戳（用来计算账号和当前时间的差距）。</p>
+<p>constantDivisionFactorGt_threshFriendsToFollowersRatioUMass: 关注数与粉丝数常量因子（用于衡量用户好友与粉丝比例）。</p>
+<p>threshAbsNumFriendsUMass: 用户最小关注数（用于计算用户权重）</p>
+<p>threshFriendsToFollowersRatioUMass: 关注数与粉丝数阈值（用户关注数与粉丝数比例的最小允许值，当比例超过这个值时，会造成负面影响）。</p>
+<p>deviceWeightAdditive: 设备权重</p>
+<p>ageWeightAdditive: 年龄权重（似乎没有用到）</p>
+<p>restrictedWeightMultiplicative: 受限用户权重</p>
+<p>计算分数的时候会先判断账号的状态，如果账号被停用了，分数为 0；如果是验证过的账号分数为 100，如果是没有验证的账号会根据条件进行计算。</p>
+<pre><code class="language-Scala">if (isSuspended)
+  0
+else if (isVerified)
+  100
+else {
+  var score = deviceWeightAdditive * 0.1 +
+    (if (hasValidDevice) deviceWeightAdditive else 0)
+  val normalizedAge = if (age &gt; 30) 1.0 else (1.0 min scala.math.log(1.0 + age / 15.0))
+  score *= normalizedAge
+  if (score &lt; 0.01) score = 0.01
+  if (isRestricted) score *= restrictedWeightMultiplicative
+  score = (score min 1.0) max 0
+  score *= 100
+  score
+}
+</code></pre>
+<p>这段代码中会先判断是否持有有效设备再加上初始权重，不过我没找到其它更细节的代码检测设备的有效性。如果设备有效返回 0.5 分，如果无效返回 0 分。deviceWeightAdditive 的默认值是 0.5，那么根据下面的算法，假设设备是有效的情况下 0.5 * 0.1 + 0.5 = 0.55 分。</p>
+<pre><code class="language-Scala">deviceWeightAdditive * 0.1 +
+  (if (hasValidDevice) deviceWeightAdditive else 0)
+
+</code></pre>
+<p>再根据年龄进行计算，如果年龄大于 30 岁，返回 1 分，如果年龄小于或等于 30 岁，就会进行下一步的计算，将年龄除以 15，再加上 1，然后计算自然对数。</p>
+<p>自然对数是以常数 e 为底数的对数，公式：ln(x)。</p>
+<p>假设年龄是 22 岁，ln(1 + 22 / 15) ≈ 0.9028677115420144</p>
+<p>如果自然对数小于 1 返回自然对数，如果自然对数大于 1，则返回 1，也就是说 normalizedAge 的值最大不会超过 1。</p>
+<p>最后再将计算的结果乘以之前算好的分数，即 0.55 * 0.9028677115420144 = 0.49657724134810793</p>
+<pre><code class="language-Scala">val normalizedAge = if (age &gt; 30) 1.0 else (1.0 min scala.math.log(1.0 + age / 15.0))
+  score *= normalizedAge
+</code></pre>
+<p>下面又进行了一些判断，如果分数小于 0.01 的情况下，返回 0.01，不过根据上面的条件，分数并不会低于 0.01 分。</p>
+<p>如果账号受限了，会将总分数乘以受限权重，也就是 0.1。</p>
+<p>如果分数大于 1，会将分数设为 1，如果分数小于 1，则会返回当前分数；最后将分数乘以 100。</p>
+<p>假设账号没有受限的情况下，根据上面的条件，得出分数为 49.657724134810793。</p>
+<pre><code class="language-Scala">if (score &lt; 0.01) score = 0.01
+if (isRestricted) score *= restrictedWeightMultiplicative
+score = (score min 1.0) max 0
+score *= 100
+</code></pre>
+<p>接下来会根据账号的关注数和粉丝数进行计算分数。1 加上关注数的和除以 1 加上粉丝数的和。假设账号关注数有 600，粉丝数有 450，那么关注数和粉丝数的比例是：(1 + 600) / (1 + 450) ≈ 1.3325942350332594。</p>
+<pre><code class="language-Scala">val friendsToFollowersRatio = (1.0 + numFollowings) / (1.0 + numFollowers)
+</code></pre>
+<p>先判断两个条件，一个是关注数是否大于设定的用户最小关注数 (500) 和比例是否大于关注数与粉丝数阈值 (0.6)，如果不满足这两个条件则不会进行下面的计算，直接返回之前计算好的分数。</p>
+<p>如果满足以上的两个条件，会先用比例减去关注数与粉丝数阈值的差乘以关注数与粉丝数常量因子的值，结果为：5 * (1.3325942350332594 - 0.6) = 3.6629711751662968，再根据这个结果使用指数函数计算幂值。</p>
+<p>指数函数公式：f(x) = a^x</p>
+<p>那么根据计算的结果计算指数函数的结果 e^3.6629711751662968 ≈ 2.565617039296528，这个结果就是最终的账号权重分数。</p>
+<pre><code class="language-Scala">val adjustedMass =
+  if (numFollowings &gt; threshAbsNumFriendsUMass &amp;&amp;
+    friendsToFollowersRatio &gt; threshFriendsToFollowersRatioUMass) {
+    mass / scala.math.exp(
+      constantDivisionFactorGt_threshFriendsToFollowersRatioUMass *
+        (friendsToFollowersRatio - threshFriendsToFollowersRatioUMass)
+    )
+  } else {
+    mass
+  }
+</code></pre>
+<p>来源：<a href="https://github.com/twitter/the-algorithm/blob/main/src/scala/com/twitter/graph/batch/job/tweepcred/UserMass.scala" target="_blank">UserMass.scala</a></p>
+<div class="form">
+    <div class="panel-heading">账号权重计算器</div>
+    <div class="panel-body">
+      <div class="form-control">
+        <lable>账号状态</lable>
+        <select id="accountStatus">
+          <option value="">请选择账号状态</option>
+          <option value="suspended">停用</option>
+          <option value="verified">已验证</option>
+          <option value="unVerified">未验证</option>
+        </select>
+      </div>
+      <div class="form-control">
+        <lable>是否受限</lable>
+        <select id="restrictedStatus">
+          <option value="">请选择账号状态</option>
+          <option value="restricted">受限</option>
+          <option value="unRestricted">未受限</option>
+        </select>
+      </div>
+      <div class="form-control">
+        <lable>生日</lable>
+        <input type="date" id="birthday">
+      </div>
+      <div class="form-control">
+        <lable>关注数</lable>
+        <input type="number" id="followings">
+      </div>
+      <div class="form-control">
+        <lable>粉丝数</lable>
+        <input type="number" id="followers">
+      </div>
+      <div class="form-control">
+        <button class="btn btn-primary btn-block" onclick="calcAccountWeight()">计算</button>
+        <p id="accountScore"></p>
+      </div>
+    </div>
+  </div>
+<h2 id="排名权重演算法">排名权重演算法</h2>
+<table style="margin: 0 auto;">
+	<thead>
+		<tr>
+			<th scope="col">类型</th>
+			<th scope="col">分数</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr style="text-align: center;">
+			<td>UI 英文，推文非英文</td>
+			<td>0.3x</td>
+		</tr>
+		<tr>
+			<td colspan="2">Twitter 的界面语言是英文，但是发布的推文不是英文。</td>
+		</tr>
+		<tr style="text-align: center;">
+			<td>推文英文，UI 非英文</td>
+			<td>0.7x</td>
+		</tr>
+		<tr>
+			<td colspan="2">发布的推文是英文，但是 Twitter 的界面语言不是英文。</td>
+		</tr>
+		<tr style="text-align: center;">
+			<td>UI 和语言不同</td>
+			<td>0.1x</td>
+		</tr>
+		<tr>
+			<td colspan="2">Twitter 的界面语言是英文，但是发布的推文不是英文。</td>
+		</tr>
+		<tr style="text-align: center;">
+			<td>无法识别语言</td>
+			<td>0.01x</td>
+		</tr>
+		<tr>
+			<td colspan="2">推文的语言不是用户可理解的语言，也不会界面语言。</td>
+		</tr>
+		<tr style="text-align: center;">
+			<td>UI 英文，推文非英文</td>
+			<td>0.3x</td>
+		</tr>
+		<tr>
+			<td colspan="2">Twitter 的界面语言是英文，但是发布的推文不是英文。</td>
+		</tr>
+		<tr style="text-align: center;">
+			<td>图片、视频、新闻链接</td>
+			<td>1.0x</td>
+		</tr>
+		<tr>
+			<td colspan="2">根据媒体的数量累计加成。</td>
+		</tr>
+		<tr style="text-align: center;">
+			<td>外部链接</td>
+			<td>隐藏</td>
+		</tr>
+		<tr>
+			<td colspan="2">如果链接非媒体链接，而且没有足够的互动权重，会被隐藏。</td>
+		</tr>
+	</tbody>
+</table>
+<br>
+<table style="margin: 0 auto;">
+	<thead>
+		<tr>
+			<th colspan="2" scope="col">降级属性</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr style="text-align: center;">
+			<td>无文字内容</td>
+			<td>1.0x</td>
+		</tr>
+		<tr>
+			<td colspan="2">推文的内容没有任何文字。</td>
+		</tr>
+		<tr style="text-align: center;">
+			<td>只有链接</td>
+			<td>1.0x</td>
+		</tr>
+		<tr>
+			<td colspan="2">推文只有链接，没有其它内容。</td>
+		</tr>
+		<tr style="text-align: center;">
+			<td>只有名字</td>
+			<td>1.0x</td>
+		</tr>
+		<tr>
+			<td colspan="2">推文只有名字，没有其它内容。</td>
+		</tr>
+	</tbody>
+</table>
+<br>
+由于这段代码太长，我只把部分内容摘取出来，下面的代码不是完整的代码。
+这里定义了各项类型的初始值。
+<p>maxHitsPerUser 默认值是 3，代表演算法最多推送 3 条推文，如果账号权重大于 maxTweepcredForAntiGaming 设置的值，演算法会推送所有的推文。</p>
+<pre><code class="language-Scala">struct ThriftRankingParams {
+  30: optional double langEnglishUIBoost = 0.3
+  31: optional double langEnglishTweetBoost = 0.7
+  32: optional double langDefaultBoost = 0.1
+  43: optional double unknownLanguageBoost = 0.01
+  60: optional bool enableHitDemotion = 0
+  61: optional double noTextHitDemotion = 1.0
+  62: optional double urlOnlyHitDemotion = 1.0
+  63: optional double nameOnlyHitDemotion = 1.0
+  64: optional double separateTextAndNameHitDemotion = 1.0
+  65: optional double separateTextAndUrlHitDemotion = 1.0
+  102: optional double multipleHashtagsOrTrendsBoost = 1
+  108: optional double tweetHasImageUrlBoost = 1
+  109: optional double tweetHasVideoUrlBoost = 1
+  110: optional double tweetHasNewsUrlBoost = 1
+}(persisted='true')
+
+
+struct ThriftFacetRankingOptions {
+  35: optional i32 maxHitsPerUser = 3
+  36: optional i32 maxTweepcredForAntiGaming = 65
+}(persisted='true')
+</code></pre>
+<p>如果推文包含图片、视频或者新闻链接，会在原来的数量上 +1。</p>
+<pre><code class="language-Java">if (data.hasImageUrl || data.hasVideoUrl) {
+  relevanceStats.setNumWithMedia(relevanceStats.getNumWithMedia() + 1);
+}
+if (data.hasNewsUrl) {
+  relevanceStats.setNumWithNews(relevanceStats.getNumWithNews() + 1);
+}
+</code></pre>
+<p>如果内容包含图片、视频或者新闻链接，会给推文增加权重，计算方式：总分数 _ (1 _ (图片数量 + 1))</p>
+<pre><code class="language-Java">// Media/News url boosts.
+if (data.hasImageUrl || data.hasVideoUrl) {
+  data.hasMedialUrlBoostApplied = true;
+  boostedScore *= params.tweetHasMediaUrlBoost;
+}
+if (data.hasNewsUrl) {
+  data.hasNewsUrlBoostApplied = true;
+  boostedScore *= params.tweetHasNewsUrlBoost;
+}
+</code></pre>
+<p>下面的这段代码也说明了图片、视频或者新闻链接会有额外的权重加成，无文字、只有链接、只有名字会降低权重。</p>
+<pre><code class="language-Java">if (scoringData.tweetHasTrendsBoostApplied) {
+  boostDetails.add(Explanation.match(
+    (float) params.tweetHasTrendBoost, &quot;[x] Tweet has trend boost&quot;));
+}
+if (scoringData.hasMedialUrlBoostApplied) {
+  boostDetails.add(Explanation.match(
+    (float) params.tweetHasMediaUrlBoost, &quot;[x] Media url boost&quot;));
+}
+if (scoringData.hasNewsUrlBoostApplied) {
+  boostDetails.add(Explanation.match(
+    (float) params.tweetHasNewsUrlBoost, &quot;[x] News url boost&quot;));
+}
+boostDetails.add(Explanation.match(0.0f, &quot;[FIELDS HIT] &quot; + scoringData.hitFields));
+if (scoringData.hasNoTextHitDemotionApplied) {
+  boostDetails.add(Explanation.match(
+    (float) params.noTextHitDemotion, &quot;[x] No text hit demotion&quot;));
+}
+if (scoringData.hasUrlOnlyHitDemotionApplied) {
+  boostDetails.add(Explanation.match(
+    (float) params.urlOnlyHitDemotion, &quot;[x] URL only hit demotion&quot;));
+}
+if (scoringData.hasNameOnlyHitDemotionApplied) {
+  boostDetails.add(Explanation.match(
+    (float) params.nameOnlyHitDemotion, &quot;[x] Name only hit demotion&quot;));
+}
+if (scoringData.hasSeparateTextAndNameHitDemotionApplied) {
+  boostDetails.add(Explanation.match((float) params.separateTextAndNameHitDemotion,
+    &quot;[x] Separate text/name demotion&quot;));
+}
+if (scoringData.hasSeparateTextAndUrlHitDemotionApplied) {
+  boostDetails.add(Explanation.match((float) params.separateTextAndUrlHitDemotion,
+    &quot;[x] Separate text/url demotion&quot;));
+}
+</code></pre>
+<p>来源：<a href="https://github.com/twitter/the-algorithm/blob/main/src/thrift/com/twitter/search/common/ranking/ranking.thrift" target="_blank">ranking.thrift</a><br>
+来源：<a href="https://github.com/twitter/the-algorithm/blob/main/src/java/com/twitter/search/earlybird/search/relevance/scoring/FeatureBasedScoringFunction.java" target="_blank">FeatureBasedScoringFunction.java</a></p>
+<h2 id="推文发布时间演算法">推文发布时间演算法</h2>
+<p>推文会随着时间的推移而降低分数。</p>
+<p>相关代码</p>
+<pre><code class="language-Scala">struct ThriftAgeDecayRankingParams {
+  // the rate in which the score of older tweets decreases
+  1: optional double slope = 0.003
+  // the age, in minutes, where the age score of a tweet is half of the latest tweet
+  2: optional double halflife = 360.0
+  // the minimal age decay score a tweet will have
+  3: optional double base = 0.6
+}(persisted='true')
+</code></pre>
+<p>这里使用了时间衰减函数，衰减率为 0.003，衰减半衰期为 360 分钟。这个衰减函数表示，随着时间的推移，一个推文的分数将逐渐下降，下降的速率取决于时间的差距和衰减率。在这种情况下，当一个推文的发布时间与当前时间相差 500 分钟时，可以通过以下面的公式计算推文的衰减分数：</p>
+<p>衰减分数 = 基础分数 _ exp(-衰减率 _ (发布时间 - 当前时间) / 衰减半衰期)</p>
+<p>来源：<a href="https://github.com/twitter/the-algorithm/blob/main/src/thrift/com/twitter/search/common/ranking/ranking.thrift" target="_blank">ranking.thrift</a></p>
+  <div class="form">
+    <div class="panel-heading">推文权重衰减计算器</div>
+    <div class="panel-body">
+      <div class="form-control">
+        <lable>发布时间</lable>
+        <input type="datetime-local" id="postTime">
+      </div>
+      <div class="form-control">
+        <button class="btn btn-primary btn-block" onclick="calcPostWeight()">计算</button>
+        <p id="postScore"></p>
+      </div>
+    </div>
+  </div>
+<h2 id="违反政策的内容">违反政策的内容</h2>
+<p>如果推文的内容包含违反政策的内容会被降低权重，包括但不限于：鼓励自残、仇恨行为、无端血腥、宣扬暴力、鼓励围攻骚扰、死亡前或死者用户、发布私人信息、侵犯隐私权、威胁曝光、暴力性行为、性骚扰、暴力威胁、干预选举、虚假选举信息、黑客内容、欺诈、平台操作、虚假乌克兰信息、误导信息、虚假医疗信息等。</p>
+<p>相关代码</p>
+<pre><code class="language-Scala">val reasonToPolicyInViolation: Map[Reason, PolicyInViolation] = Map(
+  AbuseEpisodic -&gt; PolicyInViolation.AbusePolicyEpisodic,
+  AbuseEpisodicEncourageSelfHarm -&gt; PolicyInViolation.AbusePolicyEpisodicEncourageSelfharm,
+  AbuseEpisodicHatefulConduct -&gt; PolicyInViolation.AbusePolicyEpisodicHatefulConduct,
+  AbuseGratuitousGore -&gt; PolicyInViolation.AbusePolicyGratuitousGore,
+  AbuseGlorificationOfViolence -&gt; PolicyInViolation.AbusePolicyGlorificationofViolence,
+  AbuseMobHarassment -&gt; PolicyInViolation.AbusePolicyEncourageMobHarassment,
+  AbuseMomentOfDeathOrDeceasedUser -&gt; PolicyInViolation.AbusePolicyMomentofDeathDeceasedUser,
+  AbusePrivateInformation -&gt; PolicyInViolation.AbusePolicyPrivateInformation,
+  AbuseRightToPrivacy -&gt; PolicyInViolation.AbusePolicyRighttoPrivacy,
+  AbuseThreatToExpose -&gt; PolicyInViolation.AbusePolicyThreattoExpose,
+  AbuseViolentSexualConduct -&gt; PolicyInViolation.AbusePolicyViolentSexualConduct,
+  AbuseViolentThreatHatefulConduct -&gt; PolicyInViolation.AbusePolicyViolentThreatsHatefulConduct,
+  AbuseViolentThreatOrBounty -&gt; PolicyInViolation.AbusePolicyViolentThreatorBounty,
+  OneOff -&gt; PolicyInViolation.OneOff,
+  VotingMisinformation -&gt; PolicyInViolation.MisinformationVoting,
+  HackedMaterials -&gt; PolicyInViolation.HackedMaterials,
+  Scams -&gt; PolicyInViolation.Scam,
+  PlatformManipulation -&gt; PolicyInViolation.PlatformManipulation,
+  MisinfoCivic -&gt; PolicyInViolation.MisinformationCivic,
+  MisinfoCrisis -&gt; PolicyInViolation.AbusePolicyUkraineCrisisMisinformation,
+  MisinfoGeneric -&gt; PolicyInViolation.MisinformationGeneric,
+  MisinfoMedical -&gt; PolicyInViolation.MisinformationMedical,
+)
+</code></pre>
+<p>来源：<a href="https://github.com/twitter/the-algorithm/blob/main/visibilitylib/src/main/scala/com/twitter/visibility/rules/PublicInterestRules.scala" target="_blank">PublicInterestRules.scala</a></p>
+<h2 id="推文推送机制">推文推送机制</h2>
+<p>下面以“我”为例子，当我发布了一个推文，或者对某一个帖子进行互动（点赞、回复或分享）的操作，那么就会将这篇推文推送到我的粉丝。</p>
+<figure data-type="image" tabindex="2"><img src="https://raz1ner.com/post-images/1681179775696.png" alt="" loading="lazy"></figure>
+<p>如果我的粉丝对推文进行互动，那么就会将这篇推文推送到他们的粉丝，如果不互动就不会继续再往外推送。</p>
+<p>粉色是蓝色粉丝的关系，也就是我粉丝的粉丝。</p>
+<figure data-type="image" tabindex="3"><img src="https://raz1ner.com/post-images/1681179940229.png" alt="" loading="lazy"></figure>
+<p>如果我的粉丝的粉丝，也就是图中粉色的粉丝，对这篇推文互动，那么就会推送到他们账号上的粉丝。<br>
+绿色是粉色粉丝的关系。</p>
+<figure data-type="image" tabindex="4"><img src="https://raz1ner.com/post-images/1681180244013.png" alt="" loading="lazy"></figure>
+<p>如果他们再进行互动，就会继续往外推送，以此类推。</p>
+  <script>
+    function calculateAge (birth) {
+      const birthDate = new Date(birth)
+      const currentDate = new Date()
+      let age = currentDate.getFullYear() - birthDate.getFullYear()
+      if (currentDate.getMonth() < birthDate.getMonth() || (currentDate.getMonth() === birthDate.getMonth() && currentDate.getDate() < birthDate.getDate())) {
+        age--
+      }
+      return age
+    }
+
+    function calcAccountWeight () {
+      const accountStatus = document.getElementById('accountStatus').value
+      const isRestricted = document.getElementById('restrictedStatus').value
+      const birthday = document.getElementById('birthday').value
+      const numFollowings = document.getElementById('followings').value
+      const numFollowers = document.getElementById('followers').value
+      const accountScore = document.getElementById('accountScore')
+      if (!accountStatus && !isRestricted && !birthday && !numFollowings && !numFollowers) return alert('请将信息填写规范')
+      let score
+      const deviceWeightAdditive = 0.5
+      const hasValidDevice = true
+      const threshAbsNumFriendsUMass = 500
+      const threshFriendsToFollowersRatioUMass = 0.6
+      const constantDivisionFactorGt_threshFriendsToFollowersRatioUMass = 5.0
+      const restrictedWeightMultiplicative = 0.1
+      const age = calculateAge(birthday)
+      if (accountStatus === 'suspended') {
+        score = 0
+      } else if (accountStatus === 'verified') {
+        score = 100
+      } else if (accountStatus === 'unVerified') {
+        score = deviceWeightAdditive * 0.1 + (hasValidDevice ? deviceWeightAdditive : 0)
+        const normalizedAge = age > 30 ? 1.0 : Math.min(1.0, Math.log(1.0 + age / 15.0))
+        score *= normalizedAge
+        if (score < 0.01) score = 0.01
+        if (isRestricted === 'restricted') score *= restrictedWeightMultiplicative
+        score = Math.min(1.0, Math.max(0, score))
+        score *= 100
+      }
+      const friendsToFollowersRatio = (1.0 + numFollowings) / (1.0 + numFollowers)
+      let adjustedMass = 0
+      if (numFollowings > threshAbsNumFriendsUMass && friendsToFollowersRatio > threshFriendsToFollowersRatioUMass) {
+        adjustedMass = score / Math.exp(constantDivisionFactorGt_threshFriendsToFollowersRatioUMass * (friendsToFollowersRatio - threshFriendsToFollowersRatioUMass))
+      } else {
+        adjustedMass = score
+      }
+      accountScore.innerText = adjustedMass
+    }
+
+    function calcPostWeight () {
+      const postTime = document.getElementById('postTime').value
+      const postScore = document.getElementById('postScore')
+      if (!postTime) return alert('请选择发帖时间')
+      const halfLife = 360
+      const slope = 0.003
+      const base = 0.6
+      const minutesPassed = (Date.now() - new Date(postTime).getTime()) / (1000 * 60)
+      const ageDecay = Math.pow(2, -minutesPassed / halfLife)
+      const score = base + (1 - base) * ageDecay * Math.exp(-slope * minutesPassed)
+      postScore.innerText = score
+    }
+  </script>
+
+          </div>
+          <div class="copyright">
+            <p>本文链接： <a href="https://raz1ner.com/post/Twitter-Algorithm/">https://raz1ner.com/post/Twitter-Algorithm/</a></p>
+            <p>版权声明： 本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="nofollow noreferrer" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</p>
+          </div>
+        </article>
+        <div class="next-post">
+          <div class="next">下一篇</div>
+          <a href="https://raz1ner.com/post/Deep-Clean/">
+            <h3 class="post-title">Deep Clean 深度清理垃圾软件</h3>
+          </a>
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="gitalk-container"></div>
+      </div>
+      <!-- middle -->
+      <div class="main-container-middle"></div>
+      <!-- right -->
+      <div id="sidebar" class="main-container-right">
+        <div class="id_card i-card">
+          <div class="id_card-avatar" style="background-image: url(https://raz1ner.com/images/avatar.png?v=1764290830388)"></div>
+          <h1 class="id_card-title">Raz1ner</h1>
+          <p style="text-align: center;">
+            <a href="https://github.com/dev-coco" rel="nofollow noreferrer" target="_blank"><img class="social-icon" alt="Github" src="/images/social/GitHub.png"></a>
+            <a href="https://t.me/raz1ner" rel="nofollow noreferrer" target="_blank"><img class="social-icon" alt="Telegram" src="/images/social/Telegram.png"></a>
+            <a href="https://www.youtube.com/channel/UCEgNinV_DEntuv5Dm8Z_JvA?sub_confirmation=1" rel="nofollow noreferrer" target="_blank"><img class="social-icon" alt="YouTuebe" src="/images/social/YouTube.png"></a>
+            <a href="/atom.xml" target="_blank"><img class="social-icon" alt="rss" src="/images/social/RSS.png"></a>
+            <a href="mailto:ruijingle@gmail.com" target="_blank"><img class="social-icon" alt="Email" src="/images/social/Gmail.png"></a>
+          </p>
+          <!-- <h2 class="id_card-description"></h2> -->
+          <!--  -->
+          <div class="id_card-sns">
+            <!-- github -->
+            
+            <!-- twitter -->
+            <!-- weibo -->
+            <!-- facebook -->
+          </div>
+        </div>
+      <!-- toc -->
+      <div class="toc-card i-card" style="max-height:40%;overflow:auto">
+        <div class="toc-title i-card-title">目录</div>
+          <div class="toc-content">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E6%8E%A8%E6%96%87%E6%9D%83%E9%87%8D%E6%BC%94%E7%AE%97%E6%B3%95">推文权重演算法</a>
+<ul>
+<li><a href="#%E6%80%BB%E5%88%86%E6%95%B0%E7%9A%84%E7%AE%97%E6%B3%95">总分数的算法</a></li>
+</ul>
+</li>
+<li><a href="#%E5%B9%BF%E5%91%8A%E6%9D%83%E9%87%8D%E6%BC%94%E7%AE%97%E6%B3%95">广告权重演算法</a></li>
+<li><a href="#twitter-blue-%E6%9D%83%E9%87%8D%E6%BC%94%E7%AE%97%E6%B3%95">Twitter Blue 权重演算法</a></li>
+<li><a href="#%E8%B4%A6%E5%8F%B7%E6%9D%83%E9%87%8D%E6%BC%94%E7%AE%97%E6%B3%95">账号权重演算法</a></li>
+<li><a href="#%E6%8E%92%E5%90%8D%E6%9D%83%E9%87%8D%E6%BC%94%E7%AE%97%E6%B3%95">排名权重演算法</a></li>
+<li><a href="#%E6%8E%A8%E6%96%87%E5%8F%91%E5%B8%83%E6%97%B6%E9%97%B4%E6%BC%94%E7%AE%97%E6%B3%95">推文发布时间演算法</a></li>
+<li><a href="#%E8%BF%9D%E5%8F%8D%E6%94%BF%E7%AD%96%E7%9A%84%E5%86%85%E5%AE%B9">违反政策的内容</a></li>
+<li><a href="#%E6%8E%A8%E6%96%87%E6%8E%A8%E9%80%81%E6%9C%BA%E5%88%B6">推文推送机制</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      <div class="notice-card i-card ">
+        <div class="notice-title i-card-title">公告</div>
+        <div class="notice-content"><p>博客新开通 Telegram 频道：<a href="https://t.me/raz1ner" target="_blank" style="color: blue">瑞景乐的博客</a>，欢迎订阅，随时收到最新资讯。</p><p>商务合作请点击上方的邮箱与我联系。<p></div>
+      </div>
+      <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
+        <div class="notice-content">
+          <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://raz1ner.com/tag/ai-tech/">AI 科技</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/excel/">Excel</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/google-script/">Google 脚本</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/instagram/">Instagram</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/security/">安全</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://raz1ner.com/tag/javascript/">Javascript</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://raz1ner.com/tag/twitter-x/">Twitter (X)</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/life/">生活</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://raz1ner.com/tag/sololearn/">Sololearn</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://raz1ner.com/tag/linux-command/">Linux命令</a>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="site-footer">
+    <p style="text-align: center;">
+        <a href="https://github.com/dev-coco" rel="nofollow noreferrer" target="_blank"><img class="social-icon" alt="Github" src="/images/social/GitHub.png"></a>
+        <a href="https://t.me/raz1ner" rel="nofollow noreferrer" target="_blank"><img class="social-icon" alt="Telegram" src="/images/social/Telegram.png"></a>
+        <a href="https://www.youtube.com/channel/UCEgNinV_DEntuv5Dm8Z_JvA?sub_confirmation=1" rel="nofollow noreferrer" target="_blank"><img class="social-icon" alt="YouTuebe" src="/images/social/YouTube.png"></a>
+        <a href="/atom.xml" target="_blank"><img class="social-icon" alt="rss" src="/images/social/RSS.png"></a>
+        <a href="mailto:ruijingle@gmail.com" target="_blank"><img class="social-icon" alt="Email" src="/images/social/Gmail.png"></a>
+      </p>
+    <span>Copyright © 2020-2025 Raz1ner - All Rights Reserved.</span> | <a class="rss" href="https://raz1ner.com/atom.xml" target="_blank">RSS</a>
+</div>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/excel.min.js"></script>
+            <script>hljs.highlightAll();</script>
+  </div>
+  
+</body>
+</html>

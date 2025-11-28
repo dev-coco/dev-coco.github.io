@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://raz1ner.com/sitemap.xml

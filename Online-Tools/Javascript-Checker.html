@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <title>Javascript检测</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="keywords" content="dev-coco, Javascript检测">
+  <meta name="robots" content="index,follow">
+  <link rel="icon" href="/images/avatar.png">
+  <meta name="description" content="检测浏览器是否开启Javascript.">
+  <link rel="stylesheet" href="/css/site.css">
+</head>
+<body style="font-size: 16pt;font-family: arial, helvetica, sans-serif;position: absolute;left: 50%;top: 50%;text-align:center;-webkit-transform: translate(-50%, -50%);">
+  <p id="script"><noscript>The browse </noscript><span style="background-color:#e74c3c"><noscript>disabled</noscript></span><noscript> javascript</noscript><br><noscript>浏览器</noscript><span style="background-color:#e74c3c"><noscript>禁用</noscript></span><noscript>Javascript功能</noscript></p>
+  <script>
+    document.getElementById('script').innerHTML = 'The browser <span style="background-color:#2ecc71">enabled</span> javascript<br>浏览器<span style="background-color:#2ecc71">开启</span>Javascript功能'
+  </script>
+  <script>(location.href.includes('raz1ner.com')||location.href.includes('localhost'))?'':window.open('https'+'://raz'+'1ner'+'.com','_self')</script>
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>超链接管理面板</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="referrer" content="no-referrer">
+  <meta name="description" content="自定义超链接管理模版。">
+  <meta name="keywords" content="Raz1ner, 超链接管理, 管理面板">
+  <meta name="author" content="Raz1ner">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <meta property="og:image" content="https://raz1ner.com/post-images/Raz1ner.png">
+  <link rel="canonical" href="https://raz1ner.com/other/Link-Panel/">
+  <meta property="og:title" content="超链接管理面板">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://raz1ner.com/post-images/Raz1ner.png">
+  <meta property="og:url" content="https://raz1ner.com/other/Link-Panel/">
+  <meta property="og:description" content="自定义超链接管理模版。">
+  <meta name="twitter:title" content="超链接管理面板">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://raz1ner.com/post-images/Raz1ner.png">
+  <meta name="twitter:description" content="自定义超链接管理模版。">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Microsoft YaHei', sans-serif;
+    }
+    body {
+      background-color: #f5f7fa;
+      padding: 20px;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      margin-bottom: 20px;
+    }
+    h1 a {
+      color: #2c3e50;
+      font-size: 24px;
+      color: inherit;
+      text-decoration: none;
+    }
+    .icon {
+      width:25px;
+      height:25px;
+      margin-right: 5px;
+    }
+    .search-container {
+      position: relative;
+      width: 300px;
+    }
+    #search {
+      width: 100%;
+      padding: 10px 15px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    .clear-search {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #999;
+      cursor: pointer;
+      display: none;
+    }
+    .categories {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+    .category-button {
+      padding: 8px 16px;
+      background-color: #eaeaea;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: all 0.2s ease;
+    }
+    .category-button:hover {
+      background-color: #d1d1d1;
+    }
+    .category-button.active {
+      background-color: #3498db;
+      color: white;
+    }
+    .category-section {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      margin-bottom: 30px;
+      overflow: hidden;
+    }
+    .category-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      background-color: #f8f9fa;
+      border-bottom: 1px solid #eee;
+    }
+    .category-title {
+      font-size: 18px;
+      color: #2c3e50;
+      display: flex;
+      align-items: center;
+    }
+    .category-icon {
+      margin-right: 10px;
+      color: #3498db;
+    }
+    .category-count {
+      background-color: #3498db;
+      color: white;
+      padding: 2px 8px;
+      border-radius: 20px;
+      font-size: 12px;
+      margin-left: 10px;
+    }
+    .toggle-category {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #7f8c8d;
+      font-size: 18px;
+    }
+    .links-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 15px;
+      padding: 20px;
+    }
+    .link-card {
+      display: flex;
+      align-items: center;
+      padding: 12px;
+      border: 1px solid #eee;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+    }
+    .hiden {
+      visibility:hidden
+    }
+    .link-card:hover {
+      border-color: #3498db;
+      box-shadow: 0 2px 5px rgba(52, 152, 219, 0.1);
+    }
+    .link-icon {
+      color: #27ae60;
+      margin-right: 12px;
+      flex-shrink: 0;
+    }
+    .link-details {
+      flex-grow: 1;
+      overflow: hidden;
+    }
+    .link-title {
+      font-size: 18px;
+      color: #2c3e50;
+      margin-bottom: 3px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .link-title * {
+         vertical-align:middle;
+    }
+    .link-meta {
+      display: flex;
+      font-size: 14px;
+      color: #7f8c8d;
+    }
+    .link-date {
+      margin-right: 10px;
+    }
+    .link-card a {
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      width: 100%;
+      height: 100%;
+      align-items: center;
+    }
+    .empty-message {
+      padding: 20px;
+      text-align: center;
+      color: #7f8c8d;
+      font-style: italic;
+    }
+    .hidden {
+      display: none;
+    }
+    @media (max-width: 768px) {
+      .search-container {
+        width: 100%;
+        margin-top: 10px;
+      }
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .links-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1><a href="#" target="_blank">🖥️ 超链接管理面板</a></h1>
+      <div class="search-container">
+        <input type="text" id="search" placeholder="搜索...">
+        <span class="clear-search" id="clearSearch">✕</span>
+      </div>
+    </header>
+    <div class="categories" id="categories">
+      <button class="category-button active" data-category="all">全部</button>
+    </div>
+    <div id="contentContainer">
+    </div>
+  </div>
+  <script src="main-min.js"></script>
+</body>
+</html>

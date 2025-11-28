@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="keywords" content="Google Excel, Excel表格, IFS">
+  <meta name="description" content="IFS - 判断多个条件，返回条件为TRUE的值。">
+  <meta name="robots" content="index, follow">
+  <meta property="og:image" content="/images/Excel-Tutorial.jpg">
+  <title>IFS</title>
+  <link rel="icon" href="/images/avatar.png">
+  <link href="/css/Excel/typo.css" rel="stylesheet">
+</head>
+<body class="typo">
+  <h1 id="title">IFS</h1>
+  <p>作用：判断多个条件，返回条件为 TRUE 的值。</p>
+  <p>语法：<span class="f">IFS(<span class="t">条件1</span>, <span class="t">返回值1</span>, <span class="t">条件2</span>, <span class="t">返回值2</span>, ...)</span></p>
+  <p>当第一个条件返回 FALSE 时，就会判断第二个条件，以此类推，直到返回到正确的条件，如果所有条件都是 FALSE，会输出 #N/A。</p>
+  <img style="min-width:420px;width:60%;margin-left: auto;display: block;margin-right: auto;" src="/images/Excel/IFS.png" >
+  <p>例子：</p>
+  <iframe style="max-width:524px;height:96px;" src="https://docs.google.com/spreadsheets/d/1HipOmDJI1aLZGpaXaeA6FAVhZIGHAw4gr4_fOjfuG3s/pubhtml/sheet?headers=true&gid=854563019"></iframe>
+  <p>运用：跟进成绩分类优等生、差生和中等水平。</p>
+  <p>需要计算的条件：</p>
+  <ol>
+    <li>大于等于 <span class="f n">80</span> 分，小于 <span class="f n">90</span> 分，返回中等水平。</li>
+    <li>小于 <span class="f n">80</span> 分，返回差生。</li>
+    <li>大于 <span class="f n">90</span> 分，返回优等生。</li>
+  </ol>
+  <p>在判断多个条件的时候，如果使用 <a href="/Excel/#Function/Logical-Judgments/IF" target="_blank">IF</a> 函数就需要一个函数套一个函数，IF(IF(IF...))，不美观，而且出错的时候不太好维护，可以使用 IFS 函数来代替。</p>  
+  <p>使用 <a href="/Excel/#Function/Logical-Judgments/AND" target="_blank">AND</a> 函数判断两个条件，是否大于等于 <span class="f n">80</span> 分，又小于 <span class="f n">90</span> 分，再加上第二个条件，如果分数低于 <span class="f n">80</span> 分就返回差生，如果分数高于 <span class="f n">90</span> 分返回优等生。</p>
+  <iframe style="max-width:817px;height:144px;" src="https://docs.google.com/spreadsheets/d/1HipOmDJI1aLZGpaXaeA6FAVhZIGHAw4gr4_fOjfuG3s/pubhtml/sheet?headers=true&gid=588167097"></iframe>
+  <p class="home">
+    <a href="/Excel" target="_blank">
+      <img alt="Excel表格, Google Excel" src="/images/Excel.png">
+      <span>Excel 一点通</span>
+    </a>
+  </p>
+  <script src="/js/voice-playback.js"></script>
+</body>
+</html>

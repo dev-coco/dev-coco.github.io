@@ -1,0 +1,950 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="瑞景乐的个人博客。">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Twitter Algorithm and Push Mechanism 2023 Update | Raz1ner</title>
+  <meta name="author" content="Raz1ner">
+  <link rel="shortcut icon" href="https://raz1ner.com/favicon.ico?v=1764290830388">
+  <link rel="stylesheet" href="https://raz1ner.com/styles/main.css">
+  <!-- <script src="/js/prism.js"></script> -->
+  <!-- <link rel="stylesheet" href="/css/prism.css"> -->
+  <script src="https://raz1ner.com/media/js/jquery.sticky-sidebar.min.js"></script>
+  <script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script async src="https://fundingchoicesmessages.google.com/i/pub-6960947409660270?ers=1" nonce="3szuJwRueku-LVJlmdoLew"></script><script nonce="3szuJwRueku-LVJlmdoLew">(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+  <script>(function(){
+   'use strict';var aa=function(a){var b=0;return function(){return b<a.length?{done:!1,value:a[b++]}:{done:!0}}},ba="function"==typeof Object.create?Object.create:function(a){var b=function(){};b.prototype=a;return new b},k;if("function"==typeof Object.setPrototypeOf)k=Object.setPrototypeOf;else{var m;a:{var ca={a:!0},n={};try{n.__proto__=ca;m=n.a;break a}catch(a){}m=!1}k=m?function(a,b){a.__proto__=b;if(a.__proto__!==b)throw new TypeError(a+" is not extensible");return a}:null}
+   var p=k,q=function(a,b){a.prototype=ba(b.prototype);a.prototype.constructor=a;if(p)p(a,b);else for(var c in b)if("prototype"!=c)if(Object.defineProperties){var d=Object.getOwnPropertyDescriptor(b,c);d&&Object.defineProperty(a,c,d)}else a[c]=b[c];a.v=b.prototype},r=this||self,da=function(){},t=function(a){return a};var u;var w=function(a,b){this.g=b===v?a:""};w.prototype.toString=function(){return this.g+""};var v={},x=function(a){if(void 0===u){var b=null;var c=r.trustedTypes;if(c&&c.createPolicy){try{b=c.createPolicy("goog#html",{createHTML:t,createScript:t,createScriptURL:t})}catch(d){r.console&&r.console.error(d.message)}u=b}else u=b}a=(b=u)?b.createScriptURL(a):a;return new w(a,v)};var A=function(){return Math.floor(2147483648*Math.random()).toString(36)+Math.abs(Math.floor(2147483648*Math.random())^Date.now()).toString(36)};var B={},C=null;var D="function"===typeof Uint8Array;function E(a,b,c){return"object"===typeof a?D&&!Array.isArray(a)&&a instanceof Uint8Array?c(a):F(a,b,c):b(a)}function F(a,b,c){if(Array.isArray(a)){for(var d=Array(a.length),e=0;e<a.length;e++){var f=a[e];null!=f&&(d[e]=E(f,b,c))}Array.isArray(a)&&a.s&&G(d);return d}d={};for(e in a)Object.prototype.hasOwnProperty.call(a,e)&&(f=a[e],null!=f&&(d[e]=E(f,b,c)));return d}
+   function ea(a){return F(a,function(b){return"number"===typeof b?isFinite(b)?b:String(b):b},function(b){var c;void 0===c&&(c=0);if(!C){C={};for(var d="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789".split(""),e=["+/=","+/","-_=","-_.","-_"],f=0;5>f;f++){var h=d.concat(e[f].split(""));B[f]=h;for(var g=0;g<h.length;g++){var l=h[g];void 0===C[l]&&(C[l]=g)}}}c=B[c];d=Array(Math.floor(b.length/3));e=c[64]||"";for(f=h=0;h<b.length-2;h+=3){var y=b[h],z=b[h+1];l=b[h+2];g=c[y>>2];y=c[(y&3)<<
+   4|z>>4];z=c[(z&15)<<2|l>>6];l=c[l&63];d[f++]=""+g+y+z+l}g=0;l=e;switch(b.length-h){case 2:g=b[h+1],l=c[(g&15)<<2]||e;case 1:b=b[h],d[f]=""+c[b>>2]+c[(b&3)<<4|g>>4]+l+e}return d.join("")})}var fa={s:{value:!0,configurable:!0}},G=function(a){Array.isArray(a)&&!Object.isFrozen(a)&&Object.defineProperties(a,fa);return a};var H;var J=function(a,b,c){var d=H;H=null;a||(a=d);d=this.constructor.u;a||(a=d?[d]:[]);this.j=d?0:-1;this.h=null;this.g=a;a:{d=this.g.length;a=d-1;if(d&&(d=this.g[a],!(null===d||"object"!=typeof d||Array.isArray(d)||D&&d instanceof Uint8Array))){this.l=a-this.j;this.i=d;break a}void 0!==b&&-1<b?(this.l=Math.max(b,a+1-this.j),this.i=null):this.l=Number.MAX_VALUE}if(c)for(b=0;b<c.length;b++)a=c[b],a<this.l?(a+=this.j,(d=this.g[a])?G(d):this.g[a]=I):(d=this.l+this.j,this.g[d]||(this.i=this.g[d]={}),(d=this.i[a])?
+   G(d):this.i[a]=I)},I=Object.freeze(G([])),K=function(a,b){if(-1===b)return null;if(b<a.l){b+=a.j;var c=a.g[b];return c!==I?c:a.g[b]=G([])}if(a.i)return c=a.i[b],c!==I?c:a.i[b]=G([])},M=function(a,b){var c=L;if(-1===b)return null;a.h||(a.h={});if(!a.h[b]){var d=K(a,b);d&&(a.h[b]=new c(d))}return a.h[b]};J.prototype.toJSON=function(){var a=N(this,!1);return ea(a)};
+   var N=function(a,b){if(a.h)for(var c in a.h)if(Object.prototype.hasOwnProperty.call(a.h,c)){var d=a.h[c];if(Array.isArray(d))for(var e=0;e<d.length;e++)d[e]&&N(d[e],b);else d&&N(d,b)}return a.g},O=function(a,b){H=b=b?JSON.parse(b):null;a=new a(b);H=null;return a};J.prototype.toString=function(){return N(this,!1).toString()};var P=function(a){J.call(this,a)};q(P,J);function ha(a){var b,c=(a.ownerDocument&&a.ownerDocument.defaultView||window).document,d=null===(b=c.querySelector)||void 0===b?void 0:b.call(c,"script[nonce]");(b=d?d.nonce||d.getAttribute("nonce")||"":"")&&a.setAttribute("nonce",b)};var Q=function(a,b){b=String(b);"application/xhtml+xml"===a.contentType&&(b=b.toLowerCase());return a.createElement(b)},R=function(a){this.g=a||r.document||document};R.prototype.appendChild=function(a,b){a.appendChild(b)};var S=function(a,b,c,d,e,f){try{var h=a.g,g=Q(a.g,"SCRIPT");g.async=!0;g.src=b instanceof w&&b.constructor===w?b.g:"type_error:TrustedResourceUrl";ha(g);h.head.appendChild(g);g.addEventListener("load",function(){e();d&&h.head.removeChild(g)});g.addEventListener("error",function(){0<c?S(a,b,c-1,d,e,f):(d&&h.head.removeChild(g),f())})}catch(l){f()}};var ia=r.atob("aHR0cHM6Ly93d3cuZ3N0YXRpYy5jb20vaW1hZ2VzL2ljb25zL21hdGVyaWFsL3N5c3RlbS8xeC93YXJuaW5nX2FtYmVyXzI0ZHAucG5n"),ja=r.atob("WW91IGFyZSBzZWVpbmcgdGhpcyBtZXNzYWdlIGJlY2F1c2UgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlIGlzIGludGVyZmVyaW5nIHdpdGggdGhpcyBwYWdlLg=="),ka=r.atob("RGlzYWJsZSBhbnkgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlLCB0aGVuIHJlbG9hZCB0aGlzIHBhZ2Uu"),la=function(a,b,c){this.h=a;this.j=new R(this.h);this.g=null;this.i=[];this.l=!1;this.o=b;this.m=c},V=function(a){if(a.h.body&&!a.l){var b=
+   function(){T(a);r.setTimeout(function(){return U(a,3)},50)};S(a.j,a.o,2,!0,function(){r[a.m]||b()},b);a.l=!0}},T=function(a){for(var b=W(1,5),c=0;c<b;c++){var d=X(a);a.h.body.appendChild(d);a.i.push(d)}b=X(a);b.style.bottom="0";b.style.left="0";b.style.position="fixed";b.style.width=W(100,110).toString()+"%";b.style.zIndex=W(2147483544,2147483644).toString();b.style["background-color"]=ma(249,259,242,252,219,229);b.style["box-shadow"]="0 0 12px #888";b.style.color=ma(0,10,0,10,0,10);b.style.display=
+   "flex";b.style["justify-content"]="center";b.style["font-family"]="Roboto, Arial";c=X(a);c.style.width=W(80,85).toString()+"%";c.style.maxWidth=W(750,775).toString()+"px";c.style.margin="24px";c.style.display="flex";c.style["align-items"]="flex-start";c.style["justify-content"]="center";d=Q(a.j.g,"IMG");d.className=A();d.src=ia;d.style.height="24px";d.style.width="24px";d.style["padding-right"]="16px";var e=X(a),f=X(a);f.style["font-weight"]="bold";f.textContent=ja;var h=X(a);h.textContent=ka;Y(a,
+   e,f);Y(a,e,h);Y(a,c,d);Y(a,c,e);Y(a,b,c);a.g=b;a.h.body.appendChild(a.g);b=W(1,5);for(c=0;c<b;c++)d=X(a),a.h.body.appendChild(d),a.i.push(d)},Y=function(a,b,c){for(var d=W(1,5),e=0;e<d;e++){var f=X(a);b.appendChild(f)}b.appendChild(c);c=W(1,5);for(d=0;d<c;d++)e=X(a),b.appendChild(e)},W=function(a,b){return Math.floor(a+Math.random()*(b-a))},ma=function(a,b,c,d,e,f){return"rgb("+W(Math.max(a,0),Math.min(b,255)).toString()+","+W(Math.max(c,0),Math.min(d,255)).toString()+","+W(Math.max(e,0),Math.min(f,
+   255)).toString()+")"},X=function(a){a=Q(a.j.g,"DIV");a.className=A();return a},U=function(a,b){0>=b||null!=a.g&&0!=a.g.offsetHeight&&0!=a.g.offsetWidth||(na(a),T(a),r.setTimeout(function(){return U(a,b-1)},50))},na=function(a){var b=a.i;var c="undefined"!=typeof Symbol&&Symbol.iterator&&b[Symbol.iterator];b=c?c.call(b):{next:aa(b)};for(c=b.next();!c.done;c=b.next())(c=c.value)&&c.parentNode&&c.parentNode.removeChild(c);a.i=[];(b=a.g)&&b.parentNode&&b.parentNode.removeChild(b);a.g=null};var pa=function(a,b,c,d,e){var f=oa(c),h=function(l){l.appendChild(f);r.setTimeout(function(){f?(0!==f.offsetHeight&&0!==f.offsetWidth?b():a(),f.parentNode&&f.parentNode.removeChild(f)):a()},d)},g=function(l){document.body?h(document.body):0<l?r.setTimeout(function(){g(l-1)},e):b()};g(3)},oa=function(a){var b=document.createElement("div");b.className=a;b.style.width="1px";b.style.height="1px";b.style.position="absolute";b.style.left="-10000px";b.style.top="-10000px";b.style.zIndex="-10000";return b};var L=function(a){J.call(this,a)};q(L,J);var qa=function(a){J.call(this,a)};q(qa,J);var ra=function(a,b){this.l=a;this.m=new R(a.document);this.g=b;this.i=K(this.g,1);b=M(this.g,2);this.o=x(K(b,4)||"");this.h=!1;b=M(this.g,13);b=x(K(b,4)||"");this.j=new la(a.document,b,K(this.g,12))};ra.prototype.start=function(){sa(this)};
+   var sa=function(a){ta(a);S(a.m,a.o,3,!1,function(){a:{var b=a.i;var c=r.btoa(b);if(c=r[c]){try{var d=O(P,r.atob(c))}catch(e){b=!1;break a}b=b===K(d,1)}else b=!1}b?Z(a,K(a.g,14)):(Z(a,K(a.g,8)),V(a.j))},function(){pa(function(){Z(a,K(a.g,7));V(a.j)},function(){return Z(a,K(a.g,6))},K(a.g,9),K(a.g,10),K(a.g,11))})},Z=function(a,b){a.h||(a.h=!0,a=new a.l.XMLHttpRequest,a.open("GET",b,!0),a.send())},ta=function(a){var b=r.btoa(a.i);a.l[b]&&Z(a,K(a.g,5))};(function(a,b){r[a]=function(c){for(var d=[],e=0;e<arguments.length;++e)d[e-0]=arguments[e];r[a]=da;b.apply(null,d)}})("__h82AlnkH6D91__",function(a){"function"===typeof window.atob&&(new ra(window,O(qa,window.atob(a)))).start()});}).call(this);
+   window.__h82AlnkH6D91__("WyJwdWItNjk2MDk0NzQwOTY2MDI3MCIsW251bGwsbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9iL3B1Yi02OTYwOTQ3NDA5NjYwMjcwIl0sbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9lbC9BR1NLV3hWWkh4UHVLbUVuYUVHcDZmcldNVTVHZloyVUxJZW8zcHZhaV9wUVJ5a2M4dmlkZlVwMENZeVJQZEQxdExOQzRkOUN6cEQxS1hFZml1cnFJZXFIOVVsc1R3XHUwMDNkXHUwMDNkP3RlXHUwMDNkVE9LRU5fRVhQT1NFRCIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFhUNmRjRFppendkR2FaMmQ2dHBOMEF3TWowNERwVWVBaUd4Y1lsNXR1UWZFdmhDSTZmaWRxcEN3RXNQeGF1eWJUc004eFlhVWFLSWJENnNWdVIyNXIwT0FcdTAwM2RcdTAwM2Q/YWJcdTAwM2QxXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFVFeld6ZVhfYjlBSnJsR05ab2N0MG1UVHBKZFUxQVo1b2piaVNXMXc4TjNJdG93TndOZ2YtNzcwOVNEQUlrSWlUbW5UU2hvVW5DYml0QmVYVTM4Z3M3c2dcdTAwM2RcdTAwM2Q/YWJcdTAwM2QyXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFVWdXc5Q2tNRzNoX3p2WGJHcHlLdU95cE4weWVabEVVSmVsbFBnR2F4Y3NockhWdklpSmlPMzZKM3JhRlhDSl9fdnp2U0ZuRFNXS3dPUXl5enpLWG5zc0FcdTAwM2RcdTAwM2Q/c2JmXHUwMDNkMiIsImRpdi1ncHQtYWQiLDIwLDEwMCwiY0hWaUxUWTVOakE1TkRjME1EazJOakF5TnpBXHUwMDNkIixbbnVsbCxudWxsLG51bGwsImh0dHBzOi8vd3d3LmdzdGF0aWMuY29tLzBlbW4vZi9wL3B1Yi02OTYwOTQ3NDA5NjYwMjcwLmpzP3VzcXBcdTAwM2RDQXciXSwiaHR0cHM6Ly9mdW5kaW5nY2hvaWNlc21lc3NhZ2VzLmdvb2dsZS5jb20vZWwvQUdTS1d4V0M5M05iUXBSTC12eTBWbXd3TjBwVllQTDE5eDJLYWJfQkFZYjVucWlRM0VZTTJ0ZXRQMHJxRzE5ZHF5X3NfZjh6VmhPc0ZIWExmeVJGUnJJTEhSak5aZ1x1MDAzZFx1MDAzZCJd");</script>
+   <script async src="https://www.googletagmanager.com/gtag/js?id=G-24X8H1LT7N"></script>
+   <script>
+      window.dataLayer = window.dataLayer || []
+      function gtag(){dataLayer.push(arguments)}
+      gtag('js', new Date())
+      gtag('config', 'G-24X8H1LT7N')
+   </script>
+  <meta property="og:image" content="https://raz1ner.com/post-images/Twitter-Algorithm-EN.png">
+  <meta name="description" content="Provide a detailed explanation of Twitter&#39;s algorithm and its delivery mechanism.">
+  <link rel="canonical" href="https://raz1ner.com/post/Twitter-Algorithm-EN/">
+  <meta property="og:title" content="Twitter Algorithm and Push Mechanism 2023 Update - Raz1ner">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://raz1ner.com/post-images/Twitter-Algorithm-EN.png">
+  <meta property="og:url" content="https://raz1ner.com/post/Twitter-Algorithm-EN/">
+  <meta property="og:description" content="Provide a detailed explanation of Twitter&#39;s algorithm and its delivery mechanism.">
+  <meta name="twitter:title" content="Twitter Algorithm and Push Mechanism 2023 Update - Raz1ner">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://raz1ner.com/post-images/Twitter-Algorithm-EN.png">
+  <meta name="twitter:description" content="Provide a detailed explanation of Twitter&#39;s algorithm and its delivery mechanism.">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:300,300i,400,400i,700,700i,800" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Mallanna" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+</head>
+<body>
+  <div class="main">
+    <div class="header">
+      <div class="nav">
+        <div class="logo">
+          <a href="https://raz1ner.com">
+            <img class="avatar" alt="Raz1ner" src="https://raz1ner.com/images/avatar.png?v=1764290830388" alt="">
+          </a>
+          <div class="site-title">
+            <h1>Raz1ner</h1>
+          </div>
+          <svg width="32" height="32" viewBox="0 0 16 16" id="menuBtn" style="position:absolute;right:15px">
+            <path d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5">
+          </svg>
+        </div>
+        <div class="mobile-menu" style="display: none;">
+          <div style="text-align: center">
+            
+              <div class="nav-item">
+                <a href="/" class="menu">首页</a>
+              </div>
+              <div class="nav-item">
+                <a href="/Navigation" class="menu">导航</a>
+              </div>
+              <div class="nav-item">
+                <a href="/Awesome-Software" class="menu">软件</a>
+              </div>
+              <div class="nav-item">
+                <a href="/Extension/" class="menu">插件</a>
+              </div>
+              <div class="nav-item">
+                <a href="/Online-Tools" class="menu">在线工具</a>
+              </div>
+              <div class="nav-item">
+                <a href="/post/Linux-Command" class="menu">Linux命令</a>
+              </div>
+              <div class="nav-item">
+                <a href="/Excel" class="menu">Excel教程</a>
+              </div>
+              <div class="nav-item">
+                <a href="/post/Terms-and-Privacy" class="menu">隐私与条款</a>
+              </div>
+          </div>
+        </div>
+
+        <div class="menu-container">
+          <ul>
+            <li>
+              <a href="/" class="menu">首页</a>
+            </li>
+            <li>
+              <a href="/Navigation" class="menu">导航</a>
+            </li>
+            <li>
+              <a href="/Awesome-Software" class="menu">软件</a>
+            </li>
+            <li>
+              <a href="/Extension/" class="menu">插件</a>
+            </li>
+            <li>
+              <a href="/Online-Tools" class="menu">在线工具</a>
+            </li>
+            <li>
+              <a href="/post/Linux-Command" class="menu">Linux命令</a>
+            </li>
+            <li>
+              <a href="/Excel" class="menu">Excel教程</a>
+            </li>
+            <li>
+              <a href="/post/Terms-and-Privacy" class="menu">隐私与条款</a>
+            </li>
+          </ul>
+        </div>
+
+
+
+        <form id="gridea-search-form" action="https://raz1ner.com/search/" class="search">
+          <input type="search" name="q" class="search-box">
+          <span class="search-button">
+            <span class="search-icon"></span>
+          </span>
+        </form>
+      </div>
+    </div>
+    <script>
+      document.getElementsByClassName('search-button')[0].addEventListener('click', function () {
+        document.getElementById('gridea-search-form').classList.toggle('open');
+      })
+      document.getElementById('menuBtn').addEventListener('click', () => {
+        const element = document.querySelector('.mobile-menu')
+        if (element.style.display === 'none' || element.style.display === '') {
+          element.style.display = 'block'
+        } else {
+          element.style.display = 'none'
+        }
+      })
+    </script>
+
+    <div id="main-content" class="post-detail main-container">
+      <!-- left -->
+      <div id="content" class="main-container-left">
+        <article class="post i-card">
+        <h2 class="post-title">Twitter Algorithm and Push Mechanism 2023 Update</h2>
+        <div class="post-info">
+          <time class="post-time">2023-04-27 / 22 min read</time>
+            <a href="https://raz1ner.com/tag/twitter-x/" class="post-tag i-tag i-tag-warning">#Twitter (X)</a>
+        </div>
+        <!--
+          
+        <div class="post-feature-image" style="background-image: url('https://raz1ner.com/post-images/Twitter-Algorithm-EN.png')"></div>
+        -->
+          <div class="post-content">
+            <p>Provide a detailed explanation of Twitter's algorithm and its delivery mechanism.</p>
+<!-- more -->
+<style>.form{width:300px;margin-bottom:20px;background-color:#fff;border:1px solid transparent;border-radius:16px 16px 5px 5px;box-shadow:0 1px 1px rgba(0,0,0,.05);border-color:#428bca;margin:10px auto}.panel-heading{color:#fff;background-color:#428bca;border-color:#428bca;text-align:center;padding:15px;border-bottom:1px solid transparent;border-top-right-radius:13px;border-top-left-radius:13px}lable{width:100px;font-size:16px;padding-top:7px;float:left;text-align:right}.form-control{font-size:16px;margin-top:10px;margin-bottom:10px}.btn,input,select{margin-left:10px;padding:5px;font-size:16px;width:150px;box-sizing:border-box}.btn{margin:0 auto}#accountScore,#postScore{text-align:center;margin:5px}</style>
+<p>I will provide a detailed explanation of my personal understanding of the Twitter algorithm code and include sources. However, different engineers may draw different conclusions from their analysis, and the Twitter algorithm may change at any time. Therefore, please approach the content of this article with a rational perspective and use it for reference only.</p>
+<p>If you intend to republish this article, please provide proper attribution and include a link to the original source.</p>
+<h2 id="twitter-tweet-weight-algorithm">Twitter Tweet Weight Algorithm</h2>
+<p>Twitter's algorithm model includes a machine learning model called &quot;Heavy Ranker,&quot; which retrieves and ranks the weight scores of tweets for the &quot;For You&quot; section on the homepage.</p>
+<p>Below are the summarized weight values and upper limits for each type. Different functions have different upper limit values, and even if the quantity of a certain function is large, the gain will not be infinitely stacked.</p>
+<table style="margin: 0 auto;">
+	<thead>
+		<tr>
+			<th scope="col">category</th>
+			<th scope="col">score</th>
+			<th scope="col">limit</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr style="text-align:center">
+			<td>Like</td>
+			<td>+0.5 points</td>
+			<td>100 points</td>
+		</tr>
+		<tr>
+			<td colspan="3">The user has liked the tweet.</td>
+		</tr>
+		<tr style="text-align:center">
+			<td>Retweeted</td>
+			<td>+1.0 points</td>
+			<td>100 points</td>
+		</tr>
+		<tr>
+			<td colspan="3">The user has retweeted the tweet.</td>
+		</tr>
+		<tr style="text-align:center">
+			<td>Reply</td>
+			<td>+13.5 points</td>
+			<td>100 points</td>
+		</tr>
+		<tr>
+			<td colspan="3">User's reply to a tweet.</td>
+		</tr>
+		<tr style="text-align:center">
+			<td>Access personal profile page.</td>
+			<td>+12 points</td>
+			<td>1000000 points</td>
+		</tr>
+		<tr>
+			<td colspan="3">Follow a tweet to the author's page and show your support by liking or replying to their content.</td>
+		</tr>
+		<tr style="text-align:center">
+			<td>The video is being played.</td>
+			<td>+0.005 points</td>
+			<td>100 points</td>
+		</tr>
+		<tr>
+			<td colspan="3">For tweets that contain videos, viewers are required to watch at least 50% of the content.</td>
+		</tr>
+		<tr style="text-align:center">
+			<td>Author's response</td>
+			<td>+75 points</td>
+			<td>200 points</td>
+		</tr>
+		<tr>
+			<td colspan="3">The author of the tweet responded to a user's reply to the tweet.</td>
+		</tr>
+		<tr style="text-align:center">
+			<td>Reply to a reply</td>
+			<td>+11 points</td>
+			<td>1000000 points</td>
+		</tr>
+		<tr>
+			<td colspan="3">Users can like or reply to replies to a tweet.</td>
+		</tr>
+		<tr style="text-align:center">
+			<td>View 2 minutes</td>
+			<td>+10 points</td>
+			<td>1000000 points</td>
+		</tr>
+		<tr>
+			<td colspan="3">Users spend no less than 2 minutes view tweets.</td>
+		</tr>
+		<tr style="text-align:center">
+			<td>Negative reaction</td>
+			<td>-74 points</td>
+			<td>-1000 points</td>
+		</tr>
+		<tr>
+			<td colspan="3">Users have a negative reaction to the tweet (not interested in this tweet, block the author, hide the author). </td>
+		</tr>
+		<tr style="text-align:center">
+			<td>Reported</td>
+			<td>-369 points</td>
+			<td>-20000 points</td>
+		</tr>
+		<tr>
+			<td colspan="3">The user reported a tweet. Can you please provide me with more context on the situation?</td>
+		</tr>
+	</tbody>
+</table>
+<br>
+<p>Code related to scores for various types. As the code for the upper limit is too lengthy, it is not included here but can be found in the source below.</p>
+<pre><code class="language-Scala">scored_tweets_model_weight_fav: 0.5
+scored_tweets_model_weight_retweet: 1.0
+scored_tweets_model_weight_reply: 13.5
+scored_tweets_model_weight_good_profile_click: 12.0
+scored_tweets_model_weight_video_playback50: 0.005
+scored_tweets_model_weight_reply_engaged_by_author: 75.0
+scored_tweets_model_weight_good_click: 11.0
+scored_tweets_model_weight_good_click_v2: 10.0
+scored_tweets_model_weight_negative_feedback_v2: -74.0
+scored_tweets_model_weight_report: -369.0
+</code></pre>
+<h3 id="algorithm-for-calculating-total-score">Algorithm for Calculating Total Score</h3>
+<pre><code class="language-Scala">score = sum_i { (weight of engagement i) * (probability of engagement i) }
+</code></pre>
+<p>Total Score = Weight * Number of Participations.</p>
+<p>For example, let's say 10 users have liked a tweet, giving it a weight of +0.5 points. With 10 participants, the engagement score would be 0.5 * 10 = 5. Thus, the total weight would be 5 points.</p>
+<p>Source of tweet algorithm and overall score algorithm: <a href="https://github.com/twitter/the-algorithm-ml/blob/main/projects/home/recap/README.md" target="_blank">README.md</a></p>
+<p>Source of Upper Limit: <a href="https://github.com/twitter/the-algorithm/blob/main/home-mixer/server/src/main/scala/com/twitter/home_mixer/product/scored_tweets/param/ScoredTweetsParam.scala" target="_blank">ScoredTweetsParam.scala</a></p>
+<p>However, there is a widely circulated notion online that the weight of a &quot;like&quot; is 30, while that of a retweet is 20. I looked up the source code of this claim.</p>
+<pre><code class="language-Scala">private def getLinearRankingParams: ThriftRankingParams = {
+  ThriftRankingParams(
+    `type` = Some(ThriftScoringFunctionType.Linear),
+    minScore = -1.0e100,
+    retweetCountParams = Some(ThriftLinearFeatureRankingParams(weight = 20.0)),
+    replyCountParams = Some(ThriftLinearFeatureRankingParams(weight = 1.0)),
+    reputationParams = Some(ThriftLinearFeatureRankingParams(weight = 0.2)),
+    luceneScoreParams = Some(ThriftLinearFeatureRankingParams(weight = 2.0)),
+    textScoreParams = Some(ThriftLinearFeatureRankingParams(weight = 0.18)),
+    urlParams = Some(ThriftLinearFeatureRankingParams(weight = 2.0)),
+    isReplyParams = Some(ThriftLinearFeatureRankingParams(weight = 1.0)),
+    favCountParams = Some(ThriftLinearFeatureRankingParams(weight = 30.0)),
+    langEnglishUIBoost = 0.5,
+    langEnglishTweetBoost = 0.2,
+    langDefaultBoost = 0.02,
+    unknownLanguageBoost = 0.05,
+    offensiveBoost = 0.1,
+    inTrustedCircleBoost = 3.0,
+    multipleHashtagsOrTrendsBoost = 0.6,
+    inDirectFollowBoost = 4.0,
+    tweetHasTrendBoost = 1.1,
+    selfTweetBoost = 2.0,
+    tweetHasImageUrlBoost = 2.0,
+    tweetHasVideoUrlBoost = 2.0,
+    useUserLanguageInfo = true,
+    ageDecayParams = Some(ThriftAgeDecayRankingParams(slope = 0.005, base = 1.0))
+  )
+}
+</code></pre>
+<p>The code did set default values for the permission to like at 30 and to retweet at 20, but it has since been removed as it was deemed unnecessary and was not being used for ranking purposes.</p>
+<figure data-type="image" tabindex="1"><img src="https://raz1ner.com/post-images/1681162788813.png" alt="" loading="lazy"></figure>
+<p>Source： <a href="https://github.com/twitter/the-algorithm/commit/138bb519975407d4ea0dc1478d897d451ef05dab" target="_blank">EarlybirdTensorflowBasedSimilarityEngine.scala</a></p>
+<h2 id="advertising-weight-algorithm">Advertising Weight Algorithm</h2>
+<p>Advertising: +10,000 weight points</p>
+<pre><code class="language-Scala">object AdsCandidateGenerationScoreBoostFactor
+    extends FSBoundedParam[Double](
+      name = &quot;ads_candidate_generation_score_boost_factor&quot;,
+      default = 10000.0,
+      min = 1.0,
+      max = 100000.0
+    )
+</code></pre>
+<p>Source：<a href="https://github.com/twitter/the-algorithm/blob/main/cr-mixer/server/src/main/scala/com/twitter/cr_mixer/param/AdsParams.scala" target="_blank">AdsParams.scala</a></p>
+<h2 id="twitter-blue-weighting-algorithm">Twitter Blue Weighting Algorithm</h2>
+<p>Subscribing to Twitter Blue provides additional weighting bonuses.</p>
+<table style="margin: 0 auto;">
+	<thead>
+		<tr>
+			<th scope="col">category</th>
+			<th scope="col">Score</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr style="text-align: center;">
+			<td>Twitter Blue (followed)</td>
+			<td>4x</td>
+		</tr>
+		<tr>
+			<td colspan="2">Accounts already followed.</td>
+		</tr>
+		<tr style="text-align: center;">
+			<td>Twitter Blue (unfollowed)</td>
+			<td>2x</td>
+		</tr>
+		<tr>
+			<td colspan="2">Account that is not being followed.</td>
+		</tr>
+	</tbody>
+</table>
+<br>
+<p>Code related to weight for Twitter Blue.</p>
+<pre><code class="language-Scala">object BlueVerifiedAuthorInNetworkMultiplierParam
+    extends FSBoundedParam[Double](
+      name = &quot;home_mixer_blue_verified_author_in_network_multiplier&quot;,
+      default = 4.0,
+      min = 0.0,
+      max = 100.0
+    )
+
+object BlueVerifiedAuthorOutOfNetworkMultiplierParam
+    extends FSBoundedParam[Double](
+      name = &quot;home_mixer_blue_verified_author_out_of_network_multiplier&quot;,
+      default = 2.0,
+      min = 0.0,
+      max = 100.0
+    )
+</code></pre>
+<p>Sources of Weighting for Twitter Blue:<a href="https://github.com/twitter/the-algorithm/blob/main/home-mixer/server/src/main/scala/com/twitter/home_mixer/param/HomeGlobalParams.scala" target="_blank">HomeGlobalParams.scala</a></p>
+<h2 id="account-weight-algorithm">Account Weight Algorithm</h2>
+<p>Calculate the weight value of an account based on its status.<br>
+Inactive accounts: 0 points<br>
+Verified accounts: 100 points<br>
+Unverified accounts: Score is calculated based on a combination of device, account information, and age, with a maximum of 55 points.<br>
+In addition, the ratio of followers to following will also be factored in to determine the final weight value.</p>
+<p>Related Code</p>
+<pre><code class="language-Scala">object UserMass {
+  private val currentTimestamp = Time.now.inMilliseconds
+  private val constantDivisionFactorGt_threshFriendsToFollowersRatioUMass = 5.0
+  private val threshAbsNumFriendsUMass = 500
+  private val threshFriendsToFollowersRatioUMass = 0.6
+  private val deviceWeightAdditive = 0.5
+  private val ageWeightAdditive = 0.2
+  private val restrictedWeightMultiplicative = 0.1
+  def getUserMass(combinedUser: CombinedUser): Option[UserMassInfo] = {
+    val user = Option(combinedUser.user)
+    val userId = user.map(_.id).getOrElse(0L)
+    val userExtended = Option(combinedUser.user_extended)
+    val age = user.map(_.created_at_msec).map(DateUtil.diffDays(_, currentTimestamp)).getOrElse(0)
+    val isRestricted = user.map(_.safety).exists(_.restricted)
+    val isSuspended = user.map(_.safety).exists(_.suspended)
+    val isVerified = user.map(_.safety).exists(_.verified)
+    val hasValidDevice = user.flatMap(u =&gt; Option(u.devices)).exists(_.isSetMessaging_devices)
+    val numFollowers = userExtended.flatMap(u =&gt; Option(u.followers)).map(_.toInt).getOrElse(0)
+    val numFollowings = userExtended.flatMap(u =&gt; Option(u.followings)).map(_.toInt).getOrElse(0)
+    if (userId == 0L || user.map(_.safety).exists(_.deactivated)) {
+      None
+    } else {
+      val mass =
+        if (isSuspended)
+          0
+        else if (isVerified)
+          100
+        else {
+          var score = deviceWeightAdditive * 0.1 +
+            (if (hasValidDevice) deviceWeightAdditive else 0)
+          val normalizedAge = if (age &gt; 30) 1.0 else (1.0 min scala.math.log(1.0 + age / 15.0))
+          score *= normalizedAge
+          if (score &lt; 0.01) score = 0.01
+          if (isRestricted) score *= restrictedWeightMultiplicative
+          score = (score min 1.0) max 0
+          score *= 100
+          score
+        }
+      val friendsToFollowersRatio = (1.0 + numFollowings) / (1.0 + numFollowers)
+      val adjustedMass =
+        if (numFollowings &gt; threshAbsNumFriendsUMass &amp;&amp;
+          friendsToFollowersRatio &gt; threshFriendsToFollowersRatioUMass) {
+          mass / scala.math.exp(
+            constantDivisionFactorGt_threshFriendsToFollowersRatioUMass *
+              (friendsToFollowersRatio - threshFriendsToFollowersRatioUMass)
+          )
+        } else {
+          mass
+        }
+      Some(UserMassInfo(userId, adjustedMass))
+    }
+  }
+}
+</code></pre>
+<p>Here are some variable values defined:</p>
+<ul>
+<li>currentTimestamp: current timestamp (used to calculate the difference between account and current time).</li>
+<li>constantDivisionFactorGt_threshFriendsToFollowersRatioUMass: constant factor for the ratio of friends to followers (used to measure the proportion of a user's friends to followers).</li>
+<li>threshAbsNumFriendsUMass: minimum number of friends a user must have (used to calculate user weight).</li>
+<li>threshFriendsToFollowersRatioUMass: threshold for the ratio of friends to followers (minimum allowed value for the ratio of a user's friends to followers; exceeding this value can have negative consequences).</li>
+<li>deviceWeightAdditive: device weight.</li>
+<li>ageWeightAdditive: age weight (seems to be unused).</li>
+<li>restrictedWeightMultiplicative: weight for restricted users.</li>
+</ul>
+<p>When calculating the score, the account status is first checked. If the account has been deactivated, the score is 0. If the account is verified, the score is 100. If the account is not verified, the score is calculated based on certain conditions.</p>
+<pre><code class="language-Scala">if (isSuspended)
+  0
+else if (isVerified)
+  100
+else {
+  var score = deviceWeightAdditive * 0.1 +
+    (if (hasValidDevice) deviceWeightAdditive else 0)
+  val normalizedAge = if (age &gt; 30) 1.0 else (1.0 min scala.math.log(1.0 + age / 15.0))
+  score *= normalizedAge
+  if (score &lt; 0.01) score = 0.01
+  if (isRestricted) score *= restrictedWeightMultiplicative
+  score = (score min 1.0) max 0
+  score *= 100
+  score
+}
+</code></pre>
+<p>In this code, it first checks whether a valid device is held and then adds the initial weight. However, I couldn't find any other code that checks the validity of the device in more detail. If the device is valid, it returns 0.5 points, and if it's invalid, it returns 0 points. The default value of <code>deviceWeightAdditive</code> is 0.5, so according to the following algorithm, assuming the device is valid, the score would be 0.55 points (0.5 * 0.1 + 0.5).</p>
+<pre><code class="language-Scala">deviceWeightAdditive * 0.1 +
+  (if (hasValidDevice) deviceWeightAdditive else 0)
+</code></pre>
+<p>After calculating based on age, if the age is greater than 30 years old, return 1 point. If the age is less than or equal to 30 years old, proceed to the next calculation by dividing the age by 15, adding 1, and then taking the natural logarithm.</p>
+<p>The natural logarithm is the logarithm with base e, denoted as ln(x).</p>
+<p>Assuming the age is 22 years old, ln(1 + 22/15) ≈ 0.9028677115420144.</p>
+<p>If the natural logarithm is less than 1, return the natural logarithm. If the natural logarithm is greater than 1, return 1. This means the maximum value of normalizedAge will not exceed 1.</p>
+<p>Finally, multiply the calculated result by the previously calculated score, which is 0.55 * 0.9028677115420144 = 0.49657724134810793.</p>
+<pre><code class="language-Scala">val normalizedAge = if (age &gt; 30) 1.0 else (1.0 min scala.math.log(1.0 + age / 15.0))
+  score *= normalizedAge
+</code></pre>
+<p>Some additional checks were made below. If the score is less than 0.01, it will return 0.01, but according to the above conditions, the score will not be lower than 0.01.</p>
+<p>If the account is restricted, the total score will be multiplied by the restricted weight, which is 0.1.</p>
+<p>If the score is greater than 1, it will be set to 1. If the score is less than 1, the current score will be returned. Finally, the score is multiplied by 100.</p>
+<p>Assuming the account is not restricted, based on the above conditions, the score is 49.657724134810793.</p>
+<pre><code class="language-Scala">if (score &lt; 0.01) score = 0.01
+if (isRestricted) score *= restrictedWeightMultiplicative
+score = (score min 1.0) max 0
+score *= 100
+</code></pre>
+<p>Next, the score will be calculated based on the account's number of following and followers. It is calculated by adding 1 to the sum of following and dividing by 1 plus the sum of followers. For example, assuming the account has 600 following and 450 followers, the ratio of following to followers would be (1 + 600) / (1 + 450) ≈ 1.3325942350332594.</p>
+<pre><code class="language-Scala">val friendsToFollowersRatio = (1.0 + numFollowings) / (1.0 + numFollowers)
+</code></pre>
+<p>First, two conditions are evaluated: whether the number of followers is greater than the user's minimum follower count (500) and whether the ratio of followers to following is greater than the threshold (0.6). If these two conditions are not met, the previously calculated score is returned without further calculation.</p>
+<p>If both conditions are met, the difference between the ratio of followers to following and the threshold is multiplied by the constant factor of followers and fans, resulting in 5 * (1.3325942350332594 - 0.6) = 3.6629711751662968. This result is then used to calculate the exponent using the exponential function.</p>
+<p>The exponential function formula is: f(x) = a^x.</p>
+<p>Using the calculated result, we can calculate the exponential function by computing e^3.6629711751662968 ≈ 2.565617039296528. This result is the final account weight score.</p>
+<pre><code class="language-Scala">val adjustedMass =
+  if (numFollowings &gt; threshAbsNumFriendsUMass &amp;&amp;
+    friendsToFollowersRatio &gt; threshFriendsToFollowersRatioUMass) {
+    mass / scala.math.exp(
+      constantDivisionFactorGt_threshFriendsToFollowersRatioUMass *
+        (friendsToFollowersRatio - threshFriendsToFollowersRatioUMass)
+    )
+  } else {
+    mass
+  }
+</code></pre>
+<p>Source：<a href="https://github.com/twitter/the-algorithm/blob/main/src/scala/com/twitter/graph/batch/job/tweepcred/UserMass.scala" target="_blank">UserMass.scala</a></p>
+<div class="form">
+    <div class="panel-heading">Account Weight Calculator</div>
+    <div class="panel-body">
+      <div class="form-control">
+        <lable>Account Status</lable>
+        <select id="accountStatus">
+          <option value="">Status</option>
+          <option value="suspended">Suspended</option>
+          <option value="verified">Verified</option>
+          <option value="unVerified">Unverified</option>
+        </select>
+      </div>
+      <div class="form-control">
+        <lable>Restricted?</lable>
+        <select id="restrictedStatus">
+          <option value="">Select status</option>
+          <option value="restricted">restricted</option>
+          <option value="unRestricted">Unrestricted</option>
+        </select>
+      </div>
+      <div class="form-control">
+        <lable>Birthday</lable>
+        <input type="date" id="birthday">
+      </div>
+      <div class="form-control">
+        <lable>Followings</lable>
+        <input type="number" id="followings">
+      </div>
+      <div class="form-control">
+        <lable>Followers</lable>
+        <input type="number" id="followers">
+      </div>
+      <div class="form-control">
+        <button class="btn btn-primary btn-block" onclick="calcAccountWeight()">Calculate</button>
+        <p id="accountScore"></p>
+      </div>
+    </div>
+  </div>
+<h2 id="ranking-weight-algorithm">Ranking weight algorithm</h2>
+<table style="margin: 0 auto;">
+	<thead>
+		<tr>
+			<th scope="col">Category</th>
+			<th scope="col">Score</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr style="text-align: center;">
+			<td>UI English, tweet not English</td>
+			<td>0.3x</td>
+		</tr>
+		<tr>
+			<td colspan="2">While the interface language of Twitter is in English, the tweets posted on the platform can be written in any language.</td>
+		</tr>
+		<tr style="text-align: center;">
+			<td>Twitter English, UI not English</td>
+			<td>0.7x</td>
+		</tr>
+		<tr>
+			<td colspan="2">The tweet that was posted is written in English, however, the language used on Twitter's interface is not English.</td>
+		</tr>
+		<tr style="text-align: center;">
+			<td>UI and language distinct.</td>
+			<td>0.1x</td>
+		</tr>
+		<tr>
+			<td colspan="2">Although the interface language of Twitter is English, the content of tweets posted on the platform can be written in languages other than English.</td>
+		</tr>
+		<tr style="text-align: center;">
+			<td>Cannot recognize the language. </td>
+			<td>0.01x</td>
+		</tr>
+		<tr>
+			<td colspan="2">The language used in this tweet is neither user-friendly nor matches the interface language.</td>
+		</tr>
+		<tr style="text-align: center;">
+			<td>UI English, tweet not English</td>
+			<td>0.3x</td>
+		</tr>
+		<tr>
+			<td colspan="2">The interface language of Twitter is English, but the tweets posted on it may not be in English. </td>
+		</tr>
+		<tr style="text-align: center;">
+			<td>Images, videos, and news links</td>
+			<td>1.0x</td>
+		</tr>
+		<tr>
+			<td colspan="2">Accumulate a weights based on the number of media.</td>
+		</tr>
+		<tr style="text-align: center;">
+			<td>External link</td>
+			<td>Hide</td>
+		</tr>
+		<tr>
+			<td colspan="2">If a link is a non-media link and lacks sufficient interaction weight, it will be hidden. </td>
+		</tr>
+	</tbody>
+</table>
+<br>
+<table style="margin: 0 auto;">
+	<thead>
+		<tr>
+			<th colspan="2" scope="col">Downgrade Attribute</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr style="text-align: center;">
+			<td>No text content</td>
+			<td>1.0x</td>
+		</tr>
+		<tr>
+			<td colspan="2">There is no text in the content of the tweet. </td>
+		</tr>
+		<tr style="text-align: center;">
+			<td>Only link</td>
+			<td>1.0x</td>
+		</tr>
+		<tr>
+			<td colspan="2">The tweet simply includes a link without any accompanying text.</td>
+		</tr>
+		<tr style="text-align: center;">
+			<td>Only name</td>
+			<td>1.0x</td>
+		</tr>
+		<tr>
+			<td colspan="2">The tweet only has the name and no other content. </td>
+		</tr>
+	</tbody>
+</table>
+<br>
+<p>As the code is too long, I have only extracted a part of it. The following code is not complete.<br>
+Here are defined the initial values for each type.</p>
+<p>maxHitsPerUser has a default value of 3, which means the algorithm can push up to 3 tweets. If the account weight is greater than the value set by maxTweepcredForAntiGaming, the algorithm will push all tweets.</p>
+<pre><code class="language-Scala">struct ThriftRankingParams {
+  30: optional double langEnglishUIBoost = 0.3
+  31: optional double langEnglishTweetBoost = 0.7
+  32: optional double langDefaultBoost = 0.1
+  43: optional double unknownLanguageBoost = 0.01
+  60: optional bool enableHitDemotion = 0
+  61: optional double noTextHitDemotion = 1.0
+  62: optional double urlOnlyHitDemotion = 1.0
+  63: optional double nameOnlyHitDemotion = 1.0
+  64: optional double separateTextAndNameHitDemotion = 1.0
+  65: optional double separateTextAndUrlHitDemotion = 1.0
+  102: optional double multipleHashtagsOrTrendsBoost = 1
+  108: optional double tweetHasImageUrlBoost = 1
+  109: optional double tweetHasVideoUrlBoost = 1
+  110: optional double tweetHasNewsUrlBoost = 1
+}(persisted='true')
+
+
+struct ThriftFacetRankingOptions {
+  35: optional i32 maxHitsPerUser = 3
+  36: optional i32 maxTweepcredForAntiGaming = 65
+}(persisted='true')
+</code></pre>
+<p>If a tweet includes a picture, video, or news link, the count will increase by 1 from its original quantity.</p>
+<p>Revised version: If a tweet includes a picture, video, or news link, the character count will increase by one from its original quantity.</p>
+<pre><code class="language-Java">if (data.hasImageUrl || data.hasVideoUrl) {
+  relevanceStats.setNumWithMedia(relevanceStats.getNumWithMedia() + 1);
+}
+if (data.hasNewsUrl) {
+  relevanceStats.setNumWithNews(relevanceStats.getNumWithNews() + 1);
+}
+</code></pre>
+<p>If a tweet contains images, videos, or news links, it will increase the weight of the tweet. The calculation method is: total score _ (1 _ (number of images + 1)).</p>
+<pre><code class="language-Java">// Media/News url boosts.
+if (data.hasImageUrl || data.hasVideoUrl) {
+  data.hasMedialUrlBoostApplied = true;
+  boostedScore *= params.tweetHasMediaUrlBoost;
+}
+if (data.hasNewsUrl) {
+  data.hasNewsUrlBoostApplied = true;
+  boostedScore *= params.tweetHasNewsUrlBoost;
+}
+</code></pre>
+<p>The following code snippet demonstrates that images, videos, or news links receive an additional weightage, whereas the absence of text, presence of only links or names result in reduced weightage.</p>
+<pre><code class="language-Java">if (scoringData.tweetHasTrendsBoostApplied) {
+  boostDetails.add(Explanation.match(
+    (float) params.tweetHasTrendBoost, &quot;[x] Tweet has trend boost&quot;));
+}
+if (scoringData.hasMedialUrlBoostApplied) {
+  boostDetails.add(Explanation.match(
+    (float) params.tweetHasMediaUrlBoost, &quot;[x] Media url boost&quot;));
+}
+if (scoringData.hasNewsUrlBoostApplied) {
+  boostDetails.add(Explanation.match(
+    (float) params.tweetHasNewsUrlBoost, &quot;[x] News url boost&quot;));
+}
+boostDetails.add(Explanation.match(0.0f, &quot;[FIELDS HIT] &quot; + scoringData.hitFields));
+if (scoringData.hasNoTextHitDemotionApplied) {
+  boostDetails.add(Explanation.match(
+    (float) params.noTextHitDemotion, &quot;[x] No text hit demotion&quot;));
+}
+if (scoringData.hasUrlOnlyHitDemotionApplied) {
+  boostDetails.add(Explanation.match(
+    (float) params.urlOnlyHitDemotion, &quot;[x] URL only hit demotion&quot;));
+}
+if (scoringData.hasNameOnlyHitDemotionApplied) {
+  boostDetails.add(Explanation.match(
+    (float) params.nameOnlyHitDemotion, &quot;[x] Name only hit demotion&quot;));
+}
+if (scoringData.hasSeparateTextAndNameHitDemotionApplied) {
+  boostDetails.add(Explanation.match((float) params.separateTextAndNameHitDemotion,
+    &quot;[x] Separate text/name demotion&quot;));
+}
+if (scoringData.hasSeparateTextAndUrlHitDemotionApplied) {
+  boostDetails.add(Explanation.match((float) params.separateTextAndUrlHitDemotion,
+    &quot;[x] Separate text/url demotion&quot;));
+}
+</code></pre>
+<p>Source: <a href="https://github.com/twitter/the-algorithm/blob/main/src/thrift/com/twitter/search/common/ranking/ranking.thrift" target="_blank">ranking.thrift</a><br>
+Source: <a href="https://github.com/twitter/the-algorithm/blob/main/src/java/com/twitter/search/earlybird/search/relevance/scoring/FeatureBasedScoringFunction.java" target="_blank">FeatureBasedScoringFunction.java</a></p>
+<h2 id="tweet-publishing-time-algorithm">Tweet publishing time algorithm</h2>
+<p>The score of a tweet will decrease over time.</p>
+<p>Related code:</p>
+<pre><code class="language-Scala">struct ThriftAgeDecayRankingParams {
+  // the rate in which the score of older tweets decreases
+  1: optional double slope = 0.003
+  // the age, in minutes, where the age score of a tweet is half of the latest tweet
+  2: optional double halflife = 360.0
+  // the minimal age decay score a tweet will have
+  3: optional double base = 0.6
+}(persisted='true')
+</code></pre>
+<p>Here, a time decay function is used with a decay rate of 0.003 and a decay half-life of 360 minutes. This decay function indicates that the score of a tweet will gradually decrease over time, with the rate of decrease depending on the time difference and decay rate. In this case, when a tweet's posting time is 500 minutes apart from the current time, the decay score of the tweet can be calculated using the following formula:</p>
+<p>Decay Score = Base Score _ exp(-Decay Rate _ (Posting Time - Current Time) / Decay Half-life)</p>
+<p>Source: <a href="https://github.com/twitter/the-algorithm/blob/main/src/thrift/com/twitter/search/common/ranking/ranking.thrift" target="_blank">ranking.thrift</a></p>
+  <div class="form">
+    <div class="panel-heading">Tweet Weight Decay Calculator</div>
+    <div class="panel-body">
+      <div class="form-control">
+        <lable>Tweet post date</lable>
+        <input type="datetime-local" id="postTime">
+      </div>
+      <div class="form-control">
+        <button class="btn btn-primary btn-block" onclick="calcPostWeight()">Calculate</button>
+        <p id="postScore"></p>
+      </div>
+    </div>
+  </div>
+<h2 id="violations-of-policy">Violations of Policy</h2>
+<p>If a tweet contains content that violates policy, its ranking will be lowered. This includes, but is not limited to, encouraging self-harm, hate speech, gratuitous violence, promoting violence, encouraging mob harassment, tweets related to a deceased or dying user, releasing private information, violating privacy rights, threatening exposure, violent sexual behavior, sexual harassment, violent threats, interfering with elections, false election information, hacking content, fraud, platform manipulation, false Ukrainian information, misleading information, and false medical information.</p>
+<p>Related code</p>
+<pre><code class="language-Scala">val reasonToPolicyInViolation: Map[Reason, PolicyInViolation] = Map(
+  AbuseEpisodic -&gt; PolicyInViolation.AbusePolicyEpisodic,
+  AbuseEpisodicEncourageSelfHarm -&gt; PolicyInViolation.AbusePolicyEpisodicEncourageSelfharm,
+  AbuseEpisodicHatefulConduct -&gt; PolicyInViolation.AbusePolicyEpisodicHatefulConduct,
+  AbuseGratuitousGore -&gt; PolicyInViolation.AbusePolicyGratuitousGore,
+  AbuseGlorificationOfViolence -&gt; PolicyInViolation.AbusePolicyGlorificationofViolence,
+  AbuseMobHarassment -&gt; PolicyInViolation.AbusePolicyEncourageMobHarassment,
+  AbuseMomentOfDeathOrDeceasedUser -&gt; PolicyInViolation.AbusePolicyMomentofDeathDeceasedUser,
+  AbusePrivateInformation -&gt; PolicyInViolation.AbusePolicyPrivateInformation,
+  AbuseRightToPrivacy -&gt; PolicyInViolation.AbusePolicyRighttoPrivacy,
+  AbuseThreatToExpose -&gt; PolicyInViolation.AbusePolicyThreattoExpose,
+  AbuseViolentSexualConduct -&gt; PolicyInViolation.AbusePolicyViolentSexualConduct,
+  AbuseViolentThreatHatefulConduct -&gt; PolicyInViolation.AbusePolicyViolentThreatsHatefulConduct,
+  AbuseViolentThreatOrBounty -&gt; PolicyInViolation.AbusePolicyViolentThreatorBounty,
+  OneOff -&gt; PolicyInViolation.OneOff,
+  VotingMisinformation -&gt; PolicyInViolation.MisinformationVoting,
+  HackedMaterials -&gt; PolicyInViolation.HackedMaterials,
+  Scams -&gt; PolicyInViolation.Scam,
+  PlatformManipulation -&gt; PolicyInViolation.PlatformManipulation,
+  MisinfoCivic -&gt; PolicyInViolation.MisinformationCivic,
+  MisinfoCrisis -&gt; PolicyInViolation.AbusePolicyUkraineCrisisMisinformation,
+  MisinfoGeneric -&gt; PolicyInViolation.MisinformationGeneric,
+  MisinfoMedical -&gt; PolicyInViolation.MisinformationMedical,
+)
+</code></pre>
+<p>Source: <a href="https://github.com/twitter/the-algorithm/blob/main/visibilitylib/src/main/scala/com/twitter/visibility/rules/PublicInterestRules.scala" target="_blank">PublicInterestRules.scala</a></p>
+<h2 id="tweet-push-mechanism">Tweet Push Mechanism</h2>
+<p>Let's take &quot;me&quot; as an example. When I post a tweet, or interact with a certain post (like, reply, or share), the tweet will be pushed to my fans.</p>
+<figure data-type="image" tabindex="2"><img src="https://raz1ner.com/post-images/1682655291106.png" alt="" loading="lazy"></figure>
+<p>If my followers engage with a tweet, it will be pushed to their own followers. If there is no engagement, it won't be pushed any further.</p>
+<p>Pink represents the relationship between blue followers, which are the followers of my followers.</p>
+<figure data-type="image" tabindex="3"><img src="https://raz1ner.com/post-images/1682655297998.png" alt="" loading="lazy"></figure>
+<p>If the followers of my followers, represented by the pink fans in the diagram, engage with this post, it will be shared with their own set of followers. The green lines indicate the connection between the pink fans.</p>
+<figure data-type="image" tabindex="4"><img src="https://raz1ner.com/post-images/1682655302665.png" alt="" loading="lazy"></figure>
+<p>If they persist in their interaction, they will continue to push each other outward in an ongoing cycle.</p>
+  <script>
+    function calculateAge (birth) {
+      const birthDate = new Date(birth)
+      const currentDate = new Date()
+      let age = currentDate.getFullYear() - birthDate.getFullYear()
+      if (currentDate.getMonth() < birthDate.getMonth() || (currentDate.getMonth() === birthDate.getMonth() && currentDate.getDate() < birthDate.getDate())) {
+        age--
+      }
+      return age
+    }
+
+    function calcAccountWeight () {
+      const accountStatus = document.getElementById('accountStatus').value
+      const isRestricted = document.getElementById('restrictedStatus').value
+      const birthday = document.getElementById('birthday').value
+      const numFollowings = document.getElementById('followings').value
+      const numFollowers = document.getElementById('followers').value
+      const accountScore = document.getElementById('accountScore')
+      if (!accountStatus && !isRestricted && !birthday && !numFollowings && !numFollowers) return alert('Please fill in the information specification')
+      let score
+      const deviceWeightAdditive = 0.5
+      const hasValidDevice = true
+      const threshAbsNumFriendsUMass = 500
+      const threshFriendsToFollowersRatioUMass = 0.6
+      const constantDivisionFactorGt_threshFriendsToFollowersRatioUMass = 5.0
+      const restrictedWeightMultiplicative = 0.1
+      const age = calculateAge(birthday)
+      if (accountStatus === 'suspended') {
+        score = 0
+      } else if (accountStatus === 'verified') {
+        score = 100
+      } else if (accountStatus === 'unVerified') {
+        score = deviceWeightAdditive * 0.1 + (hasValidDevice ? deviceWeightAdditive : 0)
+        const normalizedAge = age > 30 ? 1.0 : Math.min(1.0, Math.log(1.0 + age / 15.0))
+        score *= normalizedAge
+        if (score < 0.01) score = 0.01
+        if (isRestricted === 'restricted') score *= restrictedWeightMultiplicative
+        score = Math.min(1.0, Math.max(0, score))
+        score *= 100
+      }
+      const friendsToFollowersRatio = (1.0 + numFollowings) / (1.0 + numFollowers)
+      let adjustedMass = 0
+      if (numFollowings > threshAbsNumFriendsUMass && friendsToFollowersRatio > threshFriendsToFollowersRatioUMass) {
+        adjustedMass = score / Math.exp(constantDivisionFactorGt_threshFriendsToFollowersRatioUMass * (friendsToFollowersRatio - threshFriendsToFollowersRatioUMass))
+      } else {
+        adjustedMass = score
+      }
+      accountScore.innerText = adjustedMass
+    }
+
+    function calcPostWeight () {
+      const postTime = document.getElementById('postTime').value
+      const postScore = document.getElementById('postScore')
+      if (!postTime) return alert('Please select posting date')
+      const halfLife = 360
+      const slope = 0.003
+      const base = 0.6
+      const minutesPassed = (Date.now() - new Date(postTime).getTime()) / (1000 * 60)
+      const ageDecay = Math.pow(2, -minutesPassed / halfLife)
+      const score = base + (1 - base) * ageDecay * Math.exp(-slope * minutesPassed)
+      postScore.innerText = score
+    }
+  </script>
+
+          </div>
+          <div class="copyright">
+            <p>本文链接： <a href="https://raz1ner.com/post/Twitter-Algorithm-EN/">https://raz1ner.com/post/Twitter-Algorithm-EN/</a></p>
+            <p>版权声明： 本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="nofollow noreferrer" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</p>
+          </div>
+        </article>
+        <div class="next-post">
+          <div class="next">下一篇</div>
+          <a href="https://raz1ner.com/post/Google-Excel-Boost-Data-Match-Compared/">
+            <h3 class="post-title">Google Excel 性能优化 - 数据匹配性能对比</h3>
+          </a>
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="gitalk-container"></div>
+      </div>
+      <!-- middle -->
+      <div class="main-container-middle"></div>
+      <!-- right -->
+      <div id="sidebar" class="main-container-right">
+        <div class="id_card i-card">
+          <div class="id_card-avatar" style="background-image: url(https://raz1ner.com/images/avatar.png?v=1764290830388)"></div>
+          <h1 class="id_card-title">Raz1ner</h1>
+          <p style="text-align: center;">
+            <a href="https://github.com/dev-coco" rel="nofollow noreferrer" target="_blank"><img class="social-icon" alt="Github" src="/images/social/GitHub.png"></a>
+            <a href="https://t.me/raz1ner" rel="nofollow noreferrer" target="_blank"><img class="social-icon" alt="Telegram" src="/images/social/Telegram.png"></a>
+            <a href="https://www.youtube.com/channel/UCEgNinV_DEntuv5Dm8Z_JvA?sub_confirmation=1" rel="nofollow noreferrer" target="_blank"><img class="social-icon" alt="YouTuebe" src="/images/social/YouTube.png"></a>
+            <a href="/atom.xml" target="_blank"><img class="social-icon" alt="rss" src="/images/social/RSS.png"></a>
+            <a href="mailto:ruijingle@gmail.com" target="_blank"><img class="social-icon" alt="Email" src="/images/social/Gmail.png"></a>
+          </p>
+          <!-- <h2 class="id_card-description"></h2> -->
+          <!--  -->
+          <div class="id_card-sns">
+            <!-- github -->
+            
+            <!-- twitter -->
+            <!-- weibo -->
+            <!-- facebook -->
+          </div>
+        </div>
+      <!-- toc -->
+      <div class="toc-card i-card" style="max-height:40%;overflow:auto">
+        <div class="toc-title i-card-title">目录</div>
+          <div class="toc-content">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#twitter-tweet-weight-algorithm">Twitter Tweet Weight Algorithm</a>
+<ul>
+<li><a href="#algorithm-for-calculating-total-score">Algorithm for Calculating Total Score</a></li>
+</ul>
+</li>
+<li><a href="#advertising-weight-algorithm">Advertising Weight Algorithm</a></li>
+<li><a href="#twitter-blue-weighting-algorithm">Twitter Blue Weighting Algorithm</a></li>
+<li><a href="#account-weight-algorithm">Account Weight Algorithm</a></li>
+<li><a href="#ranking-weight-algorithm">Ranking weight algorithm</a></li>
+<li><a href="#tweet-publishing-time-algorithm">Tweet publishing time algorithm</a></li>
+<li><a href="#violations-of-policy">Violations of Policy</a></li>
+<li><a href="#tweet-push-mechanism">Tweet Push Mechanism</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      <div class="notice-card i-card ">
+        <div class="notice-title i-card-title">公告</div>
+        <div class="notice-content"><p>博客新开通 Telegram 频道：<a href="https://t.me/raz1ner" target="_blank" style="color: blue">瑞景乐的博客</a>，欢迎订阅，随时收到最新资讯。</p><p>商务合作请点击上方的邮箱与我联系。<p></div>
+      </div>
+      <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
+        <div class="notice-content">
+          <a class="tags-tag i-tag i-tag-banana" href="https://raz1ner.com/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/ai-tech/">AI 科技</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/excel/">Excel</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/google-script/">Google 脚本</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://raz1ner.com/tag/instagram/">Instagram</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/security/">安全</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/javascript/">Javascript</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/twitter-x/">Twitter (X)</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://raz1ner.com/tag/life/">生活</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/sololearn/">Sololearn</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://raz1ner.com/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/linux-command/">Linux命令</a>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="site-footer">
+    <p style="text-align: center;">
+        <a href="https://github.com/dev-coco" rel="nofollow noreferrer" target="_blank"><img class="social-icon" alt="Github" src="/images/social/GitHub.png"></a>
+        <a href="https://t.me/raz1ner" rel="nofollow noreferrer" target="_blank"><img class="social-icon" alt="Telegram" src="/images/social/Telegram.png"></a>
+        <a href="https://www.youtube.com/channel/UCEgNinV_DEntuv5Dm8Z_JvA?sub_confirmation=1" rel="nofollow noreferrer" target="_blank"><img class="social-icon" alt="YouTuebe" src="/images/social/YouTube.png"></a>
+        <a href="/atom.xml" target="_blank"><img class="social-icon" alt="rss" src="/images/social/RSS.png"></a>
+        <a href="mailto:ruijingle@gmail.com" target="_blank"><img class="social-icon" alt="Email" src="/images/social/Gmail.png"></a>
+      </p>
+    <span>Copyright © 2020-2025 Raz1ner - All Rights Reserved.</span> | <a class="rss" href="https://raz1ner.com/atom.xml" target="_blank">RSS</a>
+</div>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/excel.min.js"></script>
+            <script>hljs.highlightAll();</script>
+  </div>
+  
+</body>
+</html>

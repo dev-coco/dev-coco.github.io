@@ -1,0 +1,859 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="瑞景乐的个人博客。">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sololearn HTML course HTML5 answers | Raz1ner</title>
+  <meta name="author" content="Raz1ner">
+  <link rel="shortcut icon" href="https://raz1ner.com/favicon.ico?v=1764290830388">
+  <link rel="stylesheet" href="https://raz1ner.com/styles/main.css">
+  <!-- <script src="/js/prism.js"></script> -->
+  <!-- <link rel="stylesheet" href="/css/prism.css"> -->
+  <script src="https://raz1ner.com/media/js/jquery.sticky-sidebar.min.js"></script>
+  <script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script async src="https://fundingchoicesmessages.google.com/i/pub-6960947409660270?ers=1" nonce="3szuJwRueku-LVJlmdoLew"></script><script nonce="3szuJwRueku-LVJlmdoLew">(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+  <script>(function(){
+   'use strict';var aa=function(a){var b=0;return function(){return b<a.length?{done:!1,value:a[b++]}:{done:!0}}},ba="function"==typeof Object.create?Object.create:function(a){var b=function(){};b.prototype=a;return new b},k;if("function"==typeof Object.setPrototypeOf)k=Object.setPrototypeOf;else{var m;a:{var ca={a:!0},n={};try{n.__proto__=ca;m=n.a;break a}catch(a){}m=!1}k=m?function(a,b){a.__proto__=b;if(a.__proto__!==b)throw new TypeError(a+" is not extensible");return a}:null}
+   var p=k,q=function(a,b){a.prototype=ba(b.prototype);a.prototype.constructor=a;if(p)p(a,b);else for(var c in b)if("prototype"!=c)if(Object.defineProperties){var d=Object.getOwnPropertyDescriptor(b,c);d&&Object.defineProperty(a,c,d)}else a[c]=b[c];a.v=b.prototype},r=this||self,da=function(){},t=function(a){return a};var u;var w=function(a,b){this.g=b===v?a:""};w.prototype.toString=function(){return this.g+""};var v={},x=function(a){if(void 0===u){var b=null;var c=r.trustedTypes;if(c&&c.createPolicy){try{b=c.createPolicy("goog#html",{createHTML:t,createScript:t,createScriptURL:t})}catch(d){r.console&&r.console.error(d.message)}u=b}else u=b}a=(b=u)?b.createScriptURL(a):a;return new w(a,v)};var A=function(){return Math.floor(2147483648*Math.random()).toString(36)+Math.abs(Math.floor(2147483648*Math.random())^Date.now()).toString(36)};var B={},C=null;var D="function"===typeof Uint8Array;function E(a,b,c){return"object"===typeof a?D&&!Array.isArray(a)&&a instanceof Uint8Array?c(a):F(a,b,c):b(a)}function F(a,b,c){if(Array.isArray(a)){for(var d=Array(a.length),e=0;e<a.length;e++){var f=a[e];null!=f&&(d[e]=E(f,b,c))}Array.isArray(a)&&a.s&&G(d);return d}d={};for(e in a)Object.prototype.hasOwnProperty.call(a,e)&&(f=a[e],null!=f&&(d[e]=E(f,b,c)));return d}
+   function ea(a){return F(a,function(b){return"number"===typeof b?isFinite(b)?b:String(b):b},function(b){var c;void 0===c&&(c=0);if(!C){C={};for(var d="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789".split(""),e=["+/=","+/","-_=","-_.","-_"],f=0;5>f;f++){var h=d.concat(e[f].split(""));B[f]=h;for(var g=0;g<h.length;g++){var l=h[g];void 0===C[l]&&(C[l]=g)}}}c=B[c];d=Array(Math.floor(b.length/3));e=c[64]||"";for(f=h=0;h<b.length-2;h+=3){var y=b[h],z=b[h+1];l=b[h+2];g=c[y>>2];y=c[(y&3)<<
+   4|z>>4];z=c[(z&15)<<2|l>>6];l=c[l&63];d[f++]=""+g+y+z+l}g=0;l=e;switch(b.length-h){case 2:g=b[h+1],l=c[(g&15)<<2]||e;case 1:b=b[h],d[f]=""+c[b>>2]+c[(b&3)<<4|g>>4]+l+e}return d.join("")})}var fa={s:{value:!0,configurable:!0}},G=function(a){Array.isArray(a)&&!Object.isFrozen(a)&&Object.defineProperties(a,fa);return a};var H;var J=function(a,b,c){var d=H;H=null;a||(a=d);d=this.constructor.u;a||(a=d?[d]:[]);this.j=d?0:-1;this.h=null;this.g=a;a:{d=this.g.length;a=d-1;if(d&&(d=this.g[a],!(null===d||"object"!=typeof d||Array.isArray(d)||D&&d instanceof Uint8Array))){this.l=a-this.j;this.i=d;break a}void 0!==b&&-1<b?(this.l=Math.max(b,a+1-this.j),this.i=null):this.l=Number.MAX_VALUE}if(c)for(b=0;b<c.length;b++)a=c[b],a<this.l?(a+=this.j,(d=this.g[a])?G(d):this.g[a]=I):(d=this.l+this.j,this.g[d]||(this.i=this.g[d]={}),(d=this.i[a])?
+   G(d):this.i[a]=I)},I=Object.freeze(G([])),K=function(a,b){if(-1===b)return null;if(b<a.l){b+=a.j;var c=a.g[b];return c!==I?c:a.g[b]=G([])}if(a.i)return c=a.i[b],c!==I?c:a.i[b]=G([])},M=function(a,b){var c=L;if(-1===b)return null;a.h||(a.h={});if(!a.h[b]){var d=K(a,b);d&&(a.h[b]=new c(d))}return a.h[b]};J.prototype.toJSON=function(){var a=N(this,!1);return ea(a)};
+   var N=function(a,b){if(a.h)for(var c in a.h)if(Object.prototype.hasOwnProperty.call(a.h,c)){var d=a.h[c];if(Array.isArray(d))for(var e=0;e<d.length;e++)d[e]&&N(d[e],b);else d&&N(d,b)}return a.g},O=function(a,b){H=b=b?JSON.parse(b):null;a=new a(b);H=null;return a};J.prototype.toString=function(){return N(this,!1).toString()};var P=function(a){J.call(this,a)};q(P,J);function ha(a){var b,c=(a.ownerDocument&&a.ownerDocument.defaultView||window).document,d=null===(b=c.querySelector)||void 0===b?void 0:b.call(c,"script[nonce]");(b=d?d.nonce||d.getAttribute("nonce")||"":"")&&a.setAttribute("nonce",b)};var Q=function(a,b){b=String(b);"application/xhtml+xml"===a.contentType&&(b=b.toLowerCase());return a.createElement(b)},R=function(a){this.g=a||r.document||document};R.prototype.appendChild=function(a,b){a.appendChild(b)};var S=function(a,b,c,d,e,f){try{var h=a.g,g=Q(a.g,"SCRIPT");g.async=!0;g.src=b instanceof w&&b.constructor===w?b.g:"type_error:TrustedResourceUrl";ha(g);h.head.appendChild(g);g.addEventListener("load",function(){e();d&&h.head.removeChild(g)});g.addEventListener("error",function(){0<c?S(a,b,c-1,d,e,f):(d&&h.head.removeChild(g),f())})}catch(l){f()}};var ia=r.atob("aHR0cHM6Ly93d3cuZ3N0YXRpYy5jb20vaW1hZ2VzL2ljb25zL21hdGVyaWFsL3N5c3RlbS8xeC93YXJuaW5nX2FtYmVyXzI0ZHAucG5n"),ja=r.atob("WW91IGFyZSBzZWVpbmcgdGhpcyBtZXNzYWdlIGJlY2F1c2UgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlIGlzIGludGVyZmVyaW5nIHdpdGggdGhpcyBwYWdlLg=="),ka=r.atob("RGlzYWJsZSBhbnkgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlLCB0aGVuIHJlbG9hZCB0aGlzIHBhZ2Uu"),la=function(a,b,c){this.h=a;this.j=new R(this.h);this.g=null;this.i=[];this.l=!1;this.o=b;this.m=c},V=function(a){if(a.h.body&&!a.l){var b=
+   function(){T(a);r.setTimeout(function(){return U(a,3)},50)};S(a.j,a.o,2,!0,function(){r[a.m]||b()},b);a.l=!0}},T=function(a){for(var b=W(1,5),c=0;c<b;c++){var d=X(a);a.h.body.appendChild(d);a.i.push(d)}b=X(a);b.style.bottom="0";b.style.left="0";b.style.position="fixed";b.style.width=W(100,110).toString()+"%";b.style.zIndex=W(2147483544,2147483644).toString();b.style["background-color"]=ma(249,259,242,252,219,229);b.style["box-shadow"]="0 0 12px #888";b.style.color=ma(0,10,0,10,0,10);b.style.display=
+   "flex";b.style["justify-content"]="center";b.style["font-family"]="Roboto, Arial";c=X(a);c.style.width=W(80,85).toString()+"%";c.style.maxWidth=W(750,775).toString()+"px";c.style.margin="24px";c.style.display="flex";c.style["align-items"]="flex-start";c.style["justify-content"]="center";d=Q(a.j.g,"IMG");d.className=A();d.src=ia;d.style.height="24px";d.style.width="24px";d.style["padding-right"]="16px";var e=X(a),f=X(a);f.style["font-weight"]="bold";f.textContent=ja;var h=X(a);h.textContent=ka;Y(a,
+   e,f);Y(a,e,h);Y(a,c,d);Y(a,c,e);Y(a,b,c);a.g=b;a.h.body.appendChild(a.g);b=W(1,5);for(c=0;c<b;c++)d=X(a),a.h.body.appendChild(d),a.i.push(d)},Y=function(a,b,c){for(var d=W(1,5),e=0;e<d;e++){var f=X(a);b.appendChild(f)}b.appendChild(c);c=W(1,5);for(d=0;d<c;d++)e=X(a),b.appendChild(e)},W=function(a,b){return Math.floor(a+Math.random()*(b-a))},ma=function(a,b,c,d,e,f){return"rgb("+W(Math.max(a,0),Math.min(b,255)).toString()+","+W(Math.max(c,0),Math.min(d,255)).toString()+","+W(Math.max(e,0),Math.min(f,
+   255)).toString()+")"},X=function(a){a=Q(a.j.g,"DIV");a.className=A();return a},U=function(a,b){0>=b||null!=a.g&&0!=a.g.offsetHeight&&0!=a.g.offsetWidth||(na(a),T(a),r.setTimeout(function(){return U(a,b-1)},50))},na=function(a){var b=a.i;var c="undefined"!=typeof Symbol&&Symbol.iterator&&b[Symbol.iterator];b=c?c.call(b):{next:aa(b)};for(c=b.next();!c.done;c=b.next())(c=c.value)&&c.parentNode&&c.parentNode.removeChild(c);a.i=[];(b=a.g)&&b.parentNode&&b.parentNode.removeChild(b);a.g=null};var pa=function(a,b,c,d,e){var f=oa(c),h=function(l){l.appendChild(f);r.setTimeout(function(){f?(0!==f.offsetHeight&&0!==f.offsetWidth?b():a(),f.parentNode&&f.parentNode.removeChild(f)):a()},d)},g=function(l){document.body?h(document.body):0<l?r.setTimeout(function(){g(l-1)},e):b()};g(3)},oa=function(a){var b=document.createElement("div");b.className=a;b.style.width="1px";b.style.height="1px";b.style.position="absolute";b.style.left="-10000px";b.style.top="-10000px";b.style.zIndex="-10000";return b};var L=function(a){J.call(this,a)};q(L,J);var qa=function(a){J.call(this,a)};q(qa,J);var ra=function(a,b){this.l=a;this.m=new R(a.document);this.g=b;this.i=K(this.g,1);b=M(this.g,2);this.o=x(K(b,4)||"");this.h=!1;b=M(this.g,13);b=x(K(b,4)||"");this.j=new la(a.document,b,K(this.g,12))};ra.prototype.start=function(){sa(this)};
+   var sa=function(a){ta(a);S(a.m,a.o,3,!1,function(){a:{var b=a.i;var c=r.btoa(b);if(c=r[c]){try{var d=O(P,r.atob(c))}catch(e){b=!1;break a}b=b===K(d,1)}else b=!1}b?Z(a,K(a.g,14)):(Z(a,K(a.g,8)),V(a.j))},function(){pa(function(){Z(a,K(a.g,7));V(a.j)},function(){return Z(a,K(a.g,6))},K(a.g,9),K(a.g,10),K(a.g,11))})},Z=function(a,b){a.h||(a.h=!0,a=new a.l.XMLHttpRequest,a.open("GET",b,!0),a.send())},ta=function(a){var b=r.btoa(a.i);a.l[b]&&Z(a,K(a.g,5))};(function(a,b){r[a]=function(c){for(var d=[],e=0;e<arguments.length;++e)d[e-0]=arguments[e];r[a]=da;b.apply(null,d)}})("__h82AlnkH6D91__",function(a){"function"===typeof window.atob&&(new ra(window,O(qa,window.atob(a)))).start()});}).call(this);
+   window.__h82AlnkH6D91__("WyJwdWItNjk2MDk0NzQwOTY2MDI3MCIsW251bGwsbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9iL3B1Yi02OTYwOTQ3NDA5NjYwMjcwIl0sbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9lbC9BR1NLV3hWWkh4UHVLbUVuYUVHcDZmcldNVTVHZloyVUxJZW8zcHZhaV9wUVJ5a2M4dmlkZlVwMENZeVJQZEQxdExOQzRkOUN6cEQxS1hFZml1cnFJZXFIOVVsc1R3XHUwMDNkXHUwMDNkP3RlXHUwMDNkVE9LRU5fRVhQT1NFRCIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFhUNmRjRFppendkR2FaMmQ2dHBOMEF3TWowNERwVWVBaUd4Y1lsNXR1UWZFdmhDSTZmaWRxcEN3RXNQeGF1eWJUc004eFlhVWFLSWJENnNWdVIyNXIwT0FcdTAwM2RcdTAwM2Q/YWJcdTAwM2QxXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFVFeld6ZVhfYjlBSnJsR05ab2N0MG1UVHBKZFUxQVo1b2piaVNXMXc4TjNJdG93TndOZ2YtNzcwOVNEQUlrSWlUbW5UU2hvVW5DYml0QmVYVTM4Z3M3c2dcdTAwM2RcdTAwM2Q/YWJcdTAwM2QyXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFVWdXc5Q2tNRzNoX3p2WGJHcHlLdU95cE4weWVabEVVSmVsbFBnR2F4Y3NockhWdklpSmlPMzZKM3JhRlhDSl9fdnp2U0ZuRFNXS3dPUXl5enpLWG5zc0FcdTAwM2RcdTAwM2Q/c2JmXHUwMDNkMiIsImRpdi1ncHQtYWQiLDIwLDEwMCwiY0hWaUxUWTVOakE1TkRjME1EazJOakF5TnpBXHUwMDNkIixbbnVsbCxudWxsLG51bGwsImh0dHBzOi8vd3d3LmdzdGF0aWMuY29tLzBlbW4vZi9wL3B1Yi02OTYwOTQ3NDA5NjYwMjcwLmpzP3VzcXBcdTAwM2RDQXciXSwiaHR0cHM6Ly9mdW5kaW5nY2hvaWNlc21lc3NhZ2VzLmdvb2dsZS5jb20vZWwvQUdTS1d4V0M5M05iUXBSTC12eTBWbXd3TjBwVllQTDE5eDJLYWJfQkFZYjVucWlRM0VZTTJ0ZXRQMHJxRzE5ZHF5X3NfZjh6VmhPc0ZIWExmeVJGUnJJTEhSak5aZ1x1MDAzZFx1MDAzZCJd");</script>
+   <script async src="https://www.googletagmanager.com/gtag/js?id=G-24X8H1LT7N"></script>
+   <script>
+      window.dataLayer = window.dataLayer || []
+      function gtag(){dataLayer.push(arguments)}
+      gtag('js', new Date())
+      gtag('config', 'G-24X8H1LT7N')
+   </script>
+  <meta property="og:image" content="https://raz1ner.com/post-images/Sololearn-HTML-Course.png">
+  <meta name="description" content="Sololearn HTML course HTML5 answers">
+  <link rel="canonical" href="https://raz1ner.com/post/Sololearn-HTML-Course-HTML5-Answers/">
+  <meta property="og:title" content="Sololearn HTML course HTML5 answers - Raz1ner">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://raz1ner.com/post-images/Sololearn-HTML-Course.png">
+  <meta property="og:url" content="https://raz1ner.com/post/Sololearn-HTML-Course-HTML5-Answers/">
+  <meta property="og:description" content="Sololearn HTML course HTML5 answers">
+  <meta name="twitter:title" content="Sololearn HTML course HTML5 answers - Raz1ner">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://raz1ner.com/post-images/Sololearn-HTML-Course.png">
+  <meta name="twitter:description" content="Sololearn HTML course HTML5 answers">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:300,300i,400,400i,700,700i,800" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Mallanna" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+</head>
+<body>
+  <div class="main">
+    <div class="header">
+      <div class="nav">
+        <div class="logo">
+          <a href="https://raz1ner.com">
+            <img class="avatar" alt="Raz1ner" src="https://raz1ner.com/images/avatar.png?v=1764290830388" alt="">
+          </a>
+          <div class="site-title">
+            <h1>Raz1ner</h1>
+          </div>
+          <svg width="32" height="32" viewBox="0 0 16 16" id="menuBtn" style="position:absolute;right:15px">
+            <path d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5">
+          </svg>
+        </div>
+        <div class="mobile-menu" style="display: none;">
+          <div style="text-align: center">
+            
+              <div class="nav-item">
+                <a href="/" class="menu">首页</a>
+              </div>
+              <div class="nav-item">
+                <a href="/Navigation" class="menu">导航</a>
+              </div>
+              <div class="nav-item">
+                <a href="/Awesome-Software" class="menu">软件</a>
+              </div>
+              <div class="nav-item">
+                <a href="/Extension/" class="menu">插件</a>
+              </div>
+              <div class="nav-item">
+                <a href="/Online-Tools" class="menu">在线工具</a>
+              </div>
+              <div class="nav-item">
+                <a href="/post/Linux-Command" class="menu">Linux命令</a>
+              </div>
+              <div class="nav-item">
+                <a href="/Excel" class="menu">Excel教程</a>
+              </div>
+              <div class="nav-item">
+                <a href="/post/Terms-and-Privacy" class="menu">隐私与条款</a>
+              </div>
+          </div>
+        </div>
+
+        <div class="menu-container">
+          <ul>
+            <li>
+              <a href="/" class="menu">首页</a>
+            </li>
+            <li>
+              <a href="/Navigation" class="menu">导航</a>
+            </li>
+            <li>
+              <a href="/Awesome-Software" class="menu">软件</a>
+            </li>
+            <li>
+              <a href="/Extension/" class="menu">插件</a>
+            </li>
+            <li>
+              <a href="/Online-Tools" class="menu">在线工具</a>
+            </li>
+            <li>
+              <a href="/post/Linux-Command" class="menu">Linux命令</a>
+            </li>
+            <li>
+              <a href="/Excel" class="menu">Excel教程</a>
+            </li>
+            <li>
+              <a href="/post/Terms-and-Privacy" class="menu">隐私与条款</a>
+            </li>
+          </ul>
+        </div>
+
+
+
+        <form id="gridea-search-form" action="https://raz1ner.com/search/" class="search">
+          <input type="search" name="q" class="search-box">
+          <span class="search-button">
+            <span class="search-icon"></span>
+          </span>
+        </form>
+      </div>
+    </div>
+    <script>
+      document.getElementsByClassName('search-button')[0].addEventListener('click', function () {
+        document.getElementById('gridea-search-form').classList.toggle('open');
+      })
+      document.getElementById('menuBtn').addEventListener('click', () => {
+        const element = document.querySelector('.mobile-menu')
+        if (element.style.display === 'none' || element.style.display === '') {
+          element.style.display = 'block'
+        } else {
+          element.style.display = 'none'
+        }
+      })
+    </script>
+
+    <div id="main-content" class="post-detail main-container">
+      <!-- left -->
+      <div id="content" class="main-container-left">
+        <article class="post i-card">
+        <h2 class="post-title">Sololearn HTML course HTML5 answers</h2>
+        <div class="post-info">
+          <time class="post-time">2022-07-25 / 10 min read</time>
+            <a href="https://raz1ner.com/tag/sololearn/" class="post-tag i-tag i-tag-primary">#Sololearn</a>
+        </div>
+        <!--
+          
+        <div class="post-feature-image" style="background-image: url('https://raz1ner.com/post-images/Sololearn-HTML-Course.png')"></div>
+        -->
+          <div class="post-content">
+            <p>Sololearn HTML course HTML5 answers</p>
+<!-- more -->
+<style>.q,.a{font-weight:bold;}.q{color:red;}.a{color:green}</style>
+<p>Here are all the questions and answers that I hope will help you learn HTML course.</p>
+<h2 id="other-course-answers">Other course answers</h2>
+<p><a href="/post/Sololearn-HTML-Course-Overview-Answers">Sololearn HTML course Overview answers</a><br>
+<a href="/post/Sololearn-HTML-Course-HTML-Basics-Answers">Sololearn HTML course HTML Basics answers</a><br>
+<a href="/post/Sololearn-HTML-Course-Challenges-Answers">Sololearn HTML course Challenges answers</a></p>
+<h2 id="261-lesson">26.1 Lesson</h2>
+<h3 id="introduction-to-html5">Introduction to HTML5</h3>
+<p class="q">Question:</p>
+<blockquote>
+<p><strong>HTML5</strong><br>
+Drag and drop from the options below to create a valid HTML5 doctype:</p>
+</blockquote>
+<p class="a">Answer:</p>
+<pre><code class="language-HTML">&lt;!DOCTYPE HTML&gt;
+  &lt;html&gt;
+    &lt;head&gt;
+      &lt;title&gt;Title&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;The content of the document&lt;/body&gt;
+  &lt;/html&gt;
+</code></pre>
+<p class="q">Question:</p>
+<blockquote>
+<p><strong>New in HTML5</strong><br>
+Which element/feature is not new in HTML5?</p>
+</blockquote>
+<p class="a">Answer:</p>
+<blockquote>
+<p>Image</p>
+</blockquote>
+<h2 id="271-lesson">27.1 Lesson</h2>
+<h3 id="content-models">Content Models</h3>
+<p class="q">Question:</p>
+<blockquote>
+<p>How many content models does HTML5 offer?</p>
+</blockquote>
+<p class="a">Answer:</p>
+<blockquote>
+<p>7</p>
+</blockquote>
+<p class="q">Question:</p>
+<blockquote>
+<p><strong>Content Models</strong><br>
+Where is the metadata located in an HTML5 document?</p>
+</blockquote>
+<p class="a">Answer:</p>
+<blockquote>
+<p>head</p>
+</blockquote>
+<p class="q">Question:</p>
+<blockquote>
+<p><strong>Content Models</strong><br>
+Which content model contains almost all of the others?</p>
+</blockquote>
+<p class="a">Answer:</p>
+<blockquote>
+<p>Flow</p>
+</blockquote>
+<h2 id="281-lesson">28.1 Lesson</h2>
+<h3 id="html5-page-structure">HTML5 Page Structure</h3>
+<p class="q">Question:</p>
+<blockquote>
+<p><strong>Page Structure in HTML5</strong><br>
+Rearrange the following blocks to create a generalized HTML5 page structure.</p>
+</blockquote>
+<p class="a">Answer:</p>
+<pre><code class="language-HTML">&lt;header&gt;
+&lt;nav&gt;
+&lt;article&gt;
+&lt;section&gt;
+&lt;footer&gt;
+</code></pre>
+<h2 id="291-lesson">29.1 Lesson</h2>
+<h3 id="header-nav-footer">header, nav &amp; footer</h3>
+<p class="q">Question:</p>
+<blockquote>
+<p><strong>The &lt;header&gt; Element</strong><br>
+The header element is appropriate to use...</p>
+</blockquote>
+<p class="a">Answer:</p>
+<blockquote>
+<p>...inside of the body tag</p>
+</blockquote>
+<p class="q">Question:</p>
+<blockquote>
+<p><strong>The &lt;footer&gt; Element</strong><br>
+Which tag specifies the footer element?</p>
+</blockquote>
+<p class="a">Answer:</p>
+<pre><code class="language-HTML">&lt;footer&gt;
+</code></pre>
+<p class="q">Question:</p>
+<blockquote>
+<p><strong>The &lt;nav&gt; Element</strong><br>
+Rearrange the sections to create a generic HTML5 page structure:</p>
+</blockquote>
+<p class="a">Answer:</p>
+<pre><code class="language-HTML">&lt;head&gt;
+&lt;header&gt;
+&lt;nav&gt;
+&lt;footer&gt;
+</code></pre>
+<h2 id="301-lesson">30.1 Lesson</h2>
+<h3 id="article-section-aside">article, section &amp; aside</h3>
+<p class="q">Question:</p>
+<blockquote>
+<p><strong>The &lt;article&gt; Element</strong><br>
+Which element was usually used in HTML4 instead of the article tag?</p>
+</blockquote>
+<p class="a">Answer:</p>
+<pre><code class="language-HTML">&lt;div&gt;
+</code></pre>
+<p class="q">Question:</p>
+<blockquote>
+<p><strong>The &lt;section&gt; Element</strong><br>
+The section element should be used only inside an article element.</p>
+</blockquote>
+<p class="a">Answer:</p>
+<blockquote>
+<p>False</p>
+</blockquote>
+<h2 id="311-lesson">31.1 Lesson</h2>
+<h3 id="the-audio-element">The audio Element</h3>
+<p class="q">Question:</p>
+<blockquote>
+<p><strong>The &lt;aside&gt; Element</strong><br>
+The aside element is used to define:</p>
+</blockquote>
+<p class="a">Answer:</p>
+<blockquote>
+<p>secondary content</p>
+</blockquote>
+<h2 id="321-lesson">32.1 Lesson</h2>
+<h3 id="the-video-element">The video Element</h3>
+<p class="q">Question:</p>
+<blockquote>
+<p><strong>Videos in HTML</strong><br>
+Fill in the blanks to create a video element:</p>
+</blockquote>
+<p class="a">Answer:</p>
+<pre><code class="language-HTML">&lt;video controls&gt;
+  &lt;source src=&quot;video.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+  &lt;source src=&quot;video.ogg&quot; type=&quot;video/ogg&quot; /&gt;
+  Video not supported
+&lt;/video&gt;
+</code></pre>
+<p class="q">Question:</p>
+<blockquote>
+<p><strong>Attributes of &lt;video&gt;</strong><br>
+Rearrange the code to create a valid video tag that will attempt to play the mp4 file first.</p>
+</blockquote>
+<p class="a">Answer:</p>
+<pre><code class="language-HTML">&lt;video controls&gt;
+  &lt;source src=&quot;a.mp4&quot; type=&quot;video/mp4&quot;&gt;
+  &lt;source src=&quot;a.ogg&quot; type=&quot;video/ogg&quot;&gt;
+  Video is not supported
+&lt;/video&gt;
+</code></pre>
+<h2 id="331-lesson">33.1 Lesson</h2>
+<h3 id="the-progress-element">The progress Element</h3>
+<p class="q">Question:</p>
+<blockquote>
+<p><strong>Progress Bar</strong><br>
+Define a progress bar that shows 63 percent of progress:</p>
+</blockquote>
+<p class="a">Answer:</p>
+<pre><code class="language-HTML">&lt;progress min=&quot;0&quot; max=&quot;100&quot; value=&quot;63&quot;&gt;
+&lt;/progress&gt;
+</code></pre>
+<h2 id="341-lesson">34.1 Lesson</h2>
+<h3 id="web-storage-api">Web Storage API</h3>
+<p class="q">Question:</p>
+<blockquote>
+<p><strong>HTML5 Web Storage</strong><br>
+Before HTML5, application data was stored in:</p>
+</blockquote>
+<p class="a">Answer:</p>
+<blockquote>
+<p>cookies</p>
+</blockquote>
+<p class="q">Question:</p>
+<blockquote>
+<p><strong>Types of Web Storage Objects</strong><br>
+What are the two types of HTML5 web storage?</p>
+</blockquote>
+<p class="a">Answer:</p>
+<blockquote>
+<p>localStorage<br>
+sessionStorage</p>
+</blockquote>
+<p class="q">Question:</p>
+<blockquote>
+<p><strong>Working with Values</strong><br>
+Drag and drop from the options below to clear all values stored in the localStorage. Then store &quot;a&quot; using the key &quot;b&quot;.</p>
+</blockquote>
+<p class="a">Answer:</p>
+<pre><code class="language-Javascript">localStorage.clear();
+localStorage.setItem(&quot;b&quot;, &quot;a&quot;);
+</code></pre>
+<h2 id="351-lesson">35.1 Lesson</h2>
+<h3 id="geolocation-api">Geolocation API</h3>
+<p class="q">Question:</p>
+<blockquote>
+<p><strong>What is the Geolocation API?</strong><br>
+With the Geolocation API, you can obtain...</p>
+</blockquote>
+<p class="a">Answer:</p>
+<blockquote>
+<p>...user location</p>
+</blockquote>
+<p class="q">Question:</p>
+<blockquote>
+<p><strong>Using HTML Geolocation</strong><br>
+Which choice is the mandatory parameter of the getCurrentPosition() method?</p>
+</blockquote>
+<p class="a">Answer:</p>
+<blockquote>
+<p>showLocation</p>
+</blockquote>
+<p class="q">Question:</p>
+<blockquote>
+<p><strong>Presenting Data</strong><br>
+What are the two known ways to present location specific data?</p>
+</blockquote>
+<p class="a">Answer:</p>
+<blockquote>
+<p>Geodetic<br>
+Civic</p>
+</blockquote>
+<h2 id="361-lesson">36.1 Lesson</h2>
+<h3 id="dragdrop-api">Drag&amp;Drop API</h3>
+<p class="q">Question:</p>
+<blockquote>
+<p><strong>Making Elements Draggable</strong><br>
+How many times can HTML5 events be fired?</p>
+</blockquote>
+<p class="a">Answer:</p>
+<blockquote>
+<p>Multiple</p>
+</blockquote>
+<h2 id="371-lesson">37.1 Lesson</h2>
+<h3 id="svg">SVG</h3>
+<p class="q">Question:</p>
+<blockquote>
+<p><strong>Drawing Shapes</strong><br>
+What does SVG stand for?</p>
+</blockquote>
+<p class="a">Answer:</p>
+<blockquote>
+<p>scalable vector graphics</p>
+</blockquote>
+<p class="q">Question:</p>
+<blockquote>
+<p><strong>Inserting SVG Images</strong><br>
+Fill in the blanks to add &quot;my.svg&quot; to the page:</p>
+</blockquote>
+<p class="a">Answer:</p>
+<pre><code class="language-HTML">&lt;img src=&quot;my.svg&quot; width=&quot;300px&quot; alt=&quot;&quot; /&gt;
+</code></pre>
+<p class="q">Question:</p>
+<blockquote>
+<p><strong>Drawing a Circle</strong><br>
+Fill in the blanks to create a red circle at the position X=50, Y=240:</p>
+</blockquote>
+<p class="a">Answer:</p>
+<pre><code class="language-HTML">&lt;svg width=&quot;1000&quot; height=&quot;1000&quot;&gt;
+  &lt;circle cx=&quot;50&quot; cy=&quot;240&quot; r=&quot;10&quot; fill=&quot;red&quot; /&gt;
+  &lt;/svg&gt;
+</code></pre>
+<p class="q">Question:</p>
+<blockquote>
+<p><strong>Other Shape Elements</strong><br>
+Fill in the blanks to add a line to the page, starting from coordinates 10, 20 and ending at 50, 100:</p>
+</blockquote>
+<p class="a">Answer:</p>
+<pre><code class="language-HTML">&lt;svg width=&quot;500&quot; height=&quot;500&quot;&gt;
+   &lt;line x1=&quot;10&quot; y1=&quot;20&quot; x2=&quot;50&quot; y2=&quot;100&quot; /&gt;
+&lt;/svg&gt;
+</code></pre>
+<p class="q">Question:</p>
+<blockquote>
+<p><strong>&lt;ellipse&gt; and &lt;polygon&gt;</strong><br>
+Which of the following is an HTML5 SVG shape?</p>
+</blockquote>
+<p class="a">Answer:</p>
+<blockquote>
+<p>polygon</p>
+</blockquote>
+<h2 id="381-lesson">38.1 Lesson</h2>
+<h3 id="svg-animations-paths">SVG Animations &amp; Paths</h3>
+<p class="q">Question:</p>
+<blockquote>
+<p><strong>Shape Animations</strong><br>
+Which tag is used to create shape animations?</p>
+</blockquote>
+<p class="a">Answer:</p>
+<pre><code class="language-HTML">&lt;animate&gt;
+</code></pre>
+<p class="q">Question:</p>
+<blockquote>
+<p><strong>Paths</strong><br>
+Which shape is indicated by the following path?<br>
+<code>&lt;path d=&quot;M0 0 L0 100 L100 100 L100 0 Z&quot; /&gt;</code></p>
+</blockquote>
+<p class="a">Answer:</p>
+<blockquote>
+<p>Square</p>
+</blockquote>
+<h2 id="391-lesson">39.1 Lesson</h2>
+<h3 id="canvas">Canvas</h3>
+<p class="q">Question:</p>
+<blockquote>
+<p><strong>The &lt;canvas&gt; Element</strong><br>
+You can draw on the canvas using...</p>
+</blockquote>
+<p class="a">Answer:</p>
+<blockquote>
+<p>JavaScript</p>
+</blockquote>
+<p class="q">Question:</p>
+<blockquote>
+<p><strong>Canvas Coordinates</strong><br>
+X and Y are...</p>
+</blockquote>
+<p class="a">Answer:</p>
+<blockquote>
+<p>...coordinates from upper left corner</p>
+</blockquote>
+<p class="q">Question:</p>
+<blockquote>
+<p><strong>Drawing Shapes</strong><br>
+fillRect (36,10,22,12) indicates a rectangle with a height of...</p>
+</blockquote>
+<p class="a">Answer:</p>
+<blockquote>
+<p>12</p>
+</blockquote>
+<h2 id="401-lesson">40.1 Lesson</h2>
+<h3 id="svg-vs-canvas">SVG vs. Canvas</h3>
+<p class="q">Question:</p>
+<blockquote>
+<p><strong>Canvas vs. SVG</strong><br>
+Which of the following statements are true?</p>
+</blockquote>
+<p class="a">Answer:</p>
+<blockquote>
+<p>SVG has better accessibility.<br>
+In Canvas, drawing is done with pixels.</p>
+</blockquote>
+<h2 id="411-lesson">41.1 Lesson</h2>
+<h3 id="canvas-transformations">Canvas Transformations</h3>
+<p class="q">Question:</p>
+<blockquote>
+<p><strong>Working with Canvas</strong><br>
+Which method is used to move the canvas element?</p>
+</blockquote>
+<p class="a">Answer:</p>
+<pre><code class="language-Javascript">translate()
+</code></pre>
+<p class="q">Question:</p>
+<blockquote>
+<p><strong>The rotate() Method</strong><br>
+The rotation parameter is in:</p>
+</blockquote>
+<p class="a">Answer:</p>
+<blockquote>
+<p>Radians</p>
+</blockquote>
+<p class="q">Question:</p>
+<blockquote>
+<p><strong>The scale() Method</strong><br>
+What method is used to increase or decrease the size of the current drawing?</p>
+</blockquote>
+<p class="a">Answer:</p>
+<blockquote>
+<p>scale</p>
+</blockquote>
+<h2 id="421-lesson">42.1 Lesson</h2>
+<h3 id="html5-forms-part-1">HTML5 Forms, Part 1</h3>
+<p class="q">Question:</p>
+<blockquote>
+<p><strong>HTML5 Forms</strong><br>
+Fill in the blanks:</p>
+</blockquote>
+<p class="a">Answer:</p>
+<pre><code class="language-HTML">&lt;form&gt;
+  &lt;input type=&quot;text&quot; name=&quot;name&quot; /&gt;
+&lt;/form&gt;
+</code></pre>
+<p class="q">Question:</p>
+<blockquote>
+<p><strong>New Attributes</strong><br>
+Drag and drop from the options below to auto focus on the input and create a placeholder:</p>
+</blockquote>
+<p class="a">Answer:</p>
+<pre><code class="language-HTML">&lt;form&gt;
+  &lt;input type=&quot;text&quot; name=&quot;name&quot; placeholder=&quot;Enter your name&quot; autofocus /&gt;
+&lt;/form&gt;
+</code></pre>
+<p class="q">Question:</p>
+<blockquote>
+<p><strong>Forms with Required Fields</strong><br>
+Designate the username field as required, and focus on the name field when the page loads:</p>
+</blockquote>
+<p class="a">Answer:</p>
+<pre><code class="language-HTML">&lt;form autocomplete=&quot;off&quot;&gt;
+  &lt;input name=&quot;name&quot; type=&quot;text&quot; autofocus /&gt;
+  &lt;br /&gt;
+  &lt;input name=&quot;username&quot; type=&quot;text&quot; required /&gt;
+&lt;/form&gt;
+</code></pre>
+<h2 id="431-lesson">43.1 Lesson</h2>
+<h3 id="html5-forms-part-2">HTML5 Forms, Part 2</h3>
+<p class="q">Question:</p>
+<blockquote>
+<p><strong>Creating a Search Box</strong><br>
+Fill in the blank to create a Search Box:</p>
+</blockquote>
+<p class="a">Answer:</p>
+<pre><code class="language-HTML">&lt;input type=&quot;search&quot; /&gt;
+</code></pre>
+<p class="q">Question:</p>
+<blockquote>
+<p><strong>Search Options</strong><br>
+Fill in the blanks to associate the input with the datalist:</p>
+</blockquote>
+<p class="a">Answer:</p>
+<pre><code class="language-HTML">&lt;form&gt;
+  &lt;input type=&quot;text&quot; name=&quot;color&quot;list=&quot;colors&quot; /&gt;
+  &lt;datalist id=&quot;colors&quot;&gt;
+   &lt;option value=&quot;Red&quot;&gt;
+   &lt;option value=&quot;Blue&quot;&gt;
+   &lt;option value=&quot;Green&quot;&gt;
+  &lt;/datalist&gt;
+&lt;/form&gt;
+</code></pre>
+<p class="q">Question:</p>
+<blockquote>
+<p><strong>Creating More Fields</strong><br>
+Which of the following is not a supported type for the input tag?</p>
+</blockquote>
+<p class="a">Answer:</p>
+<blockquote>
+<p>planet</p>
+</blockquote>
+<h2 id="441-lesson">44.1 Lesson</h2>
+<h3 id="module-quiz">Module Quiz</h3>
+<p class="q">Question:</p>
+<blockquote>
+<p>Which choice is the correct HTML5 element for playing video files?</p>
+</blockquote>
+<p class="a">Answer:</p>
+<pre><code class="language-HTML">&lt;video&gt;
+</code></pre>
+<p class="q">Question:</p>
+<blockquote>
+<p>The &lt;canvas&gt; element in HTML5 is used to:</p>
+</blockquote>
+<p class="a">Answer:</p>
+<blockquote>
+<p>draw graphics</p>
+</blockquote>
+<p class="q">Question:</p>
+<blockquote>
+<p>Which tag contains the navigation?</p>
+</blockquote>
+<p class="a">Answer:</p>
+<pre><code class="language-HTML">&lt;nav&gt;
+</code></pre>
+<p class="q">Question:</p>
+<blockquote>
+<p>sessionStorage stores data for the duration of how many session(s)?</p>
+</blockquote>
+<p class="a">Answer:</p>
+<blockquote>
+<p>one</p>
+</blockquote>
+<p class="q">Question:</p>
+<blockquote>
+<p>What shape results from the following code?</p>
+</blockquote>
+<pre><code class="language-HTML">&lt;svg width=&quot;100&quot; height=&quot;100&quot;&gt;
+  &lt;line x1=&quot;50&quot; y1=&quot;0&quot; x2=&quot;50&quot; y2=&quot;100&quot; style=&quot;stroke:black&quot; /&gt;
+  &lt;line x1=&quot;0&quot; y1=&quot;50&quot; x2=&quot;100&quot; y2=&quot;50&quot; style=&quot;stroke:black&quot; /&gt;
+&lt;/svg&gt;
+</code></pre>
+<p class="a">Answer:</p>
+<blockquote>
+<p>Plus sign</p>
+</blockquote>
+<p class="q">Question:</p>
+<blockquote>
+<p>Fill in the blanks to turn off auto complete and require the password field.</p>
+</blockquote>
+<p class="a">Answer:</p>
+<pre><code class="language-HTML">&lt;form autocomplete=&quot;off&quot;&gt;
+  &lt;input type=&quot;text&quot; name=&quot;name&quot; /&gt;
+  &lt;input type=&quot;password&quot; name=&quot;pass&quot; required /&gt;
+&lt;/form&gt;
+</code></pre>
+
+          </div>
+          <div class="copyright">
+            <p>本文链接： <a href="https://raz1ner.com/post/Sololearn-HTML-Course-HTML5-Answers/">https://raz1ner.com/post/Sololearn-HTML-Course-HTML5-Answers/</a></p>
+            <p>版权声明： 本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="nofollow noreferrer" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</p>
+          </div>
+        </article>
+        <div class="next-post">
+          <div class="next">下一篇</div>
+          <a href="https://raz1ner.com/post/Sololearn-HTML-Course-HTML-Basics-Answers/">
+            <h3 class="post-title">Sololearn HTML course HTML Basics answers</h3>
+          </a>
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="gitalk-container"></div>
+      </div>
+      <!-- middle -->
+      <div class="main-container-middle"></div>
+      <!-- right -->
+      <div id="sidebar" class="main-container-right">
+        <div class="id_card i-card">
+          <div class="id_card-avatar" style="background-image: url(https://raz1ner.com/images/avatar.png?v=1764290830388)"></div>
+          <h1 class="id_card-title">Raz1ner</h1>
+          <p style="text-align: center;">
+            <a href="https://github.com/dev-coco" rel="nofollow noreferrer" target="_blank"><img class="social-icon" alt="Github" src="/images/social/GitHub.png"></a>
+            <a href="https://t.me/raz1ner" rel="nofollow noreferrer" target="_blank"><img class="social-icon" alt="Telegram" src="/images/social/Telegram.png"></a>
+            <a href="https://www.youtube.com/channel/UCEgNinV_DEntuv5Dm8Z_JvA?sub_confirmation=1" rel="nofollow noreferrer" target="_blank"><img class="social-icon" alt="YouTuebe" src="/images/social/YouTube.png"></a>
+            <a href="/atom.xml" target="_blank"><img class="social-icon" alt="rss" src="/images/social/RSS.png"></a>
+            <a href="mailto:ruijingle@gmail.com" target="_blank"><img class="social-icon" alt="Email" src="/images/social/Gmail.png"></a>
+          </p>
+          <!-- <h2 class="id_card-description"></h2> -->
+          <!--  -->
+          <div class="id_card-sns">
+            <!-- github -->
+            
+            <!-- twitter -->
+            <!-- weibo -->
+            <!-- facebook -->
+          </div>
+        </div>
+      <!-- toc -->
+      <div class="toc-card i-card" style="max-height:40%;overflow:auto">
+        <div class="toc-title i-card-title">目录</div>
+          <div class="toc-content">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#other-course-answers">Other course answers</a></li>
+<li><a href="#261-lesson">26.1 Lesson</a>
+<ul>
+<li><a href="#introduction-to-html5">Introduction to HTML5</a></li>
+</ul>
+</li>
+<li><a href="#271-lesson">27.1 Lesson</a>
+<ul>
+<li><a href="#content-models">Content Models</a></li>
+</ul>
+</li>
+<li><a href="#281-lesson">28.1 Lesson</a>
+<ul>
+<li><a href="#html5-page-structure">HTML5 Page Structure</a></li>
+</ul>
+</li>
+<li><a href="#291-lesson">29.1 Lesson</a>
+<ul>
+<li><a href="#header-nav-footer">header, nav &amp; footer</a></li>
+</ul>
+</li>
+<li><a href="#301-lesson">30.1 Lesson</a>
+<ul>
+<li><a href="#article-section-aside">article, section &amp; aside</a></li>
+</ul>
+</li>
+<li><a href="#311-lesson">31.1 Lesson</a>
+<ul>
+<li><a href="#the-audio-element">The audio Element</a></li>
+</ul>
+</li>
+<li><a href="#321-lesson">32.1 Lesson</a>
+<ul>
+<li><a href="#the-video-element">The video Element</a></li>
+</ul>
+</li>
+<li><a href="#331-lesson">33.1 Lesson</a>
+<ul>
+<li><a href="#the-progress-element">The progress Element</a></li>
+</ul>
+</li>
+<li><a href="#341-lesson">34.1 Lesson</a>
+<ul>
+<li><a href="#web-storage-api">Web Storage API</a></li>
+</ul>
+</li>
+<li><a href="#351-lesson">35.1 Lesson</a>
+<ul>
+<li><a href="#geolocation-api">Geolocation API</a></li>
+</ul>
+</li>
+<li><a href="#361-lesson">36.1 Lesson</a>
+<ul>
+<li><a href="#dragdrop-api">Drag&amp;Drop API</a></li>
+</ul>
+</li>
+<li><a href="#371-lesson">37.1 Lesson</a>
+<ul>
+<li><a href="#svg">SVG</a></li>
+</ul>
+</li>
+<li><a href="#381-lesson">38.1 Lesson</a>
+<ul>
+<li><a href="#svg-animations-paths">SVG Animations &amp; Paths</a></li>
+</ul>
+</li>
+<li><a href="#391-lesson">39.1 Lesson</a>
+<ul>
+<li><a href="#canvas">Canvas</a></li>
+</ul>
+</li>
+<li><a href="#401-lesson">40.1 Lesson</a>
+<ul>
+<li><a href="#svg-vs-canvas">SVG vs. Canvas</a></li>
+</ul>
+</li>
+<li><a href="#411-lesson">41.1 Lesson</a>
+<ul>
+<li><a href="#canvas-transformations">Canvas Transformations</a></li>
+</ul>
+</li>
+<li><a href="#421-lesson">42.1 Lesson</a>
+<ul>
+<li><a href="#html5-forms-part-1">HTML5 Forms, Part 1</a></li>
+</ul>
+</li>
+<li><a href="#431-lesson">43.1 Lesson</a>
+<ul>
+<li><a href="#html5-forms-part-2">HTML5 Forms, Part 2</a></li>
+</ul>
+</li>
+<li><a href="#441-lesson">44.1 Lesson</a>
+<ul>
+<li><a href="#module-quiz">Module Quiz</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      <div class="notice-card i-card ">
+        <div class="notice-title i-card-title">公告</div>
+        <div class="notice-content"><p>博客新开通 Telegram 频道：<a href="https://t.me/raz1ner" target="_blank" style="color: blue">瑞景乐的博客</a>，欢迎订阅，随时收到最新资讯。</p><p>商务合作请点击上方的邮箱与我联系。<p></div>
+      </div>
+      <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
+        <div class="notice-content">
+          <a class="tags-tag i-tag i-tag-info" href="https://raz1ner.com/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/ai-tech/">AI 科技</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/excel/">Excel</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/google-script/">Google 脚本</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/windows/">Windows</a>
+          <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/instagram/">Instagram</a>
+          <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/security/">安全</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/javascript/">Javascript</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/twitter-x/">Twitter (X)</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://raz1ner.com/tag/life/">生活</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://raz1ner.com/tag/sololearn/">Sololearn</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://raz1ner.com/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-" href="https://raz1ner.com/tag/linux-command/">Linux命令</a>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="site-footer">
+    <p style="text-align: center;">
+        <a href="https://github.com/dev-coco" rel="nofollow noreferrer" target="_blank"><img class="social-icon" alt="Github" src="/images/social/GitHub.png"></a>
+        <a href="https://t.me/raz1ner" rel="nofollow noreferrer" target="_blank"><img class="social-icon" alt="Telegram" src="/images/social/Telegram.png"></a>
+        <a href="https://www.youtube.com/channel/UCEgNinV_DEntuv5Dm8Z_JvA?sub_confirmation=1" rel="nofollow noreferrer" target="_blank"><img class="social-icon" alt="YouTuebe" src="/images/social/YouTube.png"></a>
+        <a href="/atom.xml" target="_blank"><img class="social-icon" alt="rss" src="/images/social/RSS.png"></a>
+        <a href="mailto:ruijingle@gmail.com" target="_blank"><img class="social-icon" alt="Email" src="/images/social/Gmail.png"></a>
+      </p>
+    <span>Copyright © 2020-2025 Raz1ner - All Rights Reserved.</span> | <a class="rss" href="https://raz1ner.com/atom.xml" target="_blank">RSS</a>
+</div>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/excel.min.js"></script>
+            <script>hljs.highlightAll();</script>
+  </div>
+  
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="keywords" content="Google Excel, Excel表格, 数据验证">
+  <meta name="description" content="数据验证 - 用于限制和规范用户填写数据。">
+  <meta name="robots" content="index, follow">
+  <meta property="og:image" content="/images/Excel-Tutorial.jpg">
+  <title>数据验证</title>
+  <link rel="icon" href="/images/avatar.png">
+  <link href="/css/Excel/typo.css" rel="stylesheet">
+</head>
+<body class="typo">
+  <h1>数据验证</h1>
+  <p>用于限制和规范用户填写数据。</p>
+  <p>选择一个范围的数据，在菜单栏的数据中选择数据验证。</p>
+  <img src="/images/Excel/Data-Validation-1.png" style="min-width:420px;width:60%;" class="img">
+  <p>在条件中有多个选项，下面以范围列表为例子。范围列表的作用是 <a href="/Excel/#Basic-Core/Operators/Reference-Operators" target="_blank">引用</a> 一个范围的单元格，单元格的内容会以下拉菜单的方式显示。</p>
+  <img src="/images/Excel/Data-Validation-2.png" style="min-width:420px;width:60%;" class="img">
+  <p>如果勾选了在单元格内显示下拉列表，设置数据验证后，在单元格的右侧点击 <img src="/images/Excel/Data-Validation.png"> 图标，然后会显示下拉菜单，菜单的内容就是刚才设置好的范围列表。</p>
+  <img src="/images/Excel/Data-Validation-3.png" style="min-width:220px;width:40%;" class="img">
+  <p>因为范围列表是引用一个范围的数据，所以在引用的范围内数据更改了，数据验证下拉菜单的内容也会同步更新。</p>
+  <img src="/images/Excel/Data-Validation-4.png" style="min-width:220px;width:40%;" class="img">
+  <p>如果输入的内容和设置的条件不相符的时候就会提示无效内容，但是依然可以填写内容，只不过在单元格的右上角会有一个提示。</p>
+  <img src="/images/Excel/Data-Validation-5.png" style="min-width:420px;width:50%;" class="img">
+  <p>在数据验证中的 在数据无效的情况下 选择拒绝输入，外观可以选择显示验证帮助文本，在出错的时候会显示下面设置好的文本内容，而不是默认的内容。</p>
+  <img src="/images/Excel/Data-Validation-6.png" style="min-width:420px;width:50%;" class="img">
+  <p>设置好条件格式后如果在单元格填写的内容与条件不一致就无法填写，会出现下图的弹窗警告。</p>
+  <img src="/images/Excel/Data-Validation-7.png" style="min-width:420px;width:45%;" class="img">
+  <p>数据验证中的项列表条件用来自定义内容作为下拉菜单的内容，每个内容使用 ,（英文逗号）间隔开，显示的效果和范围列表一样，唯一不同的地方是项列表是固定的内容，范围列表是引用的内容，会随着引用单元的内容同步，但是项列表不会。</p>
+  <img src="/images/Excel/Data-Validation-8.png" style="min-width:420px;width:50%;" class="img">
+  <p>数据验证中的文本条件有多种选项，下面以是有效网址为例子，将条件设置成是有效网址，那么输入的内容只能是合法链接。</p>
+  <img src="/images/Excel/Data-Validation-10.png" style="min-width:420px;width:50%;" class="img">
+  <p>如果填写的内容不是合法的链接格式，就会提示无效内容。</p>
+  <img src="/images/Excel/Data-Validation-11.png" style="min-width:420px;width:45%;" class="img">
+  <p class="home">
+    <a href="/Excel" target="_blank">
+      <img alt="Excel表格, Google Excel" src="/images/Excel.png">
+      <span>Excel 一点通</span>
+    </a>
+  </p>
+  <script>(location.href.includes('raz1ner.com')||location.href.includes('localhost'))?'':window.open('https'+'://raz'+'1ner'+'.com','_self')</script>
+</body>
+</html>
