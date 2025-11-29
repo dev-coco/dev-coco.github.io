@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://raz1ner.com</id>
     <title>Raz1ner</title>
-    <updated>2025-11-28T00:47:31.340Z</updated>
+    <updated>2025-11-29T22:36:32.569Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://raz1ner.com"/>
     <link rel="self" href="https://raz1ner.com/atom.xml"/>
     <logo>https://raz1ner.com/images/avatar.png</logo>
     <icon>https://raz1ner.com/favicon.ico</icon>
     <rights>All rights reserved 2025, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[免费试用 Gemini Enterprise]]></title>
+        <id>https://raz1ner.com/post/Gemini-Enterprise-Free-Plan/</id>
+        <link href="https://raz1ner.com/post/Gemini-Enterprise-Free-Plan/">
+        </link>
+        <updated>2025-11-29T12:41:27.000Z</updated>
+        <summary type="html"><![CDATA[<p>无需绑卡免费试用一个月 Gemini Enterprise。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>无需绑卡免费试用一个月 Gemini Enterprise。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[抖音记录 使用方法]]></title>
         <id>https://raz1ner.com/post/TikTok-Activity-Tracker/</id>
@@ -69,7 +80,7 @@
         <id>https://raz1ner.com/post/FB-Preview-Link-Converter/</id>
         <link href="https://raz1ner.com/post/FB-Preview-Link-Converter/">
         </link>
-        <updated>2025-09-14T17:28:34.000Z</updated>
+        <updated>2025-09-14T06:28:34.000Z</updated>
         <summary type="html"><![CDATA[<p>获取预览后的链接。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>获取预览后的链接。</p>
@@ -161,17 +172,6 @@
         <summary type="html"><![CDATA[<p>我做了个超链接管理面板，终于告别书签混乱了！</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>我做了个超链接管理面板，终于告别书签混乱了！</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[免费领取 Google One 会员]]></title>
-        <id>https://raz1ner.com/post/Receive-Gemini-Advanced/</id>
-        <link href="https://raz1ner.com/post/Receive-Gemini-Advanced/">
-        </link>
-        <updated>2025-05-06T13:36:24.000Z</updated>
-        <summary type="html"><![CDATA[<p>免费领取 Google One 会员以及旗下 AI 服务。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>免费领取 Google One 会员以及旗下 AI 服务。</p>
 ]]></content>
     </entry>
 </feed>
