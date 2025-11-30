@@ -8,527 +8,6 @@
     <title>Raz1ner 在线工具集合</title>
     <meta name="author" content="Raz1ner" />
     <link rel="shortcut icon" href="/favicon.ico" />
-    <script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script async src="https://fundingchoicesmessages.google.com/i/pub-6960947409660270?ers=1" nonce="3szuJwRueku-LVJlmdoLew"></script>
-    <script nonce="3szuJwRueku-LVJlmdoLew">
-      ;(function () {
-        function signalGooglefcPresent() {
-          if (!window.frames['googlefcPresent']) {
-            if (document.body) {
-              const iframe = document.createElement('iframe')
-              iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'
-              iframe.style.display = 'none'
-              iframe.name = 'googlefcPresent'
-              document.body.appendChild(iframe)
-            } else {
-              setTimeout(signalGooglefcPresent, 0)
-            }
-          }
-        }
-        signalGooglefcPresent()
-      })()
-    </script>
-    <script>
-      ;(function () {
-        'use strict'
-        var aa = function (a) {
-            var b = 0
-            return function () {
-              return b < a.length ? { done: !1, value: a[b++] } : { done: !0 }
-            }
-          },
-          ba =
-            'function' == typeof Object.create
-              ? Object.create
-              : function (a) {
-                  var b = function () {}
-                  b.prototype = a
-                  return new b()
-                },
-          k
-        if ('function' == typeof Object.setPrototypeOf) k = Object.setPrototypeOf
-        else {
-          var m
-          a: {
-            var ca = { a: !0 },
-              n = {}
-            try {
-              n.__proto__ = ca
-              m = n.a
-              break a
-            } catch (a) {}
-            m = !1
-          }
-          k = m
-            ? function (a, b) {
-                a.__proto__ = b
-                if (a.__proto__ !== b) throw new TypeError(a + ' is not extensible')
-                return a
-              }
-            : null
-        }
-        var p = k,
-          q = function (a, b) {
-            a.prototype = ba(b.prototype)
-            a.prototype.constructor = a
-            if (p) p(a, b)
-            else
-              for (var c in b)
-                if ('prototype' != c)
-                  if (Object.defineProperties) {
-                    var d = Object.getOwnPropertyDescriptor(b, c)
-                    d && Object.defineProperty(a, c, d)
-                  } else a[c] = b[c]
-            a.v = b.prototype
-          },
-          r = this || self,
-          da = function () {},
-          t = function (a) {
-            return a
-          }
-        var u
-        var w = function (a, b) {
-          this.g = b === v ? a : ''
-        }
-        w.prototype.toString = function () {
-          return this.g + ''
-        }
-        var v = {},
-          x = function (a) {
-            if (void 0 === u) {
-              var b = null
-              var c = r.trustedTypes
-              if (c && c.createPolicy) {
-                try {
-                  b = c.createPolicy('goog#html', { createHTML: t, createScript: t, createScriptURL: t })
-                } catch (d) {
-                  r.console && r.console.error(d.message)
-                }
-                u = b
-              } else u = b
-            }
-            a = (b = u) ? b.createScriptURL(a) : a
-            return new w(a, v)
-          }
-        var A = function () {
-          return Math.floor(2147483648 * Math.random()).toString(36) + Math.abs(Math.floor(2147483648 * Math.random()) ^ Date.now()).toString(36)
-        }
-        var B = {},
-          C = null
-        var D = 'function' === typeof Uint8Array
-        function E(a, b, c) {
-          return 'object' === typeof a ? (D && !Array.isArray(a) && a instanceof Uint8Array ? c(a) : F(a, b, c)) : b(a)
-        }
-        function F(a, b, c) {
-          if (Array.isArray(a)) {
-            for (var d = Array(a.length), e = 0; e < a.length; e++) {
-              var f = a[e]
-              null != f && (d[e] = E(f, b, c))
-            }
-            Array.isArray(a) && a.s && G(d)
-            return d
-          }
-          d = {}
-          for (e in a) Object.prototype.hasOwnProperty.call(a, e) && ((f = a[e]), null != f && (d[e] = E(f, b, c)))
-          return d
-        }
-        function ea(a) {
-          return F(
-            a,
-            function (b) {
-              return 'number' === typeof b ? (isFinite(b) ? b : String(b)) : b
-            },
-            function (b) {
-              var c
-              void 0 === c && (c = 0)
-              if (!C) {
-                C = {}
-                for (var d = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'.split(''), e = ['+/=', '+/', '-_=', '-_.', '-_'], f = 0; 5 > f; f++) {
-                  var h = d.concat(e[f].split(''))
-                  B[f] = h
-                  for (var g = 0; g < h.length; g++) {
-                    var l = h[g]
-                    void 0 === C[l] && (C[l] = g)
-                  }
-                }
-              }
-              c = B[c]
-              d = Array(Math.floor(b.length / 3))
-              e = c[64] || ''
-              for (f = h = 0; h < b.length - 2; h += 3) {
-                var y = b[h],
-                  z = b[h + 1]
-                l = b[h + 2]
-                g = c[y >> 2]
-                y = c[((y & 3) << 4) | (z >> 4)]
-                z = c[((z & 15) << 2) | (l >> 6)]
-                l = c[l & 63]
-                d[f++] = '' + g + y + z + l
-              }
-              g = 0
-              l = e
-              switch (b.length - h) {
-                case 2:
-                  ;(g = b[h + 1]), (l = c[(g & 15) << 2] || e)
-                case 1:
-                  ;(b = b[h]), (d[f] = '' + c[b >> 2] + c[((b & 3) << 4) | (g >> 4)] + l + e)
-              }
-              return d.join('')
-            }
-          )
-        }
-        var fa = { s: { value: !0, configurable: !0 } },
-          G = function (a) {
-            Array.isArray(a) && !Object.isFrozen(a) && Object.defineProperties(a, fa)
-            return a
-          }
-        var H
-        var J = function (a, b, c) {
-            var d = H
-            H = null
-            a || (a = d)
-            d = this.constructor.u
-            a || (a = d ? [d] : [])
-            this.j = d ? 0 : -1
-            this.h = null
-            this.g = a
-            a: {
-              d = this.g.length
-              a = d - 1
-              if (d && ((d = this.g[a]), !(null === d || 'object' != typeof d || Array.isArray(d) || (D && d instanceof Uint8Array)))) {
-                this.l = a - this.j
-                this.i = d
-                break a
-              }
-              void 0 !== b && -1 < b ? ((this.l = Math.max(b, a + 1 - this.j)), (this.i = null)) : (this.l = Number.MAX_VALUE)
-            }
-            if (c)
-              for (b = 0; b < c.length; b++)
-                (a = c[b]), a < this.l ? ((a += this.j), (d = this.g[a]) ? G(d) : (this.g[a] = I)) : ((d = this.l + this.j), this.g[d] || (this.i = this.g[d] = {}), (d = this.i[a]) ? G(d) : (this.i[a] = I))
-          },
-          I = Object.freeze(G([])),
-          K = function (a, b) {
-            if (-1 === b) return null
-            if (b < a.l) {
-              b += a.j
-              var c = a.g[b]
-              return c !== I ? c : (a.g[b] = G([]))
-            }
-            if (a.i) return (c = a.i[b]), c !== I ? c : (a.i[b] = G([]))
-          },
-          M = function (a, b) {
-            var c = L
-            if (-1 === b) return null
-            a.h || (a.h = {})
-            if (!a.h[b]) {
-              var d = K(a, b)
-              d && (a.h[b] = new c(d))
-            }
-            return a.h[b]
-          }
-        J.prototype.toJSON = function () {
-          var a = N(this, !1)
-          return ea(a)
-        }
-        var N = function (a, b) {
-            if (a.h)
-              for (var c in a.h)
-                if (Object.prototype.hasOwnProperty.call(a.h, c)) {
-                  var d = a.h[c]
-                  if (Array.isArray(d)) for (var e = 0; e < d.length; e++) d[e] && N(d[e], b)
-                  else d && N(d, b)
-                }
-            return a.g
-          },
-          O = function (a, b) {
-            H = b = b ? JSON.parse(b) : null
-            a = new a(b)
-            H = null
-            return a
-          }
-        J.prototype.toString = function () {
-          return N(this, !1).toString()
-        }
-        var P = function (a) {
-          J.call(this, a)
-        }
-        q(P, J)
-        function ha(a) {
-          var b,
-            c = ((a.ownerDocument && a.ownerDocument.defaultView) || window).document,
-            d = null === (b = c.querySelector) || void 0 === b ? void 0 : b.call(c, 'script[nonce]')
-          ;(b = d ? d.nonce || d.getAttribute('nonce') || '' : '') && a.setAttribute('nonce', b)
-        }
-        var Q = function (a, b) {
-            b = String(b)
-            'application/xhtml+xml' === a.contentType && (b = b.toLowerCase())
-            return a.createElement(b)
-          },
-          R = function (a) {
-            this.g = a || r.document || document
-          }
-        R.prototype.appendChild = function (a, b) {
-          a.appendChild(b)
-        }
-        var S = function (a, b, c, d, e, f) {
-          try {
-            var h = a.g,
-              g = Q(a.g, 'SCRIPT')
-            g.async = !0
-            g.src = b instanceof w && b.constructor === w ? b.g : 'type_error:TrustedResourceUrl'
-            ha(g)
-            h.head.appendChild(g)
-            g.addEventListener('load', function () {
-              e()
-              d && h.head.removeChild(g)
-            })
-            g.addEventListener('error', function () {
-              0 < c ? S(a, b, c - 1, d, e, f) : (d && h.head.removeChild(g), f())
-            })
-          } catch (l) {
-            f()
-          }
-        }
-        var ia = r.atob('aHR0cHM6Ly93d3cuZ3N0YXRpYy5jb20vaW1hZ2VzL2ljb25zL21hdGVyaWFsL3N5c3RlbS8xeC93YXJuaW5nX2FtYmVyXzI0ZHAucG5n'),
-          ja = r.atob('WW91IGFyZSBzZWVpbmcgdGhpcyBtZXNzYWdlIGJlY2F1c2UgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlIGlzIGludGVyZmVyaW5nIHdpdGggdGhpcyBwYWdlLg=='),
-          ka = r.atob('RGlzYWJsZSBhbnkgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlLCB0aGVuIHJlbG9hZCB0aGlzIHBhZ2Uu'),
-          la = function (a, b, c) {
-            this.h = a
-            this.j = new R(this.h)
-            this.g = null
-            this.i = []
-            this.l = !1
-            this.o = b
-            this.m = c
-          },
-          V = function (a) {
-            if (a.h.body && !a.l) {
-              var b = function () {
-                T(a)
-                r.setTimeout(function () {
-                  return U(a, 3)
-                }, 50)
-              }
-              S(
-                a.j,
-                a.o,
-                2,
-                !0,
-                function () {
-                  r[a.m] || b()
-                },
-                b
-              )
-              a.l = !0
-            }
-          },
-          T = function (a) {
-            for (var b = W(1, 5), c = 0; c < b; c++) {
-              var d = X(a)
-              a.h.body.appendChild(d)
-              a.i.push(d)
-            }
-            b = X(a)
-            b.style.bottom = '0'
-            b.style.left = '0'
-            b.style.position = 'fixed'
-            b.style.width = W(100, 110).toString() + '%'
-            b.style.zIndex = W(2147483544, 2147483644).toString()
-            b.style['background-color'] = ma(249, 259, 242, 252, 219, 229)
-            b.style['box-shadow'] = '0 0 12px #888'
-            b.style.color = ma(0, 10, 0, 10, 0, 10)
-            b.style.display = 'flex'
-            b.style['justify-content'] = 'center'
-            b.style['font-family'] = 'Roboto, Arial'
-            c = X(a)
-            c.style.width = W(80, 85).toString() + '%'
-            c.style.maxWidth = W(750, 775).toString() + 'px'
-            c.style.margin = '24px'
-            c.style.display = 'flex'
-            c.style['align-items'] = 'flex-start'
-            c.style['justify-content'] = 'center'
-            d = Q(a.j.g, 'IMG')
-            d.className = A()
-            d.src = ia
-            d.style.height = '24px'
-            d.style.width = '24px'
-            d.style['padding-right'] = '16px'
-            var e = X(a),
-              f = X(a)
-            f.style['font-weight'] = 'bold'
-            f.textContent = ja
-            var h = X(a)
-            h.textContent = ka
-            Y(a, e, f)
-            Y(a, e, h)
-            Y(a, c, d)
-            Y(a, c, e)
-            Y(a, b, c)
-            a.g = b
-            a.h.body.appendChild(a.g)
-            b = W(1, 5)
-            for (c = 0; c < b; c++) (d = X(a)), a.h.body.appendChild(d), a.i.push(d)
-          },
-          Y = function (a, b, c) {
-            for (var d = W(1, 5), e = 0; e < d; e++) {
-              var f = X(a)
-              b.appendChild(f)
-            }
-            b.appendChild(c)
-            c = W(1, 5)
-            for (d = 0; d < c; d++) (e = X(a)), b.appendChild(e)
-          },
-          W = function (a, b) {
-            return Math.floor(a + Math.random() * (b - a))
-          },
-          ma = function (a, b, c, d, e, f) {
-            return 'rgb(' + W(Math.max(a, 0), Math.min(b, 255)).toString() + ',' + W(Math.max(c, 0), Math.min(d, 255)).toString() + ',' + W(Math.max(e, 0), Math.min(f, 255)).toString() + ')'
-          },
-          X = function (a) {
-            a = Q(a.j.g, 'DIV')
-            a.className = A()
-            return a
-          },
-          U = function (a, b) {
-            0 >= b ||
-              (null != a.g && 0 != a.g.offsetHeight && 0 != a.g.offsetWidth) ||
-              (na(a),
-              T(a),
-              r.setTimeout(function () {
-                return U(a, b - 1)
-              }, 50))
-          },
-          na = function (a) {
-            var b = a.i
-            var c = 'undefined' != typeof Symbol && Symbol.iterator && b[Symbol.iterator]
-            b = c ? c.call(b) : { next: aa(b) }
-            for (c = b.next(); !c.done; c = b.next()) (c = c.value) && c.parentNode && c.parentNode.removeChild(c)
-            a.i = []
-            ;(b = a.g) && b.parentNode && b.parentNode.removeChild(b)
-            a.g = null
-          }
-        var pa = function (a, b, c, d, e) {
-            var f = oa(c),
-              h = function (l) {
-                l.appendChild(f)
-                r.setTimeout(function () {
-                  f ? (0 !== f.offsetHeight && 0 !== f.offsetWidth ? b() : a(), f.parentNode && f.parentNode.removeChild(f)) : a()
-                }, d)
-              },
-              g = function (l) {
-                document.body
-                  ? h(document.body)
-                  : 0 < l
-                  ? r.setTimeout(function () {
-                      g(l - 1)
-                    }, e)
-                  : b()
-              }
-            g(3)
-          },
-          oa = function (a) {
-            var b = document.createElement('div')
-            b.className = a
-            b.style.width = '1px'
-            b.style.height = '1px'
-            b.style.position = 'absolute'
-            b.style.left = '-10000px'
-            b.style.top = '-10000px'
-            b.style.zIndex = '-10000'
-            return b
-          }
-        var L = function (a) {
-          J.call(this, a)
-        }
-        q(L, J)
-        var qa = function (a) {
-          J.call(this, a)
-        }
-        q(qa, J)
-        var ra = function (a, b) {
-          this.l = a
-          this.m = new R(a.document)
-          this.g = b
-          this.i = K(this.g, 1)
-          b = M(this.g, 2)
-          this.o = x(K(b, 4) || '')
-          this.h = !1
-          b = M(this.g, 13)
-          b = x(K(b, 4) || '')
-          this.j = new la(a.document, b, K(this.g, 12))
-        }
-        ra.prototype.start = function () {
-          sa(this)
-        }
-        var sa = function (a) {
-            ta(a)
-            S(
-              a.m,
-              a.o,
-              3,
-              !1,
-              function () {
-                a: {
-                  var b = a.i
-                  var c = r.btoa(b)
-                  if ((c = r[c])) {
-                    try {
-                      var d = O(P, r.atob(c))
-                    } catch (e) {
-                      b = !1
-                      break a
-                    }
-                    b = b === K(d, 1)
-                  } else b = !1
-                }
-                b ? Z(a, K(a.g, 14)) : (Z(a, K(a.g, 8)), V(a.j))
-              },
-              function () {
-                pa(
-                  function () {
-                    Z(a, K(a.g, 7))
-                    V(a.j)
-                  },
-                  function () {
-                    return Z(a, K(a.g, 6))
-                  },
-                  K(a.g, 9),
-                  K(a.g, 10),
-                  K(a.g, 11)
-                )
-              }
-            )
-          },
-          Z = function (a, b) {
-            a.h || ((a.h = !0), (a = new a.l.XMLHttpRequest()), a.open('GET', b, !0), a.send())
-          },
-          ta = function (a) {
-            var b = r.btoa(a.i)
-            a.l[b] && Z(a, K(a.g, 5))
-          }
-        ;(function (a, b) {
-          r[a] = function (c) {
-            for (var d = [], e = 0; e < arguments.length; ++e) d[e - 0] = arguments[e]
-            r[a] = da
-            b.apply(null, d)
-          }
-        })('__h82AlnkH6D91__', function (a) {
-          'function' === typeof window.atob && new ra(window, O(qa, window.atob(a))).start()
-        })
-      }.call(this))
-      window.__h82AlnkH6D91__(
-        'WyJwdWItNjk2MDk0NzQwOTY2MDI3MCIsW251bGwsbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9iL3B1Yi02OTYwOTQ3NDA5NjYwMjcwIl0sbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9lbC9BR1NLV3hWWkh4UHVLbUVuYUVHcDZmcldNVTVHZloyVUxJZW8zcHZhaV9wUVJ5a2M4dmlkZlVwMENZeVJQZEQxdExOQzRkOUN6cEQxS1hFZml1cnFJZXFIOVVsc1R3XHUwMDNkXHUwMDNkP3RlXHUwMDNkVE9LRU5fRVhQT1NFRCIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFhUNmRjRFppendkR2FaMmQ2dHBOMEF3TWowNERwVWVBaUd4Y1lsNXR1UWZFdmhDSTZmaWRxcEN3RXNQeGF1eWJUc004eFlhVWFLSWJENnNWdVIyNXIwT0FcdTAwM2RcdTAwM2Q/YWJcdTAwM2QxXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFVFeld6ZVhfYjlBSnJsR05ab2N0MG1UVHBKZFUxQVo1b2piaVNXMXc4TjNJdG93TndOZ2YtNzcwOVNEQUlrSWlUbW5UU2hvVW5DYml0QmVYVTM4Z3M3c2dcdTAwM2RcdTAwM2Q/YWJcdTAwM2QyXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFVWdXc5Q2tNRzNoX3p2WGJHcHlLdU95cE4weWVabEVVSmVsbFBnR2F4Y3NockhWdklpSmlPMzZKM3JhRlhDSl9fdnp2U0ZuRFNXS3dPUXl5enpLWG5zc0FcdTAwM2RcdTAwM2Q/c2JmXHUwMDNkMiIsImRpdi1ncHQtYWQiLDIwLDEwMCwiY0hWaUxUWTVOakE1TkRjME1EazJOakF5TnpBXHUwMDNkIixbbnVsbCxudWxsLG51bGwsImh0dHBzOi8vd3d3LmdzdGF0aWMuY29tLzBlbW4vZi9wL3B1Yi02OTYwOTQ3NDA5NjYwMjcwLmpzP3VzcXBcdTAwM2RDQXciXSwiaHR0cHM6Ly9mdW5kaW5nY2hvaWNlc21lc3NhZ2VzLmdvb2dsZS5jb20vZWwvQUdTS1d4V0M5M05iUXBSTC12eTBWbXd3TjBwVllQTDE5eDJLYWJfQkFZYjVucWlRM0VZTTJ0ZXRQMHJxRzE5ZHF5X3NfZjh6VmhPc0ZIWExmeVJGUnJJTEhSak5aZ1x1MDAzZFx1MDAzZCJd'
-      )
-    </script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-24X8H1LT7N"></script>
-    <script>
-      window.dataLayer = window.dataLayer || []
-      function gtag() {
-        dataLayer.push(arguments)
-      }
-      gtag('js', new Date())
-      gtag('config', 'G-24X8H1LT7N')
-    </script>
     <meta property="og:image" content="https://raz1ner.com/post-images/Raz1ner.png" />
     <meta name="description" content="在线实用工具集合。" />
     <link rel="canonical" href="https://raz1ner.com/Online-Tools/" />
@@ -541,444 +20,29 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="https://raz1ner.com/post-images/Raz1ner.png" />
     <meta name="twitter:description" content="在线实用工具集合。" />
-    <style>
-      html {
-        -webkit-text-size-adjust: 100%;
-        max-width: 100vw;
-        overflow-x: hidden;
-        overflow-y: scroll;
-      }
-      body,
-      html {
-        -ms-text-size-adjust: 100%;
-      }
-      body {
-        -webkit-text-size-adjust: 100%;
-        -moz-osx-font-smoothing: grayscale;
-        -webkit-font-smoothing: antialiased;
-        font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, 微软雅黑, Arial, sans-serif;
-        min-height: 100vh;
-        word-spacing: 0.0625rem;
-        background-color: #f4f8fb;
-        color: var(--color-text);
-        overflow: hidden;
-        width: 100vw;
-      }
-      input {
-        -webkit-appearance: none;
-        border-radius: 0;
-      }
-      :root {
-        overflow-x: hidden;
-        overflow-y: auto;
-        --theme-success: #52de97;
-        --theme-danger: #fa5477;
-        --theme-info: #9ed0ff;
-        --theme-wrning: #ffdd98;
-      }
-      @media (max-width: 500px) {
-        :root {
-          font-size: 0.8125rem;
-        }
-      }
-      @media (max-width: 380px) {
-        :root {
-          font-size: 0.75rem;
-        }
-      }
-      @media (max-width: 350px) {
-        :root {
-          font-size: 0.625rem;
-        }
-      }
-      * {
-        -webkit-tap-highlight-color: transparent;
-      }
-      a {
-        color: var(--theme);
-        -webkit-text-decoration: none;
-        text-decoration: none;
-        word-break: break-all;
-      }
-      a[target='_blank'] {
-        cursor: alias;
-      }
-      img {
-        max-width: 100%;
-      }
-      .theme-blue {
-        --theme: #249ffd;
-        --color-danger: #fa5477;
-        --color-success: #47da6b;
-        --color-warning: #f7c907;
-        --color-text-placeholder: #c0c4cc;
-        --color-text: #2f3e4c;
-        --color-text-gray: #787980;
-        --color-background: #fff;
-        --color-background-primary: #f1f1f1;
-        --border-color: #dcdee0;
-        --bg: #fff;
-        --input-border-color: #414141;
-        --transparent-el-bg: hsla(0, 0%, 100%, 0.65);
-        --transparent-el: hsla(0, 0%, 100%, 0.7);
-      }
-      input[type='file'].el-input__inner::file-selector-button {
-        display: none;
-      }
-      .navbar {
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 0.25rem 0;
-      }
-      .navbar .title {
-        font-family: initial;
-        margin-bottom: 0.3125rem;
-        position: relative;
-        text-shadow: 0.0625rem 0.0625rem 0.0625rem rgba(0, 0, 0, 0.15);
-      }
-      .navbar .title,
-      .navbar .title a {
-        align-items: center;
-        cursor: pointer;
-        display: flex;
-      }
-      .navbar .title a {
-        color: var(--color-text);
-      }
-      .navbar .title a:hover {
-        -webkit-text-decoration: none;
-        text-decoration: none;
-      }
-      .tools-footer {
-        bottom: 0;
-        left: 0;
-        margin: 1.875rem auto;
-        position: absolute;
-        right: 0;
-      }
-      .tools-footer .footer-info {
-        font-size: 0.75rem;
-        line-height: 1;
-        margin-top: 1.25rem;
-        opacity: 0.7;
-        text-align: center;
-      }
-      .tools-footer .vfooter {
-        align-items: center;
-        display: flex;
-        justify-content: center;
-      }
-      .tools-footer .vfooter a {
-        color: inherit;
-        display: block;
-        margin: 0 0.4375rem;
-      }
-      .tools-footer .vfooter img {
-        fill: currentColor;
-        background-color: hsla(0, 0%, 100%, 0.65);
-        border-radius: 50%;
-        box-shadow: 0.5rem 0.875rem 2.375rem rgba(39, 44, 49, 0.06), 0.0625rem 0.1875rem 0.5rem rgba(39, 44, 49, 0.03);
-        color: #222831;
-        cursor: pointer;
-        font-size: 1.5625rem;
-        height: 2rem;
-        overflow: hidden;
-        padding: 0.3125rem;
-        vertical-align: -0.15em;
-        width: 2rem;
-      }
-      .index_page {
-        min-height: 100vh;
-        position: relative;
-      }
-      .index_page main {
-        box-sizing: border-box;
-        margin: 0 auto;
-        max-width: 62.5rem;
-        min-height: 100vh;
-        padding: 0 1.5625rem 10rem;
-        position: relative;
-      }
-      .tools-container {
-        background-color: #fff;
-        border: none;
-        border-radius: 0.5rem;
-        box-shadow: 0.5rem 0.875rem 2.375rem rgba(39, 44, 49, 0.06), 0.0625rem 0.1875rem 0.5rem rgba(39, 44, 49, 0.03);
-        margin-bottom: 3.125rem;
-        margin-top: 1.125rem;
-        padding: 1.5625rem 2rem;
-        position: relative;
-      }
-      .tools-container.pt {
-        padding-top: 2.1875rem;
-      }
-      .tools-container .tools-title {
-        background-color: var(--theme);
-        border-radius: 0.5rem;
-        box-shadow: 0 0.3125rem 0.5rem rgba(36, 159, 253, 0.302);
-        color: #fff;
-        font-size: 0;
-        font-weight: 700;
-        left: 1.875rem;
-        padding: 0.5rem 0.9375rem;
-        position: absolute;
-        top: -1.125rem;
-      }
-      .tools-container .tools-title span {
-        font-size: 1.0625rem;
-        line-height: 1.25rem;
-        vertical-align: middle;
-      }
-      @media (max-width: 600px) {
-        .tools-container {
-          padding: 1.25rem;
-        }
-        .tools-container .tools-title {
-          left: 1.25rem;
-        }
-      }
-      .tools-card {
-        align-items: center;
-        background-color: transparent;
-        border: none;
-        box-shadow: 0 0.0625rem 0.5rem 0.0625rem rgba(0, 0, 0, 0.07);
-        box-sizing: border-box;
-        color: var(--color-text) !important;
-        cursor: pointer;
-        display: inline-flex;
-        letter-spacing: 0.0625rem;
-        margin: 0.4375rem;
-        padding: 0.625rem;
-        position: relative;
-        transform: translateZ(0);
-        transition: transform 0.1s, background-color 0.1s, color 0.05s ease-out;
-        vertical-align: top;
-        width: calc(25% - 0.875rem);
-        border-radius: 0.5rem;
-        font-size: 0;
-      }
-      .tools-card-text {
-        width: calc(100% - 2.375rem);
-      }
-      .tools-card-name {
-        font-size: 0.875rem;
-        font-weight: 700;
-        margin-bottom: 0.3125rem;
-      }
-      .tools-card-desc,
-      .tools-card-name {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-      }
-      .tools-card-desc {
-        font-size: 0.75rem;
-        opacity: 0.85;
-      }
-      @media (max-width: 1050px) {
-        .tools-card {
-          width: calc(25% - 0.875rem);
-        }
-      }
-      @media (max-width: 900px) {
-        .tools-card {
-          width: calc(33.33333% - 0.875rem);
-        }
-      }
-      @media (max-width: 700px) {
-        .tools-card {
-          border: 0.0625rem solid var(--color-text-placeholder);
-          box-shadow: none;
-          margin: 0.375rem 0.3125rem;
-          width: calc(50% - 0.625rem);
-        }
-        .tools-card:active,
-        .tools-card:hover {
-          border-color: transparent;
-        }
-      }
-      .tools-card:hover {
-        background-color: var(--theme);
-        box-shadow: 0 0 0.0625rem 0 rgba(8, 11, 14, 0.06), 0 0.375rem 0.375rem -0.0625rem rgba(8, 11, 14, 0.1);
-        transform: translateY(-0.125rem);
-        color: #fff !important;
-      }
-      .tools-card:active {
-        background-color: var(--theme);
-        box-shadow: 0 0 0.0625rem 0 rgba(8, 11, 14, 0.06), 0 0.375rem 0.375rem -0.0625rem rgba(8, 11, 14, 0.1);
-        transform: scale(0.9);
-        color: #fff !important;
-      }
-      .menu,
-      ul {
-        padding-left: 2rem;
-        margin-top: 0;
-        margin-bottom: 1rem;
-        font-weight: 700;
-      }
-      .logo img {
-        vertical-align: middle;
-        height: 40px;
-      }
-      .container {
-        width: 100%;
-        margin-right: auto;
-        margin-left: auto;
-      }
-      @media (min-width: 576px) {
-        .container {
-          max-width: 540px;
-        }
-      }
-      @media (min-width: 768px) {
-        .container {
-          max-width: 720px;
-        }
-      }
-      @media (min-width: 992px) {
-        .container {
-          max-width: 960px;
-        }
-        .mb-lg-0 {
-          margin-bottom: 0;
-        }
-        .px-lg-5 {
-          padding-right: 3rem;
-          padding-left: 3rem;
-        }
-      }
-      @media (min-width: 1200px) {
-        .container {
-          max-width: 1140px;
-        }
-      }
-      @media (min-width: 1400px) {
-        .container {
-          max-width: 1320px;
-        }
-      }
-      .nav-link {
-        display: block;
-        padding: 0.5rem 1rem;
-        color: #0d6efd;
-        text-decoration: none;
-        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
-      }
-      @media (prefers-reduced-motion: reduce) {
-        .nav-link {
-          transition: none;
-        }
-      }
-      .nav-link:focus,
-      .nav-link:hover {
-        color: #0a58ca;
-      }
-      .navbar {
-        position: relative;
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-between;
-      }
-      .navbar > .container {
-        display: flex;
-        flex-wrap: inherit;
-        align-items: center;
-        justify-content: space-between;
-      }
-      .navbar-brand {
-        padding-top: 0.3125rem;
-        padding-bottom: 0.3125rem;
-        margin-right: 1rem;
-        font-size: 1.55rem;
-        text-decoration: none;
-        white-space: nowrap;
-      }
-      .navbar-nav {
-        display: flex;
-        flex-direction: column;
-        padding-left: 0;
-        margin-bottom: 0;
-        list-style: none;
-      }
-      .navbar-nav .nav-link {
-        padding-right: 0;
-        padding-left: 0;
-      }
-      .navbar-collapse {
-        flex-basis: 100%;
-        flex-grow: 1;
-        align-items: center;
-      }
-      .navbar-expand {
-        flex-wrap: nowrap;
-        justify-content: flex-start;
-      }
-      .navbar-expand .navbar-nav {
-        flex-direction: row;
-      }
-      .navbar-expand .navbar-nav .nav-link {
-        padding-right: 0.5rem;
-        padding-left: 0.5rem;
-      }
-      .navbar-expand .navbar-collapse {
-        display: flex;
-        flex-basis: auto;
-      }
-      .navbar-dark .mobile-menu .nav-item .menu.active,
-      .navbar-dark .navbar-brand,
-      .navbar-dark .navbar-brand:focus,
-      .navbar-dark .navbar-brand:hover,
-      .navbar-dark .navbar-nav .nav-link.active {
-        color: #fff;
-      }
-      .navbar-dark .mobile-menu .nav-item .menu,
-      .navbar-dark .navbar-nav .nav-link {
-        color: rgba(255, 255, 255, 0.55);
-      }
-      .navbar-dark .mobile-menu .nav-item .menu:focus,
-      .navbar-dark .mobile-menu .nav-item .menu:hover,
-      .navbar-dark .navbar-nav .nav-link:focus,
-      .navbar-dark .navbar-nav .nav-link:hover {
-        color: rgba(255, 255, 255, 0.75);
-      }
-      .mb-2 {
-        margin-bottom: 0.5rem;
-      }
-      .ms-auto {
-        margin-left: auto;
-      }
-      .bg-dark {
-        background-color: rgba(33, 37, 41);
-      }
-      .tool-icon {
-        height: 1.875rem;
-        margin-right: 0.5rem;
-        width: 1.875rem;
-      }
-      .mobile-menu .nav-item {
-        padding: 8px;
-      }
-      @media (min-width: 961px) {
-        .navbar-collapse {
-          display: flex !important;
-        }
-        #menuBtn,
-        .mobile-menu {
-          display: none !important;
-        }
-      }
-      @media (max-width: 960px) {
-        .navbar-collapse {
-          display: none !important;
-        }
-        .mobile-menu {
-          display: inline;
-        }
-      }
-    </style>
+    <style>html{-webkit-text-size-adjust:100%;max-width:100vw;overflow-x:hidden;overflow-y:scroll}body,html{-ms-text-size-adjust:100%}body{-webkit-text-size-adjust:100%;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;font-family:Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,微软雅黑,Arial,sans-serif;min-height:100vh;word-spacing:0.0625rem;background-color:#f4f8fb;color:var(--color-text);overflow:hidden;width:100vw}input{-webkit-appearance:none;border-radius:0}:root{overflow-x:hidden;overflow-y:auto;--theme-success:#52de97;--theme-danger:#fa5477;--theme-info:#9ed0ff;--theme-wrning:#ffdd98}@media (max-width:500px){:root{font-size:.8125rem}}@media (max-width:380px){:root{font-size:.75rem}}@media (max-width:350px){:root{font-size:.625rem}}*{-webkit-tap-highlight-color:transparent}a{color:var(--theme);-webkit-text-decoration:none;text-decoration:none;word-break:break-all}a[target='_blank']{cursor:alias}img{max-width:100%}.theme-blue{--theme:#249ffd;--color-danger:#fa5477;--color-success:#47da6b;--color-warning:#f7c907;--color-text-placeholder:#c0c4cc;--color-text:#2f3e4c;--color-text-gray:#787980;--color-background:#fff;--color-background-primary:#f1f1f1;--border-color:#dcdee0;--bg:#fff;--input-border-color:#414141;--transparent-el-bg:hsla(0, 0%, 100%, 0.65);--transparent-el:hsla(0, 0%, 100%, 0.7)}input[type=file].el-input__inner::file-selector-button{display:none}.navbar{align-items:center;display:flex;flex-direction:column;justify-content:center;padding:.25rem 0}.navbar .title{font-family:initial;margin-bottom:.3125rem;position:relative;text-shadow:.0625rem .0625rem .0625rem rgba(0,0,0,.15)}.navbar .title,.navbar .title a{align-items:center;cursor:pointer;display:flex}.navbar .title a{color:var(--color-text)}.navbar .title a:hover{-webkit-text-decoration:none;text-decoration:none}.tools-footer{bottom:0;left:0;margin:1.875rem auto;position:absolute;right:0}.tools-footer .footer-info{font-size:.75rem;line-height:1;margin-top:1.25rem;opacity:.7;text-align:center}.tools-footer .vfooter{align-items:center;display:flex;justify-content:center}.tools-footer .vfooter a{color:inherit;display:block;margin:0 .4375rem}.tools-footer .vfooter img{fill:currentColor;background-color:hsla(0,0%,100%,.65);border-radius:50%;box-shadow:.5rem .875rem 2.375rem rgba(39,44,49,.06),.0625rem .1875rem .5rem rgba(39,44,49,.03);color:#222831;cursor:pointer;font-size:1.5625rem;height:2rem;overflow:hidden;padding:.3125rem;vertical-align:-.15em;width:2rem}.index_page{min-height:100vh;position:relative}.index_page main{box-sizing:border-box;margin:0 auto;max-width:62.5rem;min-height:100vh;padding:0 1.5625rem 10rem;position:relative}.tools-container{background-color:#fff;border:none;border-radius:.5rem;box-shadow:.5rem .875rem 2.375rem rgba(39,44,49,.06),.0625rem .1875rem .5rem rgba(39,44,49,.03);margin-bottom:3.125rem;margin-top:1.125rem;padding:1.5625rem 2rem;position:relative}.tools-container.pt{padding-top:2.1875rem}.tools-container .tools-title{background-color:var(--theme);border-radius:.5rem;box-shadow:0 .3125rem .5rem rgba(36,159,253,.302);color:#fff;font-size:0;font-weight:700;left:1.875rem;padding:.5rem .9375rem;position:absolute;top:-1.125rem}.tools-container .tools-title span{font-size:1.0625rem;line-height:1.25rem;vertical-align:middle}@media (max-width:600px){.tools-container{padding:1.25rem}.tools-container .tools-title{left:1.25rem}}.tools-card{align-items:center;background-color:transparent;border:none;box-shadow:0 .0625rem .5rem .0625rem rgba(0,0,0,.07);box-sizing:border-box;color:var(--color-text)!important;cursor:pointer;display:inline-flex;letter-spacing:.0625rem;margin:.4375rem;padding:.625rem;position:relative;transform:translateZ(0);transition:transform .1s,background-color .1s,color 50ms ease-out;vertical-align:top;width:calc(25% - .875rem);border-radius:.5rem;font-size:0}.tools-card-text{width:calc(100% - 2.375rem)}.tools-card-name{font-size:.875rem;font-weight:700;margin-bottom:.3125rem}.tools-card-desc,.tools-card-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.tools-card-desc{font-size:.75rem;opacity:.85}@media (max-width:1050px){.tools-card{width:calc(25% - .875rem)}}@media (max-width:900px){.tools-card{width:calc(33.33333% - .875rem)}}@media (max-width:700px){.tools-card{border:.0625rem solid var(--color-text-placeholder);box-shadow:none;margin:.375rem .3125rem;width:calc(50% - .625rem)}.tools-card:active,.tools-card:hover{border-color:transparent}}.tools-card:hover{background-color:var(--theme);box-shadow:0 0 .0625rem 0 rgba(8,11,14,.06),0 .375rem .375rem -.0625rem rgba(8,11,14,.1);transform:translateY(-.125rem);color:#fff!important}.tools-card:active{background-color:var(--theme);box-shadow:0 0 .0625rem 0 rgba(8,11,14,.06),0 .375rem .375rem -.0625rem rgba(8,11,14,.1);transform:scale(.9);color:#fff!important}.menu,ul{padding-left:2rem;margin-top:0;margin-bottom:1rem;font-weight:700}.logo img{vertical-align:middle;height:40px}.container{width:100%;margin-right:auto;margin-left:auto}@media (min-width:576px){.container{max-width:540px}}@media (min-width:768px){.container{max-width:720px}}@media (min-width:992px){.container{max-width:960px}.mb-lg-0{margin-bottom:0}.px-lg-5{padding-right:3rem;padding-left:3rem}}@media (min-width:1200px){.container{max-width:1140px}}@media (min-width:1400px){.container{max-width:1320px}}.nav-link{display:block;padding:.5rem 1rem;color:#0d6efd;text-decoration:none;transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out}@media (prefers-reduced-motion:reduce){.nav-link{transition:none}}.nav-link:focus,.nav-link:hover{color:#0a58ca}.navbar{position:relative;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between}.navbar>.container{display:flex;flex-wrap:inherit;align-items:center;justify-content:space-between}.navbar-brand{padding-top:.3125rem;padding-bottom:.3125rem;margin-right:1rem;font-size:1.55rem;text-decoration:none;white-space:nowrap}.navbar-nav{display:flex;flex-direction:column;padding-left:0;margin-bottom:0;list-style:none}.navbar-nav .nav-link{padding-right:0;padding-left:0}.navbar-collapse{flex-basis:100%;flex-grow:1;align-items:center}.navbar-expand{flex-wrap:nowrap;justify-content:flex-start}.navbar-expand .navbar-nav{flex-direction:row}.navbar-expand .navbar-nav .nav-link{padding-right:.5rem;padding-left:.5rem}.navbar-expand .navbar-collapse{display:flex;flex-basis:auto}.navbar-dark .mobile-menu .nav-item .menu.active,.navbar-dark .navbar-brand,.navbar-dark .navbar-brand:focus,.navbar-dark .navbar-brand:hover,.navbar-dark .navbar-nav .nav-link.active{color:#fff}.navbar-dark .mobile-menu .nav-item .menu,.navbar-dark .navbar-nav .nav-link{color:rgba(255,255,255,.55)}.navbar-dark .mobile-menu .nav-item .menu:focus,.navbar-dark .mobile-menu .nav-item .menu:hover,.navbar-dark .navbar-nav .nav-link:focus,.navbar-dark .navbar-nav .nav-link:hover{color:rgba(255,255,255,.75)}.mb-2{margin-bottom:.5rem}.ms-auto{margin-left:auto}.bg-dark{background-color:rgba(33,37,41)}.tool-icon{height:1.875rem;margin-right:.5rem;width:1.875rem}.mobile-menu .nav-item{padding:8px}@media (min-width:961px){.navbar-collapse{display:flex!important}#menuBtn,.mobile-menu{display:none!important}}@media (max-width:960px){.navbar-collapse{display:none!important}.mobile-menu{display:inline}}</style>
+    <script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script async src="https://fundingchoicesmessages.google.com/i/pub-6960947409660270?ers=1" nonce="3szuJwRueku-LVJlmdoLew"></script><script nonce="3szuJwRueku-LVJlmdoLew">(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+  <script>(function(){
+   'use strict';var aa=function(a){var b=0;return function(){return b<a.length?{done:!1,value:a[b++]}:{done:!0}}},ba="function"==typeof Object.create?Object.create:function(a){var b=function(){};b.prototype=a;return new b},k;if("function"==typeof Object.setPrototypeOf)k=Object.setPrototypeOf;else{var m;a:{var ca={a:!0},n={};try{n.__proto__=ca;m=n.a;break a}catch(a){}m=!1}k=m?function(a,b){a.__proto__=b;if(a.__proto__!==b)throw new TypeError(a+" is not extensible");return a}:null}
+   var p=k,q=function(a,b){a.prototype=ba(b.prototype);a.prototype.constructor=a;if(p)p(a,b);else for(var c in b)if("prototype"!=c)if(Object.defineProperties){var d=Object.getOwnPropertyDescriptor(b,c);d&&Object.defineProperty(a,c,d)}else a[c]=b[c];a.v=b.prototype},r=this||self,da=function(){},t=function(a){return a};var u;var w=function(a,b){this.g=b===v?a:""};w.prototype.toString=function(){return this.g+""};var v={},x=function(a){if(void 0===u){var b=null;var c=r.trustedTypes;if(c&&c.createPolicy){try{b=c.createPolicy("goog#html",{createHTML:t,createScript:t,createScriptURL:t})}catch(d){r.console&&r.console.error(d.message)}u=b}else u=b}a=(b=u)?b.createScriptURL(a):a;return new w(a,v)};var A=function(){return Math.floor(2147483648*Math.random()).toString(36)+Math.abs(Math.floor(2147483648*Math.random())^Date.now()).toString(36)};var B={},C=null;var D="function"===typeof Uint8Array;function E(a,b,c){return"object"===typeof a?D&&!Array.isArray(a)&&a instanceof Uint8Array?c(a):F(a,b,c):b(a)}function F(a,b,c){if(Array.isArray(a)){for(var d=Array(a.length),e=0;e<a.length;e++){var f=a[e];null!=f&&(d[e]=E(f,b,c))}Array.isArray(a)&&a.s&&G(d);return d}d={};for(e in a)Object.prototype.hasOwnProperty.call(a,e)&&(f=a[e],null!=f&&(d[e]=E(f,b,c)));return d}
+   function ea(a){return F(a,function(b){return"number"===typeof b?isFinite(b)?b:String(b):b},function(b){var c;void 0===c&&(c=0);if(!C){C={};for(var d="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789".split(""),e=["+/=","+/","-_=","-_.","-_"],f=0;5>f;f++){var h=d.concat(e[f].split(""));B[f]=h;for(var g=0;g<h.length;g++){var l=h[g];void 0===C[l]&&(C[l]=g)}}}c=B[c];d=Array(Math.floor(b.length/3));e=c[64]||"";for(f=h=0;h<b.length-2;h+=3){var y=b[h],z=b[h+1];l=b[h+2];g=c[y>>2];y=c[(y&3)<<
+   4|z>>4];z=c[(z&15)<<2|l>>6];l=c[l&63];d[f++]=""+g+y+z+l}g=0;l=e;switch(b.length-h){case 2:g=b[h+1],l=c[(g&15)<<2]||e;case 1:b=b[h],d[f]=""+c[b>>2]+c[(b&3)<<4|g>>4]+l+e}return d.join("")})}var fa={s:{value:!0,configurable:!0}},G=function(a){Array.isArray(a)&&!Object.isFrozen(a)&&Object.defineProperties(a,fa);return a};var H;var J=function(a,b,c){var d=H;H=null;a||(a=d);d=this.constructor.u;a||(a=d?[d]:[]);this.j=d?0:-1;this.h=null;this.g=a;a:{d=this.g.length;a=d-1;if(d&&(d=this.g[a],!(null===d||"object"!=typeof d||Array.isArray(d)||D&&d instanceof Uint8Array))){this.l=a-this.j;this.i=d;break a}void 0!==b&&-1<b?(this.l=Math.max(b,a+1-this.j),this.i=null):this.l=Number.MAX_VALUE}if(c)for(b=0;b<c.length;b++)a=c[b],a<this.l?(a+=this.j,(d=this.g[a])?G(d):this.g[a]=I):(d=this.l+this.j,this.g[d]||(this.i=this.g[d]={}),(d=this.i[a])?
+   G(d):this.i[a]=I)},I=Object.freeze(G([])),K=function(a,b){if(-1===b)return null;if(b<a.l){b+=a.j;var c=a.g[b];return c!==I?c:a.g[b]=G([])}if(a.i)return c=a.i[b],c!==I?c:a.i[b]=G([])},M=function(a,b){var c=L;if(-1===b)return null;a.h||(a.h={});if(!a.h[b]){var d=K(a,b);d&&(a.h[b]=new c(d))}return a.h[b]};J.prototype.toJSON=function(){var a=N(this,!1);return ea(a)};
+   var N=function(a,b){if(a.h)for(var c in a.h)if(Object.prototype.hasOwnProperty.call(a.h,c)){var d=a.h[c];if(Array.isArray(d))for(var e=0;e<d.length;e++)d[e]&&N(d[e],b);else d&&N(d,b)}return a.g},O=function(a,b){H=b=b?JSON.parse(b):null;a=new a(b);H=null;return a};J.prototype.toString=function(){return N(this,!1).toString()};var P=function(a){J.call(this,a)};q(P,J);function ha(a){var b,c=(a.ownerDocument&&a.ownerDocument.defaultView||window).document,d=null===(b=c.querySelector)||void 0===b?void 0:b.call(c,"script[nonce]");(b=d?d.nonce||d.getAttribute("nonce")||"":"")&&a.setAttribute("nonce",b)};var Q=function(a,b){b=String(b);"application/xhtml+xml"===a.contentType&&(b=b.toLowerCase());return a.createElement(b)},R=function(a){this.g=a||r.document||document};R.prototype.appendChild=function(a,b){a.appendChild(b)};var S=function(a,b,c,d,e,f){try{var h=a.g,g=Q(a.g,"SCRIPT");g.async=!0;g.src=b instanceof w&&b.constructor===w?b.g:"type_error:TrustedResourceUrl";ha(g);h.head.appendChild(g);g.addEventListener("load",function(){e();d&&h.head.removeChild(g)});g.addEventListener("error",function(){0<c?S(a,b,c-1,d,e,f):(d&&h.head.removeChild(g),f())})}catch(l){f()}};var ia=r.atob("aHR0cHM6Ly93d3cuZ3N0YXRpYy5jb20vaW1hZ2VzL2ljb25zL21hdGVyaWFsL3N5c3RlbS8xeC93YXJuaW5nX2FtYmVyXzI0ZHAucG5n"),ja=r.atob("WW91IGFyZSBzZWVpbmcgdGhpcyBtZXNzYWdlIGJlY2F1c2UgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlIGlzIGludGVyZmVyaW5nIHdpdGggdGhpcyBwYWdlLg=="),ka=r.atob("RGlzYWJsZSBhbnkgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlLCB0aGVuIHJlbG9hZCB0aGlzIHBhZ2Uu"),la=function(a,b,c){this.h=a;this.j=new R(this.h);this.g=null;this.i=[];this.l=!1;this.o=b;this.m=c},V=function(a){if(a.h.body&&!a.l){var b=
+   function(){T(a);r.setTimeout(function(){return U(a,3)},50)};S(a.j,a.o,2,!0,function(){r[a.m]||b()},b);a.l=!0}},T=function(a){for(var b=W(1,5),c=0;c<b;c++){var d=X(a);a.h.body.appendChild(d);a.i.push(d)}b=X(a);b.style.bottom="0";b.style.left="0";b.style.position="fixed";b.style.width=W(100,110).toString()+"%";b.style.zIndex=W(2147483544,2147483644).toString();b.style["background-color"]=ma(249,259,242,252,219,229);b.style["box-shadow"]="0 0 12px #888";b.style.color=ma(0,10,0,10,0,10);b.style.display=
+   "flex";b.style["justify-content"]="center";b.style["font-family"]="Roboto, Arial";c=X(a);c.style.width=W(80,85).toString()+"%";c.style.maxWidth=W(750,775).toString()+"px";c.style.margin="24px";c.style.display="flex";c.style["align-items"]="flex-start";c.style["justify-content"]="center";d=Q(a.j.g,"IMG");d.className=A();d.src=ia;d.style.height="24px";d.style.width="24px";d.style["padding-right"]="16px";var e=X(a),f=X(a);f.style["font-weight"]="bold";f.textContent=ja;var h=X(a);h.textContent=ka;Y(a,
+   e,f);Y(a,e,h);Y(a,c,d);Y(a,c,e);Y(a,b,c);a.g=b;a.h.body.appendChild(a.g);b=W(1,5);for(c=0;c<b;c++)d=X(a),a.h.body.appendChild(d),a.i.push(d)},Y=function(a,b,c){for(var d=W(1,5),e=0;e<d;e++){var f=X(a);b.appendChild(f)}b.appendChild(c);c=W(1,5);for(d=0;d<c;d++)e=X(a),b.appendChild(e)},W=function(a,b){return Math.floor(a+Math.random()*(b-a))},ma=function(a,b,c,d,e,f){return"rgb("+W(Math.max(a,0),Math.min(b,255)).toString()+","+W(Math.max(c,0),Math.min(d,255)).toString()+","+W(Math.max(e,0),Math.min(f,
+   255)).toString()+")"},X=function(a){a=Q(a.j.g,"DIV");a.className=A();return a},U=function(a,b){0>=b||null!=a.g&&0!=a.g.offsetHeight&&0!=a.g.offsetWidth||(na(a),T(a),r.setTimeout(function(){return U(a,b-1)},50))},na=function(a){var b=a.i;var c="undefined"!=typeof Symbol&&Symbol.iterator&&b[Symbol.iterator];b=c?c.call(b):{next:aa(b)};for(c=b.next();!c.done;c=b.next())(c=c.value)&&c.parentNode&&c.parentNode.removeChild(c);a.i=[];(b=a.g)&&b.parentNode&&b.parentNode.removeChild(b);a.g=null};var pa=function(a,b,c,d,e){var f=oa(c),h=function(l){l.appendChild(f);r.setTimeout(function(){f?(0!==f.offsetHeight&&0!==f.offsetWidth?b():a(),f.parentNode&&f.parentNode.removeChild(f)):a()},d)},g=function(l){document.body?h(document.body):0<l?r.setTimeout(function(){g(l-1)},e):b()};g(3)},oa=function(a){var b=document.createElement("div");b.className=a;b.style.width="1px";b.style.height="1px";b.style.position="absolute";b.style.left="-10000px";b.style.top="-10000px";b.style.zIndex="-10000";return b};var L=function(a){J.call(this,a)};q(L,J);var qa=function(a){J.call(this,a)};q(qa,J);var ra=function(a,b){this.l=a;this.m=new R(a.document);this.g=b;this.i=K(this.g,1);b=M(this.g,2);this.o=x(K(b,4)||"");this.h=!1;b=M(this.g,13);b=x(K(b,4)||"");this.j=new la(a.document,b,K(this.g,12))};ra.prototype.start=function(){sa(this)};
+   var sa=function(a){ta(a);S(a.m,a.o,3,!1,function(){a:{var b=a.i;var c=r.btoa(b);if(c=r[c]){try{var d=O(P,r.atob(c))}catch(e){b=!1;break a}b=b===K(d,1)}else b=!1}b?Z(a,K(a.g,14)):(Z(a,K(a.g,8)),V(a.j))},function(){pa(function(){Z(a,K(a.g,7));V(a.j)},function(){return Z(a,K(a.g,6))},K(a.g,9),K(a.g,10),K(a.g,11))})},Z=function(a,b){a.h||(a.h=!0,a=new a.l.XMLHttpRequest,a.open("GET",b,!0),a.send())},ta=function(a){var b=r.btoa(a.i);a.l[b]&&Z(a,K(a.g,5))};(function(a,b){r[a]=function(c){for(var d=[],e=0;e<arguments.length;++e)d[e-0]=arguments[e];r[a]=da;b.apply(null,d)}})("__h82AlnkH6D91__",function(a){"function"===typeof window.atob&&(new ra(window,O(qa,window.atob(a)))).start()});}).call(this);
+   window.__h82AlnkH6D91__("WyJwdWItNjk2MDk0NzQwOTY2MDI3MCIsW251bGwsbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9iL3B1Yi02OTYwOTQ3NDA5NjYwMjcwIl0sbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9lbC9BR1NLV3hWWkh4UHVLbUVuYUVHcDZmcldNVTVHZloyVUxJZW8zcHZhaV9wUVJ5a2M4dmlkZlVwMENZeVJQZEQxdExOQzRkOUN6cEQxS1hFZml1cnFJZXFIOVVsc1R3XHUwMDNkXHUwMDNkP3RlXHUwMDNkVE9LRU5fRVhQT1NFRCIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFhUNmRjRFppendkR2FaMmQ2dHBOMEF3TWowNERwVWVBaUd4Y1lsNXR1UWZFdmhDSTZmaWRxcEN3RXNQeGF1eWJUc004eFlhVWFLSWJENnNWdVIyNXIwT0FcdTAwM2RcdTAwM2Q/YWJcdTAwM2QxXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFVFeld6ZVhfYjlBSnJsR05ab2N0MG1UVHBKZFUxQVo1b2piaVNXMXc4TjNJdG93TndOZ2YtNzcwOVNEQUlrSWlUbW5UU2hvVW5DYml0QmVYVTM4Z3M3c2dcdTAwM2RcdTAwM2Q/YWJcdTAwM2QyXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFVWdXc5Q2tNRzNoX3p2WGJHcHlLdU95cE4weWVabEVVSmVsbFBnR2F4Y3NockhWdklpSmlPMzZKM3JhRlhDSl9fdnp2U0ZuRFNXS3dPUXl5enpLWG5zc0FcdTAwM2RcdTAwM2Q/c2JmXHUwMDNkMiIsImRpdi1ncHQtYWQiLDIwLDEwMCwiY0hWaUxUWTVOakE1TkRjME1EazJOakF5TnpBXHUwMDNkIixbbnVsbCxudWxsLG51bGwsImh0dHBzOi8vd3d3LmdzdGF0aWMuY29tLzBlbW4vZi9wL3B1Yi02OTYwOTQ3NDA5NjYwMjcwLmpzP3VzcXBcdTAwM2RDQXciXSwiaHR0cHM6Ly9mdW5kaW5nY2hvaWNlc21lc3NhZ2VzLmdvb2dsZS5jb20vZWwvQUdTS1d4V0M5M05iUXBSTC12eTBWbXd3TjBwVllQTDE5eDJLYWJfQkFZYjVucWlRM0VZTTJ0ZXRQMHJxRzE5ZHF5X3NfZjh6VmhPc0ZIWExmeVJGUnJJTEhSak5aZ1x1MDAzZFx1MDAzZCJd");</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-24X8H1LT7N"></script>
+  <script>
+    window.dataLayer = window.dataLayer || []
+    function gtag(){dataLayer.push(arguments)}
+    gtag('js', new Date())
+    gtag('config', 'G-24X8H1LT7N')
+  </script>
   </head>
   <body>
     <nav class="navbar navbar-expand navbar-dark bg-dark">
@@ -1041,50 +105,43 @@
         <div class="tools-container pt">
           <div class="tools-title">
             <span>Google Sheets</span>
-          </div>
-          <a href="/Online-Tools/Excel-Formula-Beautifier.html" class="tools-card" target="_blank">
+          </div><a href="/Online-Tools/Excel-Formula-Beautifier.html" class="tools-card" target="_blank">
             <img src="/images/icon/Excel-Formula-Beautifier.png" class="tool-icon" />
             <div class="tools-card-text">
               <div class="tools-card-name">表格公式格式化</div>
               <div class="tools-card-desc">格式化后更利于理解嵌套</div>
             </div>
-          </a>
-          <a href="/Online-Tools/Google-Excel-Batch-Action.html" class="tools-card" target="_blank">
+          </a><a href="/Online-Tools/Google-Excel-Batch-Action.html" class="tools-card" target="_blank">
             <img src="/images/icon/Excel-Batch-Tool.png" class="tool-icon" />
             <div class="tools-card-text">
               <div class="tools-card-name">表格批量操作</div>
               <div class="tools-card-desc">批量复制删除表格等</div>
             </div>
-          </a>
-          <a href="/Online-Tools/Google-Excel-Image-Sort.html" class="tools-card" target="_blank">
+          </a><a href="/Online-Tools/Google-Excel-Image-Sort.html" class="tools-card" target="_blank">
             <img src="/images/icon/Excel-Image-Sort.png" class="tool-icon" />
             <div class="tools-card-text">
               <div class="tools-card-name">表格图片排序</div>
               <div class="tools-card-desc">根据图片相似度排序</div>
             </div>
-          </a>
-          <a href="/Online-Tools/Image-Upload-Google-Drive.html" class="tools-card" target="_blank">
+          </a><a href="/Online-Tools/Image-Upload-Google-Drive.html" class="tools-card" target="_blank">
             <img src="/images/icon/Image-Upload-Google-Drive.png" class="tool-icon" />
             <div class="tools-card-text">
               <div class="tools-card-name">图片上传云端</div>
               <div class="tools-card-desc">图片保存到 Google 云端</div>
             </div>
-          </a>
-          <a href="/Online-Tools/Data-Classification.html" class="tools-card" target="_blank">
+          </a><a href="/Online-Tools/Data-Classification.html" class="tools-card" target="_blank">
             <img src="/images/icon/Data-Classification.png" class="tool-icon" />
             <div class="tools-card-text">
               <div class="tools-card-name">数据归类工具</div>
               <div class="tools-card-desc">根据相似度将文本归类</div>
             </div>
-          </a>
-          <a href="/Online-Tools/Google-Sheets-Batch-Editor.html" class="tools-card" target="_blank">
+          </a><a href="/Online-Tools/Google-Sheets-Batch-Editor.html" class="tools-card" target="_blank">
             <img src="/images/icon/Excel-Batch-Tool.png" class="tool-icon" />
             <div class="tools-card-text">
               <div class="tools-card-name">自动化改表工具</div>
               <div class="tools-card-desc">批量修改多个表格</div>
             </div>
-          </a>
-          <a href="/Online-Tools/GAS-Code-Snippets.html" class="tools-card" target="_blank">
+          </a><a href="/Online-Tools/GAS-Code-Snippets.html" class="tools-card" target="_blank">
             <img src="/images/icon/GAS-Code-Snippets.png" class="tool-icon" />
             <div class="tools-card-text">
               <div class="tools-card-name">脚本代码片段</div>
@@ -1095,106 +152,91 @@
         <div class="tools-container pt">
           <div class="tools-title">
             <span>其它工具</span>
-          </div>
-          <a href="/Online-Tools/Rich-Editor.html" class="tools-card" target="_blank">
+          </div><a href="/Online-Tools/Rich-Editor.html" class="tools-card" target="_blank">
             <img src="/images/icon/Rich-Editor.png" class="tool-icon" />
             <div class="tools-card-text">
               <div class="tools-card-name">富文本编辑器</div>
               <div class="tools-card-desc">支持媒体和自定义HTML</div>
             </div>
-          </a>
-          <a href="/Online-Tools/Bookmark-Code.html" class="tools-card" target="_blank">
+          </a><a href="/Online-Tools/Bookmark-Code.html" class="tools-card" target="_blank">
             <img src="/images/icon/Bookmark-Code.png" class="tool-icon" />
             <div class="tools-card-text">
               <div class="tools-card-name">常用工具合集</div>
               <div class="tools-card-desc">常用书签代码工具</div>
             </div>
-          </a>
-          <a href="/Online-Tools/Free-GPT-4-Online.html" class="tools-card" target="_blank">
+          </a><a href="/Online-Tools/Free-GPT-4-Online.html" class="tools-card" target="_blank">
             <img src="/images/icon/Free-GPT-4-Online.png" class="tool-icon" />
             <div class="tools-card-text">
               <div class="tools-card-name">Free GPT-4</div>
               <div class="tools-card-desc">免费使用GPT-4</div>
             </div>
-          </a>
-          <a href="/Online-Tools/Common-Emoji.html" class="tools-card" target="_blank">
+          </a><a href="/Online-Tools/Common-Emoji.html" class="tools-card" target="_blank">
             <img src="/images/icon/Emoji.png" class="tool-icon" />
             <div class="tools-card-text">
               <div class="tools-card-name">常用表情符号</div>
               <div class="tools-card-desc">收集了常用的Emoji</div>
             </div>
-          </a>
-          <a href="/Online-Tools/Create-KeePassXC-Database.html" class="tools-card" target="_blank">
+          </a><a href="/Online-Tools/Create-KeePassXC-Database.html" class="tools-card" target="_blank">
             <img src="/images/icon/Create-KeePassXC-Database.png" class="tool-icon" />
             <div class="tools-card-text">
               <div class="tools-card-name">KeePassXC 生成器</div>
               <div class="tools-card-desc">批量创建数据库</div>
             </div>
-          </a>
-          <a href="/Online-Tools/Duplicate-Word-Finder.html" class="tools-card" target="_blank">
+          </a><a href="/Online-Tools/Duplicate-Word-Finder.html" class="tools-card" target="_blank">
             <img src="/images/icon/Duplicate-Word-Finder.png" class="tool-icon" />
             <div class="tools-card-text">
               <div class="tools-card-name">查询重复</div>
               <div class="tools-card-desc">查找重复率高的关键词</div>
             </div>
-          </a>
-          <a href="/Online-Tools/Face-Detect.html" class="tools-card" target="_blank">
+          </a><a href="/Online-Tools/Face-Detect.html" class="tools-card" target="_blank">
             <img src="/images/icon/Face-Detect.png" class="tool-icon" />
             <div class="tools-card-text">
               <div class="tools-card-name">人脸识别</div>
               <div class="tools-card-desc">人脸识别性别年龄表情</div>
             </div>
-          </a>
-          <a href="/Online-Tools/Profile-Photo-Mask.html" class="tools-card" target="_blank">
+          </a><a href="/Online-Tools/Profile-Photo-Mask.html" class="tools-card" target="_blank">
             <img src="/images/icon/Profile-Photo-Mask.png" class="tool-icon" />
             <div class="tools-card-text">
               <div class="tools-card-name">头像加口罩</div>
               <div class="tools-card-desc">为头像戴上口罩</div>
             </div>
-          </a>
-          <a href="/Online-Tools/Profile-Photo-Santa-Hat.html" class="tools-card" target="_blank">
+          </a><a href="/Online-Tools/Profile-Photo-Santa-Hat.html" class="tools-card" target="_blank">
             <img src="/images/icon/Profile-Photo-Santa-Hat.png" class="tool-icon" />
             <div class="tools-card-text">
               <div class="tools-card-name">头像加圣诞帽</div>
               <div class="tools-card-desc">为头像戴上圣诞帽</div>
             </div>
-          </a>
-          <a href="/Online-Tools/Convert-Cartoon-Images.html" class="tools-card" target="_blank">
+          </a><a href="/Online-Tools/Convert-Cartoon-Images.html" class="tools-card" target="_blank">
             <img src="/images/icon/Convert-Cartoon-Image.png" class="tool-icon" />
             <div class="tools-card-text">
               <div class="tools-card-name">转换卡通图片</div>
               <div class="tools-card-desc">转换为卡通图片的风格</div>
             </div>
-          </a>
-          <a href="/Online-Tools/Device-Mockup.html" class="tools-card" target="_blank">
+          </a><a href="/Online-Tools/Device-Mockup.html" class="tools-card" target="_blank">
             <img src="/images/icon/Device-Mockup.png" class="tool-icon" />
             <div class="tools-card-text">
               <div class="tools-card-name">带壳截图</div>
               <div class="tools-card-desc">为图片添加电子设备外壳</div>
             </div>
-          </a>
-          <a href="/Online-Tools/QR-Code-Generation.html" class="tools-card" target="_blank">
+          </a><a href="/Online-Tools/QR-Code-Generation.html" class="tools-card" target="_blank">
             <img src="/images/icon/QR-Code-Generation.png" class="tool-icon" />
             <div class="tools-card-text">
               <div class="tools-card-name">二维码在线生成器</div>
               <div class="tools-card-desc">链接生成二维码</div>
             </div>
-          </a>
-          <a href="/Online-Tools/Inpaint-Web.html" class="tools-card" target="_blank">
+          </a><a href="/Online-Tools/Inpaint-Web.html" class="tools-card" target="_blank">
             <img src="/images/icon/Inpaint-Web.png" class="tool-icon" />
             <div class="tools-card-text">
               <div class="tools-card-name">Inpaint Web</div>
               <div class="tools-card-desc">图像修复工具</div>
             </div>
-          </a>
-          <a href="/Online-Tools/File-Rename.html" class="tools-card" target="_blank">
+          </a><a href="/Online-Tools/File-Rename.html" class="tools-card" target="_blank">
             <img src="/images/icon/File-Rename.png" class="tool-icon" />
             <div class="tools-card-text">
               <div class="tools-card-name">文件重命名</div>
               <div class="tools-card-desc">在线批量修改文件名</div>
             </div>
-          </a>
-          <a href="/Online-Tools/World-Time.html" class="tools-card" target="_blank">
+          </a><a href="/Online-Tools/World-Time.html" class="tools-card" target="_blank">
             <img src="/images/icon/Clock.png" class="tool-icon" />
             <div class="tools-card-text">
               <div class="tools-card-name">各国时间</div>
@@ -1205,50 +247,43 @@
         <div class="tools-container pt">
           <div class="tools-title">
             <span>社交平台</span>
-          </div>
-          <a href="/Online-Tools/Facebook-Appeal.html" class="tools-card" target="_blank">
+          </div><a href="/Online-Tools/Facebook-Appeal.html" class="tools-card" target="_blank">
             <img src="/images/icon/Facebook-Appeal.png" class="tool-icon" />
             <div class="tools-card-text">
               <div class="tools-card-name">Facebook 账号申诉</div>
               <div class="tools-card-desc">FB被封号提交申诉</div>
             </div>
-          </a>
-          <a href="/Online-Tools/WhatsApp-Unbaned-Tool.html" class="tools-card" target="_blank">
+          </a><a href="/Online-Tools/WhatsApp-Unbaned-Tool.html" class="tools-card" target="_blank">
             <img src="/images/icon/WhatsApp-Unbaned-Tool.png" class="tool-icon" />
             <div class="tools-card-text">
               <div class="tools-card-name">WhatsApp 快速解封</div>
               <div class="tools-card-desc">WA快速解封提交工具</div>
             </div>
-          </a>
-          <a href="/Online-Tools/Instagram-Banned-Hashtags-Detect.html" class="tools-card" target="_blank">
+          </a><a href="/Online-Tools/Instagram-Banned-Hashtags-Detect.html" class="tools-card" target="_blank">
             <img src="/images/icon/Instagram-Banned-Hashtags-Detect.png" class="tool-icon" />
             <div class="tools-card-text">
               <div class="tools-card-name">Instagram 屏蔽标签</div>
               <div class="tools-card-desc">检测被屏蔽的标签</div>
             </div>
-          </a>
-          <a href="/Online-Tools/Facebook-Precise-Search.html" class="tools-card" target="_blank">
+          </a><a href="/Online-Tools/Facebook-Precise-Search.html" class="tools-card" target="_blank">
             <img src="/images/icon/Facebook-Precise-Search.png" class="tool-icon" />
             <div class="tools-card-text">
               <div class="tools-card-name">Facebook 精确搜索</div>
               <div class="tools-card-desc">通过ID搜索更精确信息</div>
             </div>
-          </a>
-          <a href="/Online-Tools/Site-Search.html" class="tools-card" target="_blank">
+          </a><a href="/Online-Tools/Site-Search.html" class="tools-card" target="_blank">
             <img src="/images/icon/Site-Search.png" class="tool-icon" />
             <div class="tools-card-text">
               <div class="tools-card-name">站点搜索</div>
               <div class="tools-card-desc">多平台站点搜索</div>
             </div>
-          </a>
-          <a href="/Online-Tools/Social-Platform-Generator.html" class="tools-card" target="_blank">
+          </a><a href="/Online-Tools/Social-Platform-Generator.html" class="tools-card" target="_blank">
             <img src="/images/icon/Social.png" class="tool-icon" />
             <div class="tools-card-text">
               <div class="tools-card-name">社交平台生成器</div>
               <div class="tools-card-desc">社交平台多合一</div>
             </div>
-          </a>
-          <a href="/Online-Tools/Phone-Area-Code.html" class="tools-card" target="_blank">
+          </a><a href="/Online-Tools/Phone-Area-Code.html" class="tools-card" target="_blank">
             <img src="/images/icon/Phone-Area-Code.png" class="tool-icon" />
             <div class="tools-card-text">
               <div class="tools-card-name">号码识别区号</div>
@@ -1259,57 +294,49 @@
         <div class="tools-container pt">
           <div class="tools-title">
             <span>媒体相关</span>
-          </div>
-          <a href="/Online-Tools/Video-Compression.html" class="tools-card" target="_blank">
+          </div><a href="/Online-Tools/Video-Compression.html" class="tools-card" target="_blank">
             <img src="/images/icon/Video-Compression.png" class="tool-icon" />
             <div class="tools-card-text">
               <div class="tools-card-name">视频压缩</div>
               <div class="tools-card-desc">压缩率高达 80% - 90%。</div>
             </div>
-          </a>
-          <a href="/Online-Tools/Music-Visualization.html" class="tools-card" target="_blank">
+          </a><a href="/Online-Tools/Music-Visualization.html" class="tools-card" target="_blank">
             <img src="/images/icon/Music-Visualization.png" class="tool-icon" />
             <div class="tools-card-text">
               <div class="tools-card-name">音频可视化</div>
               <div class="tools-card-desc">将音频生成频谱动画</div>
             </div>
-          </a>
-          <a href="/Online-Tools/Similarity-Detect.html" class="tools-card" target="_blank">
+          </a><a href="/Online-Tools/Similarity-Detect.html" class="tools-card" target="_blank">
             <img src="/images/icon/Similarity-Detect.png" class="tool-icon" />
             <div class="tools-card-text">
               <div class="tools-card-name">内容相似度检测</div>
               <div class="tools-card-desc">图片和文本相似度检测</div>
             </div>
-          </a>
-          <a href="/Online-Tools/OCR.html" class="tools-card" target="_blank">
+          </a><a href="/Online-Tools/OCR.html" class="tools-card" target="_blank">
             <img src="/images/icon/OCR.png" class="tool-icon" />
             <div class="tools-card-text">
               <div class="tools-card-name">图片识别文字</div>
               <div class="tools-card-desc">提取图片中的文字</div>
             </div>
-          </a>
-          <a href="/Online-Tools/Exif-Clean.html" class="tools-card" target="_blank">
+          </a><a href="/Online-Tools/Exif-Clean.html" class="tools-card" target="_blank">
             <img src="/images/icon/Exif-Clean.png" class="tool-icon" />
             <div class="tools-card-text">
               <div class="tools-card-name">清理 Exif</div>
               <div class="tools-card-desc">清理图片Exif数据</div>
             </div>
-          </a>
-          <a href="/Online-Tools/Add-Watermark.html" class="tools-card" target="_blank">
+          </a><a href="/Online-Tools/Add-Watermark.html" class="tools-card" target="_blank">
             <img src="/images/icon/Add-Watermark.png" class="tool-icon" />
             <div class="tools-card-text">
               <div class="tools-card-name">图片加水印</div>
               <div class="tools-card-desc">图片批量添加水印</div>
             </div>
-          </a>
-          <a href="/Online-Tools/Image-to-Image.html" class="tools-card" target="_blank">
+          </a><a href="/Online-Tools/Image-to-Image.html" class="tools-card" target="_blank">
             <img src="/images/icon/Image-to-Image.png" class="tool-icon" />
             <div class="tools-card-text">
               <div class="tools-card-name">图片生成图片</div>
               <div class="tools-card-desc">AI 生成类似图片</div>
             </div>
-          </a>
-          <a href="/other/Audio-Recorder/" class="tools-card" target="_blank">
+          </a><a href="/other/Audio-Recorder/" class="tools-card" target="_blank">
             <img src="/images/icon/Audio-Recorder.png" class="tool-icon" />
             <div class="tools-card-text">
               <div class="tools-card-name">在线录音</div>
@@ -1320,64 +347,55 @@
         <div class="tools-container pt">
           <div class="tools-title">
             <span>编程开发</span>
-          </div>
-          <a href="/Online-Tools/HTML-Password-Protect.html" class="tools-card" target="_blank">
+          </div><a href="/Online-Tools/HTML-Password-Protect.html" class="tools-card" target="_blank">
             <img src="/images/icon/HTML-Protect.png" class="tool-icon" />
             <div class="tools-card-text">
               <div class="tools-card-name">HTML 密码保护</div>
               <div class="tools-card-desc">生成HTML密码保护页面</div>
             </div>
-          </a>
-          <a href="/Online-Tools/JavaScript-Deobfuscator.html" class="tools-card" target="_blank">
+          </a><a href="/Online-Tools/JavaScript-Deobfuscator.html" class="tools-card" target="_blank">
             <img src="/images/icon/JavaScript-Deobfuscator.png" class="tool-icon" />
             <div class="tools-card-text">
               <div class="tools-card-name">JS Deobfuscator</div>
               <div class="tools-card-desc">JavaScript 反混淆</div>
             </div>
-          </a>
-          <a href="/Online-Tools/Regular-Expression.html" class="tools-card" target="_blank">
+          </a><a href="/Online-Tools/Regular-Expression.html" class="tools-card" target="_blank">
             <img src="/images/icon/Regex.png" class="tool-icon" />
             <div class="tools-card-text">
               <div class="tools-card-name">正则表达式工具</div>
               <div class="tools-card-desc">支持字符转换</div>
             </div>
-          </a>
-          <a href="/Online-Tools/RGB-to-Hex.html" class="tools-card" target="_blank">
+          </a><a href="/Online-Tools/RGB-to-Hex.html" class="tools-card" target="_blank">
             <img src="/images/icon/RGB.png" class="tool-icon" />
             <div class="tools-card-text">
               <div class="tools-card-name">RGB to Hex</div>
               <div class="tools-card-desc">三原色转换为十六进制</div>
             </div>
-          </a>
-          <a href="/Online-Tools/HTML-Minifier-Online.html" class="tools-card" target="_blank">
+          </a><a href="/Online-Tools/HTML-Minifier-Online.html" class="tools-card" target="_blank">
             <img src="/images/icon/HTML-Minify.png" class="tool-icon" />
             <div class="tools-card-text">
               <div class="tools-card-name">HTML 压缩</div>
               <div class="tools-card-desc">移除缩进、换行等</div>
             </div>
-          </a>
-          <a href="/Online-Tools/Javascript-Checker.html" class="tools-card" target="_blank">
+          </a><a href="/Online-Tools/Javascript-Checker.html" class="tools-card" target="_blank">
             <img src="/images/icon/JS.png" class="tool-icon" />
             <div class="tools-card-text">
               <div class="tools-card-name">Javascript 检测</div>
               <div class="tools-card-desc">检测浏览器是否开启JS</div>
             </div>
-          </a>
-          <a href="/Online-Tools/User-Agent-Checker.html" class="tools-card" target="_blank">
+          </a><a href="/Online-Tools/User-Agent-Checker.html" class="tools-card" target="_blank">
             <img src="/images/icon/UA.png" class="tool-icon" />
             <div class="tools-card-text">
               <div class="tools-card-name">User Agent 检测</div>
               <div class="tools-card-desc">检测浏览器的UA</div>
             </div>
-          </a>
-          <a href="/Online-Tools/Online-Code-Editor.html" class="tools-card" target="_blank">
+          </a><a href="/Online-Tools/Online-Code-Editor.html" class="tools-card" target="_blank">
             <img src="/images/icon/Online-Code-Editor.png" class="tool-icon" />
             <div class="tools-card-text">
               <div class="tools-card-name">在线代码编辑器</div>
               <div class="tools-card-desc">支持HTML和Markdown</div>
             </div>
-          </a>
-          <a href="/Online-Tools/Code-Conversion.html" class="tools-card" target="_blank">
+          </a><a href="/Online-Tools/Code-Conversion.html" class="tools-card" target="_blank">
             <img src="/images/icon/Code-Conversion.png" class="tool-icon" />
             <div class="tools-card-text">
               <div class="tools-card-name">编码转换工具</div>
@@ -1422,8 +440,6 @@
           element.style.display = 'none'
         }
       })
-    </script>
-    <script>
       location.href.includes('raz1ner.com') || location.href.includes('localhost') ? '' : window.open('https' + '://raz' + '1ner' + '.com', '_self')
     </script>
   </body>
