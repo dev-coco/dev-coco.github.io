@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://raz1ner.com</id>
     <title>Raz1ner</title>
-    <updated>2025-12-06T04:07:54.717Z</updated>
+    <updated>2025-12-08T15:32:50.878Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://raz1ner.com"/>
     <link rel="self" href="https://raz1ner.com/atom.xml"/>
     <logo>https://raz1ner.com/images/avatar.png</logo>
     <icon>https://raz1ner.com/favicon.ico</icon>
     <rights>All rights reserved 2025, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[语音输入]]></title>
+        <id>https://raz1ner.com/post/Speech-To-Text/</id>
+        <link href="https://raz1ner.com/post/Speech-To-Text/">
+        </link>
+        <updated>2025-12-09T03:32:36.000Z</updated>
+        <summary type="html"><![CDATA[<p>一款可以在任意地方使用的语音输入软件。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>一款可以在任意地方使用的语音输入软件。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[视频批量添加水印]]></title>
         <id>https://raz1ner.com/post/Video-Watermark/</id>
@@ -161,17 +172,6 @@
         <summary type="html"><![CDATA[<p>Accelerate page loading with a plugin that works out of the box—no configuration needed.</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>Accelerate page loading with a plugin that works out of the box—no configuration needed.</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[ChatGPT Team 团队版首月 1 美元]]></title>
-        <id>https://raz1ner.com/post/ChatGPT-Team-One-Dollar/</id>
-        <link href="https://raz1ner.com/post/ChatGPT-Team-One-Dollar/">
-        </link>
-        <updated>2025-06-05T00:00:56.000Z</updated>
-        <summary type="html"><![CDATA[<p>ChatGPT Team 团队版账号优惠活动，首月仅需 1 美元，附开通教程。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>ChatGPT Team 团队版账号优惠活动，首月仅需 1 美元，附开通教程。</p>
 ]]></content>
     </entry>
 </feed>
