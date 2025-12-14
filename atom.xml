@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://raz1ner.com</id>
     <title>Raz1ner</title>
-    <updated>2025-12-08T15:32:50.878Z</updated>
+    <updated>2025-12-14T17:28:39.518Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://raz1ner.com"/>
     <link rel="self" href="https://raz1ner.com/atom.xml"/>
     <logo>https://raz1ner.com/images/avatar.png</logo>
     <icon>https://raz1ner.com/favicon.ico</icon>
     <rights>All rights reserved 2025, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[Google 账号地区修改]]></title>
+        <id>https://raz1ner.com/post/Google-Account-Change-Region/</id>
+        <link href="https://raz1ner.com/post/Google-Account-Change-Region/">
+        </link>
+        <updated>2025-12-14T05:28:29.000Z</updated>
+        <summary type="html"><![CDATA[<p>提交修改 Google 账号关联地区申请。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>提交修改 Google 账号关联地区申请。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[语音输入]]></title>
         <id>https://raz1ner.com/post/Speech-To-Text/</id>
@@ -161,17 +172,6 @@
         <summary type="html"><![CDATA[<p>加快页面加载速度，安装即用，无需任何设置。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>加快页面加载速度，安装即用，无需任何设置。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Page Load Booster]]></title>
-        <id>https://raz1ner.com/post/Page-Load-Booster-EN/</id>
-        <link href="https://raz1ner.com/post/Page-Load-Booster-EN/">
-        </link>
-        <updated>2025-06-27T01:03:29.000Z</updated>
-        <summary type="html"><![CDATA[<p>Accelerate page loading with a plugin that works out of the box—no configuration needed.</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>Accelerate page loading with a plugin that works out of the box—no configuration needed.</p>
 ]]></content>
     </entry>
 </feed>
