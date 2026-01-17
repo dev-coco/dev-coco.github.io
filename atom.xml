@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://raz1ner.com</id>
     <title>Raz1ner</title>
-    <updated>2026-01-12T12:36:13.911Z</updated>
+    <updated>2026-01-17T21:28:39.582Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://raz1ner.com"/>
     <link rel="self" href="https://raz1ner.com/atom.xml"/>
     <logo>https://raz1ner.com/images/avatar.png</logo>
     <icon>https://raz1ner.com/favicon.ico</icon>
     <rights>All rights reserved 2026, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[HEIC Converter 使用方法]]></title>
+        <id>https://raz1ner.com/post/HEIC-Converter/</id>
+        <link href="https://raz1ner.com/post/HEIC-Converter/">
+        </link>
+        <updated>2026-01-17T09:27:39.000Z</updated>
+        <summary type="html"><![CDATA[<p>多线程极速转换，让 Mac 里的照片体积减半，腾出更多存储空间。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>多线程极速转换，让 Mac 里的照片体积减半，腾出更多存储空间。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[悬浮歌词播放器]]></title>
         <id>https://raz1ner.com/post/Floating-Lyrics-Player/</id>
@@ -161,17 +172,6 @@
         <summary type="html"><![CDATA[<p>通过以下设置，可以在 Chrome 浏览器中继续使用 V2 版本的插件。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>通过以下设置，可以在 Chrome 浏览器中继续使用 V2 版本的插件。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Page Load Booster Privacy Policy]]></title>
-        <id>https://raz1ner.com/post/Page-Load-Booster-Privacy-Policy/</id>
-        <link href="https://raz1ner.com/post/Page-Load-Booster-Privacy-Policy/">
-        </link>
-        <updated>2025-06-27T12:03:15.000Z</updated>
-        <summary type="html"><![CDATA[<p>Page Load Booster Chrome Extension’s privacy policy is detailed here.</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>Page Load Booster Chrome Extension’s privacy policy is detailed here.</p>
 ]]></content>
     </entry>
 </feed>
