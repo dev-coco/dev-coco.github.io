@@ -112,7 +112,15 @@
       button:hover {
         background: #1976d2;
       }
+      .progress {
+        height: 30px;
+      }
+      .progress-bar {
+        font-size: 16px;
+        line-height: 30px;
+      }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
   </head>
   <body>
     <div class="container">
@@ -171,8 +179,16 @@
             <div class="position-option selected" data-position="bottom-right">右下角</div>
           </div>
         </div>
-        <div class="preview-container" id="previewContainer"></div>
         <button id="processButton">处理图片</button>
+        <div id="progressWrapper" style="display:none; margin-top:15px;">
+          <div class="progress">
+            <div id="progressBar" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%">0%</div>
+          </div>
+          <div id="progressText" style="margin-top:6px;font-size:14px;">
+            正在处理图片…
+          </div>
+        </div>
+        <div class="preview-container" id="previewContainer"></div>
       </div>
     </div>
     <script>
@@ -185,6 +201,9 @@
       const positionOptions = document.querySelectorAll('.position-option')
       const smartColorCheckbox = document.getElementById('smartColor')
       const watermarkColorInput = document.getElementById('watermarkColor')
+      const progressWrapper = document.getElementById('progressWrapper')
+      const progressBar = document.getElementById('progressBar')
+      const progressText = document.getElementById('progressText')
       let selectedPosition = 'bottom-right'
       let files = []
 
@@ -492,9 +511,18 @@
       }
 
       processButton.addEventListener('click', async () => {
+        if (!files.length) return
+        const zip = new JSZip()
+        
+        processButton.disabled = true
+        progressWrapper.style.display = 'block'
+
         const watermarkText = document.getElementById('watermarkText').value
         const opacity = opacityRange.value / 100
         const fontSize = parseInt(document.getElementById('fontSize').value)
+
+        const total = files.length
+        let completed = 0
 
         for (const file of files) {
           const img = await createImage(file)
@@ -534,12 +562,27 @@
           // 绘制水印文字，使用自动换行函数
           drawWrappedText(ctx, watermarkText, position.x, position.y, position.maxWidth, position.lineHeight, position.align, opacity, position.position, canvas)
 
-          // 下载处理后的图片
-          const link = document.createElement('a')
-          link.download = `${file.name.split('.')[0]}-加水印.${file.name.split('.').pop()}`
-          link.href = canvas.toDataURL(file.type)
-          link.click()
+          // 打包处理后的图片
+          const blob = await new Promise(resolve =>
+            canvas.toBlob(resolve, file.type)
+          )
+          zip.file(`${file.name.split('.').slice(0, -1).join('')}-加水印.${file.name.split('.').pop()}`, blob)
+
+          completed++
+          const percent = Math.round((completed / total) * 100)
+          progressBar.style.width = percent + '%'
+          progressBar.textContent = percent + '%'
+          progressText.textContent = `正在处理 ${completed} / ${total} 张图片`
         }
+        const zipBlob = await zip.generateAsync({ type: 'blob' })
+        const link = document.createElement('a')
+        link.href = URL.createObjectURL(zipBlob)
+        link.download = 'watermarked-images.zip'
+        link.click()
+
+        progressText.textContent = '处理完成 ✅'
+        progressBar.classList.remove('progress-bar-animated')
+        processButton.disabled = false
       })
       function createImage(file) {
         return new Promise(resolve => {
