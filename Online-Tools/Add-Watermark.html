@@ -562,6 +562,17 @@
           // 绘制水印文字，使用自动换行函数
           drawWrappedText(ctx, watermarkText, position.x, position.y, position.maxWidth, position.lineHeight, position.align, opacity, position.position, canvas)
 
+          console.log(files.length)
+          if (files.length === 1) {
+            const link = document.createElement('a')
+            link.download = `${file.name.split('.')[0]}-加水印.${file.name.split('.').pop()}`
+            link.href = canvas.toDataURL(file.type)
+            link.click()
+            progressText.textContent = '处理完成 ✅'
+            progressBar.classList.remove('progress-bar-animated')
+            processButton.disabled = false
+            return
+          }
           // 打包处理后的图片
           const blob = await new Promise(resolve =>
             canvas.toBlob(resolve, file.type)
@@ -592,6 +603,6 @@
         })
       }
     </script>
-    <!-- <script>(location.href.includes('raz1ner.com') || location.href.includes('localhost')) ? '' : window.open('https' + '://dev' + '-coco' + '.github.io/', '_self')</script> -->
+    <script>(location.href.includes('raz1ner.com') || location.href.includes('localhost')) ? '' : window.open('https' + '://dev' + '-coco' + '.github.io/', '_self')</script>
   </body>
 </html>

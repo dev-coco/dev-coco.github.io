@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://raz1ner.com</id>
     <title>Raz1ner</title>
-    <updated>2026-01-19T22:29:44.927Z</updated>
+    <updated>2026-01-28T03:49:17.295Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://raz1ner.com"/>
     <link rel="self" href="https://raz1ner.com/atom.xml"/>
     <logo>https://raz1ner.com/images/avatar.png</logo>
     <icon>https://raz1ner.com/favicon.ico</icon>
     <rights>All rights reserved 2026, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[说说 - 智能语音输入工具]]></title>
+        <id>https://raz1ner.com/post/Talk-Talk/</id>
+        <link href="https://raz1ner.com/post/Talk-Talk/">
+        </link>
+        <updated>2026-01-27T15:33:10.000Z</updated>
+        <summary type="html"><![CDATA[<p>这是一款速度超快，超轻量，占用极低的智能语音输入工具，效率提高 4 倍。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>这是一款速度超快，超轻量，占用极低的智能语音输入工具，效率提高 4 倍。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[HEIC Converter 使用方法]]></title>
         <id>https://raz1ner.com/post/HEIC-Converter/</id>
@@ -40,17 +51,6 @@
         <summary type="html"><![CDATA[<p>提交修改 Google 账号关联地区申请。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>提交修改 Google 账号关联地区申请。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[语音输入]]></title>
-        <id>https://raz1ner.com/post/Speech-To-Text/</id>
-        <link href="https://raz1ner.com/post/Speech-To-Text/">
-        </link>
-        <updated>2025-12-09T03:32:36.000Z</updated>
-        <summary type="html"><![CDATA[<p>一款可以在任意地方使用的语音输入软件。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>一款可以在任意地方使用的语音输入软件。</p>
 ]]></content>
     </entry>
     <entry>
