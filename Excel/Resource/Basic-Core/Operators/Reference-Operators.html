@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="keywords" content="Google Excel, Excel表格, 引用运算符">
+  <meta name="description" content="引用运算符">
+  <meta name="robots" content="index, follow">
+  <meta property="og:image" content="/images/Excel-Tutorial.jpg">
+  <title>引用运算符</title>
+  <link rel="icon" href="/images/avatar.png">
+  <link href="/css/Excel/typo.css" rel="stylesheet">
+</head>
+<body class="typo">
+  <h1>引用运算符</h1>
+  <ol>
+    <li>
+      <p>:（冒号）</p>
+      <p>作用：用于区域运算，对两个引用范围之间所有单元格的引用。</p>
+      <p>语法：<span class="f"><span class="f q">引用范围1</span>:<span class="f q">引用范围2</span></span></p>
+      <p>例子：</p>
+      <iframe style="max-width:355px;height:174px;" src="https://docs.google.com/spreadsheets/d/1QxsI816JQIRxF_B72DRNNR55yttMF7Pcv4PXVzPubAE/pubhtml/sheet?headers=true&gid=13927688"></iframe>
+    </li>
+    <li>
+      <p>$（美元符号）</p>
+      <p>作用：在默认情况下，单元格引用是相对的，在复制公式的时候，引用的范围就会发生变化。例如，引用单元格 <span class="f q">A1</span>，当公式向下调整一行时，变为 <span class="f q">A2</span>，如果公式向右调整一行时，变为 <span class="f q">B2</span>。</p>
+      <p>如果复制公式时希望保持原始单元格引用，需要在引用的行和列前面添加美元符号（$）。例如，绝对引用单元格 <span class="f q">$A$1</span>，不管公式往哪个地方调整也不会改变引用的范围。</p>
+      <p>在一些特定的情况下，可能会使用混合型引用。在引用的行或者列前面添加美元符号。例如，绝对引用 A 列并且相对引用第一个单元格 <span class="f q">$A1</span>，如果公式横向调整，A 列不会改变，如果公式纵向调整，那么 1 就会改变。例如：相对引用 A 列并且绝对引用第一个单元格 <span class="f q">A$1</span>，如果公式横向调整，A 列会改变，如果公式纵向调整，那么 1 不会改变。</p>
+      <p>说明：</p>
+      <iframe style="max-width:312px;height:144px;" src="https://docs.google.com/spreadsheets/d/1QxsI816JQIRxF_B72DRNNR55yttMF7Pcv4PXVzPubAE/pubhtml/sheet?headers=true&gid=663089808"></iframe>
+    </li>
+  </ol>
+  <p class="home">
+    <a href="/Excel" target="_blank">
+      <img alt="Excel表格, Google Excel" src="/images/Excel.png">
+      <span>Excel 一点通</span>
+    </a>
+  </p>
+  <script>(location.href.includes('raz1ner.com')||location.href.includes('localhost'))?'':window.open('https'+'://raz'+'1ner'+'.com','_self')</script>
+</body>
+</html>

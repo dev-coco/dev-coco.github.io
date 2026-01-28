@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Raz1ner">
+  <title>彩色背景预览</title>
+  <meta property="og:image" content="https://raz1ner.com/post-images/Raz1ner.png">
+  <meta name="description" content="彩色背景预览。">
+  <meta name="keywords" content="Raz1ner, 彩色背景, Background Color, Background Color Post" />
+  <link rel="canonical" href="https://raz1ner.com/Extension/Background-Color-Post/">
+  <meta property="og:title" content="彩色背景预览">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://raz1ner.com/post-images/Raz1ner.png">
+  <meta property="og:url" content="https://raz1ner.com/Extension/Background-Color-Post/">
+  <meta property="og:description" content="彩色背景预览。">
+  <meta name="twitter:title" content="彩色背景预览">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://raz1ner.com/post-images/Raz1ner.png">
+  <meta name="twitter:description" content="彩色背景预览。">
+  <style>
+    body {
+      font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+      background-color: #f5f7fa;
+      margin: 0;
+      display: flex;
+      height: 100vh;
+      overflow: hidden
+    }
+
+    #sidebar {
+      width: 265px;
+      background: #fff;
+      border-right: 1px solid #e0e0e0;
+      display: flex;
+      flex-direction: column;
+      padding: 20px 15px;
+      box-sizing: border-box;
+      height: 100vh
+    }
+
+    .sidebar-title {
+      font-size: 16px;
+      color: #999;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 700
+    }
+
+    .sidebar-section.nav-container {
+      flex: 0 1 auto;
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+      margin-bottom: 20px
+    }
+
+    .nav-menu {
+      list-style: none;
+      padding: 0 5px 0 0;
+      margin: 0;
+      overflow-y: auto
+    }
+
+    .sidebar-section.tags-container {
+      flex-shrink: 0;
+      margin-bottom: 20px
+    }
+
+    .nav-menu li {
+      padding: 8px 12px;
+      cursor: pointer;
+      border-radius: 6px;
+      color: #444;
+      transition: .2s;
+      font-size: 16px
+    }
+
+    .nav-menu li:hover {
+      background: #f0f7ff;
+      color: #4a90e2
+    }
+
+    .tag-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px
+    }
+
+    .tag-item {
+      color: #fff;
+      padding: 5px 12px;
+      border-radius: 4px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: transform .2s, opacity .2s;
+      border: none;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, .1)
+    }
+
+    .tag-item:hover {
+      opacity: .8;
+      transform: translateY(-1px)
+    }
+
+    #main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden
+    }
+
+    .search-container {
+      padding: 20px 40px;
+      background: rgba(255, 255, 255, .8);
+      backdrop-filter: blur(10px);
+      z-index: 10
+    }
+
+    #searchBar {
+      width: 95%;
+      padding: 12px 25px;
+      border: 2px solid #ddd;
+      border-radius: 30px;
+      font-size: 16px;
+      outline: 0;
+      transition: border-color .3s
+    }
+
+    #searchBar:focus {
+      border-color: #4a90e2
+    }
+
+    #gallery {
+      flex: 1;
+      padding: 0 40px 40px;
+      overflow-y: auto;
+      scroll-behavior: smooth
+    }
+
+    .category-group {
+      margin-top: 40px
+    }
+
+    .category-header {
+      font-size: 18px;
+      border-left: 4px solid #4a90e2;
+      padding-left: 10px;
+      margin-bottom: 20px;
+      font-weight: 700;
+      color: #333
+    }
+
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 15px
+    }
+
+    .image-card {
+      aspect-ratio: 1/1;
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, .05)
+    }
+
+    .image-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block
+    }
+
+    #toast {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #333;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 20px;
+      display: none;
+      z-index: 1000;
+      font-size: 14px
+    }
+
+    #gallery::-webkit-scrollbar,
+    .nav-menu::-webkit-scrollbar {
+      width: 5px
+    }
+
+    #gallery::-webkit-scrollbar-thumb,
+    .nav-menu::-webkit-scrollbar-thumb {
+      background: #ddd;
+      border-radius: 10px
+    }
+  </style>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-24X8H1LT7N"></script>
+  <script>
+    window.dataLayer = window.dataLayer || []
+    function gtag() { dataLayer.push(arguments) }
+    gtag('js', new Date())
+    gtag('config', 'G-24X8H1LT7N')
+  </script>
+</head>
+<body>
+  <aside id="sidebar">
+    <div class="sidebar-section nav-container">
+      <div class="sidebar-title">分类目录</div>
+      <ul class="nav-menu" id="navMenu"></ul>
+    </div>
+    <div class="sidebar-section tags-container">
+      <div class="sidebar-title">快捷标签</div>
+      <div class="tag-container" id="tagContainer">
+        <span class="tag-item">Meta AI</span>
+        <span class="tag-item">近期更新</span>
+        <span class="tag-item">天空</span>
+        <span class="tag-item">节日</span>
+        <span class="tag-item">人物</span>
+        <span class="tag-item">云</span>
+        <span class="tag-item">山</span>
+        <span class="tag-item">海边</span>
+        <span class="tag-item">树</span>
+        <span class="tag-item">沙滩</span>
+        <span class="tag-item">几何</span>
+        <span class="tag-item">日落</span>
+        <span class="tag-item">叶子</span>
+        <span class="tag-item">沙漠</span>
+        <span class="tag-item">夜晚</span>
+        <span class="tag-item">月亮</span>
+        <span class="tag-item">新年</span>
+        <span class="tag-item">水面</span>
+        <span class="tag-item">庆祝</span>
+        <span class="tag-item">星芒</span>
+        <span class="tag-item">烟花</span>
+        <span class="tag-item">春天</span>
+        <span class="tag-item">夏天</span>
+        <span class="tag-item">秋天</span>
+        <span class="tag-item">冬天</span>
+      </div>
+    </div>
+  </aside>
+  <div id="main">
+    <div class="search-container">
+      <input type="text" id="searchBar" placeholder="搜索关键词或图片元素...">
+    </div>
+    <div id="gallery"></div>
+  </div>
+  <div id="toast"></div>
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <script src="https://unpkg.com/tippy.js@6"></script>
+  <script>
+    const searchBar = document.getElementById('searchBar')
+    const toast = document.getElementById('toast')
+
+    const list = {
+      '3D': '3D',
+      illustration: '插画',
+      pureColor: '纯色',
+      animal: '动物',
+      landscape: '风景',
+      flower: '花朵',
+      texture: '纹理',
+      gradient: '渐变',
+      festival: '节日',
+      other: '其它',
+      food: '食物',
+      fruit: '水果',
+      sport: '体育',
+      pattern: '图案',
+      messageBubble: '消息气泡',
+      heartPattern: '心形图案',
+      starrySky: '星空',
+      virtualAvatar: '虚拟形象',
+      plant: '植物'
+    }
+
+    // 初始化
+    async function init () {
+      try {
+        const json = await fetch('color.json').then(response => response.json())
+
+        renderUI(json)
+        initTagColors()
+        setupEventListeners()
+
+        tippy('.image-card', {
+          content(data) {
+            const imgID = data.dataset.id.replace(/.+\/|-.+|\D/g, '')
+            return `<img loading="lazy" class="zoom-img" src="/images/Background-Color/${imgID}-2x.png">`
+          },
+          maxWidth: 740,
+          allowHTML: true,
+          appendTo: document.body,
+          placement: 'right'
+        })
+      } catch (err) {
+        console.error('加载失败', err)
+      }
+    }
+
+    // 随机颜色
+    function getRandomColor() {
+      const palette = [
+        '#F87171', // 红
+        '#FB923C', // 橙
+        '#FBBF24', // 黄
+        '#34D399', // 绿
+        '#60A5FA', // 蓝
+        '#818CF8', // 紫
+        '#F472B6'  // 粉
+      ]
+
+      return palette[Math.floor(Math.random() * palette.length)]
+    }
+
+    // 初始化标签颜色
+    function initTagColors () {
+      const tags = document.querySelectorAll('.tag-item')
+      // 为每个标签设置随机背景颜色
+      tags.forEach(tag => {
+        tag.style.backgroundColor = getRandomColor()
+      })
+    }
+
+    // 关键词搜索
+    const executeSearch = term => {
+      const query = term.toLowerCase()
+
+      // 遍历所有图片
+      document.querySelectorAll('.image-card').forEach(card => {
+        const isMatch = card.dataset.meta.includes(query)
+        card.style.display = isMatch ? 'block' : 'none'
+      })
+
+      // 控制分组是否需要显示
+      document.querySelectorAll('.category-group').forEach(group => {
+        // 当前分类下是否还有可见的图片
+        const visibleCards = Array.from(group.querySelectorAll('.image-card')).some(c => c.style.display === 'block')
+        group.style.display = visibleCards ? 'block' : 'none'
+      })
+    }
+
+    // 渲染界面
+    function renderUI (rawData) {
+      const navMenu = document.getElementById('navMenu')
+      const gallery = document.getElementById('gallery')
+
+      // 遍历所有分类
+      for (const category in rawData) {
+        // 左侧菜单
+        const li = document.createElement('li')
+        li.textContent = list[category]
+        li.onclick = () => {
+          // 清空搜索状态
+          executeSearch('')
+          searchBar.value = ''
+
+          // 平滑滚动到对应分类
+          const el = document.getElementById(`cat-${category}`)
+          if (el) el.scrollIntoView({ behavior: 'smooth' })
+        }
+
+        navMenu.appendChild(li)
+
+        // 分类容器
+        const group = document.createElement('div')
+        group.className = 'category-group'
+        group.id = `cat-${category}`
+
+        // 分类标题
+        group.innerHTML = `<div class="category-header">${list[category]}</div>`
+
+        // 图片网格容器
+        const grid = document.createElement('div')
+        grid.className = 'image-grid'
+
+        // 便利分类下的图片
+        for (const id in rawData[category]) {
+          const desc = rawData[category][id]
+          const card = document.createElement('div')
+          card.className = 'image-card'
+          card.dataset.id = id
+
+          // 储存图片描述信息
+          card.dataset.meta = `${id} ${desc} ${category}`.toLowerCase()
+
+          // 预设图片懒加载
+          card.innerHTML = `<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="/images/Background-Color/${id}-2x.png" loading="lazy" class="lazy" alt="${desc}">`
+
+          // 绑定复制事件
+          card.onclick = () => copyId(id)
+          grid.appendChild(card)
+        }
+
+        group.appendChild(grid)
+        gallery.appendChild(group)
+      }
+
+      // 初始化懒加载
+      initLazyLoad()
+    }
+
+    // 绑定搜索栏和标签事件
+    function setupEventListeners () {
+      // 搜索关键词
+      searchBar.addEventListener('input', e => executeSearch(e.target.value))
+
+      // 搜索标签
+      document.getElementById('tagContainer').addEventListener('click', e => {
+        if (e.target.classList.contains('tag-item')) {
+          // 清空旧搜索词
+          searchBar.value = ''
+          // 将标签文字作搜索关键词
+          const tagText = e.target.textContent
+          searchBar.value = tagText
+          executeSearch(tagText)
+        }
+      })
+    }
+
+    // 图片懒加载
+    function initLazyLoad () {
+      const observer = new IntersectionObserver(
+        entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const img = entry.target
+              // 真正加载图片
+              img.src = img.dataset.src
+              img.classList.remove('lazy')
+
+              // 加载完成后取消监听
+              observer.unobserve(img)
+            }
+          })
+        },
+        { root: document.getElementById('gallery'), rootMargin: '100px' }
+      )
+
+      document.querySelectorAll('img.lazy').forEach(img => observer.observe(img))
+    }
+
+    // 复制 ID 到剪切板
+    function copyId (text) {
+      navigator.clipboard.writeText(text).then(() => {
+        toast.textContent = `ID ${text} 已复制到剪贴板`
+        toast.style.display = 'block'
+        setTimeout(() => {
+          toast.style.display = 'none'
+        }, 2000)
+      })
+    }
+
+    init()
+
+  </script>
+</body>
+</html>

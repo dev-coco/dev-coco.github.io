@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="keywords" content="Google Excel, Excel表格, INDIRECT">
+  <meta name="description" content="INDIRECT - 以字符串的形式引用单元格。">
+  <meta name="robots" content="index, follow">
+  <meta property="og:image" content="/images/Excel-Tutorial.jpg">
+  <title>INDIRECT</title>
+  <link rel="icon" href="/images/avatar.png">
+  <link href="/css/Excel/typo.css" rel="stylesheet">
+</head>
+<body class="typo">
+  <h1 id="title">INDIRECT</h1>
+  <p>作用：以字符串的形式引用单元格。</p>
+  <p>语法：<span class="f">INDIRECT(<span class="t">范围</span>)</span></p>
+  <p>例子：</p>
+  <iframe style="max-width:384px;height:153px;" src="https://docs.google.com/spreadsheets/d/1uTSDnSTn7sQ8WDxNqgkE5IZSrI_bkzY76I9VMgz6Yds/pubhtml/sheet?headers=true&gid=2090059988"></iframe>
+  <p>运用：手动切换条件查询 1-3 月份的支出金额。</p>
+  <p>1-3 月的支出金额格式都是一样的，但是数据分别在不同的表格。</p>
+  <img style="min-width:320px;width:45%;margin-left: auto;display: block;margin-right: auto;margin-left: auto;display: block;margin-right: auto;" src="/images/Excel/INDIRECT-1.png">
+  <p>一般情况下分表引用一个数据的话就会写成<span class="f q">'1月支出'!A2:A6</span>，但是需求是手动切换条件查询，那么 1 月支出就不是一个固定的值，<span class="f q">A2:A6</span> 的范围是固定的，所以需要先做一个项列表用来手动切换条件。</p>
+  <img style="min-width:420px;width:60%;margin-left: auto;display: block;margin-right: auto;margin-left: auto;display: block;margin-right: auto;" src="/images/Excel/INDIRECT-2.png">
+  <p>因为 INDIRECT 函数是通过文本的形式引用单元格的，可以用 & 进行字符拼接，引用 B1 的项列表作为引用的表格名字，再接上 <span class="f q">A2:A6</span> 的范围。这样 <span class="f q">B1</span> 项列表选择不同的表格名字就可以查询到不同的结果了。</p>
+  <iframe style="max-width:309px;height:153px;" src="https://docs.google.com/spreadsheets/d/1uTSDnSTn7sQ8WDxNqgkE5IZSrI_bkzY76I9VMgz6Yds/pubhtml/sheet?headers=true&gid=664594847"></iframe>
+  <p class="home">
+    <a href="/Excel" target="_blank">
+      <img alt="Excel表格, Google Excel" src="/images/Excel.png">
+      <span>Excel 一点通</span>
+    </a>
+  </p>
+  <script src="/js/voice-playback.js"></script>
+</body>
+</html>

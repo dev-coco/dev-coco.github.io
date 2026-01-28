@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="keywords" content="Google Excel, Excel表格, REGEXMATCH">
+  <meta name="description" content="REGEXMATCH - 判读一个文本是否和正则表达式相匹配。如果匹配到返回TRUE，如果匹配不到返回FALSE。">
+  <meta name="robots" content="index, follow">
+  <meta property="og:image" content="/images/Excel-Tutorial.jpg">
+  <title>REGEXMATCH</title>
+  <link rel="icon" href="/images/avatar.png">
+  <link href="/css/Excel/typo.css" rel="stylesheet">
+</head>
+<body class="typo">
+  <h1 id="title">REGEXMATCH</h1>
+  <p>作用：判读一个文本是否和 <a href="/post/Regex-Syntax/" target="_blank">正则表达式</a> 相匹配。如果匹配到返回 TRUE，如果匹配不到返回 FALSE。</p>
+  <p>语法：<span class="f">REGEXMATCH(<span class="t">文本</span>, <span class="t">正则表达式</span>)</span></p>
+  <p>例子：</p>
+  <iframe style="max-width:374px;height:90px;" src="https://docs.google.com/spreadsheets/d/11TU-3DIEIRGrdq3YG1EXwP0Now37SLr9W-GnMfyhWs0/pubhtml/sheet?headers=true&gid=1116879244"></iframe>
+  <p>运用：使用 A 列的关键词匹配 B 列的水果是否和 A 列重复。</p>
+  <p>使用 <a href="/Excel/#Function/Text-Processing/JOIN" target="_blank">JOIN</a> 函数生成正则表达式查询的语法，<span class="f">JOIN(<span class="t">"I"</span>, <span class="q">A$2:A</span>)</span> 的结果同等于西瓜|橙子|蓝莓|树莓|草莓|柚子|猕猴桃，使用 JOIN 函数用生成好的语句查询 B 列是否和 A 列的关键词重复。</p>
+  <iframe style="max-width:606px;height:216px;" src="https://docs.google.com/spreadsheets/d/11TU-3DIEIRGrdq3YG1EXwP0Now37SLr9W-GnMfyhWs0/pubhtml/sheet?headers=true&gid=1931610459"></iframe>
+  <p class="home">
+    <a href="/Excel" target="_blank">
+      <img alt="Excel表格, Google Excel" src="/images/Excel.png">
+      <span>Excel 一点通</span>
+    </a>
+  </p>
+  <script src="/js/voice-playback.js"></script>
+</body>
+</html>

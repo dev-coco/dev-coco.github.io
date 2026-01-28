@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <title>图片批量添加水印</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="keywords" content="Raz1ner, 图片批量添加水印, 图片添加水印" />
+    <meta name="robots" content="index,follow" />
+    <meta name="description" content="拖入图片批量添加水印。" />
+    <link rel="icon" href="/images/avatar.png" />
+    <link rel="stylesheet" href="https://raz1ner.com/css/site.css" />
+    <link rel="stylesheet" href="https://raz1ner.com/css/bootstrap.min.css" />
+    <script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script async src="https://fundingchoicesmessages.google.com/i/pub-6960947409660270?ers=1" nonce="3szuJwRueku-LVJlmdoLew"></script><script nonce="3szuJwRueku-LVJlmdoLew">(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+  <script>(function(){
+   'use strict';var aa=function(a){var b=0;return function(){return b<a.length?{done:!1,value:a[b++]}:{done:!0}}},ba="function"==typeof Object.create?Object.create:function(a){var b=function(){};b.prototype=a;return new b},k;if("function"==typeof Object.setPrototypeOf)k=Object.setPrototypeOf;else{var m;a:{var ca={a:!0},n={};try{n.__proto__=ca;m=n.a;break a}catch(a){}m=!1}k=m?function(a,b){a.__proto__=b;if(a.__proto__!==b)throw new TypeError(a+" is not extensible");return a}:null}
+   var p=k,q=function(a,b){a.prototype=ba(b.prototype);a.prototype.constructor=a;if(p)p(a,b);else for(var c in b)if("prototype"!=c)if(Object.defineProperties){var d=Object.getOwnPropertyDescriptor(b,c);d&&Object.defineProperty(a,c,d)}else a[c]=b[c];a.v=b.prototype},r=this||self,da=function(){},t=function(a){return a};var u;var w=function(a,b){this.g=b===v?a:""};w.prototype.toString=function(){return this.g+""};var v={},x=function(a){if(void 0===u){var b=null;var c=r.trustedTypes;if(c&&c.createPolicy){try{b=c.createPolicy("goog#html",{createHTML:t,createScript:t,createScriptURL:t})}catch(d){r.console&&r.console.error(d.message)}u=b}else u=b}a=(b=u)?b.createScriptURL(a):a;return new w(a,v)};var A=function(){return Math.floor(2147483648*Math.random()).toString(36)+Math.abs(Math.floor(2147483648*Math.random())^Date.now()).toString(36)};var B={},C=null;var D="function"===typeof Uint8Array;function E(a,b,c){return"object"===typeof a?D&&!Array.isArray(a)&&a instanceof Uint8Array?c(a):F(a,b,c):b(a)}function F(a,b,c){if(Array.isArray(a)){for(var d=Array(a.length),e=0;e<a.length;e++){var f=a[e];null!=f&&(d[e]=E(f,b,c))}Array.isArray(a)&&a.s&&G(d);return d}d={};for(e in a)Object.prototype.hasOwnProperty.call(a,e)&&(f=a[e],null!=f&&(d[e]=E(f,b,c)));return d}
+   function ea(a){return F(a,function(b){return"number"===typeof b?isFinite(b)?b:String(b):b},function(b){var c;void 0===c&&(c=0);if(!C){C={};for(var d="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789".split(""),e=["+/=","+/","-_=","-_.","-_"],f=0;5>f;f++){var h=d.concat(e[f].split(""));B[f]=h;for(var g=0;g<h.length;g++){var l=h[g];void 0===C[l]&&(C[l]=g)}}}c=B[c];d=Array(Math.floor(b.length/3));e=c[64]||"";for(f=h=0;h<b.length-2;h+=3){var y=b[h],z=b[h+1];l=b[h+2];g=c[y>>2];y=c[(y&3)<<
+   4|z>>4];z=c[(z&15)<<2|l>>6];l=c[l&63];d[f++]=""+g+y+z+l}g=0;l=e;switch(b.length-h){case 2:g=b[h+1],l=c[(g&15)<<2]||e;case 1:b=b[h],d[f]=""+c[b>>2]+c[(b&3)<<4|g>>4]+l+e}return d.join("")})}var fa={s:{value:!0,configurable:!0}},G=function(a){Array.isArray(a)&&!Object.isFrozen(a)&&Object.defineProperties(a,fa);return a};var H;var J=function(a,b,c){var d=H;H=null;a||(a=d);d=this.constructor.u;a||(a=d?[d]:[]);this.j=d?0:-1;this.h=null;this.g=a;a:{d=this.g.length;a=d-1;if(d&&(d=this.g[a],!(null===d||"object"!=typeof d||Array.isArray(d)||D&&d instanceof Uint8Array))){this.l=a-this.j;this.i=d;break a}void 0!==b&&-1<b?(this.l=Math.max(b,a+1-this.j),this.i=null):this.l=Number.MAX_VALUE}if(c)for(b=0;b<c.length;b++)a=c[b],a<this.l?(a+=this.j,(d=this.g[a])?G(d):this.g[a]=I):(d=this.l+this.j,this.g[d]||(this.i=this.g[d]={}),(d=this.i[a])?
+   G(d):this.i[a]=I)},I=Object.freeze(G([])),K=function(a,b){if(-1===b)return null;if(b<a.l){b+=a.j;var c=a.g[b];return c!==I?c:a.g[b]=G([])}if(a.i)return c=a.i[b],c!==I?c:a.i[b]=G([])},M=function(a,b){var c=L;if(-1===b)return null;a.h||(a.h={});if(!a.h[b]){var d=K(a,b);d&&(a.h[b]=new c(d))}return a.h[b]};J.prototype.toJSON=function(){var a=N(this,!1);return ea(a)};
+   var N=function(a,b){if(a.h)for(var c in a.h)if(Object.prototype.hasOwnProperty.call(a.h,c)){var d=a.h[c];if(Array.isArray(d))for(var e=0;e<d.length;e++)d[e]&&N(d[e],b);else d&&N(d,b)}return a.g},O=function(a,b){H=b=b?JSON.parse(b):null;a=new a(b);H=null;return a};J.prototype.toString=function(){return N(this,!1).toString()};var P=function(a){J.call(this,a)};q(P,J);function ha(a){var b,c=(a.ownerDocument&&a.ownerDocument.defaultView||window).document,d=null===(b=c.querySelector)||void 0===b?void 0:b.call(c,"script[nonce]");(b=d?d.nonce||d.getAttribute("nonce")||"":"")&&a.setAttribute("nonce",b)};var Q=function(a,b){b=String(b);"application/xhtml+xml"===a.contentType&&(b=b.toLowerCase());return a.createElement(b)},R=function(a){this.g=a||r.document||document};R.prototype.appendChild=function(a,b){a.appendChild(b)};var S=function(a,b,c,d,e,f){try{var h=a.g,g=Q(a.g,"SCRIPT");g.async=!0;g.src=b instanceof w&&b.constructor===w?b.g:"type_error:TrustedResourceUrl";ha(g);h.head.appendChild(g);g.addEventListener("load",function(){e();d&&h.head.removeChild(g)});g.addEventListener("error",function(){0<c?S(a,b,c-1,d,e,f):(d&&h.head.removeChild(g),f())})}catch(l){f()}};var ia=r.atob("aHR0cHM6Ly93d3cuZ3N0YXRpYy5jb20vaW1hZ2VzL2ljb25zL21hdGVyaWFsL3N5c3RlbS8xeC93YXJuaW5nX2FtYmVyXzI0ZHAucG5n"),ja=r.atob("WW91IGFyZSBzZWVpbmcgdGhpcyBtZXNzYWdlIGJlY2F1c2UgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlIGlzIGludGVyZmVyaW5nIHdpdGggdGhpcyBwYWdlLg=="),ka=r.atob("RGlzYWJsZSBhbnkgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlLCB0aGVuIHJlbG9hZCB0aGlzIHBhZ2Uu"),la=function(a,b,c){this.h=a;this.j=new R(this.h);this.g=null;this.i=[];this.l=!1;this.o=b;this.m=c},V=function(a){if(a.h.body&&!a.l){var b=
+   function(){T(a);r.setTimeout(function(){return U(a,3)},50)};S(a.j,a.o,2,!0,function(){r[a.m]||b()},b);a.l=!0}},T=function(a){for(var b=W(1,5),c=0;c<b;c++){var d=X(a);a.h.body.appendChild(d);a.i.push(d)}b=X(a);b.style.bottom="0";b.style.left="0";b.style.position="fixed";b.style.width=W(100,110).toString()+"%";b.style.zIndex=W(2147483544,2147483644).toString();b.style["background-color"]=ma(249,259,242,252,219,229);b.style["box-shadow"]="0 0 12px #888";b.style.color=ma(0,10,0,10,0,10);b.style.display=
+   "flex";b.style["justify-content"]="center";b.style["font-family"]="Roboto, Arial";c=X(a);c.style.width=W(80,85).toString()+"%";c.style.maxWidth=W(750,775).toString()+"px";c.style.margin="24px";c.style.display="flex";c.style["align-items"]="flex-start";c.style["justify-content"]="center";d=Q(a.j.g,"IMG");d.className=A();d.src=ia;d.style.height="24px";d.style.width="24px";d.style["padding-right"]="16px";var e=X(a),f=X(a);f.style["font-weight"]="bold";f.textContent=ja;var h=X(a);h.textContent=ka;Y(a,
+   e,f);Y(a,e,h);Y(a,c,d);Y(a,c,e);Y(a,b,c);a.g=b;a.h.body.appendChild(a.g);b=W(1,5);for(c=0;c<b;c++)d=X(a),a.h.body.appendChild(d),a.i.push(d)},Y=function(a,b,c){for(var d=W(1,5),e=0;e<d;e++){var f=X(a);b.appendChild(f)}b.appendChild(c);c=W(1,5);for(d=0;d<c;d++)e=X(a),b.appendChild(e)},W=function(a,b){return Math.floor(a+Math.random()*(b-a))},ma=function(a,b,c,d,e,f){return"rgb("+W(Math.max(a,0),Math.min(b,255)).toString()+","+W(Math.max(c,0),Math.min(d,255)).toString()+","+W(Math.max(e,0),Math.min(f,
+   255)).toString()+")"},X=function(a){a=Q(a.j.g,"DIV");a.className=A();return a},U=function(a,b){0>=b||null!=a.g&&0!=a.g.offsetHeight&&0!=a.g.offsetWidth||(na(a),T(a),r.setTimeout(function(){return U(a,b-1)},50))},na=function(a){var b=a.i;var c="undefined"!=typeof Symbol&&Symbol.iterator&&b[Symbol.iterator];b=c?c.call(b):{next:aa(b)};for(c=b.next();!c.done;c=b.next())(c=c.value)&&c.parentNode&&c.parentNode.removeChild(c);a.i=[];(b=a.g)&&b.parentNode&&b.parentNode.removeChild(b);a.g=null};var pa=function(a,b,c,d,e){var f=oa(c),h=function(l){l.appendChild(f);r.setTimeout(function(){f?(0!==f.offsetHeight&&0!==f.offsetWidth?b():a(),f.parentNode&&f.parentNode.removeChild(f)):a()},d)},g=function(l){document.body?h(document.body):0<l?r.setTimeout(function(){g(l-1)},e):b()};g(3)},oa=function(a){var b=document.createElement("div");b.className=a;b.style.width="1px";b.style.height="1px";b.style.position="absolute";b.style.left="-10000px";b.style.top="-10000px";b.style.zIndex="-10000";return b};var L=function(a){J.call(this,a)};q(L,J);var qa=function(a){J.call(this,a)};q(qa,J);var ra=function(a,b){this.l=a;this.m=new R(a.document);this.g=b;this.i=K(this.g,1);b=M(this.g,2);this.o=x(K(b,4)||"");this.h=!1;b=M(this.g,13);b=x(K(b,4)||"");this.j=new la(a.document,b,K(this.g,12))};ra.prototype.start=function(){sa(this)};
+   var sa=function(a){ta(a);S(a.m,a.o,3,!1,function(){a:{var b=a.i;var c=r.btoa(b);if(c=r[c]){try{var d=O(P,r.atob(c))}catch(e){b=!1;break a}b=b===K(d,1)}else b=!1}b?Z(a,K(a.g,14)):(Z(a,K(a.g,8)),V(a.j))},function(){pa(function(){Z(a,K(a.g,7));V(a.j)},function(){return Z(a,K(a.g,6))},K(a.g,9),K(a.g,10),K(a.g,11))})},Z=function(a,b){a.h||(a.h=!0,a=new a.l.XMLHttpRequest,a.open("GET",b,!0),a.send())},ta=function(a){var b=r.btoa(a.i);a.l[b]&&Z(a,K(a.g,5))};(function(a,b){r[a]=function(c){for(var d=[],e=0;e<arguments.length;++e)d[e-0]=arguments[e];r[a]=da;b.apply(null,d)}})("__h82AlnkH6D91__",function(a){"function"===typeof window.atob&&(new ra(window,O(qa,window.atob(a)))).start()});}).call(this);
+   window.__h82AlnkH6D91__("WyJwdWItNjk2MDk0NzQwOTY2MDI3MCIsW251bGwsbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9iL3B1Yi02OTYwOTQ3NDA5NjYwMjcwIl0sbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9lbC9BR1NLV3hWWkh4UHVLbUVuYUVHcDZmcldNVTVHZloyVUxJZW8zcHZhaV9wUVJ5a2M4dmlkZlVwMENZeVJQZEQxdExOQzRkOUN6cEQxS1hFZml1cnFJZXFIOVVsc1R3XHUwMDNkXHUwMDNkP3RlXHUwMDNkVE9LRU5fRVhQT1NFRCIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFhUNmRjRFppendkR2FaMmQ2dHBOMEF3TWowNERwVWVBaUd4Y1lsNXR1UWZFdmhDSTZmaWRxcEN3RXNQeGF1eWJUc004eFlhVWFLSWJENnNWdVIyNXIwT0FcdTAwM2RcdTAwM2Q/YWJcdTAwM2QxXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFVFeld6ZVhfYjlBSnJsR05ab2N0MG1UVHBKZFUxQVo1b2piaVNXMXc4TjNJdG93TndOZ2YtNzcwOVNEQUlrSWlUbW5UU2hvVW5DYml0QmVYVTM4Z3M3c2dcdTAwM2RcdTAwM2Q/YWJcdTAwM2QyXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFVWdXc5Q2tNRzNoX3p2WGJHcHlLdU95cE4weWVabEVVSmVsbFBnR2F4Y3NockhWdklpSmlPMzZKM3JhRlhDSl9fdnp2U0ZuRFNXS3dPUXl5enpLWG5zc0FcdTAwM2RcdTAwM2Q/c2JmXHUwMDNkMiIsImRpdi1ncHQtYWQiLDIwLDEwMCwiY0hWaUxUWTVOakE1TkRjME1EazJOakF5TnpBXHUwMDNkIixbbnVsbCxudWxsLG51bGwsImh0dHBzOi8vd3d3LmdzdGF0aWMuY29tLzBlbW4vZi9wL3B1Yi02OTYwOTQ3NDA5NjYwMjcwLmpzP3VzcXBcdTAwM2RDQXciXSwiaHR0cHM6Ly9mdW5kaW5nY2hvaWNlc21lc3NhZ2VzLmdvb2dsZS5jb20vZWwvQUdTS1d4V0M5M05iUXBSTC12eTBWbXd3TjBwVllQTDE5eDJLYWJfQkFZYjVucWlRM0VZTTJ0ZXRQMHJxRzE5ZHF5X3NfZjh6VmhPc0ZIWExmeVJGUnJJTEhSak5aZ1x1MDAzZFx1MDAzZCJd");</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-24X8H1LT7N"></script>
+  <script>
+    window.dataLayer = window.dataLayer || []
+    function gtag(){dataLayer.push(arguments)}
+    gtag('js', new Date())
+    gtag('config', 'G-24X8H1LT7N')
+  </script>
+    <style>
+      .content {
+        font-family: Arial, sans-serif;
+        max-width: 800px;
+        padding: 20px;
+      }
+      .drop-zone {
+        border: 2px dashed #ccc;
+        border-radius: 4px;
+        padding: 20px;
+        text-align: center;
+        margin: 20px 0;
+        min-height: 100px;
+      }
+      .drop-zone.dragover {
+        background: #e1f5fe;
+        border-color: #03a9f4;
+      }
+      .preview-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 20px 0;
+      }
+      .preview-item {
+        position: relative;
+        width: 150px;
+        height: 150px;
+      }
+      .preview-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .controls label {
+        display: block;
+        margin: 10px 0 5px;
+      }
+      .position-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        margin: 10px 0;
+        max-width: 300px;
+      }
+      .position-option {
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        cursor: pointer;
+        text-align: center;
+      }
+      .position-option.selected {
+        background: #2196f3;
+        color: white;
+        border-color: #2196f3;
+      }
+      .color-section {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        margin: 10px 0;
+      }
+      .smart-color {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      button {
+        background: #2196f3;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+      button:hover {
+        background: #1976d2;
+      }
+      .progress {
+        height: 30px;
+      }
+      .progress-bar {
+        font-size: 16px;
+        line-height: 30px;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="text-start pt-3">
+        <img class="logo" alt="Raz1ner" src="/images/avatar.png" />
+        <span>Raz1ner</span>
+      </h1>
+      <div class="menu">
+        <a href="/">首页</a>
+        <a href="/Navigation/">导航</a>
+        <a href="/Awesome-Software/">软件</a>
+        <a href="/Extension/">插件</a>
+        <a href="/Online-Tools">在线工具</a>
+        <a href="/post/Linux-Command">Linux命令</a>
+        <a href="/Excel/">Excel教程</a>
+        <a href="/post/Terms-and-Privacy">隐私与条款</a>
+      </div>
+      <h1 class="my-3">图片批量添加水印</h1>
+      <div class="content mx-auto">
+        <div class="drop-zone" id="dropZone">
+          拖放图片到这里或点击选择图片
+          <input type="file" id="fileInput" multiple accept="image/*" style="display: none" />
+        </div>
+        <div class="controls">
+          <div class="input-group mb-3 w-50">
+            <span class="input-group-text" id="basic-addon1">水印文字</span>
+            <input type="text" class="form-control" id="watermarkText" value="示例水印" />
+          </div>
+
+          <div class="color-section">
+            <div>
+              <label for="watermarkColor">水印颜色：</label>
+              <input type="color" id="watermarkColor" value="#000000" />
+            </div>
+            <div class="smart-color">
+              <input type="checkbox" id="smartColor" />
+              <label for="smartColor">智能选色</label>
+            </div>
+          </div>
+          <div class="input-group mb-3 w-50">
+            <label for="customRange1" class="form-label">
+              水印透明度：
+              <span id="opacityValue">50%</span>
+            </label>
+            <input type="range" class="form-range" id="watermarkOpacity" min="0" max="100" value="50" />
+          </div>
+          <div class="input-group mb-3 w-50">
+            <span class="input-group-text" id="basic-addon1">文字大小</span>
+            <input type="number" class="form-control" id="fontSize" value="24" min="8" max="200" />
+          </div>
+          <label>水印位置：</label>
+          <div class="position-grid">
+            <div class="position-option" data-position="top-left">左上角</div>
+            <div class="position-option" data-position="top-right">右上角</div>
+            <div class="position-option" data-position="bottom-left">左下角</div>
+            <div class="position-option selected" data-position="bottom-right">右下角</div>
+          </div>
+        </div>
+        <button id="processButton">处理图片</button>
+        <div id="progressWrapper" style="display:none; margin-top:15px;">
+          <div class="progress">
+            <div id="progressBar" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%">0%</div>
+          </div>
+          <div id="progressText" style="margin-top:6px;font-size:14px;">
+            正在处理图片…
+          </div>
+        </div>
+        <div class="preview-container" id="previewContainer"></div>
+      </div>
+    </div>
+    <script>
+      const dropZone = document.getElementById('dropZone')
+      const fileInput = document.getElementById('fileInput')
+      const previewContainer = document.getElementById('previewContainer')
+      const processButton = document.getElementById('processButton')
+      const opacityRange = document.getElementById('watermarkOpacity')
+      const opacityValue = document.getElementById('opacityValue')
+      const positionOptions = document.querySelectorAll('.position-option')
+      const smartColorCheckbox = document.getElementById('smartColor')
+      const watermarkColorInput = document.getElementById('watermarkColor')
+      const progressWrapper = document.getElementById('progressWrapper')
+      const progressBar = document.getElementById('progressBar')
+      const progressText = document.getElementById('progressText')
+      let selectedPosition = 'bottom-right'
+      let files = []
+
+      // 智能选色时禁用手动颜色选择
+      smartColorCheckbox.addEventListener('change', e => {
+        watermarkColorInput.disabled = e.target.checked
+      })
+
+      // 位置选择
+      positionOptions.forEach(option => {
+        option.addEventListener('click', () => {
+          positionOptions.forEach(opt => opt.classList.remove('selected'))
+          option.classList.add('selected')
+          selectedPosition = option.dataset.position
+        })
+      })
+
+      // 更新透明度显示
+      opacityRange.addEventListener('input', e => {
+        opacityValue.textContent = `${e.target.value}%`
+      })
+
+      // 处理拖放
+      dropZone.addEventListener('dragover', e => {
+        e.preventDefault()
+        dropZone.classList.add('dragover')
+      })
+
+      dropZone.addEventListener('dragleave', () => {
+        dropZone.classList.remove('dragover')
+      })
+
+      dropZone.addEventListener('drop', e => {
+        e.preventDefault()
+        dropZone.classList.remove('dragover')
+        handleFiles(e.dataTransfer.files)
+      })
+
+      // 点击选择文件
+      dropZone.addEventListener('click', () => {
+        fileInput.click()
+      })
+
+      fileInput.addEventListener('change', e => {
+        handleFiles(e.target.files)
+      })
+
+      function handleFiles(fileList) {
+        files = Array.from(fileList).filter(file => file.type.startsWith('image/'))
+        previewContainer.innerHTML = ''
+
+        files.forEach(file => {
+          const reader = new FileReader()
+          reader.onload = e => {
+            const div = document.createElement('div')
+            div.className = 'preview-item'
+            div.innerHTML = `<img src="${e.target.result}" alt="预览">`
+            previewContainer.appendChild(div)
+          }
+          reader.readAsDataURL(file)
+        })
+      }
+
+      function drawWrappedText(ctx, text, x, y, maxWidth, lineHeight, alignment, originalAlpha, position, canvas) {
+        // 分割文本为单词（对于中文和其他语言，可能需要不同的分割逻辑）
+        const words = text.split('')
+        let line = ''
+        const lines = []
+
+        // 逐字检查并形成行
+        for (let i = 0; i < words.length; i++) {
+          const testLine = line + words[i]
+          const metrics = ctx.measureText(testLine)
+          const testWidth = metrics.width
+
+          if (testWidth > maxWidth && i > 0) {
+            lines.push(line)
+            line = words[i]
+          } else {
+            line = testLine
+          }
+        }
+
+        // 添加最后一行
+        lines.push(line)
+
+        // 保存当前绘图状态
+        ctx.save()
+
+        // 计算总高度
+        const totalHeight = lines.length * lineHeight
+
+        // 基于总高度调整起始Y位置
+        let startY = y
+        if (position.includes('bottom')) {
+          startY = startY - totalHeight + lineHeight
+        }
+
+        // 处理每一行
+        for (let i = 0; i < lines.length; i++) {
+          const currentY = startY + i * lineHeight
+
+          // 智能选色：为每一行单独分析背景颜色
+          if (smartColorCheckbox.checked) {
+            const areaWidth = ctx.measureText(lines[i]).width + 20 // 加一些额外宽度
+            const areaHeight = lineHeight
+
+            // 根据对齐方式确定分析区域的X坐标
+            let analyzeX = x - (alignment === 'right' ? areaWidth : 0)
+
+            // 确保分析区域在画布内
+            analyzeX = Math.max(0, Math.min(canvas.width - areaWidth, analyzeX))
+            const analyzeY = Math.max(0, Math.min(canvas.height - areaHeight, currentY - lineHeight / 2))
+
+            const smartColor = analyzeAreaColor(ctx, analyzeX, analyzeY, areaWidth, areaHeight)
+            ctx.fillStyle = smartColor
+          }
+
+          // 设置绘图属性
+          ctx.globalAlpha = originalAlpha
+
+          // 计算当前行的X坐标
+          let lineX = x
+          if (alignment === 'right') {
+            lineX = x
+          } else if (alignment === 'center') {
+            lineX = x - ctx.measureText(lines[i]).width / 2
+          }
+
+          // 添加文字阴影/描边效果增强可见性
+          ctx.shadowColor = 'rgba(0,0,0,0.5)'
+          ctx.shadowBlur = 2
+          ctx.shadowOffsetX = 1
+          ctx.shadowOffsetY = 1
+
+          // 绘制当前行文本
+          ctx.fillText(lines[i], lineX, currentY)
+        }
+
+        // 恢复绘图状态
+        ctx.restore()
+
+        return {
+          lines: lines.length,
+          totalHeight: totalHeight
+        }
+      }
+
+      function getWatermarkPosition(position, canvas, text, fontSize, maxWidth) {
+        const ctx = canvas.getContext('2d')
+        const padding = 20
+
+        // 预估行数和高度，用于初始位置计算
+        const estimatedWidth = ctx.measureText(text).width
+        const estimatedLines = Math.max(1, Math.ceil(estimatedWidth / maxWidth))
+        const lineHeight = fontSize * 1.5 // 增加行高以容纳阴影效果
+        const totalHeight = estimatedLines * lineHeight
+
+        // 计算各个位置的坐标
+        const positions = {
+          'top-left': {
+            x: padding,
+            y: padding + lineHeight / 2,
+            align: 'left'
+          },
+          'top-right': {
+            x: canvas.width - padding,
+            y: padding + lineHeight / 2,
+            align: 'right'
+          },
+          'bottom-left': {
+            x: padding,
+            y: canvas.height - padding,
+            align: 'left'
+          },
+          'bottom-right': {
+            x: canvas.width - padding,
+            y: canvas.height - padding,
+            align: 'right'
+          }
+        }
+
+        const posInfo = positions[position]
+        posInfo.lineHeight = lineHeight
+        posInfo.maxWidth = maxWidth
+        posInfo.position = position
+
+        return posInfo
+      }
+
+      // 分析区域颜色并返回合适的水印颜色
+      function analyzeAreaColor(ctx, x, y, width, height) {
+        // 确保分析区域在画布范围内
+        x = Math.max(0, x)
+        y = Math.max(0, y)
+        width = Math.min(ctx.canvas.width - x, width)
+        height = Math.min(ctx.canvas.height - y, height)
+
+        // 如果区域太小，返回默认颜色
+        if (width <= 0 || height <= 0) {
+          return '#ffffff'
+        }
+
+        const imageData = ctx.getImageData(x, y, width, height)
+        const data = imageData.data
+        let totalR = 0
+        let totalG = 0
+        let totalB = 0
+
+        // 计算区域平均颜色
+        for (let i = 0; i < data.length; i += 4) {
+          totalR += data[i]
+          totalG += data[i + 1]
+          totalB += data[i + 2]
+        }
+
+        const pixels = data.length / 4
+        const avgR = totalR / pixels
+        const avgG = totalG / pixels
+        const avgB = totalB / pixels
+
+        // 计算亮度 (使用相对亮度公式)
+        const brightness = (avgR * 0.299 + avgG * 0.587 + avgB * 0.114) / 255
+
+        // 计算背景色的HSL值
+        const [h, s, l] = rgbToHsl(avgR, avgG, avgB)
+
+        // 根据背景颜色决定水印颜色并增加对比度
+        if (brightness > 0.5) {
+          // 如果背景偏亮，使用深色水印
+          // 保持色相，增加饱和度，大幅降低亮度
+          const darkL = Math.max(0, 0.1) // 固定为很暗的值
+          const [r, g, b] = hslToRgb(h, 0.8, darkL)
+          return `rgb(${Math.round(r)}, ${Math.round(g)}, ${Math.round(b)})`
+        } else {
+          // 如果背景偏暗，使用亮色水印
+          // 保持色相，降低饱和度，大幅提高亮度
+          const lightL = Math.min(1, 0.9) // 固定为很亮的值
+          const [r, g, b] = hslToRgb(h, 0.2, lightL)
+          return `rgb(${Math.round(r)}, ${Math.round(g)}, ${Math.round(b)})`
+        }
+      }
+
+      // RGB转HSL
+      function rgbToHsl(r, g, b) {
+        r /= 255
+        g /= 255
+        b /= 255
+
+        const max = Math.max(r, g, b)
+        const min = Math.min(r, g, b)
+        let h
+        let s
+        const l = (max + min) / 2
+
+        if (max === min) {
+          h = s = 0
+        } else {
+          const d = max - min
+          s = l > 0.5 ? d / (2 - max - min) : d / (max + min)
+
+          switch (max) {
+            case r:
+              h = (g - b) / d + (g < b ? 6 : 0)
+              break
+            case g:
+              h = (b - r) / d + 2
+              break
+            case b:
+              h = (r - g) / d + 4
+              break
+          }
+
+          h /= 6
+        }
+
+        return [h, s, l]
+      }
+
+      // HSL转RGB
+      function hslToRgb(h, s, l) {
+        let r, g, b
+
+        if (s === 0) {
+          r = g = b = l
+        } else {
+          const hue2rgb = (p, q, t) => {
+            if (t < 0) t += 1
+            if (t > 1) t -= 1
+            if (t < 1 / 6) return p + (q - p) * 6 * t
+            if (t < 1 / 2) return q
+            if (t < 2 / 3) return p + (q - p) * (2 / 3 - t) * 6
+            return p
+          }
+
+          const q = l < 0.5 ? l * (1 + s) : l + s - l * s
+          const p = 2 * l - q
+
+          r = hue2rgb(p, q, h + 1 / 3)
+          g = hue2rgb(p, q, h)
+          b = hue2rgb(p, q, h - 1 / 3)
+        }
+
+        return [r * 255, g * 255, b * 255]
+      }
+
+      processButton.addEventListener('click', async () => {
+        if (!files.length) return
+        const zip = new JSZip()
+        
+        processButton.disabled = true
+        progressWrapper.style.display = 'block'
+
+        const watermarkText = document.getElementById('watermarkText').value
+        const opacity = opacityRange.value / 100
+        const fontSize = parseInt(document.getElementById('fontSize').value)
+
+        const total = files.length
+        let completed = 0
+
+        for (const file of files) {
+          const img = await createImage(file)
+          const canvas = document.createElement('canvas')
+          const ctx = canvas.getContext('2d')
+
+          canvas.width = img.width
+          canvas.height = img.height
+
+          // 绘制原始图片
+          ctx.drawImage(img, 0, 0)
+
+          // 计算最大宽度，基于图片尺寸和边距
+          // 小图片使用较小的最大宽度，大图片使用较大的最大宽度
+          const maxWidth = Math.min(canvas.width * 0.8, canvas.width > 800 ? 500 : canvas.width * 0.6)
+
+          // 获取水印位置
+          const position = getWatermarkPosition(selectedPosition, canvas, watermarkText, fontSize, maxWidth)
+
+          // 如果不是智能选色，就设置一个全局颜色
+          if (!smartColorCheckbox.checked) {
+            ctx.fillStyle = watermarkColorInput.value
+          }
+
+          // 设置水印样式
+          ctx.globalAlpha = opacity
+          ctx.font = `${fontSize}px Arial`
+
+          // 根据位置设置对齐方式
+          if (position.position.includes('right')) {
+            ctx.textAlign = 'right'
+          } else {
+            ctx.textAlign = 'left'
+          }
+          ctx.textBaseline = 'middle'
+
+          // 绘制水印文字，使用自动换行函数
+          drawWrappedText(ctx, watermarkText, position.x, position.y, position.maxWidth, position.lineHeight, position.align, opacity, position.position, canvas)
+
+          console.log(files.length)
+          if (files.length === 1) {
+            const link = document.createElement('a')
+            link.download = `${file.name.split('.')[0]}-加水印.${file.name.split('.').pop()}`
+            link.href = canvas.toDataURL(file.type)
+            link.click()
+            progressText.textContent = '处理完成 ✅'
+            progressBar.classList.remove('progress-bar-animated')
+            processButton.disabled = false
+            return
+          }
+          // 打包处理后的图片
+          const blob = await new Promise(resolve =>
+            canvas.toBlob(resolve, file.type)
+          )
+          zip.file(`${file.name.split('.').slice(0, -1).join('')}-加水印.${file.name.split('.').pop()}`, blob)
+
+          completed++
+          const percent = Math.round((completed / total) * 100)
+          progressBar.style.width = percent + '%'
+          progressBar.textContent = percent + '%'
+          progressText.textContent = `正在处理 ${completed} / ${total} 张图片`
+        }
+        const zipBlob = await zip.generateAsync({ type: 'blob' })
+        const link = document.createElement('a')
+        link.href = URL.createObjectURL(zipBlob)
+        link.download = 'watermarked-images.zip'
+        link.click()
+
+        progressText.textContent = '处理完成 ✅'
+        progressBar.classList.remove('progress-bar-animated')
+        processButton.disabled = false
+      })
+      function createImage(file) {
+        return new Promise(resolve => {
+          const img = new Image()
+          img.onload = () => resolve(img)
+          img.src = URL.createObjectURL(file)
+        })
+      }
+    </script>
+    <script>(location.href.includes('raz1ner.com') || location.href.includes('localhost')) ? '' : window.open('https' + '://dev' + '-coco' + '.github.io/', '_self')</script>
+  </body>
+</html>

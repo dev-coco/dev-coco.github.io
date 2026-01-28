@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="keywords" content="Google Excel, Excel表格, 多函数嵌套">
+  <meta name="description" content="多函数嵌套与理解。">
+  <meta name="robots" content="index, follow">
+  <meta property="og:image" content="/images/Excel-Tutorial.jpg">
+  <title>多函数嵌套与理解</title>
+  <link rel="icon" href="/images/avatar.png">
+  <link href="/css/Excel/typo.css" rel="stylesheet">
+</head>
+<body class="typo">
+  <h1>多函数嵌套与理解</h1>
+  <h2>函数合并</h2>
+  <p>需求：将 A 列的内容排除数字 3 后进行升序排序。</p>
+  <p>使用 <a href="/Excel/#Function/Find-Filter/FILTER" target="_blank">FILTER</a> 函数筛选内容，设置条件不等于 <span class="f n">3</span>，然后再使用 SORT 函数对 C 列的内容进行升序排序。</p>
+  <iframe style="max-width:664px;height:237px;" src="https://docs.google.com/spreadsheets/d/1yBaozSD0JBQyIaN__adBmPq2gwRK84r5d2B5pwwRVb4/pubhtml/sheet?headers=true&gid=0"></iframe>
+  <p>这种写法虽然可以实现需求，但是会占用多个单元格。</p>
+  <p>在 <a href="/Excel/#Function/Find-Filter/SORT" target="_blank">SORT</a> 函数中的范围引用的是 C 列 FILTER 函数计算完的结果，也就是说 <span class="f q">C2:C</span> 的结果等于 FILTER 函数计算的结果。如果要将两个函数合并，只需要把 SORT 函数中的范围替换成 FILTER 函数。</p>
+  <img class="img" style="min-width:420px;width:60%;" src="/images/Excel/Function-Nesting-1.png">
+  <p>函数合并后并不会影响输出的结果，反而让表格看起来更加简洁。</p>
+  <iframe style="max-width:517px;height:237px;" src="https://docs.google.com/spreadsheets/d/1yBaozSD0JBQyIaN__adBmPq2gwRK84r5d2B5pwwRVb4/pubhtml/sheet?headers=true&gid=879718527"></iframe>
+  <h2>理解多函数嵌套公式</h2>
+  <iframe style="max-width:523px;height:72px;" src="https://docs.google.com/spreadsheets/d/1yBaozSD0JBQyIaN__adBmPq2gwRK84r5d2B5pwwRVb4/pubhtml/sheet?headers=true&gid=460862938"></iframe>
+  <p>公式：<span class="f">=OFFSET(INDIRECT(ADDRESS(ROW(), COLUMN())), <span class="n">-1</span>, <span class="n">-1</span>)</span></p>
+  <p>通常情况下，看到一个多个函数嵌套成一个很长的公式的时候就会感到十分费解。如果对运算符优先级和所使用的函数作用不了解的话会很难理解这样的公式。</p>
+  <p>根据公式的计算顺序，先一层一层的找到最内层的函数。在 Google Excel 中有一个小技巧，当鼠标点击函数名的时候，当前被选择的函数包括函数内所有的参数都会被高亮，其它的函数将会变成阴影，这样有助于找到最内层的函数。</p>
+  <img src="/images/Excel/Function-Nesting-2.png" class="img" style="min-width:420px;width:60%;">
+  <p>按照从函数从外到内的顺序排序如下：</p>
+  <ol>
+    <li>OFFSET</li>
+    <li>INDIRECT</li>
+    <li>ADDRESS</li>
+    <li>ROW 和 COLUMN</li>
+  </ol>
+  <p>因为 <a href="/Excel/#Function/Others/ROW" target="_blank">ROW</a> 和 COLUMN 函数属于同级函数，默认按照从左到右的顺序计算，所以在这个公式中最优先计算的是 ROW 函数，获取当前行，返回值是 <span class="f n">2</span>，然后是 COLUMN 函数，获取当前列，返回值是 <span class="f n">2</span>。</p>
+  <p>外面一层的函数是 ADDRESS，将刚才的 ROW 函数和 <a href="/Excel/#Function/Others/COLUMN" target="_blank">COLUMN</a> 函数的结果进行计算，也就是 <span class="f">ADDRESS(<span class="n">2</span>, <span class="n">2</span>)</span>，返回的结果是 <span class="f q">$B$2</span>。</p>
+  <p>再外面一层的函数是 INDIRECT，以字符串的结果引用单元格，也就是引用刚才 <a href="/Excel/#Function/Others/ADDRESS" target="_blank">ADDRESS</a> 计算出来的结果 <span class="f q">$B$2</span>，等于 <span class="f">INDIRECT(<span class="t">"$B$2"</span>)</span>，返回引用 <span class="f q">$B$2</span> 单元格。</p>
+  <p>最外面一层的函数是 <a href="/Excel/#Function/Find-Filter/OFFSET" target="_blank">OFFSET</a>，将 INDIRECT 函数的结果进行向左一个单元格再向上一个单元格进行偏移，等于 <span class="f">OFFSET(<span class="q">$B$2</span>, <span class="n">-1</span>, <span class="n">-1</span>)</span></p>
+  <p>计算思路顺序如下图：</p>
+  <img src="/images/Excel/Function-Nesting-3.png" class="img" style="min-width:420px;width:60%;">
+  <h3>小技巧</h3>
+  <p>使用 <a href="/Online-Tools/Excel-Formula-Beautifier.html" target="_blank">Excel公式格式化</a> 工具，将一长段的公式进行格式化，可以更直观的根据缩进看到函数的分层。</p>
+  <img src="/images/Excel/Function-Nesting-4.png" class="img" style="min-width:380px;width:50%;">
+  <p class="home">
+    <a href="/Excel" target="_blank">
+      <img alt="Excel表格, Google Excel" src="/images/Excel.png">
+      <span>Excel 一点通</span>
+    </a>
+  </p>
+  <script>(location.href.includes('raz1ner.com')||location.href.includes('localhost'))?'':window.open('https'+'://raz'+'1ner'+'.com','_self')</script>
+</body>
+</html>
