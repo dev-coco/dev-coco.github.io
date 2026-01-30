@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://raz1ner.com</id>
     <title>Raz1ner</title>
-    <updated>2026-01-30T15:21:01.959Z</updated>
+    <updated>2026-01-30T21:48:40.729Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://raz1ner.com"/>
     <link rel="self" href="https://raz1ner.com/atom.xml"/>
     <logo>https://raz1ner.com/images/avatar.png</logo>
     <icon>https://raz1ner.com/favicon.ico</icon>
     <rights>All rights reserved 2026, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[SnapOCR - 截图文字识别工具]]></title>
+        <id>https://raz1ner.com/post/SnapOCR/</id>
+        <link href="https://raz1ner.com/post/SnapOCR/">
+        </link>
+        <updated>2026-01-30T09:38:43.000Z</updated>
+        <summary type="html"><![CDATA[<p>极简高效的 macOS 截图文字识别工具。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>极简高效的 macOS 截图文字识别工具。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[说说 - 智能语音输入工具]]></title>
         <id>https://raz1ner.com/post/Talk-Talk/</id>
@@ -161,17 +172,6 @@
         <summary type="html"><![CDATA[<p>此优惠活动在 2025 年 10 月 6 日前申请有效。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>此优惠活动在 2025 年 10 月 6 日前申请有效。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Chrome 浏览器开启Manifest V2 插件支持]]></title>
-        <id>https://raz1ner.com/post/Chrome-Enable-MV2-Support/</id>
-        <link href="https://raz1ner.com/post/Chrome-Enable-MV2-Support/">
-        </link>
-        <updated>2025-07-12T09:25:03.000Z</updated>
-        <summary type="html"><![CDATA[<p>通过以下设置，可以在 Chrome 浏览器中继续使用 V2 版本的插件。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>通过以下设置，可以在 Chrome 浏览器中继续使用 V2 版本的插件。</p>
 ]]></content>
     </entry>
 </feed>

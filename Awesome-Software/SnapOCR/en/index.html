@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SnapOCR - Screen Text Recognition Tool</title>
+  <meta name="keywords" content="Raz1ner, SnapOCR, OCR Tool, Screenshot OCR, macOS OCR" />
+  <meta name="author" content="Raz1ner" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <meta property="og:image" content="https://raz1ner.com/post-images/Raz1ner.png" />
+  <meta name="description" content="SnapOCR - A minimalist and efficient text recognition tool for macOS." />
+  <link rel="canonical" href="https://raz1ner.com/Awesome-Software/SnapOCR/en/" />
+  <meta property="og:title" content="SnapOCR - Screen Text Recognition Tool" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://raz1ner.com/post-images/Raz1ner.png" />
+  <meta property="og:url" content="https://raz1ner.com/Awesome-Software/SnapOCR/en/" />
+  <meta property="og:description" content="SnapOCR - A minimalist and efficient text recognition tool for macOS." />
+  <meta name="twitter:title" content="SnapOCR - Screen Text Recognition Tool" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://raz1ner.com/post-images/Raz1ner.png" />
+  <meta name="twitter:description" content="SnapOCR - A minimalist and efficient text recognition tool for macOS." />
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,sans-serif;background:linear-gradient(135deg,#fffdf9 0,#f5f5f2 100%);color:#1a1a1a;overflow-x:hidden;line-height:1.6}.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;background:linear-gradient(135deg,#fef9e7 0,#f0e6d2 50%,#e8d5b7 100%);overflow:hidden}.hero::before{content:'';position:absolute;width:500px;height:500px;background:radial-gradient(circle,rgba(255,211,129,.15) 0,transparent 70%);border-radius:50%;top:-150px;right:-150px;animation:10s ease-in-out infinite gentlePulse}.hero::after{content:'';position:absolute;width:300px;height:300px;background:radial-gradient(circle,rgba(255,193,7,.1) 0,transparent 70%);border-radius:50%;bottom:-50px;left:-50px;animation:8s ease-in-out infinite reverse gentlePulse}@keyframes gentlePulse{0%,100%{transform:scale(1);opacity:.6}50%{transform:scale(1.1);opacity:.9}}.hero-content{text-align:center;z-index:10;max-width:900px;padding:40px;animation:1s ease-out fadeInUp}@keyframes fadeInUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}.hero h1{font-size:4.5rem;font-weight:800;background:linear-gradient(135deg,#d97706,#b45309);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:24px;letter-spacing:-2px;text-shadow:0 2px 12px rgba(214,119,6,.15)}.hero .subtitle{font-size:1.5rem;color:#4b5563;margin-bottom:40px;font-weight:300}.cta-button{display:inline-block;padding:18px 48px;background:linear-gradient(135deg,#fbbf24,#f59e0b);color:#1f2937;font-size:1.2rem;font-weight:600;border-radius:50px;text-decoration:none;box-shadow:0 8px 32px rgba(245,158,11,.3);transition:.3s cubic-bezier(.25, .46, .45, .94);cursor:pointer;position:relative;overflow:hidden}.cta-button:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(245,158,11,.4)}.scroll-indicator{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);animation:2.5s infinite bounce;cursor:pointer}@keyframes bounce{0%,100%,20%,50%,80%{transform:translateX(-50%) translateY(0)}40%{transform:translateX(-50%) translateY(-12px)}60%{transform:translateX(-50%) translateY(-8px)}}.scroll-indicator svg{width:28px;height:28px;fill:rgba(180,83,9,0.8)}.features{padding:100px 40px;background:#fff;position:relative}.section-title{text-align:center;font-size:3rem;font-weight:700;color:#1a1a1a;margin-bottom:60px;position:relative}.section-title::after{content:'';display:block;width:60px;height:3px;background:linear-gradient(90deg,#fbbf24,#f59e0b);margin:16px auto 0;border-radius:2px}.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:32px;max-width:1200px;margin:0 auto}.feature-card{background:#fff;padding:48px 32px;border-radius:20px;border:1px solid #f3f4f6;transition:.3s;cursor:pointer;position:relative;box-shadow:0 4px 16px rgba(0,0,0,.05)}.feature-card:hover{transform:translateY(-6px);border-color:#fbbf24;box-shadow:0 16px 48px rgba(251,191,36,.15)}.feature-icon{width:80px;height:80px;margin-bottom:24px;display:flex;align-items:center;justify-content:center;border-radius:20px;background:linear-gradient(135deg,#fef3c7 0,#fde68a 100%);position:relative;z-index:1;box-shadow:0 4px 16px rgba(251,191,36,.2)}.feature-icon svg{width:44px;height:44px;stroke:#d97706;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}.feature-card h3{font-size:1.6rem;color:#1a1a1a;margin-bottom:12px;font-weight:700;position:relative;z-index:1}.feature-card p{font-size:1.05rem;color:#6b7280;line-height:1.7;position:relative;z-index:1}.how-it-works{padding:100px 40px;background:linear-gradient(135deg,#fefce8 0,#fef9e7 100%)}.steps-container{max-width:1000px;margin:0 auto;position:relative}.step{display:flex;align-items:center;margin-bottom:70px;opacity:0;transform:translateX(-40px);transition:.7s}.step.animate{opacity:1;transform:translateX(0)}.step:nth-child(2n){flex-direction:row-reverse;transform:translateX(40px)}.step:nth-child(2n).animate{transform:translateX(0)}.step-number{font-size:4.5rem;font-weight:800;background:linear-gradient(135deg,#fbbf24,#f59e0b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;min-width:140px;text-align:center;line-height:1}.step-content{flex:1;padding:0 40px}.step-content h3{font-size:1.8rem;color:#1a1a1a;margin-bottom:12px;font-weight:700}.step-content p{font-size:1.1rem;color:#6b7280;line-height:1.7}.specs{padding:100px 40px;background:#fff}.specs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;max-width:1200px;margin:0 auto}.spec-item{background:#fff;padding:36px 28px;border-radius:16px;border:1px solid #f3f4f6;transition:.3s;text-align:center;box-shadow:0 2px 12px rgba(0,0,0,.04);position:relative}.spec-item:hover{border-color:#fbbf24;transform:translateY(-4px);box-shadow:0 8px 32px rgba(251,191,36,.1)}.spec-icon{width:64px;height:64px;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;border-radius:16px;background:linear-gradient(135deg,#fef3c7 0,#fde68a 100%);box-shadow:0 4px 12px rgba(251,191,36,.25)}.spec-icon svg{width:32px;height:32px;stroke:#d97706;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.spec-item h4{font-size:1.2rem;color:#d97706;margin-bottom:10px;font-weight:600}.spec-item p{font-size:1rem;color:#6b7280}.cta-section{padding:100px 40px;background:linear-gradient(135deg,#fefce8 0,#fef9e7 100%);text-align:center;position:relative;overflow:hidden}.cta-section::before{content:'';position:absolute;width:400px;height:400px;background:radial-gradient(circle,rgba(255,193,7,.12) 0,transparent 70%);border-radius:50%;top:-100px;left:-100px;animation:12s ease-in-out infinite gentlePulse}.cta-section h2{font-size:3rem;background:linear-gradient(135deg,#d97706,#b45309);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:24px;font-weight:800;position:relative;z-index:1}.cta-section p{font-size:1.3rem;color:#4b5563;margin-bottom:40px;position:relative;z-index:1}.cta-section .cta-button{background:linear-gradient(135deg,#fbbf24,#f59e0b);color:#1f2937;position:relative;z-index:1}footer{padding:60px 40px 40px;background:#f8fafc;color:#6b7280;text-align:center;border-top:1px solid #e5e7eb}.footer-content{max-width:1200px;margin:0 auto}.social-group{display:flex;justify-content:center;gap:20px;margin-bottom:32px}.social-link{transition:transform .3s,opacity .3s}.social-link:hover{transform:translateY(-4px);opacity:.8}.social-link img{width:32px;height:32px;display:block}.footer-info{font-size:.95rem}.copyright-text{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:12px}.divider{color:#d1d5db}.footer-link{color:#6b7280;text-decoration:none;transition:color .3s;display:inline-flex;align-items:center;gap:4px}.footer-link:hover{color:#d97706}.floating-shape{position:fixed;border-radius:50%;opacity:.08;pointer-events:none;z-index:1}.shape-1{width:80px;height:80px;background:#fbbf24;top:20%;left:8%;animation:8s ease-in-out infinite floatGentle}.shape-2{width:120px;height:120px;background:#f59e0b;top:65%;right:10%;animation:10s ease-in-out infinite reverse floatGentle}.shape-3{width:60px;height:60px;background:#fbbf24;bottom:25%;left:12%;animation:9s ease-in-out infinite floatGentle}@keyframes floatGentle{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-20px) rotate(180deg)}}@media (max-width:768px){.hero h1{font-size:2.8rem}.hero .subtitle{font-size:1.15rem}.section-title{font-size:2.2rem}.features-grid,.specs-grid{grid-template-columns:1fr}.features{padding:80px 20px}.step{flex-direction:column!important;text-align:center}.step-number{margin-bottom:20px}.step-content{padding:0}.copyright-text{flex-direction:column;gap:8px}.divider{display:none}}</style>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-24X8H1LT7N"></script>
+  <script>
+    window.dataLayer = window.dataLayer || []
+    function gtag() { dataLayer.push(arguments) }
+    gtag('js', new Date())
+    gtag('config', 'G-24X8H1LT7N')
+  </script>
+</head>
+<body>
+  <div class="floating-shape shape-1"></div>
+  <div class="floating-shape shape-2"></div>
+  <div class="floating-shape shape-3"></div>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>SnapOCR</h1>
+      <p class="subtitle">Capture to Text, Instantly — Elegant & Simple Text Extraction</p>
+      <a href="https://github.com/dev-coco/SnapOCR/releases/download/1.0.1/SnapOCR.pkg" target="_blank" class="cta-button" download>Free Download</a>
+    </div>
+    <div class="scroll-indicator" onclick="scrollToSection('.features')">
+      <svg viewBox="0 0 24 24">
+        <path d="M7 10l5 5 5-5z" />
+      </svg>
+    </div>
+  </section>
+  <section class="features">
+    <h2 class="section-title">Core Features</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon"><i data-lucide="zap"></i></div>
+        <h3>Ultra-Fast Recognition</h3>
+        <p>Press the hotkey, select the area, and text is instantly copied to your clipboard. A seamless workflow in under a second.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i data-lucide="globe"></i></div>
+        <h3>Multi-Language Support</h3>
+        <p>Supports English, Chinese, and various other languages. Intelligent matching with system settings for precise recognition.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i data-lucide="keyboard"></i></div>
+        <h3>Custom Hotkeys</h3>
+        <p>Default Shift+Command+2, but you can set your own exclusive shortcut to fit perfectly into your workflow.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i data-lucide="clipboard"></i></div>
+        <h3>Smart Formatting</h3>
+        <p>Choose to keep line breaks or merge into a single line. Flexible options to meet your specific needs.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i data-lucide="target"></i></div>
+        <h3>Menu Bar Access</h3>
+        <p>Lightweight design that runs silently in the menu bar. Always ready, with extremely low memory footprint.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i data-lucide="sparkles"></i></div>
+        <h3>Elegant Notifications</h3>
+        <p>Beautiful HUD alerts with a frosted glass effect appear upon completion, providing feedback without interruption.</p>
+      </div>
+    </div>
+  </section>
+  <section class="how-it-works">
+    <h2 class="section-title">How It Works</h2>
+    <div class="steps-container">
+      <div class="step">
+        <div class="step-number">01</div>
+        <div class="step-content">
+          <h3>Press the Hotkey</h3>
+          <p>Use Shift+Command+2 or your custom combination to trigger the recognition tool anytime.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-number">02</div>
+        <div class="step-content">
+          <h3>Select Text Area</h3>
+          <p>The system capture tool launches automatically. Simply drag to select the text area you want to extract.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-number">03</div>
+        <div class="step-content">
+          <h3>Auto-Recognize & Copy</h3>
+          <p>The powerful engine recognizes the text instantly and copies it to your clipboard with an elegant HUD confirmation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="specs">
+    <h2 class="section-title">Product Specs</h2>
+    <div class="specs-grid">
+      <div class="spec-item">
+        <div class="spec-icon"><i data-lucide="laptop"></i></div>
+        <h4>macOS Native</h4>
+        <p>Deeply optimized for macOS</p>
+      </div>
+      <div class="spec-item">
+        <div class="spec-icon"><i data-lucide="shield"></i></div>
+        <h4>Privacy First</h4>
+        <p>Local recognition, no data upload</p>
+      </div>
+      <div class="spec-item">
+        <div class="spec-icon"><i data-lucide="rocket"></i></div>
+        <h4>High Performance</h4>
+        <p>Minimal resource consumption</p>
+      </div>
+      <div class="spec-item">
+        <div class="spec-icon"><i data-lucide="palette"></i></div>
+        <h4>Beautiful Design</h4>
+        <p>Follows Apple Design Guidelines</p>
+      </div>
+      <div class="spec-item">
+        <div class="spec-icon"><i data-lucide="settings"></i></div>
+        <h4>Flexible Settings</h4>
+        <p>Personalized configurations</p>
+      </div>
+      <div class="spec-item">
+        <div class="spec-icon"><i data-lucide="gift"></i></div>
+        <h4>Totally Free</h4>
+        <p>Experience all features for free</p>
+      </div>
+    </div>
+  </section>
+  <section class="cta-section">
+    <h2>Ready to Boost Your Productivity?</h2>
+    <p>Download SnapOCR now and make text recognition your ultimate power tool.</p>
+    <a href="https://github.com/dev-coco/SnapOCR/releases/download/1.0.1/SnapOCR.pkg" target="_blank" class="cta-button" download>Download Now</a>
+  </section>
+  <footer>
+    <div class="footer-content">
+      <div class="social-group">
+        <a href="https://github.com/dev-coco" class="social-link" title="GitHub" rel="nofollow noreferrer"
+          target="_blank">
+          <img alt="Github" src="https://raz1ner.com/images/social/GitHub.png" />
+        </a>
+        <a href="https://t.me/raz1ner" class="social-link" title="Telegram" rel="nofollow noreferrer" target="_blank">
+          <img alt="Telegram" src="https://raz1ner.com/images/social/Telegram.png" />
+        </a>
+        <a href="https://www.youtube.com/channel/UCEgNinV_DEntuv5Dm8Z_JvA?sub_confirmation=1" class="social-link"
+          title="YouTube" rel="nofollow noreferrer" target="_blank">
+          <img alt="YouTube" src="https://raz1ner.com/images/social/YouTube.png" />
+        </a>
+        <a href="/atom.xml" class="social-link" title="RSS" target="_blank">
+          <img alt="RSS" src="https://raz1ner.com/images/social/RSS.png" />
+        </a>
+        <a href="mailto:ruijingle@gmail.com" class="social-link" title="Email" target="_blank">
+          <img alt="Email" src="https://raz1ner.com/images/social/Gmail.png" />
+        </a>
+      </div>
+      <div class="footer-info">
+        <div class="copyright-text">
+          <span>Copyright © 2020-2026 Raz1ner - All Rights Reserved.</span>
+          <span class="divider">|</span>
+          <a class="footer-link" href="https://raz1ner.com/atom.xml" target="_blank">
+            <i data-lucide="rss" style="width:14px; height:14px;"></i> RSS Feed
+          </a>
+          <a class="footer-link" href="https://raz1ner.com/" target="_blank">
+            <i data-lucide="globe" style="width:14px; height:14px;"></i> Official Website
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script>
+    lucide.createIcons()
+
+    function scrollToSection(selector) {
+      document.querySelector(selector).scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      })
+    }
+
+    const observerOptions = {
+      threshold: 0.15,
+      rootMargin: '0px 0px -80px 0px'
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate')
+        }
+      })
+    }, observerOptions)
+
+    document.querySelectorAll('.step').forEach(step => observer.observe(step))
+
+    const featureCards = document.querySelectorAll('.feature-card')
+    featureCards.forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        card.style.transform = 'translateY(-6px)'
+        const icon = card.querySelector('.feature-icon')
+        if (!icon) return
+        icon.style.transform = 'scale(1.1)'
+        icon.style.boxShadow = '0 8px 24px rgba(251, 191, 36, 0.3)'
+      })
+
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = ''
+        const icon = card.querySelector('.feature-icon')
+        if (!icon) return
+        icon.style.transform = ''
+        icon.style.boxShadow = '0 4px 16px rgba(251, 191, 36, 0.2)'
+      })
+    })
+
+    const specItems = document.querySelectorAll('.spec-item')
+    specItems.forEach(item => {
+      item.addEventListener('mouseenter', () => {
+        const icon = item.querySelector('.spec-icon')
+        if (!icon) return
+        icon.style.transform = 'scale(1.15)'
+        icon.style.boxShadow = '0 6px 20px rgba(251, 191, 36, 0.3)'
+      })
+
+      item.addEventListener('mouseleave', () => {
+        const icon = item.querySelector('.spec-icon')
+        if (!icon) return
+        icon.style.transform = ''
+        icon.style.boxShadow = '0 4px 12px rgba(251, 191, 36, 0.25)'
+      })
+    })
+
+    const ctaButtons = document.querySelectorAll('.cta-button')
+    ctaButtons.forEach(button => {
+      button.addEventListener('mousedown', function () {
+        this.style.transform = 'scale(0.98)'
+      })
+      button.addEventListener('mouseup', function () {
+        this.style.transform = ''
+      })
+    })
+
+    let ticking = false
+    function updateScroll() {
+      const scrolled = window.pageYOffset
+      const parallax = document.querySelectorAll('.floating-shape')
+      parallax.forEach((shape, index) => {
+        const speed = 0.3 + (index * 0.1)
+        const yPos = -(scrolled * speed)
+        shape.style.transform = `translateY(${yPos}px)`
+      })
+      ticking = false
+    }
+
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(updateScroll)
+        ticking = true
+      }
+    })
+
+    window.addEventListener('load', () => {
+      document.body.classList.add('loaded')
+      setTimeout(() => {
+        lucide.createIcons()
+      }, 100)
+    })
+  </script>
+</body>
+</html>
