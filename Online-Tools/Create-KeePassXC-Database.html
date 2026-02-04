@@ -92,7 +92,7 @@
           )}" --url "${url}" -p "${title}"\n`
           result += createFile + addItem
         }
-        output.value = result
+        output.value = result + 'open ./\n'
       }
       const regex = /\$|!|"|\\/g
       // 替换字典
