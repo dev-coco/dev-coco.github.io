@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://raz1ner.com</id>
     <title>Raz1ner</title>
-    <updated>2026-02-07T17:49:56.864Z</updated>
+    <updated>2026-02-10T00:16:27.278Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://raz1ner.com"/>
     <link rel="self" href="https://raz1ner.com/atom.xml"/>
     <logo>https://raz1ner.com/images/avatar.png</logo>
     <icon>https://raz1ner.com/favicon.ico</icon>
     <rights>All rights reserved 2026, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[滚动字幕视频合成使用方法]]></title>
+        <id>https://raz1ner.com/post/Text-Scroll-Synth/</id>
+        <link href="https://raz1ner.com/post/Text-Scroll-Synth/">
+        </link>
+        <updated>2026-02-09T11:56:16.000Z</updated>
+        <summary type="html"><![CDATA[<p>无需安装复杂的剪辑软件，直接在浏览器中即可合成滚动字幕视频。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>无需安装复杂的剪辑软件，直接在浏览器中即可合成滚动字幕视频。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[QSwitch 使用方法]]></title>
         <id>https://raz1ner.com/post/QSwitch/</id>
@@ -161,17 +172,6 @@
         <summary type="html"><![CDATA[<p>获取预览后的链接。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>获取预览后的链接。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Teams 清理账号使用方法]]></title>
-        <id>https://raz1ner.com/post/Teams-Clean-Account/</id>
-        <link href="https://raz1ner.com/post/Teams-Clean-Account/">
-        </link>
-        <updated>2025-09-13T21:54:18.000Z</updated>
-        <summary type="html"><![CDATA[<p>自动清理 Teams 账号里所有的聊天信息。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>自动清理 Teams 账号里所有的聊天信息。</p>
 ]]></content>
     </entry>
 </feed>
