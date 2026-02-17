@@ -2,13 +2,46 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://raz1ner.com</id>
     <title>Raz1ner</title>
-    <updated>2026-02-11T23:18:56.570Z</updated>
+    <updated>2026-02-17T04:30:38.085Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://raz1ner.com"/>
     <link rel="self" href="https://raz1ner.com/atom.xml"/>
     <logo>https://raz1ner.com/images/avatar.png</logo>
     <icon>https://raz1ner.com/favicon.ico</icon>
     <rights>All rights reserved 2026, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[Sheet Toos 使用教程]]></title>
+        <id>https://raz1ner.com/post/Sheet-Tools/</id>
+        <link href="https://raz1ner.com/post/Sheet-Tools/">
+        </link>
+        <updated>2026-02-16T16:03:36.000Z</updated>
+        <summary type="html"><![CDATA[<p>一个多功能 Google Sheets 辅助工具。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>一个多功能 Google Sheets 辅助工具。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[电子表格批量修改 使用教程]]></title>
+        <id>https://raz1ner.com/post/Spreadsheet-Bulk-Editor/</id>
+        <link href="https://raz1ner.com/post/Spreadsheet-Bulk-Editor/">
+        </link>
+        <updated>2026-02-16T16:03:24.000Z</updated>
+        <summary type="html"><![CDATA[<p>针对多个电子表格进行批量修改。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>针对多个电子表格进行批量修改。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[表格分页批量修改 使用教程]]></title>
+        <id>https://raz1ner.com/post/Multi-Sheet-Bulk-Editor/</id>
+        <link href="https://raz1ner.com/post/Multi-Sheet-Bulk-Editor/">
+        </link>
+        <updated>2026-02-16T16:03:02.000Z</updated>
+        <summary type="html"><![CDATA[<p>针对单个电子表格的不同分页进行批量修改。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>针对单个电子表格的不同分页进行批量修改。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[滚动字幕视频合成使用方法]]></title>
         <id>https://raz1ner.com/post/Text-Scroll-Synth/</id>
@@ -139,39 +172,6 @@
         <summary type="html"><![CDATA[<p>Automatically suspend or close inactive tabs on a schedule to free up memory, optimize browser performance, and speed up browsing.</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>Automatically suspend or close inactive tabs on a schedule to free up memory, optimize browser performance, and speed up browsing.</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Tab Zen Privacy Policy]]></title>
-        <id>https://raz1ner.com/post/Tab-Zen-Privacy-Policy/</id>
-        <link href="https://raz1ner.com/post/Tab-Zen-Privacy-Policy/">
-        </link>
-        <updated>2025-10-20T00:28:41.000Z</updated>
-        <summary type="html"><![CDATA[<p>Tab Zen Chrome Extension’s privacy policy is detailed here.</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>Tab Zen Chrome Extension’s privacy policy is detailed here.</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Perplexity Pro 一年免费计划申请流程]]></title>
-        <id>https://raz1ner.com/post/Perplexity-Pro-Free-Pro-Plan/</id>
-        <link href="https://raz1ner.com/post/Perplexity-Pro-Free-Pro-Plan/">
-        </link>
-        <updated>2025-10-04T15:10:45.000Z</updated>
-        <summary type="html"><![CDATA[<p>Perplexity 提供了一年免费 Pro 计划，只需简单几步即可开通使用。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>Perplexity 提供了一年免费 Pro 计划，只需简单几步即可开通使用。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[链接转换工具使用方法]]></title>
-        <id>https://raz1ner.com/post/FB-Preview-Link-Converter/</id>
-        <link href="https://raz1ner.com/post/FB-Preview-Link-Converter/">
-        </link>
-        <updated>2025-09-14T06:28:34.000Z</updated>
-        <summary type="html"><![CDATA[<p>获取预览后的链接。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>获取预览后的链接。</p>
 ]]></content>
     </entry>
 </feed>
