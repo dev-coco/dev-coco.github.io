@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QSwitch - Raz1ner</title>
+  <meta name="description" content="QSwitch - 一键快速切换屏幕分辨率与音频设置。" />
+  <meta name="keywords" content="Raz1ner, QSwitch, 切换分辨率, 切换音频设置" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Raz1ner" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <meta property="og:image" content="https://raz1ner.com/post-images/Raz1ner.png" />
+  <meta name="description" content="QSwitch - 一键快速切换屏幕分辨率与音频设置。" />
+  <link rel="canonical" href="https://raz1ner.com/Awesome-Software/QSwitch/zh/" />
+  <meta property="og:title" content="QSwitch - Raz1ner" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://raz1ner.com/post-images/Raz1ner.png" />
+  <meta property="og:url" content="https://raz1ner.com/Awesome-Software/QSwitch/zh/" />
+  <meta property="og:description" content="QSwitch - 一键快速切换屏幕分辨率与音频设置。" />
+  <meta name="twitter:title" content="QSwitch - Raz1ner" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://raz1ner.com/post-images/Raz1ner.png" />
+  <meta name="twitter:description" content="QSwitch - 一键快速切换屏幕分辨率与音频设置。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>:root{--cream:#FAF7F2;--warm-white:#FFFCF8;--ink:#1A1612;--ink-light:#3D3830;--accent:#E85D3A;--accent-soft:#F5A58C;--gold:#C99B5A;--sage:#8BA888;--sky:#5B8FA8;--muted:#9B9489;--surface:#F0EDE7;--border:rgba(26, 22, 18, 0.1)}*,::after,::before{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden}nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:24px 48px;display:flex;align-items:center;justify-content:space-between;background:0 0;transition:background .4s,backdrop-filter .4s,padding .3s}nav.scrolled{background:rgba(250,247,242,.88);backdrop-filter:blur(20px);padding:16px 48px;border-bottom:1px solid var(--border)}.nav-logo{font-family:Fraunces,serif;font-size:22px;font-weight:600;color:var(--ink);letter-spacing:-.5px;text-decoration:none}.footer-info a:hover,.nav-logo span,.stat-number span{color:var(--accent)}.nav-links{display:flex;gap:36px;list-style:none}.nav-links a{font-size:14px;font-weight:400;color:var(--ink-light);text-decoration:none;letter-spacing:.3px;position:relative;padding-bottom:2px}.nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--accent);transition:width .3s}.nav-links a:hover::after{width:100%}.nav-cta{background:var(--ink);color:var(--cream)!important;padding:10px 22px!important;border-radius:100px;font-weight:500!important;transition:background .2s,transform .2s!important}.nav-cta:hover{background:var(--accent)!important;transform:translateY(-1px)}.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 24px 80px;position:relative;overflow:hidden}.hero-bg{position:absolute;inset:0;z-index:0}.hero-blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:.35}.hero-blob-1{width:600px;height:600px;background:radial-gradient(circle,#f5a58c,#e85d3a);top:-100px;right:-100px;animation:8s ease-in-out infinite floatBlob}.hero-blob-2{width:400px;height:400px;background:radial-gradient(circle,#5b8fa8,#8ba888);bottom:0;left:-80px;animation:10s ease-in-out infinite reverse floatBlob}.hero-blob-3{width:300px;height:300px;background:radial-gradient(circle,#c99b5a,#f5a58c);top:40%;left:30%;animation:12s ease-in-out 2s infinite floatBlob;opacity:.2}@keyframes floatBlob{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(30px,-20px) scale(1.05)}66%{transform:translate(-20px,15px) scale(.97)}}.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(26,22,18,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(26,22,18,.04) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 70% 70% at 50% 50%,black,transparent)}.hero-eyebrow{font-size:12px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:28px;position:relative;z-index:1;opacity:0;animation:.7s .2s forwards fadeUp}.hero-title{font-family:Fraunces,serif;font-size:clamp(56px, 9vw, 120px);font-weight:300;line-height:.95;letter-spacing:-3px;color:var(--ink);position:relative;z-index:1;margin-bottom:32px;opacity:0;animation:.8s .4s forwards fadeUp}.cta-title em,.hero-title em,.section-title em{font-style:italic;color:var(--accent)}.hero-title .line-2{display:block;font-size:clamp(48px, 7vw, 90px);color:var(--ink-light);font-weight:300}.hero-subtitle{font-size:18px;font-weight:300;color:var(--muted);line-height:1.7;max-width:520px;position:relative;z-index:1;margin-bottom:56px;opacity:0;animation:.8s .6s forwards fadeUp}.hero-actions{display:flex;gap:16px;align-items:center;position:relative;z-index:1;opacity:0;animation:.8s .8s forwards fadeUp}.btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:var(--cream);padding:16px 32px;border-radius:100px;font-size:15px;font-weight:500;text-decoration:none;transition:background .25s,transform .25s,box-shadow .25s;box-shadow:0 4px 20px rgba(26,22,18,.15)}.btn-primary:hover{background:var(--accent);transform:translateY(-2px);box-shadow:0 8px 32px rgba(232,93,58,.3)}.btn-primary svg{width:18px;height:18px}.btn-secondary{font-size:14px;color:var(--muted);text-decoration:none;display:flex;align-items:center;gap:6px;transition:color .2s}.btn-secondary:hover{color:var(--ink)}.hero-preview{margin-top:80px;position:relative;z-index:1;opacity:0;animation:1s 1s forwards fadeUp}.app-window{background:rgba(255,252,248,.9);border:1px solid var(--border);border-radius:20px;box-shadow:0 40px 120px rgba(26,22,18,.18),0 0 0 1px rgba(255,255,255,.8) inset;overflow:hidden;width:320px;backdrop-filter:blur(20px)}.app-titlebar{display:flex;align-items:center;gap:8px;padding:14px 16px;border-bottom:1px solid var(--border);background:rgba(240,237,231,.5)}.dot{width:12px;height:12px;border-radius:50%}.dot-r{background:#ff5f57}.dot-y{background:#ffbd2e}.dot-g{background:#28c840}.app-body{padding:8px}.app-section-title{font-size:10px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);padding:10px 12px 6px}.app-item{display:flex;align-items:center;justify-content:space-between;padding:10px 12px;border-radius:10px;transition:background .15s;cursor:pointer}.app-item:hover{background:var(--surface)}.app-item.active{background:var(--ink)}.app-item-left{display:flex;align-items:center;gap:10px}.app-item-icon{width:32px;height:32px;background:var(--surface);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px}.app-item.active .app-item-icon{background:rgba(255,255,255,.15)}.app-item-name{font-size:13px;font-weight:500;color:var(--ink)}.app-item.active .app-item-name,.feature-card.hero-card .feature-title,.preset-item.selected .preset-name{color:#fff}.app-item-sub{font-size:11px;color:var(--muted);margin-top:1px}.app-item.active .app-item-sub{color:rgba(255,255,255,.6)}.app-item-check{width:18px;height:18px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .2s}.app-item.active .app-item-check,.preset-item.selected .preset-check{opacity:1}.app-item-check::after{content:'✓';font-size:10px;color:#fff;font-weight:700}.app-divider{height:1px;background:var(--border);margin:6px 12px}.hero-badge{position:absolute;right:-60px;top:30px;background:var(--warm-white);border:1px solid var(--border);border-radius:16px;padding:14px 18px;box-shadow:0 20px 60px rgba(26,22,18,.12);display:flex;flex-direction:column;gap:4px;animation:4s ease-in-out infinite floatBadge;width:170px}.hero-badge-2{position:absolute;left:-80px;bottom:60px;background:var(--ink);border-radius:16px;padding:14px 18px;box-shadow:0 20px 60px rgba(26,22,18,.2);display:flex;align-items:center;gap:12px;animation:5s ease-in-out 1s infinite floatBadge;width:190px}@keyframes floatBadge{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}.badge-label{font-size:10px;color:var(--muted);font-weight:500;letter-spacing:.5px}.badge-value{font-family:Fraunces,serif;font-size:22px;color:var(--ink);font-weight:600}.badge-dot{width:8px;height:8px;border-radius:50%;background:var(--sage);animation:2s ease-in-out infinite pulse;flex-shrink:0}@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.4);opacity:.7}}.badge-text{font-size:12px;font-weight:500;color:#fff}@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}.features{padding:140px 48px;max-width:1200px;margin:0 auto}.section-label{font-size:11px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:20px}.section-title{font-family:Fraunces,serif;font-size:clamp(36px, 5vw, 64px);font-weight:300;line-height:1.1;letter-spacing:-2px;color:var(--ink);margin-bottom:80px;max-width:700px}.features-grid{display:grid;grid-template-columns:1.4fr 1fr;grid-template-rows:auto auto;gap:20px}.feature-card{background:var(--surface);border-radius:24px;padding:48px;border:1px solid var(--border);position:relative;overflow:hidden;transition:transform .35s cubic-bezier(.23, 1, .32, 1),box-shadow .35s}.feature-card:hover{transform:translateY(-4px);box-shadow:0 24px 80px rgba(26,22,18,.1)}.feature-card.hero-card{grid-row:1/3;background:var(--ink);color:#fff;display:flex;flex-direction:column;justify-content:flex-end;min-height:500px}.feature-card.hero-card .feature-icon{color:var(--accent-soft)}.feature-card.hero-card .feature-desc{color:rgba(255,255,255,.55)}.feature-deco{position:absolute;top:0;right:0;width:240px;height:240px;border-radius:50%;opacity:.07}.hero-card .feature-deco{background:radial-gradient(circle,var(--accent),transparent);opacity:.4;width:300px;height:300px;top:-60px;right:-60px}.feature-icon{font-size:36px;margin-bottom:32px;display:block}.feature-title{font-family:Fraunces,serif;font-size:28px;font-weight:400;letter-spacing:-.5px;color:var(--ink);margin-bottom:14px}.feature-desc{font-size:15px;line-height:1.7;color:var(--muted);font-weight:300}.res-visual{display:flex;flex-direction:column;gap:8px;margin-bottom:36px}.preset-item-info,.res-bar-wrap{display:flex;align-items:center;gap:12px}.res-label{font-size:12px;color:rgba(255,255,255,.5);width:80px;flex-shrink:0}.res-bar{height:6px;border-radius:100px;background:rgba(255,255,255,.15);flex:1;overflow:hidden}.res-bar-fill{height:100%;border-radius:100px;background:var(--accent);transition:width 1.5s cubic-bezier(.23, 1, .32, 1)}.res-bar-fill.active{background:#fff}.audio-section{background:var(--warm-white);padding:140px 48px;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}.audio-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}.audio-visual{position:relative}.preset-card{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:24px;box-shadow:0 20px 60px rgba(26,22,18,.08)}.preset-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}.preset-title-label{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);font-weight:500}.preset-add-btn{width:28px;height:28px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px;line-height:1;cursor:pointer}.preset-list{display:flex;flex-direction:column;gap:8px}.preset-item{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;background:var(--warm-white);border-radius:12px;border:1px solid var(--border);cursor:pointer;transition:.2s}.preset-item.selected{background:var(--ink);border-color:var(--ink)}.preset-item-icon{width:36px;height:36px;background:var(--surface);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px}.preset-item.selected .preset-item-icon{background:rgba(255,255,255,.12)}.preset-name{font-size:14px;font-weight:500;color:var(--ink)}.preset-sub{font-size:11px;color:var(--muted)}.preset-item.selected .preset-sub{color:rgba(255,255,255,.5)}.preset-check{width:20px;height:20px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:11px;color:#fff;font-weight:700;opacity:0;transition:opacity .2s}.floating-card{position:absolute;right:-40px;top:-30px;background:#fff;border:1px solid var(--border);border-radius:16px;padding:16px 20px;box-shadow:0 16px 50px rgba(26,22,18,.12);animation:5s ease-in-out .5s infinite floatBadge}.floating-label{font-size:10px;color:var(--muted);letter-spacing:.5px;margin-bottom:6px}.device-row{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:var(--ink)}.device-dot{width:6px;height:6px;border-radius:50%;background:var(--sage);flex-shrink:0}.how-section{padding:140px 48px;max-width:1100px;margin:0 auto}.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:80px}.step-card{position:relative;padding:40px;border-radius:24px;border:1px solid var(--border);transition:transform .3s,border-color .3s}.step-card:hover{transform:translateY(-4px);border-color:var(--accent-soft)}.step-number{font-family:Fraunces,serif;font-size:72px;font-weight:300;color:var(--accent);opacity:.2;position:absolute;top:24px;right:32px;line-height:1;letter-spacing:-3px}.step-icon{font-size:32px;margin-bottom:24px;display:block}.step-title{font-family:Fraunces,serif;font-size:22px;font-weight:400;letter-spacing:-.3px;color:var(--ink);margin-bottom:12px}.step-desc{font-size:14px;line-height:1.7;color:var(--muted)}.stats-section{background:var(--ink);padding:100px 48px;position:relative;overflow:hidden}.stats-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;position:relative;z-index:1}.stats-bg-shape{position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(232,93,58,.15),transparent);top:-200px;right:-100px}.stat-item{padding:48px;text-align:center;position:relative}.stat-item+.stat-item::before{content:'';position:absolute;left:0;top:25%;bottom:25%;width:1px;background:rgba(255,255,255,.08)}.stat-number{font-family:Fraunces,serif;font-size:72px;font-weight:300;letter-spacing:-3px;color:#fff;line-height:1;margin-bottom:12px}.stat-label{font-size:14px;color:rgba(255,255,255,.4);font-weight:300}.cta-section{padding:160px 48px;text-align:center;position:relative;overflow:hidden}.cta-bg{position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 50% 50%,rgba(232,93,58,.08),transparent)}.cta-title{font-family:Fraunces,serif;font-size:clamp(48px, 7vw, 96px);font-weight:300;letter-spacing:-3px;line-height:1;color:var(--ink);margin-bottom:24px;position:relative;z-index:1}.cta-sub{font-size:18px;color:var(--muted);font-weight:300;margin-bottom:48px;position:relative;z-index:1}.cta-note{font-size:13px;color:var(--muted);margin-top:16px;position:relative;z-index:1}.cta-actions{display:flex;justify-content:center;gap:16px;position:relative;z-index:1}.site-footer{padding:80px 48px 60px;border-top:1px solid var(--border);display:flex;flex-direction:column;align-items:center;gap:32px;background:var(--cream)}.social-links{display:flex;gap:28px;align-items:center}.social-links a{color:var(--muted);transition:.3s;display:flex;align-items:center;justify-content:center}.social-links a:hover{color:var(--accent);transform:translateY(-3px)}.social-links svg{width:22px;height:22px}.footer-info{font-size:13px;color:var(--muted);display:flex;align-items:center;flex-wrap:wrap;justify-content:center;line-height:1.8}.footer-info b{color:var(--ink);font-weight:600}.footer-info a{color:var(--muted);text-decoration:none;transition:color .2s}.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s cubic-bezier(.23, 1, .32, 1),transform .7s cubic-bezier(.23, 1, .32, 1)}.reveal.visible{opacity:1;transform:translateY(0)}.reveal-delay-1{transition-delay:0.1s}.reveal-delay-2{transition-delay:0.2s}.progress-bar{position:fixed;top:0;left:0;height:2px;background:var(--accent);z-index:200;transition:width .1s}@media (max-width:768px){nav{padding:20px 24px}.floating-card,.footer-info span[style*=margin],.hero-badge,.hero-badge-2,.nav-links{display:none}.audio-section,.features,.how-section{padding:80px 24px}.features-grid,.stats-inner,.steps-grid{grid-template-columns:1fr}.audio-inner{grid-template-columns:1fr;gap:48px}.cta-section{padding:100px 24px}.footer-info{flex-direction:column;gap:8px;text-align:center}}</style>
+</head>
+<body>
+  <div class="progress-bar" id="progressBar"></div>
+  <nav id="nav">
+    <a class="nav-logo" href="#"><span>Q</span>Switch</a>
+    <ul class="nav-links">
+      <li><a href="#features">功能</a></li>
+      <li><a href="#audio">音频</a></li>
+      <li><a href="#how">使用方式</a></li>
+      <li><a href="https://github.com/dev-coco/QSwitch/releases/download/1.0.0/QSwitch.pkg" class="nav-cta">免费下载</a>
+      </li>
+    </ul>
+  </nav>
+  <section class="hero">
+    <div class="hero-bg">
+      <div class="hero-grid"></div>
+      <div class="hero-blob hero-blob-1"></div>
+      <div class="hero-blob hero-blob-2"></div>
+      <div class="hero-blob hero-blob-3"></div>
+    </div>
+    <div class="hero-eyebrow">Mac 效率工具 · 免费使用</div>
+    <h1 class="hero-title">
+      一键切换<em>，</em>
+      <span class="line-2">掌控全局。</span>
+    </h1>
+    <p class="hero-subtitle">分辨率与音频设备，在指尖之间自由流转。QSwitch 让你的 Mac 随时适配任何场景。</p>
+    <div class="hero-actions">
+      <a href="https://github.com/dev-coco/QSwitch/releases/download/1.0.0/QSwitch.pkg" class="btn-primary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 5v14M5 12l7 7 7-7" />
+        </svg>
+        下载 QSwitch
+      </a>
+      <a href="#features" class="btn-secondary">了解更多 →</a>
+    </div>
+    <div class="hero-preview">
+      <div style="position:relative; display:inline-block;">
+        <div class="app-window">
+          <div class="app-titlebar">
+            <div class="dot dot-r"></div>
+            <div class="dot dot-y"></div>
+            <div class="dot dot-g"></div>
+          </div>
+          <div class="app-body">
+            <div class="app-section-title">显示分辨率</div>
+            <div class="app-item active">
+              <div class="app-item-left">
+                <div class="app-item-icon">🖥️</div>
+                <div>
+                  <div class="app-item-name">2560 × 1600</div>
+                  <div class="app-item-sub">HiDPI · 当前使用</div>
+                </div>
+              </div>
+              <div class="app-item-check"></div>
+            </div>
+            <div class="app-item">
+              <div class="app-item-left">
+                <div class="app-item-icon">🖥️</div>
+                <div>
+                  <div class="app-item-name">1920 × 1200</div>
+                  <div class="app-item-sub">HiDPI</div>
+                </div>
+              </div>
+              <div class="app-item-check"></div>
+            </div>
+            <div class="app-item">
+              <div class="app-item-left">
+                <div class="app-item-icon">🖥️</div>
+                <div>
+                  <div class="app-item-name">1440 × 900</div>
+                  <div class="app-item-sub">HiDPI</div>
+                </div>
+              </div>
+              <div class="app-item-check"></div>
+            </div>
+            <div class="app-divider"></div>
+            <div class="app-section-title">音频设备</div>
+            <div class="app-item">
+              <div class="app-item-left">
+                <div class="app-item-icon">🎧</div>
+                <div>
+                  <div class="app-item-name">AirPods Pro</div>
+                  <div class="app-item-sub">输入 · 输出</div>
+                </div>
+              </div>
+              <div class="app-item-check"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-badge">
+          <div class="badge-label">当前分辨率</div>
+          <div class="badge-value">2560</div>
+          <div class="badge-label">× 1600 HiDPI</div>
+        </div>
+        <div class="hero-badge-2">
+          <div class="badge-dot"></div>
+          <div class="badge-text">已切换到「会议模式」</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="features" id="features">
+    <div class="reveal">
+      <div class="section-label">核心功能</div>
+      <h2 class="section-title">专为 Mac 打造的<br><em>智能切换体验</em></h2>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card hero-card reveal">
+        <div class="feature-deco"></div>
+        <div class="res-visual">
+          <div class="res-bar-wrap">
+            <div class="res-label">3840 × 2160</div>
+            <div class="res-bar">
+              <div class="res-bar-fill" style="width:100%"></div>
+            </div>
+          </div>
+          <div class="res-bar-wrap">
+            <div class="res-label">2560 × 1600</div>
+            <div class="res-bar">
+              <div class="res-bar-fill active" style="width:66%"></div>
+            </div>
+          </div>
+          <div class="res-bar-wrap">
+            <div class="res-label">1920 × 1200</div>
+            <div class="res-bar">
+              <div class="res-bar-fill" style="width:50%"></div>
+            </div>
+          </div>
+          <div class="res-bar-wrap">
+            <div class="res-label">1440 × 900</div>
+            <div class="res-bar">
+              <div class="res-bar-fill" style="width:37%"></div>
+            </div>
+          </div>
+        </div>
+        <span class="feature-icon">🖥️</span>
+        <div class="feature-title">即时分辨率切换</div>
+        <p class="feature-desc">从菜单栏直接切换 Mac 显示分辨率，无需进入系统偏好设置。演示、录屏、日常使用，随时适配。</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-1">
+        <span class="feature-icon">🎛️</span>
+        <div class="feature-title">音频预设管理</div>
+        <p class="feature-desc">将常用的输入输出设备组合保存为预设，一键切换「工作模式」「会议模式」「创作模式」。</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-2">
+        <span class="feature-icon">⚡</span>
+        <div class="feature-title">开机自动启动</div>
+        <p class="feature-desc">设置 QSwitch 随 Mac 启动，随时待命，永远在菜单栏等候你的指令。</p>
+      </div>
+    </div>
+  </section>
+  <section class="audio-section" id="audio">
+    <div class="audio-inner">
+      <div>
+        <div class="reveal">
+          <div class="section-label">音频切换</div>
+          <h2 class="section-title" style="margin-bottom:24px;">告别反复<br><em>手动调整</em></h2>
+          <p
+            style="font-size:16px; line-height:1.8; color:var(--muted); font-weight:300; max-width:440px; margin-bottom:40px;">
+            无论是 AirPods、外接麦克风还是 USB 声卡，QSwitch 帮你把所有音频设备组合打包成预设，会议开始前一键搞定。
+          </p>
+        </div>
+        <div class="reveal reveal-delay-1" style="display:flex; flex-direction:column; gap:16px;">
+          <div style="display:flex; align-items:flex-start; gap:16px;">
+            <div
+              style="width:40px;height:40px;background:var(--surface);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;">
+              🎤</div>
+            <div>
+              <div style="font-weight:500;color:var(--ink);margin-bottom:4px;">智能设备识别</div>
+              <div style="font-size:14px;color:var(--muted);line-height:1.6;">自动扫描所有可用的输入与输出设备，实时更新列表。</div>
+            </div>
+          </div>
+          <div style="display:flex; align-items:flex-start; gap:16px;">
+            <div
+              style="width:40px;height:40px;background:var(--surface);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;">
+              💾</div>
+            <div>
+              <div style="font-weight:500;color:var(--ink);margin-bottom:4px;">预设持久保存</div>
+              <div style="font-size:14px;color:var(--muted);line-height:1.6;">你的预设配置本地保存，重启 Mac 后依然在。</div>
+            </div>
+          </div>
+          <div style="display:flex; align-items:flex-start; gap:16px;">
+            <div
+              style="width:40px;height:40px;background:var(--surface);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;">
+              🔁</div>
+            <div>
+              <div style="font-weight:500;color:var(--ink);margin-bottom:4px;">输入输出同步切换</div>
+              <div style="font-size:14px;color:var(--muted);line-height:1.6;">每个预设同时记忆输入与输出设备，切换一步到位。</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="audio-visual reveal">
+        <div class="preset-card">
+          <div class="preset-header">
+            <div class="preset-title-label">我的音频预设</div>
+            <div class="preset-add-btn">+</div>
+          </div>
+          <div class="preset-list">
+            <div class="preset-item selected">
+              <div class="preset-item-info">
+                <div class="preset-item-icon">💼</div>
+                <div>
+                  <div class="preset-name">工作模式</div>
+                  <div class="preset-sub">MacBook 麦克风 · 外放</div>
+                </div>
+              </div>
+              <div class="preset-check">✓</div>
+            </div>
+            <div class="preset-item">
+              <div class="preset-item-info">
+                <div class="preset-item-icon">📹</div>
+                <div>
+                  <div class="preset-name">会议模式</div>
+                  <div class="preset-sub">Blue Yeti · AirPods Pro</div>
+                </div>
+              </div>
+              <div class="preset-check">✓</div>
+            </div>
+            <div class="preset-item">
+              <div class="preset-item-info">
+                <div class="preset-item-icon">🎵</div>
+                <div>
+                  <div class="preset-name">创作模式</div>
+                  <div class="preset-sub">接口 · 监听耳机</div>
+                </div>
+              </div>
+              <div class="preset-check">✓</div>
+            </div>
+          </div>
+        </div>
+        <div class="floating-card">
+          <div class="floating-label">已切换设备</div>
+          <div class="device-row">
+            <div class="device-dot"></div>
+            Blue Yeti USB Mic
+          </div>
+          <div class="device-row" style="margin-top:6px;">
+            <div class="device-dot"></div>
+            AirPods Pro
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="how-section" id="how">
+    <div class="reveal">
+      <div class="section-label">使用方式</div>
+      <h2 class="section-title">三步上手，<em>零学习成本</em></h2>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card reveal">
+        <div class="step-number">01</div>
+        <span class="step-icon">⬇️</span>
+        <div class="step-title">下载安装</div>
+        <p class="step-desc">下载 QSwitch，拖入应用程序文件夹，双击打开。它会安静地出现在你的菜单栏。</p>
+      </div>
+      <div class="step-card reveal reveal-delay-1">
+        <div class="step-number">02</div>
+        <span class="step-icon">🖱️</span>
+        <div class="step-title">点击菜单栏图标</div>
+        <p class="step-desc">点击菜单栏的 QSwitch 图标，即可看到所有可用分辨率和音频设备，随时查看当前状态。</p>
+      </div>
+      <div class="step-card reveal reveal-delay-2">
+        <div class="step-number">03</div>
+        <span class="step-icon">✨</span>
+        <div class="step-title">保存你的预设</div>
+        <p class="step-desc">调好音频设备后，一键保存为预设。下次直接点击预设名称，瞬间切换，节省每一秒。</p>
+      </div>
+    </div>
+  </section>
+  <section class="stats-section">
+    <div class="stats-bg-shape"></div>
+    <div class="stats-inner">
+      <div class="stat-item reveal">
+        <div class="stat-number">0<span>秒</span></div>
+        <div class="stat-label">切换所需的系统设置操作</div>
+      </div>
+      <div class="stat-item reveal reveal-delay-1">
+        <div class="stat-number">∞<span></span></div>
+        <div class="stat-label">可保存的音频预设数量</div>
+      </div>
+      <div class="stat-item reveal reveal-delay-2">
+        <div class="stat-number">1<span>下</span></div>
+        <div class="stat-label">完成所有切换操作的点击次数</div>
+      </div>
+    </div>
+  </section>
+  <section class="cta-section">
+    <div class="cta-bg"></div>
+    <div class="reveal">
+      <h2 class="cta-title">准备好了吗？<br><em>现在就切换。</em></h2>
+      <p class="cta-sub">免费下载，适用于 macOS 13 及以上版本。</p>
+      <div class="cta-actions">
+        <a href="https://github.com/dev-coco/QSwitch/releases/download/1.0.0/QSwitch.pkg" class="btn-primary"
+          style="font-size:17px; padding:18px 40px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:20px;height:20px;">
+            <path d="M12 5v14M5 12l7 7 7-7" />
+          </svg>
+          免费下载 QSwitch
+        </a>
+      </div>
+      <p class="cta-note">macOS 13+ · 完全免费 · 无订阅</p>
+    </div>
+  </section>
+  <footer class="site-footer">
+    <div class="social-links">
+      <a href="https://github.com/dev-coco" class="github" target="_blank"><i data-lucide="github"></i></a>
+      <a href="https://t.me/raz1ner" class="telegram" target="_blank"><i data-lucide="send"></i></a>
+      <a href="https://www.youtube.com/channel/UCEgNinV_DEntuv5Dm8Z_JvA?sub_confirmation=1" class="youtube"
+        target="_blank"><i data-lucide="youtube"></i></a>
+      <a href="/atom.xml" class="rss" target="_blank"><i data-lucide="rss"></i></a>
+      <a href="mailto:ruijingle@gmail.com" class="email" target="_blank"><i data-lucide="mail"></i></a>
+    </div>
+    <div class="footer-info">
+      <span>Copyright © 2020-2026 <b>Raz1ner</b> · All Rights Reserved.</span>
+      <span style="opacity: 0.3; margin: 0 10px;">|</span>
+      <a href="/atom.xml" target="_blank">RSS 订阅</a>
+      <span style="opacity: 0.3; margin: 0 10px;">|</span>
+      <a href="https://raz1ner.com" target="_blank">访问官网</a>
+    </div>
+  </footer>
+  <script>
+    lucide.createIcons()
+
+    const progressBar = document.getElementById('progressBar')
+    window.addEventListener('scroll', () => {
+      const scrollTop = document.documentElement.scrollTop
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight
+      progressBar.style.width = (scrollTop / docHeight) * 100 + '%'
+    })
+
+    const nav = document.getElementById('nav')
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40)
+    })
+
+    const reveals = document.querySelectorAll('.reveal')
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible')
+          }
+        })
+      },
+      { threshold: 0.12 }
+    )
+    reveals.forEach(el => observer.observe(el))
+
+    document.querySelectorAll('.preset-item').forEach(item => {
+      item.addEventListener('click', function () {
+        document.querySelectorAll('.preset-item').forEach(i => i.classList.remove('selected'))
+        this.classList.add('selected')
+        const sub = this.querySelector('.preset-sub').textContent
+        const rows = document.querySelectorAll('.device-row')
+        const parts = sub.split('·')
+        if (rows.length >= 2) {
+          rows[0].innerHTML = `<div class="device-dot"></div> ${(parts[0] || '').trim()}`
+          rows[1].innerHTML = `<div class="device-dot"></div> ${(parts[1] || '').trim()}`
+        }
+      })
+    })
+
+    document.querySelectorAll('.app-item').forEach(item => {
+      item.addEventListener('click', function () {
+        const section = this.closest('.app-body')
+        const siblings = [...section.querySelectorAll('.app-item')]
+        siblings.forEach(s => {
+          const subText = s.querySelector('.app-item-sub')?.textContent || ''
+          if (subText.includes('HiDPI') || subText.includes('当前')) {
+            s.classList.remove('active')
+          }
+        })
+        this.classList.add('active')
+        const sub = this.querySelector('.app-item-sub')
+        if (sub && sub.textContent.includes('HiDPI')) {
+          section.querySelectorAll('.app-item-sub').forEach(s => {
+            if (s.textContent.includes('当前')) s.textContent = 'HiDPI'
+          })
+          sub.textContent = 'HiDPI · 当前使用'
+        }
+      })
+    })
+
+    const resSection = document.querySelector('.features')
+    let barAnimated = false
+    const barObserver = new IntersectionObserver(
+      entries => {
+        if (entries[0].isIntersecting && !barAnimated) {
+          barAnimated = true
+          document.querySelectorAll('.res-bar-fill').forEach(bar => {
+            const w = bar.style.width
+            bar.style.width = '0%'
+            setTimeout(() => {
+              bar.style.width = w
+            }, 300)
+          })
+        }
+      },
+      { threshold: 0.3 }
+    )
+    if (resSection) barObserver.observe(resSection)
+  </script>
+</body>
+</html>
