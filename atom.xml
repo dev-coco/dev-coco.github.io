@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://raz1ner.com</id>
     <title>Raz1ner</title>
-    <updated>2026-03-07T18:37:23.195Z</updated>
+    <updated>2026-03-11T05:06:03.160Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://raz1ner.com"/>
     <link rel="self" href="https://raz1ner.com/atom.xml"/>
     <logo>https://raz1ner.com/images/avatar.png</logo>
     <icon>https://raz1ner.com/favicon.ico</icon>
     <rights>All rights reserved 2026, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[视频动态字幕合成使用方法]]></title>
+        <id>https://raz1ner.com/post/Dynamic-Subtitle-Composer/</id>
+        <link href="https://raz1ner.com/post/Dynamic-Subtitle-Composer/">
+        </link>
+        <updated>2026-03-10T17:05:00.000Z</updated>
+        <summary type="html"><![CDATA[<p>通过视频和文本合成动态字幕效果的视频。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>通过视频和文本合成动态字幕效果的视频。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Google Opal 系统提示词]]></title>
         <id>https://raz1ner.com/post/Google-Opal-System-Prompt/</id>
@@ -69,7 +80,7 @@
         <id>https://raz1ner.com/post/Text-Scroll-Synth/</id>
         <link href="https://raz1ner.com/post/Text-Scroll-Synth/">
         </link>
-        <updated>2026-02-09T11:56:16.000Z</updated>
+        <updated>2026-02-08T22:56:16.000Z</updated>
         <summary type="html"><![CDATA[<p>无需安装复杂的剪辑软件，直接在浏览器中即可合成滚动字幕视频。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>无需安装复杂的剪辑软件，直接在浏览器中即可合成滚动字幕视频。</p>
@@ -161,17 +172,6 @@
         <summary type="html"><![CDATA[<p>无需绑卡免费试用一个月 Gemini Enterprise。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>无需绑卡免费试用一个月 Gemini Enterprise。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[抖音记录 使用方法]]></title>
-        <id>https://raz1ner.com/post/TikTok-Activity-Tracker/</id>
-        <link href="https://raz1ner.com/post/TikTok-Activity-Tracker/">
-        </link>
-        <updated>2025-11-27T12:44:11.000Z</updated>
-        <summary type="html"><![CDATA[<p>自动获取抖音关注数、粉丝数、好友数写入表格。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>自动获取抖音关注数、粉丝数、好友数写入表格。</p>
 ]]></content>
     </entry>
 </feed>
