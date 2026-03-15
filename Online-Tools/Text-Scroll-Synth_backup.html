@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <title>滚动字幕视频合成</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="keywords" content="Raz1ner, 滚动字幕, 视频合成" />
+  <meta name="robots" content="index,follow" />
+  <meta name="description" content="滚动字幕视频合成 - 无需安装复杂的剪辑软件，直接在浏览器中即可合成滚动字幕视频。" />
+  <link rel="icon" href="/images/avatar.png" />
+  <link rel="stylesheet" href="/css/site.css" />
+  <link rel="stylesheet" href="/css/bootstrap.min.css" />
+  <script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script async src="https://fundingchoicesmessages.google.com/i/pub-6960947409660270?ers=1" nonce="3szuJwRueku-LVJlmdoLew"></script><script nonce="3szuJwRueku-LVJlmdoLew">(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+  <script>(function(){
+   'use strict';var aa=function(a){var b=0;return function(){return b<a.length?{done:!1,value:a[b++]}:{done:!0}}},ba="function"==typeof Object.create?Object.create:function(a){var b=function(){};b.prototype=a;return new b},k;if("function"==typeof Object.setPrototypeOf)k=Object.setPrototypeOf;else{var m;a:{var ca={a:!0},n={};try{n.__proto__=ca;m=n.a;break a}catch(a){}m=!1}k=m?function(a,b){a.__proto__=b;if(a.__proto__!==b)throw new TypeError(a+" is not extensible");return a}:null}
+   var p=k,q=function(a,b){a.prototype=ba(b.prototype);a.prototype.constructor=a;if(p)p(a,b);else for(var c in b)if("prototype"!=c)if(Object.defineProperties){var d=Object.getOwnPropertyDescriptor(b,c);d&&Object.defineProperty(a,c,d)}else a[c]=b[c];a.v=b.prototype},r=this||self,da=function(){},t=function(a){return a};var u;var w=function(a,b){this.g=b===v?a:""};w.prototype.toString=function(){return this.g+""};var v={},x=function(a){if(void 0===u){var b=null;var c=r.trustedTypes;if(c&&c.createPolicy){try{b=c.createPolicy("goog#html",{createHTML:t,createScript:t,createScriptURL:t})}catch(d){r.console&&r.console.error(d.message)}u=b}else u=b}a=(b=u)?b.createScriptURL(a):a;return new w(a,v)};var A=function(){return Math.floor(2147483648*Math.random()).toString(36)+Math.abs(Math.floor(2147483648*Math.random())^Date.now()).toString(36)};var B={},C=null;var D="function"===typeof Uint8Array;function E(a,b,c){return"object"===typeof a?D&&!Array.isArray(a)&&a instanceof Uint8Array?c(a):F(a,b,c):b(a)}function F(a,b,c){if(Array.isArray(a)){for(var d=Array(a.length),e=0;e<a.length;e++){var f=a[e];null!=f&&(d[e]=E(f,b,c))}Array.isArray(a)&&a.s&&G(d);return d}d={};for(e in a)Object.prototype.hasOwnProperty.call(a,e)&&(f=a[e],null!=f&&(d[e]=E(f,b,c)));return d}
+   function ea(a){return F(a,function(b){return"number"===typeof b?isFinite(b)?b:String(b):b},function(b){var c;void 0===c&&(c=0);if(!C){C={};for(var d="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789".split(""),e=["+/=","+/","-_=","-_.","-_"],f=0;5>f;f++){var h=d.concat(e[f].split(""));B[f]=h;for(var g=0;g<h.length;g++){var l=h[g];void 0===C[l]&&(C[l]=g)}}}c=B[c];d=Array(Math.floor(b.length/3));e=c[64]||"";for(f=h=0;h<b.length-2;h+=3){var y=b[h],z=b[h+1];l=b[h+2];g=c[y>>2];y=c[(y&3)<<
+   4|z>>4];z=c[(z&15)<<2|l>>6];l=c[l&63];d[f++]=""+g+y+z+l}g=0;l=e;switch(b.length-h){case 2:g=b[h+1],l=c[(g&15)<<2]||e;case 1:b=b[h],d[f]=""+c[b>>2]+c[(b&3)<<4|g>>4]+l+e}return d.join("")})}var fa={s:{value:!0,configurable:!0}},G=function(a){Array.isArray(a)&&!Object.isFrozen(a)&&Object.defineProperties(a,fa);return a};var H;var J=function(a,b,c){var d=H;H=null;a||(a=d);d=this.constructor.u;a||(a=d?[d]:[]);this.j=d?0:-1;this.h=null;this.g=a;a:{d=this.g.length;a=d-1;if(d&&(d=this.g[a],!(null===d||"object"!=typeof d||Array.isArray(d)||D&&d instanceof Uint8Array))){this.l=a-this.j;this.i=d;break a}void 0!==b&&-1<b?(this.l=Math.max(b,a+1-this.j),this.i=null):this.l=Number.MAX_VALUE}if(c)for(b=0;b<c.length;b++)a=c[b],a<this.l?(a+=this.j,(d=this.g[a])?G(d):this.g[a]=I):(d=this.l+this.j,this.g[d]||(this.i=this.g[d]={}),(d=this.i[a])?
+   G(d):this.i[a]=I)},I=Object.freeze(G([])),K=function(a,b){if(-1===b)return null;if(b<a.l){b+=a.j;var c=a.g[b];return c!==I?c:a.g[b]=G([])}if(a.i)return c=a.i[b],c!==I?c:a.i[b]=G([])},M=function(a,b){var c=L;if(-1===b)return null;a.h||(a.h={});if(!a.h[b]){var d=K(a,b);d&&(a.h[b]=new c(d))}return a.h[b]};J.prototype.toJSON=function(){var a=N(this,!1);return ea(a)};
+   var N=function(a,b){if(a.h)for(var c in a.h)if(Object.prototype.hasOwnProperty.call(a.h,c)){var d=a.h[c];if(Array.isArray(d))for(var e=0;e<d.length;e++)d[e]&&N(d[e],b);else d&&N(d,b)}return a.g},O=function(a,b){H=b=b?JSON.parse(b):null;a=new a(b);H=null;return a};J.prototype.toString=function(){return N(this,!1).toString()};var P=function(a){J.call(this,a)};q(P,J);function ha(a){var b,c=(a.ownerDocument&&a.ownerDocument.defaultView||window).document,d=null===(b=c.querySelector)||void 0===b?void 0:b.call(c,"script[nonce]");(b=d?d.nonce||d.getAttribute("nonce")||"":"")&&a.setAttribute("nonce",b)};var Q=function(a,b){b=String(b);"application/xhtml+xml"===a.contentType&&(b=b.toLowerCase());return a.createElement(b)},R=function(a){this.g=a||r.document||document};R.prototype.appendChild=function(a,b){a.appendChild(b)};var S=function(a,b,c,d,e,f){try{var h=a.g,g=Q(a.g,"SCRIPT");g.async=!0;g.src=b instanceof w&&b.constructor===w?b.g:"type_error:TrustedResourceUrl";ha(g);h.head.appendChild(g);g.addEventListener("load",function(){e();d&&h.head.removeChild(g)});g.addEventListener("error",function(){0<c?S(a,b,c-1,d,e,f):(d&&h.head.removeChild(g),f())})}catch(l){f()}};var ia=r.atob("aHR0cHM6Ly93d3cuZ3N0YXRpYy5jb20vaW1hZ2VzL2ljb25zL21hdGVyaWFsL3N5c3RlbS8xeC93YXJuaW5nX2FtYmVyXzI0ZHAucG5n"),ja=r.atob("WW91IGFyZSBzZWVpbmcgdGhpcyBtZXNzYWdlIGJlY2F1c2UgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlIGlzIGludGVyZmVyaW5nIHdpdGggdGhpcyBwYWdlLg=="),ka=r.atob("RGlzYWJsZSBhbnkgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlLCB0aGVuIHJlbG9hZCB0aGlzIHBhZ2Uu"),la=function(a,b,c){this.h=a;this.j=new R(this.h);this.g=null;this.i=[];this.l=!1;this.o=b;this.m=c},V=function(a){if(a.h.body&&!a.l){var b=
+   function(){T(a);r.setTimeout(function(){return U(a,3)},50)};S(a.j,a.o,2,!0,function(){r[a.m]||b()},b);a.l=!0}},T=function(a){for(var b=W(1,5),c=0;c<b;c++){var d=X(a);a.h.body.appendChild(d);a.i.push(d)}b=X(a);b.style.bottom="0";b.style.left="0";b.style.position="fixed";b.style.width=W(100,110).toString()+"%";b.style.zIndex=W(2147483544,2147483644).toString();b.style["background-color"]=ma(249,259,242,252,219,229);b.style["box-shadow"]="0 0 12px #888";b.style.color=ma(0,10,0,10,0,10);b.style.display=
+   "flex";b.style["justify-content"]="center";b.style["font-family"]="Roboto, Arial";c=X(a);c.style.width=W(80,85).toString()+"%";c.style.maxWidth=W(750,775).toString()+"px";c.style.margin="24px";c.style.display="flex";c.style["align-items"]="flex-start";c.style["justify-content"]="center";d=Q(a.j.g,"IMG");d.className=A();d.src=ia;d.style.height="24px";d.style.width="24px";d.style["padding-right"]="16px";var e=X(a),f=X(a);f.style["font-weight"]="bold";f.textContent=ja;var h=X(a);h.textContent=ka;Y(a,
+   e,f);Y(a,e,h);Y(a,c,d);Y(a,c,e);Y(a,b,c);a.g=b;a.h.body.appendChild(a.g);b=W(1,5);for(c=0;c<b;c++)d=X(a),a.h.body.appendChild(d),a.i.push(d)},Y=function(a,b,c){for(var d=W(1,5),e=0;e<d;e++){var f=X(a);b.appendChild(f)}b.appendChild(c);c=W(1,5);for(d=0;d<c;d++)e=X(a),b.appendChild(e)},W=function(a,b){return Math.floor(a+Math.random()*(b-a))},ma=function(a,b,c,d,e,f){return"rgb("+W(Math.max(a,0),Math.min(b,255)).toString()+","+W(Math.max(c,0),Math.min(d,255)).toString()+","+W(Math.max(e,0),Math.min(f,
+   255)).toString()+")"},X=function(a){a=Q(a.j.g,"DIV");a.className=A();return a},U=function(a,b){0>=b||null!=a.g&&0!=a.g.offsetHeight&&0!=a.g.offsetWidth||(na(a),T(a),r.setTimeout(function(){return U(a,b-1)},50))},na=function(a){var b=a.i;var c="undefined"!=typeof Symbol&&Symbol.iterator&&b[Symbol.iterator];b=c?c.call(b):{next:aa(b)};for(c=b.next();!c.done;c=b.next())(c=c.value)&&c.parentNode&&c.parentNode.removeChild(c);a.i=[];(b=a.g)&&b.parentNode&&b.parentNode.removeChild(b);a.g=null};var pa=function(a,b,c,d,e){var f=oa(c),h=function(l){l.appendChild(f);r.setTimeout(function(){f?(0!==f.offsetHeight&&0!==f.offsetWidth?b():a(),f.parentNode&&f.parentNode.removeChild(f)):a()},d)},g=function(l){document.body?h(document.body):0<l?r.setTimeout(function(){g(l-1)},e):b()};g(3)},oa=function(a){var b=document.createElement("div");b.className=a;b.style.width="1px";b.style.height="1px";b.style.position="absolute";b.style.left="-10000px";b.style.top="-10000px";b.style.zIndex="-10000";return b};var L=function(a){J.call(this,a)};q(L,J);var qa=function(a){J.call(this,a)};q(qa,J);var ra=function(a,b){this.l=a;this.m=new R(a.document);this.g=b;this.i=K(this.g,1);b=M(this.g,2);this.o=x(K(b,4)||"");this.h=!1;b=M(this.g,13);b=x(K(b,4)||"");this.j=new la(a.document,b,K(this.g,12))};ra.prototype.start=function(){sa(this)};
+   var sa=function(a){ta(a);S(a.m,a.o,3,!1,function(){a:{var b=a.i;var c=r.btoa(b);if(c=r[c]){try{var d=O(P,r.atob(c))}catch(e){b=!1;break a}b=b===K(d,1)}else b=!1}b?Z(a,K(a.g,14)):(Z(a,K(a.g,8)),V(a.j))},function(){pa(function(){Z(a,K(a.g,7));V(a.j)},function(){return Z(a,K(a.g,6))},K(a.g,9),K(a.g,10),K(a.g,11))})},Z=function(a,b){a.h||(a.h=!0,a=new a.l.XMLHttpRequest,a.open("GET",b,!0),a.send())},ta=function(a){var b=r.btoa(a.i);a.l[b]&&Z(a,K(a.g,5))};(function(a,b){r[a]=function(c){for(var d=[],e=0;e<arguments.length;++e)d[e-0]=arguments[e];r[a]=da;b.apply(null,d)}})("__h82AlnkH6D91__",function(a){"function"===typeof window.atob&&(new ra(window,O(qa,window.atob(a)))).start()});}).call(this);
+   window.__h82AlnkH6D91__("WyJwdWItNjk2MDk0NzQwOTY2MDI3MCIsW251bGwsbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9iL3B1Yi02OTYwOTQ3NDA5NjYwMjcwIl0sbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9lbC9BR1NLV3hWWkh4UHVLbUVuYUVHcDZmcldNVTVHZloyVUxJZW8zcHZhaV9wUVJ5a2M4dmlkZlVwMENZeVJQZEQxdExOQzRkOUN6cEQxS1hFZml1cnFJZXFIOVVsc1R3XHUwMDNkXHUwMDNkP3RlXHUwMDNkVE9LRU5fRVhQT1NFRCIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFhUNmRjRFppendkR2FaMmQ2dHBOMEF3TWowNERwVWVBaUd4Y1lsNXR1UWZFdmhDSTZmaWRxcEN3RXNQeGF1eWJUc004eFlhVWFLSWJENnNWdVIyNXIwT0FcdTAwM2RcdTAwM2Q/YWJcdTAwM2QxXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFVFeld6ZVhfYjlBSnJsR05ab2N0MG1UVHBKZFUxQVo1b2piaVNXMXc4TjNJdG93TndOZ2YtNzcwOVNEQUlrSWlUbW5UU2hvVW5DYml0QmVYVTM4Z3M3c2dcdTAwM2RcdTAwM2Q/YWJcdTAwM2QyXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFVWdXc5Q2tNRzNoX3p2WGJHcHlLdU95cE4weWVabEVVSmVsbFBnR2F4Y3NockhWdklpSmlPMzZKM3JhRlhDSl9fdnp2U0ZuRFNXS3dPUXl5enpLWG5zc0FcdTAwM2RcdTAwM2Q/c2JmXHUwMDNkMiIsImRpdi1ncHQtYWQiLDIwLDEwMCwiY0hWaUxUWTVOakE1TkRjME1EazJOakF5TnpBXHUwMDNkIixbbnVsbCxudWxsLG51bGwsImh0dHBzOi8vd3d3LmdzdGF0aWMuY29tLzBlbW4vZi9wL3B1Yi02OTYwOTQ3NDA5NjYwMjcwLmpzP3VzcXBcdTAwM2RDQXciXSwiaHR0cHM6Ly9mdW5kaW5nY2hvaWNlc21lc3NhZ2VzLmdvb2dsZS5jb20vZWwvQUdTS1d4V0M5M05iUXBSTC12eTBWbXd3TjBwVllQTDE5eDJLYWJfQkFZYjVucWlRM0VZTTJ0ZXRQMHJxRzE5ZHF5X3NfZjh6VmhPc0ZIWExmeVJGUnJJTEhSak5aZ1x1MDAzZFx1MDAzZCJd");</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-24X8H1LT7N"></script>
+  <script>
+    window.dataLayer = window.dataLayer || []
+    function gtag(){dataLayer.push(arguments)}
+    gtag('js', new Date())
+    gtag('config', 'G-24X8H1LT7N')
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <style>*{margin:0;padding:0;box-sizing:border-box}:root{--coral:#ff6b6b;--tangerine:#ff8e53;--amber:#fec63d;--mint:#00d9a5;--teal:#00b8a9;--sky:#4ecdc4;--cerulean:#2e86de;--lavender:#a29bfe;--surface:#ffffff;--surface-elevated:#ffffff;--surface-card:#fafafa;--text-primary:#1a1a2e;--text-secondary:#6b7280;--border:rgba(0, 0, 0, 0.08);--border-light:rgba(0, 0, 0, 0.05);--shadow-sm:0 1px 3px rgba(0, 0, 0, 0.06);--shadow-md:0 4px 16px rgba(0, 0, 0, 0.08);--shadow-lg:0 12px 40px rgba(0, 0, 0, 0.1);--shadow-xl:0 20px 60px rgba(0, 0, 0, 0.12)}body{font-family:'Space Grotesk',sans-serif;background:#fff;min-height:100vh;padding:32px 20px;position:relative;overflow-x:hidden}.content{max-width:1600px;margin:0 auto;background:var(--surface-elevated);border-radius:24px;box-shadow:var(--shadow-lg);position:relative;z-index:1;border:1px solid var(--border-light);overflow:hidden;display:flex;flex-direction:column}.content::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--coral) 0,var(--tangerine) 25%,var(--amber) 50%,var(--mint) 75%,var(--cerulean) 100%);border-radius:24px 24px 0 0;z-index:10}.main-content{display:flex;min-height:600px}.left-sidebar{width:480px;padding:32px;background:var(--surface-card);border-right:1px solid var(--border);overflow-y:auto;max-height:100vh}.left-sidebar::-webkit-scrollbar{width:8px}.left-sidebar::-webkit-scrollbar-track{background:0 0}.left-sidebar::-webkit-scrollbar-thumb{background:linear-gradient(180deg,var(--coral),var(--tangerine));border-radius:4px}.right-preview{flex:1;padding:32px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#fff}.controls{display:flex;flex-direction:column;gap:20px;margin-bottom:28px}.control-group{display:flex;flex-direction:column;gap:10px;font-size:14px;padding-left:16px;position:relative;animation:.5s backwards fadeInUp}.control-group:first-child{animation-delay:50ms}.control-group:nth-child(2){animation-delay:.1s}.control-group:nth-child(3){animation-delay:.15s}.control-group:nth-child(4){animation-delay:.2s}.control-group:nth-child(5){animation-delay:.25s}.control-group:nth-child(6){animation-delay:.3s}.control-group:nth-child(7){animation-delay:.35s}@keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}.control-group::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--mint),var(--teal));border-radius:2px;opacity:0;transition:opacity .3s}.control-group:focus-within::before{opacity:1}label{font-weight:600;color:var(--text-primary);font-size:15px;letter-spacing:.01em;display:flex;align-items:center;gap:8px}label::before{content:'';width:8px;height:8px;background:linear-gradient(135deg,var(--coral),var(--tangerine));border-radius:50%;display:inline-block;box-shadow:0 2px 8px rgba(255,107,107,.3);flex-shrink:0}small{font-size:12px;color:var(--text-secondary);font-family:'JetBrains Mono',monospace;letter-spacing:-.01em;line-height:1.4}input[type=file]{padding:14px 16px;border:2px dashed var(--border);border-radius:12px;font-size:13px;background:#fff;cursor:pointer;transition:.3s cubic-bezier(.4, 0, .2, 1);font-family:'Space Grotesk',sans-serif;color:var(--text-primary);font-weight:500;position:relative;overflow:hidden}input[type=file]::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,107,107,.08),transparent);transition:left .6s}input[type=file]:hover::before{left:100%}input[type=file]:hover{border-color:var(--coral);background:rgba(255,107,107,.02);transform:translateY(-2px);box-shadow:0 6px 20px rgba(255,107,107,.1)}input[type=file]:focus{outline:0;border-color:var(--tangerine);box-shadow:0 0 0 3px rgba(255,142,83,.1)}textarea{padding:16px;border:2px solid var(--border);border-radius:12px;font-size:13px;font-family:'Space Grotesk',sans-serif;resize:vertical;min-height:100px;transition:.3s cubic-bezier(.4, 0, .2, 1);background:#fff;color:var(--text-primary);line-height:1.6}textarea:focus{outline:0;border-color:var(--mint);box-shadow:0 0 0 3px rgba(0,217,165,.08),0 6px 20px rgba(0,217,165,.05);background:#fff;transform:translateY(-2px)}textarea::placeholder{color:var(--text-secondary);opacity:.6}input[type=number],select{padding:12px 14px;border:2px solid var(--border);border-radius:10px;font-size:13px;font-family:'Space Grotesk',sans-serif;background:#fff;color:var(--text-primary);transition:.3s cubic-bezier(.4, 0, .2, 1);font-weight:500;width:100%}input[type=number]:focus,select:focus{outline:0;border-color:var(--cerulean);box-shadow:0 0 0 3px rgba(46,134,222,.08);background:#fff}input[type=number]:hover,select:hover{border-color:var(--text-secondary)}select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:40px}input[type=checkbox]{appearance:none;width:20px;height:20px;border:2px solid var(--border);border-radius:6px;cursor:pointer;position:relative;transition:.3s cubic-bezier(.4, 0, .2, 1);background:#fff;flex-shrink:0}input[type=checkbox]:hover{border-color:var(--lavender)}input[type=checkbox]:checked{background:linear-gradient(135deg,var(--lavender),var(--cerulean));border-color:var(--lavender)}input[type=checkbox]:checked::after{content:'✓';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:#fff;font-size:13px;font-weight:700}input[type=checkbox]:focus{outline:0;box-shadow:0 0 0 3px rgba(162,155,254,.12)}button{padding:14px 28px;border:none;border-radius:12px;font-size:14px;font-family:'Space Grotesk',sans-serif;font-weight:600;cursor:pointer;transition:.3s cubic-bezier(.4, 0, .2, 1);position:relative;overflow:hidden;letter-spacing:.02em;color:#fff;background:linear-gradient(135deg,var(--coral),var(--tangerine));box-shadow:0 4px 12px rgba(255,107,107,.2);width:100%}button:hover::before{width:300px;height:300px}button:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(255,107,107,.3)}button:active{transform:translateY(0)}button:disabled{background:linear-gradient(135deg,#d1d5db,#9ca3af);cursor:not-allowed;box-shadow:none;opacity:.6}button:disabled:hover{transform:none}button:focus{outline:0;box-shadow:0 0 0 3px rgba(255,107,107,.15),0 6px 20px rgba(255,107,107,.3)}.settings-section{margin:28px 0 28px 16px;padding:24px;background:#fff;border-radius:16px;border:1px solid var(--border);position:relative;box-shadow:var(--shadow-sm)}.settings-section::before{content:'';position:absolute;top:-1px;left:50%;transform:translateX(-50%);width:50px;height:3px;background:linear-gradient(90deg,var(--mint),var(--teal));border-radius:0 0 3px 3px}.settings-section:hover{border-color:rgba(78,205,196,.3);box-shadow:0 4px 16px rgba(78,205,196,.08)}.settings-grid{display:grid;grid-template-columns:1fr;gap:16px}.video-container{position:relative;width:100%;max-width:900px;background:#000;border-radius:16px;overflow:hidden;box-shadow:var(--shadow-lg);transition:transform .4s cubic-bezier(.4, 0, .2, 1);margin:0 auto;border:1px solid var(--border-light)}.video-container:hover{transform:translateY(-4px);box-shadow:0 20px 60px rgba(0,0,0,.15)}video{width:100%;display:block}#textOverlay{position:absolute;left:10%;top:50%;width:80%;height:40%;border:2px dashed rgba(255,235,59,.8);background:linear-gradient(135deg,rgba(255,107,107,.15),rgba(255,142,83,.15));backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;text-align:center;color:#fff;font-size:24px;padding:12px;cursor:move;overflow:hidden;user-select:none;border-radius:12px;box-shadow:0 8px 32px rgba(255,107,107,.3);transition:border-color .3s}#textOverlay:hover{border-color:#ffeb3b}#previewText{word-wrap:break-word;width:100%;text-shadow:0 4px 12px rgba(0,0,0,.5)}.resize-handle{position:absolute;right:0;bottom:0;width:24px;height:24px;background:linear-gradient(135deg,var(--amber),var(--tangerine));cursor:nwse-resize;border-radius:12px 0;box-shadow:0 4px 12px rgba(254,198,61,.4);transition:.3s}.resize-handle:hover{transform:scale(1.15);box-shadow:0 6px 18px rgba(254,198,61,.6)}.button-group{display:flex;flex-direction:column;gap:12px;margin:28px 0 0 16px}.button-group button:first-child{background:linear-gradient(135deg,var(--cerulean),var(--lavender));box-shadow:0 4px 12px rgba(46,134,222,.25)}.button-group button:first-child:hover{box-shadow:0 6px 20px rgba(46,134,222,.35)}#canvasPreview{display:none}.video-placeholder{width:100%;max-width:900px;aspect-ratio:16/9;background:var(--surface-card);border-radius:16px;border:2px dashed var(--border);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px;color:var(--text-secondary);font-size:18px;font-weight:500;transition:.3s}.video-placeholder::before{content:'📹';font-size:64px;opacity:.5}.video-placeholder:hover{border-color:var(--coral);background:rgba(255,107,107,.02)}.progress-container{display:none;padding:24px 48px;background:var(--surface-card);border-top:1px solid var(--border)}.progress-bar{width:100%;height:32px;border-radius:16px;background:rgba(0,0,0,.04);overflow:hidden;position:relative;box-shadow:inset 0 2px 4px rgba(0,0,0,.06)}.progress-bar::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.5),transparent);animation:2s infinite shimmer}@keyframes shimmer{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}.progress-fill{height:100%;width:0%;background:linear-gradient(90deg,var(--cerulean),var(--lavender),var(--mint));background-size:200% 100%;color:#fff;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center;transition:width .3s cubic-bezier(.4, 0, .2, 1);border-radius:16px;box-shadow:0 4px 16px rgba(46,134,222,.3);animation:3s infinite gradientShift}@keyframes gradientShift{0%,100%{background-position:0 50%}50%{background-position:100% 50%}}.status-text{text-align:center;font-size:15px;margin-top:12px;color:var(--cerulean);font-weight:600;letter-spacing:.02em}@media (max-width:1200px){.left-sidebar{width:420px}}@media (max-width:992px){.main-content{flex-direction:column}.left-sidebar{width:100%;border-right:none;border-bottom:1px solid var(--border);max-height:none}.right-preview{padding:32px 24px}h1{font-size:36px}}@media (max-width:640px){body{padding:16px 12px}.content{border-radius:20px}h1{font-size:28px}.left-sidebar,.progress-container,.right-preview{padding:20px}}html{scroll-behavior:smooth}::-webkit-scrollbar{width:10px}::-webkit-scrollbar-track{background:var(--surface-card);border-radius:5px}::-webkit-scrollbar-thumb{background:linear-gradient(180deg,var(--coral),var(--tangerine));border-radius:5px;border:2px solid var(--surface-card)}::-webkit-scrollbar-thumb:hover{background:linear-gradient(180deg,var(--tangerine),var(--amber))}:focus-visible{outline:2px solid var(--coral);outline-offset:2px}</style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="text-start pt-3">
+      <img class="logo" alt="Raz1ner" src="/images/avatar.png" />
+      <span>Raz1ner</span>
+    </h1>
+    <div class="menu">
+      <a href="/">首页</a>
+      <a href="/Navigation/">导航</a>
+      <a href="/Awesome-Software/">软件</a>
+      <a href="/Extension/">插件</a>
+      <a href="/Online-Tools">在线工具</a>
+      <a href="/post/Linux-Command">Linux命令</a>
+      <a href="/Excel/">Excel教程</a>
+      <a href="/post/Terms-and-Privacy">隐私与条款</a>
+    </div>
+    <h2 class="my-3">滚动字幕视频合成</h2>
+    <div class="content">
+      <div class="main-content">
+        <div class="left-sidebar">
+          <div class="controls">
+            <div class="control-group">
+              <label for="videoInput">选择视频文件</label>
+              <input type="file" id="videoInput" accept="video/*">
+            </div>
+            <div class="control-group">
+              <label for="audioInput">选择音频文件</label>
+              <input type="file" id="audioInput" accept="audio/*">
+            </div>
+          </div>
+          <div class="control-group">
+            <label for="textInput">输入字幕内容</label>
+            <textarea id="textInput" placeholder="滚动字幕内容，自动按单词换行滚动"></textarea>
+          </div>
+          <div class="settings-section">
+            <div class="settings-grid">
+              <div class="control-group">
+                <label for="fontFamily">字体</label>
+                <select id="fontFamily">
+                  <option value="Arial">Arial</option>
+                  <option value="'Arial Black'">Arial Black</option>
+                  <option value="'Comic Sans MS'">Comic Sans MS</option>
+                  <!-- <option value="'Courier New'">Courier New</option> -->
+                  <option value="Georgia">Georgia</option>
+                  <option value="'Helvetica'">Helvetica</option>
+                  <!-- <option value="Impact">Impact</option> -->
+                  <option value="'Palatino Linotype'">Palatino Linotype</option>
+                  <option value="Tahoma">Tahoma</option>
+                  <option value="'Times New Roman'">Times New Roman</option>
+                  <option value="'Trebuchet MS'">Trebuchet MS</option>
+                  <option value="Verdana">Verdana</option>
+                  <!-- <option value="Monaco">Monaco</option> -->
+                  <!-- <option value="'Andale Mono'">Andale Mono</option> -->
+                  <option value="system-ui">System UI</option>
+                  <hr>
+                  <option value="Roboto">Roboto</option>
+                  <option value="Kavivanar">Kavivanar</option>
+                  <option value="Playwrite NZ Basic">Playwrite NZ Basic</option>
+                  <option value="Shantell Sans">Shantell Sans</option>
+                  <option value="Playpen Sans Thai">Playpen Sans Thai</option>
+                  <option value="Patrick Hand">Patrick Hand</option>
+                  <option value="Comic Neue">Comic Neue</option>
+                  <option value="Kalam">Kalam</option>
+                  <option value="Caveat">Caveat</option>
+                  <option value="Stylish">Stylish</option>
+                  <option value="Merienda">Merienda</option>
+                  <option value="Itim">Itim</option>
+                  <option value="Rubik Doodle Shadow">Rubik Doodle Shadow</option>
+                </select>
+              </div>
+              <div class="control-group">
+                <label for="fontSize">字体大小(px)</label>
+                <input type="number" id="fontSize" value="38" min="12" max="100">
+              </div>
+              <div class="control-group">
+                <label for="lineSpacing">行间距倍数</label>
+                <input type="number" id="lineSpacing" value="1.4" min="1" max="3" step="0.1">
+              </div>
+              <div class="control-group">
+                <label for="textColor">字幕颜色</label>
+                <input type="color" id="textColor" value="#FFFFFF">
+              </div>
+              <div class="control-group">
+                <label for="fadeHeight">上下渐变高度(%)</label>
+                <input type="number" id="fadeHeight" value="20" min="5" max="50" step="5">
+              </div>
+              <div class="control-group">
+                <label for="initialProgress">字幕初始进度(%)</label>
+                <input type="number" id="initialProgress" value="20" min="0" max="80" step="5">
+              </div>
+              <div class="control-group">
+                <label>
+                  <input type="checkbox" id="pingPongToggle">
+                  正反交替循环
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="button-group">
+            <button id="exportBtn" style="display:;">导出视频</button>
+          </div>
+        </div>
+        <div class="right-preview">
+          <div class="video-container" id="videoContainer" style="display:none;">
+            <video id="videoPreview" controls muted></video>
+            <div id="textOverlay">
+              <span id="previewText"></span>
+              <div class="resize-handle" id="resizeHandle"></div>
+            </div>
+          </div>
+          <div class="video-placeholder" id="videoPlaceholder">
+            选择视频文件开始预览
+          </div>
+        </div>
+      </div>
+      <video id="videoSource" style="display:none;"></video>
+      <audio id="audioSource" style="display:none;"></audio>
+      <canvas id="canvasPreview"></canvas>
+      <div class="progress-container" id="progressContainer">
+        <div class="progress-bar">
+          <div class="progress-fill" id="progressFill">0%</div>
+        </div>
+        <p class="status-text" id="statusText">正在导出，请稍候</p>
+      </div>
+    </div>
+  </div>
+  <script>
+    // 视频文件输入框
+    const videoInput = document.getElementById('videoInput')
+    // 音频文件输入框
+    const audioInput = document.getElementById('audioInput')
+
+    // 预览视频区域
+    const videoPreview = document.getElementById('videoPreview')
+    const videoSource = document.getElementById('videoSource')
+    const audioSource = document.getElementById('audioSource')
+
+    // 视频与字幕的外层容器
+    const videoContainer = document.getElementById('videoContainer')
+    // 未选择视频时的占位元素
+    const videoPlaceholder = document.getElementById('videoPlaceholder')
+    // 预览文字
+    const textInput = document.getElementById('textInput')
+
+    // 视频上的字幕覆盖层
+    const textOverlay = document.getElementById('textOverlay')
+    // 覆盖层内部显示文字的元素
+    const previewText = document.getElementById('previewText')
+
+    // 导出按钮
+    const exportBtn = document.getElementById('exportBtn')
+
+    // 字体与样式控制
+    const fontFamilySelect = document.getElementById('fontFamily')
+    const fontSizeInput = document.getElementById('fontSize')
+    const lineSpacingInput = document.getElementById('lineSpacing')
+    const textColorSelect = document.getElementById('textColor')
+
+    // 字幕渐隐高度比例
+    const fadeHeightInput = document.getElementById('fadeHeight')
+
+    // 字幕初始进度
+    const initialProgressInput = document.getElementById('initialProgress')
+
+    // 正反交替循环
+    const pingPongToggle = document.getElementById('pingPongToggle')
+
+    // 绘制视频和字幕
+    const canvasPreview = document.getElementById('canvasPreview')
+
+    // 导出进度条
+    const progressContainer = document.getElementById('progressContainer')
+    const progressFill = document.getElementById('progressFill')
+
+    // 字幕缩放控制点
+    const resizeHandle = document.getElementById('resizeHandle')
+
+    // 拖拽状态
+    let dragging = false
+    // 缩放状态
+    let resizing = false
+
+    // 鼠标起始位置
+    let startX, startY
+    // 覆盖层初始位置和尺寸
+    let initLeft, initTop, initWidth, initHeight
+
+    // 字幕覆盖层位置大小
+    let overlaySettings = { left: 10, top: 50, width: 80, height: 40 }
+
+    // 远程字体配置表
+    const REMOTE_FONTS_CONFIG = {
+      Roboto: 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap',
+      Kavivanar: 'https://fonts.googleapis.com/css2?family=Kavivanar&display=swap',
+      'Playwrite NZ Basic': 'https://fonts.googleapis.com/css2?family=Playwrite+NZ+Basic:wght@100..400&display=swap',
+      'Shantell Sans': 'https://fonts.googleapis.com/css2?family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap',
+      'Playpen Sans Thai': 'https://fonts.googleapis.com/css2?family=Playpen+Sans+Thai:wght@100..800&display=swap',
+      'Patrick Hand': 'https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap',
+      'Comic Neue': 'https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap',
+      Kalam: 'https://fonts.googleapis.com/css2?family=Kalam&display=swap',
+      Caveat: 'https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap',
+      Stylish: 'https://fonts.googleapis.com/css2?family=Stylish&display=swap',
+      Merienda: 'https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap',
+      Itim: 'https://fonts.googleapis.com/css2?family=Itim&display=swap',
+      'Rubik Doodle Shadow': 'https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap'
+    }
+
+    /**
+     * @description 动态加载远程字体并确保在 Canvas 中可用
+     * @param {string} fontFamily
+     */
+    async function ensureFontLoaded (fontFamily) {
+      const fontUrl = REMOTE_FONTS_CONFIG[fontFamily]
+      if (!fontUrl) return // 非远程字体不处理
+
+      const linkId = `font-link-${fontFamily.replace(/\s+/g, '-')}`
+
+      // 如果加载过就跳过，不重复加载
+      if (document.getElementById(linkId)) return
+
+      // 加载远程字体
+      const link = document.createElement('link')
+      link.id = linkId
+      link.rel = 'stylesheet'
+      link.href = fontUrl
+      document.head.appendChild(link)
+
+      // 等待字体激活
+      try {
+        // 等待字体加载，防止无限阻塞
+        await Promise.race([document.fonts.load(`1em ${fontFamily}`), new Promise(resolve => setTimeout(resolve, 5000))])
+        console.log(`字体准备就绪: ${fontFamily}`)
+      } catch (e) {
+        console.error(`字体加载失败: ${fontFamily}`, e)
+      }
+    }
+
+    /**
+     * @description 文本自动换行处理
+     * @param {CanvasRenderingContext2D} ctx - Canvas 绘图上下文，测量字符宽度
+     * @param {string} text - 原始文本内容
+     * @param {number} maxWidth - 每一行允许的最大像素宽度
+     * @returns {string[]} 按宽度拆分后的文本数组
+     */
+    function wrapText (ctx, text, maxWidth) {
+      // 按换行符拆分原始文本
+      const rawLines = text.split(/\r?\n/)
+      const lines = []
+      for (const raw of rawLines) {
+        // 按空白字符拆分为单词
+        const words = raw.split(/\s+/).filter(Boolean)
+        let line = ''
+        for (const word of words) {
+          // 把单词拼接到当前行
+          const testLine = line ? line + ' ' + word : word
+          // 测量拼接后的宽度
+          const width = ctx.measureText(testLine).width
+          if (width > maxWidth && line) {
+            // 储存已满行的结果
+            lines.push(line)
+            // 将当前单词作为新一行的起点
+            line = word
+          } else {
+            // 未超出，继续拼接
+            line = testLine
+          }
+        }
+        // 处理段落末尾剩下的最后一行
+        if (line) lines.push(line)
+      }
+      return lines
+    }
+
+    // 视频文件加载事件
+    videoInput.addEventListener('change', e => {
+      const file = e.target.files[0]
+      if (!file) return
+      const url = URL.createObjectURL(file)
+
+      // 设置预览与导出视频源
+      videoPreview.src = url
+      videoSource.src = url
+
+      // 预览静音
+      videoPreview.muted = true
+      // 允许循环
+      videoSource.loop = true
+
+      // 显示视频区域
+      videoContainer.style.display = 'block'
+      videoPlaceholder.style.display = 'none'
+
+      // 显示字幕覆盖层
+      autoShowOverlay()
+    })
+
+    // 音频文件加载事件
+    audioInput.addEventListener('change', e => {
+      const file = e.target.files[0]
+      if (!file) return
+      const url = URL.createObjectURL(file)
+      audioSource.src = url
+    })
+
+    // 文本与样式实时更新事件
+    textInput.addEventListener('input', syncOverlayText)
+    fontSizeInput.addEventListener('input', syncOverlayStyle)
+    lineSpacingInput.addEventListener('input', syncOverlayStyle)
+    textColorSelect.addEventListener('input', syncOverlayStyle)
+
+    // 修改字体选择事件，加入异步加载逻辑
+    fontFamilySelect.addEventListener('change', async () => {
+      const selectedFont = fontFamilySelect.value
+      if (REMOTE_FONTS_CONFIG[selectedFont]) {
+        await ensureFontLoaded(selectedFont)
+      }
+      syncOverlayStyle()
+    })
+
+    // 自动显示字幕层
+    function autoShowOverlay () {
+      // 默认字幕内容
+      const text = textInput.value.trim() || '在此输入片尾字幕内容'
+      previewText.textContent = text
+
+      // 同步样式
+      syncOverlayStyle()
+
+      // 设置初始位置和尺寸
+      textOverlay.style.left = overlaySettings.left + '%'
+      textOverlay.style.top = overlaySettings.top + '%'
+      textOverlay.style.width = overlaySettings.width + '%'
+      textOverlay.style.height = overlaySettings.height + '%'
+
+      // 显示字幕层和导出按钮
+      textOverlay.style.display = 'flex'
+      exportBtn.style.display = 'inline-block'
+    }
+
+    // 同步编辑框文本内容
+    function syncOverlayText () {
+      previewText.textContent = textInput.value.trim() || '在此输入片尾字幕内容'
+    }
+
+    // 同步字幕样式
+    function syncOverlayStyle () {
+      const fontSize = fontSizeInput.value + 'px'
+      const lineSpacing = parseFloat(lineSpacingInput.value) || 1.4
+      const fontFamily = fontFamilySelect.value
+
+      textOverlay.style.fontSize = fontSize
+      textOverlay.style.fontFamily = fontFamily
+      textOverlay.style.lineHeight = lineSpacing
+      textOverlay.style.color = textColorSelect.value
+    }
+
+    // 字幕框拖拽逻辑
+    textOverlay.addEventListener('mousedown', e => {
+      // 点击缩放点不触发拖拽
+      if (e.target === resizeHandle) return
+
+      dragging = true
+
+      const rect = textOverlay.getBoundingClientRect()
+      const cRect = videoContainer.getBoundingClientRect()
+
+      // 记录初始位置
+      startX = e.clientX
+      startY = e.clientY
+      initLeft = rect.left - cRect.left
+      initTop = rect.top - cRect.top
+
+      e.preventDefault()
+    })
+
+    // 字幕缩放逻辑
+    resizeHandle.addEventListener('mousedown', e => {
+      resizing = true
+      const rect = textOverlay.getBoundingClientRect()
+      startX = e.clientX
+      startY = e.clientY
+      initWidth = rect.width
+      initHeight = rect.height
+      e.stopPropagation()
+      e.preventDefault()
+    })
+
+    // 全局鼠标移动监听，处理拖拽和缩放的计算
+    document.addEventListener('mousemove', e => {
+      const cRect = videoContainer.getBoundingClientRect()
+      if (dragging) {
+        // 计算拖拽位移
+        const dx = e.clientX - startX
+        const dy = e.clientY - startY
+
+        // 转换为百分比
+        const nl = ((initLeft + dx) / cRect.width) * 100
+        const nt = ((initTop + dy) / cRect.height) * 100
+
+        overlaySettings.left = Math.max(0, Math.min(90, nl))
+        overlaySettings.top = Math.max(0, Math.min(90, nt))
+
+        textOverlay.style.left = overlaySettings.left + '%'
+        textOverlay.style.top = overlaySettings.top + '%'
+      } else if (resizing) {
+        // 计算缩放尺寸
+        const dx = e.clientX - startX
+        const dy = e.clientY - startY
+
+        const nw = ((initWidth + dx) / cRect.width) * 100
+        const nh = ((initHeight + dy) / cRect.height) * 100
+
+        overlaySettings.width = Math.max(20, Math.min(100, nw))
+        overlaySettings.height = Math.max(10, Math.min(100, nh))
+
+        textOverlay.style.width = overlaySettings.width + '%'
+        textOverlay.style.height = overlaySettings.height + '%'
+      }
+    })
+
+    // 鼠标释放
+    document.addEventListener('mouseup', () => {
+      dragging = false
+      resizing = false
+    })
+
+    // 导出视频
+    exportBtn.addEventListener('click', async () => {
+      if (!videoSource.src) return alert('请先选择视频')
+      if (!audioSource.src) return alert('请先选择音频')
+      const text = textInput.value.trim()
+      if (!text) return alert('请输入字幕内容')
+
+      // 滚动到底部，查看进度条
+      setTimeout(() => {
+        window.scrollTo(0, document.body.scrollHeight)
+      }, 100)
+      
+
+      // 确保音频元数据已加载
+      if (!audioSource.duration) {
+        await new Promise(res => {
+          audioSource.onloadedmetadata = () => res()
+        })
+      }
+      const d = audioSource.duration
+      if (!d) {
+        alert('音频尚未准备好')
+        return
+      }
+
+      exportBtn.disabled = true
+      progressContainer.style.display = 'block'
+      progressFill.style.width = '0%'
+      progressFill.textContent = '0%'
+
+      try {
+        const currentFont = fontFamilySelect.value
+        if (REMOTE_FONTS_CONFIG[currentFont]) {
+          progressFill.textContent = '加载远程字体...'
+          await ensureFontLoaded(currentFont)
+        }
+        await exportWithLoopedVideoAndAudio(text)
+      } catch (err) {
+        console.error(err)
+        alert('导出失败：' + err.message)
+        exportBtn.disabled = false
+      } finally {
+        // exportBtn.disabled = false
+        // startScrollBtn.disabled = false;
+      }
+    })
+
+    /**
+     * @description 视频合成
+     * @param {string} text - 滚动字幕文本
+     */
+    async function exportWithLoopedVideoAndAudio (text) {
+      // 获取 canvas 绘图上下文
+      const canvas = canvasPreview
+      const ctx = canvas.getContext('2d', { willReadFrequently: true })
+
+      // 等待视频元数据
+      if (!videoSource.videoWidth) {
+        await new Promise(res => {
+          videoSource.onloadedmetadata = () => res()
+        })
+      }
+
+      // 设置 canvas 分辨率
+      canvas.width = videoSource.videoWidth
+      canvas.height = videoSource.videoHeight
+
+      // 从音频元素捕获音频流
+      const audioStream = audioSource.captureStream()
+      const audioTracks = audioStream.getAudioTracks()
+
+      // 从 canvas 捕获视频流，帧率 30 FPS
+      const canvasStream = canvas.captureStream(30)
+
+      // 创建混合流，包含视频轨道和音频轨道
+      const mixedStream = new MediaStream()
+      canvasStream.getVideoTracks().forEach(t => mixedStream.addTrack(t))
+      audioTracks.forEach(t => mixedStream.addTrack(t))
+
+      // 存储录制的视频片段
+      const recordedChunks = []
+      // 编码视频
+      const options = { mimeType: 'video/webm', videoBitsPerSecond: 3000000 }
+
+      // const options = { mimeType: 'video/webm;codecs=vp9,opus', videoBitsPerSecond: 4000000 }
+      // 如果浏览器不支持 VP9，降级使用默认 WebM 编码
+      // if (!MediaRecorder.isTypeSupported(options.mimeType)) {
+      //   options.mimeType = 'video/webm'
+      //   options.videoBitsPerSecond = 3000000
+      // }
+
+      const recorder = new MediaRecorder(mixedStream, options)
+
+      // 录制数据可用时，将数据片段添加到数组
+      recorder.ondataavailable = e => {
+        if (e.data.size > 0) recordedChunks.push(e.data)
+      }
+
+      // 录制停止时，合并所有片段并下载
+      recorder.onstop = () => {
+        const blob = new Blob(recordedChunks, { type: 'video/webm' })
+        const url = URL.createObjectURL(blob)
+        const a = document.createElement('a')
+        a.href = url
+        a.download = 'looped_video_with_audio_' + Date.now() + '.webm'
+        a.style.display = 'none'
+        document.body.appendChild(a)
+        // 下载视频
+        a.click()
+
+        // 清理临时 DOM 元素和 URL 对象
+        setTimeout(() => {
+          document.body.removeChild(a)
+          URL.revokeObjectURL(url)
+        }, 100)
+        progressContainer.style.display = 'none'
+        alert('导出完成')
+        exportBtn.disabled = false
+      }
+
+      // 根据 canvas 宽度动态调整字体大小
+      const fontSize = parseInt(fontSizeInput.value) * (canvas.width / 900)
+      // 行间距倍数
+      const lineSpacing = parseFloat(lineSpacingInput.value) || 1.8
+      // 字体
+      const fontFamily = fontFamilySelect.value
+      // 文本颜色
+      const color = textColorSelect.value
+
+      // 初始滚动进度百分比
+      const initialProgressRatio = Math.min(0.8, Math.max(0, parseFloat(initialProgressInput.value) || 0) / 100)
+
+      // 音频总时长，视频总时长等于音频时长
+      const audioDuration = audioSource.duration
+
+      // 渐隐区域占字幕显示区域的比例
+      const fadePercent = (parseFloat(fadeHeightInput.value) || 20) / 100
+
+      // 结束时保留 1/3 字幕在可见区域
+      const endRemainRatio = 1 / 3
+
+      // 是否启用正反交替
+      const usePingPong = pingPongToggle.checked
+
+      // 滚动总时长
+      const scrollDurationMs = audioDuration * 1000
+
+      // 设置字体用于测量文本宽度
+      ctx.font = `bold ${fontSize}px ${fontFamily}`
+      // 文本内边距
+      const padding = fontSize * 0.5
+
+      // 计算字幕显示区域的绝对坐标
+      const overlayRect = {
+        x: (overlaySettings.left / 100) * canvas.width,
+        y: (overlaySettings.top / 100) * canvas.height,
+        width: (overlaySettings.width / 100) * canvas.width,
+        height: (overlaySettings.height / 100) * canvas.height
+      }
+
+      // 文本最大宽度
+      const maxTextWidth = overlayRect.width - padding * 2
+      // 将文本按宽度分行
+      const lines = wrapText(ctx, text, maxTextWidth)
+      // 单行高度
+      const lineHeight = fontSize * lineSpacing
+      // 字幕总高度
+      const totalTextHeight = lines.length * lineHeight + overlayRect.height
+      // 渐隐区域的像素高度
+      const fadeHeight = overlayRect.height * fadePercent
+      // 最大滚动距离
+      const maxTravelDistance = totalTextHeight * (1 - endRemainRatio)
+      // 初始偏移量
+      const initialOffset = initialProgressRatio * maxTravelDistance
+      // 滚动速度
+      const scrollSpeed = maxTravelDistance / scrollDurationMs
+
+      // 静音视频和音频源
+      videoSource.muted = true
+      audioSource.muted = true
+
+      // 重置播放位置到开头
+      videoSource.currentTime = 0
+      audioSource.currentTime = 0
+
+      // 等待视频和音频都跳转完成
+      await Promise.all([
+        new Promise(res => {
+          videoSource.onseeked = () => res()
+          videoSource.currentTime = 0
+        }),
+        new Promise(res => {
+          audioSource.onseeked = () => res()
+          audioSource.currentTime = 0
+        })
+      ])
+
+      // 单个视频片段的时长
+      const videoDuration = videoSource.duration || 1
+
+      // 预加载视频
+      await new Promise(res => {
+        if (videoSource.readyState >= 3) {
+          res()
+        } else {
+          videoSource.oncanplaythrough = () => res()
+        }
+      })
+
+      // 禁用视频自动循环
+      videoSource.loop = false
+      // 禁用视频自动循环
+      videoSource.play()
+      // 开始播放音频
+      audioSource.play()
+      // 开始录制，循环触一次 dataavailable 事件
+      recorder.start(100)
+
+      let lastTime = performance.now()
+      let accumulatedScroll = 0
+
+      function draw () {
+        const now = performance.now()
+        // 计算时间增量，
+        const deltaTime = Math.min(now - lastTime, 100)
+        lastTime = now
+
+        // 当前音频播放时间
+        const t = audioSource.currentTime
+
+        // 检查是否播放完成
+        if (t >= audioDuration || audioSource.ended) {
+          // 停止录制
+          recorder.stop()
+          videoSource.pause()
+          audioSource.pause()
+          return
+        }
+
+        // 第几个视频循环
+        const segment = Math.floor(t / videoDuration)
+        // 当前循环内的时间
+        const segTime = t % videoDuration
+
+        let targetVideoTime
+
+        if (usePingPong) {
+          // 奇数段倒放
+          const isReversing = segment % 2 === 1
+
+          if (isReversing) {
+            // 倒放
+            targetVideoTime = videoDuration - segTime
+          } else {
+            // 正放
+            targetVideoTime = segTime
+          }
+        } else {
+          // 始终正向播放
+          targetVideoTime = segTime
+        }
+
+        // 确保时间在有效范围内
+        targetVideoTime = Math.max(0, Math.min(targetVideoTime, videoDuration - 0.033))
+
+        // 如果时间差异较大，需要跳转
+        const timeDiff = Math.abs(targetVideoTime - videoSource.currentTime)
+        if (timeDiff > 0.5) {
+          // 设置跳转时间
+          videoSource.currentTime = targetVideoTime
+        } else if (timeDiff > 0.05) {
+          // 使用插值平滑过渡
+          const blend = 0.5
+          videoSource.currentTime = videoSource.currentTime * (1 - blend) + targetVideoTime * blend
+        }
+
+        // 绘制视频帧
+        try {
+          ctx.drawImage(videoSource, 0, 0, canvas.width, canvas.height)
+        } catch (e) {
+          // 跳过有问题的帧
+        }
+
+        // 更新字幕滚动位置
+        accumulatedScroll += scrollSpeed * deltaTime
+        // 限制最大滚动距离
+        accumulatedScroll = Math.min(accumulatedScroll, maxTravelDistance)
+
+        // 设置裁剪区域
+        ctx.save()
+        ctx.beginPath()
+        ctx.rect(overlayRect.x, overlayRect.y, overlayRect.width, overlayRect.height)
+        ctx.clip()
+
+        // 配置文本样式
+        ctx.font = `bold ${fontSize}px ${fontFamily}`
+        ctx.textAlign = 'center'
+        ctx.textBaseline = 'top'
+        ctx.shadowColor = 'rgba(0,0,0,0.8)' // 文本阴影
+        ctx.shadowBlur = 4
+        ctx.shadowOffsetX = 2
+        ctx.shadowOffsetY = 2
+        ctx.fillStyle = color
+
+        // 计算字幕起始位置
+        const scrollOffset = initialOffset + accumulatedScroll
+        const startY = overlayRect.y + overlayRect.height - scrollOffset
+
+        // 逐行绘制字幕
+        lines.forEach((line, i) => {
+          const y = startY + i * lineHeight
+
+          // 计算渐隐效果
+          // 距离顶部边界的距离
+          const distTop = y - overlayRect.y
+          // 距离底部边界的距离
+          const distBottom = overlayRect.y + overlayRect.height - y
+          let alpha = 1
+
+          if (distTop < fadeHeight) {
+            // 上方渐隐
+            alpha = distTop / fadeHeight
+          } else if (distBottom < fadeHeight) {
+            // 下方渐隐
+            alpha = distBottom / fadeHeight
+          }
+
+          // 限制透明度范围
+          alpha = Math.max(0, Math.min(1, alpha))
+          if (alpha > 0) {
+            ctx.save()
+            ctx.globalAlpha = alpha
+            ctx.fillText(line, overlayRect.x + overlayRect.width / 2, y)
+            ctx.restore()
+          }
+        })
+        ctx.restore()
+
+        // 更新进度条显示
+        const p = (t / audioDuration) * 100
+        progressFill.style.width = Math.min(100, p) + '%'
+        progressFill.textContent = Math.round(Math.min(100, p)) + '%'
+
+        // 请求下一帧
+        requestAnimationFrame(draw)
+      }
+
+      // 启动渲染循环
+      draw()
+    }
+  </script>
+</body>
+</html>
