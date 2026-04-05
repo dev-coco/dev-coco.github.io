@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8" />
+  <meta name="description" content="修复 macOS 打不开 App 的问题。" />
+  <meta name="keywords" content="Raz1ner, 修复 macOS App, App 无法启动, 软件无法启动" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>修复 macOS App 无法启动</title>
+  <meta name="author" content="Raz1ner" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <meta property="og:image" content="https://raz1ner.com/post-images/Raz1ner.png" />
+  <meta name="description" content="修复 macOS 打不开 App 的问题。" />
+  <link rel="canonical" href="https://raz1ner.com/Awesome-Software/Fix/" />
+  <meta property="og:title" content="修复 macOS App 无法启动" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://raz1ner.com/post-images/Raz1ner.png" />
+  <meta property="og:url" content="https://raz1ner.com/Awesome-Software/Fix/" />
+  <meta property="og:description" content="修复 macOS 打不开 App 的问题。" />
+  <meta name="twitter:title" content="修复 macOS App 无法启动" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://raz1ner.com/post-images/Raz1ner.png" />
+  <meta name="twitter:description" content="修复 macOS 打不开 App 的问题。" />
+  <style>:root{--font-body:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;--color-bg:#f7f6f2;--color-text:#28251d;--color-surface:#f9f8f5;--color-primary:#01696f;--space-4:1rem}body{font-family:var(--font-body);font-size:18px;line-height:1.6;margin:0;padding:20px;background-color:var(--color-bg);color:var(--color-text)}.container{max-width:720px;margin:0 auto}h1{text-align:center;font-size:1.8rem;margin-bottom:1.2rem}h2{font-size:1.4rem;margin-top:1.5rem;margin-bottom:.8rem;color:var(--color-primary)}p{margin-bottom:.8rem}code{font-family:Consolas,monospace;background-color:#f0f0f0;padding:3px 6px;border-radius:4px}pre{background-color:#f0f0f0;padding:1rem;border-radius:8px;overflow-x:auto}ol,ul{margin-bottom:1rem}.note{background-color:#f9f0e6;border-left:4px solid #da7101;padding:1rem;margin:1rem 0;border-radius:6px}img{display:block;margin:30px auto;filter:drop-shadow(0 10px 20px rgba(0, 0, 0, .3));display:block;height:auto}</style>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-24X8H1LT7N"></script>
+  <script>
+    window.dataLayer = window.dataLayer || []
+    function gtag() { dataLayer.push(arguments) }
+    gtag('js', new Date())
+    gtag('config', 'G-24X8H1LT7N')
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>修复 macOS 打不开 App 的问题</h1>
+    <p>
+      如果你在 macOS 上启动 App 时提示 <strong>“App 已损坏”或“无法打开，来自身份不明的开发者”</strong>，可以先尝试按照下面的步骤修复问题。
+    </p>
+    <img src="1.png" style="width: 500px;">
+    <h2>第 1 步：打开“终端”</h2>
+    <ol>
+      <li>
+        点击「<strong>启动台</strong>」图标。
+        <img src="2.png" style="width: 500px;">
+      </li>
+      <li>
+        在搜索框中输入「<strong>终端</strong>」，然后打开 <code>终端</code> 应用。
+        <img src="3.png" style="width: 350px;">
+      </li>
+    </ol>
+    <h2>第 2 步：在终端输入命令</h2>
+    <p>在终端输入下面这一行命令：</p>
+    <pre>xattr -r -d com.apple.quarantine /Applications/xxxxxx.app</pre>
+    <img src="4.png">
+    <p>输入命令后按回车执行。如果没有显示报错信息，说明一切正常；可以尝试启动软件，应该可以正常运行了。</p>
+    <div class="note">
+      <strong>注意：</strong>这个命令只移除 macOS 系统对 App 的「隔离标签」。请确保你从可信来源下载 App，避免清理恶意软件的隔离属性。
+    </div>
+  </div>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search)
+      const path = urlParams.get('path')
+      document.querySelector('pre').innerText = `xattr -r -d com.apple.quarantine "${path.trim()}"`
+    })
+  </script>
+</body>
+</html>
