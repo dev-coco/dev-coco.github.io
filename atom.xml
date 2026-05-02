@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://raz1ner.com</id>
     <title>Raz1ner</title>
-    <updated>2026-04-27T03:38:26.461Z</updated>
+    <updated>2026-05-02T19:53:36.559Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://raz1ner.com"/>
     <link rel="self" href="https://raz1ner.com/atom.xml"/>
     <logo>https://raz1ner.com/images/avatar.png</logo>
     <icon>https://raz1ner.com/favicon.ico</icon>
     <rights>All rights reserved 2026, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[Mac 实用软件推荐]]></title>
+        <id>https://raz1ner.com/post/Mac-App-Recommend/</id>
+        <link href="https://raz1ner.com/post/Mac-App-Recommend/">
+        </link>
+        <updated>2026-05-02T07:51:57.000Z</updated>
+        <summary type="html"><![CDATA[<p>一些我长期在用的 Mac 效率工具，主要用来提升日常生产力，个人向推荐。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>一些我长期在用的 Mac 效率工具，主要用来提升日常生产力，个人向推荐。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[视频动态字幕合成使用方法]]></title>
         <id>https://raz1ner.com/post/Dynamic-Subtitle-Composer/</id>
@@ -161,17 +172,6 @@
         <summary type="html"><![CDATA[<p>批量给多个视频文件添加水印文字。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>批量给多个视频文件添加水印文字。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[免费试用 Gemini Enterprise]]></title>
-        <id>https://raz1ner.com/post/Gemini-Enterprise-Free-Plan/</id>
-        <link href="https://raz1ner.com/post/Gemini-Enterprise-Free-Plan/">
-        </link>
-        <updated>2025-11-29T12:41:27.000Z</updated>
-        <summary type="html"><![CDATA[<p>无需绑卡免费试用一个月 Gemini Enterprise。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>无需绑卡免费试用一个月 Gemini Enterprise。</p>
 ]]></content>
     </entry>
 </feed>
