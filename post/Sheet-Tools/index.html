@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sheet Toos 使用教程 | Raz1ner</title>
   <meta name="author" content="Raz1ner">
-  <link rel="shortcut icon" href="https://raz1ner.com/favicon.ico?v=1777751519138">
+  <link rel="shortcut icon" href="https://raz1ner.com/favicon.ico?v=1778107665210">
   <link rel="stylesheet" href="https://raz1ner.com/styles/main.css">
   <script src="https://raz1ner.com/media/js/jquery.sticky-sidebar.min.js"></script>
   <script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -53,7 +53,7 @@
       <div class="nav">
         <div class="logo">
           <a href="https://raz1ner.com">
-            <img class="avatar" alt="Raz1ner" src="https://raz1ner.com/images/avatar.png?v=1777751519138" alt="">
+            <img class="avatar" alt="Raz1ner" src="https://raz1ner.com/images/avatar.png?v=1778107665210" alt="">
           </a>
           <div class="site-title">
             <h1>Raz1ner</h1>
@@ -151,8 +151,8 @@
         <article class="post i-card">
         <h2 class="post-title">Sheet Toos 使用教程</h2>
         <div class="post-info">
-          <time class="post-time">2026-02-16 / 7 min read</time>
-            <a href="https://raz1ner.com/tag/excel/" class="post-tag i-tag i-tag-other_2">#Excel</a>
+          <time class="post-time">2026-02-15 / 7 min read</time>
+            <a href="https://raz1ner.com/tag/excel/" class="post-tag i-tag i-tag-primary">#Excel</a>
         </div>
         <!--
           
@@ -245,6 +245,12 @@
 在某些场景需要固定引用一个范围不会变动，就需要把普通的应用改成 INDIRECT 文本引用的方式。</p>
 <p><strong>使用方法</strong><br>
 在公式中复制引用范围，如果复制的是普通引用，例如 Sheet1!A1:B10，点击「引用转换」按钮后，会自动转换为 INDIRECT(&quot;Sheet1!A1:B10&quot;) 格式。如果复制的是 INDIRECT 公式，例如 INDIRECT(&quot;Sheet1!A1:B10&quot;)，点击按钮后会自动去除函数结构，还原为普通引用格式。</p>
+<h3 id="授权表格">授权表格</h3>
+<p>批量授权表格访问权限。</p>
+<p><strong>适用场景</strong><br>
+使用 <code>IMPORTRANGE</code> 函数引用其他表格，但是表格需要点授权后才可以访问。</p>
+<p><strong>使用方法</strong><br>
+打开表格，点击「授权表格」按钮，然后会弹出一个窗口，复制表格链接或者 ID，支持多个，然后会批量授权输入的表格。</p>
 <h3 id="快速切换工作表">快速切换工作表</h3>
 <p><strong>适用场景</strong><br>
 当一个电子表格中包含大量工作表时，手动在底部分页滚动查找的时候非常困难，尤其在需要频繁切换不同工作表进行查看或编辑时，可以通过这个功能快速跳转到指定工作表。</p>
@@ -300,8 +306,8 @@
         </article>
         <div class="next-post">
           <div class="next">下一篇</div>
-          <a href="https://raz1ner.com/post/Spreadsheet-Bulk-Editor/">
-            <h3 class="post-title">电子表格批量修改 使用教程</h3>
+          <a href="https://raz1ner.com/post/Text-Scroll-Synth/">
+            <h3 class="post-title">滚动字幕视频合成使用方法</h3>
           </a>
         </div>
         <div id="disqus_thread"></div>
@@ -312,7 +318,7 @@
       <!-- right -->
       <div id="sidebar" class="main-container-right">
         <div class="id_card i-card">
-          <div class="id_card-avatar" style="background-image: url(https://raz1ner.com/images/avatar.png?v=1777751519138)"></div>
+          <div class="id_card-avatar" style="background-image: url(https://raz1ner.com/images/avatar.png?v=1778107665210)"></div>
           <h1 class="id_card-title">Raz1ner</h1>
           <p style="text-align: center;">
             <a href="https://github.com/dev-coco" rel="nofollow noreferrer" target="_blank"><img class="social-icon" alt="Github" src="/images/social/GitHub.png"></a>
@@ -349,6 +355,7 @@
 <li><a href="#%E6%8B%86%E5%88%86%E5%87%BD%E6%95%B0%E4%B8%BA%E5%8D%95%E8%A1%8C">拆分函数为单行</a></li>
 <li><a href="#%E5%A4%8D%E5%88%B6%E8%A1%A8%E6%A0%BC%E5%90%8D%E5%AD%97">复制表格名字</a></li>
 <li><a href="#%E5%BC%95%E7%94%A8%E8%BD%AC%E6%8D%A2">引用转换</a></li>
+<li><a href="#%E6%8E%88%E6%9D%83%E8%A1%A8%E6%A0%BC">授权表格</a></li>
 <li><a href="#%E5%BF%AB%E9%80%9F%E5%88%87%E6%8D%A2%E5%B7%A5%E4%BD%9C%E8%A1%A8">快速切换工作表</a></li>
 <li><a href="#%E6%9B%BF%E6%8D%A2">替换</a></li>
 <li><a href="#%E5%85%AC%E5%BC%8F%E6%A0%BC%E5%BC%8F%E5%8C%96">公式格式化</a></li>
@@ -366,24 +373,24 @@
       </div>
       <div class="notice-card i-card "><div class="notice-title i-card-title"><a href="/tags/">标签</a></div>
         <div class="notice-content">
-          <a class="tags-tag i-tag i-tag-success" href="https://raz1ner.com/tag/software/">软件</a>
-          <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/macos/">macOS</a>
-          <a class="tags-tag i-tag i-tag-info" href="https://raz1ner.com/tag/other/">其它</a>
-          <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/ai-tech/">AI 科技</a>
-          <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/excel/">Excel</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/software/">软件</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/macos/">macOS</a>
+          <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/other/">其它</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/ai-tech/">AI 科技</a>
           <a class="tags-tag i-tag i-tag-banana" href="https://raz1ner.com/tag/google-script/">Google 脚本</a>
+          <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/excel/">Excel</a>
           <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/windows/">Windows</a>
-          <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/facebook/">Facebook</a>
-          <a class="tags-tag i-tag i-tag-info" href="https://raz1ner.com/tag/instagram/">Instagram</a>
-          <a class="tags-tag i-tag i-tag-success" href="https://raz1ner.com/tag/ios/">iOS</a>
-          <a class="tags-tag i-tag i-tag-warning" href="https://raz1ner.com/tag/security/">安全</a>
-          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/shell/">Shell</a>
-          <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/javascript/">Javascript</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/facebook/">Facebook</a>
+          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/instagram/">Instagram</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/ios/">iOS</a>
+          <a class="tags-tag i-tag i-tag-banana" href="https://raz1ner.com/tag/security/">安全</a>
+          <a class="tags-tag i-tag i-tag-other_4" href="https://raz1ner.com/tag/shell/">Shell</a>
+          <a class="tags-tag i-tag i-tag-other_1" href="https://raz1ner.com/tag/javascript/">Javascript</a>
           <a class="tags-tag i-tag i-tag-info" href="https://raz1ner.com/tag/twitter-x/">Twitter (X)</a>
-          <a class="tags-tag i-tag i-tag-banana" href="https://raz1ner.com/tag/life/">生活</a>
-          <a class="tags-tag i-tag i-tag-other_2" href="https://raz1ner.com/tag/sololearn/">Sololearn</a>
-          <a class="tags-tag i-tag i-tag-primary" href="https://raz1ner.com/tag/whatsapp/">WhatsApp</a>
-          <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/linux-command/">Linux命令</a>
+          <a class="tags-tag i-tag i-tag-error" href="https://raz1ner.com/tag/life/">生活</a>
+          <a class="tags-tag i-tag i-tag-other_3" href="https://raz1ner.com/tag/sololearn/">Sololearn</a>
+          <a class="tags-tag i-tag i-tag-info" href="https://raz1ner.com/tag/whatsapp/">WhatsApp</a>
+          <a class="tags-tag i-tag i-tag-success" href="https://raz1ner.com/tag/linux-command/">Linux命令</a>
         </div>
       </div>
       </div>
