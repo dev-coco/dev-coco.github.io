@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://raz1ner.com</id>
     <title>Raz1ner</title>
-    <updated>2026-05-07T12:31:10.830Z</updated>
+    <updated>2026-05-22T12:35:13.937Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://raz1ner.com"/>
     <link rel="self" href="https://raz1ner.com/atom.xml"/>
     <logo>https://raz1ner.com/images/avatar.png</logo>
     <icon>https://raz1ner.com/favicon.ico</icon>
     <rights>All rights reserved 2026, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[Deep Clean Pro 使用方法]]></title>
+        <id>https://raz1ner.com/post/Deep-Clean-Pro/</id>
+        <link href="https://raz1ner.com/post/Deep-Clean-Pro/">
+        </link>
+        <updated>2026-05-20T15:16:59.000Z</updated>
+        <summary type="html"><![CDATA[<p>一款专为 Mac 设计的深度清理缓的工具，释放磁盘空间，让设备恢复流畅。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>一款专为 Mac 设计的深度清理缓的工具，释放磁盘空间，让设备恢复流畅。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Mac 实用软件推荐]]></title>
         <id>https://raz1ner.com/post/Mac-App-Recommend/</id>
@@ -161,17 +172,6 @@
         <summary type="html"><![CDATA[<p>提交修改 Google 账号关联地区申请。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>提交修改 Google 账号关联地区申请。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[视频批量添加水印]]></title>
-        <id>https://raz1ner.com/post/Video-Watermark/</id>
-        <link href="https://raz1ner.com/post/Video-Watermark/">
-        </link>
-        <updated>2025-12-04T12:11:44.000Z</updated>
-        <summary type="html"><![CDATA[<p>批量给多个视频文件添加水印文字。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>批量给多个视频文件添加水印文字。</p>
 ]]></content>
     </entry>
 </feed>
