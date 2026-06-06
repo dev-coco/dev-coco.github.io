@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodCourt AI - Smart Dining Solutions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        body {
+            background-color: #f9fafb;
+            color: #111827;
+            line-height: 1.6;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 8%;
+            background-color: #ffffff;
+            border-bottom: 1px solid #e5e7eb;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: #ef4444;
+            text-decoration: none;
+        }
+
+        nav a {
+            margin-left: 32px;
+            text-decoration: none;
+            color: #4b5563;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: #ef4444;
+        }
+
+        .cta-button {
+            background-color: #ef4444;
+            color: #ffffff;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.2s;
+        }
+
+        .cta-button:hover {
+            background-color: #dc2626;
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 80px 8%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .hero-content {
+            flex: 1;
+            padding-right: 60px;
+        }
+
+        .hero-title {
+            font-size: 56px;
+            line-height: 1.1;
+            font-weight: 800;
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+        }
+
+        .hero-description {
+            font-size: 20px;
+            color: #4b5563;
+            margin-bottom: 40px;
+        }
+
+        .hero-image {
+            flex: 1;
+            background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+            border-radius: 24px;
+            height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #fca5a5;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
+        }
+
+        .mock-ui {
+            width: 80%;
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .mock-chat-line {
+            height: 12px;
+            background: #e5e7eb;
+            margin-bottom: 12px;
+            border-radius: 6px;
+        }
+
+        .mock-chat-line.short { width: 60%; }
+        .mock-chat-line.colored { background: #fca5a5; width: 40%; }
+
+        .features {
+            background-color: #ffffff;
+            padding: 80px 8%;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 48px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            padding: 32px;
+            border-radius: 16px;
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+        }
+
+        .card h3 {
+            font-size: 20px;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        .card p {
+            color: #6b7280;
+        }
+
+        footer {
+            background-color: #111827;
+            color: #9ca3af;
+            padding: 48px 8%;
+            text-align: center;
+            border-top: 1px solid #1f2937;
+        }
+
+        footer a {
+            color: #9ca3af;
+            text-decoration: none;
+            margin: 0 12px;
+        }
+
+        footer a:hover {
+            color: #ffffff;
+        }
+
+        .footer-nav {
+            margin-bottom: 24px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">FoodCourt AI</a>
+        <nav>
+            <a href="#features">Features</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="#" class="cta-button">Get Started</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Automate your food court operations</h1>
+            <p class="hero-description">Connect tenants, streamline multi-cart ordering, and elevate the dining experience with an all-in-one intelligent platform</p>
+            <a href="#" class="cta-button">Start Free Trial</a>
+        </div>
+        <div class="hero-image">
+            <div class="mock-ui">
+                <div class="mock-chat-line"></div>
+                <div class="mock-chat-line short"></div>
+                <div class="mock-chat-line colored"></div>
+                <div class="mock-chat-line"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <h2 class="section-title">Built for modern food halls</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Unified Ordering</h3>
+                <p>Allow customers to combine meals from multiple vendors into a single checkout transaction</p>
+            </div>
+            <div class="card">
+                <h3>Real-time Routing</h3>
+                <p>Instantly dispatch orders to respective kitchen displays without delay or confusion</p>
+            </div>
+            <div class="card">
+                <h3>Smart Analytics</h3>
+                <p>Track foot traffic, peak hours, and vendor performance through a centralized dashboard</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-nav">
+            <a href="#">Product</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="#">Contact</a>
+        </div>
+        <p>&copy; 2026 FoodCourt AI Inc. All rights reserved</p>
+    </footer>
+
+</body>
+</html>
