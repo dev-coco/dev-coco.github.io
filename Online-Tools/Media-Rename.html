@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <title>图片视频重命名</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="keywords" content="Raz1ner, 相似度匹配, 文件重命名" />
+  <meta name="robots" content="index,follow" />
+  <meta name="description" content="图片视频相似度匹配重命名。" />
+  <link rel="icon" href="/images/avatar.png" />
+  <link rel="stylesheet" href="/css/site.css" />
+  <link rel="stylesheet" href="/css/bootstrap.min.css" />
+  <script data-ad-client="ca-pub-6960947409660270" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script async src="https://fundingchoicesmessages.google.com/i/pub-6960947409660270?ers=1" nonce="3szuJwRueku-LVJlmdoLew"></script><script nonce="3szuJwRueku-LVJlmdoLew">(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+  <script>(function(){
+   'use strict';var aa=function(a){var b=0;return function(){return b<a.length?{done:!1,value:a[b++]}:{done:!0}}},ba="function"==typeof Object.create?Object.create:function(a){var b=function(){};b.prototype=a;return new b},k;if("function"==typeof Object.setPrototypeOf)k=Object.setPrototypeOf;else{var m;a:{var ca={a:!0},n={};try{n.__proto__=ca;m=n.a;break a}catch(a){}m=!1}k=m?function(a,b){a.__proto__=b;if(a.__proto__!==b)throw new TypeError(a+" is not extensible");return a}:null}
+   var p=k,q=function(a,b){a.prototype=ba(b.prototype);a.prototype.constructor=a;if(p)p(a,b);else for(var c in b)if("prototype"!=c)if(Object.defineProperties){var d=Object.getOwnPropertyDescriptor(b,c);d&&Object.defineProperty(a,c,d)}else a[c]=b[c];a.v=b.prototype},r=this||self,da=function(){},t=function(a){return a};var u;var w=function(a,b){this.g=b===v?a:""};w.prototype.toString=function(){return this.g+""};var v={},x=function(a){if(void 0===u){var b=null;var c=r.trustedTypes;if(c&&c.createPolicy){try{b=c.createPolicy("goog#html",{createHTML:t,createScript:t,createScriptURL:t})}catch(d){r.console&&r.console.error(d.message)}u=b}else u=b}a=(b=u)?b.createScriptURL(a):a;return new w(a,v)};var A=function(){return Math.floor(2147483648*Math.random()).toString(36)+Math.abs(Math.floor(2147483648*Math.random())^Date.now()).toString(36)};var B={},C=null;var D="function"===typeof Uint8Array;function E(a,b,c){return"object"===typeof a?D&&!Array.isArray(a)&&a instanceof Uint8Array?c(a):F(a,b,c):b(a)}function F(a,b,c){if(Array.isArray(a)){for(var d=Array(a.length),e=0;e<a.length;e++){var f=a[e];null!=f&&(d[e]=E(f,b,c))}Array.isArray(a)&&a.s&&G(d);return d}d={};for(e in a)Object.prototype.hasOwnProperty.call(a,e)&&(f=a[e],null!=f&&(d[e]=E(f,b,c)));return d}
+   function ea(a){return F(a,function(b){return"number"===typeof b?isFinite(b)?b:String(b):b},function(b){var c;void 0===c&&(c=0);if(!C){C={};for(var d="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789".split(""),e=["+/=","+/","-_=","-_.","-_"],f=0;5>f;f++){var h=d.concat(e[f].split(""));B[f]=h;for(var g=0;g<h.length;g++){var l=h[g];void 0===C[l]&&(C[l]=g)}}}c=B[c];d=Array(Math.floor(b.length/3));e=c[64]||"";for(f=h=0;h<b.length-2;h+=3){var y=b[h],z=b[h+1];l=b[h+2];g=c[y>>2];y=c[(y&3)<<
+   4|z>>4];z=c[(z&15)<<2|l>>6];l=c[l&63];d[f++]=""+g+y+z+l}g=0;l=e;switch(b.length-h){case 2:g=b[h+1],l=c[(g&15)<<2]||e;case 1:b=b[h],d[f]=""+c[b>>2]+c[(b&3)<<4|g>>4]+l+e}return d.join("")})}var fa={s:{value:!0,configurable:!0}},G=function(a){Array.isArray(a)&&!Object.isFrozen(a)&&Object.defineProperties(a,fa);return a};var H;var J=function(a,b,c){var d=H;H=null;a||(a=d);d=this.constructor.u;a||(a=d?[d]:[]);this.j=d?0:-1;this.h=null;this.g=a;a:{d=this.g.length;a=d-1;if(d&&(d=this.g[a],!(null===d||"object"!=typeof d||Array.isArray(d)||D&&d instanceof Uint8Array))){this.l=a-this.j;this.i=d;break a}void 0!==b&&-1<b?(this.l=Math.max(b,a+1-this.j),this.i=null):this.l=Number.MAX_VALUE}if(c)for(b=0;b<c.length;b++)a=c[b],a<this.l?(a+=this.j,(d=this.g[a])?G(d):this.g[a]=I):(d=this.l+this.j,this.g[d]||(this.i=this.g[d]={}),(d=this.i[a])?
+   G(d):this.i[a]=I)},I=Object.freeze(G([])),K=function(a,b){if(-1===b)return null;if(b<a.l){b+=a.j;var c=a.g[b];return c!==I?c:a.g[b]=G([])}if(a.i)return c=a.i[b],c!==I?c:a.i[b]=G([])},M=function(a,b){var c=L;if(-1===b)return null;a.h||(a.h={});if(!a.h[b]){var d=K(a,b);d&&(a.h[b]=new c(d))}return a.h[b]};J.prototype.toJSON=function(){var a=N(this,!1);return ea(a)};
+   var N=function(a,b){if(a.h)for(var c in a.h)if(Object.prototype.hasOwnProperty.call(a.h,c)){var d=a.h[c];if(Array.isArray(d))for(var e=0;e<d.length;e++)d[e]&&N(d[e],b);else d&&N(d,b)}return a.g},O=function(a,b){H=b=b?JSON.parse(b):null;a=new a(b);H=null;return a};J.prototype.toString=function(){return N(this,!1).toString()};var P=function(a){J.call(this,a)};q(P,J);function ha(a){var b,c=(a.ownerDocument&&a.ownerDocument.defaultView||window).document,d=null===(b=c.querySelector)||void 0===b?void 0:b.call(c,"script[nonce]");(b=d?d.nonce||d.getAttribute("nonce")||"":"")&&a.setAttribute("nonce",b)};var Q=function(a,b){b=String(b);"application/xhtml+xml"===a.contentType&&(b=b.toLowerCase());return a.createElement(b)},R=function(a){this.g=a||r.document||document};R.prototype.appendChild=function(a,b){a.appendChild(b)};var S=function(a,b,c,d,e,f){try{var h=a.g,g=Q(a.g,"SCRIPT");g.async=!0;g.src=b instanceof w&&b.constructor===w?b.g:"type_error:TrustedResourceUrl";ha(g);h.head.appendChild(g);g.addEventListener("load",function(){e();d&&h.head.removeChild(g)});g.addEventListener("error",function(){0<c?S(a,b,c-1,d,e,f):(d&&h.head.removeChild(g),f())})}catch(l){f()}};var ia=r.atob("aHR0cHM6Ly93d3cuZ3N0YXRpYy5jb20vaW1hZ2VzL2ljb25zL21hdGVyaWFsL3N5c3RlbS8xeC93YXJuaW5nX2FtYmVyXzI0ZHAucG5n"),ja=r.atob("WW91IGFyZSBzZWVpbmcgdGhpcyBtZXNzYWdlIGJlY2F1c2UgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlIGlzIGludGVyZmVyaW5nIHdpdGggdGhpcyBwYWdlLg=="),ka=r.atob("RGlzYWJsZSBhbnkgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlLCB0aGVuIHJlbG9hZCB0aGlzIHBhZ2Uu"),la=function(a,b,c){this.h=a;this.j=new R(this.h);this.g=null;this.i=[];this.l=!1;this.o=b;this.m=c},V=function(a){if(a.h.body&&!a.l){var b=
+   function(){T(a);r.setTimeout(function(){return U(a,3)},50)};S(a.j,a.o,2,!0,function(){r[a.m]||b()},b);a.l=!0}},T=function(a){for(var b=W(1,5),c=0;c<b;c++){var d=X(a);a.h.body.appendChild(d);a.i.push(d)}b=X(a);b.style.bottom="0";b.style.left="0";b.style.position="fixed";b.style.width=W(100,110).toString()+"%";b.style.zIndex=W(2147483544,2147483644).toString();b.style["background-color"]=ma(249,259,242,252,219,229);b.style["box-shadow"]="0 0 12px #888";b.style.color=ma(0,10,0,10,0,10);b.style.display=
+   "flex";b.style["justify-content"]="center";b.style["font-family"]="Roboto, Arial";c=X(a);c.style.width=W(80,85).toString()+"%";c.style.maxWidth=W(750,775).toString()+"px";c.style.margin="24px";c.style.display="flex";c.style["align-items"]="flex-start";c.style["justify-content"]="center";d=Q(a.j.g,"IMG");d.className=A();d.src=ia;d.style.height="24px";d.style.width="24px";d.style["padding-right"]="16px";var e=X(a),f=X(a);f.style["font-weight"]="bold";f.textContent=ja;var h=X(a);h.textContent=ka;Y(a,
+   e,f);Y(a,e,h);Y(a,c,d);Y(a,c,e);Y(a,b,c);a.g=b;a.h.body.appendChild(a.g);b=W(1,5);for(c=0;c<b;c++)d=X(a),a.h.body.appendChild(d),a.i.push(d)},Y=function(a,b,c){for(var d=W(1,5),e=0;e<d;e++){var f=X(a);b.appendChild(f)}b.appendChild(c);c=W(1,5);for(d=0;d<c;d++)e=X(a),b.appendChild(e)},W=function(a,b){return Math.floor(a+Math.random()*(b-a))},ma=function(a,b,c,d,e,f){return"rgb("+W(Math.max(a,0),Math.min(b,255)).toString()+","+W(Math.max(c,0),Math.min(d,255)).toString()+","+W(Math.max(e,0),Math.min(f,
+   255)).toString()+")"},X=function(a){a=Q(a.j.g,"DIV");a.className=A();return a},U=function(a,b){0>=b||null!=a.g&&0!=a.g.offsetHeight&&0!=a.g.offsetWidth||(na(a),T(a),r.setTimeout(function(){return U(a,b-1)},50))},na=function(a){var b=a.i;var c="undefined"!=typeof Symbol&&Symbol.iterator&&b[Symbol.iterator];b=c?c.call(b):{next:aa(b)};for(c=b.next();!c.done;c=b.next())(c=c.value)&&c.parentNode&&c.parentNode.removeChild(c);a.i=[];(b=a.g)&&b.parentNode&&b.parentNode.removeChild(b);a.g=null};var pa=function(a,b,c,d,e){var f=oa(c),h=function(l){l.appendChild(f);r.setTimeout(function(){f?(0!==f.offsetHeight&&0!==f.offsetWidth?b():a(),f.parentNode&&f.parentNode.removeChild(f)):a()},d)},g=function(l){document.body?h(document.body):0<l?r.setTimeout(function(){g(l-1)},e):b()};g(3)},oa=function(a){var b=document.createElement("div");b.className=a;b.style.width="1px";b.style.height="1px";b.style.position="absolute";b.style.left="-10000px";b.style.top="-10000px";b.style.zIndex="-10000";return b};var L=function(a){J.call(this,a)};q(L,J);var qa=function(a){J.call(this,a)};q(qa,J);var ra=function(a,b){this.l=a;this.m=new R(a.document);this.g=b;this.i=K(this.g,1);b=M(this.g,2);this.o=x(K(b,4)||"");this.h=!1;b=M(this.g,13);b=x(K(b,4)||"");this.j=new la(a.document,b,K(this.g,12))};ra.prototype.start=function(){sa(this)};
+   var sa=function(a){ta(a);S(a.m,a.o,3,!1,function(){a:{var b=a.i;var c=r.btoa(b);if(c=r[c]){try{var d=O(P,r.atob(c))}catch(e){b=!1;break a}b=b===K(d,1)}else b=!1}b?Z(a,K(a.g,14)):(Z(a,K(a.g,8)),V(a.j))},function(){pa(function(){Z(a,K(a.g,7));V(a.j)},function(){return Z(a,K(a.g,6))},K(a.g,9),K(a.g,10),K(a.g,11))})},Z=function(a,b){a.h||(a.h=!0,a=new a.l.XMLHttpRequest,a.open("GET",b,!0),a.send())},ta=function(a){var b=r.btoa(a.i);a.l[b]&&Z(a,K(a.g,5))};(function(a,b){r[a]=function(c){for(var d=[],e=0;e<arguments.length;++e)d[e-0]=arguments[e];r[a]=da;b.apply(null,d)}})("__h82AlnkH6D91__",function(a){"function"===typeof window.atob&&(new ra(window,O(qa,window.atob(a)))).start()});}).call(this);
+   window.__h82AlnkH6D91__("WyJwdWItNjk2MDk0NzQwOTY2MDI3MCIsW251bGwsbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9iL3B1Yi02OTYwOTQ3NDA5NjYwMjcwIl0sbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9lbC9BR1NLV3hWWkh4UHVLbUVuYUVHcDZmcldNVTVHZloyVUxJZW8zcHZhaV9wUVJ5a2M4dmlkZlVwMENZeVJQZEQxdExOQzRkOUN6cEQxS1hFZml1cnFJZXFIOVVsc1R3XHUwMDNkXHUwMDNkP3RlXHUwMDNkVE9LRU5fRVhQT1NFRCIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFhUNmRjRFppendkR2FaMmQ2dHBOMEF3TWowNERwVWVBaUd4Y1lsNXR1UWZFdmhDSTZmaWRxcEN3RXNQeGF1eWJUc004eFlhVWFLSWJENnNWdVIyNXIwT0FcdTAwM2RcdTAwM2Q/YWJcdTAwM2QxXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFVFeld6ZVhfYjlBSnJsR05ab2N0MG1UVHBKZFUxQVo1b2piaVNXMXc4TjNJdG93TndOZ2YtNzcwOVNEQUlrSWlUbW5UU2hvVW5DYml0QmVYVTM4Z3M3c2dcdTAwM2RcdTAwM2Q/YWJcdTAwM2QyXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFVWdXc5Q2tNRzNoX3p2WGJHcHlLdU95cE4weWVabEVVSmVsbFBnR2F4Y3NockhWdklpSmlPMzZKM3JhRlhDSl9fdnp2U0ZuRFNXS3dPUXl5enpLWG5zc0FcdTAwM2RcdTAwM2Q/c2JmXHUwMDNkMiIsImRpdi1ncHQtYWQiLDIwLDEwMCwiY0hWaUxUWTVOakE1TkRjME1EazJOakF5TnpBXHUwMDNkIixbbnVsbCxudWxsLG51bGwsImh0dHBzOi8vd3d3LmdzdGF0aWMuY29tLzBlbW4vZi9wL3B1Yi02OTYwOTQ3NDA5NjYwMjcwLmpzP3VzcXBcdTAwM2RDQXciXSwiaHR0cHM6Ly9mdW5kaW5nY2hvaWNlc21lc3NhZ2VzLmdvb2dsZS5jb20vZWwvQUdTS1d4V0M5M05iUXBSTC12eTBWbXd3TjBwVllQTDE5eDJLYWJfQkFZYjVucWlRM0VZTTJ0ZXRQMHJxRzE5ZHF5X3NfZjh6VmhPc0ZIWExmeVJGUnJJTEhSak5aZ1x1MDAzZFx1MDAzZCJd");</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-24X8H1LT7N"></script>
+  <script>
+    window.dataLayer = window.dataLayer || []
+    function gtag(){dataLayer.push(arguments)}
+    gtag('js', new Date())
+    gtag('config', 'G-24X8H1LT7N')
+  </script>
+  <style>.log-box-line{opacity:0;animation:fadeInLine .4s forwards}.log-box-line.ok{color:#67e8c4}.log-box-line.warn{color:#ffcf6b}.log-box-line.err{color:#ff8b8b}@keyframes fadeInLine{to{opacity:1}}#selectZone:hover{border-color:#3d6bff;background:#eaf0ff}#startBtn:disabled{opacity:.5;cursor:not-allowed}.box{max-width:1080px;margin:0 auto;padding:20px 0 60px}.box>div{border-color:#e6e9f2;border-radius:20px;box-shadow:0 10px 30px rgba(61,107,255,.08)}label{display:block;font-size:13.5px;color:#1c2233;font-weight:600;margin-bottom:6px}#sheetUrlInput{border-color:#e6e9f2;font-size:13.5px}#selectZone{border:2px dashed #c8d4ff;border-radius:16px;padding:36px 20px;text-align:center;background:linear-gradient(180deg,#fafbff,#f3f6ff);cursor:pointer}#startBtn{background:linear-gradient(135deg,#3d6bff,#5a8bff);font-size:14px;box-shadow:0 8px 20px rgba(61,107,255,.3)}#resetBtn{color:#3d6bff;border:1.5px solid #eaf0ff;font-size:14px}#logBox{background:#0f1420;border-radius:14px;max-height:280px;font-size:13px;line-height:1.9;color:#c9d3f0}</style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="text-start pt-3">
+      <img class="logo" alt="Raz1ner" src="/images/avatar.png" />
+      <span>Raz1ner</span>
+    </h1>
+    <div class="menu">
+      <a href="/">首页</a>
+      <a href="/Navigation/">导航</a>
+      <a href="/Awesome-Software/">软件</a>
+      <a href="/Extension/">插件</a>
+      <a href="/Online-Tools">在线工具</a>
+      <a href="/post/Linux-Command">Linux命令</a>
+      <a href="/Excel/">Excel教程</a>
+      <a href="/post/Terms-and-Privacy">隐私与条款</a>
+    </div>
+    <h3 class="my-3">图片视频重命名</h3>
+    <div class="box">
+      <div class="bg-white rounded-4 p-4 mb-4 border">
+        <div class="mb-3">
+          <label>Google Sheet 链接</label>
+          <input type="text" id="sheetUrlInput" placeholder="请输入 Google Sheet 链接"
+            class="form-control w-100 px-3 py-2 rounded-3 custom-input"
+            value="https://docs.google.com/spreadsheets/d/1iK9prkiiLWv3LwAU9w9nqwwWu3NEjEdD9ngDP-IMhSU/edit?gid=0#gid=0">
+        </div>
+        <div id="selectZone">
+          <div class="display-5 mb-2">🗂️</div>
+          <h4 class="mb-1 fs-6">点击选择文件夹</h4>
+          <p class="m-0 small">选择包含图片文件夹与多个视频子文件夹的主目录</p>
+        </div>
+        <div class="text-center mt-4">
+          <button id="startBtn" class="gradient-btn text-white border-0 px-4 py-2 rounded-3 fw-bold"
+            disabled>开始智能整理</button>
+          <button id="resetBtn" class="bg-white fw-bold px-4 py-2 border rounded-3 ms-2">重新选择</button>
+        </div>
+        <div id="logBox" class="bg-dark text-light mt-4 rounded-3 p-3 overflow-auto">
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    // 选择的主文件夹
+    let rootHandle = null
+
+    const selectZone = document.getElementById('selectZone')
+    const startBtn = document.getElementById('startBtn')
+    const resetBtn = document.getElementById('resetBtn')
+    const logBox = document.getElementById('logBox')
+    const sheetUrlInput = document.getElementById('sheetUrlInput')
+
+    // 图片类型后缀
+    const imageExt = ['jpg', 'jpeg', 'png', 'webp', 'bmp']
+    // 视频类型后缀
+    const videoExt = ['mp4', 'mov', 'm4v', 'avi', 'mkv', 'webm']
+    // 判断图片文件夹的关键词
+    const imageFolderKeyword = ['图片']
+
+    /**
+     * @description 写入日志
+     * @param {string} msg - 日志内容
+     * @param {string} type - 日志类型
+     */
+    function log(msg, type) {
+      const line = document.createElement('div')
+      line.className = 'log-box-line ' + (type || '')
+      line.textContent = msg
+      logBox.appendChild(line)
+      // 滚动到最新日志
+      logBox.scrollTop = logBox.scrollHeight
+    }
+
+    /**
+     * @description 获取文件的扩展名
+     * @param {string} name - 文件名
+     * @returns {string} 扩展名
+     */
+    function extOf(name) {
+      const parts = name.split('.')
+      return parts.length > 1 ? parts.pop().toLowerCase() : ''
+    }
+
+    /**
+     * @description 判断是否是图片文件夹
+     * @param {string} name - 文件夹名字
+     * @returns {boolean} 判断结果
+     */
+    function isImageFolderName(name) {
+      const lower = name.toLowerCase()
+      return imageFolderKeyword.some(k => lower.includes(k.toLowerCase()))
+    }
+
+    /**
+     * @description 遍历子文件夹获取目录列表
+     * @param {FileSystemDirectoryHandle} dirHandle - 系统文件目录
+     * @returns {Promise<{dirs: FileSystemDirectoryHandle[], files: FileSystemFileHandle[]}>} 包含目录列表和文件列表的对象
+     */
+    async function listChildren(dirHandle) {
+      const dirs = []
+      const files = []
+      for await (const [name, handle] of dirHandle.entries()) {
+        if (name.startsWith('.')) continue
+        if (handle.kind === 'directory') dirs.push(handle)
+        else files.push(handle)
+      }
+      return { dirs, files }
+    }
+
+    /**
+     * @description 获取文件中的编号
+     * @param {string} name - 文件名
+     * @returns {number} 编号
+     */
+    function extractNumber(name) {
+      const base = name.replace(/\.[^.]+$/, '')
+      const match = base.match(/\d+/)
+      return match ? String(parseInt(match[0], 10)) : base
+    }
+
+    /**
+     * @description 计算图片的哈希
+     * @param {ImageBitmap} imgBitmap - 待计算哈希值的图片对象
+     * @returns {string} 图片的平均哈希二进制字符串
+     */
+    function calculateHash(imgBitmap) {
+      const canvas = document.createElement('canvas')
+      const width = 1080
+      const height = 1080
+      canvas.width = width
+      canvas.height = height
+      const ctx = canvas.getContext('2d')
+      // 缩放绘制到固定尺寸画布上
+      ctx.drawImage(imgBitmap, 0, 0, width, height)
+      // 获取像素数据（RGBA）
+      const imageData = ctx.getImageData(0, 0, width, height).data
+
+      const grayscaleData = []
+      let sum = 0
+      // 取 RGB 计算平均灰度
+      for (let i = 0; i < imageData.length; i += 4) {
+        const r = imageData[i]
+        const g = imageData[i + 1]
+        const b = imageData[i + 2]
+        const grayscale = (r + g + b) / 3
+        grayscaleData.push(grayscale)
+        sum += grayscale
+      }
+      // 全图平均灰度值
+      const average = sum / grayscaleData.length
+
+      // 每个像素灰度值 >= 平均值记为 '1'，否则记为 '0'，拼接成二进制哈希字符串
+      let hash = ''
+      for (let i = 0; i < grayscaleData.length; i++) {
+        hash += grayscaleData[i] >= average ? '1' : '0'
+      }
+      return hash
+    }
+
+    /**
+     * @description 计算图片哈希值相似度比例
+     * @param {string} hash1 - 第一个图片哈希值
+     * @param {string} hash2 - 第二个图片哈希值
+     * @returns {number} 对比相似度
+     */
+    function calculateHashSimilarity(hash1, hash2) {
+      let equalCount = 0
+      const len = Math.min(hash1.length, hash2.length)
+      for (let i = 0; i < len; i++) {
+        if (hash1[i] === hash2[i]) equalCount++
+      }
+      return (equalCount / len) * 100
+    }
+
+    /**
+     * @description 提取视频首帧转换成 ImageBitmap
+     * @param {File} file - 视频文件
+     * @returns {Promise<ImageBitmap|null>} 返回 ImageBitmap
+     */
+    async function getFirstFrameBitmap(file) {
+      return new Promise((resolve, reject) => {
+        // 为视频文件创建临时可访问 URL
+        const url = URL.createObjectURL(file)
+        const video = document.createElement('video')
+        video.src = url
+        // 静音
+        video.muted = true
+        video.playsInline = true
+        video.preload = 'auto'
+
+        // 加载完视频后，跳转时间点，避免首帧黑屏
+        video.addEventListener('loadeddata', () => {
+          try {
+            video.currentTime = Math.min(0.05, (video.duration || 1) / 10)
+          } catch (error) {
+            resolve(null)
+          }
+        })
+
+        // 当前视频帧转换成 ImageBitmap
+        video.addEventListener('seeked', async () => {
+          try {
+            const canvas = document.createElement('canvas')
+            canvas.width = video.videoWidth || 320
+            canvas.height = video.videoHeight || 240
+            const ctx = canvas.getContext('2d')
+            ctx.drawImage(video, 0, 0, canvas.width, canvas.height)
+            canvas.toBlob(async blob => {
+              const bmp = await createImageBitmap(blob)
+              // 释放临时 URL 避免内存泄漏
+              URL.revokeObjectURL(url)
+              resolve(bmp)
+            })
+          } catch (e) {
+            URL.revokeObjectURL(url)
+            reject(e)
+          }
+        })
+
+        // 处理视频加载出错
+        video.addEventListener('error', () => {
+          URL.revokeObjectURL(url)
+          reject(new Error('无法读取视频文件'))
+        })
+      })
+    }
+
+    // 调用浏览器原生文件夹选择器
+    selectZone.addEventListener('click', async () => {
+      try {
+        rootHandle = await window.showDirectoryPicker()
+        selectZone.querySelector('h4').textContent = '已选择：' + rootHandle.name
+        selectZone.querySelector('p').textContent = '点击可重新选择文件夹'
+        startBtn.disabled = false
+        log(`已选择主文件夹「${rootHandle.name}」`, 'ok')
+      } catch (error) {
+        // 未选择文件
+        log('未选择文件夹', 'warn')
+      }
+    })
+
+    // 重置
+    resetBtn.addEventListener('click', () => {
+      rootHandle = null
+      startBtn.disabled = true
+      selectZone.querySelector('h4').textContent = '点击选择文件夹'
+      selectZone.querySelector('p').textContent = '选择包含图片文件夹与多个视频子文件夹的主目录'
+      logBox.innerHTML = ''
+    })
+
+    // 点击开始处理按钮，执行主流程
+    startBtn.addEventListener('click', async () => {
+      const sheetUrl = sheetUrlInput.value.trim()
+      if (!sheetUrl) {
+        log('请先输入 Google 表格链接', 'err')
+        return
+      }
+
+      if (!rootHandle) return
+
+      // 禁止重复点击
+      startBtn.disabled = true
+      // 清空旧日志
+      logBox.innerHTML = ''
+
+      try {
+        log('正在读取表格数据...')
+        const list = await fetch(`https://script.google.com/macros/s/AKfycbyFhw24ONbYiEIw_vfsElqExiryxUGlH1w1H9XmBeK8kjPtIPrvwbYfEc5-VJTaPFIy/exec?sheetUrl=${encodeURIComponent(sheetUrl)}`).then(response => response.json())
+        log('表格数据读取完成', 'ok')
+
+        log('开始扫描主文件夹...')
+        const { dirs: allDirs } = await listChildren(rootHandle)
+        if (allDirs.length === 0) {
+          log('主文件夹下没有找到任何子文件夹', 'err')
+          startBtn.disabled = false
+          return
+        }
+
+        const imageDirs = []
+        const videoDirs = []
+        for (const dir of allDirs) {
+          if (isImageFolderName(dir.name)) {
+            imageDirs.push(dir)
+          } else {
+            videoDirs.push(dir)
+          }
+        }
+
+        if (imageDirs.length === 0) {
+          log('没有找到图片文件夹', 'err')
+          startBtn.disabled = false
+          return
+        }
+
+        log(`识别到 ${imageDirs.length} 个图片文件夹，${videoDirs.length} 个视频子文件夹`, 'ok')
+
+        // 收集所有图片文件夹下的图片文件
+        const allImages = []
+        for (const idir of imageDirs) {
+          const { files } = await listChildren(idir)
+
+          const imgs = files.filter(file => imageExt.includes(extOf(file.name)))
+          allImages.push(...imgs.map(file => ({ handle: file, name: file.name })))
+        }
+
+        // 收集所有视频文件夹下的视频文件
+        const allVideoEntries = []
+        for (const vdir of videoDirs) {
+          const { files } = await listChildren(vdir)
+          const videoFiles = files.filter(f => videoExt.includes(extOf(f.name)))
+          if (videoFiles.length === 0) {
+            log(`文件夹「${vdir.name}」内没有找到视频文件，已跳过`, 'warn')
+            continue
+          }
+          for (const videoFile of videoFiles) {
+            allVideoEntries.push({ handle: videoFile, name: videoFile.name, folder: vdir })
+          }
+        }
+
+        log(`共发现图片 ${allImages.length} 张，视频 ${allVideoEntries.length} 个`, 'ok')
+
+        const listCount = list ? Object.keys(list).length : 0
+
+        // 数量一致性校验
+        if (allImages.length !== allVideoEntries.length || allImages.length !== listCount || allVideoEntries.length !== listCount) {
+          log(`数量不一致：图片(${allImages.length})、视频(${allVideoEntries.length})、文案(${listCount})，处理已终止，请检查目录内容或表格数据`, 'err')
+          startBtn.disabled = false
+          return
+        }
+
+        // 预先计算所有图片的感知哈希
+        log('正在计算图片特征，请稍候...')
+        const imageHashes = []
+        for (const img of allImages) {
+          try {
+            const file = await img.handle.getFile()
+            const bmp = await createImageBitmap(file)
+            const hash = calculateHash(bmp)
+            imageHashes.push({ name: img.name, hash })
+          } catch (error) {
+            log(`读取图片「${img.name}」失败：${error.message}`, 'warn')
+          }
+        }
+        log(`图片特征计算完成，共 ${imageHashes.length} 张`, 'ok')
+
+        // 创建存放视频的文件夹
+        const completeDir = await rootHandle.getDirectoryHandle('完成', { create: true })
+        // 记录已被匹配使用过的图片避免重复匹配
+        const usedImageNames = new Set()
+        let totalMatched = 0
+        let totalFailed = 0
+
+        // 遍历每个视频，提取首帧并与图片库比对，找出最相似的图片
+        for (const vEntry of allVideoEntries) {
+          try {
+            const file = await vEntry.handle.getFile()
+            const frameBmp = await getFirstFrameBitmap(file)
+            if (!frameBmp) throw new Error('无法提取视频首帧')
+            const frameHash = calculateHash(frameBmp)
+
+            // 优先在未使用的图片中匹配相似度最高的
+            let best = null
+            let bestSimilarity = -1
+            for (const item of imageHashes) {
+              if (usedImageNames.has(item.name)) continue
+              const sim = calculateHashSimilarity(frameHash, item.hash)
+              if (sim > bestSimilarity) {
+                bestSimilarity = sim
+                best = item
+              }
+            }
+
+            // 未使用的图片中没有匹配到合适的，从全部图片中重新查找一次
+            if (!best) {
+              for (const item of imageHashes) {
+                const sim = calculateHashSimilarity(frameHash, item.hash)
+                if (sim > bestSimilarity) {
+                  bestSimilarity = sim
+                  best = item
+                }
+              }
+            }
+
+            // 根据匹配到的图片名提取编号
+            const newBase = best ? extractNumber(best.name) : extractNumber(vEntry.name)
+            const ext = extOf(vEntry.name)
+            // 从表格数据中查找该编号对应的文案
+            const label = list && list[newBase] ? list[newBase].replace(/\n/g, '') : ''
+            // 拼接新文件名
+            const newName = label ? `${newBase}、${label}.${ext}` : `${newBase}.${ext}`
+
+            // 将视频重命名后写入文件夹
+            const newFileHandle = await completeDir.getFileHandle(newName, { create: true })
+            const writable = await newFileHandle.createWritable()
+            await writable.write(await file.arrayBuffer())
+            await writable.close()
+
+            // 标记图片已被使用
+            if (best) usedImageNames.add(best.name)
+
+            log(`「${vEntry.folder.name}/${vEntry.name}」最匹配「${best ? best.name : '无'}」（相似度 ${bestSimilarity.toFixed(2)}%），已重命名为「${newName}」`, 'ok')
+            totalMatched++
+          } catch (err) {
+            log(`处理「${vEntry.folder.name}/${vEntry.name}」时出错：${err.message}`, 'err')
+            totalFailed++
+          }
+        }
+
+        log(`全部处理完成：成功 ${totalMatched} 个，失败 ${totalFailed} 个`, 'ok')
+      } catch (err) {
+        log('处理过程中发生错误：' + err.message, 'err')
+      } finally {
+        startBtn.disabled = false
+      }
+    })
+  </script>
+</body>
+</html>
