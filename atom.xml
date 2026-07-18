@@ -2,13 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://raz1ner.com</id>
     <title>Raz1ner</title>
-    <updated>2026-07-10T22:03:48.379Z</updated>
+    <updated>2026-07-18T15:54:39.792Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://raz1ner.com"/>
     <link rel="self" href="https://raz1ner.com/atom.xml"/>
     <logo>https://raz1ner.com/images/avatar.png</logo>
     <icon>https://raz1ner.com/favicon.ico</icon>
     <rights>All rights reserved 2026, Raz1ner</rights>
+    <entry>
+        <title type="html"><![CDATA[Hawk Export Privacy Policy]]></title>
+        <id>https://raz1ner.com/post/Hawk-Export-Privacy-Policy/</id>
+        <link href="https://raz1ner.com/post/Hawk-Export-Privacy-Policy/">
+        </link>
+        <updated>2026-07-18T03:50:54.000Z</updated>
+        <summary type="html"><![CDATA[<p>Hawk Export Chrome Extension’s privacy policy is detailed here.</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Hawk Export Chrome Extension’s privacy policy is detailed here.</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Github Pages 设置自定义域名]]></title>
         <id>https://raz1ner.com/post/Github-Pages-Custom-Domain/</id>
@@ -161,17 +172,6 @@
         <summary type="html"><![CDATA[<p>多线程极速转换，让 Mac 里的照片体积减半，腾出更多存储空间。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>多线程极速转换，让 Mac 里的照片体积减半，腾出更多存储空间。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[悬浮歌词播放器]]></title>
-        <id>https://raz1ner.com/post/Floating-Lyrics-Player/</id>
-        <link href="https://raz1ner.com/post/Floating-Lyrics-Player/">
-        </link>
-        <updated>2026-01-13T00:29:29.000Z</updated>
-        <summary type="html"><![CDATA[<p>一款轻量级、极简的悬浮歌词播放器。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>一款轻量级、极简的悬浮歌词播放器。</p>
 ]]></content>
     </entry>
 </feed>
