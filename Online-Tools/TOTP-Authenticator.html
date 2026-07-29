@@ -155,6 +155,8 @@
       })
     })
 
+    document.addEventListener('visibilitychange', refresh)
+
     otpEl.addEventListener('click', () => {
       navigator.clipboard.writeText(otpEl.textContent).then(() => {
         otpEl.classList.add('copied')
